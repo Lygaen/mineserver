@@ -101,6 +101,7 @@ private:
 
 public:
     Config(int argc, char *argv[]);
+    ~Config();
 
     bool loadFromFile();
 

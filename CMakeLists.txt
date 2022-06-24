@@ -11,10 +11,17 @@ target_include_directories(mineserver PUBLIC src/)
 # ####################
 # OPTIONS
 # ####################
-option(MINESERVER_ANSI_SUPPORT "Adds support for ansi color in terminal" ON)
+option(MINESERVER_ANSI_SUPPORT "Support for ansi color in terminal" ON)
 
 if(MINESERVER_ANSI_SUPPORT)
     target_compile_definitions(mineserver PUBLIC MINESERVER_ANSI_SUPPORT)
+endif()
+
+option(MINESERVER_ENABLE_TESTING "Enables the testing" ON)
+
+if(MINESERVER_ENABLE_TESTING)
+    enable_testing()
+    add_subdirectory(tests/)
 endif()
 
 # ####################

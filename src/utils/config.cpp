@@ -59,3 +59,8 @@ Config::Config(int argc, char **argv)
 
     instance = std::unique_ptr<Config>(this);
 }
+
+Config::~Config()
+{
+    Config::instance.release();
+}
