@@ -1,0 +1,9 @@
+[submodule "libs/rapidjson"]
+	path = libs/rapidjson
+	url = https://github.com/Tencent/rapidjson
+[submodule "libs/libcpnet"]
+	path = libs/libcpnet
+	url = https://github.com/soroush/libcpnet
+[submodule "libs/fmt"]
+	path = libs/fmt
+	url = https://github.com/fmtlib/fmt
