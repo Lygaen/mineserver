@@ -1,16 +1,20 @@
-enable_testing()
+add_subdirectory(doctest/)
 include(CTest)
+include_directories(doctest/doctest)
+set(CMAKE_MODULE_PATH "${CMAKE_MODULE_PATH};${CMAKE_CURRENT_SOURCE_DIR}/doctest/scripts/cmake")
+include(doctest)
 
-set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
-add_subdirectory(googletest/)
-include(GoogleTest)
+get_filename_component(FULL_PATH_MAIN ${CMAKE_CURRENT_SOURCE_DIR}/../src/main.cpp ABSOLUTE)
+message(${FULL_PATH_MAIN})
+list(REMOVE_ITEM SOURCES "${FULL_PATH_MAIN}")
+message(${SOURCES})
 
 macro(test name)
     add_executable(${name}-test ${name}.cpp ${SOURCES})
-    target_link_libraries(${name}-test gtest_main mineserver_libs)
+    target_link_libraries(${name}-test doctest mineserver_libs)
     target_include_directories(${name}-test PUBLIC ../src)
 
-    gtest_add_tests(${name}-test SOURCES ${name}.cpp)
+    doctest_discover_tests(stream-test)
 endmacro()
 
 test(stream)

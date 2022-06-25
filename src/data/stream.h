@@ -45,6 +45,24 @@ public:
     bool readBool();
     void writeBool(bool b);
 
+    short readShort();
+    void writeShort(short s);
+
+    unsigned short readUnsignedShort();
+    void writeUnsignedShort(unsigned short s);
+
+    int readInt();
+    void writeInt(int i);
+
+    long long readLong();
+    void writeLong(long long l);
+
+    float readFloat();
+    void writeFloat(float f);
+
+    double readDouble();
+    void writeDouble(double d);
+
     void startRead(int len);
     void flush();
 };

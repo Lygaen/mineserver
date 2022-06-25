@@ -1,6 +1,8 @@
 cmake_minimum_required(VERSION 3.0.0)
 project(mineserver VERSION 0.1.0)
 
+enable_testing()
+
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
 
@@ -20,8 +22,14 @@ endif()
 option(MINESERVER_ENABLE_TESTING "Enables the testing" ON)
 
 if(MINESERVER_ENABLE_TESTING)
-    enable_testing()
     add_subdirectory(tests/)
+endif()
+
+include(TestBigEndian)
+test_big_endian(BIG_ENDIAN)
+
+if(NOT BIG_ENDIAN)
+    target_compile_definitions(mineserver PUBLIC __LITTLE_ENDIAN__)
 endif()
 
 # ####################

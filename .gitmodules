@@ -7,6 +7,6 @@
 [submodule "libs/fmt"]
 	path = libs/fmt
 	url = https://github.com/fmtlib/fmt
-[submodule "tests/googletest"]
-	path = tests/googletest
-	url = https://github.com/google/googletest
+[submodule "tests/doctest"]
+	path = tests/doctest
+	url = https://github.com/doctest/doctest/
