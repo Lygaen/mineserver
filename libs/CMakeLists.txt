@@ -9,6 +9,6 @@ add_subdirectory(libcpnet/)
 add_subdirectory(mIni/)
 add_subdirectory(fmt/)
 
-target_link_libraries(mineserver_libs PUBLIC mIni fmt)
+target_link_libraries(mineserver_libs PUBLIC mIni fmt cpnet)
 # because both libraries are header-only and don't include headers at build-time
 target_include_directories(mineserver_libs PUBLIC libcpnet/src rapidjson/include)
