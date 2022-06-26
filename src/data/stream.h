@@ -3,6 +3,7 @@
 
 #include <cpnet-network.h>
 #include <vector>
+#include <string>
 
 class Stream
 {
@@ -68,6 +69,9 @@ public:
 
     long long readVarLong();
     void writeVarLong(long long l);
+
+    void readString(std::string &str);
+    void writeString(const std::string &str);
 
     void startRead(int len);
     void flush();

@@ -227,6 +227,22 @@ void StreamWrapper::writeVarLong(long long l)
     } while (ul != 0);
 }
 
+void StreamWrapper::readString(std::string &str)
+{
+    int size = readVarInt();
+
+    char *ptr = inBuffer.data() + inIndex;
+    inIndex += size;
+    str = std::string(ptr, ptr + size);
+}
+
+void StreamWrapper::writeString(const std::string &str)
+{
+    writeVarInt(str.size());
+
+    std::copy(str.begin(), str.end(), std::back_inserter(outBuffer));
+}
+
 void StreamWrapper::startRead(int len)
 {
     char *ptr = stream.read(len);

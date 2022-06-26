@@ -154,6 +154,20 @@ TEST_CASE("VarLong IO working")
     CHECK(c == w.readVarLong());
 }
 
+TEST_CASE("String IO working")
+{
+    BufferStream b;
+    StreamWrapper w(b);
+
+    std::string c = "Some kind of long string";
+    w.writeString(c);
+    w.flush();
+    w.startRead(sizeof(int) + c.size()); // VarInt + actual string
+    std::string temp;
+    w.readString(temp);
+    CHECK(c == temp);
+}
+
 TEST_CASE("Size checking")
 {
     // Size matches Java's size
