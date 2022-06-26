@@ -63,6 +63,12 @@ public:
     double readDouble();
     void writeDouble(double d);
 
+    int readVarInt();
+    void writeVarInt(int i);
+
+    long long readVarLong();
+    void writeVarLong(long long l);
+
     void startRead(int len);
     void flush();
 };

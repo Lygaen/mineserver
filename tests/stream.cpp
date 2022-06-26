@@ -130,6 +130,30 @@ TEST_CASE("Double IO working")
     CHECK(c == w.readDouble());
 }
 
+TEST_CASE("VarInt IO working")
+{
+    BufferStream b;
+    StreamWrapper w(b);
+
+    int c = -160632;
+    w.writeVarInt(c);
+    w.flush();
+    w.startRead(sizeof(int) + 1); // allocates the size + 1 (because of varint nature)
+    CHECK(c == w.readVarInt());
+}
+
+TEST_CASE("VarLong IO working")
+{
+    BufferStream b;
+    StreamWrapper w(b);
+
+    long long c = -16069456132;
+    w.writeVarLong(c);
+    w.flush();
+    w.startRead(sizeof(long long) + 2); // allocates the size + 2 (because of varlong nature)
+    CHECK(c == w.readVarLong());
+}
+
 TEST_CASE("Size checking")
 {
     // Size matches Java's size

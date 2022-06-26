@@ -1,6 +1,7 @@
 #include "stream.h"
 #include <cpnet-network.h>
 #include <cstring>
+#include <stdexcept>
 
 SocketStream::SocketStream(socket_t s) : sock(s)
 {
@@ -149,6 +150,81 @@ double StreamWrapper::readDouble()
 void StreamWrapper::writeDouble(double d)
 {
     writeLong(*reinterpret_cast<long *>(&d));
+}
+
+int StreamWrapper::readVarInt()
+{
+    int numRead = 0;
+    int result = 0;
+    unsigned char read;
+    do
+    {
+        read = readUnsignedByte();
+        int value = read & 0b01111111;
+        result |= value << (7 * numRead);
+
+        numRead++;
+        if (numRead > 5)
+        {
+            throw std::runtime_error("VarInt is too big");
+        }
+    } while ((read & 0b10000000) != 0);
+
+    return result;
+}
+
+void StreamWrapper::writeVarInt(int i)
+{
+    unsigned int ui = *reinterpret_cast<unsigned int *>(&i);
+
+    do
+    {
+        char temp = (char)(ui & 127);
+        ui >>= 7;
+
+        if (ui != 0)
+            temp |= 128;
+
+        writeByte(temp);
+    } while (ui != 0);
+}
+
+long long StreamWrapper::readVarLong()
+{
+    int numRead = 0;
+    long result = 0;
+    char read;
+    do
+    {
+        read = readByte();
+        int value = (read & 0b01111111);
+        result |= (long long)value << (7 * numRead);
+
+        numRead++;
+        if (numRead > 10)
+        {
+            throw std::runtime_error("VarLong is too big");
+        }
+    } while ((read & 0b10000000) != 0);
+
+    return result;
+}
+
+void StreamWrapper::writeVarLong(long long l)
+{
+    unsigned long long ul = *reinterpret_cast<unsigned long long *>(&l);
+
+    do
+    {
+        char temp = (char)(ul & 127);
+
+        ul >>= 7;
+
+        if (ul != 0)
+            temp |= 128;
+
+        writeByte(temp);
+    } while (ul != 0);
 }
 
 void StreamWrapper::startRead(int len)
