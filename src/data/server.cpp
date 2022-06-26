@@ -1,6 +1,7 @@
 #include "server.h"
 #include <utils/logger.h>
 #include <thread>
+#include <data/client.h>
 
 Server::Server(unsigned short port)
 {
@@ -43,12 +44,13 @@ void Server::start()
 void Server::clientLoop(socket_t socket, std::shared_ptr<bool> hasAccepted)
 {
     char address[46];
-    socket_t client = cpnet_accept(socket, address, nullptr);
+    socket_t scl = cpnet_accept(socket, address, nullptr);
     *hasAccepted = true;
 
     logger::debug("Client accepted from {}", address);
 
-    char buffer[1024];
-    ssize_t r = cpnet_read(client, buffer, 1024);
-    logger::debug("Data : {}", buffer);
+    Client client(scl);
+    client.start();
+
+    logger::debug("Client disconnected from {}", address);
 }

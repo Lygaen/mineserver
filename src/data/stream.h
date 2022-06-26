@@ -73,6 +73,9 @@ public:
     void readString(std::string &str);
     void writeString(const std::string &str);
 
+    void writeBytes(char *c, int len);
+    char *readBytes(int len);
+
     void startRead(int len);
     void flush();
 };

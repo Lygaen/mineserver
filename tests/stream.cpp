@@ -159,7 +159,7 @@ TEST_CASE("String IO working")
     BufferStream b;
     StreamWrapper w(b);
 
-    std::string c = "Some kind of long string";
+    std::string c = "zFDbcACDslpzdRGFGdijo";
     w.writeString(c);
     w.flush();
     w.startRead(sizeof(int) + c.size()); // VarInt + actual string

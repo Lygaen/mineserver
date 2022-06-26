@@ -19,12 +19,17 @@ void SocketStream::write(char *data, int len)
     cpnet_write(sock, data, len);
 }
 
-StreamWrapper::StreamWrapper(Stream &s) : stream(s)
+StreamWrapper::StreamWrapper(Stream &s) : stream(s), inIndex(-1)
 {
 }
 
 char StreamWrapper::readByte()
 {
+    if (inIndex < 0)
+    {
+        // Because VarInt reading may or may not happen during pre-buffer phase
+        return *stream.read(1);
+    }
     return inBuffer.at(inIndex++);
 }
 
@@ -35,6 +40,10 @@ void StreamWrapper::writeByte(char c)
 
 unsigned char StreamWrapper::readUnsignedByte()
 {
+    if (inIndex < 0)
+    {
+        return *reinterpret_cast<unsigned char *>(stream.read(1));
+    }
     return *reinterpret_cast<unsigned char *>(&inBuffer.at(inIndex++));
 }
 
@@ -233,7 +242,12 @@ void StreamWrapper::readString(std::string &str)
 
     char *ptr = inBuffer.data() + inIndex;
     inIndex += size;
-    str = std::string(ptr, ptr + size);
+
+    char d[size + 1];
+    std::copy(ptr, ptr + size, d);
+    d[size] = '\0';
+
+    str.assign(d);
 }
 
 void StreamWrapper::writeString(const std::string &str)
@@ -241,6 +255,18 @@ void StreamWrapper::writeString(const std::string &str)
     writeVarInt(str.size());
 
     std::copy(str.begin(), str.end(), std::back_inserter(outBuffer));
+}
+
+void StreamWrapper::writeBytes(char *c, int len)
+{
+    std::copy(c, c + len, std::back_inserter(outBuffer));
+}
+
+char *StreamWrapper::readBytes(int len)
+{
+    char *ptr = inBuffer.data() + inIndex;
+    inIndex += len;
+    return ptr;
 }
 
 void StreamWrapper::startRead(int len)
@@ -254,4 +280,5 @@ void StreamWrapper::flush()
 {
     stream.write(outBuffer.data(), outBuffer.size());
     outBuffer.clear();
+    inIndex = -1;
 }

@@ -5,9 +5,7 @@ set(CMAKE_MODULE_PATH "${CMAKE_MODULE_PATH};${CMAKE_CURRENT_SOURCE_DIR}/doctest/
 include(doctest)
 
 get_filename_component(FULL_PATH_MAIN ${CMAKE_CURRENT_SOURCE_DIR}/../src/main.cpp ABSOLUTE)
-message(${FULL_PATH_MAIN})
 list(REMOVE_ITEM SOURCES "${FULL_PATH_MAIN}")
-message(${SOURCES})
 
 macro(test name)
     add_executable(${name}-test ${name}.cpp ${SOURCES})
