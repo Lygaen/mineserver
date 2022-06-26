@@ -26,7 +26,7 @@ bool Config::save()
     motd.saveToMap(data);
     maxPlayers.saveToMap(data);
 
-    return file.write(data, false);
+    return file.write(data, true);
 }
 
 Config::Config(int argc, char **argv)
