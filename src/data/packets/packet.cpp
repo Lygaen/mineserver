@@ -1,4 +1,5 @@
 #include "packet.h"
+#include <utils/logger.h>
 
 class BufferedWriteStream : public Stream
 {
@@ -38,9 +39,12 @@ void Packet::send(StreamWrapper &wrapper)
 
     tempWrapper.writeVarInt(id);
     write(tempWrapper);
+    tempWrapper.flush();
 
     char *data = s.data();
     int size = s.size();
     wrapper.writeVarInt(size);
     wrapper.writeBytes(data, size);
+
+    logger::packet(logger::PacketDirection::TO_CLIENT, size, id, "NULL");
 }

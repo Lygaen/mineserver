@@ -28,29 +28,16 @@ void Server::start()
     cpnet_listen(socket, 10);
 
     running = true;
-    std::shared_ptr<bool> hasAccepted = std::make_shared<bool>();
-    *hasAccepted = false;
-    std::thread(clientLoop, socket, hasAccepted).detach();
     while (running)
     {
-        if (*hasAccepted)
-        {
-            std::thread(clientLoop, socket, hasAccepted).detach();
-            *hasAccepted = false;
-        }
+        char address[46];
+        socket_t scl = cpnet_accept(socket, address, nullptr);
+
+        logger::debug("Client accepted from {}", address);
+
+        Client client(scl);
+        client.start();
+
+        logger::debug("Client disconnected from {}", address);
     }
-}
-
-void Server::clientLoop(socket_t socket, std::shared_ptr<bool> hasAccepted)
-{
-    char address[46];
-    socket_t scl = cpnet_accept(socket, address, nullptr);
-    *hasAccepted = true;
-
-    logger::debug("Client accepted from {}", address);
-
-    Client client(scl);
-    client.start();
-
-    logger::debug("Client disconnected from {}", address);
 }
