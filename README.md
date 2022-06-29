@@ -16,3 +16,9 @@ not be any difference from logging in a java minecraft server or the Mineserver 
 ## Libraries
 This project uses a few embedded libraries (included in the project) :
 - [RapidJson](https://github.com/Tencent/rapidjson) one of the fastest json-parsing libs out there
+- [libcpnet](https://github.com/soroush/libcpnet) a thin wrapper for POSIX and Windows's socket
+- [fmt](https://github.com/fmtlib/fmt) an open-source, fast and safe formatting library
+- [doctest](https://github.com/doctest/doctest/) a C++ testing framework that is the fastest at both compile-time and runtime
+- [mINI](https://github.com/pulzed/mINI) a tiny header only c++ library for parsing `.ini` files
+
+This list is exhaustive but may or may not change later as we gradually move to a standalone project.
