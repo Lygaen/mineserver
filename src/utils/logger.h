@@ -54,6 +54,7 @@ namespace logger
     template <typename... T>
     void packet(PacketDirection direction, int len, int id, const std::string &name)
     {
+#ifndef NDEBUG
         lock.lock();
         const char *dir = direction == TO_SERVER ? "C->S" : "C<-S";
         std::cout << colored(fmt::emphasis::bold | fmt::fg(fmt::color::blue_violet), "[PACK]")
@@ -61,17 +62,20 @@ namespace logger
                   << " - " << fmt::format("{} {} (0x{:02X}) LENGTH {} bytes ", dir, name, id, len)
                   << "\n";
         lock.unlock();
+#endif
     }
 
     template <typename... T>
     void debug(fmt::format_string<T...> s, T &&...args)
     {
+#ifndef NDEBUG
         lock.lock();
         std::cout << colored(fmt::emphasis::bold | fmt::fg(fmt::color::purple), "[DEBUG]")
                   << " " << colored(fmt::emphasis::italic | fmt::fg(fmt::color::gray), getCurrentTime())
                   << " - " << fmt::format(s, std::forward<T>(args)...)
                   << "\n";
         lock.unlock();
+#endif
     }
 
     template <typename... T>

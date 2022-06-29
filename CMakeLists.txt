@@ -10,6 +10,10 @@ file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS src/*.cpp)
 add_executable(mineserver ${SOURCES})
 target_include_directories(mineserver PUBLIC src/)
 
+if(CMAKE_BUILD_TYPE EQUAL "Release")
+    add_compile_definitions(mineserver PRIVATE -O4)
+endif()
+
 # ####################
 # OPTIONS
 # ####################
