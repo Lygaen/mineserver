@@ -3,9 +3,10 @@
 #include <data/packets/handshake/handshake.h>
 #include <data/packets/status/statusresponse.h>
 #include <data/packets/status/pingpong.h>
+#include <data/packets/login/loginstatus.h>
 
 Client::Client(socket_t socket) : socket(socket), streamHolder(new SocketStream(socket)),
-                                  stream(*streamHolder), state(State::HANDSHAKE)
+                                  stream(*streamHolder), state(State::HANDSHAKE), player("", "")
 {
 }
 
@@ -76,6 +77,30 @@ void Client::loop()
         }
         break;
     }
+    case State::LOGIN:
+    {
+        switch (id)
+        {
+        case 0x00:
+        {
+            LoginStart start;
+            start.read(stream);
+
+            player = Player("", start.playerName);
+            // Encryption request
+            break;
+        }
+        case 0x01:
+        {
+            // Encryption response
+            // Enable encryption
+            LoginSuccess success(player.getUUID(), player.getUsername());
+            success.send(stream);
+        }
+        }
+        break;
+    }
+
     default:
         stop();
         break;

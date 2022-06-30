@@ -3,6 +3,7 @@
 
 #include <cpnet-network.h>
 #include <data/stream.h>
+#include <entities/player.h>
 
 enum State
 {
@@ -19,6 +20,7 @@ private:
     Stream *streamHolder;
     StreamWrapper stream;
     State state;
+    Player player;
 
     bool running;
 
