@@ -12,7 +12,7 @@ private:
 
 public:
     Player(const std::string &uuid, const std::string &username) : uuid(uuid), username(username) {}
-    ~Player();
+    ~Player() = default;
 
     const std::string &getUUID() const { return uuid; }
     const std::string &getUsername() const { return username; }

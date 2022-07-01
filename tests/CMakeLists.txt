@@ -12,7 +12,8 @@ macro(test name)
     target_link_libraries(${name}-test doctest mineserver_libs)
     target_include_directories(${name}-test PUBLIC ../src)
 
-    doctest_discover_tests(stream-test)
+    doctest_discover_tests(${name}-test)
 endmacro()
 
 test(stream)
+test(cryptor)
