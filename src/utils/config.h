@@ -1,7 +1,3 @@
-//
-// Created by Lygaen on 18/03/2023.
-//
-
 #ifndef MINESERVER_CONFIG_H
 #define MINESERVER_CONFIG_H
 
@@ -45,8 +41,9 @@ public:
 
     Field<int> PORT = Field("network", "port", 25565);
     Field<std::string> MOTD = Field("display", "motd", std::string("This is the message of the day !"));
+    Field<std::string> LOGLEVEL = Field("other", "loglevel", std::string("ALL"));
 
-#define CONFIG_FIELDS UF(PORT) UF(MOTD)
+#define CONFIG_FIELDS UF(PORT) UF(MOTD) UF(LOGLEVEL)
 
     static Config* inst() {
         return INSTANCE;

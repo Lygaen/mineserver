@@ -1,13 +1,10 @@
-//
-// Created by Lygaen on 18/03/2023.
-//
-
 #include <fstream>
 #include <sstream>
 #include <string>
 #include <filesystem>
 #include <rapidjson/prettywriter.h>
 #include <rapidjson/stringbuffer.h>
+#include <utils/logger.h>
 #include "config.h"
 
 template<typename T>
@@ -78,7 +75,7 @@ void Field<std::string>::load(const rapidjson::Document &document) {
     if(!loc->value.IsString())
         return;
 
-    value = std::string(loc->value.GetString(), loc->value.GetStringLength());
+    value = std::string(std::string(loc->value.GetString(), loc->value.GetStringLength()));
 }
 template<>
 void Field<std::string>::save(rapidjson::Document &document) {
@@ -93,6 +90,7 @@ Config* Config::INSTANCE = nullptr;
 Config::Config() {
     if(INSTANCE)
         return;
+    INSTANCE = this;
 
     if(!std::filesystem::exists(CONFIG_FILE)) {
         std::ofstream out(CONFIG_FILE);
@@ -101,8 +99,6 @@ Config::Config() {
 
     load();
     save();
-
-    INSTANCE = this;
 };
 Config::~Config() {
     INSTANCE = nullptr;
@@ -124,6 +120,8 @@ void Config::load() {
 #define UF(x) x.load(document);
     CONFIG_FIELDS
 #undef UF
+
+    logger::loadConfig();
 }
 
 void Config::save() {

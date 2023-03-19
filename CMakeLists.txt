@@ -8,6 +8,11 @@ file(GLOB_RECURSE SOURCES CONFIGURE_DEPENDS src/*.cpp src/*.h)
 add_executable(mineserver ${SOURCES})
 target_include_directories(mineserver PUBLIC src/)
 
+option(MINESERVER_ANSI_COLORS "Enables printing with color in the terminal" ON)
+if(MINESERVER_ANSI_COLORS)
+    target_compile_definitions(mineserver PUBLIC MINESERVER_ANSI_COLORS)
+endif()
+
 # LIBRARIES
 add_subdirectory(libs/)
 target_link_libraries(mineserver PUBLIC mineserver-libs)
