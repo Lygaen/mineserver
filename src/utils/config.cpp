@@ -95,6 +95,8 @@ Config::Config() {
     if(!std::filesystem::exists(CONFIG_FILE)) {
         std::ofstream out(CONFIG_FILE);
         out.close();
+
+        logger::warn("Did not find config, creating default !");
     }
 
     load();
@@ -122,6 +124,7 @@ void Config::load() {
 #undef UF
 
     logger::loadConfig();
+    logger::debug("Loaded Config");
 }
 
 void Config::save() {
@@ -139,4 +142,5 @@ void Config::save() {
     std::ofstream file(CONFIG_FILE);
     file << buffer.GetString();
     file.close();
+    logger::debug("Saved Config");
 };
