@@ -1,0 +1,62 @@
+\hypertarget{config_8h_source}{}\doxysection{config.\+h}
+\label{config_8h_source}\index{src/utils/config.h@{src/utils/config.h}}
+\mbox{\hyperlink{config_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#ifndef\ MINESERVER\_CONFIG\_H}}
+\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#define\ MINESERVER\_CONFIG\_H}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#include\ <rapidjson/document.h>}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00026\ \textcolor{keyword}{template}<\textcolor{keyword}{typename}\ T>}
+\DoxyCodeLine{00027\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classField}{Field}}\ \{}
+\DoxyCodeLine{00028\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ section;}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ key;}
+\DoxyCodeLine{00031\ \ \ \ \ T\ value;}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{inline}\ rapidjson::Document::ConstMemberIterator\ canSafelyRead(\textcolor{keyword}{const}\ rapidjson::Document\ \&document);}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{inline}\ \textcolor{keywordtype}{void}\ writeSafely(rapidjson::Document\ \&document,\ rapidjson::Value\&\ v);}
+\DoxyCodeLine{00035\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00046\ \ \ \ \ \mbox{\hyperlink{classField}{Field}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{char}*\ section,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *key,\ T\ def);}
+\DoxyCodeLine{00050\ \ \ \ \ \mbox{\hyperlink{classField_a88c0d28bc6696a1e5dbfc50991014959}{\string~Field}}();}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classField_a4fd4a306e69fa5290fd9700586a4de32}{load}}(\textcolor{keyword}{const}\ rapidjson::Document\&\ document);}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classField_a4f69f9beef47fcb6a0ac75fdc2315a96}{save}}(rapidjson::Document\&\ document);}
+\DoxyCodeLine{00067\ }
+\DoxyCodeLine{00073\ \ \ \ \ \textcolor{keyword}{const}\ T\ \&\mbox{\hyperlink{classField_ad6ccdff80569369f0a2ce11045cdaad1}{getValue}}()\ \{}
+\DoxyCodeLine{00074\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ value;}
+\DoxyCodeLine{00075\ \ \ \ \ \}}
+\DoxyCodeLine{00076\ }
+\DoxyCodeLine{00082\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classField_a8fffa4866eabc15ec6cdf7db860a4839}{setValue}}(T\ v)}
+\DoxyCodeLine{00083\ \ \ \ \ \{}
+\DoxyCodeLine{00084\ \ \ \ \ \ \ \ \ value\ =\ v;}
+\DoxyCodeLine{00085\ \ \ \ \ \}}
+\DoxyCodeLine{00086\ \};}
+\DoxyCodeLine{00087\ }
+\DoxyCodeLine{00096\ \textcolor{keyword}{class\ }\mbox{\hyperlink{classConfig}{Config}}\ \{}
+\DoxyCodeLine{00097\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00098\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classConfig}{Config}}\ *INSTANCE;}
+\DoxyCodeLine{00099\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00107\ \ \ \ \ \mbox{\hyperlink{classConfig_abd0c571c116924871e30444b192b792a}{Config}}();}
+\DoxyCodeLine{00112\ \ \ \ \ \mbox{\hyperlink{classConfig_a543dce59b66475c5108088ee4ce1cdfc}{\string~Config}}();}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00120\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classConfig_ae7e68962f22a2c965a61702de1c637db}{save}}();}
+\DoxyCodeLine{00128\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{classConfig_add4ebd0c89505c9b5368f03264555606}{load}}();}
+\DoxyCodeLine{00129\ }
+\DoxyCodeLine{00136\ \ \ \ \ \mbox{\hyperlink{classField}{Field<int>}}\ \mbox{\hyperlink{classConfig_a6ee00c8b627479c136aad4b2366b6426}{PORT}}\ =\ \mbox{\hyperlink{classField}{Field}}(\textcolor{stringliteral}{"{}network"{}},\ \textcolor{stringliteral}{"{}port"{}},\ 25565);}
+\DoxyCodeLine{00143\ \ \ \ \ \mbox{\hyperlink{classField}{Field<std::string>}}\ \mbox{\hyperlink{classConfig_a1991d3da593757b93485a1037924c72a}{MOTD}}\ =\ \mbox{\hyperlink{classField}{Field}}(\textcolor{stringliteral}{"{}display"{}},\ \textcolor{stringliteral}{"{}motd"{}},\ std::string(\textcolor{stringliteral}{"{}This\ is\ the\ message\ of\ the\ day\ !"{}}));}
+\DoxyCodeLine{00150\ \ \ \ \ \mbox{\hyperlink{classField}{Field<std::string>}}\ \mbox{\hyperlink{classConfig_ad015e9d391c06a1073cc0d09736319f3}{LOGLEVEL}}\ =\ \mbox{\hyperlink{classField}{Field}}(\textcolor{stringliteral}{"{}other"{}},\ \textcolor{stringliteral}{"{}loglevel"{}},\ std::string(\textcolor{stringliteral}{"{}ALL"{}}));}
+\DoxyCodeLine{00151\ }
+\DoxyCodeLine{00159\ \textcolor{preprocessor}{\#define\ CONFIG\_FIELDS\ UF(PORT)\ UF(MOTD)\ UF(LOGLEVEL)}}
+\DoxyCodeLine{00160\ }
+\DoxyCodeLine{00168\ \ \ \ \ \textcolor{keyword}{static}\ \mbox{\hyperlink{classConfig}{Config}}*\ \mbox{\hyperlink{classConfig_af08cc4a60a38a00097b93a2c5ad4d37a}{inst}}()\ \{}
+\DoxyCodeLine{00169\ \ \ \ \ \ \ \ \ \textcolor{keywordflow}{return}\ INSTANCE;}
+\DoxyCodeLine{00170\ \ \ \ \ \}}
+\DoxyCodeLine{00171\ \};}
+\DoxyCodeLine{00172\ }
+\DoxyCodeLine{00173\ }
+\DoxyCodeLine{00174\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//MINESERVER\_CONFIG\_H}}
+
+\end{DoxyCode}

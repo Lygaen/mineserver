@@ -1,0 +1,133 @@
+\hypertarget{classField}{}\doxysection{Field\texorpdfstring{$<$}{<} T \texorpdfstring{$>$}{>} Class Template Reference}
+\label{classField}\index{Field$<$ T $>$@{Field$<$ T $>$}}
+
+
+The \mbox{\hyperlink{classField}{Field}} Object for the \mbox{\hyperlink{classConfig}{Config}}.  
+
+
+
+
+{\ttfamily \#include $<$config.\+h$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classField_a2304aea77ba747f09a4fa109866ef374}{Field}} (const char $\ast$section, const char $\ast$key, T def)
+\begin{DoxyCompactList}\small\item\em Construct a new \mbox{\hyperlink{classField}{Field}} object. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classField_a88c0d28bc6696a1e5dbfc50991014959}\label{classField_a88c0d28bc6696a1e5dbfc50991014959}} 
+{\bfseries $\sim$\+Field} ()
+\begin{DoxyCompactList}\small\item\em Destroy the \mbox{\hyperlink{classField}{Field}} object. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classField_a4fd4a306e69fa5290fd9700586a4de32}{load}} (const rapidjson\+::\+Document \&document)
+\begin{DoxyCompactList}\small\item\em Loads the value from the config. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classField_a4f69f9beef47fcb6a0ac75fdc2315a96}{save}} (rapidjson\+::\+Document \&document)
+\begin{DoxyCompactList}\small\item\em Saves value to the config. \end{DoxyCompactList}\item 
+const T \& \mbox{\hyperlink{classField_ad6ccdff80569369f0a2ce11045cdaad1}{get\+Value}} ()
+\begin{DoxyCompactList}\small\item\em Get the Value of the field. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classField_a8fffa4866eabc15ec6cdf7db860a4839}{set\+Value}} (T v)
+\begin{DoxyCompactList}\small\item\em Set the Value of the field. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename T$>$\newline
+class Field$<$ T $>$}
+The \mbox{\hyperlink{classField}{Field}} Object for the \mbox{\hyperlink{classConfig}{Config}}. 
+
+The field object should only be used internally, as it is only used in \mbox{\hyperlink{classConfig}{Config}} for parsing / writing values to the config file. 
+\begin{DoxyTemplParams}{Template Parameters}
+{\em T} & the value type of the field \\
+\hline
+\end{DoxyTemplParams}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classField_a2304aea77ba747f09a4fa109866ef374}\label{classField_a2304aea77ba747f09a4fa109866ef374}} 
+\index{Field$<$ T $>$@{Field$<$ T $>$}!Field@{Field}}
+\index{Field@{Field}!Field$<$ T $>$@{Field$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{Field()}{Field()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+\mbox{\hyperlink{classField}{Field}}$<$ T $>$\mbox{\hyperlink{classField}{\+::\+Field}} (\begin{DoxyParamCaption}\item[{const char $\ast$}]{section,  }\item[{const char $\ast$}]{key,  }\item[{T}]{def }\end{DoxyParamCaption})}
+
+
+
+Construct a new \mbox{\hyperlink{classField}{Field}} object. 
+
+Should only be used internally, constructs a new object that will be used in the \mbox{\hyperlink{classConfig}{Config}} for parsing / writing values to the config file. 
+\begin{DoxyParams}{Parameters}
+{\em section} & The section of the field \\
+\hline
+{\em key} & The key / name of the field \\
+\hline
+{\em def} & Its default value \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classField_ad6ccdff80569369f0a2ce11045cdaad1}\label{classField_ad6ccdff80569369f0a2ce11045cdaad1}} 
+\index{Field$<$ T $>$@{Field$<$ T $>$}!getValue@{getValue}}
+\index{getValue@{getValue}!Field$<$ T $>$@{Field$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{getValue()}{getValue()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+const T \& \mbox{\hyperlink{classField}{Field}}$<$ T $>$\+::get\+Value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Get the Value of the field. 
+
+\begin{DoxyReturn}{Returns}
+const T\& the type of the field 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classField_a4fd4a306e69fa5290fd9700586a4de32}\label{classField_a4fd4a306e69fa5290fd9700586a4de32}} 
+\index{Field$<$ T $>$@{Field$<$ T $>$}!load@{load}}
+\index{load@{load}!Field$<$ T $>$@{Field$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{load()}{load()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classField}{Field}}$<$ T $>$\+::load (\begin{DoxyParamCaption}\item[{const rapidjson\+::\+Document \&}]{document }\end{DoxyParamCaption})}
+
+
+
+Loads the value from the config. 
+
+Loads from the json document the value, parsing it. 
+\begin{DoxyParams}{Parameters}
+{\em document} & The Json document \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classField_a4f69f9beef47fcb6a0ac75fdc2315a96}\label{classField_a4f69f9beef47fcb6a0ac75fdc2315a96}} 
+\index{Field$<$ T $>$@{Field$<$ T $>$}!save@{save}}
+\index{save@{save}!Field$<$ T $>$@{Field$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{save()}{save()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classField}{Field}}$<$ T $>$\+::save (\begin{DoxyParamCaption}\item[{rapidjson\+::\+Document \&}]{document }\end{DoxyParamCaption})}
+
+
+
+Saves value to the config. 
+
+Saves value to the json document. 
+\begin{DoxyParams}{Parameters}
+{\em document} & The Json document \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classField_a8fffa4866eabc15ec6cdf7db860a4839}\label{classField_a8fffa4866eabc15ec6cdf7db860a4839}} 
+\index{Field$<$ T $>$@{Field$<$ T $>$}!setValue@{setValue}}
+\index{setValue@{setValue}!Field$<$ T $>$@{Field$<$ T $>$}}
+\doxysubsubsection{\texorpdfstring{setValue()}{setValue()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+void \mbox{\hyperlink{classField}{Field}}$<$ T $>$\+::set\+Value (\begin{DoxyParamCaption}\item[{T}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Set the Value of the field. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em v} & the new value \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/utils/\mbox{\hyperlink{config_8h}{config.\+h}}\item 
+src/utils/config.\+cpp\end{DoxyCompactItemize}

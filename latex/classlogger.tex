@@ -1,0 +1,168 @@
+\hypertarget{classlogger}{}\doxysection{logger Class Reference}
+\label{classlogger}\index{logger@{logger}}
+
+
+The logging static class.  
+
+
+
+
+{\ttfamily \#include $<$logger.\+h$>$}
+
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::string \mbox{\hyperlink{classlogger_a5e3d513cbef44c7f3a4738485a22811a}{get\+Time}} ()
+\begin{DoxyCompactList}\small\item\em Get the Time as a string. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classlogger_a6cfbe870edaeb3d4801782bb86781b5f}{load\+Config}} ()
+\begin{DoxyCompactList}\small\item\em Loads the loglevel from the config. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classlogger_abf121e9e40ac777068d5f90419d3dfa8}{debug}} (const char $\ast$format,...)
+\begin{DoxyCompactList}\small\item\em Logs something at the \mbox{\hyperlink{logger_8h_aca1fd1d8935433e6ba2e3918214e07f9a0593585da9181e972974c1274d8f2b4f}{DEBUG}} level. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classlogger_a6c9ab850a6fd8deb457e1ade2007460f}{info}} (const char $\ast$format,...)
+\begin{DoxyCompactList}\small\item\em Logs something at the \mbox{\hyperlink{logger_8h_aca1fd1d8935433e6ba2e3918214e07f9a748005382152808a72b1a9177d9dc806}{INFO}} level. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classlogger_a97dbc692baa8b760f866b81a93175a19}{warn}} (const char $\ast$format,...)
+\begin{DoxyCompactList}\small\item\em Logs something at the \mbox{\hyperlink{logger_8h_aca1fd1d8935433e6ba2e3918214e07f9a74dac7ac23d5b810db6d4067f14e8676}{WARN}} level. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classlogger_a2c342fb4415aa53943af3b25b469581f}{error}} (const char $\ast$format,...)
+\begin{DoxyCompactList}\small\item\em Logs something at the \mbox{\hyperlink{logger_8h_aca1fd1d8935433e6ba2e3918214e07f9a2fd6f336d08340583bd620a7f5694c90}{ERROR}} level. \end{DoxyCompactList}\item 
+static void \mbox{\hyperlink{classlogger_a556241a1f5dfb02c21e3ba755e5ff4ac}{fatal}} (const char $\ast$format,...)
+\begin{DoxyCompactList}\small\item\em Logs something at the \mbox{\hyperlink{logger_8h_aca1fd1d8935433e6ba2e3918214e07f9a651d8a47a6976d6fe05c0e03fb4cd2d0}{FATAL}} level. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static \mbox{\hyperlink{logger_8h_aca1fd1d8935433e6ba2e3918214e07f9}{Log\+Level}} \mbox{\hyperlink{classlogger_a14254691ce4dc96b9aea58bcb06d5f49}{LOGLEVEL}}
+\begin{DoxyCompactList}\small\item\em The Log\+Level for the logger to use. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The logging static class. 
+
+The logging class, should NOT be manually created or anything. It is fully static. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classlogger_abf121e9e40ac777068d5f90419d3dfa8}\label{classlogger_abf121e9e40ac777068d5f90419d3dfa8}} 
+\index{logger@{logger}!debug@{debug}}
+\index{debug@{debug}!logger@{logger}}
+\doxysubsubsection{\texorpdfstring{debug()}{debug()}}
+{\footnotesize\ttfamily void logger\+::debug (\begin{DoxyParamCaption}\item[{const char $\ast$}]{format,  }\item[{}]{... }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Logs something at the \mbox{\hyperlink{logger_8h_aca1fd1d8935433e6ba2e3918214e07f9a0593585da9181e972974c1274d8f2b4f}{DEBUG}} level. 
+
+In the end is just a wrapper around printf, so it will works like it. Should be used to log information only used by developers. 
+\begin{DoxyParams}{Parameters}
+{\em format} & the format string to parse arguements in \\
+\hline
+{\em ...} & the arguments for the format \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classlogger_a2c342fb4415aa53943af3b25b469581f}\label{classlogger_a2c342fb4415aa53943af3b25b469581f}} 
+\index{logger@{logger}!error@{error}}
+\index{error@{error}!logger@{logger}}
+\doxysubsubsection{\texorpdfstring{error()}{error()}}
+{\footnotesize\ttfamily void logger\+::error (\begin{DoxyParamCaption}\item[{const char $\ast$}]{format,  }\item[{}]{... }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Logs something at the \mbox{\hyperlink{logger_8h_aca1fd1d8935433e6ba2e3918214e07f9a2fd6f336d08340583bd620a7f5694c90}{ERROR}} level. 
+
+In the end is just a wrapper around printf, so it will works like it. Should only be used to logs errors to the end user, when the program has done / detected something wrong, that impacts the end user. 
+\begin{DoxyParams}{Parameters}
+{\em format} & the format string to parse arguements in \\
+\hline
+{\em ...} & the arguments for the format \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classlogger_a556241a1f5dfb02c21e3ba755e5ff4ac}\label{classlogger_a556241a1f5dfb02c21e3ba755e5ff4ac}} 
+\index{logger@{logger}!fatal@{fatal}}
+\index{fatal@{fatal}!logger@{logger}}
+\doxysubsubsection{\texorpdfstring{fatal()}{fatal()}}
+{\footnotesize\ttfamily void logger\+::fatal (\begin{DoxyParamCaption}\item[{const char $\ast$}]{format,  }\item[{}]{... }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Logs something at the \mbox{\hyperlink{logger_8h_aca1fd1d8935433e6ba2e3918214e07f9a651d8a47a6976d6fe05c0e03fb4cd2d0}{FATAL}} level. 
+
+In the end is just a wrapper around printf, so it will works like it. Should only be used when a fatal error has happened, that crashes the program or has a severe impact for the well-\/being of the program. 
+\begin{DoxyParams}{Parameters}
+{\em format} & the format string to parse arguements in \\
+\hline
+{\em ...} & the arguments for the format \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classlogger_a5e3d513cbef44c7f3a4738485a22811a}\label{classlogger_a5e3d513cbef44c7f3a4738485a22811a}} 
+\index{logger@{logger}!getTime@{getTime}}
+\index{getTime@{getTime}!logger@{logger}}
+\doxysubsubsection{\texorpdfstring{getTime()}{getTime()}}
+{\footnotesize\ttfamily std\+::string logger\+::get\+Time (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Get the Time as a string. 
+
+Gets the local time and returns a string representation of the time accompanied by the date and the month. Used for the console logging. \begin{DoxyReturn}{Returns}
+std\+::string the ascii representation of the local time as \char`\"{}day/month 24\+:60\+:60\char`\"{} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classlogger_a6c9ab850a6fd8deb457e1ade2007460f}\label{classlogger_a6c9ab850a6fd8deb457e1ade2007460f}} 
+\index{logger@{logger}!info@{info}}
+\index{info@{info}!logger@{logger}}
+\doxysubsubsection{\texorpdfstring{info()}{info()}}
+{\footnotesize\ttfamily void logger\+::info (\begin{DoxyParamCaption}\item[{const char $\ast$}]{format,  }\item[{}]{... }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Logs something at the \mbox{\hyperlink{logger_8h_aca1fd1d8935433e6ba2e3918214e07f9a748005382152808a72b1a9177d9dc806}{INFO}} level. 
+
+In the end is just a wrapper around printf, so it will works like it. Should be used to print out general information such as the current status of the program and so on and so on. 
+\begin{DoxyParams}{Parameters}
+{\em format} & the format string to parse arguements in \\
+\hline
+{\em ...} & the arguments for the format \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classlogger_a6cfbe870edaeb3d4801782bb86781b5f}\label{classlogger_a6cfbe870edaeb3d4801782bb86781b5f}} 
+\index{logger@{logger}!loadConfig@{loadConfig}}
+\index{loadConfig@{loadConfig}!logger@{logger}}
+\doxysubsubsection{\texorpdfstring{loadConfig()}{loadConfig()}}
+{\footnotesize\ttfamily void logger\+::load\+Config (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Loads the loglevel from the config. 
+
+Loads the loglevel from the config and parse it to be usable, should only be used internally as a hook after the config was loaded, which is in \mbox{\hyperlink{classConfig_add4ebd0c89505c9b5368f03264555606}{Config\+::load()}}. \mbox{\Hypertarget{classlogger_a97dbc692baa8b760f866b81a93175a19}\label{classlogger_a97dbc692baa8b760f866b81a93175a19}} 
+\index{logger@{logger}!warn@{warn}}
+\index{warn@{warn}!logger@{logger}}
+\doxysubsubsection{\texorpdfstring{warn()}{warn()}}
+{\footnotesize\ttfamily void logger\+::warn (\begin{DoxyParamCaption}\item[{const char $\ast$}]{format,  }\item[{}]{... }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Logs something at the \mbox{\hyperlink{logger_8h_aca1fd1d8935433e6ba2e3918214e07f9a74dac7ac23d5b810db6d4067f14e8676}{WARN}} level. 
+
+In the end is just a wrapper around printf, so it will works like it. Should be used to log information that the end user should be warned about, but has no impact. 
+\begin{DoxyParams}{Parameters}
+{\em format} & the format string to parse arguements in \\
+\hline
+{\em ...} & the arguments for the format \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classlogger_a14254691ce4dc96b9aea58bcb06d5f49}\label{classlogger_a14254691ce4dc96b9aea58bcb06d5f49}} 
+\index{logger@{logger}!LOGLEVEL@{LOGLEVEL}}
+\index{LOGLEVEL@{LOGLEVEL}!logger@{logger}}
+\doxysubsubsection{\texorpdfstring{LOGLEVEL}{LOGLEVEL}}
+{\footnotesize\ttfamily \mbox{\hyperlink{logger_8h_aca1fd1d8935433e6ba2e3918214e07f9}{Log\+Level}} logger\+::\+LOGLEVEL\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The Log\+Level for the logger to use. 
+
+The minimum log level of the logger. 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+src/utils/\mbox{\hyperlink{logger_8h}{logger.\+h}}\item 
+src/utils/logger.\+cpp\end{DoxyCompactItemize}

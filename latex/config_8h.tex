@@ -1,0 +1,52 @@
+\hypertarget{config_8h}{}\doxysection{src/utils/config.h File Reference}
+\label{config_8h}\index{src/utils/config.h@{src/utils/config.h}}
+
+
+The main file for the config io.  
+
+
+{\ttfamily \#include $<$memory$>$}\newline
+{\ttfamily \#include $<$rapidjson/document.\+h$>$}\newline
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classField}{Field$<$ T $>$}}
+\begin{DoxyCompactList}\small\item\em The \mbox{\hyperlink{classField}{Field}} Object for the \mbox{\hyperlink{classConfig}{Config}}. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classConfig}{Config}}
+\begin{DoxyCompactList}\small\item\em The config class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{config_8h_ab3de00e1df9619cf7b3d90f15ab75c18}{CONFIG\+\_\+\+FIELDS}}~UF(PORT) UF(MOTD) UF(LOGLEVEL)
+\begin{DoxyCompactList}\small\item\em List of all the config fields. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+The main file for the config io. 
+
+\begin{DoxyAuthor}{Author}
+Mathieu Cayeux 
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+1.\+0 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2023-\/03-\/20
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2023 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{config_8h_ab3de00e1df9619cf7b3d90f15ab75c18}\label{config_8h_ab3de00e1df9619cf7b3d90f15ab75c18}} 
+\index{config.h@{config.h}!CONFIG\_FIELDS@{CONFIG\_FIELDS}}
+\index{CONFIG\_FIELDS@{CONFIG\_FIELDS}!config.h@{config.h}}
+\doxysubsubsection{\texorpdfstring{CONFIG\_FIELDS}{CONFIG\_FIELDS}}
+{\footnotesize\ttfamily \#define CONFIG\+\_\+\+FIELDS~UF(PORT) UF(MOTD) UF(LOGLEVEL)}
+
+
+
+List of all the config fields. 
+
+List of all of the above config fields, used as a handy tool to run similar functions on all of the fields by defining the UF(x) macro. 
