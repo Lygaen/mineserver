@@ -1,1 +1,0 @@
-// Empty on purpose for CMake to link libraries correctly

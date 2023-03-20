@@ -1,3 +1,0 @@
-# Mineserver
-
-🚧 In construction !
