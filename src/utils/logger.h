@@ -13,6 +13,14 @@
 #define WARN_COLOR "\033[0;33m"
 #define INFO_COLOR "\033[0;35m"
 #define DEBUG_COLOR "\033[0;36m"
+#else
+#define RESET_COLOR ""
+#define TIME_COLOR ""
+#define FATAL_COLOR ""
+#define ERROR_COLOR ""
+#define WARN_COLOR ""
+#define INFO_COLOR ""
+#define DEBUG_COLOR ""
 #endif
 
 enum LogLevel
