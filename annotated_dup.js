@@ -2,5 +2,7 @@ var annotated_dup =
 [
     [ "Config", "classConfig.html", "classConfig" ],
     [ "Field", "classField.html", "classField" ],
-    [ "logger", "classlogger.html", "classlogger" ]
+    [ "IStream", "classIStream.html", "classIStream" ],
+    [ "logger", "classlogger.html", "classlogger" ],
+    [ "MemoryStream", "classMemoryStream.html", "classMemoryStream" ]
 ];

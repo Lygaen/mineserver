@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['logger_0',['logger',['../classlogger.html',1,'']]]
+  ['istream_0',['IStream',['../classIStream.html',1,'']]]
 ];

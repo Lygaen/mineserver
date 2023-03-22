@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['warn_0',['warn',['../classlogger.html#a97dbc692baa8b760f866b81a93175a19',1,'logger']]],
-  ['warn_1',['WARN',['../logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a74dac7ac23d5b810db6d4067f14e8676',1,'logger.h']]]
+  ['save_0',['save',['../classField.html#a4f69f9beef47fcb6a0ac75fdc2315a96',1,'Field::save()'],['../classConfig.html#ae7e68962f22a2c965a61702de1c637db',1,'Config::save()']]],
+  ['setvalue_1',['setValue',['../classField.html#a8fffa4866eabc15ec6cdf7db860a4839',1,'Field']]],
+  ['stream_2eh_2',['stream.h',['../stream_8h.html',1,'']]]
 ];
