@@ -1,5 +1,7 @@
 #include "logger.h"
 
+LogLevel logger::LOGLEVEL;
+
 std::string logger::getTime()
 {
     std::time_t now = std::time(nullptr);
