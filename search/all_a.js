@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['port_0',['PORT',['../classConfig.html#a6ee00c8b627479c136aad4b2366b6426',1,'Config']]]
+  ['off_0',['OFF',['../logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9aac132f2982b98bcaa3445e535a03ff75',1,'logger.h']]]
 ];
