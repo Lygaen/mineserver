@@ -16,6 +16,7 @@
 #include <cstddef>
 #include <string>
 #include <vector>
+#include <utils/network.h>
 
 /**
  * @brief Stream interface
@@ -281,6 +282,55 @@ public:
      * @brief Flushes the stream
      *
      * Clears the buffer of the stream.
+     */
+    void flush() override;
+};
+
+/**
+ * @brief Stream from a net client socket
+ *
+ * Stream for IO on a Network client socket
+ */
+class NetSocketStream : public IStream
+{
+private:
+    ClientSocket socket;
+
+public:
+    /**
+     * @brief Construct a new Net Socket Stream object
+     *
+     * @param socket the socket to IO on
+     */
+    NetSocketStream(ClientSocket socket);
+    /**
+     * @brief Destroy the Net Socket Stream object
+     *
+     */
+    ~NetSocketStream();
+
+    /**
+     * @brief Reads from the network socket
+     *
+     * Reads from the network socket, writing it
+     * to @p buffer
+     * @param buffer the buffer to write to
+     * @param offset the offset to start writing at
+     * @param len the maximum length to write
+     */
+    void read(std::byte *buffer, std::size_t offset, std::size_t len) override;
+    /**
+     * @brief Writes to the network socket
+     *
+     * Writes to the network socket
+     * @param buffer the buffer to read from
+     * @param offset the offset to start reading from
+     * @param len the maximum read length
+     */
+    void write(std::byte *buffer, std::size_t offset, std::size_t len) override;
+    /**
+     * @brief Flushes the stream
+     * @deprecated Not implemented, useless, should not be used
      */
     void flush() override;
 };

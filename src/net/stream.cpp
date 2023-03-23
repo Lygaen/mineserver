@@ -283,3 +283,27 @@ void MemoryStream::flush()
     readIndex = 0;
     data.clear();
 }
+
+NetSocketStream::NetSocketStream(ClientSocket socket) : socket(socket)
+{
+}
+
+NetSocketStream::~NetSocketStream()
+{
+    socket.close();
+}
+
+void NetSocketStream::read(std::byte *buffer, std::size_t offset, std::size_t len)
+{
+    socket.read(buffer + offset, len);
+}
+
+void NetSocketStream::write(std::byte *buffer, std::size_t offset, std::size_t len)
+{
+    socket.write(buffer + offset, len);
+}
+
+void NetSocketStream::flush()
+{
+    /* Not implemented */
+}

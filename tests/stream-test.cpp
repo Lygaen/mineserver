@@ -204,3 +204,70 @@ TEST(MinecraftStream, VarLong)
     m.writeVarLong(LONG_MAX);
     ASSERT_EQ(m.readVarLong(), LONG_MAX);
 }
+
+void runStreamTest(IStream *reader, IStream *writer)
+{
+    writer->writeBoolean(true);
+    ASSERT_TRUE(reader->readBoolean());
+
+    writer->writeByte(SCHAR_MAX);
+    ASSERT_EQ(reader->readByte(), SCHAR_MAX);
+
+    writer->writeUnsignedByte(UCHAR_MAX);
+    ASSERT_EQ(reader->readUnsignedByte(), UCHAR_MAX);
+
+    writer->writeShort(SHRT_MAX);
+    ASSERT_EQ(reader->readShort(), SHRT_MAX);
+
+    writer->writeUnsignedShort(SHRT_MAX);
+    ASSERT_EQ(reader->readUnsignedShort(), SHRT_MAX);
+
+    writer->writeInt(INT_MAX);
+    ASSERT_EQ(reader->readInt(), INT_MAX);
+
+    writer->writeFloat(FLT_MAX);
+    ASSERT_EQ(reader->readFloat(), FLT_MAX);
+
+    writer->writeLong(LONG_MAX);
+    ASSERT_EQ(reader->readLong(), LONG_MAX);
+
+    writer->writeDouble(DBL_MAX);
+    ASSERT_EQ(reader->readDouble(), DBL_MAX);
+
+    std::string s = "Some random st\0ring to io";
+    writer->writeString(s);
+    ASSERT_EQ(reader->readString(), s);
+
+    writer->writeVarInt(INT_MAX);
+    ASSERT_EQ(reader->readVarInt(), INT_MAX);
+
+    writer->writeVarLong(LONG_MAX);
+    ASSERT_EQ(reader->readVarLong(), LONG_MAX);
+}
+
+TEST(Streams, Network)
+{
+    ASSERT_TRUE(ServerSocket::init());
+
+    ServerSocket server(SOCK_STREAM);
+    server.bind(nullptr, 6565);
+    server.start(10);
+
+    ClientSocket client(SOCK_STREAM);
+    bool hasConnected;
+    std::thread([&client, &hasConnected]()
+                { hasConnected = client.connect("127.0.0.1", 6565); })
+        .detach();
+    ClientSocket sClient = server.accept();
+    ASSERT_TRUE(hasConnected);
+
+    NetSocketStream clientStream(client);
+    NetSocketStream serverStream(sClient);
+
+    runStreamTest(&clientStream, &serverStream);
+    runStreamTest(&serverStream, &clientStream);
+
+    server.close();
+    client.close();
+    ASSERT_TRUE(ServerSocket::cleanup());
+}

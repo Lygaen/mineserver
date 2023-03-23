@@ -17,15 +17,6 @@ ServerSocket::ServerSocket(int type)
     sock = socket(AF_INET, type, 0);
 }
 
-ServerSocket::~ServerSocket()
-{
-#if defined(_WIN32)
-    closesocket(sock);
-#elif defined(__linux__)
-    ::close(sock);
-#endif
-}
-
 bool ServerSocket::bind(const char *address, int port)
 {
     if (!sock)
@@ -71,6 +62,15 @@ ClientSocket ServerSocket::accept()
 #endif
 
     return ClientSocket(rvalue, addr);
+}
+
+void ServerSocket::close()
+{
+#if defined(_WIN32)
+    closesocket(sock);
+#elif defined(__linux__)
+    ::close(sock);
+#endif
 }
 
 bool ServerSocket::init()
@@ -121,15 +121,33 @@ bool ServerSocket::cleanup()
 ClientSocket::ClientSocket(socket_t client, char *addr) : address(addr)
 {
     sock = client;
+    connected = true;
 }
 
-ClientSocket::~ClientSocket()
+ClientSocket::ClientSocket(int type)
 {
-#if defined(_WIN32)
-    closesocket(sock);
-#elif defined(__linux__)
-    ::close(sock);
-#endif
+    connected = false;
+
+    sock = socket(AF_INET, type, 0);
+}
+
+bool ClientSocket::connect(const char *address, int port)
+{
+    if (connected)
+        return false;
+
+    struct sockaddr_in serv_addr;
+    struct hostent *server;
+    server = gethostbyname(address);
+    if (server == NULL)
+    {
+        return -1;
+    }
+    memset((void *)&serv_addr, '\0', sizeof(serv_addr));
+    serv_addr.sin_family = AF_INET;
+    memmove((char *)&serv_addr.sin_addr.s_addr, (char *)server->h_addr, server->h_length);
+    serv_addr.sin_port = htons(port);
+    return ::connect(sock, (struct sockaddr *)&serv_addr, sizeof(serv_addr)) == 0;
 }
 
 ssize_t ClientSocket::read(std::byte *buffer, size_t len)
@@ -150,5 +168,14 @@ ssize_t ClientSocket::write(std::byte *buffer, size_t len)
     return send(sock, buffer, len, MSG_NOSIGNAL);
 #elif defined(_WIN32)
     return send(sock, buffer, (unsigned int)len, 0);
+#endif
+}
+
+void ClientSocket::close()
+{
+#if defined(_WIN32)
+    closesocket(sock);
+#elif defined(__linux__)
+    ::close(sock);
 #endif
 }
