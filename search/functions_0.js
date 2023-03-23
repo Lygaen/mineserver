@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['config_0',['Config',['../classConfig.html#abd0c571c116924871e30444b192b792a',1,'Config']]]
+  ['accept_0',['accept',['../classServerSocket.html#a15754ba53298af09a2822d32adfe13a7',1,'ServerSocket']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['debug_0',['debug',['../classlogger.html#abf121e9e40ac777068d5f90419d3dfa8',1,'logger']]]
+  ['bind_0',['bind',['../classServerSocket.html#a2944cd35f49fcec358fbd75c29d0dfaa',1,'ServerSocket']]]
 ];

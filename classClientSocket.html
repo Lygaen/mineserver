@@ -104,19 +104,267 @@ $(document).ready(function(){initNavTree('classClientSocket.html',''); initResiz
   <div class="headertitle"><div class="title">ClientSocket Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Network POSIX Client.  
+ <a href="classClientSocket.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="network_8h_source.html">network.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a13175484cd58019f34f37471abcdf4df"><td class="memItemLeft" align="right" valign="top"><a id="a13175484cd58019f34f37471abcdf4df" name="a13175484cd58019f34f37471abcdf4df"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ClientSocket</b> (socket_t client, char *addr)</td></tr>
+<tr class="memitem:a13175484cd58019f34f37471abcdf4df"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClientSocket.html#a13175484cd58019f34f37471abcdf4df">ClientSocket</a> (socket_t client, char *addr)</td></tr>
+<tr class="memdesc:a13175484cd58019f34f37471abcdf4df"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Client Socket object.  <br /></td></tr>
 <tr class="separator:a13175484cd58019f34f37471abcdf4df"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af1f8bfae4957063cd484f444f655cfd0"><td class="memItemLeft" align="right" valign="top"><a id="af1f8bfae4957063cd484f444f655cfd0" name="af1f8bfae4957063cd484f444f655cfd0"></a>
-ssize_t&#160;</td><td class="memItemRight" valign="bottom"><b>read</b> (std::byte *buffer, size_t len)</td></tr>
+<tr class="memitem:a2364e47b7c4cb3a81b8fdafe9376946c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClientSocket.html#a2364e47b7c4cb3a81b8fdafe9376946c">ClientSocket</a> (int type)</td></tr>
+<tr class="memdesc:a2364e47b7c4cb3a81b8fdafe9376946c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Client Socket object.  <br /></td></tr>
+<tr class="separator:a2364e47b7c4cb3a81b8fdafe9376946c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a00319bd7a57d8d8f356fe358133c3ab2"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClientSocket.html#a00319bd7a57d8d8f356fe358133c3ab2">~ClientSocket</a> ()=default</td></tr>
+<tr class="memdesc:a00319bd7a57d8d8f356fe358133c3ab2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the Client Socket object.  <br /></td></tr>
+<tr class="separator:a00319bd7a57d8d8f356fe358133c3ab2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac22cddc58215b02bd414338e1011b393"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClientSocket.html#ac22cddc58215b02bd414338e1011b393">connect</a> (const char *address, int port)</td></tr>
+<tr class="memdesc:ac22cddc58215b02bd414338e1011b393"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connects to an <code>address</code> on a certain <code>port</code>.  <br /></td></tr>
+<tr class="separator:ac22cddc58215b02bd414338e1011b393"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1f8bfae4957063cd484f444f655cfd0"><td class="memItemLeft" align="right" valign="top">ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClientSocket.html#af1f8bfae4957063cd484f444f655cfd0">read</a> (std::byte *buffer, size_t len)</td></tr>
+<tr class="memdesc:af1f8bfae4957063cd484f444f655cfd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads from the socket.  <br /></td></tr>
 <tr class="separator:af1f8bfae4957063cd484f444f655cfd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6c6d2c5c2026083e0bf5ee78fb31098c"><td class="memItemLeft" align="right" valign="top"><a id="a6c6d2c5c2026083e0bf5ee78fb31098c" name="a6c6d2c5c2026083e0bf5ee78fb31098c"></a>
-ssize_t&#160;</td><td class="memItemRight" valign="bottom"><b>write</b> (std::byte *buffer, size_t len)</td></tr>
+<tr class="memitem:a6c6d2c5c2026083e0bf5ee78fb31098c"><td class="memItemLeft" align="right" valign="top">ssize_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClientSocket.html#a6c6d2c5c2026083e0bf5ee78fb31098c">write</a> (std::byte *buffer, size_t len)</td></tr>
+<tr class="memdesc:a6c6d2c5c2026083e0bf5ee78fb31098c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes to the socket.  <br /></td></tr>
 <tr class="separator:a6c6d2c5c2026083e0bf5ee78fb31098c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6326bc6d9eec75a2e10ae8d8122ea488"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classClientSocket.html#a6326bc6d9eec75a2e10ae8d8122ea488">close</a> ()</td></tr>
+<tr class="memdesc:a6326bc6d9eec75a2e10ae8d8122ea488"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes the connection.  <br /></td></tr>
+<tr class="separator:a6326bc6d9eec75a2e10ae8d8122ea488"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Network POSIX Client. </p>
+<p>Wrapper for cross-platform POSIX networking. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a13175484cd58019f34f37471abcdf4df" name="a13175484cd58019f34f37471abcdf4df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a13175484cd58019f34f37471abcdf4df">&#9670;&#160;</a></span>ClientSocket() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ClientSocket::ClientSocket </td>
+          <td>(</td>
+          <td class="paramtype">socket_t&#160;</td>
+          <td class="paramname"><em>client</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">char *&#160;</td>
+          <td class="paramname"><em>addr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct a new Client Socket object. </p>
+<p>Constructs a client socket, only used by the <a class="el" href="classServerSocket.html" title="Network POSIX Server.">ServerSocket</a> internally. You should use other constructers instead. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">client</td><td>the client to attach on </td></tr>
+    <tr><td class="paramname">addr</td><td>the address on which the socket is connected </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a2364e47b7c4cb3a81b8fdafe9376946c" name="a2364e47b7c4cb3a81b8fdafe9376946c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2364e47b7c4cb3a81b8fdafe9376946c">&#9670;&#160;</a></span>ClientSocket() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ClientSocket::ClientSocket </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>type</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct a new Client Socket object. </p>
+<p>Creates a new Socket client, to be able to connect to remote addresses manually. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">type</td><td>the socket type, please use SOCK_STREAM </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a00319bd7a57d8d8f356fe358133c3ab2" name="a00319bd7a57d8d8f356fe358133c3ab2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a00319bd7a57d8d8f356fe358133c3ab2">&#9670;&#160;</a></span>~ClientSocket()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ClientSocket::~ClientSocket </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destroy the Client Socket object. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a6326bc6d9eec75a2e10ae8d8122ea488" name="a6326bc6d9eec75a2e10ae8d8122ea488"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6326bc6d9eec75a2e10ae8d8122ea488">&#9670;&#160;</a></span>close()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ClientSocket::close </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Closes the connection. </p>
+<p>Must be run when you finish your work or else it will come at a cost of leaking memory ! </p>
+
+</div>
+</div>
+<a id="ac22cddc58215b02bd414338e1011b393" name="ac22cddc58215b02bd414338e1011b393"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac22cddc58215b02bd414338e1011b393">&#9670;&#160;</a></span>connect()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ClientSocket::connect </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>address</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>port</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Connects to an <code>address</code> on a certain <code>port</code>. </p>
+<p>Keep in mind that if the <a class="el" href="classClientSocket.html" title="Network POSIX Client.">ClientSocket</a> was constructed by the <a class="el" href="classServerSocket.html" title="Network POSIX Server.">ServerSocket</a>, this function will fail ! </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">address</td><td>the address to connect on </td></tr>
+    <tr><td class="paramname">port</td><td>the port to connect on </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true the connection was succesfull </dd>
+<dd>
+false something went wrong </dd></dl>
+
+</div>
+</div>
+<a id="af1f8bfae4957063cd484f444f655cfd0" name="af1f8bfae4957063cd484f444f655cfd0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1f8bfae4957063cd484f444f655cfd0">&#9670;&#160;</a></span>read()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ssize_t ClientSocket::read </td>
+          <td>(</td>
+          <td class="paramtype">std::byte *&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reads from the socket. </p>
+<p>Everything is said. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buffer</td><td>the buffer to write into </td></tr>
+    <tr><td class="paramname">len</td><td>the maximum length to write </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ssize_t the data length actually read </dd></dl>
+
+</div>
+</div>
+<a id="a6c6d2c5c2026083e0bf5ee78fb31098c" name="a6c6d2c5c2026083e0bf5ee78fb31098c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6c6d2c5c2026083e0bf5ee78fb31098c">&#9670;&#160;</a></span>write()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ssize_t ClientSocket::write </td>
+          <td>(</td>
+          <td class="paramtype">std::byte *&#160;</td>
+          <td class="paramname"><em>buffer</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Writes to the socket. </p>
+<p>Everything is said. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buffer</td><td>the buffer to read from </td></tr>
+    <tr><td class="paramname">len</td><td>the maximum length to read </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>ssize_t the data length actually written </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/utils/<a class="el" href="network_8h_source.html">network.h</a></li>
 <li>src/utils/network.cpp</li>

@@ -1,5 +1,5 @@
 var network_8h =
 [
-    [ "ClientSocket", "classClientSocket.html", null ],
-    [ "ServerSocket", "classServerSocket.html", null ]
+    [ "ClientSocket", "classClientSocket.html", "classClientSocket" ],
+    [ "ServerSocket", "classServerSocket.html", "classServerSocket" ]
 ];

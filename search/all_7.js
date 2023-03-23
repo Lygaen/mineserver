@@ -1,9 +1,8 @@
 var searchData=
 [
-  ['load_0',['load',['../classField.html#a4fd4a306e69fa5290fd9700586a4de32',1,'Field::load()'],['../classConfig.html#add4ebd0c89505c9b5368f03264555606',1,'Config::load()']]],
-  ['loadconfig_1',['loadConfig',['../classlogger.html#a6cfbe870edaeb3d4801782bb86781b5f',1,'logger']]],
-  ['logger_2',['logger',['../classlogger.html',1,'']]],
-  ['logger_2eh_3',['logger.h',['../logger_8h.html',1,'']]],
-  ['loglevel_4',['LOGLEVEL',['../classConfig.html#ad015e9d391c06a1073cc0d09736319f3',1,'Config::LOGLEVEL()'],['../classlogger.html#a14254691ce4dc96b9aea58bcb06d5f49',1,'logger::LOGLEVEL()']]],
-  ['loglevel_5',['LogLevel',['../logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9',1,'logger.h']]]
+  ['info_0',['info',['../classlogger.html#a6c9ab850a6fd8deb457e1ade2007460f',1,'logger']]],
+  ['info_1',['INFO',['../logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a748005382152808a72b1a9177d9dc806',1,'logger.h']]],
+  ['init_2',['init',['../classServerSocket.html#a0ca4d909bf5c076b2cac8e8d297fa500',1,'ServerSocket']]],
+  ['inst_3',['inst',['../classConfig.html#af08cc4a60a38a00097b93a2c5ad4d37a',1,'Config']]],
+  ['istream_4',['IStream',['../classIStream.html',1,'']]]
 ];

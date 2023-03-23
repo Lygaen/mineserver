@@ -6,7 +6,8 @@ var hierarchy =
     [ "Field< int >", "classField.html", null ],
     [ "Field< std::string >", "classField.html", null ],
     [ "IStream", "classIStream.html", [
-      [ "MemoryStream", "classMemoryStream.html", null ]
+      [ "MemoryStream", "classMemoryStream.html", null ],
+      [ "NetSocketStream", "classNetSocketStream.html", null ]
     ] ],
     [ "logger", "classlogger.html", null ],
     [ "ServerSocket", "classServerSocket.html", null ]

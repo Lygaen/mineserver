@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['off_0',['OFF',['../logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9aac132f2982b98bcaa3445e535a03ff75',1,'logger.h']]]
+  ['netsocketstream_0',['NetSocketStream',['../classNetSocketStream.html',1,'NetSocketStream'],['../classNetSocketStream.html#a6ddbb89505842e91429aeb7ec38febbc',1,'NetSocketStream::NetSocketStream()']]],
+  ['network_2eh_1',['network.h',['../network_8h.html',1,'']]]
 ];

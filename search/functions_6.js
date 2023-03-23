@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['load_0',['load',['../classField.html#a4fd4a306e69fa5290fd9700586a4de32',1,'Field::load()'],['../classConfig.html#add4ebd0c89505c9b5368f03264555606',1,'Config::load()']]],
-  ['loadconfig_1',['loadConfig',['../classlogger.html#a6cfbe870edaeb3d4801782bb86781b5f',1,'logger']]]
+  ['gettime_0',['getTime',['../classlogger.html#a5e3d513cbef44c7f3a4738485a22811a',1,'logger']]],
+  ['getvalue_1',['getValue',['../classField.html#ad6ccdff80569369f0a2ce11045cdaad1',1,'Field']]]
 ];

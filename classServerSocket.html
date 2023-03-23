@@ -105,34 +105,266 @@ $(document).ready(function(){initNavTree('classServerSocket.html',''); initResiz
   <div class="headertitle"><div class="title">ServerSocket Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Network POSIX Server.  
+ <a href="classServerSocket.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="network_8h_source.html">network.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8df16b3cb42a8a6fe5a4bb438b43866b"><td class="memItemLeft" align="right" valign="top"><a id="a8df16b3cb42a8a6fe5a4bb438b43866b" name="a8df16b3cb42a8a6fe5a4bb438b43866b"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>ServerSocket</b> (int type)</td></tr>
+<tr class="memitem:a8df16b3cb42a8a6fe5a4bb438b43866b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classServerSocket.html#a8df16b3cb42a8a6fe5a4bb438b43866b">ServerSocket</a> (int type)</td></tr>
+<tr class="memdesc:a8df16b3cb42a8a6fe5a4bb438b43866b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Server Socket object.  <br /></td></tr>
 <tr class="separator:a8df16b3cb42a8a6fe5a4bb438b43866b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2944cd35f49fcec358fbd75c29d0dfaa"><td class="memItemLeft" align="right" valign="top"><a id="a2944cd35f49fcec358fbd75c29d0dfaa" name="a2944cd35f49fcec358fbd75c29d0dfaa"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>bind</b> (const char *address, int port)</td></tr>
+<tr class="memitem:af7672ee8b796b2a3765de1787c4707b0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classServerSocket.html#af7672ee8b796b2a3765de1787c4707b0">~ServerSocket</a> ()=default</td></tr>
+<tr class="memdesc:af7672ee8b796b2a3765de1787c4707b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the Server Socket object.  <br /></td></tr>
+<tr class="separator:af7672ee8b796b2a3765de1787c4707b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2944cd35f49fcec358fbd75c29d0dfaa"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classServerSocket.html#a2944cd35f49fcec358fbd75c29d0dfaa">bind</a> (const char *address, int port)</td></tr>
+<tr class="memdesc:a2944cd35f49fcec358fbd75c29d0dfaa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Binds the server to port / address.  <br /></td></tr>
 <tr class="separator:a2944cd35f49fcec358fbd75c29d0dfaa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abfabfd9e132aa6b73dcf77792d8b6ec9"><td class="memItemLeft" align="right" valign="top"><a id="abfabfd9e132aa6b73dcf77792d8b6ec9" name="abfabfd9e132aa6b73dcf77792d8b6ec9"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>start</b> (unsigned int backlog)</td></tr>
+<tr class="memitem:abfabfd9e132aa6b73dcf77792d8b6ec9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classServerSocket.html#abfabfd9e132aa6b73dcf77792d8b6ec9">start</a> (unsigned int backlog)</td></tr>
+<tr class="memdesc:abfabfd9e132aa6b73dcf77792d8b6ec9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the server.  <br /></td></tr>
 <tr class="separator:abfabfd9e132aa6b73dcf77792d8b6ec9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a15754ba53298af09a2822d32adfe13a7"><td class="memItemLeft" align="right" valign="top"><a id="a15754ba53298af09a2822d32adfe13a7" name="a15754ba53298af09a2822d32adfe13a7"></a>
-<a class="el" href="classClientSocket.html">ClientSocket</a>&#160;</td><td class="memItemRight" valign="bottom"><b>accept</b> ()</td></tr>
+<tr class="memitem:a15754ba53298af09a2822d32adfe13a7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classClientSocket.html">ClientSocket</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classServerSocket.html#a15754ba53298af09a2822d32adfe13a7">accept</a> ()</td></tr>
+<tr class="memdesc:a15754ba53298af09a2822d32adfe13a7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Accepts a new client.  <br /></td></tr>
 <tr class="separator:a15754ba53298af09a2822d32adfe13a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0245d40096ca089255c67303eebf17e6"><td class="memItemLeft" align="right" valign="top"><a id="a0245d40096ca089255c67303eebf17e6" name="a0245d40096ca089255c67303eebf17e6"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>close</b> ()</td></tr>
+<tr class="memitem:a0245d40096ca089255c67303eebf17e6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classServerSocket.html#a0245d40096ca089255c67303eebf17e6">close</a> ()</td></tr>
+<tr class="memdesc:a0245d40096ca089255c67303eebf17e6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes the connection.  <br /></td></tr>
 <tr class="separator:a0245d40096ca089255c67303eebf17e6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a0ca4d909bf5c076b2cac8e8d297fa500"><td class="memItemLeft" align="right" valign="top"><a id="a0ca4d909bf5c076b2cac8e8d297fa500" name="a0ca4d909bf5c076b2cac8e8d297fa500"></a>
-static bool&#160;</td><td class="memItemRight" valign="bottom"><b>init</b> ()</td></tr>
+<tr class="memitem:a0ca4d909bf5c076b2cac8e8d297fa500"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classServerSocket.html#a0ca4d909bf5c076b2cac8e8d297fa500">init</a> ()</td></tr>
+<tr class="memdesc:a0ca4d909bf5c076b2cac8e8d297fa500"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inits the POSIX API.  <br /></td></tr>
 <tr class="separator:a0ca4d909bf5c076b2cac8e8d297fa500"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3bccb373b5d5d92d9609a0f8842f9c06"><td class="memItemLeft" align="right" valign="top"><a id="a3bccb373b5d5d92d9609a0f8842f9c06" name="a3bccb373b5d5d92d9609a0f8842f9c06"></a>
-static bool&#160;</td><td class="memItemRight" valign="bottom"><b>cleanup</b> ()</td></tr>
+<tr class="memitem:a3bccb373b5d5d92d9609a0f8842f9c06"><td class="memItemLeft" align="right" valign="top">static bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classServerSocket.html#a3bccb373b5d5d92d9609a0f8842f9c06">cleanup</a> ()</td></tr>
+<tr class="memdesc:a3bccb373b5d5d92d9609a0f8842f9c06"><td class="mdescLeft">&#160;</td><td class="mdescRight">Cleansup the POSIX API.  <br /></td></tr>
 <tr class="separator:a3bccb373b5d5d92d9609a0f8842f9c06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Network POSIX Server. </p>
+<p>Wrapper for cross-platform POSIX networking. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a8df16b3cb42a8a6fe5a4bb438b43866b" name="a8df16b3cb42a8a6fe5a4bb438b43866b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8df16b3cb42a8a6fe5a4bb438b43866b">&#9670;&#160;</a></span>ServerSocket()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">ServerSocket::ServerSocket </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>type</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct a new Server Socket object. </p>
+<p>Creates a server using the POSIX api. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">type</td><td>the socket type, please use SOCK_STREAM </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af7672ee8b796b2a3765de1787c4707b0" name="af7672ee8b796b2a3765de1787c4707b0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af7672ee8b796b2a3765de1787c4707b0">&#9670;&#160;</a></span>~ServerSocket()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ServerSocket::~ServerSocket </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Destroy the Server Socket object. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a15754ba53298af09a2822d32adfe13a7" name="a15754ba53298af09a2822d32adfe13a7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a15754ba53298af09a2822d32adfe13a7">&#9670;&#160;</a></span>accept()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classClientSocket.html">ClientSocket</a> ServerSocket::accept </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Accepts a new client. </p>
+<p>Accepts synchronously a new client, and gives back a wrapper for the client socket when the client is connected. </p><dl class="section return"><dt>Returns</dt><dd><a class="el" href="classClientSocket.html" title="Network POSIX Client.">ClientSocket</a> </dd></dl>
+
+</div>
+</div>
+<a id="a2944cd35f49fcec358fbd75c29d0dfaa" name="a2944cd35f49fcec358fbd75c29d0dfaa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2944cd35f49fcec358fbd75c29d0dfaa">&#9670;&#160;</a></span>bind()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ServerSocket::bind </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>address</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>port</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Binds the server to port / address. </p>
+<p>Binds the server to a specific address and port to listen on. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">address</td><td>the address to bind on </td></tr>
+    <tr><td class="paramname">port</td><td>the port to bind on </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true binding was succesfull </dd>
+<dd>
+false something went wrong </dd></dl>
+
+</div>
+</div>
+<a id="a3bccb373b5d5d92d9609a0f8842f9c06" name="a3bccb373b5d5d92d9609a0f8842f9c06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3bccb373b5d5d92d9609a0f8842f9c06">&#9670;&#160;</a></span>cleanup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ServerSocket::cleanup </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Cleansup the POSIX API. </p>
+<p>Akin to <a class="el" href="classServerSocket.html#a0ca4d909bf5c076b2cac8e8d297fa500" title="Inits the POSIX API.">ServerSocket::init()</a>, we need also to cleanup windows mess ! Thanks again windows ! It will never fail on a Linux Machine. </p><dl class="section return"><dt>Returns</dt><dd>true API was cleaned up correctly </dd>
+<dd>
+false something went wrong </dd></dl>
+
+</div>
+</div>
+<a id="a0245d40096ca089255c67303eebf17e6" name="a0245d40096ca089255c67303eebf17e6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0245d40096ca089255c67303eebf17e6">&#9670;&#160;</a></span>close()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ServerSocket::close </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Closes the connection. </p>
+<p>Manually closes the connection, should be always ran when you finished your stuff. </p>
+
+</div>
+</div>
+<a id="a0ca4d909bf5c076b2cac8e8d297fa500" name="a0ca4d909bf5c076b2cac8e8d297fa500"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ca4d909bf5c076b2cac8e8d297fa500">&#9670;&#160;</a></span>init()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ServerSocket::init </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Inits the POSIX API. </p>
+<p>Because windows is not capable of making correct APIs, we need to initialize it, in the case we are running this code on a windows machine... Thanks windows ! It will never fail on a Linux Machine. </p><dl class="section return"><dt>Returns</dt><dd>true API was loaded correctly </dd>
+<dd>
+false something went wrong </dd></dl>
+
+</div>
+</div>
+<a id="abfabfd9e132aa6b73dcf77792d8b6ec9" name="abfabfd9e132aa6b73dcf77792d8b6ec9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abfabfd9e132aa6b73dcf77792d8b6ec9">&#9670;&#160;</a></span>start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ServerSocket::start </td>
+          <td>(</td>
+          <td class="paramtype">unsigned int&#160;</td>
+          <td class="paramname"><em>backlog</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Starts the server. </p>
+<p>Starts listening for incoming connections, with a max "acceptance" of incoming connections of <code>backlog</code> </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">backlog</td><td>the max incoming connections </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/utils/<a class="el" href="network_8h_source.html">network.h</a></li>
 <li>src/utils/network.cpp</li>

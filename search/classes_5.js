@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['serversocket_0',['ServerSocket',['../classServerSocket.html',1,'']]]
+  ['netsocketstream_0',['NetSocketStream',['../classNetSocketStream.html',1,'']]]
 ];
