@@ -87,20 +87,19 @@ enum LogLevel
 };
 
 /**
- * @brief The logging static class
+ * @brief The logging namespace
  *
- * The logging class, should NOT be manually
- * created or anything. It is fully static.
+ * The logging namespace, contains all
+ * of the logging-related functions.
  */
-class logger
+namespace logger
 {
-public:
     /**
      * @brief The LogLevel for the logger to use.
      *
      * The minimum log level of the logger.
      */
-    static LogLevel LOGLEVEL;
+    LogLevel LOGLEVEL;
 
     /**
      * @brief Get the Time as a string.
@@ -109,7 +108,7 @@ public:
      * by the date and the month. Used for the console logging.
      * @return std::string the ascii representation of the local time as "day/month 24:60:60"
      */
-    static std::string getTime();
+    std::string getTime();
 
     /**
      * @brief Loads the loglevel from the config.
@@ -118,7 +117,7 @@ public:
      * should only be used internally as a hook after the config
      * was loaded, which is in Config::load().
      */
-    static void loadConfig();
+    void loadConfig();
 
     /**
      * @brief Logs something at the ::DEBUG level
@@ -129,7 +128,7 @@ public:
      * @param format the format string to parse arguements in
      * @param ... the arguments for the format
      */
-    static void debug(const char *format, ...);
+    void debug(const char *format, ...);
 
     /**
      * @brief Logs something at the ::INFO level
@@ -142,7 +141,7 @@ public:
      * @param format the format string to parse arguements in
      * @param ... the arguments for the format
      */
-    static void info(const char *format, ...);
+    void info(const char *format, ...);
 
     /**
      * @brief Logs something at the ::WARN level
@@ -154,7 +153,7 @@ public:
      * @param format the format string to parse arguements in
      * @param ... the arguments for the format
      */
-    static void warn(const char *format, ...);
+    void warn(const char *format, ...);
 
     /**
      * @brief Logs something at the ::ERROR level
@@ -167,7 +166,7 @@ public:
      * @param format the format string to parse arguements in
      * @param ... the arguments for the format
      */
-    static void error(const char *format, ...);
+    void error(const char *format, ...);
 
     /**
      * @brief Logs something at the ::FATAL level
@@ -180,7 +179,7 @@ public:
      * @param format the format string to parse arguements in
      * @param ... the arguments for the format
      */
-    static void fatal(const char *format, ...);
+    void fatal(const char *format, ...);
 };
 
 #endif // MINESERVER_LOGGER_H

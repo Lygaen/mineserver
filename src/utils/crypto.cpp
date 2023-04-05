@@ -1,6 +1,7 @@
 #include "crypto.h"
 #include <vector>
 #include <algorithm>
+#include <openssl/rand.h>
 
 #define KEY_LENGTH 1024
 
@@ -77,6 +78,14 @@ std::unique_ptr<std::byte[]> crypto::rsaDecrypt(const std::byte *data, size_t le
     }
 
     return std::unique_ptr<std::byte[]>(out);
+}
+
+std::unique_ptr<std::byte[]> crypto::randomSecure(size_t len)
+{
+    std::byte *data = new std::byte[len];
+    if (RAND_bytes((unsigned char *)data, len))
+        return std::unique_ptr<std::byte[]>(data);
+    return std::unique_ptr<std::byte[]>();
 }
 
 crypto::MinecraftHash::MinecraftHash()
