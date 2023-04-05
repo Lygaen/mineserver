@@ -5,6 +5,5 @@ var searchData=
   ['logger_2',['logger',['../namespacelogger.html',1,'']]],
   ['logger_2eh_3',['logger.h',['../logger_8h.html',1,'']]],
   ['loglevel_4',['LOGLEVEL',['../classConfig.html#ad015e9d391c06a1073cc0d09736319f3',1,'Config']]],
-  ['loglevel_5',['LogLevel',['../logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9',1,'logger.h']]],
-  ['loglevel_6',['LOGLEVEL',['../namespacelogger.html#a14254691ce4dc96b9aea58bcb06d5f49',1,'logger']]]
+  ['loglevel_5',['LogLevel',['../logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9',1,'logger.h']]]
 ];
