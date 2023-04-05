@@ -7,4 +7,7 @@ set(RAPIDJSON_BUILD_TESTS OFF CACHE BOOL "" FORCE)
 set(RAPIDJSON_BUILD_CXX17 ON CACHE BOOL "" FORCE)
 add_subdirectory(rapidjson/)
 
+find_package(OpenSSL REQUIRED)
+
+target_link_libraries(mineserver-libs PUBLIC crypto)
 target_include_directories(mineserver-libs PUBLIC rapidjson/include)

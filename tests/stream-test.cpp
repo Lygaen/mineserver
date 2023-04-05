@@ -1,5 +1,6 @@
 #include <gtest/gtest.h>
 #include <net/stream.h>
+#include <utils/crypto.h>
 #include <limits>
 
 /**
@@ -270,4 +271,43 @@ TEST(Streams, Network)
     server.close();
     client.close();
     ASSERT_TRUE(ServerSocket::cleanup());
+}
+
+TEST(Streams, CryptoRSA)
+{
+    std::string data = "This is a test !";
+
+    ASSERT_TRUE(crypto::init());
+
+    size_t encryptedLen;
+    std::unique_ptr<std::byte[]> encrypted = crypto::rsaEncrypt((std::byte *)data.c_str(), data.length(), &encryptedLen);
+
+    ASSERT_NE(data, std::string((const char *)encrypted.get(), encryptedLen));
+
+    size_t decryptedLen;
+    std::unique_ptr<std::byte[]> decrypted = crypto::rsaDecrypt(encrypted.get(), encryptedLen, &decryptedLen);
+
+    ASSERT_EQ(data, std::string((const char *)decrypted.get(), decryptedLen));
+    crypto::cleanup();
+}
+
+TEST(Streams, CryptoHash)
+{
+    ASSERT_TRUE(crypto::init());
+
+    crypto::MinecraftHash hasher;
+
+    hasher.update("Notch");
+    ASSERT_EQ(hasher.finalize(), "4ed1f46bbe04bc756bcb17c0c7ce3e4632f06a48");
+
+    hasher.update("Notch");
+    ASSERT_EQ(hasher.finalize(), "4ed1f46bbe04bc756bcb17c0c7ce3e4632f06a48");
+
+    hasher.update("jeb_");
+    ASSERT_EQ(hasher.finalize(), "-7c9d5b0044c130109a5d7b5fb5c317c02b4e28c1");
+
+    hasher.update("simon");
+    ASSERT_EQ(hasher.finalize(), "88e16a1019277b15d58faf0541e11910eb756f6");
+
+    crypto::cleanup();
 }
