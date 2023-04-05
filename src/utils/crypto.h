@@ -67,6 +67,15 @@ namespace crypto
      * @return std::unique_ptr<std::byte[]> the encrypted data
      */
     std::unique_ptr<std::byte[]> rsaDecrypt(const std::byte *data, size_t len, size_t *outLen);
+    /**
+     * @brief Get the Public RSA Public Key
+     *
+     * Formats the public key from the startup keypair
+     * into DER format, which is an underlying ASN.1
+     * format defined by x.509
+     * @return std::unique_ptr<std::byte[]> The public key
+     */
+    std::unique_ptr<std::byte[]> getPublicRSAKey();
 
     /**
      * @brief Generates randoms bytes securely

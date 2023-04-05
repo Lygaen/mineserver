@@ -1,6 +1,6 @@
 #include "logger.h"
 
-LogLevel logger::LOGLEVEL;
+LogLevel LOGLEVEL;
 
 std::string logger::getTime()
 {

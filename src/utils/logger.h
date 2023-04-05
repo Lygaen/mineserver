@@ -95,13 +95,6 @@ enum LogLevel
 namespace logger
 {
     /**
-     * @brief The LogLevel for the logger to use.
-     *
-     * The minimum log level of the logger.
-     */
-    LogLevel LOGLEVEL;
-
-    /**
      * @brief Get the Time as a string.
      *
      * Gets the local time and returns a string representation of the time accompanied
