@@ -1,5 +1,8 @@
 var annotated_dup =
 [
+    [ "crypto", null, [
+      [ "MinecraftHash", "classcrypto_1_1MinecraftHash.html", null ]
+    ] ],
     [ "ClientSocket", "classClientSocket.html", "classClientSocket" ],
     [ "Config", "classConfig.html", "classConfig" ],
     [ "Field", "classField.html", "classField" ],

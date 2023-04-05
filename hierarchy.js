@@ -10,5 +10,6 @@ var hierarchy =
       [ "NetSocketStream", "classNetSocketStream.html", null ]
     ] ],
     [ "logger", "classlogger.html", null ],
+    [ "crypto::MinecraftHash", "classcrypto_1_1MinecraftHash.html", null ],
     [ "ServerSocket", "classServerSocket.html", null ]
 ];
