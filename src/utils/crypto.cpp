@@ -34,7 +34,7 @@ std::unique_ptr<std::byte[]> crypto::rsaEncrypt(const std::byte *data, size_t le
 {
     EVP_PKEY_CTX *ctx = EVP_PKEY_CTX_new(keypair, nullptr);
     *outLen = ULONG_MAX;
-    if (!ctx || !EVP_PKEY_encrypt_init(ctx))
+    if (!ctx || !EVP_PKEY_encrypt_init(ctx) || !EVP_PKEY_CTX_set_rsa_padding(ctx, RSA_PKCS1_PADDING))
     {
         EVP_PKEY_CTX_free(ctx);
         return std::unique_ptr<std::byte[]>();
@@ -59,7 +59,7 @@ std::unique_ptr<std::byte[]> crypto::rsaEncrypt(const std::byte *data, size_t le
 std::unique_ptr<std::byte[]> crypto::rsaDecrypt(const std::byte *data, size_t len, size_t *outLen)
 {
     EVP_PKEY_CTX *ctx = EVP_PKEY_CTX_new(keypair, nullptr);
-    if (!ctx || !EVP_PKEY_decrypt_init(ctx))
+    if (!ctx || !EVP_PKEY_decrypt_init(ctx) || !EVP_PKEY_CTX_set_rsa_padding(ctx, RSA_PKCS1_PADDING))
     {
         EVP_PKEY_CTX_free(ctx);
         *outLen = 0;
