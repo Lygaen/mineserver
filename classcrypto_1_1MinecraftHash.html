@@ -104,16 +104,118 @@ $(document).ready(function(){initNavTree('classcrypto_1_1MinecraftHash.html','')
   <div class="headertitle"><div class="title">crypto::MinecraftHash Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>The Minecraft Hashing class.  
+ <a href="classcrypto_1_1MinecraftHash.html#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="crypto_8h_source.html">crypto.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a86172a5bbf208b64873a6a54bdebdc9f"><td class="memItemLeft" align="right" valign="top"><a id="a86172a5bbf208b64873a6a54bdebdc9f" name="a86172a5bbf208b64873a6a54bdebdc9f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>update</b> (const std::string &amp;s)</td></tr>
+<tr class="memitem:a367213192993b0a61e92483b6894849f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcrypto_1_1MinecraftHash.html#a367213192993b0a61e92483b6894849f">MinecraftHash</a> ()</td></tr>
+<tr class="memdesc:a367213192993b0a61e92483b6894849f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Minecraft Hash object.  <br /></td></tr>
+<tr class="separator:a367213192993b0a61e92483b6894849f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7ddc44a874e266c5e8b171cd5c84a125"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcrypto_1_1MinecraftHash.html#a7ddc44a874e266c5e8b171cd5c84a125">~MinecraftHash</a> ()</td></tr>
+<tr class="memdesc:a7ddc44a874e266c5e8b171cd5c84a125"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the Minecraft Hash object.  <br /></td></tr>
+<tr class="separator:a7ddc44a874e266c5e8b171cd5c84a125"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86172a5bbf208b64873a6a54bdebdc9f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcrypto_1_1MinecraftHash.html#a86172a5bbf208b64873a6a54bdebdc9f">update</a> (const std::string &amp;s)</td></tr>
+<tr class="memdesc:a86172a5bbf208b64873a6a54bdebdc9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Updates the hash.  <br /></td></tr>
 <tr class="separator:a86172a5bbf208b64873a6a54bdebdc9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8c4157f0eb90c96166143db9ca4a99d2"><td class="memItemLeft" align="right" valign="top"><a id="a8c4157f0eb90c96166143db9ca4a99d2" name="a8c4157f0eb90c96166143db9ca4a99d2"></a>
-std::string&#160;</td><td class="memItemRight" valign="bottom"><b>finalize</b> ()</td></tr>
+<tr class="memitem:a8c4157f0eb90c96166143db9ca4a99d2"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcrypto_1_1MinecraftHash.html#a8c4157f0eb90c96166143db9ca4a99d2">finalize</a> ()</td></tr>
+<tr class="memdesc:a8c4157f0eb90c96166143db9ca4a99d2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finalizes the hash.  <br /></td></tr>
 <tr class="separator:a8c4157f0eb90c96166143db9ca4a99d2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>The Minecraft Hashing class. </p>
+<p>The class that wraps around OpenSSL to generate minecrafty-hashes because they are not bothered to do something standard. In the end it is just SHA-1 with fancy things on top of it. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a367213192993b0a61e92483b6894849f" name="a367213192993b0a61e92483b6894849f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a367213192993b0a61e92483b6894849f">&#9670;&#160;</a></span>MinecraftHash()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">crypto::MinecraftHash::MinecraftHash </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct a new Minecraft Hash object. </p>
+<p>Creates a new Minecraft Hash object, initailizing everything. </p>
+
+</div>
+</div>
+<a id="a7ddc44a874e266c5e8b171cd5c84a125" name="a7ddc44a874e266c5e8b171cd5c84a125"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ddc44a874e266c5e8b171cd5c84a125">&#9670;&#160;</a></span>~MinecraftHash()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">crypto::MinecraftHash::~MinecraftHash </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Destroy the Minecraft Hash object. </p>
+<p>Everything is said above. </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a8c4157f0eb90c96166143db9ca4a99d2" name="a8c4157f0eb90c96166143db9ca4a99d2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c4157f0eb90c96166143db9ca4a99d2">&#9670;&#160;</a></span>finalize()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string crypto::MinecraftHash::finalize </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Finalizes the hash. </p>
+<p>Finalizes the hash, returning it in a Minecraft-friendly format. </p><dl class="section return"><dt>Returns</dt><dd>std::string the minecraft hash </dd></dl>
+
+</div>
+</div>
+<a id="a86172a5bbf208b64873a6a54bdebdc9f" name="a86172a5bbf208b64873a6a54bdebdc9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86172a5bbf208b64873a6a54bdebdc9f">&#9670;&#160;</a></span>update()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void crypto::MinecraftHash::update </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>s</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Updates the hash. </p>
+<p>Updates the SHA-1 hash with <code>s</code> </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>the data to update the buffer with </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/utils/<a class="el" href="crypto_8h_source.html">crypto.h</a></li>
 <li>src/utils/crypto.cpp</li>
@@ -123,7 +225,7 @@ std::string&#160;</td><td class="memItemRight" valign="bottom"><b>finalize</b> (
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>crypto</b></li><li class="navelem"><a class="el" href="classcrypto_1_1MinecraftHash.html">MinecraftHash</a></li>
+    <li class="navelem"><a class="el" href="namespacecrypto.html">crypto</a></li><li class="navelem"><a class="el" href="classcrypto_1_1MinecraftHash.html">MinecraftHash</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.6 </li>
   </ul>
 </div>

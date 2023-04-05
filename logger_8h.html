@@ -99,9 +99,11 @@ $(document).ready(function(){initNavTree('logger_8h.html',''); initResizable(); 
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
+<a href="#namespaces">Namespaces</a> &#124;
 <a href="#define-members">Macros</a> &#124;
-<a href="#enum-members">Enumerations</a>  </div>
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">logger.h File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -114,10 +116,10 @@ $(document).ready(function(){initNavTree('logger_8h.html',''); initResizable(); 
 </div>
 <p><a href="logger_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classlogger.html">logger</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">The logging static class.  <a href="classlogger.html#details">More...</a><br /></td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:namespacelogger"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelogger.html">logger</a></td></tr>
+<tr class="memdesc:namespacelogger"><td class="mdescLeft">&#160;</td><td class="mdescRight">The logging namespace. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
@@ -159,6 +161,36 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:aca1fd1d8935433e6ba2e3918214e07f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">The LogLevel used internally by the logger.  <a href="logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9">More...</a><br /></td></tr>
 <tr class="separator:aca1fd1d8935433e6ba2e3918214e07f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a5e3d513cbef44c7f3a4738485a22811a"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelogger.html#a5e3d513cbef44c7f3a4738485a22811a">logger::getTime</a> ()</td></tr>
+<tr class="memdesc:a5e3d513cbef44c7f3a4738485a22811a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Time as a string.  <br /></td></tr>
+<tr class="separator:a5e3d513cbef44c7f3a4738485a22811a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6cfbe870edaeb3d4801782bb86781b5f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelogger.html#a6cfbe870edaeb3d4801782bb86781b5f">logger::loadConfig</a> ()</td></tr>
+<tr class="memdesc:a6cfbe870edaeb3d4801782bb86781b5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads the loglevel from the config.  <br /></td></tr>
+<tr class="separator:a6cfbe870edaeb3d4801782bb86781b5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf121e9e40ac777068d5f90419d3dfa8"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelogger.html#abf121e9e40ac777068d5f90419d3dfa8">logger::debug</a> (const char *format,...)</td></tr>
+<tr class="memdesc:abf121e9e40ac777068d5f90419d3dfa8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs something at the <a class="el" href="logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a0593585da9181e972974c1274d8f2b4f" title="Debug level.">DEBUG</a> level.  <br /></td></tr>
+<tr class="separator:abf121e9e40ac777068d5f90419d3dfa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6c9ab850a6fd8deb457e1ade2007460f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelogger.html#a6c9ab850a6fd8deb457e1ade2007460f">logger::info</a> (const char *format,...)</td></tr>
+<tr class="memdesc:a6c9ab850a6fd8deb457e1ade2007460f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs something at the <a class="el" href="logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a748005382152808a72b1a9177d9dc806" title="Info level.">INFO</a> level.  <br /></td></tr>
+<tr class="separator:a6c9ab850a6fd8deb457e1ade2007460f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97dbc692baa8b760f866b81a93175a19"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelogger.html#a97dbc692baa8b760f866b81a93175a19">logger::warn</a> (const char *format,...)</td></tr>
+<tr class="memdesc:a97dbc692baa8b760f866b81a93175a19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs something at the <a class="el" href="logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a74dac7ac23d5b810db6d4067f14e8676" title="warn level">WARN</a> level.  <br /></td></tr>
+<tr class="separator:a97dbc692baa8b760f866b81a93175a19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2c342fb4415aa53943af3b25b469581f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelogger.html#a2c342fb4415aa53943af3b25b469581f">logger::error</a> (const char *format,...)</td></tr>
+<tr class="memdesc:a2c342fb4415aa53943af3b25b469581f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs something at the <a class="el" href="logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a2fd6f336d08340583bd620a7f5694c90" title="Error level.">ERROR</a> level.  <br /></td></tr>
+<tr class="separator:a2c342fb4415aa53943af3b25b469581f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a556241a1f5dfb02c21e3ba755e5ff4ac"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelogger.html#a556241a1f5dfb02c21e3ba755e5ff4ac">logger::fatal</a> (const char *format,...)</td></tr>
+<tr class="memdesc:a556241a1f5dfb02c21e3ba755e5ff4ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs something at the <a class="el" href="logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a651d8a47a6976d6fe05c0e03fb4cd2d0" title="Fatal level.">FATAL</a> level.  <br /></td></tr>
+<tr class="separator:a556241a1f5dfb02c21e3ba755e5ff4ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a14254691ce4dc96b9aea58bcb06d5f49"><td class="memItemLeft" align="right" valign="top"><a class="el" href="logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9">LogLevel</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelogger.html#a14254691ce4dc96b9aea58bcb06d5f49">logger::LOGLEVEL</a></td></tr>
+<tr class="memdesc:a14254691ce4dc96b9aea58bcb06d5f49"><td class="mdescLeft">&#160;</td><td class="mdescRight">The LogLevel for the logger to use.  <br /></td></tr>
+<tr class="separator:a14254691ce4dc96b9aea58bcb06d5f49"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The main file for the logger. </p>
@@ -186,19 +218,19 @@ Enumerations</h2></td></tr>
 <p>Enables all possible log levels </p>
 </td></tr>
 <tr><td class="fieldname"><a id="aca1fd1d8935433e6ba2e3918214e07f9a0593585da9181e972974c1274d8f2b4f" name="aca1fd1d8935433e6ba2e3918214e07f9a0593585da9181e972974c1274d8f2b4f"></a>DEBUG&#160;</td><td class="fielddoc"><p>Debug level. </p>
-<p>see <a class="el" href="classlogger.html#abf121e9e40ac777068d5f90419d3dfa8" title="Logs something at the DEBUG level.">logger::debug()</a> for more info </p>
+<p>see <a class="el" href="namespacelogger.html#abf121e9e40ac777068d5f90419d3dfa8" title="Logs something at the DEBUG level.">logger::debug()</a> for more info </p>
 </td></tr>
 <tr><td class="fieldname"><a id="aca1fd1d8935433e6ba2e3918214e07f9a748005382152808a72b1a9177d9dc806" name="aca1fd1d8935433e6ba2e3918214e07f9a748005382152808a72b1a9177d9dc806"></a>INFO&#160;</td><td class="fielddoc"><p>Info level. </p>
-<p>see <a class="el" href="classlogger.html#a6c9ab850a6fd8deb457e1ade2007460f" title="Logs something at the INFO level.">logger::info()</a> for more info </p>
+<p>see <a class="el" href="namespacelogger.html#a6c9ab850a6fd8deb457e1ade2007460f" title="Logs something at the INFO level.">logger::info()</a> for more info </p>
 </td></tr>
 <tr><td class="fieldname"><a id="aca1fd1d8935433e6ba2e3918214e07f9a74dac7ac23d5b810db6d4067f14e8676" name="aca1fd1d8935433e6ba2e3918214e07f9a74dac7ac23d5b810db6d4067f14e8676"></a>WARN&#160;</td><td class="fielddoc"><p>warn level </p>
-<p>see <a class="el" href="classlogger.html#a97dbc692baa8b760f866b81a93175a19" title="Logs something at the WARN level.">logger::warn()</a> for more info </p>
+<p>see <a class="el" href="namespacelogger.html#a97dbc692baa8b760f866b81a93175a19" title="Logs something at the WARN level.">logger::warn()</a> for more info </p>
 </td></tr>
 <tr><td class="fieldname"><a id="aca1fd1d8935433e6ba2e3918214e07f9a2fd6f336d08340583bd620a7f5694c90" name="aca1fd1d8935433e6ba2e3918214e07f9a2fd6f336d08340583bd620a7f5694c90"></a>ERROR&#160;</td><td class="fielddoc"><p>Error level. </p>
-<p>see <a class="el" href="classlogger.html#a2c342fb4415aa53943af3b25b469581f" title="Logs something at the ERROR level.">logger::error()</a> for more info </p>
+<p>see <a class="el" href="namespacelogger.html#a2c342fb4415aa53943af3b25b469581f" title="Logs something at the ERROR level.">logger::error()</a> for more info </p>
 </td></tr>
 <tr><td class="fieldname"><a id="aca1fd1d8935433e6ba2e3918214e07f9a651d8a47a6976d6fe05c0e03fb4cd2d0" name="aca1fd1d8935433e6ba2e3918214e07f9a651d8a47a6976d6fe05c0e03fb4cd2d0"></a>FATAL&#160;</td><td class="fielddoc"><p>Fatal level. </p>
-<p>see <a class="el" href="classlogger.html#a556241a1f5dfb02c21e3ba755e5ff4ac" title="Logs something at the FATAL level.">logger::fatal()</a> for more info </p>
+<p>see <a class="el" href="namespacelogger.html#a556241a1f5dfb02c21e3ba755e5ff4ac" title="Logs something at the FATAL level.">logger::fatal()</a> for more info </p>
 </td></tr>
 <tr><td class="fieldname"><a id="aca1fd1d8935433e6ba2e3918214e07f9aac132f2982b98bcaa3445e535a03ff75" name="aca1fd1d8935433e6ba2e3918214e07f9aac132f2982b98bcaa3445e535a03ff75"></a>OFF&#160;</td><td class="fielddoc"><p>Off level, just for disabling. </p>
 <p>Disbles all possible log levels </p>
