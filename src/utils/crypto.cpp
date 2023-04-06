@@ -171,3 +171,51 @@ std::string crypto::MinecraftHash::finalize()
     EVP_DigestInit(ctx, EVP_sha1()); // so it is reusable
     return result;
 }
+
+crypto::AES128CFB8Cipher::AES128CFB8Cipher(CipherState state, const std::byte *key, const std::byte *iv) : state(state)
+{
+    ctx = EVP_CIPHER_CTX_new();
+    EVP_CIPHER_CTX_init(ctx);
+
+    if (state == crypto::CipherState::ENCRYPT)
+        EVP_EncryptInit_ex2(ctx, EVP_aes_128_cfb8(), (const unsigned char *)key, (const unsigned char *)iv, nullptr);
+    else if (state == crypto::CipherState::DECRYPT)
+        EVP_DecryptInit_ex2(ctx, EVP_aes_128_cfb8(), (const unsigned char *)key, (const unsigned char *)iv, nullptr);
+}
+
+crypto::AES128CFB8Cipher::~AES128CFB8Cipher()
+{
+    EVP_CIPHER_CTX_free(ctx);
+}
+
+int crypto::AES128CFB8Cipher::update(const std::byte *data, size_t len, std::byte *out)
+{
+    int outLen;
+    if (state == crypto::CipherState::ENCRYPT)
+        EVP_EncryptUpdate(ctx, (unsigned char *)out, &outLen, (const unsigned char *)data, len);
+    else if (state == crypto::CipherState::DECRYPT)
+        EVP_DecryptUpdate(ctx, (unsigned char *)out, &outLen, (const unsigned char *)data, len);
+
+    return outLen;
+}
+
+int crypto::AES128CFB8Cipher::finalize(std::byte *out)
+{
+    int outLen;
+    if (state == crypto::CipherState::ENCRYPT)
+        EVP_EncryptFinal_ex(ctx, (unsigned char *)out, &outLen);
+    else if (state == crypto::CipherState::DECRYPT)
+        EVP_DecryptFinal_ex(ctx, (unsigned char *)out, &outLen);
+    return outLen;
+}
+
+size_t crypto::AES128CFB8Cipher::calculateBufferSize(size_t len)
+{
+    int bs = EVP_CIPHER_CTX_block_size(ctx);
+    if (state == crypto::CipherState::ENCRYPT)
+        return len + bs - (len % bs);
+    else if (state == crypto::CipherState::DECRYPT)
+        return len;
+
+    return 0;
+}

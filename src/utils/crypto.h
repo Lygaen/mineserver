@@ -48,6 +48,8 @@ namespace crypto
      * Encrypts @p len of @p data and returns it as
      * a unique pointer to the encrypted data
      * of length @p outLen
+     * The keypair used is generated at startup in crypto::init().
+     * It uses RSA PKCS1 padding.
      * @param data The data to encrypt
      * @param len The length of the data to encrypt
      * @param outLen A pointer to a variable that will store the encrypted data length
@@ -61,6 +63,7 @@ namespace crypto
      * a unique pointer to the decrypted data
      * of length @p outLen
      * The keypair used is generated at startup in crypto::init().
+     * It uses RSA PKCS1 padding.
      * @param data The data to decrypt
      * @param len The length of the data to decrypt
      * @param outLen A pointer to a variable that will store the encrypted data length
@@ -132,6 +135,104 @@ namespace crypto
          * @return std::string the minecraft hash
          */
         std::string finalize();
+    };
+
+    /**
+     * @brief Possible cipher states
+     *
+     * Enum containing the possibilities of
+     * what could do a cipher, to not have
+     * to create 2 separate classes.
+     */
+    enum CipherState
+    {
+        /**
+         * @brief Decrypt Cipher state
+         *
+         * Cipher state so that the update method decrypts
+         * instead encrypting.
+         * Same for finalize.
+         */
+        DECRYPT,
+        /**
+         * @brief ENCRYPT Cipher state
+         *
+         * Cipher state so that the update method encrypts
+         * instead decrypting.
+         * Same for finalize.
+         */
+        ENCRYPT
+    };
+
+    /**
+     * @brief AES/CFB8 128bit cipher class
+     *
+     * I know, it is a *really* long name
+     * for a class, but it clearly explains
+     * what it does instead of just "cipher".
+     * So shut up and accept my beautiful naming talents.
+     *
+     * Joking, the name should be changed if someone
+     * finds something better. Naming things in
+     * programming is too hard.
+     */
+    class AES128CFB8Cipher
+    {
+    private:
+        EVP_CIPHER_CTX *ctx;
+        const CipherState state;
+
+    public:
+        /**
+         * @brief Construct a new AES/CFB8 128bit cipher object
+         *
+         * Minecraft doesn't really need both @p key and @p iv
+         * params, but who knows ! Maybe this very specific
+         * piece of code will help someone later on !
+         * @param state The cipher state of the cipher
+         * @param key The key to use with AES
+         * @param iv The IV to use with AES
+         */
+        AES128CFB8Cipher(CipherState state, const std::byte *key, const std::byte *iv);
+        /**
+         * @brief Destroy the AES/CFB8 128bit cipher object
+         *
+         * Pretty much explicit. Finally we destroy
+         * that longe-named class !
+         */
+        ~AES128CFB8Cipher();
+
+        /**
+         * @brief Updates, encrypting or decrypting depending on the state
+         *
+         * Encrypts or Decrypts the content in @p data of size @p len
+         * and stores it in @p out and returns the written size
+         * The @p out buffer should be at least of the length
+         * calculated by AES128CFB8Cipher::calculateBufferSize()
+         * @param data the data to read then encrypt / decrypt
+         * @param len the length of the data to read
+         * @param out the output buffer
+         * @return int the length of the buffer
+         */
+        int update(const std::byte *data, size_t len, std::byte *out);
+        /**
+         * @brief Finalizes cipher, encrypting / decrypting the rest of the bytes
+         *
+         * Encrypts or decrypts the remaining bytes in @p out
+         * and returns the written length.
+         * @param out the buffer to write into
+         * @return int the size written
+         */
+        int finalize(std::byte *out);
+        /**
+         * @brief Calculates minimal buffer size for the cipher
+         *
+         * Calculates the minimal buffer size for the cipher,
+         * just for the sake of over-optimizing.
+         * @param len the length of the input data
+         * @return size_t the minimal size of the buffer to use
+         */
+        size_t calculateBufferSize(size_t len);
     };
 };
 

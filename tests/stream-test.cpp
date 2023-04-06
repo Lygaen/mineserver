@@ -311,3 +311,29 @@ TEST(Streams, CryptoHash)
 
     crypto::cleanup();
 }
+
+TEST(Streams, CryptoCipher)
+{
+    ASSERT_TRUE(crypto::init());
+
+    std::unique_ptr<std::byte[]> d = crypto::randomSecure(16);
+    crypto::AES128CFB8Cipher encipher(crypto::CipherState::ENCRYPT, d.get(), d.get());
+    crypto::AES128CFB8Cipher decipher(crypto::CipherState::DECRYPT, d.get(), d.get());
+
+    std::string s = "This is some really long data ! It should be allright to encrypt it and get it back.";
+
+    int temp;
+    std::byte *enData = new std::byte[encipher.calculateBufferSize(s.size())];
+    int enLen = encipher.update((std::byte *)s.c_str(), s.size(), enData);
+    enLen += encipher.finalize(enData + enLen);
+
+    ASSERT_NE(s, std::string((char *)enData, enLen));
+
+    std::byte *deData = new std::byte[decipher.calculateBufferSize(s.size())];
+    int deLen = decipher.update(enData, enLen, deData);
+    deLen += decipher.finalize(deData + deLen);
+
+    ASSERT_EQ(s, std::string((char *)deData, deLen));
+
+    crypto::cleanup();
+}
