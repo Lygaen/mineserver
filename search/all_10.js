@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['warn_0',['WARN',['../logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a74dac7ac23d5b810db6d4067f14e8676',1,'logger.h']]],
-  ['warn_1',['warn',['../namespacelogger.html#a97dbc692baa8b760f866b81a93175a19',1,'logger']]],
+  ['warn_0',['warn',['../namespacelogger.html#a97dbc692baa8b760f866b81a93175a19',1,'logger']]],
+  ['warn_1',['WARN',['../logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a74dac7ac23d5b810db6d4067f14e8676',1,'logger.h']]],
   ['write_2',['write',['../classMemoryStream.html#a937182f1358267154235d152a189fcb9',1,'MemoryStream::write()'],['../classClientSocket.html#a6c6d2c5c2026083e0bf5ee78fb31098c',1,'ClientSocket::write()'],['../classNetSocketStream.html#a83190962e72d075db61825ac20e13107',1,'NetSocketStream::write()'],['../classIStream.html#afcca00c0a4e8837f8f432a20d6cf9a04',1,'IStream::write(std::byte *buffer, std::size_t offset, std::size_t len)=0']]],
   ['writeboolean_3',['writeBoolean',['../classIStream.html#a43f6a2006cc942c435d558c10dec9993',1,'IStream']]],
   ['writebyte_4',['writeByte',['../classIStream.html#ad42f772a092aa8a45888c06469c5b975',1,'IStream']]],
