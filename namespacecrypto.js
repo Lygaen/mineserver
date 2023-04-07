@@ -2,6 +2,7 @@ var namespacecrypto =
 [
     [ "AES128CFB8Cipher", "classcrypto_1_1AES128CFB8Cipher.html", "classcrypto_1_1AES128CFB8Cipher" ],
     [ "MinecraftHash", "classcrypto_1_1MinecraftHash.html", "classcrypto_1_1MinecraftHash" ],
+    [ "ZLibCompressor", "classcrypto_1_1ZLibCompressor.html", "classcrypto_1_1ZLibCompressor" ],
     [ "CipherState", "namespacecrypto.html#a512c0376973f32897981d6c4a7b2fd4b", [
       [ "DECRYPT", "namespacecrypto.html#a512c0376973f32897981d6c4a7b2fd4ba22a7d9a2b89e6fb536138c0f6b743e29", null ],
       [ "ENCRYPT", "namespacecrypto.html#a512c0376973f32897981d6c4a7b2fd4ba43ff6fcf1f25a5934848a49a11bce929", null ]

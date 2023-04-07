@@ -2,6 +2,7 @@ var crypto_8h =
 [
     [ "crypto::MinecraftHash", "classcrypto_1_1MinecraftHash.html", "classcrypto_1_1MinecraftHash" ],
     [ "crypto::AES128CFB8Cipher", "classcrypto_1_1AES128CFB8Cipher.html", "classcrypto_1_1AES128CFB8Cipher" ],
+    [ "crypto::ZLibCompressor", "classcrypto_1_1ZLibCompressor.html", "classcrypto_1_1ZLibCompressor" ],
     [ "CipherState", "crypto_8h.html#a512c0376973f32897981d6c4a7b2fd4b", [
       [ "DECRYPT", "crypto_8h.html#a512c0376973f32897981d6c4a7b2fd4ba22a7d9a2b89e6fb536138c0f6b743e29", null ],
       [ "ENCRYPT", "crypto_8h.html#a512c0376973f32897981d6c4a7b2fd4ba43ff6fcf1f25a5934848a49a11bce929", null ]
