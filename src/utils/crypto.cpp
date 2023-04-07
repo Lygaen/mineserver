@@ -224,58 +224,61 @@ crypto::ZLibCompressor::ZLibCompressor(int level) : compressionLevel(level)
 {
 }
 
-int crypto::ZLibCompressor::deflate(const std::byte *data, size_t len, std::byte *out)
+std::unique_ptr<std::byte[]> crypto::ZLibCompressor::deflate(const std::byte *data, size_t len, int *outLen)
 {
-    z_stream strm;
-    strm.zalloc = Z_NULL;
-    strm.zfree = Z_NULL;
-    strm.opaque = Z_NULL;
-    strm.avail_in = len;
-    strm.next_in = (Bytef *)data;
-    strm.avail_out = 0;
-    strm.next_out = nullptr;
+    z_stream zs = {0};
+    *outLen = 0;
 
-    int ret = deflateInit(&strm, compressionLevel);
-    if (ret != Z_OK)
-        return -1;
+    if (deflateInit(&zs, compressionLevel) != Z_OK)
+        return std::unique_ptr<std::byte[]>();
 
-    do
+    zs.next_in = (Bytef *)data;
+    zs.avail_in = len;
+
+    std::byte *out = new std::byte[len];
+
+    zs.next_out = (Bytef *)out;
+    zs.avail_out = len;
+
+    if (::deflate(&zs, Z_FINISH) != Z_STREAM_END)
     {
-        strm.avail_out = 1024;
-        strm.next_out = (Bytef *)out;
-        ret = ::deflate(&strm, Z_FINISH);
-        if (ret == Z_STREAM_ERROR)
-            return -1;
-    } while (strm.avail_out == 0);
+        delete[] out;
+        return std::unique_ptr<std::byte[]>();
+    }
 
-    deflateEnd(&strm);
-    return strm.total_out;
+    deflateEnd(&zs);
+    *outLen = zs.total_out;
+
+    return std::unique_ptr<std::byte[]>(out);
 }
 
-int crypto::ZLibCompressor::inflate(const std::byte *data, size_t len, std::byte *out)
+std::unique_ptr<std::byte[]> crypto::ZLibCompressor::inflate(const std::byte *data, size_t len, int *outLen)
 {
-    z_stream strm;
-    strm.zalloc = Z_NULL;
-    strm.zfree = Z_NULL;
-    strm.opaque = Z_NULL;
-    strm.avail_in = len;
-    strm.next_in = (Bytef *)data;
-    strm.avail_out = 0;
-    strm.next_out = nullptr;
+    z_stream zs = {0};
 
-    int ret = inflateInit(&strm);
-    if (ret != Z_OK)
-        return -1;
-
-    do
+    if (inflateInit(&zs) != Z_OK)
     {
-        strm.avail_out = 1024;
-        strm.next_out = (Bytef *)out;
-        ret = ::inflate(&strm, Z_FINISH);
-        if (ret == Z_STREAM_ERROR)
-            return -1;
-    } while (strm.avail_out == 0);
+        *outLen = 0;
+        return std::unique_ptr<std::byte[]>();
+    }
 
-    inflateEnd(&strm);
-    return strm.total_out;
+    zs.next_in = (Bytef *)data;
+    zs.avail_in = len;
+
+    std::byte *out = new std::byte[*outLen];
+
+    zs.next_out = (Bytef *)out;
+    zs.avail_out = *outLen;
+
+    if (::inflate(&zs, Z_FINISH) != Z_STREAM_END)
+    {
+        *outLen = 0;
+        delete[] out;
+        return std::unique_ptr<std::byte[]>();
+    }
+
+    inflateEnd(&zs);
+    *outLen = zs.total_out;
+
+    return std::unique_ptr<std::byte[]>(out);
 }

@@ -275,7 +275,7 @@ namespace crypto
          * @param out the output data, should be of at least @p len in size
          * @return int the compressed size of @p out
          */
-        int deflate(const std::byte *data, size_t len, std::byte *out);
+        std::unique_ptr<std::byte[]> deflate(const std::byte *data, size_t len, int *outLen);
         /**
          * @brief Inflates data
          *
@@ -287,7 +287,7 @@ namespace crypto
          * @param out the output dat
          * @return int the compressed size of @p out
          */
-        int inflate(const std::byte *data, size_t len, std::byte *out);
+        std::unique_ptr<std::byte[]> inflate(const std::byte *data, size_t len, int *outLen);
     };
 };
 

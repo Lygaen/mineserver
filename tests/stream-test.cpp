@@ -293,8 +293,6 @@ TEST(Streams, CryptoRSA)
 
 TEST(Streams, CryptoHash)
 {
-    ASSERT_TRUE(crypto::init());
-
     crypto::MinecraftHash hasher;
 
     hasher.update("Notch");
@@ -308,14 +306,10 @@ TEST(Streams, CryptoHash)
 
     hasher.update("simon");
     ASSERT_EQ(hasher.finalize(), "88e16a1019277b15d58faf0541e11910eb756f6");
-
-    crypto::cleanup();
 }
 
 TEST(Streams, CryptoCipher)
 {
-    ASSERT_TRUE(crypto::init());
-
     std::unique_ptr<std::byte[]> d = crypto::randomSecure(16);
     crypto::AES128CFB8Cipher encipher(crypto::CipherState::ENCRYPT, d.get(), d.get());
     crypto::AES128CFB8Cipher decipher(crypto::CipherState::DECRYPT, d.get(), d.get());
@@ -337,27 +331,22 @@ TEST(Streams, CryptoCipher)
 
     delete[] enData;
     delete[] deData;
-    crypto::cleanup();
 }
 
 TEST(Streams, CryptoZLIB)
 {
-    ASSERT_TRUE(crypto::init());
-
     crypto::ZLibCompressor comp(Z_DEFAULT_COMPRESSION);
     std::string s = "Thiiiiiis iiiiissss some compresssable striiiing !";
 
-    std::byte *de = new std::byte[s.size()];
-    int deLen = comp.deflate((std::byte *)s.data(), s.size(), de);
+    int deLen;
+    std::unique_ptr<std::byte[]> de = comp.deflate((std::byte *)s.data(), s.size(), &deLen);
+    ASSERT_NE(0, deLen);
+    ASSERT_NE(s.size(), deLen);
+    ASSERT_NE(s, std::string((char *)de.get(), deLen));
 
-    ASSERT_NE(s, std::string((char *)de, deLen));
-
-    std::byte *in = new std::byte[s.size()];
-    int inLen = comp.inflate(de, deLen, in);
-
-    ASSERT_EQ(s, std::string((char *)in, inLen));
-
-    delete[] de;
-    delete[] in;
-    crypto::cleanup();
+    int inLen = s.size();
+    std::unique_ptr<std::byte[]> in = comp.inflate(de.get(), deLen, &inLen);
+    ASSERT_NE(0, inLen);
+    ASSERT_EQ(inLen, s.size());
+    ASSERT_EQ(s, std::string((char *)in.get(), inLen));
 }

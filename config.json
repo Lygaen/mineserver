@@ -1,0 +1,13 @@
+{
+    "network": {
+        "port": 25565,
+        "compression_level": -1,
+        "online_mode": true
+    },
+    "display": {
+        "motd": "This is the message of the day !"
+    },
+    "other": {
+        "loglevel": "ALL"
+    }
+}
