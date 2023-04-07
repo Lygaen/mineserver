@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['loglevel_0',['LOGLEVEL',['../classConfig.html#ad015e9d391c06a1073cc0d09736319f3',1,'Config']]]
+  ['compression_5flvl_0',['COMPRESSION_LVL',['../classConfig.html#a57bcad1158820b8408cff38171809b32',1,'Config']]]
 ];

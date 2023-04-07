@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['motd_0',['MOTD',['../classConfig.html#a1991d3da593757b93485a1037924c72a',1,'Config']]]
+  ['loglevel_0',['LOGLEVEL',['../classConfig.html#ad015e9d391c06a1073cc0d09736319f3',1,'Config']]]
 ];

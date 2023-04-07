@@ -138,6 +138,12 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a6ee00c8b627479c136aad4b2366b6426"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classField.html">Field</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConfig.html#a6ee00c8b627479c136aad4b2366b6426">PORT</a> = <a class="el" href="classField.html">Field</a>(&quot;network&quot;, &quot;port&quot;, 25565)</td></tr>
 <tr class="memdesc:a6ee00c8b627479c136aad4b2366b6426"><td class="mdescLeft">&#160;</td><td class="mdescRight">The port of the instance.  <br /></td></tr>
 <tr class="separator:a6ee00c8b627479c136aad4b2366b6426"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57bcad1158820b8408cff38171809b32"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classField.html">Field</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConfig.html#a57bcad1158820b8408cff38171809b32">COMPRESSION_LVL</a> = <a class="el" href="classField.html">Field</a>(&quot;network&quot;, &quot;compression_level&quot;, -1)</td></tr>
+<tr class="memdesc:a57bcad1158820b8408cff38171809b32"><td class="mdescLeft">&#160;</td><td class="mdescRight">The compression level for ZLib.  <br /></td></tr>
+<tr class="separator:a57bcad1158820b8408cff38171809b32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8fce02797d172e5ea22979f38c569b9c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classField.html">Field</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConfig.html#a8fce02797d172e5ea22979f38c569b9c">ONLINE_MODE</a> = <a class="el" href="classField.html">Field</a>(&quot;network&quot;, &quot;online_mode&quot;, true)</td></tr>
+<tr class="memdesc:a8fce02797d172e5ea22979f38c569b9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The online mode flag.  <br /></td></tr>
+<tr class="separator:a8fce02797d172e5ea22979f38c569b9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1991d3da593757b93485a1037924c72a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classField.html">Field</a>&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConfig.html#a1991d3da593757b93485a1037924c72a">MOTD</a> = <a class="el" href="classField.html">Field</a>(&quot;display&quot;, &quot;motd&quot;, std::string(&quot;This is the message of the day !&quot;))</td></tr>
 <tr class="memdesc:a1991d3da593757b93485a1037924c72a"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Message of the Day.  <br /></td></tr>
 <tr class="separator:a1991d3da593757b93485a1037924c72a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -258,6 +264,23 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a57bcad1158820b8408cff38171809b32" name="a57bcad1158820b8408cff38171809b32"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57bcad1158820b8408cff38171809b32">&#9670;&#160;</a></span>COMPRESSION_LVL</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classField.html">Field</a>&lt;int&gt; Config::COMPRESSION_LVL = <a class="el" href="classField.html">Field</a>(&quot;network&quot;, &quot;compression_level&quot;, -1)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The compression level for ZLib. </p>
+<p>The compression level to use with ZLib when compressing packets. </p>
+
+</div>
+</div>
 <a id="ad015e9d391c06a1073cc0d09736319f3" name="ad015e9d391c06a1073cc0d09736319f3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ad015e9d391c06a1073cc0d09736319f3">&#9670;&#160;</a></span>LOGLEVEL</h2>
 
@@ -289,6 +312,23 @@ Public Attributes</h2></td></tr>
 
 <p>The Message of the Day. </p>
 <p>The message of the day to be displayed on a status update. </p>
+
+</div>
+</div>
+<a id="a8fce02797d172e5ea22979f38c569b9c" name="a8fce02797d172e5ea22979f38c569b9c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8fce02797d172e5ea22979f38c569b9c">&#9670;&#160;</a></span>ONLINE_MODE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classField.html">Field</a>&lt;bool&gt; Config::ONLINE_MODE = <a class="el" href="classField.html">Field</a>(&quot;network&quot;, &quot;online_mode&quot;, true)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The online mode flag. </p>
+<p>Wether to check with mojang when an account is logging in if the said account is crack or not. </p>
 
 </div>
 </div>
