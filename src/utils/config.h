@@ -23,15 +23,17 @@
  * values to the config file.
  * @tparam T the value type of the field
  */
-template<typename T>
-class Field {
+template <typename T>
+class Field
+{
 private:
-    const char* section;
-    const char* key;
+    const char *section;
+    const char *key;
     T value;
 
     inline rapidjson::Document::ConstMemberIterator canSafelyRead(const rapidjson::Document &document);
-    inline void writeSafely(rapidjson::Document &document, rapidjson::Value& v);
+    inline void writeSafely(rapidjson::Document &document, rapidjson::Value &v);
+
 public:
     /**
      * @brief Construct a new Field object
@@ -43,7 +45,7 @@ public:
      * @param key The key / name of the field
      * @param def Its default value
      */
-    Field(const char* section, const char *key, T def);
+    Field(const char *section, const char *key, T def);
     /**
      * @brief Destroy the Field object
      */
@@ -56,21 +58,22 @@ public:
      * parsing it.
      * @param document The Json document
      */
-    void load(const rapidjson::Document& document);
+    void load(const rapidjson::Document &document);
     /**
      * @brief Saves value to the config
      *
      * Saves value to the json document.
      * @param document The Json document
      */
-    void save(rapidjson::Document& document);
+    void save(rapidjson::Document &document);
 
     /**
      * @brief Get the Value of the field
      *
      * @return const T& the type of the field
      */
-    const T &getValue() {
+    const T &getValue()
+    {
         return value;
     }
 
@@ -93,9 +96,11 @@ public:
  * values from the config file.
  * The config is a singleton.
  */
-class Config {
+class Config
+{
 private:
     static Config *INSTANCE;
+
 public:
     /**
      * @brief Construct a new Config object
@@ -135,6 +140,21 @@ public:
      */
     Field<int> PORT = Field("network", "port", 25565);
     /**
+     * @brief The compression level for ZLib
+     *
+     * The compression level to use with ZLib when
+     * compressing packets.
+     */
+    Field<int> COMPRESSION_LVL = Field("network", "compression_level", -1);
+    /**
+     * @brief The online mode flag
+     *
+     * Wether to check with mojang when an account
+     * is logging in if the said account is crack
+     * or not.
+     */
+    Field<bool> ONLINE_MODE = Field("network", "online_mode", true);
+    /**
      * @brief The Message of the Day
      *
      * The message of the day to be displayed
@@ -156,7 +176,7 @@ public:
  * as a handy tool to run similar functions
  * on all of the fields by defining the UF(x) macro.
  */
-#define CONFIG_FIELDS UF(PORT) UF(MOTD) UF(LOGLEVEL)
+#define CONFIG_FIELDS UF(PORT) UF(MOTD) UF(LOGLEVEL) UF(COMPRESSION_LVL) UF(ONLINE_MODE)
 
     /**
      * @brief Fetch the instance of the config
@@ -165,10 +185,10 @@ public:
      * the singleton class-like.
      * @return ::Config* The instance of the config
      */
-    static Config* inst() {
+    static Config *inst()
+    {
         return INSTANCE;
     }
 };
 
-
-#endif //MINESERVER_CONFIG_H
+#endif // MINESERVER_CONFIG_H

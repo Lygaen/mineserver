@@ -7,24 +7,29 @@
 #include <utils/logger.h>
 #include "config.h"
 
-template<typename T>
-Field<T>::Field(const char* section, const char *key, T def) : section(section), key(key), value(def) {}
-template<typename T>
+template <typename T>
+Field<T>::Field(const char *section, const char *key, T def) : section(section), key(key), value(def) {}
+template <typename T>
 Field<T>::~Field() = default;
 
-template<typename T>
-inline rapidjson::Document::ConstMemberIterator Field<T>::canSafelyRead(const rapidjson::Document &document) {
+template <typename T>
+inline rapidjson::Document::ConstMemberIterator Field<T>::canSafelyRead(const rapidjson::Document &document)
+{
     auto loc = document.FindMember(section);
-    if(loc == document.MemberEnd())
+    if (loc == document.MemberEnd())
         return document.MemberEnd();
     return loc->value.IsObject() ? document.MemberEnd() : loc->value.FindMember(key);
 }
 
-template<typename T>
-void Field<T>::writeSafely(rapidjson::Document &document, rapidjson::Value &v) {
-    if(document.HasMember(section)) {
+template <typename T>
+void Field<T>::writeSafely(rapidjson::Document &document, rapidjson::Value &v)
+{
+    if (document.HasMember(section))
+    {
         document[section].AddMember(rapidjson::StringRef(key), v, document.GetAllocator());
-    } else {
+    }
+    else
+    {
         rapidjson::Value sec;
         sec.SetObject();
         sec.AddMember(rapidjson::StringRef(key), v, document.GetAllocator());
@@ -32,67 +37,95 @@ void Field<T>::writeSafely(rapidjson::Document &document, rapidjson::Value &v) {
     }
 }
 
-template<typename T>
-void Field<T>::load(const rapidjson::Document &document) {
+template <typename T>
+void Field<T>::load(const rapidjson::Document &document)
+{
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "Simplify"
     static_assert(sizeof(T) != sizeof(T), "Use available specializations");
 #pragma clang diagnostic pop
 }
 
-template<typename T>
-void Field<T>::save(rapidjson::Document &document) {
+template <typename T>
+void Field<T>::save(rapidjson::Document &document)
+{
 #pragma clang diagnostic push
 #pragma ide diagnostic ignored "Simplify"
     static_assert(sizeof(T) != sizeof(T), "Use available specializations");
 #pragma clang diagnostic pop
 }
 
-template<>
-void Field<int>::load(const rapidjson::Document &document) {
+template <>
+void Field<int>::load(const rapidjson::Document &document)
+{
     auto loc = canSafelyRead(document);
-    if(loc == document.MemberEnd())
+    if (loc == document.MemberEnd())
         return;
 
-    if(!loc->value.IsInt())
+    if (!loc->value.IsInt())
         return;
 
     value = loc->value.GetInt();
 }
-template<>
-void Field<int>::save(rapidjson::Document &document) {
+template <>
+void Field<int>::save(rapidjson::Document &document)
+{
     rapidjson::Value v;
     v.SetInt(value);
     writeSafely(document, v);
 }
 
-template<>
-void Field<std::string>::load(const rapidjson::Document &document) {
+template <>
+void Field<std::string>::load(const rapidjson::Document &document)
+{
     auto loc = canSafelyRead(document);
-    if(loc == document.MemberEnd())
+    if (loc == document.MemberEnd())
         return;
 
-    if(!loc->value.IsString())
+    if (!loc->value.IsString())
         return;
 
     value = std::string(std::string(loc->value.GetString(), loc->value.GetStringLength()));
 }
-template<>
-void Field<std::string>::save(rapidjson::Document &document) {
+template <>
+void Field<std::string>::save(rapidjson::Document &document)
+{
     rapidjson::Value v;
     v.SetString(value.c_str(), value.length(), document.GetAllocator());
     writeSafely(document, v);
 }
 
-constexpr const char* CONFIG_FILE = "config.json";
-Config* Config::INSTANCE = nullptr;
+template <>
+void Field<bool>::load(const rapidjson::Document &document)
+{
+    auto loc = canSafelyRead(document);
+    if (loc == document.MemberEnd())
+        return;
 
-Config::Config() {
-    if(INSTANCE)
+    if (!loc->value.IsBool())
+        return;
+
+    value = loc->value.GetBool();
+}
+template <>
+void Field<bool>::save(rapidjson::Document &document)
+{
+    rapidjson::Value v;
+    v.SetBool(value);
+    writeSafely(document, v);
+}
+
+constexpr const char *CONFIG_FILE = "config.json";
+Config *Config::INSTANCE = nullptr;
+
+Config::Config()
+{
+    if (INSTANCE)
         return;
     INSTANCE = this;
 
-    if(!std::filesystem::exists(CONFIG_FILE)) {
+    if (!std::filesystem::exists(CONFIG_FILE))
+    {
         std::ofstream out(CONFIG_FILE);
         out.close();
 
@@ -102,11 +135,13 @@ Config::Config() {
     load();
     save();
 };
-Config::~Config() {
+Config::~Config()
+{
     INSTANCE = nullptr;
 }
 
-void Config::load() {
+void Config::load()
+{
     std::ifstream file(CONFIG_FILE);
     std::stringstream stout;
     stout << file.rdbuf();
@@ -116,7 +151,7 @@ void Config::load() {
     rapidjson::Document document;
     document.Parse(content.c_str());
 
-    if(!document.IsObject())
+    if (!document.IsObject())
         return;
 
 #define UF(x) x.load(document);
@@ -127,7 +162,8 @@ void Config::load() {
     logger::debug("Loaded Config");
 }
 
-void Config::save() {
+void Config::save()
+{
     rapidjson::Document document;
     document.SetObject();
 
