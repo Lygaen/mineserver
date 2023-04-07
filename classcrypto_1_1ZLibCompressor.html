@@ -118,12 +118,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a4446e1a286f3f676c23b6da838d67a82"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcrypto_1_1ZLibCompressor.html#a4446e1a286f3f676c23b6da838d67a82">~ZLibCompressor</a> ()=default</td></tr>
 <tr class="memdesc:a4446e1a286f3f676c23b6da838d67a82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the Zlib Compressor object.  <br /></td></tr>
 <tr class="separator:a4446e1a286f3f676c23b6da838d67a82"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3d06303ab996e74088758c9e7fd255ca"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcrypto_1_1ZLibCompressor.html#a3d06303ab996e74088758c9e7fd255ca">deflate</a> (const std::byte *data, size_t len, std::byte *out)</td></tr>
-<tr class="memdesc:a3d06303ab996e74088758c9e7fd255ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deflates data.  <br /></td></tr>
-<tr class="separator:a3d06303ab996e74088758c9e7fd255ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:afbcff060410e9b7b8930a2b6467e4730"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcrypto_1_1ZLibCompressor.html#afbcff060410e9b7b8930a2b6467e4730">inflate</a> (const std::byte *data, size_t len, std::byte *out)</td></tr>
-<tr class="memdesc:afbcff060410e9b7b8930a2b6467e4730"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inflates data.  <br /></td></tr>
-<tr class="separator:afbcff060410e9b7b8930a2b6467e4730"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a909476280eb8bf0144e941e47171bbe4"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; std::byte[]&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcrypto_1_1ZLibCompressor.html#a909476280eb8bf0144e941e47171bbe4">deflate</a> (const std::byte *data, size_t len, int *outLen)</td></tr>
+<tr class="memdesc:a909476280eb8bf0144e941e47171bbe4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deflates data.  <br /></td></tr>
+<tr class="separator:a909476280eb8bf0144e941e47171bbe4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acdfa78b953277426e064d9699e1e922f"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; std::byte[]&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcrypto_1_1ZLibCompressor.html#acdfa78b953277426e064d9699e1e922f">inflate</a> (const std::byte *data, size_t len, int *outLen)</td></tr>
+<tr class="memdesc:acdfa78b953277426e064d9699e1e922f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inflates data.  <br /></td></tr>
+<tr class="separator:acdfa78b953277426e064d9699e1e922f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>ZLib compressor. </p>
@@ -183,14 +183,14 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a3d06303ab996e74088758c9e7fd255ca" name="a3d06303ab996e74088758c9e7fd255ca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3d06303ab996e74088758c9e7fd255ca">&#9670;&#160;</a></span>deflate()</h2>
+<a id="a909476280eb8bf0144e941e47171bbe4" name="a909476280eb8bf0144e941e47171bbe4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a909476280eb8bf0144e941e47171bbe4">&#9670;&#160;</a></span>deflate()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int crypto::ZLibCompressor::deflate </td>
+          <td class="memname">std::unique_ptr&lt; std::byte[]&gt; crypto::ZLibCompressor::deflate </td>
           <td>(</td>
           <td class="paramtype">const std::byte *&#160;</td>
           <td class="paramname"><em>data</em>, </td>
@@ -204,8 +204,8 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::byte *&#160;</td>
-          <td class="paramname"><em>out</em>&#160;</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>outLen</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -228,14 +228,14 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="afbcff060410e9b7b8930a2b6467e4730" name="afbcff060410e9b7b8930a2b6467e4730"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#afbcff060410e9b7b8930a2b6467e4730">&#9670;&#160;</a></span>inflate()</h2>
+<a id="acdfa78b953277426e064d9699e1e922f" name="acdfa78b953277426e064d9699e1e922f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acdfa78b953277426e064d9699e1e922f">&#9670;&#160;</a></span>inflate()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">int crypto::ZLibCompressor::inflate </td>
+          <td class="memname">std::unique_ptr&lt; std::byte[]&gt; crypto::ZLibCompressor::inflate </td>
           <td>(</td>
           <td class="paramtype">const std::byte *&#160;</td>
           <td class="paramname"><em>data</em>, </td>
@@ -249,8 +249,8 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">std::byte *&#160;</td>
-          <td class="paramname"><em>out</em>&#160;</td>
+          <td class="paramtype">int *&#160;</td>
+          <td class="paramname"><em>outLen</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
