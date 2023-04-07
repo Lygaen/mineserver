@@ -219,3 +219,63 @@ size_t crypto::AES128CFB8Cipher::calculateBufferSize(size_t len)
 
     return 0;
 }
+
+crypto::ZLibCompressor::ZLibCompressor(int level) : compressionLevel(level)
+{
+}
+
+int crypto::ZLibCompressor::deflate(const std::byte *data, size_t len, std::byte *out)
+{
+    z_stream strm;
+    strm.zalloc = Z_NULL;
+    strm.zfree = Z_NULL;
+    strm.opaque = Z_NULL;
+    strm.avail_in = len;
+    strm.next_in = (Bytef *)data;
+    strm.avail_out = 0;
+    strm.next_out = nullptr;
+
+    int ret = deflateInit(&strm, compressionLevel);
+    if (ret != Z_OK)
+        return -1;
+
+    do
+    {
+        strm.avail_out = 1024;
+        strm.next_out = (Bytef *)out;
+        ret = ::deflate(&strm, Z_FINISH);
+        if (ret == Z_STREAM_ERROR)
+            return -1;
+    } while (strm.avail_out == 0);
+
+    deflateEnd(&strm);
+    return strm.total_out;
+}
+
+int crypto::ZLibCompressor::inflate(const std::byte *data, size_t len, std::byte *out)
+{
+    z_stream strm;
+    strm.zalloc = Z_NULL;
+    strm.zfree = Z_NULL;
+    strm.opaque = Z_NULL;
+    strm.avail_in = len;
+    strm.next_in = (Bytef *)data;
+    strm.avail_out = 0;
+    strm.next_out = nullptr;
+
+    int ret = inflateInit(&strm);
+    if (ret != Z_OK)
+        return -1;
+
+    do
+    {
+        strm.avail_out = 1024;
+        strm.next_out = (Bytef *)out;
+        ret = ::inflate(&strm, Z_FINISH);
+        if (ret == Z_STREAM_ERROR)
+            return -1;
+    } while (strm.avail_out == 0);
+
+    inflateEnd(&strm);
+    return strm.total_out;
+}

@@ -335,5 +335,29 @@ TEST(Streams, CryptoCipher)
 
     ASSERT_EQ(s, std::string((char *)deData, deLen));
 
+    delete[] enData;
+    delete[] deData;
+    crypto::cleanup();
+}
+
+TEST(Streams, CryptoZLIB)
+{
+    ASSERT_TRUE(crypto::init());
+
+    crypto::ZLibCompressor comp(Z_DEFAULT_COMPRESSION);
+    std::string s = "Thiiiiiis iiiiissss some compresssable striiiing !";
+
+    std::byte *de = new std::byte[s.size()];
+    int deLen = comp.deflate((std::byte *)s.data(), s.size(), de);
+
+    ASSERT_NE(s, std::string((char *)de, deLen));
+
+    std::byte *in = new std::byte[s.size()];
+    int inLen = comp.inflate(de, deLen, in);
+
+    ASSERT_EQ(s, std::string((char *)in, inLen));
+
+    delete[] de;
+    delete[] in;
     crypto::cleanup();
 }

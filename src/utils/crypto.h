@@ -15,6 +15,7 @@
 #include <memory>
 #include <openssl/rsa.h>
 #include <openssl/evp.h>
+#include <zlib.h>
 
 /**
  * @brief The crypto namespace
@@ -233,6 +234,60 @@ namespace crypto
          * @return size_t the minimal size of the buffer to use
          */
         size_t calculateBufferSize(size_t len);
+    };
+
+    /**
+     * @brief ZLib compressor
+     *
+     * Compressor class that wraps
+     * around zlib for compression
+     * or decompression.
+     */
+    class ZLibCompressor
+    {
+    private:
+        int compressionLevel;
+
+    public:
+        /**
+         * @brief Construct a new Zlib Compressor object
+         *
+         * Creates a compressor with a paramed zlib @p level
+         * going from 0 to 9 (0 means no compression and
+         * 9 means full compression). Set it to -1 to
+         * use the default compression.
+         * @param level the compression level
+         */
+        ZLibCompressor(int level);
+        /**
+         * @brief Destroy the Zlib Compressor object
+         *
+         */
+        ~ZLibCompressor() = default;
+
+        /**
+         * @brief Deflates data
+         *
+         * Compresses @p data of size @p len into @p out
+         * using the compression level used in the constructor.
+         * @param data the data to compress
+         * @param len the size of @p data
+         * @param out the output data, should be of at least @p len in size
+         * @return int the compressed size of @p out
+         */
+        int deflate(const std::byte *data, size_t len, std::byte *out);
+        /**
+         * @brief Inflates data
+         *
+         * Uncompresses @p data of size @p len into @p out
+         * Theoratically, it doesn't use the compression level
+         * of the constructor as it reads the size from the buffer
+         * @param data the data to uncompress
+         * @param len the size of @p data
+         * @param out the output dat
+         * @return int the compressed size of @p out
+         */
+        int inflate(const std::byte *data, size_t len, std::byte *out);
     };
 };
 
