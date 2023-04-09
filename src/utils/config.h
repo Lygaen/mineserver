@@ -14,6 +14,7 @@
 
 #include <memory>
 #include <rapidjson/document.h>
+#include <net/types/chatmessage.h>
 
 /**
  * @brief The Field Object for the ::Config
@@ -161,7 +162,7 @@ public:
      * The message of the day to be displayed
      * on a status update.
      */
-    Field<std::string> MOTD = Field("display", "motd", std::string("This is the message of the day !"));
+    Field<ChatMessage> MOTD = Field("display", "motd", ChatMessage("This is the message of the day !"));
     /**
      * @brief The Log Level
      *

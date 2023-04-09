@@ -76,6 +76,28 @@ void Field<int>::save(rapidjson::Document &document)
 }
 
 template <>
+void Field<ChatMessage>::load(const rapidjson::Document &document)
+{
+    auto loc = canSafelyRead(document);
+    if (loc == document.MemberEnd())
+        return;
+
+    if (!loc->value.IsInt())
+        return;
+
+    value = ChatMessage();
+    value.load(loc->value);
+}
+template <>
+void Field<ChatMessage>::save(rapidjson::Document &document)
+{
+    rapidjson::Value v;
+    v.SetObject();
+    value.save(v, document.GetAllocator());
+    writeSafely(document, v);
+}
+
+template <>
 void Field<std::string>::load(const rapidjson::Document &document)
 {
     auto loc = canSafelyRead(document);
