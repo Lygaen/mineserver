@@ -178,9 +178,9 @@ crypto::AES128CFB8Cipher::AES128CFB8Cipher(CipherState state, const std::byte *k
     EVP_CIPHER_CTX_init(ctx);
 
     if (state == crypto::CipherState::ENCRYPT)
-        EVP_EncryptInit_ex2(ctx, EVP_aes_128_cfb8(), (const unsigned char *)key, (const unsigned char *)iv, nullptr);
+        EVP_EncryptInit(ctx, EVP_aes_128_cfb8(), (const unsigned char *)key, (const unsigned char *)iv);
     else if (state == crypto::CipherState::DECRYPT)
-        EVP_DecryptInit_ex2(ctx, EVP_aes_128_cfb8(), (const unsigned char *)key, (const unsigned char *)iv, nullptr);
+        EVP_DecryptInit(ctx, EVP_aes_128_cfb8(), (const unsigned char *)key, (const unsigned char *)iv);
 }
 
 crypto::AES128CFB8Cipher::~AES128CFB8Cipher()
