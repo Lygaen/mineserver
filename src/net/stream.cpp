@@ -2,6 +2,8 @@
 #include <cstring>
 #include <bit>
 #include <stdexcept>
+#include <rapidjson/stringbuffer.h>
+#include <rapidjson/writer.h>
 
 bool IStream::readBoolean()
 {
@@ -185,6 +187,33 @@ void IStream::writeString(const std::string &s)
 {
     writeVarInt(s.size());
     write(reinterpret_cast<std::byte *>(const_cast<char *>(s.data())), 0, s.size());
+}
+
+ChatMessage IStream::readChat()
+{
+    ChatMessage m;
+
+    std::string json = readString();
+    rapidjson::Document doc(rapidjson::kObjectType);
+    doc.Parse(json.c_str());
+
+    m.load(doc);
+
+    return m;
+}
+
+void IStream::writeChat(const ChatMessage &c)
+{
+    rapidjson::Document doc(rapidjson::kObjectType);
+    c.save(doc, doc.GetAllocator());
+
+    rapidjson::StringBuffer buffer;
+    buffer.Clear();
+
+    rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
+    doc.Accept(writer);
+
+    writeString(buffer.GetString());
 }
 
 #define SEGMENT_BITS 0x7F

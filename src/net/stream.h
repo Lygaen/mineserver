@@ -17,6 +17,7 @@
 #include <string>
 #include <vector>
 #include <utils/network.h>
+#include <net/types/chatmessage.h>
 
 /**
  * @brief Stream interface
@@ -199,7 +200,20 @@ public:
      */
     void writeString(const std::string &s);
 
-    /* CHAT */
+    /**
+     * @brief Reads a Chat Message
+     *
+     * Reads a chat message from the stream in a Minecrafty way.
+     * @todo Do something to ensure the return value is moved
+     */
+    ChatMessage readChat();
+    /**
+     * @brief Writes a Chat Message
+     *
+     * Writes a chat message to the stream in a Minecraft way.
+     * @param s the string to write
+     */
+    void writeChat(const ChatMessage &c);
 
     /**
      * @brief Reads a Variable Integer

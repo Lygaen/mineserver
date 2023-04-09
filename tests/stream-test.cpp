@@ -170,6 +170,16 @@ TEST(MinecraftStream, String)
     ASSERT_EQ(m.readString(), s);
 }
 
+TEST(MinecraftStream, Chat)
+{
+    MemoryStream m;
+
+    ChatMessage c = std::string("Some random st\0ring to io");
+    m.writeChat(c);
+
+    ASSERT_EQ(m.readChat(), c);
+}
+
 TEST(MinecraftStream, VarInt)
 {
     MemoryStream m;
