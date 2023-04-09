@@ -9,8 +9,7 @@ add_subdirectory(rapidjson/)
 
 add_subdirectory(zlib/)
 
-# TODO change OpenSSL to a submodule
-find_package(OpenSSL REQUIRED)
+add_subdirectory(openssl/)
 
 target_link_libraries(mineserver-libs PUBLIC crypto zlib)
 target_include_directories(mineserver-libs PUBLIC rapidjson/include)
