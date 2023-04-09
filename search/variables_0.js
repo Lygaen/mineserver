@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['compression_5flvl_0',['COMPRESSION_LVL',['../classConfig.html#a57bcad1158820b8408cff38171809b32',1,'Config']]]
+  ['bold_0',['bold',['../classChatMessage.html#aefd4866ba51147667a90dfa78da7df7e',1,'ChatMessage']]]
 ];

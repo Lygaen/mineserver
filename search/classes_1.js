@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['clientsocket_0',['ClientSocket',['../classClientSocket.html',1,'']]],
-  ['config_1',['Config',['../classConfig.html',1,'']]]
+  ['chatmessage_0',['ChatMessage',['../classChatMessage.html',1,'']]],
+  ['clientsocket_1',['ClientSocket',['../classClientSocket.html',1,'']]],
+  ['config_2',['Config',['../classConfig.html',1,'']]]
 ];

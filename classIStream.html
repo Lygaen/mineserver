@@ -191,6 +191,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ab01f08fcf57f885d7ec7838f38e0ac91"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIStream.html#ab01f08fcf57f885d7ec7838f38e0ac91">writeString</a> (const std::string &amp;s)</td></tr>
 <tr class="memdesc:ab01f08fcf57f885d7ec7838f38e0ac91"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a String.  <br /></td></tr>
 <tr class="separator:ab01f08fcf57f885d7ec7838f38e0ac91"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a7cee60f8dccdfaa406366911859841"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classChatMessage.html">ChatMessage</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIStream.html#a7a7cee60f8dccdfaa406366911859841">readChat</a> ()</td></tr>
+<tr class="memdesc:a7a7cee60f8dccdfaa406366911859841"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a Chat Message.  <br /></td></tr>
+<tr class="separator:a7a7cee60f8dccdfaa406366911859841"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba48d20d0cc01933e9864a4915fc01fe"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIStream.html#aba48d20d0cc01933e9864a4915fc01fe">writeChat</a> (const <a class="el" href="classChatMessage.html">ChatMessage</a> &amp;c)</td></tr>
+<tr class="memdesc:aba48d20d0cc01933e9864a4915fc01fe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a Chat Message.  <br /></td></tr>
+<tr class="separator:aba48d20d0cc01933e9864a4915fc01fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a859cfc2d3d33f29f6598635458e5e8b4"><td class="memItemLeft" align="right" valign="top">std::int32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIStream.html#a859cfc2d3d33f29f6598635458e5e8b4">readVarInt</a> ()</td></tr>
 <tr class="memdesc:a859cfc2d3d33f29f6598635458e5e8b4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads a Variable Integer.  <br /></td></tr>
 <tr class="separator:a859cfc2d3d33f29f6598635458e5e8b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -329,6 +335,26 @@ Public Member Functions</h2></td></tr>
 
 <p>Reads a Byte. </p>
 <p>Reads a byte from the stream in a Minecrafty way. </p>
+
+</div>
+</div>
+<a id="a7a7cee60f8dccdfaa406366911859841" name="a7a7cee60f8dccdfaa406366911859841"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a7cee60f8dccdfaa406366911859841">&#9670;&#160;</a></span>readChat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classChatMessage.html">ChatMessage</a> IStream::readChat </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reads a Chat Message. </p>
+<p>Reads a chat message from the stream in a Minecrafty way. </p><dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo:</a></b></dt><dd>Do something to ensure the return value is moved </dd></dl>
 
 </div>
 </div>
@@ -632,6 +658,32 @@ Public Member Functions</h2></td></tr>
 <p>Writes a byte to the stream in a Minecraft way. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">b</td><td>the byte to write </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="aba48d20d0cc01933e9864a4915fc01fe" name="aba48d20d0cc01933e9864a4915fc01fe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aba48d20d0cc01933e9864a4915fc01fe">&#9670;&#160;</a></span>writeChat()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void IStream::writeChat </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="classChatMessage.html">ChatMessage</a> &amp;&#160;</td>
+          <td class="paramname"><em>c</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Writes a Chat Message. </p>
+<p>Writes a chat message to the stream in a Minecraft way. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">s</td><td>the string to write </td></tr>
   </table>
   </dd>
 </dl>

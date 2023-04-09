@@ -5,6 +5,7 @@ var annotated_dup =
       [ "MinecraftHash", "classcrypto_1_1MinecraftHash.html", "classcrypto_1_1MinecraftHash" ],
       [ "ZLibCompressor", "classcrypto_1_1ZLibCompressor.html", "classcrypto_1_1ZLibCompressor" ]
     ] ],
+    [ "ChatMessage", "classChatMessage.html", "classChatMessage" ],
     [ "ClientSocket", "classClientSocket.html", "classClientSocket" ],
     [ "Config", "classConfig.html", "classConfig" ],
     [ "Field", "classField.html", "classField" ],

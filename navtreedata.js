@@ -25,6 +25,7 @@
 var NAVTREE =
 [
   [ "Mineserver", "index.html", [
+    [ "Todo List", "todo.html", null ],
     [ "Deprecated List", "deprecated.html", null ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],

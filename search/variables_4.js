@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['port_0',['PORT',['../classConfig.html#a6ee00c8b627479c136aad4b2366b6426',1,'Config']]]
+  ['motd_0',['MOTD',['../classConfig.html#a1991d3da593757b93485a1037924c72a',1,'Config']]]
 ];
