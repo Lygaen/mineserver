@@ -25,8 +25,9 @@ void ChatMessage::addExtra(ChatMessage *cm)
     }
 
     ChatMessage *n = next;
-    while ((n = next->next) != nullptr)
+    while (n->next != nullptr)
     {
+        n = n->next;
     }
 
     n->next = cm;

@@ -19,7 +19,7 @@ TEST(MinecraftStream, Boolean)
 
     ASSERT_TRUE(m.readBoolean());
 
-    m.flush();
+    m.clear();
     m.writeBoolean(false);
     ASSERT_FALSE(m.readBoolean());
 }
@@ -34,7 +34,7 @@ TEST(MinecraftStream, Byte)
         m.writeByte(z);
 
         ASSERT_EQ(m.readByte(), z);
-        m.flush();
+        m.clear();
     }
 
     // So that we test the full 1's possibilty
@@ -52,7 +52,7 @@ TEST(MinecraftStream, UnsignedByte)
         m.writeUnsignedByte(z);
 
         ASSERT_EQ(m.readUnsignedByte(), z);
-        m.flush();
+        m.clear();
     }
 
     // So that we test the full 1's possibilty
@@ -70,7 +70,7 @@ TEST(MinecraftStream, Short)
         m.writeShort(z);
 
         ASSERT_EQ(m.readShort(), z);
-        m.flush();
+        m.clear();
     }
 
     // So that we test the full 1's possibilty
@@ -88,7 +88,7 @@ TEST(MinecraftStream, UnsignedShort)
         m.writeUnsignedShort(z);
 
         ASSERT_EQ(m.readUnsignedShort(), z);
-        m.flush();
+        m.clear();
     }
 
     // So that we test the full 1's possibilty
@@ -106,7 +106,7 @@ TEST(MinecraftStream, Int)
         m.writeInt(z);
 
         ASSERT_EQ(m.readInt(), z);
-        m.flush();
+        m.clear();
     }
 
     // So that we test the full 1's possibilty
@@ -124,7 +124,7 @@ TEST(MinecraftStream, Long)
         m.writeLong(z);
 
         ASSERT_EQ(m.readLong(), z);
-        m.flush();
+        m.clear();
     }
 
     // So that we test the full 1's possibilty
@@ -142,7 +142,7 @@ TEST(MinecraftStream, Float)
         m.writeFloat(*reinterpret_cast<float *>(&z));
 
         ASSERT_EQ(m.readFloat(), *reinterpret_cast<float *>(&z));
-        m.flush();
+        m.clear();
     }
 }
 
@@ -156,7 +156,7 @@ TEST(MinecraftStream, Double)
         m.writeDouble(*reinterpret_cast<double *>(&z));
 
         ASSERT_EQ(m.readDouble(), *reinterpret_cast<double *>(&z));
-        m.flush();
+        m.clear();
     }
 }
 
@@ -190,7 +190,7 @@ TEST(MinecraftStream, VarInt)
         m.writeVarInt(z);
 
         ASSERT_EQ(m.readVarInt(), z);
-        m.flush();
+        m.clear();
     }
 
     // So that we test the full 1's possibilty
@@ -208,7 +208,7 @@ TEST(MinecraftStream, VarLong)
         m.writeVarLong(z);
 
         ASSERT_EQ(m.readVarLong(), z);
-        m.flush();
+        m.clear();
     }
 
     // So that we test the full 1's possibilty
@@ -216,43 +216,45 @@ TEST(MinecraftStream, VarLong)
     ASSERT_EQ(m.readVarLong(), LONG_MAX);
 }
 
-void runStreamTest(IStream *reader, IStream *writer)
+void runStreamTest(IStream *reader, IStream *writer, bool shouldReadVarInt = false)
 {
     writer->writeBoolean(true);
-    ASSERT_TRUE(reader->readBoolean());
-
     writer->writeByte(SCHAR_MAX);
-    ASSERT_EQ(reader->readByte(), SCHAR_MAX);
-
     writer->writeUnsignedByte(UCHAR_MAX);
-    ASSERT_EQ(reader->readUnsignedByte(), UCHAR_MAX);
-
     writer->writeShort(SHRT_MAX);
-    ASSERT_EQ(reader->readShort(), SHRT_MAX);
-
     writer->writeUnsignedShort(SHRT_MAX);
-    ASSERT_EQ(reader->readUnsignedShort(), SHRT_MAX);
-
     writer->writeInt(INT_MAX);
-    ASSERT_EQ(reader->readInt(), INT_MAX);
-
     writer->writeFloat(FLT_MAX);
-    ASSERT_EQ(reader->readFloat(), FLT_MAX);
-
     writer->writeLong(LONG_MAX);
-    ASSERT_EQ(reader->readLong(), LONG_MAX);
-
     writer->writeDouble(DBL_MAX);
-    ASSERT_EQ(reader->readDouble(), DBL_MAX);
 
     std::string s = "Some random st\0ring to io";
     writer->writeString(s);
-    ASSERT_EQ(reader->readString(), s);
 
     writer->writeVarInt(INT_MAX);
-    ASSERT_EQ(reader->readVarInt(), INT_MAX);
-
     writer->writeVarLong(LONG_MAX);
+
+    writer->flush();
+
+    // Because some buffer-type
+    // streams are going to automatically
+    // append the size. (eg. ZLibStream)
+    if (shouldReadVarInt)
+    {
+        reader->readVarInt();
+    }
+
+    ASSERT_TRUE(reader->readBoolean());
+    ASSERT_EQ(reader->readByte(), SCHAR_MAX);
+    ASSERT_EQ(reader->readUnsignedByte(), UCHAR_MAX);
+    ASSERT_EQ(reader->readShort(), SHRT_MAX);
+    ASSERT_EQ(reader->readUnsignedShort(), SHRT_MAX);
+    ASSERT_EQ(reader->readInt(), INT_MAX);
+    ASSERT_EQ(reader->readFloat(), FLT_MAX);
+    ASSERT_EQ(reader->readLong(), LONG_MAX);
+    ASSERT_EQ(reader->readDouble(), DBL_MAX);
+    ASSERT_EQ(reader->readString(), s);
+    ASSERT_EQ(reader->readVarInt(), INT_MAX);
     ASSERT_EQ(reader->readVarLong(), LONG_MAX);
 }
 
@@ -281,6 +283,26 @@ TEST(Streams, Network)
     server.close();
     client.close();
     ASSERT_TRUE(ServerSocket::cleanup());
+}
+
+TEST(Streams, Cipher)
+{
+    std::unique_ptr<std::byte[]> key = crypto::randomSecure(16);
+    MemoryStream m;
+
+    CipherStream in(m, key.get(), key.get());  // Because Minecraft uses the same
+    CipherStream out(m, key.get(), key.get()); // bytes for key and iv.
+
+    runStreamTest(&in, &out);
+}
+
+TEST(Streams, ZLib)
+{
+    MemoryStream m;
+
+    ZLibStream stream(m, Z_DEFAULT_COMPRESSION);
+
+    runStreamTest(&stream, &stream, true);
 }
 
 TEST(Streams, CryptoRSA)
@@ -343,7 +365,7 @@ TEST(Streams, CryptoCipher)
     delete[] deData;
 }
 
-TEST(Streams, CryptoZLIB)
+TEST(Streams, CryptoZLib)
 {
     crypto::ZLibCompressor comp(Z_DEFAULT_COMPRESSION);
     std::string s = "Thiiiiiis iiiiissss some compresssable striiiing !";

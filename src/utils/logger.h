@@ -17,12 +17,45 @@
 #include <ctime>
 
 #ifdef MINESERVER_ANSI_COLORS
+/**
+ * @brief ANSI reset color
+ *
+ */
 #define RESET_COLOR "\033[0m"
+/**
+ * @brief ANSI color for time in the console
+ *
+ * See logger::getTime() for more info
+ */
 #define TIME_COLOR "\033[0;90m"
+/**
+ * @brief ANSI color for fatal level in the console
+ *
+ */
 #define FATAL_COLOR "\033[1;31m"
+/**
+ * @brief ANSI color for error level in the console
+ *
+ * See logger::error() for more info
+ */
 #define ERROR_COLOR "\033[0;31m"
+/**
+ * @brief ANSI color for warn level in the console
+ *
+ * See logger::warn() for more info
+ */
 #define WARN_COLOR "\033[0;33m"
+/**
+ * @brief ANSI color for info level in the console
+ *
+ * See logger::info() for more info
+ */
 #define INFO_COLOR "\033[0;35m"
+/**
+ * @brief ANSI color for debug level in the console
+ *
+ * See logger::debug() for more info
+ */
 #define DEBUG_COLOR "\033[0;36m"
 #else
 #define RESET_COLOR ""

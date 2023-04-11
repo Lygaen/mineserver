@@ -268,24 +268,27 @@ namespace crypto
         /**
          * @brief Deflates data
          *
-         * Compresses @p data of size @p len into @p out
-         * using the compression level used in the constructor.
+         * Compresses @p data of length @p len and
+         * writes the compressed length to @p outLen
+         * returning the compressed data.
          * @param data the data to compress
-         * @param len the size of @p data
-         * @param out the output data, should be of at least @p len in size
-         * @return int the compressed size of @p out
+         * @param len the length of @p data
+         * @param outLen a pointer to an int that will contain the compressed data length
+         * @return std::unique_ptr<std::byte[]> the compressed data
          */
         std::unique_ptr<std::byte[]> deflate(const std::byte *data, size_t len, int *outLen);
         /**
          * @brief Inflates data
          *
-         * Uncompresses @p data of size @p len into @p out
-         * Theoratically, it doesn't use the compression level
-         * of the constructor as it reads the size from the buffer
+         * Uncompresses @p data of length @p len and
+         * writes the uncompressed length to @p outLen
+         * returning the compressed data.
+         * In contrary to ::deflate @p outLen
+         * should contain the uncompressed data size.
          * @param data the data to uncompress
-         * @param len the size of @p data
-         * @param out the output dat
-         * @return int the compressed size of @p out
+         * @param len the length of @p data
+         * @param outLen a pointer to an int that contains the uncompressed data size
+         * @return std::unique_ptr<std::byte[]> the uncompressed data
          */
         std::unique_ptr<std::byte[]> inflate(const std::byte *data, size_t len, int *outLen);
     };

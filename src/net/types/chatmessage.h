@@ -125,6 +125,14 @@ public:
      */
     void save(rapidjson::Value &document, rapidjson::Document::AllocatorType &alloc) const;
 
+    /**
+     * @brief Equality operator between two chat messages
+     *
+     * @param lhs the left-handside variable
+     * @param rhs the righ-handside variable
+     * @return true the two variables are equal
+     * @return false the two variables are not equal
+     */
     friend bool operator==(const ChatMessage &lhs, const ChatMessage &rhs);
 };
 

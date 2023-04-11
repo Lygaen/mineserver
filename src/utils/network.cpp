@@ -54,11 +54,11 @@ ClientSocket ServerSocket::accept()
     char addr[46];
 #if defined(__linux__)
     char *tmp = inet_ntoa(cli_addr.sin_addr);
-    strcpy(addr, tmp);
+    strncpy(addr, tmp, 46);
 #elif defined(_WIN32)
     char buffer[46];
     inet_ntop(AF_INET, &cli_addr.sin_addr, buffer, 46);
-    strcpy(addr, buffer);
+    strncpy(addr, tmp, 46);
 #endif
 
     return ClientSocket(rvalue, addr);

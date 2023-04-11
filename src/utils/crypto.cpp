@@ -190,7 +190,7 @@ crypto::AES128CFB8Cipher::~AES128CFB8Cipher()
 
 int crypto::AES128CFB8Cipher::update(const std::byte *data, size_t len, std::byte *out)
 {
-    int outLen;
+    int outLen = 0;
     if (state == crypto::CipherState::ENCRYPT)
         EVP_EncryptUpdate(ctx, (unsigned char *)out, &outLen, (const unsigned char *)data, len);
     else if (state == crypto::CipherState::DECRYPT)
@@ -201,7 +201,7 @@ int crypto::AES128CFB8Cipher::update(const std::byte *data, size_t len, std::byt
 
 int crypto::AES128CFB8Cipher::finalize(std::byte *out)
 {
-    int outLen;
+    int outLen = 0;
     if (state == crypto::CipherState::ENCRYPT)
         EVP_EncryptFinal_ex(ctx, (unsigned char *)out, &outLen);
     else if (state == crypto::CipherState::DECRYPT)

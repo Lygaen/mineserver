@@ -18,6 +18,7 @@
 #include <vector>
 #include <utils/network.h>
 #include <net/types/chatmessage.h>
+#include <utils/crypto.h>
 
 /**
  * @brief Stream interface
@@ -211,7 +212,7 @@ public:
      * @brief Writes a Chat Message
      *
      * Writes a chat message to the stream in a Minecraft way.
-     * @param s the string to write
+     * @param c the chat message to write
      */
     void writeChat(const ChatMessage &c);
 
@@ -295,9 +296,23 @@ public:
     /**
      * @brief Flushes the stream
      *
-     * Clears the buffer of the stream.
+     * Flushes the buffer of the stream, resetting the index of the buffer.
      */
     void flush() override;
+
+    /**
+     * @brief Cleares the stream
+     *
+     * Cleares the stream of any data.
+     */
+    void clear();
+    /**
+     * @brief Get the written data
+     *
+     * Gets the written data of the buffer,
+     * excluding any index.
+     */
+    const std::vector<std::byte> &getData() const;
 };
 
 /**
@@ -345,6 +360,120 @@ public:
     /**
      * @brief Flushes the stream
      * @deprecated Not implemented, useless, should not be used
+     */
+    void flush() override;
+};
+
+/**
+ * @brief AES 128bit CFB8 Cipher stream
+ *
+ * Cipher stream for minecraft, is updates for every
+ * packet and not finalized then restarted.
+ */
+class CipherStream : public IStream
+{
+private:
+    IStream &baseStream;
+    crypto::AES128CFB8Cipher encipher;
+    crypto::AES128CFB8Cipher decipher;
+
+public:
+    /**
+     * @brief Construct a new Cipher Stream object
+     *
+     * @param baseStream the stream to IO on
+     * @param key the key for the AES cipher
+     * @param iv the IV for the AES cipher
+     */
+    CipherStream(IStream &baseStream, std::byte *key, std::byte *iv);
+    /**
+     * @brief Destroy the Cipher Stream object
+     *
+     */
+    ~CipherStream();
+
+    /**
+     * @brief Reads from an encrypted stream
+     *
+     * @param buffer the buffer to write to
+     * @param offset the offset to start writing to
+     * @param len the length to read from baseStream and write to @p buffer
+     */
+    void read(std::byte *buffer, std::size_t offset, std::size_t len) override;
+    /**
+     * @brief Writes to an encrypted stream
+     *
+     * @param buffer the buffer to read from
+     * @param offset the offset to start reading from
+     * @param len the length to read from @p buffer
+     */
+    void write(std::byte *buffer, std::size_t offset, std::size_t len) override;
+    /**
+     * @brief Flushes the base stream
+     *
+     */
+    void flush() override;
+};
+
+/**
+ * @brief ZLib Stream
+ *
+ * Stream that compresses data according
+ * to minecraft standard, writing packet length
+ * and data length.
+ */
+class ZLibStream : public IStream
+{
+private:
+    IStream &baseStream;
+    crypto::ZLibCompressor comp;
+
+    std::vector<std::byte> inBuffer{};
+    std::uint32_t inIndex{};
+
+    std::vector<std::byte> outBuffer{};
+
+public:
+    /**
+     * @brief Construct a new ZLibStream object
+     *
+     * @param baseStream the base stream to IO on
+     * @param level the level of compression
+     */
+    ZLibStream(IStream &baseStream, int level);
+    /**
+     * @brief Destroy the ZLibStream object
+     *
+     */
+    ~ZLibStream();
+
+    /**
+     * @brief Reads from a compressed stream
+     *
+     * @param buffer the buffer to write to
+     * @param offset the offset to start writing to
+     * @param len the length to read from baseStream and write to @p buffer
+     */
+    void read(std::byte *buffer, std::size_t offset, std::size_t len) override;
+    /**
+     * @brief Writes to a compressed stream
+     *
+     * @param buffer the buffer to read from
+     * @param offset the offset to start reading from
+     * @param len the length to read from @p buffer
+     */
+    void write(std::byte *buffer, std::size_t offset, std::size_t len) override;
+    /**
+     * @brief Flushes the stream
+     *
+     * Writes to the base stream any data,
+     * following minecraft standard way
+     * then flushes the base stream and
+     * buffers in any incoming data.
+     * It then should be called at the
+     * end of every packet loop and is the main
+     * reason why we are forced to write one packet
+     * per loop.
      */
     void flush() override;
 };

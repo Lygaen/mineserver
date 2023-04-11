@@ -2,6 +2,7 @@
 #include <cstring>
 #include <bit>
 #include <stdexcept>
+#include <algorithm>
 #include <rapidjson/stringbuffer.h>
 #include <rapidjson/writer.h>
 
@@ -44,7 +45,7 @@ std::int16_t IStream::readShort()
 {
     std::byte b[sizeof(std::int16_t)];
     read(b, 0, sizeof(std::int16_t));
-    if constexpr (std::endian::little == std::endian::little)
+    if constexpr (std::endian::native == std::endian::little)
     {
         std::byte temp; // Yes, I know, It is not needed to use a temp
                         // variable to swap these two bytes but it increases
@@ -59,7 +60,7 @@ std::int16_t IStream::readShort()
 
 void IStream::writeShort(std::int16_t s)
 {
-    if constexpr (std::endian::little == std::endian::little)
+    if constexpr (std::endian::native == std::endian::little)
     {
         std::byte *bytes = reinterpret_cast<std::byte *>(&s);
         std::byte temp; // Yes, I know, It is not needed to use a temp
@@ -93,7 +94,7 @@ std::int32_t IStream::readInt()
     std::byte b[sizeof(std::int32_t)];
     read(b, 0, sizeof(std::int32_t));
 
-    if constexpr (std::endian::little == std::endian::little)
+    if constexpr (std::endian::native == std::endian::little)
     {
         // Kinda tedious but better than nothing !
         std::uint32_t i = *reinterpret_cast<std::uint32_t *>(&b);
@@ -108,7 +109,7 @@ std::int32_t IStream::readInt()
 
 void IStream::writeInt(std::int32_t i)
 {
-    if constexpr (std::endian::little == std::endian::little)
+    if constexpr (std::endian::native == std::endian::little)
     {
         std::uint32_t n = *reinterpret_cast<std::uint32_t *>(&i);
         n = __builtin_bswap32(n);
@@ -125,7 +126,7 @@ std::int64_t IStream::readLong()
     std::byte b[sizeof(std::int64_t)];
     read(b, 0, sizeof(std::int64_t));
 
-    if constexpr (std::endian::little == std::endian::little)
+    if constexpr (std::endian::native == std::endian::little)
     {
         // Again, kinda tedious but better than nothing !
         std::uint64_t i = *reinterpret_cast<std::uint64_t *>(&b);
@@ -140,7 +141,7 @@ std::int64_t IStream::readLong()
 
 void IStream::writeLong(std::int64_t l)
 {
-    if constexpr (std::endian::little == std::endian::little)
+    if constexpr (std::endian::native == std::endian::little)
     {
         std::uint64_t n = *reinterpret_cast<std::uint64_t *>(&l);
         n = __builtin_bswap64(n);
@@ -310,7 +311,17 @@ void MemoryStream::write(std::byte *buffer, std::size_t offset, std::size_t len)
 void MemoryStream::flush()
 {
     readIndex = 0;
+}
+
+void MemoryStream::clear()
+{
+    flush();
     data.clear();
+}
+
+const std::vector<std::byte> &MemoryStream::getData() const
+{
+    return data;
 }
 
 NetSocketStream::NetSocketStream(ClientSocket socket) : socket(socket)
@@ -335,4 +346,101 @@ void NetSocketStream::write(std::byte *buffer, std::size_t offset, std::size_t l
 void NetSocketStream::flush()
 {
     /* Not implemented */
+}
+
+CipherStream::CipherStream(IStream &baseStream, std::byte *key, std::byte *iv) : baseStream(baseStream),
+                                                                                 encipher(crypto::CipherState::ENCRYPT, key, iv),
+                                                                                 decipher(crypto::CipherState::DECRYPT, key, iv)
+
+{
+}
+
+CipherStream::~CipherStream()
+{
+}
+
+void CipherStream::read(std::byte *buffer, std::size_t offset, std::size_t len)
+{
+    std::byte buf[len];
+    baseStream.read(buf, 0, len);
+
+    std::byte outBuf[decipher.calculateBufferSize(len)];
+    int outLen = decipher.update(buf, len, outBuf);
+
+    std::memcpy(buffer + offset, outBuf, outLen);
+}
+
+void CipherStream::write(std::byte *buffer, std::size_t offset, std::size_t len)
+{
+    std::byte outBuf[encipher.calculateBufferSize(len)];
+    int outLen = encipher.update(buffer + offset, len, outBuf);
+
+    baseStream.write(outBuf, 0, outLen);
+}
+
+void CipherStream::flush()
+{
+    baseStream.flush();
+}
+
+ZLibStream::ZLibStream(IStream &baseStream, int level) : baseStream(baseStream), comp(level)
+{
+}
+
+ZLibStream::~ZLibStream()
+{
+}
+
+void ZLibStream::read(std::byte *buffer, std::size_t offset, std::size_t len)
+{
+    std::memcpy(buffer + offset, inBuffer.data() + inIndex, std::min(len, inBuffer.size()));
+    inIndex += std::min(len, inBuffer.size());
+}
+
+void ZLibStream::write(std::byte *buffer, std::size_t offset, std::size_t len)
+{
+    std::copy(buffer + offset, buffer + offset + len, std::back_inserter(outBuffer));
+}
+
+void ZLibStream::flush()
+{
+
+    // Buffer write
+    if (outBuffer.size() > 0)
+    {
+        int dataLength = outBuffer.size();
+        std::byte dataOut[dataLength];
+        int packetLength = 0;
+        std::unique_ptr<std::byte[]> inData = comp.deflate(outBuffer.data(), dataLength, &packetLength);
+
+        MemoryStream m;
+        m.writeVarInt(dataLength); // Adds dataLength to the buffer because it is used
+        packetLength += m.getData().size();
+
+        baseStream.writeVarInt(packetLength);
+        baseStream.writeVarInt(dataLength);
+        baseStream.write(inData.get(), 0, packetLength - m.getData().size());
+        outBuffer.clear();
+    }
+
+    // Buffer read
+    inBuffer.clear();
+
+    int packetLength = baseStream.readVarInt();
+    inBuffer.reserve(packetLength);
+
+    int dataLength = baseStream.readVarInt();
+
+    MemoryStream m;
+    m.writeVarInt(dataLength); // Adds dataLength to the buffer because it is used
+    std::copy(m.getData().begin(), m.getData().end(), std::back_inserter(inBuffer));
+
+    std::byte streamIn[packetLength - inBuffer.size()];
+    baseStream.read(streamIn, 0, packetLength - inBuffer.size());
+    int outLen = dataLength;
+    std::unique_ptr<std::byte[]> data = comp.inflate(streamIn, packetLength - inBuffer.size(), &dataLength);
+
+    std::copy(data.get(), data.get() + outLen, std::back_inserter(inBuffer));
+
+    baseStream.flush();
 }
