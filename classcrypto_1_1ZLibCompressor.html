@@ -216,15 +216,15 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Deflates data. </p>
-<p>Compresses <code>data</code> of size <code>len</code> into <code>out</code> using the compression level used in the constructor. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Compresses <code>data</code> of length <code>len</code> and writes the compressed length to <code>outLen</code> returning the compressed data. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">data</td><td>the data to compress </td></tr>
-    <tr><td class="paramname">len</td><td>the size of <code>data</code> </td></tr>
-    <tr><td class="paramname">out</td><td>the output data, should be of at least <code>len</code> in size </td></tr>
+    <tr><td class="paramname">len</td><td>the length of <code>data</code> </td></tr>
+    <tr><td class="paramname">outLen</td><td>a pointer to an int that will contain the compressed data length </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>int the compressed size of <code>out</code> </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>std::unique_ptr&lt;std::byte[]&gt; the compressed data </dd></dl>
 
 </div>
 </div>
@@ -261,15 +261,15 @@ Public Member Functions</h2></td></tr>
 </div><div class="memdoc">
 
 <p>Inflates data. </p>
-<p>Uncompresses <code>data</code> of size <code>len</code> into <code>out</code> Theoratically, it doesn't use the compression level of the constructor as it reads the size from the buffer </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Uncompresses <code>data</code> of length <code>len</code> and writes the uncompressed length to <code>outLen</code> returning the compressed data. In contrary to <a class="el" href="classcrypto_1_1ZLibCompressor.html#a909476280eb8bf0144e941e47171bbe4" title="Deflates data.">deflate</a> <code>outLen</code> should contain the uncompressed data size. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">data</td><td>the data to uncompress </td></tr>
-    <tr><td class="paramname">len</td><td>the size of <code>data</code> </td></tr>
-    <tr><td class="paramname">out</td><td>the output dat </td></tr>
+    <tr><td class="paramname">len</td><td>the length of <code>data</code> </td></tr>
+    <tr><td class="paramname">outLen</td><td>a pointer to an int that contains the uncompressed data size </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>int the compressed size of <code>out</code> </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>std::unique_ptr&lt;std::byte[]&gt; the uncompressed data </dd></dl>
 
 </div>
 </div>

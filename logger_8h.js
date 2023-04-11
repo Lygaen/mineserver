@@ -1,5 +1,12 @@
 var logger_8h =
 [
+    [ "DEBUG_COLOR", "logger_8h.html#a792f9eb6a62648607f47b22644ad9707", null ],
+    [ "ERROR_COLOR", "logger_8h.html#a79b638f694ebb66a5eb8b994f4139906", null ],
+    [ "FATAL_COLOR", "logger_8h.html#af28559d37017eab92792d364a8f82e21", null ],
+    [ "INFO_COLOR", "logger_8h.html#a5d724ff30124b3ce91f377afb4598ed7", null ],
+    [ "RESET_COLOR", "logger_8h.html#ad7c3b975e5552a122f836b02fa138502", null ],
+    [ "TIME_COLOR", "logger_8h.html#ac8e597a14bd81a2aae848dfe05abef13", null ],
+    [ "WARN_COLOR", "logger_8h.html#ade48c7e2e47b62c4ba5b651a8fce44d7", null ],
     [ "LogLevel", "logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9", [
       [ "ALL", "logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9ab1d5eac4b1dca480c8056eaea7663b7a", null ],
       [ "DEBUG", "logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a0593585da9181e972974c1274d8f2b4f", null ],

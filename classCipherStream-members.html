@@ -72,7 +72,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('classMemoryStream.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('classCipherStream.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -98,17 +98,15 @@ $(document).ready(function(){initNavTree('classMemoryStream.html',''); initResiz
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">MemoryStream Member List</div></div>
+  <div class="headertitle"><div class="title">CipherStream Member List</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="classMemoryStream.html">MemoryStream</a>, including all inherited members.</p>
+<p>This is the complete list of members for <a class="el" href="classCipherStream.html">CipherStream</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="classMemoryStream.html#a392cb7470c7642c89daa5652e05c12c8">clear</a>()</td><td class="entry"><a class="el" href="classMemoryStream.html">MemoryStream</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classMemoryStream.html#a497251020f6338694ebe91b8d32b2404">flush</a>() override</td><td class="entry"><a class="el" href="classMemoryStream.html">MemoryStream</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classMemoryStream.html#a1e8a7a73bb63d0f6f07a57ff35ecd679">getData</a>() const</td><td class="entry"><a class="el" href="classMemoryStream.html">MemoryStream</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classMemoryStream.html#a50244829d3814d4bd03133c71ec1c92a">MemoryStream</a>()=default</td><td class="entry"><a class="el" href="classMemoryStream.html">MemoryStream</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classMemoryStream.html#a72769208313900a9dee1b423590cb260">read</a>(std::byte *buffer, std::size_t offset, std::size_t len) override</td><td class="entry"><a class="el" href="classMemoryStream.html">MemoryStream</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classCipherStream.html#a8f981d8f22fa40fdf3b7b155bcf5aa0a">CipherStream</a>(IStream &amp;baseStream, std::byte *key, std::byte *iv)</td><td class="entry"><a class="el" href="classCipherStream.html">CipherStream</a></td><td class="entry"></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classCipherStream.html#afda30da86b45fca2f023c365eb441229">flush</a>() override</td><td class="entry"><a class="el" href="classCipherStream.html">CipherStream</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classCipherStream.html#aaa340fad40a76b7fe3c5e0316bb0b01a">read</a>(std::byte *buffer, std::size_t offset, std::size_t len) override</td><td class="entry"><a class="el" href="classCipherStream.html">CipherStream</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="classIStream.html#a5018c4f7c8ca1430f91034c4c3ca9073">readBoolean</a>()</td><td class="entry"><a class="el" href="classIStream.html">IStream</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classIStream.html#a8fa19805970ccf7d8fe8fb5ceeab6e80">readByte</a>()</td><td class="entry"><a class="el" href="classIStream.html">IStream</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="classIStream.html#a7a7cee60f8dccdfaa406366911859841">readChat</a>()</td><td class="entry"><a class="el" href="classIStream.html">IStream</a></td><td class="entry"></td></tr>
@@ -122,7 +120,7 @@ $(document).ready(function(){initNavTree('classMemoryStream.html',''); initResiz
   <tr class="odd"><td class="entry"><a class="el" href="classIStream.html#ab732f3a8cd436ea45e2c421b311310a3">readUnsignedShort</a>()</td><td class="entry"><a class="el" href="classIStream.html">IStream</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classIStream.html#a859cfc2d3d33f29f6598635458e5e8b4">readVarInt</a>()</td><td class="entry"><a class="el" href="classIStream.html">IStream</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="classIStream.html#a7e39033a6dda1bee6ec4cbbdc30542ce">readVarLong</a>()</td><td class="entry"><a class="el" href="classIStream.html">IStream</a></td><td class="entry"></td></tr>
-  <tr class="even"><td class="entry"><a class="el" href="classMemoryStream.html#a937182f1358267154235d152a189fcb9">write</a>(std::byte *buffer, std::size_t offset, std::size_t len) override</td><td class="entry"><a class="el" href="classMemoryStream.html">MemoryStream</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classCipherStream.html#a0daaa917592b42e868b3d2c86ca50ab8">write</a>(std::byte *buffer, std::size_t offset, std::size_t len) override</td><td class="entry"><a class="el" href="classCipherStream.html">CipherStream</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="classIStream.html#a43f6a2006cc942c435d558c10dec9993">writeBoolean</a>(bool b)</td><td class="entry"><a class="el" href="classIStream.html">IStream</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classIStream.html#ad42f772a092aa8a45888c06469c5b975">writeByte</a>(std::int8_t b)</td><td class="entry"><a class="el" href="classIStream.html">IStream</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="classIStream.html#aba48d20d0cc01933e9864a4915fc01fe">writeChat</a>(const ChatMessage &amp;c)</td><td class="entry"><a class="el" href="classIStream.html">IStream</a></td><td class="entry"></td></tr>
@@ -136,8 +134,8 @@ $(document).ready(function(){initNavTree('classMemoryStream.html',''); initResiz
   <tr class="odd"><td class="entry"><a class="el" href="classIStream.html#a99e4d059e062453e002337919172e930">writeUnsignedShort</a>(std::uint16_t s)</td><td class="entry"><a class="el" href="classIStream.html">IStream</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classIStream.html#a73f4796457a9cfe732b90aea3ad4debc">writeVarInt</a>(std::int32_t i)</td><td class="entry"><a class="el" href="classIStream.html">IStream</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="classIStream.html#a216ac1fcac32082f6c69da5e5f912703">writeVarLong</a>(std::int64_t l)</td><td class="entry"><a class="el" href="classIStream.html">IStream</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>~IStream</b>()=default (defined in <a class="el" href="classIStream.html">IStream</a>)</td><td class="entry"><a class="el" href="classIStream.html">IStream</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classMemoryStream.html#a4c192de9c2a94bfa1d1d9eaa84e1dec1">~MemoryStream</a>()=default</td><td class="entry"><a class="el" href="classMemoryStream.html">MemoryStream</a></td><td class="entry"></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classCipherStream.html#a9d71de1c91d41a1c1bf67b91b385b386">~CipherStream</a>()</td><td class="entry"><a class="el" href="classCipherStream.html">CipherStream</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>~IStream</b>()=default (defined in <a class="el" href="classIStream.html">IStream</a>)</td><td class="entry"><a class="el" href="classIStream.html">IStream</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

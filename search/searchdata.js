@@ -8,8 +8,9 @@ var indexSectionsWithContent =
   5: "bcilmopstu",
   6: "cl",
   7: "adefiow",
-  8: "c",
-  9: "dt"
+  8: "o",
+  9: "cdefirtw",
+  10: "dt"
 };
 
 var indexSectionNames =
@@ -22,8 +23,9 @@ var indexSectionNames =
   5: "variables",
   6: "enums",
   7: "enumvalues",
-  8: "defines",
-  9: "pages"
+  8: "related",
+  9: "defines",
+  10: "pages"
 };
 
 var indexSectionLabels =
@@ -36,7 +38,8 @@ var indexSectionLabels =
   5: "Variables",
   6: "Enumerations",
   7: "Enumerator",
-  8: "Macros",
-  9: "Pages"
+  8: "Friends",
+  9: "Macros",
+  10: "Pages"
 };
 

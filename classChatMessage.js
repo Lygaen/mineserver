@@ -6,6 +6,7 @@ var classChatMessage =
     [ "addExtra", "classChatMessage.html#a725edcc20d93302099ee88113c047d71", null ],
     [ "load", "classChatMessage.html#a943755266c9c152daf084f73497561d9", null ],
     [ "save", "classChatMessage.html#ab84c6a8e3da68e79005bd019d50f9055", null ],
+    [ "operator==", "classChatMessage.html#a3b17b800fec4be26fa28af64cd32875b", null ],
     [ "bold", "classChatMessage.html#aefd4866ba51147667a90dfa78da7df7e", null ],
     [ "color", "classChatMessage.html#abf704dae7d0485af0a9bacfdc277357f", null ],
     [ "insertion", "classChatMessage.html#ad89ce158d6e312c6cd28ff508286aff3", null ],

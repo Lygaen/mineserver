@@ -1,7 +1,7 @@
 var searchData=
 [
   ['randomsecure_0',['randomSecure',['../namespacecrypto.html#a4cc82d519a7538de05cf960f031e44d9',1,'crypto']]],
-  ['read_1',['read',['../classMemoryStream.html#a72769208313900a9dee1b423590cb260',1,'MemoryStream::read()'],['../classNetSocketStream.html#a3bcda89414aa711236dbaa0e548ac8c0',1,'NetSocketStream::read()'],['../classClientSocket.html#af1f8bfae4957063cd484f444f655cfd0',1,'ClientSocket::read()'],['../classIStream.html#a31d842f90a32369ba89f555159615263',1,'IStream::read(std::byte *buffer, std::size_t offset, std::size_t len)=0']]],
+  ['read_1',['read',['../classMemoryStream.html#a72769208313900a9dee1b423590cb260',1,'MemoryStream::read()'],['../classNetSocketStream.html#a3bcda89414aa711236dbaa0e548ac8c0',1,'NetSocketStream::read()'],['../classCipherStream.html#aaa340fad40a76b7fe3c5e0316bb0b01a',1,'CipherStream::read()'],['../classZLibStream.html#afcc3fabfb54e92bf0c868efcf9ef1d27',1,'ZLibStream::read()'],['../classClientSocket.html#af1f8bfae4957063cd484f444f655cfd0',1,'ClientSocket::read()'],['../classIStream.html#a31d842f90a32369ba89f555159615263',1,'IStream::read(std::byte *buffer, std::size_t offset, std::size_t len)=0']]],
   ['readboolean_2',['readBoolean',['../classIStream.html#a5018c4f7c8ca1430f91034c4c3ca9073',1,'IStream']]],
   ['readbyte_3',['readByte',['../classIStream.html#a8fa19805970ccf7d8fe8fb5ceeab6e80',1,'IStream']]],
   ['readchat_4',['readChat',['../classIStream.html#a7a7cee60f8dccdfaa406366911859841',1,'IStream']]],
@@ -15,6 +15,7 @@ var searchData=
   ['readunsignedshort_12',['readUnsignedShort',['../classIStream.html#ab732f3a8cd436ea45e2c421b311310a3',1,'IStream']]],
   ['readvarint_13',['readVarInt',['../classIStream.html#a859cfc2d3d33f29f6598635458e5e8b4',1,'IStream']]],
   ['readvarlong_14',['readVarLong',['../classIStream.html#a7e39033a6dda1bee6ec4cbbdc30542ce',1,'IStream']]],
-  ['rsadecrypt_15',['rsaDecrypt',['../namespacecrypto.html#a1f0ff42fb28d677d0ebf3775082e2327',1,'crypto']]],
-  ['rsaencrypt_16',['rsaEncrypt',['../namespacecrypto.html#a29e78257094408827833ea3e5e7d613e',1,'crypto']]]
+  ['reset_5fcolor_15',['RESET_COLOR',['../logger_8h.html#ad7c3b975e5552a122f836b02fa138502',1,'logger.h']]],
+  ['rsadecrypt_16',['rsaDecrypt',['../namespacecrypto.html#a1f0ff42fb28d677d0ebf3775082e2327',1,'crypto']]],
+  ['rsaencrypt_17',['rsaEncrypt',['../namespacecrypto.html#a29e78257094408827833ea3e5e7d613e',1,'crypto']]]
 ];

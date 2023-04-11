@@ -115,8 +115,10 @@ Inheritance diagram for IStream:</div>
  <div class="center">
   <img src="classIStream.png" usemap="#IStream_map" alt=""/>
   <map id="IStream_map" name="IStream_map">
-<area href="classMemoryStream.html" title="A stream from Memory." alt="MemoryStream" shape="rect" coords="0,56,108,80"/>
-<area href="classNetSocketStream.html" title="Stream from a net client socket." alt="NetSocketStream" shape="rect" coords="118,56,226,80"/>
+<area href="classCipherStream.html" title="AES 128bit CFB8 Cipher stream." alt="CipherStream" shape="rect" coords="0,56,108,80"/>
+<area href="classMemoryStream.html" title="A stream from Memory." alt="MemoryStream" shape="rect" coords="118,56,226,80"/>
+<area href="classNetSocketStream.html" title="Stream from a net client socket." alt="NetSocketStream" shape="rect" coords="236,56,344,80"/>
+<area href="classZLibStream.html" title="ZLib Stream." alt="ZLibStream" shape="rect" coords="354,56,462,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -240,7 +242,7 @@ Public Member Functions</h2></td></tr>
 <p>Flushes the stream. </p>
 <p>Empties the buffer, sending it correctly, resets any offset / data. </p>
 
-<p>Implemented in <a class="el" href="classMemoryStream.html#a497251020f6338694ebe91b8d32b2404">MemoryStream</a>, and <a class="el" href="classNetSocketStream.html#ab8e7a809ac4e51b7d8934ee25740a43b">NetSocketStream</a>.</p>
+<p>Implemented in <a class="el" href="classMemoryStream.html#a497251020f6338694ebe91b8d32b2404">MemoryStream</a>, <a class="el" href="classNetSocketStream.html#ab8e7a809ac4e51b7d8934ee25740a43b">NetSocketStream</a>, <a class="el" href="classCipherStream.html#afda30da86b45fca2f023c365eb441229">CipherStream</a>, and <a class="el" href="classZLibStream.html#ac06417138fc207911d411577de418dfc">ZLibStream</a>.</p>
 
 </div>
 </div>
@@ -294,7 +296,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classMemoryStream.html#a72769208313900a9dee1b423590cb260">MemoryStream</a>, and <a class="el" href="classNetSocketStream.html#a3bcda89414aa711236dbaa0e548ac8c0">NetSocketStream</a>.</p>
+<p>Implemented in <a class="el" href="classMemoryStream.html#a72769208313900a9dee1b423590cb260">MemoryStream</a>, <a class="el" href="classNetSocketStream.html#a3bcda89414aa711236dbaa0e548ac8c0">NetSocketStream</a>, <a class="el" href="classCipherStream.html#aaa340fad40a76b7fe3c5e0316bb0b01a">CipherStream</a>, and <a class="el" href="classZLibStream.html#afcc3fabfb54e92bf0c868efcf9ef1d27">ZLibStream</a>.</p>
 
 </div>
 </div>
@@ -608,7 +610,7 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 
-<p>Implemented in <a class="el" href="classMemoryStream.html#a937182f1358267154235d152a189fcb9">MemoryStream</a>, and <a class="el" href="classNetSocketStream.html#a83190962e72d075db61825ac20e13107">NetSocketStream</a>.</p>
+<p>Implemented in <a class="el" href="classMemoryStream.html#a937182f1358267154235d152a189fcb9">MemoryStream</a>, <a class="el" href="classNetSocketStream.html#a83190962e72d075db61825ac20e13107">NetSocketStream</a>, <a class="el" href="classCipherStream.html#a0daaa917592b42e868b3d2c86ca50ab8">CipherStream</a>, and <a class="el" href="classZLibStream.html#aea1834629a214061404494774e624723">ZLibStream</a>.</p>
 
 </div>
 </div>
@@ -683,7 +685,7 @@ Public Member Functions</h2></td></tr>
 <p>Writes a Chat Message. </p>
 <p>Writes a chat message to the stream in a Minecraft way. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">s</td><td>the string to write </td></tr>
+    <tr><td class="paramname">c</td><td>the chat message to write </td></tr>
   </table>
   </dd>
 </dl>

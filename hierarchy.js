@@ -10,8 +10,10 @@ var hierarchy =
     [ "Field< int >", "classField.html", null ],
     [ "Field< std::string >", "classField.html", null ],
     [ "IStream", "classIStream.html", [
+      [ "CipherStream", "classCipherStream.html", null ],
       [ "MemoryStream", "classMemoryStream.html", null ],
-      [ "NetSocketStream", "classNetSocketStream.html", null ]
+      [ "NetSocketStream", "classNetSocketStream.html", null ],
+      [ "ZLibStream", "classZLibStream.html", null ]
     ] ],
     [ "crypto::MinecraftHash", "classcrypto_1_1MinecraftHash.html", null ],
     [ "ServerSocket", "classServerSocket.html", null ],

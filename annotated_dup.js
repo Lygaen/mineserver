@@ -6,11 +6,13 @@ var annotated_dup =
       [ "ZLibCompressor", "classcrypto_1_1ZLibCompressor.html", "classcrypto_1_1ZLibCompressor" ]
     ] ],
     [ "ChatMessage", "classChatMessage.html", "classChatMessage" ],
+    [ "CipherStream", "classCipherStream.html", "classCipherStream" ],
     [ "ClientSocket", "classClientSocket.html", "classClientSocket" ],
     [ "Config", "classConfig.html", "classConfig" ],
     [ "Field", "classField.html", "classField" ],
     [ "IStream", "classIStream.html", "classIStream" ],
     [ "MemoryStream", "classMemoryStream.html", "classMemoryStream" ],
     [ "NetSocketStream", "classNetSocketStream.html", "classNetSocketStream" ],
-    [ "ServerSocket", "classServerSocket.html", "classServerSocket" ]
+    [ "ServerSocket", "classServerSocket.html", "classServerSocket" ],
+    [ "ZLibStream", "classZLibStream.html", "classZLibStream" ]
 ];

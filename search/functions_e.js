@@ -1,7 +1,7 @@
 var searchData=
 [
   ['warn_0',['warn',['../namespacelogger.html#a97dbc692baa8b760f866b81a93175a19',1,'logger']]],
-  ['write_1',['write',['../classMemoryStream.html#a937182f1358267154235d152a189fcb9',1,'MemoryStream::write()'],['../classClientSocket.html#a6c6d2c5c2026083e0bf5ee78fb31098c',1,'ClientSocket::write()'],['../classNetSocketStream.html#a83190962e72d075db61825ac20e13107',1,'NetSocketStream::write()'],['../classIStream.html#afcca00c0a4e8837f8f432a20d6cf9a04',1,'IStream::write(std::byte *buffer, std::size_t offset, std::size_t len)=0']]],
+  ['write_1',['write',['../classMemoryStream.html#a937182f1358267154235d152a189fcb9',1,'MemoryStream::write()'],['../classClientSocket.html#a6c6d2c5c2026083e0bf5ee78fb31098c',1,'ClientSocket::write()'],['../classZLibStream.html#aea1834629a214061404494774e624723',1,'ZLibStream::write()'],['../classCipherStream.html#a0daaa917592b42e868b3d2c86ca50ab8',1,'CipherStream::write()'],['../classNetSocketStream.html#a83190962e72d075db61825ac20e13107',1,'NetSocketStream::write()'],['../classIStream.html#afcca00c0a4e8837f8f432a20d6cf9a04',1,'IStream::write(std::byte *buffer, std::size_t offset, std::size_t len)=0']]],
   ['writeboolean_2',['writeBoolean',['../classIStream.html#a43f6a2006cc942c435d558c10dec9993',1,'IStream']]],
   ['writebyte_3',['writeByte',['../classIStream.html#ad42f772a092aa8a45888c06469c5b975',1,'IStream']]],
   ['writechat_4',['writeChat',['../classIStream.html#aba48d20d0cc01933e9864a4915fc01fe',1,'IStream']]],
