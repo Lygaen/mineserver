@@ -1,7 +1,8 @@
 <img align="left" width="80" height="80" src="./.data/icon.png" alt="Resume application project app icon">
 <h1>Mineserver</h1>
-[![Build and Tests](https://github.com/Lygaen/mineserver/actions/workflows/cmake.yml/badge.svg)](https://github.com/Lygaen/mineserver/actions/workflows/cmake.yml)
-[![Documentation](https://github.com/Lygaen/mineserver/actions/workflows/doxygen.yml/badge.svg)](https://github.com/Lygaen/mineserver/actions/workflows/doxygen.yml)
+
+[![🧪](https://github.com/Lygaen/mineserver/actions/workflows/cmake.yml/badge.svg)](https://github.com/Lygaen/mineserver/actions/workflows/cmake.yml)
+[![📚](https://github.com/Lygaen/mineserver/actions/workflows/doxygen.yml/badge.svg)](https://github.com/Lygaen/mineserver/actions/workflows/doxygen.yml)
 
 ## Summary
 - [Summary](#summary)
@@ -80,7 +81,7 @@ mkdir build
 cd build
 cmake -DCMAKE_BUILD_TYPE=Release ..
 ```
-You can add `-D<YOUR OPTION>=<VALUE>` to the cmake command before the `...` to modify build parameters for Mineserver (refer to [this](#cmake)).
+You can add `-D<YOUR OPTION>=<VALUE>` to the cmake command before the `..` to modify build parameters for Mineserver (refer to [this](#cmake)).
 
 ### Step 5 : Building
 Open a terminal in the build folder or reuse the terminal in the previous steps, running the following commands. It should start building the executable. If any errors happened, please check that you did all of the previous steps or make an issue on Github, we will be happy to help !
@@ -116,7 +117,7 @@ Here are the different keys listed by section.
 #### Display
 | Key  | Type  | Default Value | Description                                                               |
 | ---- | :---: | :-----------: | ------------------------------------------------------------------------- |
-| chat | motd  |       /       | A message of the day in the form of a [Chat object](https://wiki.vg/Chat) |
+| chat | motd  |       /       | A message of the day in the form of a [Chat object](https://wiki.vg/Chat#Inheritance) |
 #### Other
 | Key      |   Type   | Default Value | Description                                                               |
 | -------- | :------: | :-----------: | ------------------------------------------------------------------------- |
