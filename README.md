@@ -3,6 +3,8 @@
 
 [![🧪](https://github.com/Lygaen/mineserver/actions/workflows/cmake.yml/badge.svg)](https://github.com/Lygaen/mineserver/actions/workflows/cmake.yml)
 [![📚](https://github.com/Lygaen/mineserver/actions/workflows/doxygen.yml/badge.svg)](https://github.com/Lygaen/mineserver/actions/workflows/doxygen.yml)
+[![Github Pages](https://img.shields.io/badge/github%20pages-121013?style=flat&logo=github&logoColor=white)](https://lygaen.github.io/mineserver/)
+[![License](https://img.shields.io/github/license/Lygaen/Mineserver)](https://choosealicense.com/licenses/apache-2.0/)
 
 ## Summary
 - [Summary](#summary)
