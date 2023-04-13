@@ -236,7 +236,7 @@ std::int32_t IStream::readVarInt()
         position += 7;
 
         if (position > 32)
-            throw new std::runtime_error("VarInt is too big !");
+            throw std::runtime_error("VarInt is too big !");
     }
 
     return value;
@@ -275,7 +275,7 @@ std::int64_t IStream::readVarLong()
         position += 7;
 
         if (position > 64)
-            throw new std::runtime_error("VarLong is too big !");
+            throw std::runtime_error("VarLong is too big !");
     }
 
     return value;
@@ -348,7 +348,7 @@ void NetSocketStream::flush()
     /* Not implemented */
 }
 
-CipherStream::CipherStream(IStream &baseStream, std::byte *key, std::byte *iv) : baseStream(baseStream),
+CipherStream::CipherStream(IStream *baseStream, std::byte *key, std::byte *iv) : baseStream(baseStream),
                                                                                  encipher(crypto::CipherState::ENCRYPT, key, iv),
                                                                                  decipher(crypto::CipherState::DECRYPT, key, iv)
 
@@ -357,12 +357,13 @@ CipherStream::CipherStream(IStream &baseStream, std::byte *key, std::byte *iv) :
 
 CipherStream::~CipherStream()
 {
+    delete baseStream;
 }
 
 void CipherStream::read(std::byte *buffer, std::size_t offset, std::size_t len)
 {
     std::byte buf[len];
-    baseStream.read(buf, 0, len);
+    baseStream->read(buf, 0, len);
 
     std::byte outBuf[decipher.calculateBufferSize(len)];
     int outLen = decipher.update(buf, len, outBuf);
@@ -375,20 +376,21 @@ void CipherStream::write(std::byte *buffer, std::size_t offset, std::size_t len)
     std::byte outBuf[encipher.calculateBufferSize(len)];
     int outLen = encipher.update(buffer + offset, len, outBuf);
 
-    baseStream.write(outBuf, 0, outLen);
+    baseStream->write(outBuf, 0, outLen);
 }
 
 void CipherStream::flush()
 {
-    baseStream.flush();
+    baseStream->flush();
 }
 
-ZLibStream::ZLibStream(IStream &baseStream, int level) : baseStream(baseStream), comp(level)
+ZLibStream::ZLibStream(IStream *baseStream, int level) : baseStream(baseStream), comp(level)
 {
 }
 
 ZLibStream::~ZLibStream()
 {
+    delete baseStream;
 }
 
 void ZLibStream::read(std::byte *buffer, std::size_t offset, std::size_t len)
@@ -417,30 +419,30 @@ void ZLibStream::flush()
         m.writeVarInt(dataLength); // Adds dataLength to the buffer because it is used
         packetLength += m.getData().size();
 
-        baseStream.writeVarInt(packetLength);
-        baseStream.writeVarInt(dataLength);
-        baseStream.write(inData.get(), 0, packetLength - m.getData().size());
+        baseStream->writeVarInt(packetLength);
+        baseStream->writeVarInt(dataLength);
+        baseStream->write(inData.get(), 0, packetLength - m.getData().size());
         outBuffer.clear();
     }
 
     // Buffer read
     inBuffer.clear();
 
-    int packetLength = baseStream.readVarInt();
+    int packetLength = baseStream->readVarInt();
     inBuffer.reserve(packetLength);
 
-    int dataLength = baseStream.readVarInt();
+    int dataLength = baseStream->readVarInt();
 
     MemoryStream m;
     m.writeVarInt(dataLength); // Adds dataLength to the buffer because it is used
     std::copy(m.getData().begin(), m.getData().end(), std::back_inserter(inBuffer));
 
     std::byte streamIn[packetLength - inBuffer.size()];
-    baseStream.read(streamIn, 0, packetLength - inBuffer.size());
+    baseStream->read(streamIn, 0, packetLength - inBuffer.size());
     int outLen = dataLength;
     std::unique_ptr<std::byte[]> data = comp.inflate(streamIn, packetLength - inBuffer.size(), &dataLength);
 
     std::copy(data.get(), data.get() + outLen, std::back_inserter(inBuffer));
 
-    baseStream.flush();
+    baseStream->flush();
 }

@@ -12,6 +12,10 @@
 #include <netinet/ip.h>
 #endif // __linux__
 
+ServerSocket::ServerSocket()
+{
+}
+
 ServerSocket::ServerSocket(int type)
 {
     sock = socket(AF_INET, type, 0);
@@ -158,7 +162,7 @@ ssize_t ClientSocket::read(std::byte *buffer, size_t len)
     ssize_t retval = (ssize_t)(recv(sock, buffer, (int)len, 0));
 #endif
     if (retval <= 0)
-        throw new std::runtime_error("Invalid socket read !");
+        throw std::runtime_error("Invalid socket read !");
     return retval;
 }
 

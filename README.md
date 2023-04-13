@@ -107,13 +107,16 @@ Refer to [this piece of documentation](https://cmake.org/cmake/help/latest/prop_
 
 ### Config.json
 Here are the different keys listed by section.
+You can go take a look at [this documentation page](https://lygaen.github.io/mineserver/classConfig.html) if the description is not detailed enough (might have to scroll a bit).
 
 #### Network
-| Key               |             Type             | Default Value | Description                                                |
-| ----------------- | :--------------------------: | :-----------: | ---------------------------------------------------------- |
-| port              |             int              |     25565     | The port for the server to listen on                       |
-| compression_level | int (0 to 9, -1 for default) |      -1       | The compression level for ZLib, 0 means none, 9 means best |
-| online_mode       |             bool             |     true      | Whether to check if the client is crack or not             |
+| Key               |             Type             | Default Value | Description                                                               |
+| ----------------- | :--------------------------: | :-----------: | ------------------------------------------------------------------------- |
+| port              |             int              |     25565     | The port for the server to listen on                                      |
+| compression_level | int (0 to 9, -1 for default) |      -1       | The compression level for ZLib, 0 means none, 9 means best                |
+| online_mode       |             bool             |     true      | Whether to check if the client is crack or not                            |
+| address           |            string            |   127.0.0.1   | The IP address for the server to listen on                                |
+| backlog           |             int              |      100      | The number of pending connections for the server to hold before accepting |
 #### Display
 | Key  | Type  | Default Value | Description                                                               |
 | ---- | :---: | :-----------: | ------------------------------------------------------------------------- |

@@ -157,6 +157,22 @@ public:
      */
     Field<bool> ONLINE_MODE = Field("network", "online_mode", true);
     /**
+     * @brief The address to listen on
+     *
+     * The address for the server to listen on,
+     * really used in advance cases if you have
+     * multiple IPs for one server.
+     */
+    Field<std::string> ADDRESS = Field("network", "address", std::string("127.0.0.1"));
+    /**
+     * @brief The backlog for the server
+     *
+     * The amount of pending connections the server
+     * will hold before accepting them. There should
+     * not be really any need to crank up that number.
+     */
+    Field<int> BACKLOG = Field("network", "backlog", 100);
+    /**
      * @brief The Message of the Day
      *
      * The message of the day to be displayed
@@ -178,7 +194,7 @@ public:
  * as a handy tool to run similar functions
  * on all of the fields by defining the UF(x) macro.
  */
-#define CONFIG_FIELDS UF(PORT) UF(MOTD) UF(LOGLEVEL) UF(COMPRESSION_LVL) UF(ONLINE_MODE)
+#define CONFIG_FIELDS UF(PORT) UF(MOTD) UF(LOGLEVEL) UF(COMPRESSION_LVL) UF(ONLINE_MODE) UF(ADDRESS) UF(BACKLOG)
 
     /**
      * @brief Fetch the instance of the config

@@ -122,6 +122,13 @@ private:
 
 public:
     /**
+     * @brief Construct a new empty Server Socket object
+     *
+     * Only used for late initialization, any call on
+     * an object initialized that way will fail.
+     */
+    ServerSocket();
+    /**
      * @brief Construct a new Server Socket object
      *
      * Creates a server using the POSIX api.

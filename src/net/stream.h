@@ -373,7 +373,7 @@ public:
 class CipherStream : public IStream
 {
 private:
-    IStream &baseStream;
+    IStream *baseStream;
     crypto::AES128CFB8Cipher encipher;
     crypto::AES128CFB8Cipher decipher;
 
@@ -381,11 +381,11 @@ public:
     /**
      * @brief Construct a new Cipher Stream object
      *
-     * @param baseStream the stream to IO on
+     * @param baseStream the stream to IO on, the class takes ownership
      * @param key the key for the AES cipher
      * @param iv the IV for the AES cipher
      */
-    CipherStream(IStream &baseStream, std::byte *key, std::byte *iv);
+    CipherStream(IStream *baseStream, std::byte *key, std::byte *iv);
     /**
      * @brief Destroy the Cipher Stream object
      *
@@ -425,7 +425,7 @@ public:
 class ZLibStream : public IStream
 {
 private:
-    IStream &baseStream;
+    IStream *baseStream;
     crypto::ZLibCompressor comp;
 
     std::vector<std::byte> inBuffer{};
@@ -437,10 +437,10 @@ public:
     /**
      * @brief Construct a new ZLibStream object
      *
-     * @param baseStream the base stream to IO on
+     * @param baseStream the base stream to IO on, the class takes ownership
      * @param level the level of compression
      */
-    ZLibStream(IStream &baseStream, int level);
+    ZLibStream(IStream *baseStream, int level);
     /**
      * @brief Destroy the ZLibStream object
      *

@@ -1,7 +1,12 @@
 #include <iostream>
 #include <utils/config.h>
+#include <server.h>
 
-int main() {
+int main()
+{
     Config config;
+
+    Server server;
+    server.start();
     return 0;
 }

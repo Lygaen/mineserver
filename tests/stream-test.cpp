@@ -288,19 +288,16 @@ TEST(Streams, Network)
 TEST(Streams, Cipher)
 {
     std::unique_ptr<std::byte[]> key = crypto::randomSecure(16);
-    MemoryStream m;
 
-    CipherStream in(m, key.get(), key.get());  // Because Minecraft uses the same
-    CipherStream out(m, key.get(), key.get()); // bytes for key and iv.
+    // Because Minecraft uses the same bytes for key and iv.
+    CipherStream stream(new MemoryStream(), key.get(), key.get());
 
-    runStreamTest(&in, &out);
+    runStreamTest(&stream, &stream);
 }
 
 TEST(Streams, ZLib)
 {
-    MemoryStream m;
-
-    ZLibStream stream(m, Z_DEFAULT_COMPRESSION);
+    ZLibStream stream(new MemoryStream(), Z_DEFAULT_COMPRESSION);
 
     runStreamTest(&stream, &stream, true);
 }
