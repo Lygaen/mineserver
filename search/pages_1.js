@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['todo_20list_0',['Todo List',['../todo.html',1,'']]]
+  ['faq_0',['FAQ',['../index.html',1,'']]]
 ];

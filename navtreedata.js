@@ -25,6 +25,7 @@
 var NAVTREE =
 [
   [ "Mineserver", "index.html", [
+    [ "FAQ", "index.html", "index" ],
     [ "Todo List", "todo.html", null ],
     [ "Deprecated List", "deprecated.html", null ],
     [ "Namespaces", "namespaces.html", [
@@ -61,7 +62,8 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"annotated.html"
+"annotated.html",
+"stream_8h_source.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
