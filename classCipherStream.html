@@ -121,9 +121,9 @@ Inheritance diagram for CipherStream:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a8f981d8f22fa40fdf3b7b155bcf5aa0a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCipherStream.html#a8f981d8f22fa40fdf3b7b155bcf5aa0a">CipherStream</a> (<a class="el" href="classIStream.html">IStream</a> &amp;baseStream, std::byte *key, std::byte *iv)</td></tr>
-<tr class="memdesc:a8f981d8f22fa40fdf3b7b155bcf5aa0a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Cipher Stream object.  <br /></td></tr>
-<tr class="separator:a8f981d8f22fa40fdf3b7b155bcf5aa0a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0a58a0ebc37424b3d0339dbbcfdb2119"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCipherStream.html#a0a58a0ebc37424b3d0339dbbcfdb2119">CipherStream</a> (<a class="el" href="classIStream.html">IStream</a> *baseStream, std::byte *key, std::byte *iv)</td></tr>
+<tr class="memdesc:a0a58a0ebc37424b3d0339dbbcfdb2119"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new Cipher Stream object.  <br /></td></tr>
+<tr class="separator:a0a58a0ebc37424b3d0339dbbcfdb2119"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d71de1c91d41a1c1bf67b91b385b386"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCipherStream.html#a9d71de1c91d41a1c1bf67b91b385b386">~CipherStream</a> ()</td></tr>
 <tr class="memdesc:a9d71de1c91d41a1c1bf67b91b385b386"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the Cipher Stream object.  <br /></td></tr>
 <tr class="separator:a9d71de1c91d41a1c1bf67b91b385b386"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -229,8 +229,8 @@ Public Member Functions</h2></td></tr>
 <div class="textblock"><p>AES 128bit CFB8 Cipher stream. </p>
 <p>Cipher stream for minecraft, is updates for every packet and not finalized then restarted. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a8f981d8f22fa40fdf3b7b155bcf5aa0a" name="a8f981d8f22fa40fdf3b7b155bcf5aa0a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8f981d8f22fa40fdf3b7b155bcf5aa0a">&#9670;&#160;</a></span>CipherStream()</h2>
+<a id="a0a58a0ebc37424b3d0339dbbcfdb2119" name="a0a58a0ebc37424b3d0339dbbcfdb2119"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0a58a0ebc37424b3d0339dbbcfdb2119">&#9670;&#160;</a></span>CipherStream()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -238,7 +238,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">CipherStream::CipherStream </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classIStream.html">IStream</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classIStream.html">IStream</a> *&#160;</td>
           <td class="paramname"><em>baseStream</em>, </td>
         </tr>
         <tr>
@@ -264,7 +264,7 @@ Public Member Functions</h2></td></tr>
 <p>Construct a new Cipher Stream object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">baseStream</td><td>the stream to IO on </td></tr>
+    <tr><td class="paramname">baseStream</td><td>the stream to IO on, the class takes ownership </td></tr>
     <tr><td class="paramname">key</td><td>the key for the AES cipher </td></tr>
     <tr><td class="paramname">iv</td><td>the IV for the AES cipher </td></tr>
   </table>

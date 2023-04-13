@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['color_0',['color',['../classChatMessage.html#abf704dae7d0485af0a9bacfdc277357f',1,'ChatMessage']]],
-  ['compression_5flvl_1',['COMPRESSION_LVL',['../classConfig.html#a57bcad1158820b8408cff38171809b32',1,'Config']]]
+  ['backlog_0',['BACKLOG',['../classConfig.html#a78844faa97f4a8e017ba2b14a600a17e',1,'Config']]],
+  ['bold_1',['bold',['../classChatMessage.html#aefd4866ba51147667a90dfa78da7df7e',1,'ChatMessage']]]
 ];

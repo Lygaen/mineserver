@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['text_0',['text',['../classChatMessage.html#a667910b13603ee95b81ba7ad1d289ef1',1,'ChatMessage']]]
+  ['strikethrough_0',['strikethrough',['../classChatMessage.html#ab47846c7398d7c14ed8c5d9a9e038920',1,'ChatMessage']]]
 ];

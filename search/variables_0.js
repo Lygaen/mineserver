@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['bold_0',['bold',['../classChatMessage.html#aefd4866ba51147667a90dfa78da7df7e',1,'ChatMessage']]]
+  ['address_0',['ADDRESS',['../classConfig.html#a2d9308efd8e264f8118b65658df0257b',1,'Config']]]
 ];

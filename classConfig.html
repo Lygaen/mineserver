@@ -144,6 +144,12 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a8fce02797d172e5ea22979f38c569b9c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classField.html">Field</a>&lt; bool &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConfig.html#a8fce02797d172e5ea22979f38c569b9c">ONLINE_MODE</a> = <a class="el" href="classField.html">Field</a>(&quot;network&quot;, &quot;online_mode&quot;, true)</td></tr>
 <tr class="memdesc:a8fce02797d172e5ea22979f38c569b9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The online mode flag.  <br /></td></tr>
 <tr class="separator:a8fce02797d172e5ea22979f38c569b9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d9308efd8e264f8118b65658df0257b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classField.html">Field</a>&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConfig.html#a2d9308efd8e264f8118b65658df0257b">ADDRESS</a> = <a class="el" href="classField.html">Field</a>(&quot;network&quot;, &quot;address&quot;, std::string(&quot;127.0.0.1&quot;))</td></tr>
+<tr class="memdesc:a2d9308efd8e264f8118b65658df0257b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The address to listen on.  <br /></td></tr>
+<tr class="separator:a2d9308efd8e264f8118b65658df0257b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78844faa97f4a8e017ba2b14a600a17e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classField.html">Field</a>&lt; int &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConfig.html#a78844faa97f4a8e017ba2b14a600a17e">BACKLOG</a> = <a class="el" href="classField.html">Field</a>(&quot;network&quot;, &quot;backlog&quot;, 100)</td></tr>
+<tr class="memdesc:a78844faa97f4a8e017ba2b14a600a17e"><td class="mdescLeft">&#160;</td><td class="mdescRight">The backlog for the server.  <br /></td></tr>
+<tr class="separator:a78844faa97f4a8e017ba2b14a600a17e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abcc2d45023a25f1c3cf5bf8074ffc993"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classField.html">Field</a>&lt; <a class="el" href="classChatMessage.html">ChatMessage</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classConfig.html#abcc2d45023a25f1c3cf5bf8074ffc993">MOTD</a> = <a class="el" href="classField.html">Field</a>(&quot;display&quot;, &quot;motd&quot;, <a class="el" href="classChatMessage.html">ChatMessage</a>(&quot;This is the message of the day !&quot;))</td></tr>
 <tr class="memdesc:abcc2d45023a25f1c3cf5bf8074ffc993"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Message of the Day.  <br /></td></tr>
 <tr class="separator:abcc2d45023a25f1c3cf5bf8074ffc993"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -264,6 +270,40 @@ Public Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a2d9308efd8e264f8118b65658df0257b" name="a2d9308efd8e264f8118b65658df0257b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d9308efd8e264f8118b65658df0257b">&#9670;&#160;</a></span>ADDRESS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classField.html">Field</a>&lt;std::string&gt; Config::ADDRESS = <a class="el" href="classField.html">Field</a>(&quot;network&quot;, &quot;address&quot;, std::string(&quot;127.0.0.1&quot;))</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The address to listen on. </p>
+<p>The address for the server to listen on, really used in advance cases if you have multiple IPs for one server. </p>
+
+</div>
+</div>
+<a id="a78844faa97f4a8e017ba2b14a600a17e" name="a78844faa97f4a8e017ba2b14a600a17e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78844faa97f4a8e017ba2b14a600a17e">&#9670;&#160;</a></span>BACKLOG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classField.html">Field</a>&lt;int&gt; Config::BACKLOG = <a class="el" href="classField.html">Field</a>(&quot;network&quot;, &quot;backlog&quot;, 100)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The backlog for the server. </p>
+<p>The amount of pending connections the server will hold before accepting them. There should not be really any need to crank up that number. </p>
+
+</div>
+</div>
 <a id="a57bcad1158820b8408cff38171809b32" name="a57bcad1158820b8408cff38171809b32"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a57bcad1158820b8408cff38171809b32">&#9670;&#160;</a></span>COMPRESSION_LVL</h2>
 

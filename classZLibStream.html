@@ -121,9 +121,9 @@ Inheritance diagram for ZLibStream:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac7489ef1b6a191ac71c2f8ba161734ee"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZLibStream.html#ac7489ef1b6a191ac71c2f8ba161734ee">ZLibStream</a> (<a class="el" href="classIStream.html">IStream</a> &amp;baseStream, int level)</td></tr>
-<tr class="memdesc:ac7489ef1b6a191ac71c2f8ba161734ee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classZLibStream.html" title="ZLib Stream.">ZLibStream</a> object.  <br /></td></tr>
-<tr class="separator:ac7489ef1b6a191ac71c2f8ba161734ee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adb182ea22673055b92070d15ca14d226"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZLibStream.html#adb182ea22673055b92070d15ca14d226">ZLibStream</a> (<a class="el" href="classIStream.html">IStream</a> *baseStream, int level)</td></tr>
+<tr class="memdesc:adb182ea22673055b92070d15ca14d226"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classZLibStream.html" title="ZLib Stream.">ZLibStream</a> object.  <br /></td></tr>
+<tr class="separator:adb182ea22673055b92070d15ca14d226"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe30c6f669a0d8f8cf8dd12643f14ddc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classZLibStream.html#afe30c6f669a0d8f8cf8dd12643f14ddc">~ZLibStream</a> ()</td></tr>
 <tr class="memdesc:afe30c6f669a0d8f8cf8dd12643f14ddc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the <a class="el" href="classZLibStream.html" title="ZLib Stream.">ZLibStream</a> object.  <br /></td></tr>
 <tr class="separator:afe30c6f669a0d8f8cf8dd12643f14ddc"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -229,8 +229,8 @@ Public Member Functions</h2></td></tr>
 <div class="textblock"><p>ZLib Stream. </p>
 <p>Stream that compresses data according to minecraft standard, writing packet length and data length. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ac7489ef1b6a191ac71c2f8ba161734ee" name="ac7489ef1b6a191ac71c2f8ba161734ee"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac7489ef1b6a191ac71c2f8ba161734ee">&#9670;&#160;</a></span>ZLibStream()</h2>
+<a id="adb182ea22673055b92070d15ca14d226" name="adb182ea22673055b92070d15ca14d226"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adb182ea22673055b92070d15ca14d226">&#9670;&#160;</a></span>ZLibStream()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -238,7 +238,7 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname">ZLibStream::ZLibStream </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classIStream.html">IStream</a> &amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classIStream.html">IStream</a> *&#160;</td>
           <td class="paramname"><em>baseStream</em>, </td>
         </tr>
         <tr>
@@ -258,7 +258,7 @@ Public Member Functions</h2></td></tr>
 <p>Construct a new <a class="el" href="classZLibStream.html" title="ZLib Stream.">ZLibStream</a> object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">baseStream</td><td>the base stream to IO on </td></tr>
+    <tr><td class="paramname">baseStream</td><td>the base stream to IO on, the class takes ownership </td></tr>
     <tr><td class="paramname">level</td><td>the level of compression </td></tr>
   </table>
   </dd>

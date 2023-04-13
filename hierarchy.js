@@ -2,6 +2,7 @@ var hierarchy =
 [
     [ "crypto::AES128CFB8Cipher", "classcrypto_1_1AES128CFB8Cipher.html", null ],
     [ "ChatMessage", "classChatMessage.html", null ],
+    [ "Client", "classClient.html", null ],
     [ "ClientSocket", "classClientSocket.html", null ],
     [ "Config", "classConfig.html", null ],
     [ "Field< T >", "classField.html", null ],
@@ -16,6 +17,7 @@ var hierarchy =
       [ "ZLibStream", "classZLibStream.html", null ]
     ] ],
     [ "crypto::MinecraftHash", "classcrypto_1_1MinecraftHash.html", null ],
+    [ "Server", "classServer.html", null ],
     [ "ServerSocket", "classServerSocket.html", null ],
     [ "crypto::ZLibCompressor", "classcrypto_1_1ZLibCompressor.html", null ]
 ];

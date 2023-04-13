@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['serversocket_0',['ServerSocket',['../classServerSocket.html',1,'']]]
+  ['server_0',['Server',['../classServer.html',1,'']]],
+  ['serversocket_1',['ServerSocket',['../classServerSocket.html',1,'']]]
 ];

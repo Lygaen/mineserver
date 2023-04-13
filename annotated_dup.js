@@ -7,12 +7,14 @@ var annotated_dup =
     ] ],
     [ "ChatMessage", "classChatMessage.html", "classChatMessage" ],
     [ "CipherStream", "classCipherStream.html", "classCipherStream" ],
+    [ "Client", "classClient.html", "classClient" ],
     [ "ClientSocket", "classClientSocket.html", "classClientSocket" ],
     [ "Config", "classConfig.html", "classConfig" ],
     [ "Field", "classField.html", "classField" ],
     [ "IStream", "classIStream.html", "classIStream" ],
     [ "MemoryStream", "classMemoryStream.html", "classMemoryStream" ],
     [ "NetSocketStream", "classNetSocketStream.html", "classNetSocketStream" ],
+    [ "Server", "classServer.html", "classServer" ],
     [ "ServerSocket", "classServerSocket.html", "classServerSocket" ],
     [ "ZLibStream", "classZLibStream.html", "classZLibStream" ]
 ];

@@ -1,5 +1,6 @@
 var classServerSocket =
 [
+    [ "ServerSocket", "classServerSocket.html#a2b3098589541243241ca25495155186c", null ],
     [ "ServerSocket", "classServerSocket.html#a8df16b3cb42a8a6fe5a4bb438b43866b", null ],
     [ "~ServerSocket", "classServerSocket.html#af7672ee8b796b2a3765de1787c4707b0", null ],
     [ "accept", "classServerSocket.html#a15754ba53298af09a2822d32adfe13a7", null ],
