@@ -6,4 +6,4 @@ Because we decided to use C++, I already forsee all of the memory-oriented vulne
 Its not like we got a released version yet.
 
 ## Reporting a Vulnerability
-If you encounter any issues / vulnerability on this project, because it has no impact on the time being, just create an issue.
+If you encounter any issues / vulnerability on this project, use [this link](https://github.com/Lygaen/mineserver/security/advisories/new) to report it.
