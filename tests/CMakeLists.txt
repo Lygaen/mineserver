@@ -15,5 +15,5 @@ foreach (FILE ${SOURCES})
     target_link_libraries(${NAME} PUBLIC gtest_main mineserver-libs)
     target_include_directories(${NAME} PUBLIC ../src/)
 
-    gtest_add_tests(TARGET ${NAME})
+    gtest_discover_tests(${NAME})
 endforeach ()
