@@ -7,3 +7,6 @@
 [submodule "libs/openssl"]
 	path = libs/openssl
 	url = https://github.com/janbar/openssl-cmake
+[submodule "libs/zlib"]
+	path = libs/zlib
+	url = https://github.com/Lygaen/zlib

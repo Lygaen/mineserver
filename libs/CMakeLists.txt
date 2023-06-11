@@ -11,5 +11,5 @@ add_subdirectory(zlib/)
 
 add_subdirectory(openssl/)
 
-target_link_libraries(mineserver-libs PUBLIC crypto zlib)
-target_include_directories(mineserver-libs PUBLIC rapidjson/include)
+target_link_libraries(mineserver-libs PUBLIC crypto zlibstatic)
+target_include_directories(mineserver-libs PUBLIC rapidjson/include zlib)
