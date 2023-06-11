@@ -1,8 +1,8 @@
 var searchData=
 [
   ['faq_0',['FAQ',['../index.html',1,'']]],
-  ['fatal_1',['fatal',['../namespacelogger.html#a556241a1f5dfb02c21e3ba755e5ff4ac',1,'logger']]],
-  ['fatal_2',['FATAL',['../logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a651d8a47a6976d6fe05c0e03fb4cd2d0',1,'logger.h']]],
+  ['fatal_1',['FATAL',['../logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a651d8a47a6976d6fe05c0e03fb4cd2d0',1,'logger.h']]],
+  ['fatal_2',['fatal',['../namespacelogger.html#a556241a1f5dfb02c21e3ba755e5ff4ac',1,'logger']]],
   ['fatal_5fcolor_3',['FATAL_COLOR',['../logger_8h.html#af28559d37017eab92792d364a8f82e21',1,'logger.h']]],
   ['field_4',['Field',['../classField.html',1,'Field&lt; T &gt;'],['../classField.html#a2304aea77ba747f09a4fa109866ef374',1,'Field::Field()']]],
   ['field_3c_20bool_20_3e_5',['Field&lt; bool &gt;',['../classField.html',1,'']]],
