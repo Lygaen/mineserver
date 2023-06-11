@@ -196,6 +196,14 @@ public:
  */
 #define CONFIG_FIELDS UF(PORT) UF(MOTD) UF(LOGLEVEL) UF(COMPRESSION_LVL) UF(ONLINE_MODE) UF(ADDRESS) UF(BACKLOG)
 
+/**
+ * @brief The Version Number
+ *
+ * The corresponding version number for
+ * MC 1.8.9. From wiki.vg, of course.
+ */
+#define MC_VERSION_NUMBER 47
+
     /**
      * @brief Fetch the instance of the config
      *
