@@ -4,9 +4,6 @@
 [submodule "tests/googletest"]
 	path = tests/googletest
 	url = https://github.com/google/googletest
-[submodule "libs/zlib"]
-	path = libs/zlib
-	url = https://github.com/madler/zlib
 [submodule "libs/openssl"]
 	path = libs/openssl
 	url = https://github.com/janbar/openssl-cmake
