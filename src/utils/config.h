@@ -180,6 +180,13 @@ public:
      */
     Field<ChatMessage> MOTD = Field("display", "motd", ChatMessage("This is the message of the day !"));
     /**
+     * @brief Max Players
+     *
+     * The max number of players allowed on the
+     * server.
+     */
+    Field<int> MAX_PLAYERS = Field("server", "max_players", 100);
+    /**
      * @brief The Log Level
      *
      * The minimum ::LogLevel that the ::logger
@@ -194,7 +201,8 @@ public:
  * as a handy tool to run similar functions
  * on all of the fields by defining the UF(x) macro.
  */
-#define CONFIG_FIELDS UF(PORT) UF(MOTD) UF(LOGLEVEL) UF(COMPRESSION_LVL) UF(ONLINE_MODE) UF(ADDRESS) UF(BACKLOG)
+#define CONFIG_FIELDS UF(PORT) UF(MOTD) UF(LOGLEVEL) UF(COMPRESSION_LVL) UF(ONLINE_MODE) UF(ADDRESS) \
+    UF(BACKLOG) UF(MAX_PLAYERS)
 
 /**
  * @brief The Version Number

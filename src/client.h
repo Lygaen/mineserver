@@ -13,6 +13,7 @@
 #define MINESERVER_CLIENT_H
 
 #include <net/stream.h>
+#include <net/types/clientstate.h>
 
 /**
  * @brief Client class
@@ -26,6 +27,7 @@ private:
     ClientSocket sock;
     IStream *stream;
     bool isRunning;
+    ClientState state;
 
     /**
      * @brief Single packet loop

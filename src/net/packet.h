@@ -70,7 +70,7 @@ public:
      * anywhere on any stream, unlike IPackert#write()
      * @param stream the stream to read from
      */
-    virtual void read(const IStream *stream) = 0;
+    virtual void read(IStream *stream) = 0;
     /**
      * @brief Sends a Packet in Minecraft format
      *
