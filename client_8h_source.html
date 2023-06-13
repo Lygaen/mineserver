@@ -106,31 +106,35 @@ $(document).ready(function(){initNavTree('client_8h_source.html',''); initResiza
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#define MINESERVER_CLIENT_H</span></div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;<a class="code" href="stream_8h.html">net/stream.h</a>&gt;</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="classClient.html">   23</a></span><span class="keyword">class </span><a class="code hl_class" href="classClient.html">Client</a></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>{</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <a class="code hl_class" href="classClientSocket.html">ClientSocket</a> sock;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <a class="code hl_class" href="classIStream.html">IStream</a> *stream;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordtype">bool</span> isRunning;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordtype">void</span> loop();</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <a class="code hl_class" href="classClient.html">Client</a>(<a class="code hl_class" href="classClientSocket.html">ClientSocket</a> sock);</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <a class="code hl_function" href="classClient.html#a840e519ca781888cbd54181572ebe3a7">~Client</a>();</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classClient.html#a742373e08a80d993d2651b6fff76f5b9">start</a>();</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classClient.html#a2ac4838875e743af25125d8b5c8eba09">close</a>();</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>};</div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="preprocessor">#endif </span><span class="comment">// MINESERVER_CLIENT_H</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;<a class="code" href="clientstate_8h.html">net/types/clientstate.h</a>&gt;</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="classClient.html">   24</a></span><span class="keyword">class </span><a class="code hl_class" href="classClient.html">Client</a></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>{</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <a class="code hl_class" href="classClientSocket.html">ClientSocket</a> sock;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <a class="code hl_class" href="classIStream.html">IStream</a> *stream;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordtype">bool</span> isRunning;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <a class="code hl_enumeration" href="clientstate_8h.html#a8d4a6786d6193f0e6245c44e4a7bb4a0">ClientState</a> state;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordtype">void</span> loop();</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <a class="code hl_class" href="classClient.html">Client</a>(<a class="code hl_class" href="classClientSocket.html">ClientSocket</a> sock);</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <a class="code hl_function" href="classClient.html#a840e519ca781888cbd54181572ebe3a7">~Client</a>();</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classClient.html#a742373e08a80d993d2651b6fff76f5b9">start</a>();</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classClient.html#a2ac4838875e743af25125d8b5c8eba09">close</a>();</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>};</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span><span class="preprocessor">#endif </span><span class="comment">// MINESERVER_CLIENT_H</span></div>
 <div class="ttc" id="aclassClientSocket_html"><div class="ttname"><a href="classClientSocket.html">ClientSocket</a></div><div class="ttdoc">Network POSIX Client.</div><div class="ttdef"><b>Definition</b> network.h:41</div></div>
-<div class="ttc" id="aclassClient_html"><div class="ttname"><a href="classClient.html">Client</a></div><div class="ttdoc">Client class.</div><div class="ttdef"><b>Definition</b> client.h:24</div></div>
-<div class="ttc" id="aclassClient_html_a2ac4838875e743af25125d8b5c8eba09"><div class="ttname"><a href="classClient.html#a2ac4838875e743af25125d8b5c8eba09">Client::close</a></div><div class="ttdeci">void close()</div><div class="ttdoc">Stops the client.</div><div class="ttdef"><b>Definition</b> client.cpp:49</div></div>
-<div class="ttc" id="aclassClient_html_a742373e08a80d993d2651b6fff76f5b9"><div class="ttname"><a href="classClient.html#a742373e08a80d993d2651b6fff76f5b9">Client::start</a></div><div class="ttdeci">void start()</div><div class="ttdoc">Starts the client, blocking.</div><div class="ttdef"><b>Definition</b> client.cpp:30</div></div>
-<div class="ttc" id="aclassClient_html_a840e519ca781888cbd54181572ebe3a7"><div class="ttname"><a href="classClient.html#a840e519ca781888cbd54181572ebe3a7">Client::~Client</a></div><div class="ttdeci">~Client()</div><div class="ttdoc">Destroy the Client object.</div><div class="ttdef"><b>Definition</b> client.cpp:8</div></div>
+<div class="ttc" id="aclassClient_html"><div class="ttname"><a href="classClient.html">Client</a></div><div class="ttdoc">Client class.</div><div class="ttdef"><b>Definition</b> client.h:25</div></div>
+<div class="ttc" id="aclassClient_html_a2ac4838875e743af25125d8b5c8eba09"><div class="ttname"><a href="classClient.html#a2ac4838875e743af25125d8b5c8eba09">Client::close</a></div><div class="ttdeci">void close()</div><div class="ttdoc">Stops the client.</div><div class="ttdef"><b>Definition</b> client.cpp:71</div></div>
+<div class="ttc" id="aclassClient_html_a742373e08a80d993d2651b6fff76f5b9"><div class="ttname"><a href="classClient.html#a742373e08a80d993d2651b6fff76f5b9">Client::start</a></div><div class="ttdeci">void start()</div><div class="ttdoc">Starts the client, blocking.</div><div class="ttdef"><b>Definition</b> client.cpp:51</div></div>
+<div class="ttc" id="aclassClient_html_a840e519ca781888cbd54181572ebe3a7"><div class="ttname"><a href="classClient.html#a840e519ca781888cbd54181572ebe3a7">Client::~Client</a></div><div class="ttdeci">~Client()</div><div class="ttdoc">Destroy the Client object.</div><div class="ttdef"><b>Definition</b> client.cpp:9</div></div>
 <div class="ttc" id="aclassIStream_html"><div class="ttname"><a href="classIStream.html">IStream</a></div><div class="ttdoc">Stream interface.</div><div class="ttdef"><b>Definition</b> stream.h:31</div></div>
+<div class="ttc" id="aclientstate_8h_html"><div class="ttname"><a href="clientstate_8h.html">clientstate.h</a></div><div class="ttdoc">The file containing just the enum of client state.</div></div>
+<div class="ttc" id="aclientstate_8h_html_a8d4a6786d6193f0e6245c44e4a7bb4a0"><div class="ttname"><a href="clientstate_8h.html#a8d4a6786d6193f0e6245c44e4a7bb4a0">ClientState</a></div><div class="ttdeci">ClientState</div><div class="ttdoc">Client State.</div><div class="ttdef"><b>Definition</b> clientstate.h:29</div></div>
 <div class="ttc" id="astream_8h_html"><div class="ttname"><a href="stream_8h.html">stream.h</a></div><div class="ttdoc">The file containing data for all of the streams.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

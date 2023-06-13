@@ -111,15 +111,24 @@ $(document).ready(function(){initNavTree('classIPacket.html',''); initResizable(
  <a href="classIPacket.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="packet_8h_source.html">packet.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for IPacket:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classIPacket.png" usemap="#IPacket_map" alt=""/>
+  <map id="IPacket_map" name="IPacket_map">
+<area href="classHandshakePacket.html" title="Handshake Packet." alt="HandshakePacket" shape="rect" coords="0,56,113,80"/>
+  </map>
+</div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a717a3f51c5e483285fabae442e715d5b"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIPacket.html#a717a3f51c5e483285fabae442e715d5b">~IPacket</a> ()=default</td></tr>
 <tr class="memdesc:a717a3f51c5e483285fabae442e715d5b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the <a class="el" href="classIPacket.html" title="Interface for all Packets.">IPacket</a> object.  <br /></td></tr>
 <tr class="separator:a717a3f51c5e483285fabae442e715d5b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8e490f7c07c8664620ce40492113841b"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIPacket.html#a8e490f7c07c8664620ce40492113841b">read</a> (const <a class="el" href="classIStream.html">IStream</a> *stream)=0</td></tr>
-<tr class="memdesc:a8e490f7c07c8664620ce40492113841b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads data from the stream to a packet.  <br /></td></tr>
-<tr class="separator:a8e490f7c07c8664620ce40492113841b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a526fbe4dcb7f9c53af586a000d75ccdd"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIPacket.html#a526fbe4dcb7f9c53af586a000d75ccdd">read</a> (<a class="el" href="classIStream.html">IStream</a> *stream)=0</td></tr>
+<tr class="memdesc:a526fbe4dcb7f9c53af586a000d75ccdd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads data from the stream to a packet.  <br /></td></tr>
+<tr class="separator:a526fbe4dcb7f9c53af586a000d75ccdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a64b32dbe172ff23bc078fd329e37cc63"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIPacket.html#a64b32dbe172ff23bc078fd329e37cc63">send</a> (<a class="el" href="classIStream.html">IStream</a> *stream)</td></tr>
 <tr class="memdesc:a64b32dbe172ff23bc078fd329e37cc63"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a Packet in Minecraft format.  <br /></td></tr>
 <tr class="separator:a64b32dbe172ff23bc078fd329e37cc63"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -205,8 +214,8 @@ Protected Attributes</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a8e490f7c07c8664620ce40492113841b" name="a8e490f7c07c8664620ce40492113841b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a8e490f7c07c8664620ce40492113841b">&#9670;&#160;</a></span>read()</h2>
+<a id="a526fbe4dcb7f9c53af586a000d75ccdd" name="a526fbe4dcb7f9c53af586a000d75ccdd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a526fbe4dcb7f9c53af586a000d75ccdd">&#9670;&#160;</a></span>read()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -217,7 +226,7 @@ Protected Attributes</h2></td></tr>
         <tr>
           <td class="memname">virtual void IPacket::read </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classIStream.html">IStream</a> *&#160;</td>
+          <td class="paramtype"><a class="el" href="classIStream.html">IStream</a> *&#160;</td>
           <td class="paramname"><em>stream</em></td><td>)</td>
           <td></td>
         </tr>
@@ -236,6 +245,8 @@ Protected Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p>Implemented in <a class="el" href="classHandshakePacket.html#a3985c22c4837247e49a34dd4cc6cfff9">HandshakePacket</a>.</p>
 
 </div>
 </div>
@@ -296,6 +307,8 @@ Protected Attributes</h2></td></tr>
   </table>
   </dd>
 </dl>
+
+<p>Implemented in <a class="el" href="classHandshakePacket.html#acc687cb298e9f3b66bcd6360d29086fc">HandshakePacket</a>.</p>
 
 </div>
 </div>

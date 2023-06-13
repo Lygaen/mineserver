@@ -10,7 +10,9 @@ var hierarchy =
     [ "Field< ChatMessage >", "classField.html", null ],
     [ "Field< int >", "classField.html", null ],
     [ "Field< std::string >", "classField.html", null ],
-    [ "IPacket", "classIPacket.html", null ],
+    [ "IPacket", "classIPacket.html", [
+      [ "HandshakePacket", "classHandshakePacket.html", null ]
+    ] ],
     [ "IStream", "classIStream.html", [
       [ "CipherStream", "classCipherStream.html", null ],
       [ "MemoryStream", "classMemoryStream.html", null ],

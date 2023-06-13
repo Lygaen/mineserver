@@ -26,8 +26,8 @@ var NAVTREE =
 [
   [ "Mineserver", "index.html", [
     [ "FAQ", "index.html", "index" ],
-    [ "Todo List", "todo.html", null ],
     [ "Deprecated List", "deprecated.html", null ],
+    [ "Todo List", "todo.html", null ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
@@ -63,7 +63,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"namespacemembers_func.html"
+"namespacecrypto.html#a1f0ff42fb28d677d0ebf3775082e2327"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

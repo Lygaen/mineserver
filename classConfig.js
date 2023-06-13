@@ -9,6 +9,7 @@ var classConfig =
     [ "BACKLOG", "classConfig.html#a78844faa97f4a8e017ba2b14a600a17e", null ],
     [ "COMPRESSION_LVL", "classConfig.html#a57bcad1158820b8408cff38171809b32", null ],
     [ "LOGLEVEL", "classConfig.html#ad015e9d391c06a1073cc0d09736319f3", null ],
+    [ "MAX_PLAYERS", "classConfig.html#a6d3f8fa249a5909b1fdf1c209c449312", null ],
     [ "MOTD", "classConfig.html#abcc2d45023a25f1c3cf5bf8074ffc993", null ],
     [ "ONLINE_MODE", "classConfig.html#a8fce02797d172e5ea22979f38c569b9c", null ],
     [ "PORT", "classConfig.html#a6ee00c8b627479c136aad4b2366b6426", null ]

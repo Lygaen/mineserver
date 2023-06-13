@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['memorystream_0',['MemoryStream',['../classMemoryStream.html',1,'']]],
-  ['minecrafthash_1',['MinecraftHash',['../classcrypto_1_1MinecraftHash.html',1,'crypto']]]
+  ['ipacket_0',['IPacket',['../classIPacket.html',1,'']]],
+  ['istream_1',['IStream',['../classIStream.html',1,'']]]
 ];

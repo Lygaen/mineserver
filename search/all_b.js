@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['obfuscated_0',['obfuscated',['../classChatMessage.html#ad6a3d9687bcdee31ac06fa2581f439db',1,'ChatMessage']]],
-  ['off_1',['OFF',['../logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9aac132f2982b98bcaa3445e535a03ff75',1,'logger.h']]],
-  ['online_5fmode_2',['ONLINE_MODE',['../classConfig.html#a8fce02797d172e5ea22979f38c569b9c',1,'Config']]],
-  ['operator_3d_3d_3',['operator==',['../classChatMessage.html#a3b17b800fec4be26fa28af64cd32875b',1,'ChatMessage']]]
+  ['netsocketstream_0',['NetSocketStream',['../classNetSocketStream.html',1,'NetSocketStream'],['../classNetSocketStream.html#a6ddbb89505842e91429aeb7ec38febbc',1,'NetSocketStream::NetSocketStream()']]],
+  ['network_2eh_1',['network.h',['../network_8h.html',1,'']]],
+  ['nextstate_2',['nextState',['../classHandshakePacket.html#a96b7a2867a9f3717a70caecbd58d6804',1,'HandshakePacket']]]
 ];

@@ -11,6 +11,7 @@ var annotated_dup =
     [ "ClientSocket", "classClientSocket.html", "classClientSocket" ],
     [ "Config", "classConfig.html", "classConfig" ],
     [ "Field", "classField.html", "classField" ],
+    [ "HandshakePacket", "classHandshakePacket.html", "classHandshakePacket" ],
     [ "IPacket", "classIPacket.html", "classIPacket" ],
     [ "IStream", "classIStream.html", "classIStream" ],
     [ "MemoryStream", "classMemoryStream.html", "classMemoryStream" ],
