@@ -211,6 +211,13 @@ public:
  * MC 1.8.9. From wiki.vg, of course.
  */
 #define MC_VERSION_NUMBER 47
+/**
+ * @brief The Version Name
+ *
+ * The corresponding version name
+ * that should be sent to connecting clients.
+ */
+#define MC_VERSION_NAME "Mineserver 1.8.9"
 
     /**
      * @brief Fetch the instance of the config

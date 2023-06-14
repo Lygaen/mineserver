@@ -1,4 +1,5 @@
 #include "packet.h"
+#include <utils/logger.h>
 
 void IPacket::send(IStream *stream)
 {
@@ -11,4 +12,6 @@ void IPacket::send(IStream *stream)
     stream->writeVarInt(d.size());
 
     stream->write(&d[0], 0, d.size());
+
+    logger::debug("C<-S Len:%d Id:%d", d.size(), id);
 }

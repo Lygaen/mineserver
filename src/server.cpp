@@ -22,7 +22,7 @@ Server::Server() : sock() // We initialize later once the network is initialized
 Server::~Server()
 {
     INSTANCE = nullptr;
-    if (ServerSocket::cleanup())
+    if (!ServerSocket::cleanup())
     {
         logger::error("Could not clean up properly !");
     }
@@ -55,6 +55,7 @@ void Server::start()
 
 void Server::stop()
 {
+    logger::info("Stopping server...");
     isRunning = false;
     sock.close();
 }

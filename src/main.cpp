@@ -94,12 +94,21 @@
 #include <iostream>
 #include <utils/config.h>
 #include <server.h>
+#include <csignal>
 
 int main()
 {
     Config config;
 
     Server server;
+
+    std::signal(SIGINT, [](int signal)
+                { Server::inst()->stop(); });
+    std::signal(SIGKILL, [](int signal)
+                { Server::inst()->stop(); });
+    std::signal(SIGQUIT, [](int signal)
+                { Server::inst()->stop(); });
+
     server.start();
     return 0;
 }
