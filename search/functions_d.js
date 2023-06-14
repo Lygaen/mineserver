@@ -1,10 +1,20 @@
 var searchData=
 [
-  ['save_0',['save',['../classChatMessage.html#ab84c6a8e3da68e79005bd019d50f9055',1,'ChatMessage::save()'],['../classField.html#a4f69f9beef47fcb6a0ac75fdc2315a96',1,'Field::save()'],['../classConfig.html#ae7e68962f22a2c965a61702de1c637db',1,'Config::save()']]],
-  ['send_1',['send',['../classIPacket.html#a64b32dbe172ff23bc078fd329e37cc63',1,'IPacket']]],
-  ['server_2',['Server',['../classServer.html#ad5ec9462b520e59f7ea831e157ee5e59',1,'Server']]],
-  ['serversocket_3',['ServerSocket',['../classServerSocket.html#a2b3098589541243241ca25495155186c',1,'ServerSocket::ServerSocket()'],['../classServerSocket.html#a8df16b3cb42a8a6fe5a4bb438b43866b',1,'ServerSocket::ServerSocket(int type)']]],
-  ['setvalue_4',['setValue',['../classField.html#a8fffa4866eabc15ec6cdf7db860a4839',1,'Field']]],
-  ['start_5',['start',['../classClient.html#a742373e08a80d993d2651b6fff76f5b9',1,'Client::start()'],['../classServer.html#a7eac07d2582fa01c2671362efa955b31',1,'Server::start()'],['../classServerSocket.html#abfabfd9e132aa6b73dcf77792d8b6ec9',1,'ServerSocket::start()']]],
-  ['stop_6',['stop',['../classServer.html#a07c45a7e101a3926d8f9685c3c5d14e4',1,'Server']]]
+  ['randomsecure_0',['randomSecure',['../namespacecrypto.html#a4cc82d519a7538de05cf960f031e44d9',1,'crypto']]],
+  ['read_1',['read',['../classHandshakePacket.html#a3985c22c4837247e49a34dd4cc6cfff9',1,'HandshakePacket::read()'],['../classPingPongPacket.html#ac12aae70ed69abc61d7b0494e1889725',1,'PingPongPacket::read()'],['../classServerListPacket.html#a287e1d2a8552760b14583d72d8b16a1c',1,'ServerListPacket::read()'],['../classIStream.html#a31d842f90a32369ba89f555159615263',1,'IStream::read()'],['../classMemoryStream.html#a72769208313900a9dee1b423590cb260',1,'MemoryStream::read()'],['../classNetSocketStream.html#a3bcda89414aa711236dbaa0e548ac8c0',1,'NetSocketStream::read()'],['../classCipherStream.html#aaa340fad40a76b7fe3c5e0316bb0b01a',1,'CipherStream::read()'],['../classZLibStream.html#afcc3fabfb54e92bf0c868efcf9ef1d27',1,'ZLibStream::read()'],['../classClientSocket.html#af1f8bfae4957063cd484f444f655cfd0',1,'ClientSocket::read()'],['../classIPacket.html#a526fbe4dcb7f9c53af586a000d75ccdd',1,'IPacket::read()']]],
+  ['readboolean_2',['readBoolean',['../classIStream.html#a5018c4f7c8ca1430f91034c4c3ca9073',1,'IStream']]],
+  ['readbyte_3',['readByte',['../classIStream.html#a8fa19805970ccf7d8fe8fb5ceeab6e80',1,'IStream']]],
+  ['readchat_4',['readChat',['../classIStream.html#a7a7cee60f8dccdfaa406366911859841',1,'IStream']]],
+  ['readdouble_5',['readDouble',['../classIStream.html#abd4cf2ff901b755eb18d8e8dcdfcc978',1,'IStream']]],
+  ['readfloat_6',['readFloat',['../classIStream.html#a45316837917e851f70c70f030ca72ba8',1,'IStream']]],
+  ['readint_7',['readInt',['../classIStream.html#a18d5271e5f61e2fcba03d6adb5cdfa94',1,'IStream']]],
+  ['readlong_8',['readLong',['../classIStream.html#a0a1be0c6128b2227b8ef3f1fb4cea61b',1,'IStream']]],
+  ['readshort_9',['readShort',['../classIStream.html#a9df65bb803b2cfb590938c67be034a59',1,'IStream']]],
+  ['readstring_10',['readString',['../classIStream.html#a7c251020639d2cdb336e2f6ed23d768b',1,'IStream']]],
+  ['readunsignedbyte_11',['readUnsignedByte',['../classIStream.html#ad683141de1765edde0ef88c3e78681f8',1,'IStream']]],
+  ['readunsignedshort_12',['readUnsignedShort',['../classIStream.html#ab732f3a8cd436ea45e2c421b311310a3',1,'IStream']]],
+  ['readvarint_13',['readVarInt',['../classIStream.html#a859cfc2d3d33f29f6598635458e5e8b4',1,'IStream']]],
+  ['readvarlong_14',['readVarLong',['../classIStream.html#a7e39033a6dda1bee6ec4cbbdc30542ce',1,'IStream']]],
+  ['rsadecrypt_15',['rsaDecrypt',['../namespacecrypto.html#a1f0ff42fb28d677d0ebf3775082e2327',1,'crypto']]],
+  ['rsaencrypt_16',['rsaEncrypt',['../namespacecrypto.html#a29e78257094408827833ea3e5e7d613e',1,'crypto']]]
 ];

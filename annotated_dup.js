@@ -16,7 +16,9 @@ var annotated_dup =
     [ "IStream", "classIStream.html", "classIStream" ],
     [ "MemoryStream", "classMemoryStream.html", "classMemoryStream" ],
     [ "NetSocketStream", "classNetSocketStream.html", "classNetSocketStream" ],
+    [ "PingPongPacket", "classPingPongPacket.html", "classPingPongPacket" ],
     [ "Server", "classServer.html", "classServer" ],
+    [ "ServerListPacket", "classServerListPacket.html", "classServerListPacket" ],
     [ "ServerSocket", "classServerSocket.html", "classServerSocket" ],
     [ "ZLibStream", "classZLibStream.html", "classZLibStream" ]
 ];

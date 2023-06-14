@@ -11,7 +11,9 @@ var hierarchy =
     [ "Field< int >", "classField.html", null ],
     [ "Field< std::string >", "classField.html", null ],
     [ "IPacket", "classIPacket.html", [
-      [ "HandshakePacket", "classHandshakePacket.html", null ]
+      [ "HandshakePacket", "classHandshakePacket.html", null ],
+      [ "PingPongPacket", "classPingPongPacket.html", null ],
+      [ "ServerListPacket", "classServerListPacket.html", null ]
     ] ],
     [ "IStream", "classIStream.html", [
       [ "CipherStream", "classCipherStream.html", null ],

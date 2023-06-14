@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['zlibcompressor_0',['ZLibCompressor',['../classcrypto_1_1ZLibCompressor.html',1,'crypto']]],
-  ['zlibstream_1',['ZLibStream',['../classZLibStream.html',1,'']]]
+  ['server_0',['Server',['../classServer.html',1,'']]],
+  ['serverlistpacket_1',['ServerListPacket',['../classServerListPacket.html',1,'']]],
+  ['serversocket_2',['ServerSocket',['../classServerSocket.html',1,'']]]
 ];
