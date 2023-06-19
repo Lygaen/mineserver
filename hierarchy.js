@@ -9,7 +9,11 @@ var hierarchy =
     [ "Field< bool >", "classField.html", null ],
     [ "Field< ChatMessage >", "classField.html", null ],
     [ "Field< int >", "classField.html", null ],
+    [ "Field< PNGFile >", "classField.html", null ],
     [ "Field< std::string >", "classField.html", null ],
+    [ "File", "classFile.html", [
+      [ "PNGFile", "classPNGFile.html", null ]
+    ] ],
     [ "IPacket", "classIPacket.html", [
       [ "HandshakePacket", "classHandshakePacket.html", null ],
       [ "PingPongPacket", "classPingPongPacket.html", null ],

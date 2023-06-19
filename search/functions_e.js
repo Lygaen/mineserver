@@ -5,7 +5,8 @@ var searchData=
   ['server_2',['Server',['../classServer.html#ad5ec9462b520e59f7ea831e157ee5e59',1,'Server']]],
   ['serverlistpacket_3',['ServerListPacket',['../classServerListPacket.html#ad88daa45371008f29333f11ee1c4bd3e',1,'ServerListPacket']]],
   ['serversocket_4',['ServerSocket',['../classServerSocket.html#a2b3098589541243241ca25495155186c',1,'ServerSocket::ServerSocket()'],['../classServerSocket.html#a8df16b3cb42a8a6fe5a4bb438b43866b',1,'ServerSocket::ServerSocket(int type)']]],
-  ['setvalue_5',['setValue',['../classField.html#a8fffa4866eabc15ec6cdf7db860a4839',1,'Field']]],
-  ['start_6',['start',['../classClient.html#a742373e08a80d993d2651b6fff76f5b9',1,'Client::start()'],['../classServer.html#a7eac07d2582fa01c2671362efa955b31',1,'Server::start()'],['../classServerSocket.html#abfabfd9e132aa6b73dcf77792d8b6ec9',1,'ServerSocket::start()']]],
-  ['stop_7',['stop',['../classServer.html#a07c45a7e101a3926d8f9685c3c5d14e4',1,'Server']]]
+  ['setpath_5',['setPath',['../classFile.html#a2a4a2243e3df06714a001ad31a605a38',1,'File']]],
+  ['setvalue_6',['setValue',['../classField.html#a8fffa4866eabc15ec6cdf7db860a4839',1,'Field']]],
+  ['start_7',['start',['../classClient.html#a742373e08a80d993d2651b6fff76f5b9',1,'Client::start()'],['../classServer.html#a7eac07d2582fa01c2671362efa955b31',1,'Server::start()'],['../classServerSocket.html#abfabfd9e132aa6b73dcf77792d8b6ec9',1,'ServerSocket::start()']]],
+  ['stop_8',['stop',['../classServer.html#a07c45a7e101a3926d8f9685c3c5d14e4',1,'Server']]]
 ];
