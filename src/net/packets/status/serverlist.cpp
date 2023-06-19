@@ -28,10 +28,13 @@ void ServerListPacket::write(IStream *stream)
     Config::inst()->MOTD.getValue().save(description, alloc);
     document.AddMember("description", description, alloc);
 
-    // TODO Add favicon in base64 with prepending "data:image/png;base64,"
-    // rapidjson::Value favicon(rapidjson::kStringType);
-    // --- load the favicon from config ---
-    // document.AddMember("favicon", favicon, alloc);
+    rapidjson::Value favicon(rapidjson::kStringType);
+
+    const std::string &data = Config::inst()->ICON_FILE.getValue().getBase64String();
+    std::string f = std::string("data:image/png;base64,") + data;
+    favicon.SetString(f.c_str(), f.size());
+
+    document.AddMember("favicon", favicon, alloc);
 
     rapidjson::StringBuffer buffer;
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);

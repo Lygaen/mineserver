@@ -28,6 +28,17 @@ Server::~Server()
     }
 }
 
+void Server::checks()
+{
+    const PNGFile &icon = Config::inst()->ICON_FILE.getValue();
+    if (icon.getHeight() != icon.getWidth() != 64)
+    {
+        // Notchian clients only render 64x64 images
+        logger::warn("Invalid image ! Check it's resolution (must be 64x64) or just if it's there !");
+        Config::inst()->ICON_FILE.setValue(PNGFile()); // Frees memory and deletes config entry
+    }
+}
+
 void Server::start()
 {
     std::string addr = Config::inst()->ADDRESS.getValue();
@@ -39,6 +50,9 @@ void Server::start()
         exit(EXIT_FAILURE);
     }
     sock.start(Config::inst()->BACKLOG.getValue());
+
+    checks();
+
     logger::info("Server started on %s:%d !", addr.c_str(), port);
 
     isRunning = true;

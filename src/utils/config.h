@@ -15,6 +15,7 @@
 #include <memory>
 #include <rapidjson/document.h>
 #include <net/types/chatmessage.h>
+#include <utils/file.h>
 
 /**
  * @brief The Field Object for the ::Config
@@ -193,6 +194,13 @@ public:
      * should use.
      */
     Field<std::string> LOGLEVEL = Field("other", "loglevel", std::string("ALL"));
+    /**
+     * @brief The Icon File
+     *
+     * The icon file that is sent to the server
+     * while pinging.
+     */
+    Field<PNGFile> ICON_FILE = Field("display", "icon_file", PNGFile());
 
 /**
  * @brief List of all the config fields
@@ -202,7 +210,7 @@ public:
  * on all of the fields by defining the UF(x) macro.
  */
 #define CONFIG_FIELDS UF(PORT) UF(MOTD) UF(LOGLEVEL) UF(COMPRESSION_LVL) UF(ONLINE_MODE) UF(ADDRESS) \
-    UF(BACKLOG) UF(MAX_PLAYERS)
+    UF(BACKLOG) UF(MAX_PLAYERS) UF(ICON_FILE)
 
 /**
  * @brief The Version Number
@@ -226,7 +234,8 @@ public:
      * the singleton class-like.
      * @return ::Config* The instance of the config
      */
-    static Config *inst()
+    static Config *
+    inst()
     {
         return INSTANCE;
     }

@@ -28,6 +28,15 @@ private:
     ServerSocket sock;
     bool isRunning{};
 
+    /**
+     * @brief Internal Checks
+     *
+     * Internal checks that will not
+     * prevent the integrity of the
+     * server.
+     */
+    void checks();
+
 public:
     /**
      * @brief Construct a new Server object

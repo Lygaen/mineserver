@@ -18,7 +18,7 @@ inline rapidjson::Document::ConstMemberIterator Field<T>::canSafelyRead(const ra
     auto loc = document.FindMember(section);
     if (loc == document.MemberEnd())
         return document.MemberEnd();
-    return loc->value.IsObject() ? document.MemberEnd() : loc->value.FindMember(key);
+    return !loc->value.IsObject() ? document.MemberEnd() : loc->value.FindMember(key);
 }
 
 template <typename T>
@@ -114,6 +114,28 @@ void Field<std::string>::save(rapidjson::Document &document)
 {
     rapidjson::Value v;
     v.SetString(value.c_str(), value.length(), document.GetAllocator());
+    writeSafely(document, v);
+}
+
+template <>
+void Field<PNGFile>::load(const rapidjson::Document &document)
+{
+    auto loc = canSafelyRead(document);
+    if (loc == document.MemberEnd())
+        return;
+
+    if (!loc->value.IsString())
+        return;
+
+    std::string s = std::string(std::string(loc->value.GetString(), loc->value.GetStringLength()));
+    if (!s.empty())
+        value = PNGFile(s);
+}
+template <>
+void Field<PNGFile>::save(rapidjson::Document &document)
+{
+    rapidjson::Value v;
+    v.SetString(value.getPath().c_str(), value.getPath().length(), document.GetAllocator());
     writeSafely(document, v);
 }
 
