@@ -25,7 +25,7 @@ class Client
 {
 private:
     ClientSocket sock;
-    IStream *stream;
+    IMCStream *stream;
     bool isRunning;
     ClientState state;
 

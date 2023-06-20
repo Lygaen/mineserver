@@ -23,7 +23,7 @@ protected:
      * Writes server list data to stream
      * @param stream the stream to write to
      */
-    void write(IStream *stream) override;
+    void write(IMCStream *stream) override;
 
 public:
     /**
@@ -45,7 +45,7 @@ public:
      * @param stream the stream to read from
      * @deprecated No need to call it, it does nothing
      */
-    void read(IStream *stream) override;
+    void read(IMCStream *stream) override;
 };
 
 #endif // MINESERVER_SERVERLIST_H

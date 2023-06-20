@@ -104,10 +104,6 @@ int main()
 
     std::signal(SIGINT, [](int signal)
                 { Server::inst()->stop(); });
-    std::signal(SIGKILL, [](int signal)
-                { Server::inst()->stop(); });
-    std::signal(SIGQUIT, [](int signal)
-                { Server::inst()->stop(); });
 
     server.start();
     return 0;

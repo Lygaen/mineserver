@@ -5,7 +5,7 @@
 #include <utils/config.h>
 #include <utils/logger.h>
 
-void ServerListPacket::write(IStream *stream)
+void ServerListPacket::write(IMCStream *stream)
 {
     rapidjson::Document document;
     document.SetObject();
@@ -43,7 +43,7 @@ void ServerListPacket::write(IStream *stream)
     stream->writeString(std::string(buffer.GetString(), buffer.GetSize()));
 }
 
-void ServerListPacket::read(IStream *stream)
+void ServerListPacket::read(IMCStream *stream)
 {
     /* Nothing wrong if you call it but just unecessary bloat */
 }

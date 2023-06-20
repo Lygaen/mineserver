@@ -42,7 +42,7 @@ protected:
      * children classes.
      * @param stream the stream to write to
      */
-    virtual void write(IStream *stream) = 0;
+    virtual void write(IMCStream *stream) = 0;
 
     /**
      * @brief Construct a new IPacket object
@@ -70,7 +70,7 @@ public:
      * anywhere on any stream, unlike IPackert#write()
      * @param stream the stream to read from
      */
-    virtual void read(IStream *stream) = 0;
+    virtual void read(IMCStream *stream) = 0;
     /**
      * @brief Sends a Packet in Minecraft format
      *
@@ -80,7 +80,7 @@ public:
      * as to their structure.
      * @param stream
      */
-    void send(IStream *stream);
+    void send(IMCStream *stream);
 };
 
 #endif // MINESERVER_PACKET_H

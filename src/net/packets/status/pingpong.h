@@ -29,7 +29,7 @@ protected:
      * Writes back the payload obtained
      * @param stream the stream to write to
      */
-    void write(IStream *stream) override;
+    void write(IMCStream *stream) override;
 
 public:
     /**
@@ -51,7 +51,7 @@ public:
      * Reads the payload from the client
      * @param stream the stream to read from
      */
-    void read(IStream *stream) override;
+    void read(IMCStream *stream) override;
 };
 
 #endif // MINESERVER_PINGPONG_H

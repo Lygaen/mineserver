@@ -216,7 +216,7 @@ TEST(MinecraftStream, VarLong)
     ASSERT_EQ(m.readVarLong(), LONG_MAX);
 }
 
-void runStreamTest(IStream *reader, IStream *writer, bool shouldReadVarInt = false)
+void runStreamTest(IMCStream *reader, IMCStream *writer, bool shouldReadVarInt = false)
 {
     writer->writeBoolean(true);
     writer->writeByte(SCHAR_MAX);

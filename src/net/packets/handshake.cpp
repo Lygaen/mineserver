@@ -4,13 +4,13 @@
 #include <locale>
 #include <utils/config.h>
 
-void HandshakePacket::write(IStream *stream)
+void HandshakePacket::write(IMCStream *stream)
 {
     // Does nothing
     throw std::runtime_error("Handshake write should not be called !");
 }
 
-void HandshakePacket::read(IStream *stream)
+void HandshakePacket::read(IMCStream *stream)
 {
     protocolVersion = stream->readVarInt();
     serverAddress = stream->readString();

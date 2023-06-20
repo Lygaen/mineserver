@@ -1,11 +1,11 @@
 #include "pingpong.h"
 
-void PingPongPacket::write(IStream *stream)
+void PingPongPacket::write(IMCStream *stream)
 {
     stream->writeLong(payload);
 }
 
-void PingPongPacket::read(IStream *stream)
+void PingPongPacket::read(IMCStream *stream)
 {
     payload = stream->readLong();
 }

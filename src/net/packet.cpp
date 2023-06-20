@@ -1,7 +1,7 @@
 #include "packet.h"
 #include <utils/logger.h>
 
-void IPacket::send(IStream *stream)
+void IPacket::send(IMCStream *stream)
 {
     MemoryStream m;
     m.writeVarInt(id);

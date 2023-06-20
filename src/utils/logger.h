@@ -67,6 +67,9 @@
 #define DEBUG_COLOR ""
 #endif
 
+// Because windows already uses the name
+#undef ERROR
+
 /**
  * @brief The LogLevel used internally by the logger.
  *

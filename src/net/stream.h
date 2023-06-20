@@ -27,10 +27,10 @@
  * implement, and it has the necessary functions
  * for IO using the Minecraft protocol.
  */
-class IStream
+class IMCStream
 {
 public:
-    virtual ~IStream() = default;
+    virtual ~IMCStream() = default;
 
     /**
      * @brief Reads data from the sub-class
@@ -258,7 +258,7 @@ public:
  * Constructed like a passthrough stream :
  * you read and write to the same buffer.
  */
-class MemoryStream : public IStream
+class MemoryStream : public IMCStream
 {
 private:
     std::vector<std::byte> data;
@@ -320,7 +320,7 @@ public:
  *
  * Stream for IO on a Network client socket
  */
-class NetSocketStream : public IStream
+class NetSocketStream : public IMCStream
 {
 private:
     ClientSocket socket;
@@ -370,10 +370,10 @@ public:
  * Cipher stream for minecraft, is updates for every
  * packet and not finalized then restarted.
  */
-class CipherStream : public IStream
+class CipherStream : public IMCStream
 {
 private:
-    IStream *baseStream;
+    IMCStream *baseStream;
     crypto::AES128CFB8Cipher encipher;
     crypto::AES128CFB8Cipher decipher;
 
@@ -385,7 +385,7 @@ public:
      * @param key the key for the AES cipher
      * @param iv the IV for the AES cipher
      */
-    CipherStream(IStream *baseStream, std::byte *key, std::byte *iv);
+    CipherStream(IMCStream *baseStream, std::byte *key, std::byte *iv);
     /**
      * @brief Destroy the Cipher Stream object
      *
@@ -422,10 +422,10 @@ public:
  * to minecraft standard, writing packet length
  * and data length.
  */
-class ZLibStream : public IStream
+class ZLibStream : public IMCStream
 {
 private:
-    IStream *baseStream;
+    IMCStream *baseStream;
     crypto::ZLibCompressor comp;
 
     std::vector<std::byte> inBuffer{};
@@ -440,7 +440,7 @@ public:
      * @param baseStream the base stream to IO on, the class takes ownership
      * @param level the level of compression
      */
-    ZLibStream(IStream *baseStream, int level);
+    ZLibStream(IMCStream *baseStream, int level);
     /**
      * @brief Destroy the ZLibStream object
      *

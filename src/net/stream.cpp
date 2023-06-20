@@ -6,42 +6,42 @@
 #include <rapidjson/stringbuffer.h>
 #include <rapidjson/writer.h>
 
-bool IStream::readBoolean()
+bool IMCStream::readBoolean()
 {
     std::byte b[sizeof(bool)];
     read(b, 0, sizeof(bool));
     return *reinterpret_cast<bool *>(b);
 }
 
-void IStream::writeBoolean(bool b)
+void IMCStream::writeBoolean(bool b)
 {
     write(reinterpret_cast<std::byte *>(&b), 0, sizeof(bool));
 }
 
-std::int8_t IStream::readByte()
+std::int8_t IMCStream::readByte()
 {
     std::byte b[sizeof(std::int8_t)];
     read(b, 0, sizeof(std::int8_t));
     return *reinterpret_cast<std::int8_t *>(b);
 }
 
-void IStream::writeByte(std::int8_t b)
+void IMCStream::writeByte(std::int8_t b)
 {
     write(reinterpret_cast<std::byte *>(&b), 0, sizeof(std::int8_t));
 }
 
-std::uint8_t IStream::readUnsignedByte()
+std::uint8_t IMCStream::readUnsignedByte()
 {
     std::int8_t b = readByte();
     return *reinterpret_cast<std::uint8_t *>(&b);
 }
 
-void IStream::writeUnsignedByte(std::uint8_t b)
+void IMCStream::writeUnsignedByte(std::uint8_t b)
 {
     writeByte(*reinterpret_cast<std::int8_t *>(&b));
 }
 
-std::int16_t IStream::readShort()
+std::int16_t IMCStream::readShort()
 {
     std::byte b[sizeof(std::int16_t)];
     read(b, 0, sizeof(std::int16_t));
@@ -58,7 +58,7 @@ std::int16_t IStream::readShort()
     return *reinterpret_cast<std::int16_t *>(b);
 }
 
-void IStream::writeShort(std::int16_t s)
+void IMCStream::writeShort(std::int16_t s)
 {
     if constexpr (std::endian::native == std::endian::little)
     {
@@ -78,18 +78,18 @@ void IStream::writeShort(std::int16_t s)
     }
 }
 
-std::uint16_t IStream::readUnsignedShort()
+std::uint16_t IMCStream::readUnsignedShort()
 {
     std::int16_t b = readShort();
     return *reinterpret_cast<std::uint16_t *>(&b);
 }
 
-void IStream::writeUnsignedShort(std::uint16_t s)
+void IMCStream::writeUnsignedShort(std::uint16_t s)
 {
     writeShort(*reinterpret_cast<std::int16_t *>(&s));
 }
 
-std::int32_t IStream::readInt()
+std::int32_t IMCStream::readInt()
 {
     std::byte b[sizeof(std::int32_t)];
     read(b, 0, sizeof(std::int32_t));
@@ -107,7 +107,7 @@ std::int32_t IStream::readInt()
     }
 }
 
-void IStream::writeInt(std::int32_t i)
+void IMCStream::writeInt(std::int32_t i)
 {
     if constexpr (std::endian::native == std::endian::little)
     {
@@ -121,7 +121,7 @@ void IStream::writeInt(std::int32_t i)
     }
 }
 
-std::int64_t IStream::readLong()
+std::int64_t IMCStream::readLong()
 {
     std::byte b[sizeof(std::int64_t)];
     read(b, 0, sizeof(std::int64_t));
@@ -139,7 +139,7 @@ std::int64_t IStream::readLong()
     }
 }
 
-void IStream::writeLong(std::int64_t l)
+void IMCStream::writeLong(std::int64_t l)
 {
     if constexpr (std::endian::native == std::endian::little)
     {
@@ -153,30 +153,30 @@ void IStream::writeLong(std::int64_t l)
     }
 }
 
-float IStream::readFloat()
+float IMCStream::readFloat()
 {
     std::int32_t i = readInt();
     return *reinterpret_cast<float *>(&i);
 }
 
-void IStream::writeFloat(float f)
+void IMCStream::writeFloat(float f)
 {
     writeInt(*reinterpret_cast<std::int32_t *>(&f));
 }
 
-double IStream::readDouble()
+double IMCStream::readDouble()
 {
     static_assert(sizeof(double) == sizeof(std::int64_t));
     std::int64_t i = readLong();
     return *reinterpret_cast<double *>(&i);
 }
 
-void IStream::writeDouble(double d)
+void IMCStream::writeDouble(double d)
 {
     writeLong(*reinterpret_cast<std::int64_t *>(&d));
 }
 
-std::string IStream::readString()
+std::string IMCStream::readString()
 {
     std::int32_t len = readVarInt();
     std::int8_t b[len];
@@ -184,13 +184,13 @@ std::string IStream::readString()
     return std::string(reinterpret_cast<const char *>(b), len);
 }
 
-void IStream::writeString(const std::string &s)
+void IMCStream::writeString(const std::string &s)
 {
     writeVarInt(s.size());
     write(reinterpret_cast<std::byte *>(const_cast<char *>(s.data())), 0, s.size());
 }
 
-ChatMessage IStream::readChat()
+ChatMessage IMCStream::readChat()
 {
     ChatMessage m;
 
@@ -203,7 +203,7 @@ ChatMessage IStream::readChat()
     return m;
 }
 
-void IStream::writeChat(const ChatMessage &c)
+void IMCStream::writeChat(const ChatMessage &c)
 {
     rapidjson::Document doc(rapidjson::kObjectType);
     c.save(doc, doc.GetAllocator());
@@ -219,7 +219,7 @@ void IStream::writeChat(const ChatMessage &c)
 
 #define SEGMENT_BITS 0x7F
 #define CONTINUE_BIT 0x80
-std::int32_t IStream::readVarInt()
+std::int32_t IMCStream::readVarInt()
 {
     std::int32_t value = 0;
     int position = 0;
@@ -242,7 +242,7 @@ std::int32_t IStream::readVarInt()
     return value;
 }
 
-void IStream::writeVarInt(std::int32_t i)
+void IMCStream::writeVarInt(std::int32_t i)
 {
     while (true)
     {
@@ -258,7 +258,7 @@ void IStream::writeVarInt(std::int32_t i)
     }
 }
 
-std::int64_t IStream::readVarLong()
+std::int64_t IMCStream::readVarLong()
 {
     std::int64_t value = 0;
     int position = 0;
@@ -281,7 +281,7 @@ std::int64_t IStream::readVarLong()
     return value;
 }
 
-void IStream::writeVarLong(std::int64_t l)
+void IMCStream::writeVarLong(std::int64_t l)
 {
     while (true)
     {
@@ -348,9 +348,9 @@ void NetSocketStream::flush()
     /* Not implemented */
 }
 
-CipherStream::CipherStream(IStream *baseStream, std::byte *key, std::byte *iv) : baseStream(baseStream),
-                                                                                 encipher(crypto::CipherState::ENCRYPT, key, iv),
-                                                                                 decipher(crypto::CipherState::DECRYPT, key, iv)
+CipherStream::CipherStream(IMCStream *baseStream, std::byte *key, std::byte *iv) : baseStream(baseStream),
+                                                                                   encipher(crypto::CipherState::ENCRYPT, key, iv),
+                                                                                   decipher(crypto::CipherState::DECRYPT, key, iv)
 
 {
 }
@@ -384,7 +384,7 @@ void CipherStream::flush()
     baseStream->flush();
 }
 
-ZLibStream::ZLibStream(IStream *baseStream, int level) : baseStream(baseStream), comp(level)
+ZLibStream::ZLibStream(IMCStream *baseStream, int level) : baseStream(baseStream), comp(level)
 {
 }
 

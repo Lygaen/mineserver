@@ -32,7 +32,7 @@ protected:
      * @param stream the stream to write to
      * @deprecated Do not call this function
      */
-    void write(IStream *stream) override;
+    void write(IMCStream *stream) override;
 
 public:
     /**
@@ -82,7 +82,7 @@ public:
      * Reads handshake data from the stream
      * @param stream the stream to read from
      */
-    void read(IStream *stream) override;
+    void read(IMCStream *stream) override;
 };
 
 #endif // MINESERVER_HANDSHAKE_H

@@ -56,8 +56,8 @@ ClientSocket ServerSocket::accept()
     socklen_t clilen = sizeof(cli_addr);
     socket_t rvalue = ::accept(sock, (struct sockaddr *)&cli_addr, &clilen);
     char addr[46];
-#if defined(__linux__)
     char *tmp = inet_ntoa(cli_addr.sin_addr);
+#if defined(__linux__)
     strncpy(addr, tmp, 46);
 #elif defined(_WIN32)
     char buffer[46];
@@ -159,7 +159,7 @@ ssize_t ClientSocket::read(std::byte *buffer, size_t len)
 #if defined(__linux__)
     ssize_t retval = recv(sock, buffer, len, MSG_NOSIGNAL);
 #elif defined(_WIN32)
-    ssize_t retval = (ssize_t)(recv(sock, buffer, (int)len, 0));
+    ssize_t retval = (ssize_t)(recv(sock, reinterpret_cast<char*>(buffer), (int)len, 0));
 #endif
     if (retval <= 0)
         throw std::runtime_error("Invalid socket read !");
@@ -171,7 +171,7 @@ ssize_t ClientSocket::write(std::byte *buffer, size_t len)
 #if defined(__linux__)
     return send(sock, buffer, len, MSG_NOSIGNAL);
 #elif defined(_WIN32)
-    return send(sock, buffer, (unsigned int)len, 0);
+    return send(sock, reinterpret_cast<char*>(buffer), (unsigned int)len, 0);
 #endif
 }
 
