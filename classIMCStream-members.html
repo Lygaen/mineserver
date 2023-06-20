@@ -72,7 +72,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('classZLibStream.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('classIMCStream.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -98,14 +98,14 @@ $(document).ready(function(){initNavTree('classZLibStream.html',''); initResizab
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">ZLibStream Member List</div></div>
+  <div class="headertitle"><div class="title">IMCStream Member List</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>This is the complete list of members for <a class="el" href="classZLibStream.html">ZLibStream</a>, including all inherited members.</p>
+<p>This is the complete list of members for <a class="el" href="classIMCStream.html">IMCStream</a>, including all inherited members.</p>
 <table class="directory">
-  <tr class="even"><td class="entry"><a class="el" href="classZLibStream.html#ac06417138fc207911d411577de418dfc">flush</a>() override</td><td class="entry"><a class="el" href="classZLibStream.html">ZLibStream</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classZLibStream.html#afcc3fabfb54e92bf0c868efcf9ef1d27">read</a>(std::byte *buffer, std::size_t offset, std::size_t len) override</td><td class="entry"><a class="el" href="classZLibStream.html">ZLibStream</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="even"><td class="entry"><a class="el" href="classIMCStream.html#aca226377aea0f0e1bca188a8911bff63">flush</a>()=0</td><td class="entry"><a class="el" href="classIMCStream.html">IMCStream</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classIMCStream.html#af9259f1c68733763d960107ab8334b60">read</a>(std::byte *buffer, std::size_t offset, std::size_t len)=0</td><td class="entry"><a class="el" href="classIMCStream.html">IMCStream</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classIMCStream.html#ae58cce0b2c4a51f0b8ee3818345bf530">readBoolean</a>()</td><td class="entry"><a class="el" href="classIMCStream.html">IMCStream</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="classIMCStream.html#ae00c6aee5410270793009979ba0ae0ea">readByte</a>()</td><td class="entry"><a class="el" href="classIMCStream.html">IMCStream</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classIMCStream.html#a33c9ff2c45435a561ff66cd722dfba10">readChat</a>()</td><td class="entry"><a class="el" href="classIMCStream.html">IMCStream</a></td><td class="entry"></td></tr>
@@ -119,7 +119,7 @@ $(document).ready(function(){initNavTree('classZLibStream.html',''); initResizab
   <tr class="even"><td class="entry"><a class="el" href="classIMCStream.html#a6b13b43179cc1dd96b6d801065f2f0a8">readUnsignedShort</a>()</td><td class="entry"><a class="el" href="classIMCStream.html">IMCStream</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="classIMCStream.html#a09925d431ef180eb1b816d72aaf90b78">readVarInt</a>()</td><td class="entry"><a class="el" href="classIMCStream.html">IMCStream</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classIMCStream.html#a22a8511cd6d1ee73d512dbe6bba419e0">readVarLong</a>()</td><td class="entry"><a class="el" href="classIMCStream.html">IMCStream</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classZLibStream.html#aea1834629a214061404494774e624723">write</a>(std::byte *buffer, std::size_t offset, std::size_t len) override</td><td class="entry"><a class="el" href="classZLibStream.html">ZLibStream</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
+  <tr class="odd"><td class="entry"><a class="el" href="classIMCStream.html#ad589a29c0af4eead2d91d12633a5a236">write</a>(std::byte *buffer, std::size_t offset, std::size_t len)=0</td><td class="entry"><a class="el" href="classIMCStream.html">IMCStream</a></td><td class="entry"><span class="mlabel">pure virtual</span></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classIMCStream.html#a86f24c981712f72fcb32204eaed23e9f">writeBoolean</a>(bool b)</td><td class="entry"><a class="el" href="classIMCStream.html">IMCStream</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="classIMCStream.html#a0701e1f63947c23ef23f608193256587">writeByte</a>(std::int8_t b)</td><td class="entry"><a class="el" href="classIMCStream.html">IMCStream</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classIMCStream.html#a3286ac710b2bd42f73d4becc8aa3d511">writeChat</a>(const ChatMessage &amp;c)</td><td class="entry"><a class="el" href="classIMCStream.html">IMCStream</a></td><td class="entry"></td></tr>
@@ -133,9 +133,7 @@ $(document).ready(function(){initNavTree('classZLibStream.html',''); initResizab
   <tr class="even"><td class="entry"><a class="el" href="classIMCStream.html#a47fd0317883b8d3a13f6cea117ba9f9f">writeUnsignedShort</a>(std::uint16_t s)</td><td class="entry"><a class="el" href="classIMCStream.html">IMCStream</a></td><td class="entry"></td></tr>
   <tr class="odd"><td class="entry"><a class="el" href="classIMCStream.html#ab34f7b4f362f0046718fc4fb242afd02">writeVarInt</a>(std::int32_t i)</td><td class="entry"><a class="el" href="classIMCStream.html">IMCStream</a></td><td class="entry"></td></tr>
   <tr class="even"><td class="entry"><a class="el" href="classIMCStream.html#a146a9234da91114bb01b48effa4c0627">writeVarLong</a>(std::int64_t l)</td><td class="entry"><a class="el" href="classIMCStream.html">IMCStream</a></td><td class="entry"></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classZLibStream.html#af3116f77505e100aa0c959ec1dcb1ed1">ZLibStream</a>(IMCStream *baseStream, int level)</td><td class="entry"><a class="el" href="classZLibStream.html">ZLibStream</a></td><td class="entry"></td></tr>
-  <tr bgcolor="#f0f0f0" class="even"><td class="entry"><b>~IMCStream</b>()=default (defined in <a class="el" href="classIMCStream.html">IMCStream</a>)</td><td class="entry"><a class="el" href="classIMCStream.html">IMCStream</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
-  <tr class="odd"><td class="entry"><a class="el" href="classZLibStream.html#afe30c6f669a0d8f8cf8dd12643f14ddc">~ZLibStream</a>()</td><td class="entry"><a class="el" href="classZLibStream.html">ZLibStream</a></td><td class="entry"></td></tr>
+  <tr bgcolor="#f0f0f0" class="odd"><td class="entry"><b>~IMCStream</b>()=default (defined in <a class="el" href="classIMCStream.html">IMCStream</a>)</td><td class="entry"><a class="el" href="classIMCStream.html">IMCStream</a></td><td class="entry"><span class="mlabel">virtual</span></td></tr>
 </table></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

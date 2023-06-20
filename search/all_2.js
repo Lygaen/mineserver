@@ -4,7 +4,7 @@ var searchData=
   ['chatmessage_1',['ChatMessage',['../classChatMessage.html',1,'ChatMessage'],['../classChatMessage.html#a21b2eb491db5a61fb6706f444c6de788',1,'ChatMessage::ChatMessage(std::string msg)'],['../classChatMessage.html#a2ed5fc0f5be09e27ca956aca65d405c8',1,'ChatMessage::ChatMessage()']]],
   ['chatmessage_2eh_2',['chatmessage.h',['../chatmessage_8h.html',1,'']]],
   ['cipherstate_3',['CipherState',['../namespacecrypto.html#a512c0376973f32897981d6c4a7b2fd4b',1,'crypto']]],
-  ['cipherstream_4',['CipherStream',['../classCipherStream.html',1,'CipherStream'],['../classCipherStream.html#a0a58a0ebc37424b3d0339dbbcfdb2119',1,'CipherStream::CipherStream()']]],
+  ['cipherstream_4',['CipherStream',['../classCipherStream.html',1,'CipherStream'],['../classCipherStream.html#a0602be22cb1ba07130b8ddc34f8ff37a',1,'CipherStream::CipherStream()']]],
   ['cleanup_5',['cleanup',['../classServerSocket.html#a3bccb373b5d5d92d9609a0f8842f9c06',1,'ServerSocket::cleanup()'],['../namespacecrypto.html#adb6a95ab45ce1c988675a45b9564b185',1,'crypto::cleanup()']]],
   ['clear_6',['clear',['../classMemoryStream.html#a392cb7470c7642c89daa5652e05c12c8',1,'MemoryStream']]],
   ['client_7',['Client',['../classClient.html',1,'Client'],['../classClient.html#a1bb2f385948faf1b441c6406aa82e4ea',1,'Client::Client()']]],

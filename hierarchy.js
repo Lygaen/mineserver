@@ -14,16 +14,16 @@ var hierarchy =
     [ "File", "classFile.html", [
       [ "PNGFile", "classPNGFile.html", null ]
     ] ],
-    [ "IPacket", "classIPacket.html", [
-      [ "HandshakePacket", "classHandshakePacket.html", null ],
-      [ "PingPongPacket", "classPingPongPacket.html", null ],
-      [ "ServerListPacket", "classServerListPacket.html", null ]
-    ] ],
-    [ "IStream", "classIStream.html", [
+    [ "IMCStream", "classIMCStream.html", [
       [ "CipherStream", "classCipherStream.html", null ],
       [ "MemoryStream", "classMemoryStream.html", null ],
       [ "NetSocketStream", "classNetSocketStream.html", null ],
       [ "ZLibStream", "classZLibStream.html", null ]
+    ] ],
+    [ "IPacket", "classIPacket.html", [
+      [ "HandshakePacket", "classHandshakePacket.html", null ],
+      [ "PingPongPacket", "classPingPongPacket.html", null ],
+      [ "ServerListPacket", "classServerListPacket.html", null ]
     ] ],
     [ "crypto::MinecraftHash", "classcrypto_1_1MinecraftHash.html", null ],
     [ "Server", "classServer.html", null ],
