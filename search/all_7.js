@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['handshake_0',['HANDSHAKE',['../clientstate_8h.html#a8d4a6786d6193f0e6245c44e4a7bb4a0acc6ddcaa36bd57e5aec12749cb5ce29c',1,'clientstate.h']]],
-  ['handshake_2eh_1',['handshake.h',['../handshake_8h.html',1,'']]],
-  ['handshakepacket_2',['HandshakePacket',['../classHandshakePacket.html',1,'HandshakePacket'],['../classHandshakePacket.html#ad2726c911f3bb5ed887e3858cc838264',1,'HandshakePacket::HandshakePacket()']]]
+  ['encrypt_0',['ENCRYPT',['../namespacecrypto.html#a512c0376973f32897981d6c4a7b2fd4ba43ff6fcf1f25a5934848a49a11bce929',1,'crypto']]],
+  ['end_20note_20with_20a_20touch_20of_20existential_20crisis_1',['End note with a touch of existential crisis',['../index.html#faq_end_note',1,'']]],
+  ['error_2',['error',['../namespacelogger.html#a2c342fb4415aa53943af3b25b469581f',1,'logger::error()'],['../logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a2fd6f336d08340583bd620a7f5694c90',1,'ERROR:&#160;logger.h']]],
+  ['error_5fcolor_3',['ERROR_COLOR',['../logger_8h.html#a79b638f694ebb66a5eb8b994f4139906',1,'logger.h']]],
+  ['existential_20crisis_4',['End note with a touch of existential crisis',['../index.html#faq_end_note',1,'']]]
 ];

@@ -1,13 +1,10 @@
 var searchData=
 [
-  ['getbase64string_0',['getBase64String',['../classPNGFile.html#ab9bf6a2c98418b5178fccf5882934e06',1,'PNGFile']]],
-  ['getdata_1',['getData',['../classMemoryStream.html#a1e8a7a73bb63d0f6f07a57ff35ecd679',1,'MemoryStream']]],
-  ['getheight_2',['getHeight',['../classPNGFile.html#a3beaddfc6500ff4fc7172eb9ade4a4ad',1,'PNGFile']]],
-  ['getpath_3',['getPath',['../classFile.html#a4b1eebc2eaa0dda401dfb5ef0f6ea5d2',1,'File']]],
-  ['getpointer_4',['getPointer',['../classFile.html#aef1561e6bb3e04f1758542dc1062c92b',1,'File']]],
-  ['getpublicrsakey_5',['getPublicRSAKey',['../namespacecrypto.html#a382b8e8fa965d3cb9fac522a8efb0bbe',1,'crypto']]],
-  ['getsize_6',['getSize',['../classFile.html#a3fef19f80ee86c54b6dc40d1e0f31699',1,'File']]],
-  ['gettime_7',['getTime',['../namespacelogger.html#a5e3d513cbef44c7f3a4738485a22811a',1,'logger']]],
-  ['getvalue_8',['getValue',['../classField.html#ad6ccdff80569369f0a2ce11045cdaad1',1,'Field']]],
-  ['getwidth_9',['getWidth',['../classPNGFile.html#a6918e284c2fe4c71c9ff625d633f3a9c',1,'PNGFile']]]
+  ['debug_0',['debug',['../namespacelogger.html#abf121e9e40ac777068d5f90419d3dfa8',1,'logger::debug()'],['../logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a0593585da9181e972974c1274d8f2b4f',1,'DEBUG:&#160;logger.h']]],
+  ['debug_5fcolor_1',['DEBUG_COLOR',['../logger_8h.html#a792f9eb6a62648607f47b22644ad9707',1,'logger.h']]],
+  ['decrypt_2',['DECRYPT',['../namespacecrypto.html#a512c0376973f32897981d6c4a7b2fd4ba22a7d9a2b89e6fb536138c0f6b743e29',1,'crypto']]],
+  ['deflate_3',['deflate',['../classcrypto_1_1ZLibCompressor.html#a909476280eb8bf0144e941e47171bbe4',1,'crypto::ZLibCompressor']]],
+  ['deprecated_20list_4',['Deprecated List',['../deprecated.html',1,'']]],
+  ['do_20you_20have_20compared_20to_20other_5',['What features do you have compared to other ?',['../index.html#what_features',1,'']]],
+  ['does_20the_20project_20takes_20so_20much_20time_6',['Why does the project takes so much time ?',['../index.html#why_so_long',1,'']]]
 ];

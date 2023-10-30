@@ -1,9 +1,10 @@
 var searchData=
 [
-  ['debug_0',['debug',['../namespacelogger.html#abf121e9e40ac777068d5f90419d3dfa8',1,'logger']]],
-  ['debug_1',['DEBUG',['../logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a0593585da9181e972974c1274d8f2b4f',1,'logger.h']]],
-  ['debug_5fcolor_2',['DEBUG_COLOR',['../logger_8h.html#a792f9eb6a62648607f47b22644ad9707',1,'logger.h']]],
-  ['decrypt_3',['DECRYPT',['../namespacecrypto.html#a512c0376973f32897981d6c4a7b2fd4ba22a7d9a2b89e6fb536138c0f6b743e29',1,'crypto']]],
-  ['deflate_4',['deflate',['../classcrypto_1_1ZLibCompressor.html#a909476280eb8bf0144e941e47171bbe4',1,'crypto::ZLibCompressor']]],
-  ['deprecated_20list_5',['Deprecated List',['../deprecated.html',1,'']]]
+  ['a_20touch_20of_20existential_20crisis_0',['End note with a touch of existential crisis',['../index.html#faq_end_note',1,'']]],
+  ['accept_1',['accept',['../classServerSocket.html#a15754ba53298af09a2822d32adfe13a7',1,'ServerSocket']]],
+  ['addextra_2',['addExtra',['../classChatMessage.html#a725edcc20d93302099ee88113c047d71',1,'ChatMessage']]],
+  ['address_3',['ADDRESS',['../classConfig.html#a2d9308efd8e264f8118b65658df0257b',1,'Config']]],
+  ['aes128cfb8cipher_4',['aes128cfb8cipher',['../classcrypto_1_1AES128CFB8Cipher.html',1,'crypto::AES128CFB8Cipher'],['../classcrypto_1_1AES128CFB8Cipher.html#af974d7ce658f268bca94ae2c4f5a3bd2',1,'crypto::AES128CFB8Cipher::AES128CFB8Cipher()']]],
+  ['all_5',['ALL',['../logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9ab1d5eac4b1dca480c8056eaea7663b7a',1,'logger.h']]],
+  ['another_20server_6',['WHY another server ?',['../index.html#why_another_server',1,'']]]
 ];

@@ -1,10 +1,11 @@
 var searchData=
 [
-  ['packet_2eh_0',['packet.h',['../packet_8h.html',1,'']]],
-  ['pingpong_2eh_1',['pingpong.h',['../pingpong_8h.html',1,'']]],
-  ['pingpongpacket_2',['PingPongPacket',['../classPingPongPacket.html',1,'PingPongPacket'],['../classPingPongPacket.html#a17719a09e567fa5313fec442d45fd8b4',1,'PingPongPacket::PingPongPacket()']]],
-  ['play_3',['PLAY',['../clientstate_8h.html#a8d4a6786d6193f0e6245c44e4a7bb4a0a0352906d1ea1dfcd663c918f3a86755b',1,'clientstate.h']]],
-  ['pngfile_4',['PNGFile',['../classPNGFile.html',1,'PNGFile'],['../classPNGFile.html#a409621329dd69822c753a3c23622bc4f',1,'PNGFile::PNGFile()'],['../classPNGFile.html#ac5df70b8fc905f5ba953a5f19f9ba948',1,'PNGFile::PNGFile(std::string path)']]],
-  ['port_5',['PORT',['../classConfig.html#a6ee00c8b627479c136aad4b2366b6426',1,'Config']]],
-  ['protocolversion_6',['protocolVersion',['../classHandshakePacket.html#ace21358e72ce6231f141d254d7c21976',1,'HandshakePacket']]]
+  ['making_20it_20open_20source_0',['Why making it Open-Source ?',['../index.html#why_opensource',1,'']]],
+  ['max_5fplayers_1',['MAX_PLAYERS',['../classConfig.html#a6d3f8fa249a5909b1fdf1c209c449312',1,'Config']]],
+  ['mc_5fversion_5fname_2',['MC_VERSION_NAME',['../config_8h.html#a04b3235bab4b9b5f3e267bfe3e51cff8',1,'config.h']]],
+  ['mc_5fversion_5fnumber_3',['MC_VERSION_NUMBER',['../config_8h.html#a0ba599fd6a7f981428f324ce7cc1240c',1,'config.h']]],
+  ['memorystream_4',['memorystream',['../classMemoryStream.html',1,'MemoryStream'],['../classMemoryStream.html#a50244829d3814d4bd03133c71ec1c92a',1,'MemoryStream::MemoryStream()']]],
+  ['minecrafthash_5',['minecrafthash',['../classcrypto_1_1MinecraftHash.html',1,'crypto::MinecraftHash'],['../classcrypto_1_1MinecraftHash.html#a367213192993b0a61e92483b6894849f',1,'crypto::MinecraftHash::MinecraftHash()']]],
+  ['motd_6',['MOTD',['../classConfig.html#abcc2d45023a25f1c3cf5bf8074ffc993',1,'Config']]],
+  ['much_20time_7',['Why does the project takes so much time ?',['../index.html#why_so_long',1,'']]]
 ];

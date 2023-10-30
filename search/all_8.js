@@ -1,15 +1,17 @@
 var searchData=
 [
-  ['icon_5ffile_0',['ICON_FILE',['../classConfig.html#aef3a172855427f6b66a430a973c62955',1,'Config']]],
-  ['id_1',['id',['../classIPacket.html#af88e94301d4f1ce06cb65e7314aa94cd',1,'IPacket']]],
-  ['imcstream_2',['IMCStream',['../classIMCStream.html',1,'']]],
-  ['inflate_3',['inflate',['../classcrypto_1_1ZLibCompressor.html#acdfa78b953277426e064d9699e1e922f',1,'crypto::ZLibCompressor']]],
-  ['info_4',['INFO',['../logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a748005382152808a72b1a9177d9dc806',1,'logger.h']]],
-  ['info_5',['info',['../namespacelogger.html#a6c9ab850a6fd8deb457e1ade2007460f',1,'logger']]],
-  ['info_5fcolor_6',['INFO_COLOR',['../logger_8h.html#a5d724ff30124b3ce91f377afb4598ed7',1,'logger.h']]],
-  ['init_7',['init',['../classServerSocket.html#a0ca4d909bf5c076b2cac8e8d297fa500',1,'ServerSocket::init()'],['../namespacecrypto.html#a3f13672befc50b83435e9b84f637997c',1,'crypto::init()']]],
-  ['insertion_8',['insertion',['../classChatMessage.html#ad89ce158d6e312c6cd28ff508286aff3',1,'ChatMessage']]],
-  ['inst_9',['inst',['../classServer.html#a326ec98fe5fb62cc0a9588a1594ed840',1,'Server::inst()'],['../classConfig.html#af08cc4a60a38a00097b93a2c5ad4d37a',1,'Config::inst()']]],
-  ['ipacket_10',['IPacket',['../classIPacket.html',1,'IPacket'],['../classIPacket.html#a2516236e7181caa0ea28ee00ff92e3b9',1,'IPacket::IPacket()']]],
-  ['italic_11',['italic',['../classChatMessage.html#a45e14f8d0cceda2f3af297bb394dffce',1,'ChatMessage']]]
+  ['faq_0',['FAQ',['../index.html',1,'']]],
+  ['fatal_1',['fatal',['../logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a651d8a47a6976d6fe05c0e03fb4cd2d0',1,'FATAL:&#160;logger.h'],['../namespacelogger.html#a556241a1f5dfb02c21e3ba755e5ff4ac',1,'logger::fatal()']]],
+  ['fatal_5fcolor_2',['FATAL_COLOR',['../logger_8h.html#af28559d37017eab92792d364a8f82e21',1,'logger.h']]],
+  ['features_20do_20you_20have_20compared_20to_20other_3',['What features do you have compared to other ?',['../index.html#what_features',1,'']]],
+  ['field_4',['field',['../classField.html',1,'Field&lt; T &gt;'],['../classField.html#a2304aea77ba747f09a4fa109866ef374',1,'Field::Field()']]],
+  ['field_3c_20bool_20_3e_5',['Field&lt; bool &gt;',['../classField.html',1,'']]],
+  ['field_3c_20chatmessage_20_3e_6',['Field&lt; ChatMessage &gt;',['../classField.html',1,'']]],
+  ['field_3c_20int_20_3e_7',['Field&lt; int &gt;',['../classField.html',1,'']]],
+  ['field_3c_20pngfile_20_3e_8',['Field&lt; PNGFile &gt;',['../classField.html',1,'']]],
+  ['field_3c_20std_3a_3astring_20_3e_9',['Field&lt; std::string &gt;',['../classField.html',1,'']]],
+  ['file_10',['file',['../classFile.html#ae039af5807fc385f41b60644725d15d0',1,'File::File()'],['../classFile.html#a4901fbf2e6cebd0adea4ea0cf998530f',1,'File::File(std::string path)'],['../classFile.html',1,'File']]],
+  ['file_2eh_11',['file.h',['../file_8h.html',1,'']]],
+  ['finalize_12',['finalize',['../classcrypto_1_1MinecraftHash.html#a8c4157f0eb90c96166143db9ca4a99d2',1,'crypto::MinecraftHash::finalize()'],['../classcrypto_1_1AES128CFB8Cipher.html#a6619c1ddc3a98ffa393f840e1d206a59',1,'crypto::AES128CFB8Cipher::finalize()']]],
+  ['flush_13',['flush',['../classIMCStream.html#aca226377aea0f0e1bca188a8911bff63',1,'IMCStream::flush()'],['../classMemoryStream.html#a497251020f6338694ebe91b8d32b2404',1,'MemoryStream::flush()'],['../classNetSocketStream.html#ab8e7a809ac4e51b7d8934ee25740a43b',1,'NetSocketStream::flush()'],['../classCipherStream.html#afda30da86b45fca2f023c365eb441229',1,'CipherStream::flush()'],['../classZLibStream.html#ac06417138fc207911d411577de418dfc',1,'ZLibStream::flush()']]]
 ];

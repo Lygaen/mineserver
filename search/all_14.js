@@ -1,23 +1,6 @@
 var searchData=
 [
-  ['_7eaes128cfb8cipher_0',['~AES128CFB8Cipher',['../classcrypto_1_1AES128CFB8Cipher.html#ad587d932b0c2e9ae95391a8e0dd65e5c',1,'crypto::AES128CFB8Cipher']]],
-  ['_7echatmessage_1',['~ChatMessage',['../classChatMessage.html#aba3256c4da91654e667c3fddf1613d8d',1,'ChatMessage']]],
-  ['_7ecipherstream_2',['~CipherStream',['../classCipherStream.html#a9d71de1c91d41a1c1bf67b91b385b386',1,'CipherStream']]],
-  ['_7eclient_3',['~Client',['../classClient.html#a840e519ca781888cbd54181572ebe3a7',1,'Client']]],
-  ['_7eclientsocket_4',['~ClientSocket',['../classClientSocket.html#a00319bd7a57d8d8f356fe358133c3ab2',1,'ClientSocket']]],
-  ['_7econfig_5',['~Config',['../classConfig.html#a543dce59b66475c5108088ee4ce1cdfc',1,'Config']]],
-  ['_7efield_6',['~Field',['../classField.html#a88c0d28bc6696a1e5dbfc50991014959',1,'Field']]],
-  ['_7efile_7',['~File',['../classFile.html#ac704ebdf5f57d7a1c5ddf409d797fb69',1,'File']]],
-  ['_7ehandshakepacket_8',['~HandshakePacket',['../classHandshakePacket.html#a37c39a4dec259aaae6e9cf5a41cc9c11',1,'HandshakePacket']]],
-  ['_7eipacket_9',['~IPacket',['../classIPacket.html#a717a3f51c5e483285fabae442e715d5b',1,'IPacket']]],
-  ['_7ememorystream_10',['~MemoryStream',['../classMemoryStream.html#a4c192de9c2a94bfa1d1d9eaa84e1dec1',1,'MemoryStream']]],
-  ['_7eminecrafthash_11',['~MinecraftHash',['../classcrypto_1_1MinecraftHash.html#a7ddc44a874e266c5e8b171cd5c84a125',1,'crypto::MinecraftHash']]],
-  ['_7enetsocketstream_12',['~NetSocketStream',['../classNetSocketStream.html#ae0b5f735b810c6ab6765e64e83ee4870',1,'NetSocketStream']]],
-  ['_7epingpongpacket_13',['~PingPongPacket',['../classPingPongPacket.html#a9e682925459bb62b9c8d1d01ffc7d58b',1,'PingPongPacket']]],
-  ['_7epngfile_14',['~PNGFile',['../classPNGFile.html#ad56a085470c90bd18e8c6aa282e90404',1,'PNGFile']]],
-  ['_7eserver_15',['~Server',['../classServer.html#a4b3aa2579cb1c8cd1d069582c14d0fa6',1,'Server']]],
-  ['_7eserverlistpacket_16',['~ServerListPacket',['../classServerListPacket.html#ac6bcf3356fa543dbf3eb79ff31dfa4f2',1,'ServerListPacket']]],
-  ['_7eserversocket_17',['~ServerSocket',['../classServerSocket.html#af7672ee8b796b2a3765de1787c4707b0',1,'ServerSocket']]],
-  ['_7ezlibcompressor_18',['~ZLibCompressor',['../classcrypto_1_1ZLibCompressor.html#a4446e1a286f3f676c23b6da838d67a82',1,'crypto::ZLibCompressor']]],
-  ['_7ezlibstream_19',['~ZLibStream',['../classZLibStream.html#afe30c6f669a0d8f8cf8dd12643f14ddc',1,'ZLibStream']]]
+  ['underlined_0',['underlined',['../classChatMessage.html#afff011985c899bd1d2152818883fa2dc',1,'ChatMessage']]],
+  ['update_1',['update',['../classcrypto_1_1MinecraftHash.html#a86172a5bbf208b64873a6a54bdebdc9f',1,'crypto::MinecraftHash::update()'],['../classcrypto_1_1AES128CFB8Cipher.html#a4a63c03f53297285956bc2c2652f3b1d',1,'crypto::AES128CFB8Cipher::update()']]],
+  ['using_20c_2',['Why bother using C++ ?',['../index.html#why_cpp',1,'']]]
 ];
