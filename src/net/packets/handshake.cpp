@@ -6,6 +6,7 @@
 
 void HandshakePacket::write(IMCStream *stream)
 {
+    (void)stream;
     // Does nothing
     throw std::runtime_error("Handshake write should not be called !");
 }

@@ -103,7 +103,7 @@ int main()
     Server server;
 
     std::signal(SIGINT, [](int signal)
-                { Server::inst()->stop(); });
+                { (void) signal; Server::inst()->stop(); });
 
     server.start();
     return 0;

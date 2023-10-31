@@ -31,7 +31,7 @@ Server::~Server()
 void Server::checks()
 {
     const PNGFile &icon = Config::inst()->ICON_FILE.getValue();
-    if (icon.getHeight() != icon.getWidth() != 64)
+    if (icon.getHeight() != icon.getWidth() || icon.getHeight() != 64)
     {
         // Notchian clients only render 64x64 images
         logger::warn("Invalid image ! Check it's resolution (must be 64x64) or just if it's there !");

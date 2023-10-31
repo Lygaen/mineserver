@@ -179,9 +179,11 @@ void IMCStream::writeDouble(double d)
 std::string IMCStream::readString()
 {
     std::int32_t len = readVarInt();
-    std::int8_t b[len];
+    std::byte *b = new std::byte[len];
     read(reinterpret_cast<std::byte *>(b), 0, len);
-    return std::string(reinterpret_cast<const char *>(b), len);
+    std::string s = std::string(reinterpret_cast<const char *>(b), len);
+    delete[] b;
+    return s;
 }
 
 void IMCStream::writeString(const std::string &s)
@@ -362,21 +364,24 @@ CipherStream::~CipherStream()
 
 void CipherStream::read(std::byte *buffer, std::size_t offset, std::size_t len)
 {
-    std::byte buf[len];
+    std::byte *buf = new std::byte[len];
     baseStream->read(buf, 0, len);
 
-    std::byte outBuf[decipher.calculateBufferSize(len)];
+    std::byte *outBuf = new std::byte[decipher.calculateBufferSize(len)];
     int outLen = decipher.update(buf, len, outBuf);
+    delete[] buf;
 
     std::memcpy(buffer + offset, outBuf, outLen);
+    delete[] outBuf;
 }
 
 void CipherStream::write(std::byte *buffer, std::size_t offset, std::size_t len)
 {
-    std::byte outBuf[encipher.calculateBufferSize(len)];
+    std::byte *outBuf = new std::byte[encipher.calculateBufferSize(len)];
     int outLen = encipher.update(buffer + offset, len, outBuf);
 
     baseStream->write(outBuf, 0, outLen);
+    delete[] outBuf;
 }
 
 void CipherStream::flush()
@@ -411,7 +416,6 @@ void ZLibStream::flush()
     if (outBuffer.size() > 0)
     {
         int dataLength = outBuffer.size();
-        std::byte dataOut[dataLength];
         int packetLength = 0;
         std::unique_ptr<std::byte[]> inData = comp.deflate(outBuffer.data(), dataLength, &packetLength);
 
@@ -437,10 +441,11 @@ void ZLibStream::flush()
     m.writeVarInt(dataLength); // Adds dataLength to the buffer because it is used
     std::copy(m.getData().begin(), m.getData().end(), std::back_inserter(inBuffer));
 
-    std::byte streamIn[packetLength - inBuffer.size()];
+    std::byte *streamIn = new std::byte[packetLength - inBuffer.size()];
     baseStream->read(streamIn, 0, packetLength - inBuffer.size());
     int outLen = dataLength;
     std::unique_ptr<std::byte[]> data = comp.inflate(streamIn, packetLength - inBuffer.size(), &dataLength);
+    delete[] streamIn;
 
     std::copy(data.get(), data.get() + outLen, std::back_inserter(inBuffer));
 

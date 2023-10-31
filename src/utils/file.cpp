@@ -73,9 +73,10 @@ PNGFile::PNGFile(std::string path) : File(path), width(0), height(0)
     temp = m.readInt();
     height = *reinterpret_cast<unsigned int *>(&temp);
 
-    char encoded[((getSize() + 2) / 3) * 4];
+    char *encoded = new char[((getSize() + 2) / 3) * 4];
     EVP_EncodeBlock(reinterpret_cast<unsigned char *>(encoded), reinterpret_cast<unsigned char *>(const_cast<char *>(getPointer())), getSize());
     base64String = std::string(encoded, ((getSize() + 2) / 3) * 4);
+    delete[] encoded;
 }
 
 PNGFile::~PNGFile()

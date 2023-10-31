@@ -40,19 +40,13 @@ void Field<T>::writeSafely(rapidjson::Document &document, rapidjson::Value &v)
 template <typename T>
 void Field<T>::load(const rapidjson::Document &document)
 {
-#pragma clang diagnostic push
-#pragma ide diagnostic ignored "Simplify"
     static_assert(sizeof(T) != sizeof(T), "Use available specializations");
-#pragma clang diagnostic pop
 }
 
 template <typename T>
 void Field<T>::save(rapidjson::Document &document)
 {
-#pragma clang diagnostic push
-#pragma ide diagnostic ignored "Simplify"
     static_assert(sizeof(T) != sizeof(T), "Use available specializations");
-#pragma clang diagnostic pop
 }
 
 template <>

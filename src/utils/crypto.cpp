@@ -226,7 +226,7 @@ crypto::ZLibCompressor::ZLibCompressor(int level) : compressionLevel(level)
 
 std::unique_ptr<std::byte[]> crypto::ZLibCompressor::deflate(const std::byte *data, size_t len, int *outLen)
 {
-    z_stream zs = {0};
+    z_stream zs = z_stream();
     *outLen = 0;
 
     if (deflateInit(&zs, compressionLevel) != Z_OK)
@@ -254,7 +254,7 @@ std::unique_ptr<std::byte[]> crypto::ZLibCompressor::deflate(const std::byte *da
 
 std::unique_ptr<std::byte[]> crypto::ZLibCompressor::inflate(const std::byte *data, size_t len, int *outLen)
 {
-    z_stream zs = {0};
+    z_stream zs = z_stream();
 
     if (inflateInit(&zs) != Z_OK)
     {

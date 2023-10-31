@@ -46,4 +46,5 @@ void ServerListPacket::write(IMCStream *stream)
 void ServerListPacket::read(IMCStream *stream)
 {
     /* Nothing wrong if you call it but just unecessary bloat */
+    (void)stream;
 }
