@@ -8,5 +8,6 @@ var searchData=
   ['setpath_5',['setPath',['../classFile.html#a2a4a2243e3df06714a001ad31a605a38',1,'File']]],
   ['setvalue_6',['setValue',['../classField.html#a8fffa4866eabc15ec6cdf7db860a4839',1,'Field']]],
   ['start_7',['start',['../classClient.html#a742373e08a80d993d2651b6fff76f5b9',1,'Client::start()'],['../classServer.html#a7eac07d2582fa01c2671362efa955b31',1,'Server::start()'],['../classServerSocket.html#abfabfd9e132aa6b73dcf77792d8b6ec9',1,'ServerSocket::start()']]],
-  ['stop_8',['stop',['../classServer.html#a07c45a7e101a3926d8f9685c3c5d14e4',1,'Server']]]
+  ['stop_8',['stop',['../classServer.html#a07c45a7e101a3926d8f9685c3c5d14e4',1,'Server']]],
+  ['subscribe_9',['subscribe',['../classEventHandler.html#a99353b9c4537ec09a625884b0636f1dc',1,'EventHandler::subscribe(const callbackType &amp;func)'],['../classEventHandler.html#a0a8f08b0943ed0ca08617bd9a34579e1',1,'EventHandler::subscribe(callbackType &amp;&amp;func)']]]
 ];

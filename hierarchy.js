@@ -5,6 +5,7 @@ var hierarchy =
     [ "Client", "classClient.html", null ],
     [ "ClientSocket", "classClientSocket.html", null ],
     [ "Config", "classConfig.html", null ],
+    [ "EventHandler< T >", "classEventHandler.html", null ],
     [ "Field< T >", "classField.html", null ],
     [ "Field< bool >", "classField.html", null ],
     [ "Field< ChatMessage >", "classField.html", null ],
@@ -14,6 +15,7 @@ var hierarchy =
     [ "File", "classFile.html", [
       [ "PNGFile", "classPNGFile.html", null ]
     ] ],
+    [ "IEvent", "classIEvent.html", null ],
     [ "IMCStream", "classIMCStream.html", [
       [ "CipherStream", "classCipherStream.html", null ],
       [ "MemoryStream", "classMemoryStream.html", null ],

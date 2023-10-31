@@ -26,8 +26,8 @@ var NAVTREE =
 [
   [ "Mineserver", "index.html", [
     [ "FAQ", "index.html", "index" ],
-    [ "Deprecated List", "deprecated.html", null ],
     [ "Todo List", "todo.html", null ],
+    [ "Deprecated List", "deprecated.html", null ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
@@ -45,6 +45,7 @@ var NAVTREE =
         [ "All", "functions.html", null ],
         [ "Functions", "functions_func.html", null ],
         [ "Variables", "functions_vars.html", null ],
+        [ "Typedefs", "functions_type.html", null ],
         [ "Related Symbols", "functions_rela.html", null ]
       ] ]
     ] ],
@@ -63,7 +64,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"index.html#what_features"
+"functions_rela.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
