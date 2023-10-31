@@ -38,6 +38,7 @@ TEST(Events, NotFireLambda)
 
     ASSERT_FALSE(eventFired);
 }
+
 static bool eventFired = false;
 void onFakeEvent(FakeEvent e)
 {
