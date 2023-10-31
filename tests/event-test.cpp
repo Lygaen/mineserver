@@ -67,5 +67,5 @@ TEST(Events, NotFireFunction)
     FakeEvent e;
     handler.fire(e);
 
-    ASSERT_TRUE(eventFired);
+    ASSERT_FALSE(eventFired);
 }
