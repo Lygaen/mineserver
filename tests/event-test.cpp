@@ -55,6 +55,7 @@ TEST(Events, FireFunction)
     handler.fire(e);
 
     ASSERT_TRUE(eventFired);
+    eventFired = false;
 }
 
 TEST(Events, NotFireFunction)
@@ -68,4 +69,5 @@ TEST(Events, NotFireFunction)
     handler.fire(e);
 
     ASSERT_FALSE(eventFired);
+    eventFired = false;
 }

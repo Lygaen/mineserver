@@ -15,5 +15,10 @@ foreach (FILE ${SOURCES})
     target_link_libraries(${NAME} PUBLIC gtest_main mineserver-libs)
     target_include_directories(${NAME} PUBLIC ../src/)
 
+    
+    if(GITHUB_ACTIONS_BUILD)
+        target_compile_definitions(${NAME} PUBLIC GITHUB_ACTIONS_BUILD)
+    endif()
+
     gtest_discover_tests(${NAME})
 endforeach ()

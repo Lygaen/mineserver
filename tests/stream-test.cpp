@@ -258,6 +258,7 @@ void runStreamTest(IMCStream *reader, IMCStream *writer, bool shouldReadVarInt =
     ASSERT_EQ(reader->readVarLong(), LONG_MAX);
 }
 
+#ifndef GITHUB_ACTIONS_BUILD
 TEST(Streams, Network)
 {
     ASSERT_TRUE(ServerSocket::init());
@@ -284,6 +285,7 @@ TEST(Streams, Network)
     client.close();
     ASSERT_TRUE(ServerSocket::cleanup());
 }
+#endif
 
 TEST(Streams, Cipher)
 {

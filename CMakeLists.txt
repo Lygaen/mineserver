@@ -19,6 +19,7 @@ if(MINESERVER_ANSI_COLORS)
     target_compile_definitions(mineserver PUBLIC MINESERVER_ANSI_COLORS)
 endif()
 
+option(GITHUB_ACTIONS_BUILD "Built from a Github Action" OFF)
 # LIBRARIES
 add_subdirectory(libs/)
 target_link_libraries(mineserver PUBLIC mineserver-libs)
