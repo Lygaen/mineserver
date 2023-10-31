@@ -11,7 +11,7 @@ target_include_directories(mineserver PUBLIC src/)
 if(MSVC)
   target_compile_options(mineserver PRIVATE /W4 /WX)
 else()
-  target_compile_options(mineserver PRIVATE -Wall -Wextra -Wpedantic -Werror)
+  target_compile_options(mineserver PRIVATE -Wall -Wextra -Wpedantic -Werror -Wno-error=strict-aliasing)
 endif()
 
 option(MINESERVER_ANSI_COLORS "Enables printing with color in the terminal" ON)

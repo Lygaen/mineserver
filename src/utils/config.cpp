@@ -40,12 +40,14 @@ void Field<T>::writeSafely(rapidjson::Document &document, rapidjson::Value &v)
 template <typename T>
 void Field<T>::load(const rapidjson::Document &document)
 {
+    (void)document;
     static_assert(sizeof(T) != sizeof(T), "Use available specializations");
 }
 
 template <typename T>
 void Field<T>::save(rapidjson::Document &document)
 {
+    (void)document;
     static_assert(sizeof(T) != sizeof(T), "Use available specializations");
 }
 
