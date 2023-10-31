@@ -43,6 +43,11 @@ public:
      */
     ~PingPongPacket() = default;
 
+    /**
+     * @brief Payload
+     *
+     * Client's payload used to calculate ping
+     */
     long payload;
 
     /**
