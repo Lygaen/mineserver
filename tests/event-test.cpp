@@ -11,7 +11,7 @@ TEST(Events, FireLambda)
 
     bool eventFired = false;
 
-    handler.subscribe([&eventFired](FakeEvent event)
+    handler.subscribe([&eventFired](FakeEvent &event)
                       { (void)event;
         eventFired = true; });
 
@@ -27,7 +27,7 @@ TEST(Events, NotFireLambda)
 
     bool eventFired = false;
 
-    auto id = handler.subscribe([&eventFired](FakeEvent event)
+    auto id = handler.subscribe([&eventFired](FakeEvent &event)
                                 { (void)event;
         eventFired = true; });
 
@@ -40,7 +40,7 @@ TEST(Events, NotFireLambda)
 }
 
 static bool eventFired = false;
-void onFakeEvent(FakeEvent e)
+void onFakeEvent(FakeEvent &e)
 {
     eventFired = true;
 }
@@ -70,4 +70,52 @@ TEST(Events, NotFireFunction)
 
     ASSERT_FALSE(eventFired);
     eventFired = false;
+}
+
+class FakeEvent2 : public IEvent
+{
+};
+
+TEST(Events, ManagerSingle)
+{
+    EventsManager manager;
+
+    bool eventFired = false;
+    EventsManager::inst()->subscribe<FakeEvent>([&eventFired](FakeEvent &e)
+                                                { eventFired = true; });
+    FakeEvent e;
+    EventsManager::inst()->fire(e);
+
+    ASSERT_TRUE(eventFired);
+}
+
+TEST(Events, ManagerTwo)
+{
+    EventsManager manager;
+
+    int eventFired = 0;
+    EventsManager::inst()->subscribe<FakeEvent>([&eventFired](FakeEvent &e)
+                                                { eventFired++; });
+    EventsManager::inst()->subscribe<FakeEvent2>([&eventFired](FakeEvent2 &e)
+                                                 { eventFired++; });
+    FakeEvent e;
+    EventsManager::inst()->fire(e);
+    FakeEvent2 e2;
+    EventsManager::inst()->fire(e2);
+
+    ASSERT_EQ(eventFired, 2);
+}
+
+TEST(Events, ManagerNotFire)
+{
+    EventsManager manager;
+
+    bool eventFired = false;
+    EventsManager::inst()->subscribe<FakeEvent>([&eventFired](FakeEvent &e)
+                                                { eventFired = true; });
+
+    FakeEvent2 e2;
+    EventsManager::inst()->fire(e2);
+
+    ASSERT_FALSE(eventFired);
 }

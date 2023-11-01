@@ -30,7 +30,7 @@ public:
      * as a void return type with a single parameter,
      * the event in question.
      */
-    using callbackType = std::function<void(T &)>;
+    typedef std::function<void(T &)> callbackType;
     /**
      * @brief The Subscription Id
      *
@@ -47,6 +47,7 @@ private:
 
     std::vector<subscription> subs;
     subId nextId = 0;
+    const std::type_info *typeInfo;
 
     /**
      * @brief Get the next Id
@@ -54,7 +55,11 @@ private:
      * Utility for generating ids for subscription system
      * @return subId the unique id
      */
-    subId getNextId() { return ++nextId; }
+    subId
+    getNextId()
+    {
+        return ++nextId;
+    }
 
 public:
     /**
@@ -63,7 +68,11 @@ public:
      * It will not compile if you try it with a
      * class that does not derive from #IEvent
      */
-    EventHandler();
+    EventHandler() : subs()
+    {
+        static_assert(std::is_base_of_v<IEvent, T>, "Class doesn't derive from IEvent");
+        typeInfo = &typeid(T);
+    }
 
     /**
      * @brief Fire an event
@@ -71,7 +80,14 @@ public:
      * Cascade the event to all of the listeners
      * @param event the event
      */
-    void fire(T &event);
+    void fire(T &event)
+    {
+        for (auto &sub : subs)
+        {
+            sub.callback(event);
+        }
+    }
+
     /**
      * @brief Subscribe to an event
      *
@@ -79,7 +95,15 @@ public:
      * @param func the function that will listen to events
      * @return subId the id to use for #unsubscribe
      */
-    subId subscribe(const callbackType &func);
+    subId subscribe(const callbackType &func)
+    {
+        subscription s;
+        s.callback = static_cast<callbackType>(func);
+        s.id = getNextId();
+        subs.push_back(s);
+        return s.id;
+    }
+
     /**
      * @brief Subscribe to an event
      *
@@ -87,63 +111,126 @@ public:
      * @param func the function that will listen to events
      * @return subId the id to use for #unsubscribe
      */
-    subId subscribe(callbackType &&func);
+    subId subscribe(callbackType &&func)
+    {
+        subscription s;
+        s.callback = std::move(func);
+        s.id = getNextId();
+        subs.push_back(s);
+        return s.id;
+    }
+
     /**
      * @brief Unsubscribe from an event
      *
      * Stop listening from events
      * @param id the id of the listener
      */
-    void unsubscribe(subId id);
+    void unsubscribe(subId id)
+    {
+        subs.erase(
+            std::remove_if(
+                subs.begin(),
+                subs.end(),
+                [id](subscription el) -> bool
+                {
+                    return el.id == id;
+                }),
+            subs.end());
+    }
+
+    const std::type_info *getTypeInfo() const { return typeInfo; }
 };
 
-template <class T>
-inline EventHandler<T>::EventHandler() : subs()
+class EventsManager
 {
-    static_assert(std::is_base_of_v<IEvent, T>, "Class doesn't derive from IEvent");
-}
+private:
+    static EventsManager *INSTANCE;
+    std::vector<EventHandler<void *> *> handlers;
 
-template <class T>
-inline void EventHandler<T>::fire(T &event)
-{
-    for (auto &sub : subs)
+    template <class T>
+    EventHandler<T> *getOrNull()
     {
-        sub.callback(event);
+        auto loc = std::find_if(handlers.begin(), handlers.end(), [](const EventHandler<void *> *entry)
+                                { return *entry->getTypeInfo() == typeid(T); });
+
+        if (loc == handlers.end())
+            return nullptr;
+
+        return reinterpret_cast<EventHandler<T> *>(*loc);
     }
-}
 
-template <class T>
-inline EventHandler<T>::subId EventHandler<T>::subscribe(const callbackType &func)
-{
-    subscription s;
-    s.callback = static_cast<callbackType>(func);
-    s.id = getNextId();
-    subs.push_back(s);
-    return s.id;
-}
+    template <class T>
+    EventHandler<T> *getOrCreateHandler()
+    {
+        auto handler = getOrNull<T>();
 
-template <class T>
-inline EventHandler<T>::subId EventHandler<T>::subscribe(callbackType &&func)
-{
-    subscription s;
-    s.callback = std::move(func);
-    s.id = getNextId();
-    subs.push_back(s);
-    return s.id;
-}
+        if (!handler)
+        {
+            handler = new EventHandler<T>();
+            handlers.push_back(reinterpret_cast<EventHandler<void *> *>(handler));
+        }
 
-template <class T>
-inline void EventHandler<T>::unsubscribe(subId id)
-{
-    subs.erase(
-        std::remove_if(
-            subs.begin(),
-            subs.end(),
-            [id](subscription el) -> bool
-            {
-                return el.id == id;
-            }),
-        subs.end());
-}
+        return handler;
+    }
+
+public:
+    EventsManager() : handlers()
+    {
+        INSTANCE = this;
+    }
+
+    ~EventsManager()
+    {
+        auto loc = handlers.begin();
+        while (loc != handlers.end())
+        {
+            delete *loc;
+            loc = handlers.erase(loc);
+        }
+    }
+
+    template <class T>
+    EventHandler<T>::subId subscribe(const EventHandler<T>::callbackType &callback)
+    {
+        static_assert(std::is_base_of_v<IEvent, T>, "Class doesn't derive from IEvent");
+        EventHandler<T> *handler = getOrCreateHandler<T>();
+        return handler->subscribe(callback);
+    }
+
+    template <class T>
+    EventHandler<T>::subId subscribe(EventHandler<T>::callbackType &&callback)
+    {
+        static_assert(std::is_base_of_v<IEvent, T>, "Class doesn't derive from IEvent");
+        EventHandler<T> *handler = getOrCreateHandler<T>();
+        return handler->subscribe(std::move(callback));
+    }
+
+    template <class T>
+    void subscribe(EventHandler<T>::subId subId)
+    {
+        static_assert(std::is_base_of_v<IEvent, T>, "Class doesn't derive from IEvent");
+        EventHandler<T> *handler = getOrCreateHandler<T>();
+        return handler->unsubscribe(subId);
+    }
+
+    template <class T>
+    void fire(T &event)
+    {
+        static_assert(std::is_base_of_v<IEvent, T>, "Class doesn't derive from IEvent");
+        EventHandler<T> *handler = getOrNull<T>();
+
+        if (handler)
+        {
+            handler->fire(event);
+        }
+    }
+
+    static EventsManager *inst()
+    {
+        return INSTANCE;
+    }
+};
+EventsManager *EventsManager::INSTANCE = nullptr;
 
 #endif // MINESERVER_EVENT_H
