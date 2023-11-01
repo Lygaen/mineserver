@@ -6,6 +6,7 @@ var hierarchy =
     [ "ClientSocket", "classClientSocket.html", null ],
     [ "Config", "classConfig.html", null ],
     [ "EventHandler< T >", "classEventHandler.html", null ],
+    [ "EventsManager", "classEventsManager.html", null ],
     [ "Field< T >", "classField.html", null ],
     [ "Field< bool >", "classField.html", null ],
     [ "Field< ChatMessage >", "classField.html", null ],

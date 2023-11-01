@@ -19,5 +19,5 @@ var searchData=
   ['stream_2eh_16',['stream.h',['../stream_8h.html',1,'']]],
   ['strikethrough_17',['strikethrough',['../classChatMessage.html#ab47846c7398d7c14ed8c5d9a9e038920',1,'ChatMessage']]],
   ['subid_18',['subId',['../classEventHandler.html#a7e2264d3e34a294002ae86f7acb0e556',1,'EventHandler']]],
-  ['subscribe_19',['subscribe',['../classEventHandler.html#a99353b9c4537ec09a625884b0636f1dc',1,'EventHandler::subscribe(const callbackType &amp;func)'],['../classEventHandler.html#a0a8f08b0943ed0ca08617bd9a34579e1',1,'EventHandler::subscribe(callbackType &amp;&amp;func)']]]
+  ['subscribe_19',['subscribe',['../classEventHandler.html#ae37885fe6ddadf786eaf97f835874a5f',1,'EventHandler::subscribe(const callbackType &amp;func)'],['../classEventHandler.html#ad563c96e95bd5ce43a09fdcf562d2334',1,'EventHandler::subscribe(callbackType &amp;&amp;func)']]]
 ];

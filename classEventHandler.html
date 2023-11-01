@@ -114,9 +114,9 @@ $(document).ready(function(){initNavTree('classEventHandler.html',''); initResiz
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a008fa893dff5465c645bfb90658ed3fc" id="r_a008fa893dff5465c645bfb90658ed3fc"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventHandler.html#a008fa893dff5465c645bfb90658ed3fc">callbackType</a> = std::function&lt; void(T &amp;)&gt;</td></tr>
-<tr class="memdesc:a008fa893dff5465c645bfb90658ed3fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of function that should be passed.  <br /></td></tr>
-<tr class="separator:a008fa893dff5465c645bfb90658ed3fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd2b8bde7024dd5c18fd87fac04b9cdc" id="r_abd2b8bde7024dd5c18fd87fac04b9cdc"><td class="memItemLeft" align="right" valign="top">typedef std::function&lt; void(T &amp;)&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventHandler.html#abd2b8bde7024dd5c18fd87fac04b9cdc">callbackType</a></td></tr>
+<tr class="memdesc:abd2b8bde7024dd5c18fd87fac04b9cdc"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type of function that should be passed.  <br /></td></tr>
+<tr class="separator:abd2b8bde7024dd5c18fd87fac04b9cdc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7e2264d3e34a294002ae86f7acb0e556" id="r_a7e2264d3e34a294002ae86f7acb0e556"><td class="memItemLeft" align="right" valign="top">typedef int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventHandler.html#a7e2264d3e34a294002ae86f7acb0e556">subId</a></td></tr>
 <tr class="memdesc:a7e2264d3e34a294002ae86f7acb0e556"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Subscription Id.  <br /></td></tr>
 <tr class="separator:a7e2264d3e34a294002ae86f7acb0e556"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -129,15 +129,18 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a335dacd696ffcdfd912d34d9cfa7c2bd" id="r_a335dacd696ffcdfd912d34d9cfa7c2bd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventHandler.html#a335dacd696ffcdfd912d34d9cfa7c2bd">fire</a> (T &amp;event)</td></tr>
 <tr class="memdesc:a335dacd696ffcdfd912d34d9cfa7c2bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Fire an event.  <br /></td></tr>
 <tr class="separator:a335dacd696ffcdfd912d34d9cfa7c2bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a99353b9c4537ec09a625884b0636f1dc" id="r_a99353b9c4537ec09a625884b0636f1dc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classEventHandler.html#a7e2264d3e34a294002ae86f7acb0e556">subId</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventHandler.html#a99353b9c4537ec09a625884b0636f1dc">subscribe</a> (const <a class="el" href="classEventHandler.html#a008fa893dff5465c645bfb90658ed3fc">callbackType</a> &amp;func)</td></tr>
-<tr class="memdesc:a99353b9c4537ec09a625884b0636f1dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subscribe to an event.  <br /></td></tr>
-<tr class="separator:a99353b9c4537ec09a625884b0636f1dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0a8f08b0943ed0ca08617bd9a34579e1" id="r_a0a8f08b0943ed0ca08617bd9a34579e1"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classEventHandler.html#a7e2264d3e34a294002ae86f7acb0e556">subId</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventHandler.html#a0a8f08b0943ed0ca08617bd9a34579e1">subscribe</a> (<a class="el" href="classEventHandler.html#a008fa893dff5465c645bfb90658ed3fc">callbackType</a> &amp;&amp;func)</td></tr>
-<tr class="memdesc:a0a8f08b0943ed0ca08617bd9a34579e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subscribe to an event.  <br /></td></tr>
-<tr class="separator:a0a8f08b0943ed0ca08617bd9a34579e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae37885fe6ddadf786eaf97f835874a5f" id="r_ae37885fe6ddadf786eaf97f835874a5f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classEventHandler.html#a7e2264d3e34a294002ae86f7acb0e556">subId</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventHandler.html#ae37885fe6ddadf786eaf97f835874a5f">subscribe</a> (const <a class="el" href="classEventHandler.html#abd2b8bde7024dd5c18fd87fac04b9cdc">callbackType</a> &amp;func)</td></tr>
+<tr class="memdesc:ae37885fe6ddadf786eaf97f835874a5f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subscribe to an event.  <br /></td></tr>
+<tr class="separator:ae37885fe6ddadf786eaf97f835874a5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad563c96e95bd5ce43a09fdcf562d2334" id="r_ad563c96e95bd5ce43a09fdcf562d2334"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classEventHandler.html#a7e2264d3e34a294002ae86f7acb0e556">subId</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventHandler.html#ad563c96e95bd5ce43a09fdcf562d2334">subscribe</a> (<a class="el" href="classEventHandler.html#abd2b8bde7024dd5c18fd87fac04b9cdc">callbackType</a> &amp;&amp;func)</td></tr>
+<tr class="memdesc:ad563c96e95bd5ce43a09fdcf562d2334"><td class="mdescLeft">&#160;</td><td class="mdescRight">Subscribe to an event.  <br /></td></tr>
+<tr class="separator:ad563c96e95bd5ce43a09fdcf562d2334"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a81d0ad307f791ef7f4fa8a4387812c0e" id="r_a81d0ad307f791ef7f4fa8a4387812c0e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classEventHandler.html#a81d0ad307f791ef7f4fa8a4387812c0e">unsubscribe</a> (<a class="el" href="classEventHandler.html#a7e2264d3e34a294002ae86f7acb0e556">subId</a> id)</td></tr>
 <tr class="memdesc:a81d0ad307f791ef7f4fa8a4387812c0e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Unsubscribe from an event.  <br /></td></tr>
 <tr class="separator:a81d0ad307f791ef7f4fa8a4387812c0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc7e36728382d3998db846024df8b119" id="r_acc7e36728382d3998db846024df8b119"><td class="memItemLeft" align="right" valign="top"><a id="acc7e36728382d3998db846024df8b119" name="acc7e36728382d3998db846024df8b119"></a>
+const std::type_info *&#160;</td><td class="memItemRight" valign="bottom"><b>getTypeInfo</b> () const</td></tr>
+<tr class="separator:acc7e36728382d3998db846024df8b119"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;class T&gt;<br />
@@ -150,8 +153,8 @@ class EventHandler&lt; T &gt;</div><p>Handler for a type of event. </p>
   </dd>
 </dl>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="a008fa893dff5465c645bfb90658ed3fc" name="a008fa893dff5465c645bfb90658ed3fc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a008fa893dff5465c645bfb90658ed3fc">&#9670;&#160;</a></span>callbackType</h2>
+<a id="abd2b8bde7024dd5c18fd87fac04b9cdc" name="abd2b8bde7024dd5c18fd87fac04b9cdc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd2b8bde7024dd5c18fd87fac04b9cdc">&#9670;&#160;</a></span>callbackType</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -159,7 +162,7 @@ class EventHandler&lt; T &gt;</div><p>Handler for a type of event. </p>
 template&lt;class T &gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classEventHandler.html">EventHandler</a>&lt; T &gt;::callbackType =  std::function&lt;void(T &amp;)&gt;</td>
+          <td class="memname">typedef std::function&lt;void(T &amp;)&gt; <a class="el" href="classEventHandler.html">EventHandler</a>&lt; T &gt;::callbackType</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -256,8 +259,8 @@ template&lt;class T &gt; </div>
 
 </div>
 </div>
-<a id="a0a8f08b0943ed0ca08617bd9a34579e1" name="a0a8f08b0943ed0ca08617bd9a34579e1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0a8f08b0943ed0ca08617bd9a34579e1">&#9670;&#160;</a></span>subscribe() <span class="overload">[1/2]</span></h2>
+<a id="ad563c96e95bd5ce43a09fdcf562d2334" name="ad563c96e95bd5ce43a09fdcf562d2334"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad563c96e95bd5ce43a09fdcf562d2334">&#9670;&#160;</a></span>subscribe() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -268,9 +271,9 @@ template&lt;class T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classEventHandler.html">EventHandler</a>&lt; T &gt;<a class="el" href="classEventHandler.html#a7e2264d3e34a294002ae86f7acb0e556">::subId</a> <a class="el" href="classEventHandler.html">EventHandler</a>&lt; T &gt;::subscribe </td>
+          <td class="memname"><a class="el" href="classEventHandler.html#a7e2264d3e34a294002ae86f7acb0e556">subId</a> <a class="el" href="classEventHandler.html">EventHandler</a>&lt; T &gt;::subscribe </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="classEventHandler.html#a008fa893dff5465c645bfb90658ed3fc">callbackType</a> &amp;&amp;&#160;</td>
+          <td class="paramtype"><a class="el" href="classEventHandler.html#abd2b8bde7024dd5c18fd87fac04b9cdc">callbackType</a> &amp;&amp;&#160;</td>
           <td class="paramname"><em>func</em></td><td>)</td>
           <td></td>
         </tr>
@@ -293,8 +296,8 @@ template&lt;class T &gt; </div>
 
 </div>
 </div>
-<a id="a99353b9c4537ec09a625884b0636f1dc" name="a99353b9c4537ec09a625884b0636f1dc"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a99353b9c4537ec09a625884b0636f1dc">&#9670;&#160;</a></span>subscribe() <span class="overload">[2/2]</span></h2>
+<a id="ae37885fe6ddadf786eaf97f835874a5f" name="ae37885fe6ddadf786eaf97f835874a5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae37885fe6ddadf786eaf97f835874a5f">&#9670;&#160;</a></span>subscribe() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -305,9 +308,9 @@ template&lt;class T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classEventHandler.html">EventHandler</a>&lt; T &gt;<a class="el" href="classEventHandler.html#a7e2264d3e34a294002ae86f7acb0e556">::subId</a> <a class="el" href="classEventHandler.html">EventHandler</a>&lt; T &gt;::subscribe </td>
+          <td class="memname"><a class="el" href="classEventHandler.html#a7e2264d3e34a294002ae86f7acb0e556">subId</a> <a class="el" href="classEventHandler.html">EventHandler</a>&lt; T &gt;::subscribe </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="classEventHandler.html#a008fa893dff5465c645bfb90658ed3fc">callbackType</a> &amp;&#160;</td>
+          <td class="paramtype">const <a class="el" href="classEventHandler.html#abd2b8bde7024dd5c18fd87fac04b9cdc">callbackType</a> &amp;&#160;</td>
           <td class="paramname"><em>func</em></td><td>)</td>
           <td></td>
         </tr>
