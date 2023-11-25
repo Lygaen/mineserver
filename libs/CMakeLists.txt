@@ -13,5 +13,14 @@ add_subdirectory(zlib/)
 
 add_subdirectory(openssl/)
 
-target_link_libraries(mineserver-libs PUBLIC crypto zlibstatic)
+file(GLOB LUA_SRCS lua/*.c)
+add_library(lua ${LUA_SRCS})
+target_include_directories(lua PUBLIC lua/)
+
+add_library(luaaa ./luaaa/luaaa.hpp)
+set_target_properties(luaaa PROPERTIES LINKER_LANGUAGE CXX)
+target_include_directories(luaaa PUBLIC luaaa/)
+target_link_libraries(luaaa PUBLIC lua)
+
+target_link_libraries(mineserver-libs PUBLIC crypto zlibstatic lua)
 target_include_directories(mineserver-libs PUBLIC rapidjson/include zlib)
