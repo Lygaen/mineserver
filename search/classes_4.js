@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['handshakepacket_0',['HandshakePacket',['../classHandshakePacket.html',1,'']]]
+  ['imcstream_0',['IMCStream',['../classIMCStream.html',1,'']]],
+  ['ipacket_1',['IPacket',['../classIPacket.html',1,'']]]
 ];

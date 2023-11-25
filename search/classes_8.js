@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['pingpongpacket_0',['PingPongPacket',['../classPingPongPacket.html',1,'']]],
-  ['pngfile_1',['PNGFile',['../classPNGFile.html',1,'']]]
+  ['server_0',['Server',['../classServer.html',1,'']]],
+  ['serverlistpacket_1',['ServerListPacket',['../classServerListPacket.html',1,'']]],
+  ['serversocket_2',['ServerSocket',['../classServerSocket.html',1,'']]]
 ];
