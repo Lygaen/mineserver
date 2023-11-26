@@ -26,7 +26,7 @@ class Server
 {
 private:
     static Server *INSTANCE;
-    PluginSystem system;
+    PluginSystem pluginSystem;
     ServerSocket sock;
     bool isRunning{};
 

@@ -4,7 +4,7 @@
 #include <future>
 
 Server *Server::INSTANCE;
-Server::Server() : sock() // We initialize later once the network is initialized
+Server::Server() : sock(), pluginSystem() // We initialize later once the network is initialized
 {
     if (INSTANCE)
         return;
@@ -54,6 +54,8 @@ void Server::start()
     checks();
 
     logger::info("Server started on %s:%d !", addr.c_str(), port);
+
+    pluginSystem.load();
 
     isRunning = true;
     while (isRunning)

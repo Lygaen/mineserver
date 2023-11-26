@@ -4,7 +4,7 @@ project(mineserver)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
 
-file(GLOB_RECURSE MAIN_SOURCES CONFIGURE_DEPENDS src/*.cpp src/*.h)
+file(GLOB_RECURSE MAIN_SOURCES CONFIGURE_DEPENDS src/*.cpp src/*.h src/*.hpp)
 add_executable(mineserver ${MAIN_SOURCES})
 target_include_directories(mineserver PUBLIC src/)
 

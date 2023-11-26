@@ -10,9 +10,6 @@
 [submodule "libs/zlib"]
 	path = libs/zlib
 	url = https://github.com/Lygaen/zlib
-[submodule "libs/lua"]
-	path = libs/lua
-	url = https://github.com/lua/lua
-[submodule "libs/luaaa"]
-	path = libs/luaaa
-	url = https://github.com/gengyong/luaaa
+[submodule "libs/lua-cmake"]
+	path = libs/lua-cmake
+	url = https://github.com/lubgr/lua-cmake
