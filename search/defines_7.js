@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['time_5fcolor_0',['TIME_COLOR',['../logger_8h.html#ac8e597a14bd81a2aae848dfe05abef13',1,'logger.h']]]
+  ['reset_5fcolor_0',['RESET_COLOR',['../logger_8h.html#ad7c3b975e5552a122f836b02fa138502',1,'logger.h']]]
 ];

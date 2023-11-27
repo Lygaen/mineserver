@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['warn_0',['warn',['../logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a74dac7ac23d5b810db6d4067f14e8676',1,'WARN:&#160;logger.h'],['../namespacelogger.html#a97dbc692baa8b760f866b81a93175a19',1,'logger::warn()']]],
+  ['warn_0',['warn',['../namespacelogger.html#a97dbc692baa8b760f866b81a93175a19',1,'logger::warn()'],['../logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a74dac7ac23d5b810db6d4067f14e8676',1,'WARN:&#160;logger.h']]],
   ['warn_5fcolor_1',['WARN_COLOR',['../logger_8h.html#ade48c7e2e47b62c4ba5b651a8fce44d7',1,'logger.h']]],
   ['what_20features_20do_20you_20have_20compared_20to_20other_2',['What features do you have compared to other ?',['../index.html#what_features',1,'']]],
   ['why_201_208_209_3',['Why 1.8.9 ?',['../index.html#why_version',1,'']]],

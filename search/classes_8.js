@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['server_0',['Server',['../classServer.html',1,'']]],
-  ['serverlistpacket_1',['ServerListPacket',['../classServerListPacket.html',1,'']]],
-  ['serversocket_2',['ServerSocket',['../classServerSocket.html',1,'']]]
+  ['pingpongpacket_0',['PingPongPacket',['../classPingPongPacket.html',1,'']]],
+  ['plugin_1',['Plugin',['../classPlugin.html',1,'']]],
+  ['pluginsmanager_2',['PluginsManager',['../classPluginsManager.html',1,'']]],
+  ['pngfile_3',['PNGFile',['../classPNGFile.html',1,'']]]
 ];

@@ -45,6 +45,7 @@ var NAVTREE =
         [ "All", "functions.html", null ],
         [ "Functions", "functions_func.html", null ],
         [ "Variables", "functions_vars.html", null ],
+        [ "Typedefs", "functions_type.html", null ],
         [ "Related Symbols", "functions_rela.html", null ]
       ] ]
     ] ],
@@ -63,7 +64,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"index.html#faq_end_note"
+"crypto_8h.html#a512c0376973f32897981d6c4a7b2fd4ba22a7d9a2b89e6fb536138c0f6b743e29"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

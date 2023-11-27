@@ -140,6 +140,9 @@ Macros</h2></td></tr>
 <tr class="memitem:ade48c7e2e47b62c4ba5b651a8fce44d7" id="r_ade48c7e2e47b62c4ba5b651a8fce44d7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger_8h.html#ade48c7e2e47b62c4ba5b651a8fce44d7">WARN_COLOR</a>&#160;&#160;&#160;&quot;\033[0;33m&quot;</td></tr>
 <tr class="memdesc:ade48c7e2e47b62c4ba5b651a8fce44d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">ANSI color for warn level in the console.  <br /></td></tr>
 <tr class="separator:ade48c7e2e47b62c4ba5b651a8fce44d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8cd5c6a640e9e8e6e253ac3e0b0c01cb" id="r_a8cd5c6a640e9e8e6e253ac3e0b0c01cb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger_8h.html#a8cd5c6a640e9e8e6e253ac3e0b0c01cb">PLUGIN_COLOR</a>&#160;&#160;&#160;&quot;\033[0;34m&quot;</td></tr>
+<tr class="memdesc:a8cd5c6a640e9e8e6e253ac3e0b0c01cb"><td class="mdescLeft">&#160;</td><td class="mdescRight">ANSI color for plugins.  <br /></td></tr>
+<tr class="separator:a8cd5c6a640e9e8e6e253ac3e0b0c01cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5d724ff30124b3ce91f377afb4598ed7" id="r_a5d724ff30124b3ce91f377afb4598ed7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="logger_8h.html#a5d724ff30124b3ce91f377afb4598ed7">INFO_COLOR</a>&#160;&#160;&#160;&quot;\033[0;35m&quot;</td></tr>
 <tr class="memdesc:a5d724ff30124b3ce91f377afb4598ed7"><td class="mdescLeft">&#160;</td><td class="mdescRight">ANSI color for info level in the console.  <br /></td></tr>
 <tr class="separator:a5d724ff30124b3ce91f377afb4598ed7"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -175,8 +178,11 @@ Functions</h2></td></tr>
 <tr class="memdesc:abf121e9e40ac777068d5f90419d3dfa8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs something at the <a class="el" href="logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a0593585da9181e972974c1274d8f2b4f" title="Debug level.">DEBUG</a> level.  <br /></td></tr>
 <tr class="separator:abf121e9e40ac777068d5f90419d3dfa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c9ab850a6fd8deb457e1ade2007460f" id="r_a6c9ab850a6fd8deb457e1ade2007460f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelogger.html#a6c9ab850a6fd8deb457e1ade2007460f">logger::info</a> (const char *format,...)</td></tr>
-<tr class="memdesc:a6c9ab850a6fd8deb457e1ade2007460f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs something at the <a class="el" href="logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a748005382152808a72b1a9177d9dc806" title="Info level.">INFO</a> level.  <br /></td></tr>
+<tr class="memdesc:a6c9ab850a6fd8deb457e1ade2007460f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs something at the <a class="el" href="logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a748005382152808a72b1a9177d9dc806" title="Info and Plugin level.">INFO</a> level.  <br /></td></tr>
 <tr class="separator:a6c9ab850a6fd8deb457e1ade2007460f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bbc9f0fb2af7e5465b08b9e6a6ccaf3" id="r_a0bbc9f0fb2af7e5465b08b9e6a6ccaf3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelogger.html#a0bbc9f0fb2af7e5465b08b9e6a6ccaf3">logger::plugin</a> (const char *format,...)</td></tr>
+<tr class="memdesc:a0bbc9f0fb2af7e5465b08b9e6a6ccaf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs something at the <a class="el" href="logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a748005382152808a72b1a9177d9dc806" title="Info and Plugin level.">INFO</a> level, for plugins.  <br /></td></tr>
+<tr class="separator:a0bbc9f0fb2af7e5465b08b9e6a6ccaf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a97dbc692baa8b760f866b81a93175a19" id="r_a97dbc692baa8b760f866b81a93175a19"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelogger.html#a97dbc692baa8b760f866b81a93175a19">logger::warn</a> (const char *format,...)</td></tr>
 <tr class="memdesc:a97dbc692baa8b760f866b81a93175a19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs something at the <a class="el" href="logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a74dac7ac23d5b810db6d4067f14e8676" title="warn level">WARN</a> level.  <br /></td></tr>
 <tr class="separator:a97dbc692baa8b760f866b81a93175a19"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -245,6 +251,23 @@ Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a8cd5c6a640e9e8e6e253ac3e0b0c01cb" name="a8cd5c6a640e9e8e6e253ac3e0b0c01cb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8cd5c6a640e9e8e6e253ac3e0b0c01cb">&#9670;&#160;</a></span>PLUGIN_COLOR</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PLUGIN_COLOR&#160;&#160;&#160;&quot;\033[0;34m&quot;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>ANSI color for plugins. </p>
+<p>Same level as LogLevel::INFO See <a class="el" href="namespacelogger.html#a0bbc9f0fb2af7e5465b08b9e6a6ccaf3" title="Logs something at the INFO level, for plugins.">logger::plugin()</a> for more info </p>
+
+</div>
+</div>
 <a id="ac8e597a14bd81a2aae848dfe05abef13" name="ac8e597a14bd81a2aae848dfe05abef13"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac8e597a14bd81a2aae848dfe05abef13">&#9670;&#160;</a></span>TIME_COLOR</h2>
 
@@ -301,7 +324,7 @@ Functions</h2></td></tr>
 <tr><td class="fieldname"><a id="aca1fd1d8935433e6ba2e3918214e07f9a0593585da9181e972974c1274d8f2b4f" name="aca1fd1d8935433e6ba2e3918214e07f9a0593585da9181e972974c1274d8f2b4f"></a>DEBUG&#160;</td><td class="fielddoc"><p>Debug level. </p>
 <p>see <a class="el" href="namespacelogger.html#abf121e9e40ac777068d5f90419d3dfa8" title="Logs something at the DEBUG level.">logger::debug()</a> for more info </p>
 </td></tr>
-<tr><td class="fieldname"><a id="aca1fd1d8935433e6ba2e3918214e07f9a748005382152808a72b1a9177d9dc806" name="aca1fd1d8935433e6ba2e3918214e07f9a748005382152808a72b1a9177d9dc806"></a>INFO&#160;</td><td class="fielddoc"><p>Info level. </p>
+<tr><td class="fieldname"><a id="aca1fd1d8935433e6ba2e3918214e07f9a748005382152808a72b1a9177d9dc806" name="aca1fd1d8935433e6ba2e3918214e07f9a748005382152808a72b1a9177d9dc806"></a>INFO&#160;</td><td class="fielddoc"><p>Info and <a class="el" href="classPlugin.html" title="Plugin class.">Plugin</a> level. </p>
 <p>see <a class="el" href="namespacelogger.html#a6c9ab850a6fd8deb457e1ade2007460f" title="Logs something at the INFO level.">logger::info()</a> for more info </p>
 </td></tr>
 <tr><td class="fieldname"><a id="aca1fd1d8935433e6ba2e3918214e07f9a74dac7ac23d5b810db6d4067f14e8676" name="aca1fd1d8935433e6ba2e3918214e07f9a74dac7ac23d5b810db6d4067f14e8676"></a>WARN&#160;</td><td class="fielddoc"><p>warn level </p>
@@ -326,7 +349,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_313caf1132e152dd9b58bea13a4052ca.html">utils</a></li><li class="navelem"><a class="el" href="logger_8h.html">logger.h</a></li>
-    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Mon Nov 27 2023 18:41:20 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

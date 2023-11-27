@@ -8,6 +8,7 @@ var searchData=
   ['getpublicrsakey_5',['getPublicRSAKey',['../namespacecrypto.html#a382b8e8fa965d3cb9fac522a8efb0bbe',1,'crypto']]],
   ['getsize_6',['getSize',['../classFile.html#a3fef19f80ee86c54b6dc40d1e0f31699',1,'File']]],
   ['gettime_7',['getTime',['../namespacelogger.html#a5e3d513cbef44c7f3a4738485a22811a',1,'logger']]],
-  ['getvalue_8',['getValue',['../classField.html#ad6ccdff80569369f0a2ce11045cdaad1',1,'Field']]],
-  ['getwidth_9',['getWidth',['../classPNGFile.html#a6918e284c2fe4c71c9ff625d633f3a9c',1,'PNGFile']]]
+  ['gettypeinfo_8',['getTypeInfo',['../classEventHandler.html#acc7e36728382d3998db846024df8b119',1,'EventHandler']]],
+  ['getvalue_9',['getValue',['../classField.html#ad6ccdff80569369f0a2ce11045cdaad1',1,'Field']]],
+  ['getwidth_10',['getWidth',['../classPNGFile.html#a6918e284c2fe4c71c9ff625d633f3a9c',1,'PNGFile']]]
 ];

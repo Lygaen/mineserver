@@ -8,6 +8,11 @@ var namespaces_dup =
       [ "getTime", "namespacelogger.html#a5e3d513cbef44c7f3a4738485a22811a", null ],
       [ "info", "namespacelogger.html#a6c9ab850a6fd8deb457e1ade2007460f", null ],
       [ "loadConfig", "namespacelogger.html#a6cfbe870edaeb3d4801782bb86781b5f", null ],
+      [ "plugin", "namespacelogger.html#a0bbc9f0fb2af7e5465b08b9e6a6ccaf3", null ],
       [ "warn", "namespacelogger.html#a97dbc692baa8b760f866b81a93175a19", null ]
+    ] ],
+    [ "lua", "namespacelua.html", [
+      [ "luaCustomPrint", "namespacelua.html#af0ce960bbad664d1bd4469a63827b471", null ],
+      [ "registerDefaultLibs", "namespacelua.html#a0e495614729d3c04963b7c0af6cf8594", null ]
     ] ]
 ];

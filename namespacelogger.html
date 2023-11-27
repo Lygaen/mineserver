@@ -119,8 +119,11 @@ Functions</h2></td></tr>
 <tr class="memdesc:abf121e9e40ac777068d5f90419d3dfa8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs something at the <a class="el" href="logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a0593585da9181e972974c1274d8f2b4f" title="Debug level.">DEBUG</a> level.  <br /></td></tr>
 <tr class="separator:abf121e9e40ac777068d5f90419d3dfa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6c9ab850a6fd8deb457e1ade2007460f" id="r_a6c9ab850a6fd8deb457e1ade2007460f"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelogger.html#a6c9ab850a6fd8deb457e1ade2007460f">info</a> (const char *format,...)</td></tr>
-<tr class="memdesc:a6c9ab850a6fd8deb457e1ade2007460f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs something at the <a class="el" href="logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a748005382152808a72b1a9177d9dc806" title="Info level.">INFO</a> level.  <br /></td></tr>
+<tr class="memdesc:a6c9ab850a6fd8deb457e1ade2007460f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs something at the <a class="el" href="logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a748005382152808a72b1a9177d9dc806" title="Info and Plugin level.">INFO</a> level.  <br /></td></tr>
 <tr class="separator:a6c9ab850a6fd8deb457e1ade2007460f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0bbc9f0fb2af7e5465b08b9e6a6ccaf3" id="r_a0bbc9f0fb2af7e5465b08b9e6a6ccaf3"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelogger.html#a0bbc9f0fb2af7e5465b08b9e6a6ccaf3">plugin</a> (const char *format,...)</td></tr>
+<tr class="memdesc:a0bbc9f0fb2af7e5465b08b9e6a6ccaf3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs something at the <a class="el" href="logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a748005382152808a72b1a9177d9dc806" title="Info and Plugin level.">INFO</a> level, for plugins.  <br /></td></tr>
+<tr class="separator:a0bbc9f0fb2af7e5465b08b9e6a6ccaf3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a97dbc692baa8b760f866b81a93175a19" id="r_a97dbc692baa8b760f866b81a93175a19"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelogger.html#a97dbc692baa8b760f866b81a93175a19">warn</a> (const char *format,...)</td></tr>
 <tr class="memdesc:a97dbc692baa8b760f866b81a93175a19"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs something at the <a class="el" href="logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a74dac7ac23d5b810db6d4067f14e8676" title="warn level">WARN</a> level.  <br /></td></tr>
 <tr class="separator:a97dbc692baa8b760f866b81a93175a19"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -292,7 +295,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>Logs something at the <a class="el" href="logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a748005382152808a72b1a9177d9dc806" title="Info level.">INFO</a> level. </p>
+<p>Logs something at the <a class="el" href="logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a748005382152808a72b1a9177d9dc806" title="Info and Plugin level.">INFO</a> level. </p>
 <p>In the end is just a wrapper around printf, so it will works like it. Should be used to print out general information such as the current status of the program and so on and so on. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">format</td><td>the format string to parse arguements in </td></tr>
@@ -320,6 +323,43 @@ Functions</h2></td></tr>
 
 <p>Loads the loglevel from the config. </p>
 <p>Loads the loglevel from the config and parse it to be usable, should only be used internally as a hook after the config was loaded, which is in <a class="el" href="classConfig.html#add4ebd0c89505c9b5368f03264555606" title="Loads the config from disk.">Config::load()</a>. </p>
+
+</div>
+</div>
+<a id="a0bbc9f0fb2af7e5465b08b9e6a6ccaf3" name="a0bbc9f0fb2af7e5465b08b9e6a6ccaf3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0bbc9f0fb2af7e5465b08b9e6a6ccaf3">&#9670;&#160;</a></span>plugin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void logger::plugin </td>
+          <td>(</td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>format</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname"><em>...</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Logs something at the <a class="el" href="logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a748005382152808a72b1a9177d9dc806" title="Info and Plugin level.">INFO</a> level, for plugins. </p>
+<p>In the end is just a wrapper around printf, so it will works like it. Should be used to print out general information such as the current status of the program and so on and so on. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">format</td><td>the format string to parse arguements in </td></tr>
+    <tr><td class="paramname">...</td><td>the arguments for the format </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -366,7 +406,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacelogger.html">logger</a></li>
-    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Mon Nov 27 2023 18:41:20 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

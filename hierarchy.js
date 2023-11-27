@@ -5,6 +5,8 @@ var hierarchy =
     [ "Client", "classClient.html", null ],
     [ "ClientSocket", "classClientSocket.html", null ],
     [ "Config", "classConfig.html", null ],
+    [ "EventHandler< T >", "classEventHandler.html", null ],
+    [ "EventsManager", "classEventsManager.html", null ],
     [ "Field< T >", "classField.html", null ],
     [ "Field< bool >", "classField.html", null ],
     [ "Field< ChatMessage >", "classField.html", null ],
@@ -14,6 +16,7 @@ var hierarchy =
     [ "File", "classFile.html", [
       [ "PNGFile", "classPNGFile.html", null ]
     ] ],
+    [ "IEvent", "classIEvent.html", null ],
     [ "IMCStream", "classIMCStream.html", [
       [ "CipherStream", "classCipherStream.html", null ],
       [ "MemoryStream", "classMemoryStream.html", null ],
@@ -26,6 +29,8 @@ var hierarchy =
       [ "ServerListPacket", "classServerListPacket.html", null ]
     ] ],
     [ "crypto::MinecraftHash", "classcrypto_1_1MinecraftHash.html", null ],
+    [ "Plugin", "classPlugin.html", null ],
+    [ "PluginsManager", "classPluginsManager.html", null ],
     [ "Server", "classServer.html", null ],
     [ "ServerSocket", "classServerSocket.html", null ],
     [ "crypto::ZLibCompressor", "classcrypto_1_1ZLibCompressor.html", null ]
