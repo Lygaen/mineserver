@@ -16,6 +16,9 @@ add_subdirectory(openssl/)
 
 add_subdirectory(lua-cmake/)
 
-target_link_libraries(mineserver-libs PUBLIC crypto zlibstatic lua::lib)
+set(LUABRIDGE_TESTING ON CACHE BOOL "" FORCE)
+add_subdirectory(LuaBridge3/)
+
+target_link_libraries(mineserver-libs PUBLIC crypto zlibstatic lua::lib LuaBridge)
 target_include_directories(mineserver-libs PUBLIC rapidjson/include zlib)
 target_compile_options(mineserver-libs PUBLIC -w)

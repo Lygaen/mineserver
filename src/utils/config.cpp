@@ -155,6 +155,21 @@ void Field<bool>::save(rapidjson::Document &document)
     writeSafely(document, v);
 }
 
+template <typename T>
+void Field<T>::registerLuaProperty(lua_State *state)
+{
+    luabridge::getGlobalNamespace(state)
+        .beginNamespace("config")
+        .addProperty(
+            key, [this]()
+            { return this->getValue(); },
+            [this](T value)
+            {
+                this->setValue(value);
+            })
+        .endNamespace();
+}
+
 constexpr const char *CONFIG_FILE = "config.json";
 Config *Config::INSTANCE = nullptr;
 
@@ -202,6 +217,13 @@ void Config::load()
     logger::debug("Loaded Config");
 }
 
+void Config::loadLuaLib(lua_State *state)
+{
+#define UF(x) x.registerLuaProperty(state);
+    CONFIG_FIELDS
+#undef UF
+}
+
 void Config::save()
 {
     rapidjson::Document document;
@@ -219,4 +241,4 @@ void Config::save()
     file << buffer.GetString();
     file.close();
     logger::debug("Saved Config");
-};
+}

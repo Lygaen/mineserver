@@ -16,6 +16,7 @@
 #include <rapidjson/document.h>
 #include <net/types/chatmessage.h>
 #include <utils/file.h>
+#include <plugins/luaheaders.h>
 
 /**
  * @brief The Field Object for the ::Config
@@ -89,6 +90,13 @@ public:
     {
         value = v;
     }
+
+    /**
+     * @brief Register this property in Lua
+     *
+     * @param state the lua state
+     */
+    void registerLuaProperty(lua_State *state);
 };
 
 /**
@@ -239,6 +247,13 @@ public:
     {
         return INSTANCE;
     }
+
+    /**
+     * @brief Load Config fields in Lua
+     *
+     * @param state the lua state
+     */
+    void loadLuaLib(lua_State *state);
 };
 
 #endif // MINESERVER_CONFIG_H

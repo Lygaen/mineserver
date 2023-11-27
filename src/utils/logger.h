@@ -46,6 +46,13 @@
  */
 #define WARN_COLOR "\033[0;33m"
 /**
+ * @brief ANSI color for plugins
+ *
+ * Same level as LogLevel::INFO
+ * See logger::plugin() for more info
+ */
+#define PLUGIN_COLOR "\033[0;34m"
+/**
  * @brief ANSI color for info level in the console
  *
  * See logger::info() for more info
@@ -63,6 +70,7 @@
 #define FATAL_COLOR ""
 #define ERROR_COLOR ""
 #define WARN_COLOR ""
+#define PLUGIN_COLOR ""
 #define INFO_COLOR ""
 #define DEBUG_COLOR ""
 #endif
@@ -91,7 +99,7 @@ enum LogLevel
      */
     DEBUG = 1,
     /**
-     * @brief Info level
+     * @brief Info and Plugin level
      *
      * see logger::info() for more info
      */
@@ -171,6 +179,19 @@ namespace logger
      * @param ... the arguments for the format
      */
     void info(const char *format, ...);
+
+    /**
+     * @brief Logs something at the ::INFO level, for plugins
+     *
+     * In the end is just a wrapper around printf, so it
+     * will works like it.
+     * Should be used to print out general information
+     * such as the current status of the program and
+     * so on and so on.
+     * @param format the format string to parse arguements in
+     * @param ... the arguments for the format
+     */
+    void plugin(const char *format, ...);
 
     /**
      * @brief Logs something at the ::WARN level

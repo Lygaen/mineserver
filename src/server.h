@@ -13,6 +13,7 @@
 #define MINESERVER_SERVER_H
 
 #include <plugins/plugins.h>
+#include <plugins/event.hpp>
 #include <utils/network.h>
 
 /**
@@ -26,7 +27,8 @@ class Server
 {
 private:
     static Server *INSTANCE;
-    PluginSystem pluginSystem;
+    PluginsManager pluginsManager;
+    EventsManager eventsManager;
     ServerSocket sock;
     bool isRunning{};
 

@@ -37,7 +37,7 @@ void logger::debug(const char *format, ...)
     va_list args;
     va_start(args, format);
 
-    std::string formatted = DEBUG_COLOR + std::string("[DEBUG] ") + TIME_COLOR + getTime() + RESET_COLOR + " - " + format + "\n";
+    std::string formatted = DEBUG_COLOR + std::string("[DEBUG]  ") + TIME_COLOR + getTime() + RESET_COLOR + " - " + format + "\n";
 
     std::vprintf(formatted.c_str(), args);
     va_end(args);
@@ -51,7 +51,20 @@ void logger::info(const char *format, ...)
     va_list args;
     va_start(args, format);
 
-    std::string formatted = INFO_COLOR + std::string("[INFO]  ") + TIME_COLOR + getTime() + RESET_COLOR + " - " + format + "\n";
+    std::string formatted = INFO_COLOR + std::string("[INFO]   ") + TIME_COLOR + getTime() + RESET_COLOR + " - " + format + "\n";
+    std::vprintf(formatted.c_str(), args);
+    va_end(args);
+}
+
+void logger::plugin(const char *format, ...)
+{
+    if (LogLevel::INFO < LOGLEVEL)
+        return;
+
+    va_list args;
+    va_start(args, format);
+
+    std::string formatted = PLUGIN_COLOR + std::string("[PLUGIN] ") + TIME_COLOR + getTime() + RESET_COLOR + " - " + format + "\n";
     std::vprintf(formatted.c_str(), args);
     va_end(args);
 }
@@ -64,7 +77,7 @@ void logger::warn(const char *format, ...)
     va_list args;
     va_start(args, format);
 
-    std::string formatted = WARN_COLOR + std::string("[WARN]  ") + TIME_COLOR + getTime() + RESET_COLOR + " - " + format + "\n";
+    std::string formatted = WARN_COLOR + std::string("[WARN]   ") + TIME_COLOR + getTime() + RESET_COLOR + " - " + format + "\n";
     std::vprintf(formatted.c_str(), args);
     va_end(args);
 }
@@ -77,7 +90,7 @@ void logger::error(const char *format, ...)
     va_list args;
     va_start(args, format);
 
-    std::string formatted = ERROR_COLOR + std::string("[ERROR] ") + TIME_COLOR + getTime() + RESET_COLOR + " - " + format + "\n";
+    std::string formatted = ERROR_COLOR + std::string("[ERROR]  ") + TIME_COLOR + getTime() + RESET_COLOR + " - " + format + "\n";
     std::vprintf(formatted.c_str(), args);
     va_end(args);
 }
@@ -90,7 +103,7 @@ void logger::fatal(const char *format, ...)
     va_list args;
     va_start(args, format);
 
-    std::string formatted = FATAL_COLOR + std::string("[FATAL] ") + TIME_COLOR + getTime() + RESET_COLOR + " - " + format + "\n";
+    std::string formatted = FATAL_COLOR + std::string("[FATAL]  ") + TIME_COLOR + getTime() + RESET_COLOR + " - " + format + "\n";
     std::vprintf(formatted.c_str(), args);
     va_end(args);
 }

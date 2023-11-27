@@ -13,3 +13,6 @@
 [submodule "libs/lua-cmake"]
 	path = libs/lua-cmake
 	url = https://github.com/lubgr/lua-cmake
+[submodule "libs/LuaBridge3"]
+	path = libs/LuaBridge3
+	url = https://github.com/kunitoki/LuaBridge3
