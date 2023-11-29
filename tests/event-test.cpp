@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include <plugins/event.hpp>
+#include <plugins/event.h>
 
 class FakeEvent : public IEvent
 {

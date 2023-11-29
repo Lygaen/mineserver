@@ -1,6 +1,6 @@
 #include "plugins.h"
 #include <utils/logger.h>
-#include <LuaBridge/LuaBridge.h>
+#include <plugins/event.h>
 
 Plugin::Plugin(const std::string &path) : path(path), state(nullptr), name(""), version("")
 {
@@ -20,6 +20,7 @@ bool Plugin::load()
     if (luaL_dofile(state, path.c_str()) != 0)
     {
         logger::error("Could not load plugin at '%s'", path.c_str());
+        logger::error("%s", lua_tostring(state, -1));
         return false;
     }
 
@@ -31,8 +32,6 @@ bool Plugin::load()
     }
     name = luaName.tostring();
     version = luaVersion.tostring();
-
-    logger::debug("Loaded plugin %s v%s", name.c_str(), version.c_str());
 
     return true;
 }

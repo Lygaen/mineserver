@@ -13,7 +13,7 @@
 #define MINESERVER_SERVER_H
 
 #include <plugins/plugins.h>
-#include <plugins/event.hpp>
+#include <plugins/event.h>
 #include <utils/network.h>
 
 /**

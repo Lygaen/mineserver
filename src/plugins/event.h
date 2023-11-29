@@ -167,6 +167,7 @@ class EventsManager
 {
 private:
     std::vector<EventHandler<void *> *> handlers;
+    static EventsManager *INSTANCE;
 
     template <class T>
     EventHandler<T> *getOrNull()
@@ -199,9 +200,7 @@ public:
      * @brief Construct a new Events Manager object
      *
      */
-    EventsManager() : handlers()
-    {
-    }
+    EventsManager();
 
     /**
      * @brief Destroy the Events Manager object
@@ -282,6 +281,8 @@ public:
             handler->fire(event);
         }
     }
+
+    static EventsManager *inst();
 };
 
 #endif // MINESERVER_EVENT_HPP
