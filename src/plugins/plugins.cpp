@@ -1,8 +1,11 @@
 #include "plugins.h"
+#include <plugins/events/serverevents.hpp>
+#include <plugins/events/clientevents.hpp>
+#include <utility>
 #include <utils/logger.h>
 #include <plugins/event.h>
 
-Plugin::Plugin(const std::string &path) : path(path), state(nullptr), name(""), version("")
+Plugin::Plugin(std::string path) : path(std::move(path)), state(nullptr)
 {
 }
 
@@ -38,9 +41,12 @@ bool Plugin::load()
 
 void Plugin::defineLibs()
 {
-    lua::registerDefaultLibs(state);
+    lua::registerDefaultLibs(state, name.c_str());
     Config::inst()
         ->loadLuaLib(state);
+
+    ServerStartEvent::loadLua(state);
+    ClientConnectedEvent::loadLua(state);
 }
 
 PluginsManager::PluginsManager() : plugins()

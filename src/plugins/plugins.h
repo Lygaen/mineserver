@@ -37,7 +37,7 @@ public:
      *
      * @param path the path of the lua plugin
      */
-    Plugin(const std::string &path);
+    explicit Plugin(std::string path);
     /**
      * @brief Destroy the Plugin object
      *

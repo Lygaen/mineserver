@@ -1,4 +1,6 @@
 #include "logger.h"
+#include "plugins/luaheaders.h"
+
 
 LogLevel LOGLEVEL;
 

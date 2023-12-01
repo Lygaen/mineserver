@@ -14,15 +14,40 @@
 
 #include <functional>
 #include <type_traits>
+#include <plugins/luaheaders.h>
 
 /**
  * @brief Interface for all events
  *
  * Really for sanity in the end.
  */
+template<class T>
 class IEvent
 {
+public:
+    static void loadLua(lua_State *state);
 };
+
+template <typename T>
+constexpr auto type_name() {
+    std::string_view name, prefix, suffix;
+#ifdef __clang__
+    name = __PRETTY_FUNCTION__;
+  prefix = "auto type_name() [T = ";
+  suffix = "]";
+#elif defined(__GNUC__)
+    name = __PRETTY_FUNCTION__;
+    prefix = "constexpr auto type_name() [with T = ";
+    suffix = "]";
+#elif defined(_MSC_VER)
+    name = __FUNCSIG__;
+  prefix = "auto __cdecl type_name<";
+  suffix = ">(void)";
+#endif
+    name.remove_prefix(prefix.size());
+    name.remove_suffix(suffix.size());
+    return name;
+}
 
 /**
  * @brief Handler for a type of event
@@ -81,7 +106,7 @@ public:
      */
     EventHandler() : subs()
     {
-        static_assert(std::is_base_of_v<IEvent, T>, "Class doesn't derive from IEvent");
+        static_assert(std::is_base_of_v<IEvent<T>, T>, "Class doesn't derive from IEvent");
         typeInfo = &typeid(T);
     }
 
@@ -95,7 +120,11 @@ public:
     {
         for (auto &sub : subs)
         {
-            sub.callback(event);
+            try {
+                sub.callback(event);
+            } catch(const luabridge::LuaException& e) {
+                logger::error("Could not launch event %s in lua", std::string(type_name<T>()).c_str());
+            }
         }
     }
 
@@ -227,7 +256,7 @@ public:
     template <class T>
     EventHandler<T>::subId subscribe(const EventHandler<T>::callbackType &callback)
     {
-        static_assert(std::is_base_of_v<IEvent, T>, "Class doesn't derive from IEvent");
+        static_assert(std::is_base_of_v<IEvent<T>, T>, "Class doesn't derive from IEvent");
         EventHandler<T> *handler = getOrCreateHandler<T>();
         return handler->subscribe(callback);
     }
@@ -243,7 +272,7 @@ public:
     template <class T>
     EventHandler<T>::subId subscribe(EventHandler<T>::callbackType &&callback)
     {
-        static_assert(std::is_base_of_v<IEvent, T>, "Class doesn't derive from IEvent");
+        static_assert(std::is_base_of_v<IEvent<T>, T>, "Class doesn't derive from IEvent");
         EventHandler<T> *handler = getOrCreateHandler<T>();
         return handler->subscribe(std::move(callback));
     }
@@ -258,7 +287,7 @@ public:
     template <class T>
     void unsubscribe(EventHandler<T>::subId subId)
     {
-        static_assert(std::is_base_of_v<IEvent, T>, "Class doesn't derive from IEvent");
+        static_assert(std::is_base_of_v<IEvent<T>, T>, "Class doesn't derive from IEvent");
         EventHandler<T> *handler = getOrCreateHandler<T>();
         return handler->unsubscribe(subId);
     }
@@ -273,7 +302,7 @@ public:
     template <class T>
     void fire(T &event)
     {
-        static_assert(std::is_base_of_v<IEvent, T>, "Class doesn't derive from IEvent");
+        static_assert(std::is_base_of_v<IEvent<T>, T>, "Class doesn't derive from IEvent");
         EventHandler<T> *handler = getOrNull<T>();
 
         if (handler)
@@ -284,5 +313,23 @@ public:
 
     static EventsManager *inst();
 };
+
+template<class T>
+void IEvent<T>::loadLua(lua_State *state) {
+    auto baseName = std::string(type_name<T>());
+    std::string cleanedEvent = baseName.substr(0, baseName.length() - std::string("Event").length());
+    static_assert(std::is_base_of_v<IEvent, T>, "Class doesn't derive from IEvent");
+    luabridge::getGlobalNamespace(state)
+            .beginNamespace("event")
+            .addFunction(("on"+cleanedEvent).c_str(), [](const luabridge::LuaRef& ref) {
+                if(!ref.isFunction())
+                    return;
+
+                EventsManager::inst()->subscribe<T>(const_cast<luabridge::LuaRef&>(ref));
+            })
+            .template beginClass<T>(cleanedEvent.c_str())
+            .endClass()
+            .endNamespace();
+}
 
 #endif // MINESERVER_EVENT_HPP

@@ -2,4 +2,5 @@
 /.idea/
 /.vscode/
 /run/
+/cmake-build-debug/
 scrap.excalidraw

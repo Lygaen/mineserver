@@ -1,7 +1,7 @@
 #include <gtest/gtest.h>
 #include <plugins/event.h>
 
-class FakeEvent : public IEvent
+class FakeEvent : public IEvent<FakeEvent>
 {
 public:
     int amount = 0;

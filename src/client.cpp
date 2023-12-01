@@ -3,9 +3,13 @@
 #include <net/packets/handshake.h>
 #include <net/packets/status/serverlist.h>
 #include <net/packets/status/pingpong.h>
+#include <plugins/events/clientevents.hpp>
+#include <plugins/event.h>
 
 Client::Client(ClientSocket sock) : sock(sock), stream(new NetSocketStream(sock))
 {
+    ClientConnectedEvent connectedEvent;
+    EventsManager::inst()->fire(connectedEvent);
 }
 
 Client::~Client()

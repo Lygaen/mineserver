@@ -44,6 +44,7 @@ namespace lua
      */
     inline int luaCustomPrint(lua_State *state)
     {
+        const char *name = reinterpret_cast<const char *>(lua_touserdata(state, lua_upvalueindex(1)));
         int n = lua_gettop(state); /* number of arguments */
         int i;
         std::string endString;
@@ -56,7 +57,7 @@ namespace lua
             endString += std::string(s, l);               /* print it */
             lua_pop(state, 1);                            /* pop result */
         }
-        logger::plugin(endString.c_str());
+        logger::plugin("[%s] %s", name, endString.c_str());
         return 0;
     }
 
@@ -65,7 +66,7 @@ namespace lua
      *
      * @param state the lua state
      */
-    void registerDefaultLibs(lua_State *state);
+    void registerDefaultLibs(lua_State *state, const char *name);
 };
 
 #endif // MINESERVER_LUAHEADERS_H

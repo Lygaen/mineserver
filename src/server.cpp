@@ -2,6 +2,8 @@
 #include <utils/logger.h>
 #include <client.h>
 #include <future>
+#include <plugins/event.h>
+#include <plugins/events/serverevents.hpp>
 
 Server *Server::INSTANCE;
 Server::Server() : sock(), pluginsManager(), eventsManager() // We initialize later once the network is initialized
@@ -53,11 +55,14 @@ void Server::start()
 
     checks();
 
-    logger::info("Server started on %s:%d !", addr.c_str(), port);
-
     pluginsManager.load();
 
     isRunning = true;
+
+    ServerStartEvent startEvent;
+    eventsManager.fire(startEvent);
+
+    logger::info("Server started on %s:%d !", addr.c_str(), port);
     while (isRunning)
     {
         ClientSocket cs = sock.accept();
