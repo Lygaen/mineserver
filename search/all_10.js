@@ -5,7 +5,7 @@ var searchData=
   ['pingpong_2eh_2',['pingpong.h',['../pingpong_8h.html',1,'']]],
   ['pingpongpacket_3',['pingpongpacket',['../classPingPongPacket.html',1,'PingPongPacket'],['../classPingPongPacket.html#a17719a09e567fa5313fec442d45fd8b4',1,'PingPongPacket::PingPongPacket()']]],
   ['play_4',['PLAY',['../clientstate_8h.html#a8d4a6786d6193f0e6245c44e4a7bb4a0a0352906d1ea1dfcd663c918f3a86755b',1,'clientstate.h']]],
-  ['plugin_5',['plugin',['../classPlugin.html',1,'Plugin'],['../namespacelogger.html#a0bbc9f0fb2af7e5465b08b9e6a6ccaf3',1,'logger::plugin()'],['../classPlugin.html#a2980cd0e78546235e9b804e990a468f7',1,'Plugin::Plugin()']]],
+  ['plugin_5',['plugin',['../classPlugin.html',1,'Plugin'],['../namespacelogger.html#a0bbc9f0fb2af7e5465b08b9e6a6ccaf3',1,'logger::plugin()'],['../classPlugin.html#a8c4988ea2af24a010f8b1d643238d141',1,'Plugin::Plugin()']]],
   ['plugin_5fcolor_6',['PLUGIN_COLOR',['../logger_8h.html#a8cd5c6a640e9e8e6e253ac3e0b0c01cb',1,'logger.h']]],
   ['plugins_2eh_7',['plugins.h',['../plugins_8h.html',1,'']]],
   ['pluginsmanager_8',['pluginsmanager',['../classPluginsManager.html#a79f16fd7dfeed11c9a795cc916e90c4a',1,'PluginsManager::PluginsManager()'],['../classPluginsManager.html',1,'PluginsManager']]],

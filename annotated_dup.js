@@ -8,6 +8,7 @@ var annotated_dup =
     [ "ChatMessage", "classChatMessage.html", "classChatMessage" ],
     [ "CipherStream", "classCipherStream.html", "classCipherStream" ],
     [ "Client", "classClient.html", "classClient" ],
+    [ "ClientConnectedEvent", "classClientConnectedEvent.html", null ],
     [ "ClientSocket", "classClientSocket.html", "classClientSocket" ],
     [ "Config", "classConfig.html", "classConfig" ],
     [ "EventHandler", "classEventHandler.html", "classEventHandler" ],
@@ -27,5 +28,6 @@ var annotated_dup =
     [ "Server", "classServer.html", "classServer" ],
     [ "ServerListPacket", "classServerListPacket.html", "classServerListPacket" ],
     [ "ServerSocket", "classServerSocket.html", "classServerSocket" ],
+    [ "ServerStartEvent", "classServerStartEvent.html", null ],
     [ "ZLibStream", "classZLibStream.html", "classZLibStream" ]
 ];

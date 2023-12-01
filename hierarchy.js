@@ -16,7 +16,13 @@ var hierarchy =
     [ "File", "classFile.html", [
       [ "PNGFile", "classPNGFile.html", null ]
     ] ],
-    [ "IEvent", "classIEvent.html", null ],
+    [ "IEvent< T >", "classIEvent.html", null ],
+    [ "IEvent< ClientConnectedEvent >", "classIEvent.html", [
+      [ "ClientConnectedEvent", "classClientConnectedEvent.html", null ]
+    ] ],
+    [ "IEvent< ServerStartEvent >", "classIEvent.html", [
+      [ "ServerStartEvent", "classServerStartEvent.html", null ]
+    ] ],
     [ "IMCStream", "classIMCStream.html", [
       [ "CipherStream", "classCipherStream.html", null ],
       [ "MemoryStream", "classMemoryStream.html", null ],

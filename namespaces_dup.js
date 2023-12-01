@@ -13,6 +13,6 @@ var namespaces_dup =
     ] ],
     [ "lua", "namespacelua.html", [
       [ "luaCustomPrint", "namespacelua.html#af0ce960bbad664d1bd4469a63827b471", null ],
-      [ "registerDefaultLibs", "namespacelua.html#a0e495614729d3c04963b7c0af6cf8594", null ]
+      [ "registerDefaultLibs", "namespacelua.html#aabcf2f0300271dfc460da8ac800254ae", null ]
     ] ]
 ];

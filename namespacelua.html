@@ -112,9 +112,9 @@ Functions</h2></td></tr>
 <tr class="memitem:af0ce960bbad664d1bd4469a63827b471" id="r_af0ce960bbad664d1bd4469a63827b471"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelua.html#af0ce960bbad664d1bd4469a63827b471">luaCustomPrint</a> (lua_State *state)</td></tr>
 <tr class="memdesc:af0ce960bbad664d1bd4469a63827b471"><td class="mdescLeft">&#160;</td><td class="mdescRight">Custom print.  <br /></td></tr>
 <tr class="separator:af0ce960bbad664d1bd4469a63827b471"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0e495614729d3c04963b7c0af6cf8594" id="r_a0e495614729d3c04963b7c0af6cf8594"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelua.html#a0e495614729d3c04963b7c0af6cf8594">registerDefaultLibs</a> (lua_State *state)</td></tr>
-<tr class="memdesc:a0e495614729d3c04963b7c0af6cf8594"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register default lua libs.  <br /></td></tr>
-<tr class="separator:a0e495614729d3c04963b7c0af6cf8594"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aabcf2f0300271dfc460da8ac800254ae" id="r_aabcf2f0300271dfc460da8ac800254ae"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelua.html#aabcf2f0300271dfc460da8ac800254ae">registerDefaultLibs</a> (lua_State *state, const char *name)</td></tr>
+<tr class="memdesc:aabcf2f0300271dfc460da8ac800254ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register default lua libs.  <br /></td></tr>
+<tr class="separator:aabcf2f0300271dfc460da8ac800254ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Lua utility namespace. </p>
@@ -154,8 +154,8 @@ Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a0e495614729d3c04963b7c0af6cf8594" name="a0e495614729d3c04963b7c0af6cf8594"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0e495614729d3c04963b7c0af6cf8594">&#9670;&#160;</a></span>registerDefaultLibs()</h2>
+<a id="aabcf2f0300271dfc460da8ac800254ae" name="aabcf2f0300271dfc460da8ac800254ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aabcf2f0300271dfc460da8ac800254ae">&#9670;&#160;</a></span>registerDefaultLibs()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -164,8 +164,18 @@ Functions</h2></td></tr>
           <td class="memname">void lua::registerDefaultLibs </td>
           <td>(</td>
           <td class="paramtype">lua_State *&#160;</td>
-          <td class="paramname"><em>state</em></td><td>)</td>
+          <td class="paramname"><em>state</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">const char *&#160;</td>
+          <td class="paramname"><em>name</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -186,7 +196,7 @@ Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacelua.html">lua</a></li>
-    <li class="footer">Generated on Wed Nov 29 2023 18:35:30 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Fri Dec 1 2023 21:00:59 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>
