@@ -110,29 +110,57 @@ $(document).ready(function(){initNavTree('clientstate_8h_source.html',''); initR
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#ifndef MINESERVER_CLIENTSTATE_H</span></div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#define MINESERVER_CLIENTSTATE_H</span></div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="foldopen" id="foldopen00028" data-start="{" data-end="};">
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="clientstate_8h.html#a8d4a6786d6193f0e6245c44e4a7bb4a0">   28</a></span><span class="keyword">enum</span> <a class="code hl_enumeration" href="clientstate_8h.html#a8d4a6786d6193f0e6245c44e4a7bb4a0">ClientState</a></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>{</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno"><a class="line" href="clientstate_8h.html#a8d4a6786d6193f0e6245c44e4a7bb4a0acc6ddcaa36bd57e5aec12749cb5ce29c">   37</a></span>    <a class="code hl_enumvalue" href="clientstate_8h.html#a8d4a6786d6193f0e6245c44e4a7bb4a0acc6ddcaa36bd57e5aec12749cb5ce29c">HANDSHAKE</a> = 0,</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno"><a class="line" href="clientstate_8h.html#a8d4a6786d6193f0e6245c44e4a7bb4a0ab15379688176677d49474245a6178d97">   45</a></span>    <a class="code hl_enumvalue" href="clientstate_8h.html#a8d4a6786d6193f0e6245c44e4a7bb4a0ab15379688176677d49474245a6178d97">STATUS</a> = 1,</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="clientstate_8h.html#a8d4a6786d6193f0e6245c44e4a7bb4a0a7ef5b81d60084ffcb2d5cb0faf9c64ff">   53</a></span>    <a class="code hl_enumvalue" href="clientstate_8h.html#a8d4a6786d6193f0e6245c44e4a7bb4a0a7ef5b81d60084ffcb2d5cb0faf9c64ff">LOGIN</a> = 2,</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <a class="code hl_enumvalue" href="clientstate_8h.html#a8d4a6786d6193f0e6245c44e4a7bb4a0a0352906d1ea1dfcd663c918f3a86755b">PLAY</a> = 3</div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno"><a class="line" href="clientstate_8h.html#a8d4a6786d6193f0e6245c44e4a7bb4a0a0352906d1ea1dfcd663c918f3a86755b">   61</a></span>};</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;<a class="code" href="luaheaders_8h.html">plugins/luaheaders.h</a>&gt;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="foldopen" id="foldopen00030" data-start="{" data-end="};">
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno"><a class="line" href="clientstate_8h.html#a8d4a6786d6193f0e6245c44e4a7bb4a0">   30</a></span><span class="keyword">enum</span> <a class="code hl_enumeration" href="clientstate_8h.html#a8d4a6786d6193f0e6245c44e4a7bb4a0">ClientState</a></div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>{</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno"><a class="line" href="clientstate_8h.html#a8d4a6786d6193f0e6245c44e4a7bb4a0acc6ddcaa36bd57e5aec12749cb5ce29c">   39</a></span>    <a class="code hl_enumvalue" href="clientstate_8h.html#a8d4a6786d6193f0e6245c44e4a7bb4a0acc6ddcaa36bd57e5aec12749cb5ce29c">HANDSHAKE</a> = 0,</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno"><a class="line" href="clientstate_8h.html#a8d4a6786d6193f0e6245c44e4a7bb4a0ab15379688176677d49474245a6178d97">   47</a></span>    <a class="code hl_enumvalue" href="clientstate_8h.html#a8d4a6786d6193f0e6245c44e4a7bb4a0ab15379688176677d49474245a6178d97">STATUS</a> = 1,</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="clientstate_8h.html#a8d4a6786d6193f0e6245c44e4a7bb4a0a7ef5b81d60084ffcb2d5cb0faf9c64ff">   55</a></span>    <a class="code hl_enumvalue" href="clientstate_8h.html#a8d4a6786d6193f0e6245c44e4a7bb4a0a7ef5b81d60084ffcb2d5cb0faf9c64ff">LOGIN</a> = 2,</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <a class="code hl_enumvalue" href="clientstate_8h.html#a8d4a6786d6193f0e6245c44e4a7bb4a0a0352906d1ea1dfcd663c918f3a86755b">PLAY</a> = 3</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno"><a class="line" href="clientstate_8h.html#a8d4a6786d6193f0e6245c44e4a7bb4a0a0352906d1ea1dfcd663c918f3a86755b">   63</a></span>};</div>
 </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
-<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><span class="preprocessor">#endif </span><span class="comment">// MINESERVER_CLIENTSTATE_H</span></div>
-<div class="ttc" id="aclientstate_8h_html_a8d4a6786d6193f0e6245c44e4a7bb4a0"><div class="ttname"><a href="clientstate_8h.html#a8d4a6786d6193f0e6245c44e4a7bb4a0">ClientState</a></div><div class="ttdeci">ClientState</div><div class="ttdoc">Client State.</div><div class="ttdef"><b>Definition</b> clientstate.h:29</div></div>
-<div class="ttc" id="aclientstate_8h_html_a8d4a6786d6193f0e6245c44e4a7bb4a0a0352906d1ea1dfcd663c918f3a86755b"><div class="ttname"><a href="clientstate_8h.html#a8d4a6786d6193f0e6245c44e4a7bb4a0a0352906d1ea1dfcd663c918f3a86755b">PLAY</a></div><div class="ttdeci">@ PLAY</div><div class="ttdoc">Play state.</div><div class="ttdef"><b>Definition</b> clientstate.h:60</div></div>
-<div class="ttc" id="aclientstate_8h_html_a8d4a6786d6193f0e6245c44e4a7bb4a0a7ef5b81d60084ffcb2d5cb0faf9c64ff"><div class="ttname"><a href="clientstate_8h.html#a8d4a6786d6193f0e6245c44e4a7bb4a0a7ef5b81d60084ffcb2d5cb0faf9c64ff">LOGIN</a></div><div class="ttdeci">@ LOGIN</div><div class="ttdoc">Login state.</div><div class="ttdef"><b>Definition</b> clientstate.h:53</div></div>
-<div class="ttc" id="aclientstate_8h_html_a8d4a6786d6193f0e6245c44e4a7bb4a0ab15379688176677d49474245a6178d97"><div class="ttname"><a href="clientstate_8h.html#a8d4a6786d6193f0e6245c44e4a7bb4a0ab15379688176677d49474245a6178d97">STATUS</a></div><div class="ttdeci">@ STATUS</div><div class="ttdoc">Status state.</div><div class="ttdef"><b>Definition</b> clientstate.h:45</div></div>
-<div class="ttc" id="aclientstate_8h_html_a8d4a6786d6193f0e6245c44e4a7bb4a0acc6ddcaa36bd57e5aec12749cb5ce29c"><div class="ttname"><a href="clientstate_8h.html#a8d4a6786d6193f0e6245c44e4a7bb4a0acc6ddcaa36bd57e5aec12749cb5ce29c">HANDSHAKE</a></div><div class="ttdeci">@ HANDSHAKE</div><div class="ttdoc">Handshake state.</div><div class="ttdef"><b>Definition</b> clientstate.h:37</div></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="keyword">template</span> &lt;&gt;</div>
+<div class="foldopen" id="foldopen00072" data-start="{" data-end="};">
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno"><a class="line" href="structluabridge_1_1Stack_3_01ClientState_01_4.html">   72</a></span><span class="keyword">struct </span>luabridge::Stack&lt;<a class="code hl_enumeration" href="clientstate_8h.html#a8d4a6786d6193f0e6245c44e4a7bb4a0">ClientState</a>&gt; : luabridge::Enum&lt;ClientState,</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        ClientState::HANDSHAKE,</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        ClientState::STATUS,</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        ClientState::LOGIN,</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>        ClientState::PLAY&gt;</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>{</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>};</div>
+</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
+<div class="foldopen" id="foldopen00086" data-start="{" data-end="}">
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="clientstate_8h.html#ad04dc15df469d6875adbb117d01ed30f">   86</a></span><span class="keyword">inline</span> <span class="keywordtype">void</span> <a class="code hl_function" href="clientstate_8h.html#ad04dc15df469d6875adbb117d01ed30f">loadClientStateLua</a>(lua_State* state, <span class="keyword">const</span> <span class="keywordtype">char</span>* namespaceName) {</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    luabridge::getGlobalNamespace(state)</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        .beginNamespace(namespaceName)</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        .beginNamespace(<span class="stringliteral">&quot;ClientState&quot;</span>)</div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>            .addProperty(<span class="stringliteral">&quot;HANDSHAKE&quot;</span>, +[] {<span class="keywordflow">return</span> <a class="code hl_enumvalue" href="clientstate_8h.html#a8d4a6786d6193f0e6245c44e4a7bb4a0acc6ddcaa36bd57e5aec12749cb5ce29c">ClientState::HANDSHAKE</a>;})</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            .addProperty(<span class="stringliteral">&quot;STATUS&quot;</span>, +[] {<span class="keywordflow">return</span> <a class="code hl_enumvalue" href="clientstate_8h.html#a8d4a6786d6193f0e6245c44e4a7bb4a0ab15379688176677d49474245a6178d97">ClientState::STATUS</a>;})</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>            .addProperty(<span class="stringliteral">&quot;LOGIN&quot;</span>, +[] {<span class="keywordflow">return</span> <a class="code hl_enumvalue" href="clientstate_8h.html#a8d4a6786d6193f0e6245c44e4a7bb4a0a7ef5b81d60084ffcb2d5cb0faf9c64ff">ClientState::LOGIN</a>;})</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            .addProperty(<span class="stringliteral">&quot;PLAY&quot;</span>, +[] {<span class="keywordflow">return</span> <a class="code hl_enumvalue" href="clientstate_8h.html#a8d4a6786d6193f0e6245c44e4a7bb4a0a0352906d1ea1dfcd663c918f3a86755b">ClientState::PLAY</a>;})</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>        .endNamespace()</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        .endNamespace();</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>}</div>
+</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="preprocessor">#endif </span><span class="comment">// MINESERVER_CLIENTSTATE_H</span></div>
+<div class="ttc" id="aclientstate_8h_html_a8d4a6786d6193f0e6245c44e4a7bb4a0"><div class="ttname"><a href="clientstate_8h.html#a8d4a6786d6193f0e6245c44e4a7bb4a0">ClientState</a></div><div class="ttdeci">ClientState</div><div class="ttdoc">Client State.</div><div class="ttdef"><b>Definition</b> clientstate.h:31</div></div>
+<div class="ttc" id="aclientstate_8h_html_a8d4a6786d6193f0e6245c44e4a7bb4a0a0352906d1ea1dfcd663c918f3a86755b"><div class="ttname"><a href="clientstate_8h.html#a8d4a6786d6193f0e6245c44e4a7bb4a0a0352906d1ea1dfcd663c918f3a86755b">PLAY</a></div><div class="ttdeci">@ PLAY</div><div class="ttdoc">Play state.</div><div class="ttdef"><b>Definition</b> clientstate.h:62</div></div>
+<div class="ttc" id="aclientstate_8h_html_a8d4a6786d6193f0e6245c44e4a7bb4a0a7ef5b81d60084ffcb2d5cb0faf9c64ff"><div class="ttname"><a href="clientstate_8h.html#a8d4a6786d6193f0e6245c44e4a7bb4a0a7ef5b81d60084ffcb2d5cb0faf9c64ff">LOGIN</a></div><div class="ttdeci">@ LOGIN</div><div class="ttdoc">Login state.</div><div class="ttdef"><b>Definition</b> clientstate.h:55</div></div>
+<div class="ttc" id="aclientstate_8h_html_a8d4a6786d6193f0e6245c44e4a7bb4a0ab15379688176677d49474245a6178d97"><div class="ttname"><a href="clientstate_8h.html#a8d4a6786d6193f0e6245c44e4a7bb4a0ab15379688176677d49474245a6178d97">STATUS</a></div><div class="ttdeci">@ STATUS</div><div class="ttdoc">Status state.</div><div class="ttdef"><b>Definition</b> clientstate.h:47</div></div>
+<div class="ttc" id="aclientstate_8h_html_a8d4a6786d6193f0e6245c44e4a7bb4a0acc6ddcaa36bd57e5aec12749cb5ce29c"><div class="ttname"><a href="clientstate_8h.html#a8d4a6786d6193f0e6245c44e4a7bb4a0acc6ddcaa36bd57e5aec12749cb5ce29c">HANDSHAKE</a></div><div class="ttdeci">@ HANDSHAKE</div><div class="ttdoc">Handshake state.</div><div class="ttdef"><b>Definition</b> clientstate.h:39</div></div>
+<div class="ttc" id="aclientstate_8h_html_ad04dc15df469d6875adbb117d01ed30f"><div class="ttname"><a href="clientstate_8h.html#ad04dc15df469d6875adbb117d01ed30f">loadClientStateLua</a></div><div class="ttdeci">void loadClientStateLua(lua_State *state, const char *namespaceName)</div><div class="ttdoc">Loads ClientState to lua.</div><div class="ttdef"><b>Definition</b> clientstate.h:86</div></div>
+<div class="ttc" id="aluaheaders_8h_html"><div class="ttname"><a href="luaheaders_8h.html">luaheaders.h</a></div><div class="ttdoc">Utility header file for lua things.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c72b25b75abe208498b36a3e44a3726c.html">net</a></li><li class="navelem"><a class="el" href="dir_30b1537879e8720516756f581cf1de44.html">types</a></li><li class="navelem"><a class="el" href="clientstate_8h.html">clientstate.h</a></li>
-    <li class="footer">Generated on Fri Dec 1 2023 21:00:59 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Dec 3 2023 17:13:24 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

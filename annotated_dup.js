@@ -5,18 +5,22 @@ var annotated_dup =
       [ "MinecraftHash", "classcrypto_1_1MinecraftHash.html", "classcrypto_1_1MinecraftHash" ],
       [ "ZLibCompressor", "classcrypto_1_1ZLibCompressor.html", "classcrypto_1_1ZLibCompressor" ]
     ] ],
+    [ "luabridge", null, [
+      [ "Stack< ClientState >", "structluabridge_1_1Stack_3_01ClientState_01_4.html", null ]
+    ] ],
     [ "ChatMessage", "classChatMessage.html", "classChatMessage" ],
     [ "CipherStream", "classCipherStream.html", "classCipherStream" ],
     [ "Client", "classClient.html", "classClient" ],
     [ "ClientConnectedEvent", "classClientConnectedEvent.html", null ],
     [ "ClientSocket", "classClientSocket.html", "classClientSocket" ],
+    [ "ClientStatusEvent", "classClientStatusEvent.html", "classClientStatusEvent" ],
     [ "Config", "classConfig.html", "classConfig" ],
     [ "EventHandler", "classEventHandler.html", "classEventHandler" ],
     [ "EventsManager", "classEventsManager.html", "classEventsManager" ],
     [ "Field", "classField.html", "classField" ],
     [ "File", "classFile.html", "classFile" ],
     [ "HandshakePacket", "classHandshakePacket.html", "classHandshakePacket" ],
-    [ "IEvent", "classIEvent.html", null ],
+    [ "IEvent", "classIEvent.html", "classIEvent" ],
     [ "IMCStream", "classIMCStream.html", "classIMCStream" ],
     [ "IPacket", "classIPacket.html", "classIPacket" ],
     [ "MemoryStream", "classMemoryStream.html", "classMemoryStream" ],

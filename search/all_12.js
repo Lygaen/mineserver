@@ -14,11 +14,12 @@ var searchData=
   ['setvalue_11',['setValue',['../classField.html#a8fffa4866eabc15ec6cdf7db860a4839',1,'Field']]],
   ['so_20much_20time_12',['Why does the project takes so much time ?',['../index.html#why_so_long',1,'']]],
   ['source_13',['Why making it Open-Source ?',['../index.html#why_opensource',1,'']]],
-  ['start_14',['start',['../classServer.html#a7eac07d2582fa01c2671362efa955b31',1,'Server::start()'],['../classServerSocket.html#abfabfd9e132aa6b73dcf77792d8b6ec9',1,'ServerSocket::start()'],['../classClient.html#a742373e08a80d993d2651b6fff76f5b9',1,'Client::start()']]],
-  ['status_15',['STATUS',['../clientstate_8h.html#a8d4a6786d6193f0e6245c44e4a7bb4a0ab15379688176677d49474245a6178d97',1,'clientstate.h']]],
-  ['stop_16',['stop',['../classServer.html#a07c45a7e101a3926d8f9685c3c5d14e4',1,'Server']]],
-  ['stream_2eh_17',['stream.h',['../stream_8h.html',1,'']]],
-  ['strikethrough_18',['strikethrough',['../classChatMessage.html#ab47846c7398d7c14ed8c5d9a9e038920',1,'ChatMessage']]],
-  ['subid_19',['subId',['../classEventHandler.html#a7e2264d3e34a294002ae86f7acb0e556',1,'EventHandler']]],
-  ['subscribe_20',['subscribe',['../classEventHandler.html#ae37885fe6ddadf786eaf97f835874a5f',1,'EventHandler::subscribe(const callbackType &amp;func)'],['../classEventHandler.html#ad563c96e95bd5ce43a09fdcf562d2334',1,'EventHandler::subscribe(callbackType &amp;&amp;func)'],['../classEventsManager.html#a17a034b18a623bb8db75bf16aabeb7c0',1,'EventsManager::subscribe(const EventHandler&lt; T &gt;::callbackType &amp;callback)'],['../classEventsManager.html#abd6add9e9a5cfc2ec483208a8ef0f603',1,'EventsManager::subscribe(EventHandler&lt; T &gt;::callbackType &amp;&amp;callback)']]]
+  ['stack_3c_20clientstate_20_3e_14',['Stack&lt; ClientState &gt;',['../structluabridge_1_1Stack_3_01ClientState_01_4.html',1,'luabridge']]],
+  ['start_15',['start',['../classServerSocket.html#abfabfd9e132aa6b73dcf77792d8b6ec9',1,'ServerSocket::start()'],['../classServer.html#a7eac07d2582fa01c2671362efa955b31',1,'Server::start()'],['../classClient.html#a742373e08a80d993d2651b6fff76f5b9',1,'Client::start()']]],
+  ['status_16',['STATUS',['../clientstate_8h.html#a8d4a6786d6193f0e6245c44e4a7bb4a0ab15379688176677d49474245a6178d97',1,'clientstate.h']]],
+  ['stop_17',['stop',['../classServer.html#a07c45a7e101a3926d8f9685c3c5d14e4',1,'Server']]],
+  ['stream_2eh_18',['stream.h',['../stream_8h.html',1,'']]],
+  ['strikethrough_19',['strikethrough',['../classChatMessage.html#ab47846c7398d7c14ed8c5d9a9e038920',1,'ChatMessage']]],
+  ['subid_20',['subId',['../classEventHandler.html#a7e2264d3e34a294002ae86f7acb0e556',1,'EventHandler']]],
+  ['subscribe_21',['subscribe',['../classEventHandler.html#ae37885fe6ddadf786eaf97f835874a5f',1,'EventHandler::subscribe(const callbackType &amp;func)'],['../classEventHandler.html#ad563c96e95bd5ce43a09fdcf562d2334',1,'EventHandler::subscribe(callbackType &amp;&amp;func)'],['../classEventsManager.html#a17a034b18a623bb8db75bf16aabeb7c0',1,'EventsManager::subscribe(const EventHandler&lt; T &gt;::callbackType &amp;callback)'],['../classEventsManager.html#abd6add9e9a5cfc2ec483208a8ef0f603',1,'EventsManager::subscribe(EventHandler&lt; T &gt;::callbackType &amp;&amp;callback)']]]
 ];

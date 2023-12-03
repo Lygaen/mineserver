@@ -5,6 +5,9 @@ var hierarchy =
     [ "Client", "classClient.html", null ],
     [ "ClientSocket", "classClientSocket.html", null ],
     [ "Config", "classConfig.html", null ],
+    [ "luabridge::Enum", null, [
+      [ "luabridge::Stack< ClientState >", "structluabridge_1_1Stack_3_01ClientState_01_4.html", null ]
+    ] ],
     [ "EventHandler< T >", "classEventHandler.html", null ],
     [ "EventsManager", "classEventsManager.html", null ],
     [ "Field< T >", "classField.html", null ],
@@ -19,6 +22,9 @@ var hierarchy =
     [ "IEvent< T >", "classIEvent.html", null ],
     [ "IEvent< ClientConnectedEvent >", "classIEvent.html", [
       [ "ClientConnectedEvent", "classClientConnectedEvent.html", null ]
+    ] ],
+    [ "IEvent< ClientStatusEvent >", "classIEvent.html", [
+      [ "ClientStatusEvent", "classClientStatusEvent.html", null ]
     ] ],
     [ "IEvent< ServerStartEvent >", "classIEvent.html", [
       [ "ServerStartEvent", "classServerStartEvent.html", null ]

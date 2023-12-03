@@ -105,22 +105,64 @@ $(document).ready(function(){initNavTree('classIEvent.html',''); initResizable()
 </div><!--header-->
 <div class="contents">
 
-<p>Interface for all events.  
+<p>Event interface.  
  <a href="classIEvent.html#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="event_8h_source.html">event.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a22d8bd6b55b5358f117db71c10272bb9" id="r_a22d8bd6b55b5358f117db71c10272bb9"><td class="memItemLeft" align="right" valign="top"><a id="a22d8bd6b55b5358f117db71c10272bb9" name="a22d8bd6b55b5358f117db71c10272bb9"></a>
-static void&#160;</td><td class="memItemRight" valign="bottom"><b>loadLua</b> (lua_State *state)</td></tr>
+<tr class="memitem:a22d8bd6b55b5358f117db71c10272bb9" id="r_a22d8bd6b55b5358f117db71c10272bb9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">static</a> <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIEvent.html#a22d8bd6b55b5358f117db71c10272bb9">loadLua</a> (<a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">lua_State</a> *state)</td></tr>
+<tr class="memdesc:a22d8bd6b55b5358f117db71c10272bb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads the event to the lua state.  <br /></td></tr>
 <tr class="separator:a22d8bd6b55b5358f117db71c10272bb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;class T&gt;<br />
-class IEvent&lt; T &gt;</div><p>Interface for all events. </p>
-<p>Really for sanity in the end. </p>
-</div><hr/>The documentation for this class was generated from the following file:<ul>
+<div class="textblock"><div class="compoundTemplParams">template&lt;<a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">class</a> <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">T</a>&gt;<br />
+class IEvent&lt; T &gt;</div><p>Event interface. </p>
+<p>All events should implement this event interface. Code will not compile otherwise. </p><dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">T</td><td>the event class, used for automatic lua class loading </td></tr>
+  </table>
+  </dd>
+</dl>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="a22d8bd6b55b5358f117db71c10272bb9" name="a22d8bd6b55b5358f117db71c10272bb9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a22d8bd6b55b5358f117db71c10272bb9">&#9670;&#160;</a></span>loadLua()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;<a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">class</a> <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">T</a> &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">void</a> <a class="el" href="classIEvent.html">IEvent</a>&lt; <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">T</a> &gt;::loadLua </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">lua_State</a> *&#160;</td>
+          <td class="paramname"><em>state</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Loads the event to the lua state. </p>
+<p>Template parameter is used here for classes that don't have any properties or else so that you don't need to have too much boilerplate code. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">state</td><td>the lua state to load to </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/plugins/<a class="el" href="event_8h_source.html">event.h</a></li>
 </ul>
 </div><!-- contents -->
@@ -129,7 +171,7 @@ class IEvent&lt; T &gt;</div><p>Interface for all events. </p>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classIEvent.html">IEvent</a></li>
-    <li class="footer">Generated on Fri Dec 1 2023 21:00:59 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Dec 3 2023 17:13:24 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

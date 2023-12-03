@@ -7,7 +7,8 @@ var searchData=
   ['clear_4',['clear',['../classMemoryStream.html#a392cb7470c7642c89daa5652e05c12c8',1,'MemoryStream']]],
   ['client_5',['Client',['../classClient.html#a1bb2f385948faf1b441c6406aa82e4ea',1,'Client']]],
   ['clientsocket_6',['clientsocket',['../classClientSocket.html#a13175484cd58019f34f37471abcdf4df',1,'ClientSocket::ClientSocket(socket_t client, char *addr)'],['../classClientSocket.html#a2364e47b7c4cb3a81b8fdafe9376946c',1,'ClientSocket::ClientSocket(int type)']]],
-  ['close_7',['close',['../classClient.html#a2ac4838875e743af25125d8b5c8eba09',1,'Client::close()'],['../classClientSocket.html#a6326bc6d9eec75a2e10ae8d8122ea488',1,'ClientSocket::close()'],['../classServerSocket.html#a0245d40096ca089255c67303eebf17e6',1,'ServerSocket::close()']]],
-  ['config_8',['Config',['../classConfig.html#abd0c571c116924871e30444b192b792a',1,'Config']]],
-  ['connect_9',['connect',['../classClientSocket.html#ac22cddc58215b02bd414338e1011b393',1,'ClientSocket']]]
+  ['clientstatusevent_7',['ClientStatusEvent',['../classClientStatusEvent.html#ac7494bf096510709629bad69f048c324',1,'ClientStatusEvent']]],
+  ['close_8',['close',['../classClient.html#a2ac4838875e743af25125d8b5c8eba09',1,'Client::close()'],['../classClientSocket.html#a6326bc6d9eec75a2e10ae8d8122ea488',1,'ClientSocket::close()'],['../classServerSocket.html#a0245d40096ca089255c67303eebf17e6',1,'ServerSocket::close()']]],
+  ['config_9',['Config',['../classConfig.html#abd0c571c116924871e30444b192b792a',1,'Config']]],
+  ['connect_10',['connect',['../classClientSocket.html#ac22cddc58215b02bd414338e1011b393',1,'ClientSocket']]]
 ];

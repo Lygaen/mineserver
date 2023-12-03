@@ -123,33 +123,33 @@ $(document).ready(function(){initNavTree('config_8h_source.html',''); initResiza
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span><span class="keyword">private</span>:</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keyword">const</span> <span class="keywordtype">char</span> *section;</div>
 <div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keyword">const</span> <span class="keywordtype">char</span> *key;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    T value;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">T</a> value;</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keyword">inline</span> rapidjson::Document::ConstMemberIterator canSafelyRead(<span class="keyword">const</span> rapidjson::Document &amp;document);</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> writeSafely(rapidjson::Document &amp;document, rapidjson::Value &amp;v);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="keyword">inline</span> rapidjson::Document::ConstMemberIterator canSafelyRead(<span class="keyword">const</span> rapidjson::Document &amp;<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">document</a>);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keyword">inline</span> <span class="keywordtype">void</span> writeSafely(rapidjson::Document &amp;<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">document</a>, rapidjson::Value &amp;<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">v</a>);</div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <a class="code hl_class" href="classField.html">Field</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *section, <span class="keyword">const</span> <span class="keywordtype">char</span> *key, T def);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <a class="code hl_class" href="classField.html">Field</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *section, <span class="keyword">const</span> <span class="keywordtype">char</span> *key, <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">T</a> <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">def</a>);</div>
 <div class="line"><a id="l00055" name="l00055"></a><span class="lineno"><a class="line" href="classField.html#a88c0d28bc6696a1e5dbfc50991014959">   55</a></span>    <a class="code hl_function" href="classField.html#a88c0d28bc6696a1e5dbfc50991014959">~Field</a>();</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classField.html#a4fd4a306e69fa5290fd9700586a4de32">load</a>(<span class="keyword">const</span> rapidjson::Document &amp;document);</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classField.html#a4f69f9beef47fcb6a0ac75fdc2315a96">save</a>(rapidjson::Document &amp;document);</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classField.html#a4fd4a306e69fa5290fd9700586a4de32">load</a>(<span class="keyword">const</span> rapidjson::Document &amp;<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">document</a>);</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classField.html#a4f69f9beef47fcb6a0ac75fdc2315a96">save</a>(rapidjson::Document &amp;<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">document</a>);</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
 <div class="foldopen" id="foldopen00079" data-start="{" data-end="}">
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="classField.html#ad6ccdff80569369f0a2ce11045cdaad1">   79</a></span>    <span class="keyword">const</span> T &amp;<a class="code hl_function" href="classField.html#ad6ccdff80569369f0a2ce11045cdaad1">getValue</a>()</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="classField.html#ad6ccdff80569369f0a2ce11045cdaad1">   79</a></span>    <span class="keyword">const</span> <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">T</a> &amp;<a class="code hl_function" href="classField.html#ad6ccdff80569369f0a2ce11045cdaad1">getValue</a>()</div>
 <div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    {</div>
 <div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        <span class="keywordflow">return</span> value;</div>
 <div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    }</div>
 </div>
 <div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
 <div class="foldopen" id="foldopen00089" data-start="{" data-end="}">
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="classField.html#a8fffa4866eabc15ec6cdf7db860a4839">   89</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classField.html#a8fffa4866eabc15ec6cdf7db860a4839">setValue</a>(T v)</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno"><a class="line" href="classField.html#a8fffa4866eabc15ec6cdf7db860a4839">   89</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classField.html#a8fffa4866eabc15ec6cdf7db860a4839">setValue</a>(<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">T</a> <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">v</a>)</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    {</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        value = v;</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>        value = <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">v</a>;</div>
 <div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>    }</div>
 </div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classField.html#a8784d5cb3626d7e6e971069153dcf5aa">registerLuaProperty</a>(lua_State *state);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classField.html#a8784d5cb3626d7e6e971069153dcf5aa">registerLuaProperty</a>(<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">lua_State</a> *state);</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>};</div>
 </div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
@@ -192,13 +192,13 @@ $(document).ready(function(){initNavTree('config_8h_source.html',''); initResiza
 <div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>    }</div>
 </div>
 <div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span> </div>
-<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classConfig.html#a349ed190b18d59d959f240efc45a8898">loadLuaLib</a>(lua_State *state);</div>
+<div class="line"><a id="l00256" name="l00256"></a><span class="lineno">  256</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classConfig.html#a349ed190b18d59d959f240efc45a8898">loadLuaLib</a>(<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">lua_State</a> *state);</div>
 <div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>};</div>
 </div>
 <div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span> </div>
 <div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span><span class="preprocessor">#endif </span><span class="comment">// MINESERVER_CONFIG_H</span></div>
 <div class="ttc" id="achatmessage_8h_html"><div class="ttname"><a href="chatmessage_8h.html">chatmessage.h</a></div><div class="ttdoc">The file containing minecraft chat message implementation.</div></div>
-<div class="ttc" id="aclassChatMessage_html"><div class="ttname"><a href="classChatMessage.html">ChatMessage</a></div><div class="ttdoc">Minecraft Chat Message implementation.</div><div class="ttdef"><b>Definition</b> chatmessage.h:26</div></div>
+<div class="ttc" id="aclassChatMessage_html"><div class="ttname"><a href="classChatMessage.html">ChatMessage</a></div><div class="ttdoc">Minecraft Chat Message implementation.</div><div class="ttdef"><b>Definition</b> chatmessage.h:27</div></div>
 <div class="ttc" id="aclassConfig_html"><div class="ttname"><a href="classConfig.html">Config</a></div><div class="ttdoc">The config class.</div><div class="ttdef"><b>Definition</b> config.h:111</div></div>
 <div class="ttc" id="aclassConfig_html_a2d9308efd8e264f8118b65658df0257b"><div class="ttname"><a href="classConfig.html#a2d9308efd8e264f8118b65658df0257b">Config::ADDRESS</a></div><div class="ttdeci">Field&lt; std::string &gt; ADDRESS</div><div class="ttdoc">The address to listen on.</div><div class="ttdef"><b>Definition</b> config.h:175</div></div>
 <div class="ttc" id="aclassConfig_html_a349ed190b18d59d959f240efc45a8898"><div class="ttname"><a href="classConfig.html#a349ed190b18d59d959f240efc45a8898">Config::loadLuaLib</a></div><div class="ttdeci">void loadLuaLib(lua_State *state)</div><div class="ttdoc">Load Config fields in Lua.</div><div class="ttdef"><b>Definition</b> config.cpp:220</div></div>
@@ -223,6 +223,7 @@ $(document).ready(function(){initNavTree('config_8h_source.html',''); initResiza
 <div class="ttc" id="aclassField_html_a8fffa4866eabc15ec6cdf7db860a4839"><div class="ttname"><a href="classField.html#a8fffa4866eabc15ec6cdf7db860a4839">Field::setValue</a></div><div class="ttdeci">void setValue(T v)</div><div class="ttdoc">Set the Value of the field.</div><div class="ttdef"><b>Definition</b> config.h:89</div></div>
 <div class="ttc" id="aclassField_html_ad6ccdff80569369f0a2ce11045cdaad1"><div class="ttname"><a href="classField.html#ad6ccdff80569369f0a2ce11045cdaad1">Field::getValue</a></div><div class="ttdeci">const T &amp; getValue()</div><div class="ttdoc">Get the Value of the field.</div><div class="ttdef"><b>Definition</b> config.h:79</div></div>
 <div class="ttc" id="aclassPNGFile_html"><div class="ttname"><a href="classPNGFile.html">PNGFile</a></div><div class="ttdoc">Wrapper around File for PNG files.</div><div class="ttdef"><b>Definition</b> file.h:95</div></div>
+<div class="ttc" id="aevent_8h_html_a76b4d07bdea899ac27cd17e96f56954b"><div class="ttname"><a href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">type_name</a></div><div class="ttdeci">constexpr std::string_view type_name()</div><div class="ttdoc">Gets the name of the type paramater.</div><div class="ttdef"><b>Definition</b> event.h:50</div></div>
 <div class="ttc" id="afile_8h_html"><div class="ttname"><a href="file_8h.html">file.h</a></div><div class="ttdoc">The file containing file (lol) loading logic.</div></div>
 <div class="ttc" id="aluaheaders_8h_html"><div class="ttname"><a href="luaheaders_8h.html">luaheaders.h</a></div><div class="ttdoc">Utility header file for lua things.</div></div>
 </div><!-- fragment --></div><!-- contents -->
@@ -231,7 +232,7 @@ $(document).ready(function(){initNavTree('config_8h_source.html',''); initResiza
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_313caf1132e152dd9b58bea13a4052ca.html">utils</a></li><li class="navelem"><a class="el" href="config_8h.html">config.h</a></li>
-    <li class="footer">Generated on Fri Dec 1 2023 21:00:59 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Dec 3 2023 17:13:24 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

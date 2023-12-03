@@ -4,5 +4,6 @@ var dir_313caf1132e152dd9b58bea13a4052ca =
     [ "crypto.h", "crypto_8h.html", "crypto_8h" ],
     [ "file.h", "file_8h.html", "file_8h" ],
     [ "logger.h", "logger_8h.html", "logger_8h" ],
+    [ "luaregutils.hpp", "luaregutils_8hpp.html", "luaregutils_8hpp" ],
     [ "network.h", "network_8h.html", "network_8h" ]
 ];
