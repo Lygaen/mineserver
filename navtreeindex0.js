@@ -246,8 +246,8 @@ var NAVTREEINDEX0 =
 "classes.html":[4,1],
 "client_8h.html":[5,0,0,3],
 "client_8h_source.html":[5,0,0,3],
+"clientevents_8hpp.html":[5,0,0,1,0,0],
 "clientevents_8hpp_source.html":[5,0,0,1,0,0],
 "clientstate_8h.html":[5,0,0,0,1,1],
-"clientstate_8h.html#a8d4a6786d6193f0e6245c44e4a7bb4a0":[5,0,0,0,1,1,1],
-"clientstate_8h.html#a8d4a6786d6193f0e6245c44e4a7bb4a0a0352906d1ea1dfcd663c918f3a86755b":[5,0,0,0,1,1,1,3]
+"clientstate_8h.html#a8d4a6786d6193f0e6245c44e4a7bb4a0":[5,0,0,0,1,1,1]
 };

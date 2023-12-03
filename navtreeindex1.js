@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"clientstate_8h.html#a8d4a6786d6193f0e6245c44e4a7bb4a0a0352906d1ea1dfcd663c918f3a86755b":[5,0,0,0,1,1,1,3],
 "clientstate_8h.html#a8d4a6786d6193f0e6245c44e4a7bb4a0a7ef5b81d60084ffcb2d5cb0faf9c64ff":[5,0,0,0,1,1,1,2],
 "clientstate_8h.html#a8d4a6786d6193f0e6245c44e4a7bb4a0ab15379688176677d49474245a6178d97":[5,0,0,0,1,1,1,1],
 "clientstate_8h.html#a8d4a6786d6193f0e6245c44e4a7bb4a0acc6ddcaa36bd57e5aec12749cb5ce29c":[5,0,0,0,1,1,1,0],
@@ -141,6 +142,7 @@ var NAVTREEINDEX1 =
 "plugins_8h_source.html":[5,0,0,1,3],
 "server_8h.html":[5,0,0,4],
 "server_8h_source.html":[5,0,0,4],
+"serverevents_8hpp.html":[5,0,0,1,0,2],
 "serverevents_8hpp_source.html":[5,0,0,1,0,2],
 "serverlist_8h.html":[5,0,0,0,0,0,1],
 "serverlist_8h_source.html":[5,0,0,0,0,0,1],
