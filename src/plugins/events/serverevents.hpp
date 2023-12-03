@@ -1,3 +1,14 @@
+/**
+ * @file serverevents.hpp
+ * @author Mathieu Cayeux
+ * @brief The file containing all of the server events
+ * @version 0.1
+ * @date 2023-12-03
+ *
+ * @copyright Copyright (c) 2023
+ *
+ */
+
 #ifndef MINESERVER_SERVEREVENTS_H
 #define MINESERVER_SERVEREVENTS_H
 

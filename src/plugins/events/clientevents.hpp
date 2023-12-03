@@ -1,3 +1,14 @@
+/**
+ * @file clientevents.hpp
+ * @author Mathieu Cayeux
+ * @brief The file containing all of the client events
+ * @version 0.1
+ * @date 2023-12-03
+ *
+ * @copyright Copyright (c) 2023
+ *
+ */
+
 #ifndef MINESERVER_CLIENTEVENTS_H
 #define MINESERVER_CLIENTEVENTS_H
 
