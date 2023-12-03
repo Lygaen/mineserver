@@ -3,6 +3,21 @@
 
 #include <plugins/event.h>
 
+/**
+ * @brief Event for a server starting
+ *
+ * Launched when the server starts,
+ * in practice straight after the plugins
+ * were loaded.
+ * Should implement in lua as such :
+ * @code{.lua}
+ * local function onStart(e)
+ *     -- do your thing
+ * end
+ *
+ * event.onServerStart(onClient)
+ * @endcode
+ */
 class ServerStartEvent : public IEvent<ServerStartEvent>
 {
 };

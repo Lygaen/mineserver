@@ -4,6 +4,9 @@
 #include <utility>
 #include <utils/logger.h>
 #include <plugins/event.h>
+#include <net/luaregnet.hpp>
+#include <utils/luaregutils.hpp>
+#include <plugins/events/luaregevents.hpp>
 
 Plugin::Plugin(std::string path) : path(std::move(path)), state(nullptr)
 {
@@ -42,11 +45,10 @@ bool Plugin::load()
 void Plugin::defineLibs()
 {
     lua::registerDefaultLibs(state, name.c_str());
-    Config::inst()
-        ->loadLuaLib(state);
 
-    ServerStartEvent::loadLua(state);
-    ClientConnectedEvent::loadLua(state);
+    loadEventsLua(state);
+    loadUtilsLua(state);
+    loadNetLua(state);
 }
 
 PluginsManager::PluginsManager() : plugins()

@@ -14,6 +14,7 @@
 
 #include <net/types/clientstate.h>
 #include <net/packet.h>
+#include <plugins/luaheaders.h>
 
 /**
  * @brief Handshake Packet
@@ -44,7 +45,7 @@ public:
      * @brief Destroy the Handshake Packet object
      *
      */
-    ~HandshakePacket() = default;
+    ~HandshakePacket() override = default;
 
     /**
      * @brief Protocol Version
@@ -52,7 +53,7 @@ public:
      * The protocol version of the client
      * connecting to the server.
      */
-    int protocolVersion;
+    int protocolVersion{};
     /**
      * @brief Server Address
      *
@@ -66,7 +67,7 @@ public:
      * The port that the client used to
      * connect to the server.
      */
-    unsigned short serverPort;
+    unsigned short serverPort{};
     /**
      * @brief Next State
      *
@@ -74,7 +75,7 @@ public:
      * is asking to do, 1 for status,
      * 2 for login.
      */
-    ClientState nextState;
+    ClientState nextState = ClientState::HANDSHAKE;
 
     /**
      * @brief Read Packet Data
@@ -83,6 +84,14 @@ public:
      * @param stream the stream to read from
      */
     void read(IMCStream *stream) override;
+
+    /**
+     * @brief Loads packet as lua class
+     *
+     * @param state lua state to load to
+     * @param baseNamespaceName the base namespace name to load to
+     */
+    static void loadLua(lua_State* state, const char* baseNamespaceName);
 };
 
 #endif // MINESERVER_HANDSHAKE_H

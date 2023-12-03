@@ -1,5 +1,5 @@
 /**
- * @file event.hpp
+ * @file event.h
  * @author Mathieu Cayeux
  * @brief The header-only containing event logic
  * @version 0.1
@@ -15,21 +15,40 @@
 #include <functional>
 #include <type_traits>
 #include <plugins/luaheaders.h>
+#include <utils/logger.h>
 
 /**
- * @brief Interface for all events
+ * @brief Event interface
  *
- * Really for sanity in the end.
+ * All events should implement this event interface.
+ * Code will not compile otherwise.
+ * @tparam T the event class, used for automatic lua class loading
  */
 template<class T>
 class IEvent
 {
 public:
+    /**
+     * @brief Loads the event to the lua state
+     *
+     * Template parameter is used here for classes
+     * that don't have any properties or else so
+     * that you don't need to have too much
+     * boilerplate code.
+     * @param state the lua state to load to
+     */
     static void loadLua(lua_State *state);
 };
 
+/**
+ * @brief Gets the name of the type paramater
+ *
+ * @tparam T the type to get the name
+ * @return constexpr std::string_view the name
+ */
 template <typename T>
-constexpr auto type_name() {
+constexpr std::string_view type_name()
+{
     std::string_view name, prefix, suffix;
 #ifdef __clang__
     name = __PRETTY_FUNCTION__;
@@ -311,6 +330,11 @@ public:
         }
     }
 
+    /**
+     * @brief Gets the instance of the events manager
+     *
+     * @return EventsManager* a pointer to the events manager
+     */
     static EventsManager *inst();
 };
 

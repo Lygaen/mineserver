@@ -13,7 +13,16 @@
 #define MINESERVER_SERVERLIST_H
 
 #include <net/packet.h>
+#include <plugins/luaheaders.h>
 
+/**
+ * @brief Server List packet
+ *
+ * Packet for clients that load the
+ * status data from the server such
+ * as the MoTD, max players, online
+ * players and so on.
+ */
 class ServerListPacket : public IPacket
 {
 protected:
@@ -27,10 +36,31 @@ protected:
 
 public:
     /**
+     * @brief Max players
+     *
+     * Max number of players allowed by the Config,
+     * defaults to config.
+     */
+    int maxPlayers;
+    /**
+     * @brief Online players
+     *
+     * The number of online players at this time.
+     * Defaults to actual number of players.
+     */
+    int onlinePlayers;
+    /**
+     * @brief Message of The Day (MoTD)
+     *
+     * Defaults to config.
+     */
+    ChatMessage motd;
+
+    /**
      * @brief Construct a new Server List Packet object
      *
      */
-    ServerListPacket() : IPacket(0x00) {}
+    ServerListPacket();
     /**
      * @brief Destroy the Server List Packet object
      *
@@ -46,6 +76,14 @@ public:
      * @deprecated No need to call it, it does nothing
      */
     void read(IMCStream *stream) override;
+
+    /**
+     * @brief Loads this Packet as a lua class
+     *
+     * @param state the state to load to
+     * @param baseNamespaceName the namespace to load to
+     */
+    static void loadLua(lua_State* state, const char* baseNamespaceName);
 };
 
 #endif // MINESERVER_SERVERLIST_H

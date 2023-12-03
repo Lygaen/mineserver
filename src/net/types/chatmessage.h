@@ -15,6 +15,7 @@
 #include <string>
 #include <rapidjson/rapidjson.h>
 #include <rapidjson/document.h>
+#include <plugins/luaheaders.h>
 
 /**
  * @brief Minecraft Chat Message implementation
@@ -134,6 +135,14 @@ public:
      * @return false the two variables are not equal
      */
     friend bool operator==(const ChatMessage &lhs, const ChatMessage &rhs);
+
+    /**
+     * @brief Loads the ChatMessage class to a Lua one
+     *
+     * @param state the state to load to
+     * @param namespaceName the namespace to load to
+     */
+    static void loadLua(lua_State *state, const char *namespaceName);
 };
 
 #endif // MINESERVER_CHATMESSAGE_H

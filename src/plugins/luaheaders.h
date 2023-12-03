@@ -19,7 +19,6 @@ extern "C"
 #include <lauxlib.h>
 }
 #include <LuaBridge/LuaBridge.h>
-#include <utils/logger.h>
 
 #ifndef DOXYGEN_IGNORE_THIS
 namespace logger
@@ -42,29 +41,16 @@ namespace lua
      * @param state the lua state
      * @return int lua thing whether it succeeded
      */
-    inline int luaCustomPrint(lua_State *state)
-    {
-        const char *name = reinterpret_cast<const char *>(lua_touserdata(state, lua_upvalueindex(1)));
-        int n = lua_gettop(state); /* number of arguments */
-        int i;
-        std::string endString;
-        for (i = 1; i <= n; i++)
-        { /* for each argument */
-            size_t l;
-            const char *s = luaL_tolstring(state, i, &l); /* convert it to string */
-            if (i > 1)                                    /* not the first element? */
-                endString += "\t";                        /* add a tab before it */
-            endString += std::string(s, l);               /* print it */
-            lua_pop(state, 1);                            /* pop result */
-        }
-        logger::plugin("[%s] %s", name, endString.c_str());
-        return 0;
-    }
+    int luaCustomPrint(lua_State *state);
 
     /**
-     * @brief Register default lua libs
+     * @brief Loads default libs
      *
-     * @param state the lua state
+     * Opens all default libs and creates a custom print
+     * luaCustomPrint(lua_State*) with the name pointer
+     * that should be pointing to the plugin name.
+     * @param state lua state to load libs to
+     * @param name the pointer to the name of the plugin
      */
     void registerDefaultLibs(lua_State *state, const char *name);
 };

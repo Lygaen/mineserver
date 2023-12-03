@@ -18,14 +18,13 @@ void ServerListPacket::write(IMCStream *stream)
     document.AddMember("version", version, alloc);
 
     rapidjson::Value players(rapidjson::kObjectType);
-    players.AddMember("max", Config::inst()->MAX_PLAYERS.getValue(), alloc);
-    // TODO Display actual number of connected players with sample
-    players.AddMember("online", 0, alloc);
+    players.AddMember("max", maxPlayers, alloc);
+    players.AddMember("online", onlinePlayers, alloc);
     // players.AddMember("sample", rapidjson::Value(rapidjson::kArrayType), alloc);
     document.AddMember("players", players, alloc);
 
     rapidjson::Value description(rapidjson::kObjectType);
-    Config::inst()->MOTD.getValue().save(description, alloc);
+    motd.save(description, alloc);
     document.AddMember("description", description, alloc);
 
     rapidjson::Value favicon(rapidjson::kStringType);
@@ -43,8 +42,29 @@ void ServerListPacket::write(IMCStream *stream)
     stream->writeString(std::string(buffer.GetString(), buffer.GetSize()));
 }
 
+ServerListPacket::ServerListPacket() : IPacket(0x00)
+{
+    maxPlayers = Config::inst()->MAX_PLAYERS.getValue();
+
+    // TODO Display actual number of connected players with sample
+    onlinePlayers = 0;
+    motd = Config::inst()->MOTD.getValue();
+}
+
 void ServerListPacket::read(IMCStream *stream)
 {
     /* Nothing wrong if you call it but just unecessary bloat */
     (void)stream;
+}
+
+void ServerListPacket::loadLua(lua_State *state, const char* baseNamespaceName) {
+    luabridge::getGlobalNamespace(state)
+        .beginNamespace(baseNamespaceName)
+        .beginClass<ServerListPacket>("ServerList")
+        .addConstructor<void()>()
+        .addProperty("maxPlayers", &ServerListPacket::maxPlayers)
+        .addProperty("onlinePlayers", &ServerListPacket::onlinePlayers)
+        .addProperty("motd", &ServerListPacket::motd)
+        .endClass()
+        .endNamespace();
 }

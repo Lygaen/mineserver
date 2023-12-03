@@ -18,3 +18,16 @@ void HandshakePacket::read(IMCStream *stream)
     serverPort = stream->readUnsignedShort();
     nextState = static_cast<ClientState>(stream->readVarInt());
 }
+
+void HandshakePacket::loadLua(lua_State *state, const char *baseNamespaceName) {
+    luabridge::getGlobalNamespace(state)
+            .beginNamespace(baseNamespaceName)
+            .beginClass<HandshakePacket>("Handshake")
+            .addConstructor<void()>()
+            .addProperty("protocolVersion", &HandshakePacket::protocolVersion)
+            .addProperty("serverAddress", &HandshakePacket::serverAddress)
+            .addProperty("serverPort", &HandshakePacket::serverPort)
+            .addProperty("nextState", &HandshakePacket::nextState)
+            .endClass()
+            .endNamespace();
+}

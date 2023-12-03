@@ -19,6 +19,8 @@
 #ifndef MINESERVER_CLIENTSTATE_H
 #define MINESERVER_CLIENTSTATE_H
 
+#include <plugins/luaheaders.h>
+
 /**
  * @brief Client State
  *
@@ -60,4 +62,36 @@ enum ClientState
     PLAY = 3
 };
 
+/**
+ * @brief Luabridge stack
+ *
+ * Utility from luabridge to add ClientState as
+ * an enum.
+ */
+template <>
+struct luabridge::Stack<ClientState> : luabridge::Enum<ClientState,
+        ClientState::HANDSHAKE,
+        ClientState::STATUS,
+        ClientState::LOGIN,
+        ClientState::PLAY>
+{
+};
+
+/**
+ * @brief Loads ClientState to lua
+ *
+ * @param state lua state to load to
+ * @param namespaceName the namespace to load to
+ */
+inline void loadClientStateLua(lua_State* state, const char* namespaceName) {
+    luabridge::getGlobalNamespace(state)
+        .beginNamespace(namespaceName)
+        .beginNamespace("ClientState")
+            .addProperty("HANDSHAKE", +[] {return ClientState::HANDSHAKE;})
+            .addProperty("STATUS", +[] {return ClientState::STATUS;})
+            .addProperty("LOGIN", +[] {return ClientState::LOGIN;})
+            .addProperty("PLAY", +[] {return ClientState::PLAY;})
+        .endNamespace()
+        .endNamespace();
+}
 #endif // MINESERVER_CLIENTSTATE_H

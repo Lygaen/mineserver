@@ -63,6 +63,8 @@ void Client::loop()
         case 0x00:
         {
             ServerListPacket serverlist;
+            ClientStatusEvent statusEvent(&serverlist);
+            EventsManager::inst()->fire(statusEvent);
             serverlist.send(stream);
             break;
         }

@@ -72,11 +72,12 @@ void Server::start()
                     client.start(); })
             .detach();
     }
+
+    sock.close();
 }
 
 void Server::stop()
 {
     logger::info("Stopping server...");
     isRunning = false;
-    sock.close();
 }

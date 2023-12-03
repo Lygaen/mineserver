@@ -1,10 +1,10 @@
 #include "chatmessage.h"
 
-ChatMessage::ChatMessage()
-{
-}
+#include <utility>
 
-ChatMessage::ChatMessage(std::string msg) : text(msg)
+ChatMessage::ChatMessage() = default;
+
+ChatMessage::ChatMessage(std::string msg) : text(std::move(msg))
 {
 }
 
@@ -118,4 +118,23 @@ bool operator==(const ChatMessage &lhs, const ChatMessage &rhs)
     return CMP(text) CMP(bold) CMP(italic) CMP(underlined)
         CMP(strikethrough) CMP(obfuscated)
             CMP(color) CMP(insertion) true;
+}
+
+void ChatMessage::loadLua(lua_State *state, const char *namespaceName) {
+    luabridge::getGlobalNamespace(state)
+    .beginNamespace(namespaceName)
+    .beginClass<ChatMessage>("ChatMessage")
+            .addConstructor([](void* ptr) {return new (ptr) ChatMessage();},
+                            [](void* ptr, const std::string &msg) {return new (ptr) ChatMessage(msg);})
+            .addProperty("bold", &ChatMessage::bold)
+            .addProperty("italic", &ChatMessage::italic)
+            .addProperty("underlined", &ChatMessage::underlined)
+            .addProperty("strikethrough", &ChatMessage::strikethrough)
+            .addProperty("obfuscated", &ChatMessage::obfuscated)
+            .addProperty("color", &ChatMessage::color)
+            .addProperty("insertion", &ChatMessage::insertion)
+            .addProperty("text", &ChatMessage::text)
+            .addFunction("addExtra", &ChatMessage::addExtra)
+    .endClass()
+    .endNamespace();
 }

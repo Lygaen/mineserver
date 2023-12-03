@@ -13,6 +13,7 @@
 #define MINESERVER_PINGPONG_H
 
 #include <net/packet.h>
+#include <plugins/luaheaders.h>
 
 /**
  * @brief The Ping Pong Packet
@@ -57,6 +58,14 @@ public:
      * @param stream the stream to read from
      */
     void read(IMCStream *stream) override;
+
+    /**
+     * @brief Loads this Packet as lua class
+     *
+     * @param state lua state to load to
+     * @param baseNamespaceName the namespace name
+     */
+    static void loadLua(lua_State* state, const char* baseNamespaceName);
 };
 
 #endif // MINESERVER_PINGPONG_H
