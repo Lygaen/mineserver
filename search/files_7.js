@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['server_2eh_0',['server.h',['../server_8h.html',1,'']]],
-  ['serverevents_2ehpp_1',['serverevents.hpp',['../serverevents_8hpp.html',1,'']]],
-  ['serverlist_2eh_2',['serverlist.h',['../serverlist_8h.html',1,'']]],
-  ['stream_2eh_3',['stream.h',['../stream_8h.html',1,'']]]
+  ['packet_2eh_0',['packet.h',['../packet_8h.html',1,'']]],
+  ['pingpong_2eh_1',['pingpong.h',['../pingpong_8h.html',1,'']]],
+  ['plugins_2eh_2',['plugins.h',['../plugins_8h.html',1,'']]]
 ];

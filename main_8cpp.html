@@ -7,7 +7,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=11" />
   <meta name="generator" content="Doxygen 1.9.8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Mineserver: src/plugins/luaheaders.h File Reference</title>
+  <title>Mineserver: src/main.cpp File Reference</title>
   <link href="tabs.css" rel="stylesheet" type="text/css" />
   <script type="text/javascript" src="jquery.js"></script>
   <script type="text/javascript" src="dynsections.js"></script>
@@ -72,7 +72,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(document).ready(function(){initNavTree('luaheaders_8h.html',''); initResizable(); });
+$(document).ready(function(){initNavTree('main_8cpp.html',''); initResizable(); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -99,48 +99,36 @@ $(document).ready(function(){initNavTree('luaheaders_8h.html',''); initResizable
 
 <div class="header">
   <div class="summary">
-<a href="#namespaces">Namespaces</a> &#124;
 <a href="#func-members">Functions</a>  </div>
-  <div class="headertitle"><div class="title">luaheaders.h File Reference</div></div>
+  <div class="headertitle"><div class="title">main.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
-<p>Utility header file for lua things.  
+<p>The file for the program entry point.  
 <a href="#details">More...</a></p>
-<div class="textblock"><code>#include &lt;lua.h&gt;</code><br />
-<code>#include &lt;lualib.h&gt;</code><br />
-<code>#include &lt;lauxlib.h&gt;</code><br />
-<code>#include &lt;LuaBridge/LuaBridge.h&gt;</code><br />
-</div>
-<p><a href="luaheaders_8h_source.html">Go to the source code of this file.</a></p>
-<table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:namespacelua" id="r_namespacelua"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelua.html">lua</a></td></tr>
-<tr class="memdesc:namespacelua"><td class="mdescLeft">&#160;</td><td class="mdescRight">Lua utility namespace. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
+<div class="textblock"><code>#include &lt;iostream&gt;</code><br />
+<code>#include &lt;<a class="el" href="config_8h_source.html">utils/config.h</a>&gt;</code><br />
+<code>#include &lt;<a class="el" href="server_8h_source.html">server.h</a>&gt;</code><br />
+<code>#include &lt;csignal&gt;</code><br />
+</div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:af0ce960bbad664d1bd4469a63827b471" id="r_af0ce960bbad664d1bd4469a63827b471"><td class="memItemLeft" align="right" valign="top"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelua.html#af0ce960bbad664d1bd4469a63827b471">lua::luaCustomPrint</a> (<a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">lua_State</a> *state)</td></tr>
-<tr class="memdesc:af0ce960bbad664d1bd4469a63827b471"><td class="mdescLeft">&#160;</td><td class="mdescRight">Custom print.  <br /></td></tr>
-<tr class="separator:af0ce960bbad664d1bd4469a63827b471"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aabcf2f0300271dfc460da8ac800254ae" id="r_aabcf2f0300271dfc460da8ac800254ae"><td class="memItemLeft" align="right" valign="top"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacelua.html#aabcf2f0300271dfc460da8ac800254ae">lua::registerDefaultLibs</a> (<a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">lua_State</a> *state, <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">const</a> <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">char</a> *name)</td></tr>
-<tr class="memdesc:aabcf2f0300271dfc460da8ac800254ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads default libs.  <br /></td></tr>
-<tr class="separator:aabcf2f0300271dfc460da8ac800254ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae66f6b31b5ad750f1fe042a706a4e3d4" id="r_ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memItemLeft" align="right" valign="top"><a id="ae66f6b31b5ad750f1fe042a706a4e3d4" name="ae66f6b31b5ad750f1fe042a706a4e3d4"></a>
+<a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">int</a>&#160;</td><td class="memItemRight" valign="bottom"><b>main</b> ()</td></tr>
+<tr class="separator:ae66f6b31b5ad750f1fe042a706a4e3d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>Utility header file for lua things. </p>
+<div class="textblock"><p>The file for the program entry point. </p>
 <dl class="section author"><dt>Author</dt><dd>Mathieu Cayeux </dd></dl>
 <dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>2023-11-27</dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2023-12-09</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2023 </dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_7020b8b7abcceffa3f9f7a2d24718f16.html">plugins</a></li><li class="navelem"><a class="el" href="luaheaders_8h.html">luaheaders.h</a></li>
+    <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="main_8cpp.html">main.cpp</a></li>
     <li class="footer">Generated on Sat Dec 9 2023 20:50:28 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
