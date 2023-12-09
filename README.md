@@ -26,6 +26,7 @@
     - [Network](#network)
     - [Display](#display)
     - [Other](#other)
+    - [Server](#server)
 - [Contribution](#contribution)
   - [Documentation](#documentation)
   - [Code](#code)
@@ -89,11 +90,11 @@ You can add `-D<YOUR OPTION>=<VALUE>` to the cmake command before the `..` to mo
 Open a terminal in the build folder or reuse the terminal in the previous steps, running the following commands. It should start building the executable. If any errors happened, please check that you did all of the previous steps or make an issue on Github, we will be happy to help !
 #### Windows
 ```
-mingw32-make
+mingw32-make all
 ```
 #### Linux
 ```
-make
+make all
 ```
 
 ## Configuration
@@ -102,10 +103,11 @@ Minserver uses multiple steps of configuration to customize everything. These st
 ### CMake
 Refer to [this piece of documentation](https://cmake.org/cmake/help/latest/prop_cache/TYPE.html) for more information on CMake types.
 
-| Option                 | Type  | Default Value | Description                                 |
-| ---------------------- | :---: | :-----------: | ------------------------------------------- |
-| MINESERVER_ANSI_COLORS | BOOL  |     TRUE      | Enables printing with color in the terminal |
-| MINESERVER_BUILD_TESTS | BOOL  |     TRUE      | Whether to build or not the tests           |
+| Option                 | Type | Default Value | Description                                             |
+|------------------------|:----:|:-------------:|---------------------------------------------------------|
+| MINESERVER_ANSI_COLORS | BOOL | TRUE          | Whether to print in the console using colors or not     |
+| MINESERVER_BUILD_TESTS | BOOL | TRUE          | Whether to build or not the tests                       |
+| GITHUB_ACTIONS_BUILD   | BOOL | FALSE         | Whether we are building from a Github Action (dev only) |
 
 ### Config.json
 Here are the different keys listed by section.
@@ -120,13 +122,19 @@ You can go take a look at [this documentation page](https://lygaen.github.io/min
 | address           |            string            |   127.0.0.1   | The IP address for the server to listen on                                |
 | backlog           |             int              |      100      | The number of pending connections for the server to hold before accepting |
 #### Display
-| Key  | Type  | Default Value | Description                                                               |
-| ---- | :---: | :-----------: | ------------------------------------------------------------------------- |
-| chat | motd  |       /       | A message of the day in the form of a [Chat object](https://wiki.vg/Chat#Inheritance) |
+| Key       |    Type   | Default Value | Description                                                                           |
+|-----------|:---------:|:-------------:|---------------------------------------------------------------------------------------|
+| motd      |    chat   |       /       | A message of the day in the form of a [Chat object](https://wiki.vg/Chat#Inheritance) |
+| icon_file | file path |       /       | Path to the png file of the server's icon (must be 64x64)                             |
 #### Other
 | Key      |   Type   | Default Value | Description                                                               |
 | -------- | :------: | :-----------: | ------------------------------------------------------------------------- |
 | loglevel | loglevel |      ALL      | Loglevel for the logger (ALL < DEBUG < INFO < WARN < ERROR < FATAL < OFF) |
+#### Server
+| Key         | Type | Default Value | Description                   |
+|-------------|:----:|:-------------:|-------------------------------|
+| max_players |  int |      100      | Max number of players allowed |
+
 
 ## Contribution
 A few instructions and informations on contributing to this project.
@@ -146,6 +154,8 @@ possible from them and uses only Open-Source libraries :
   - [Googletest](https://github.com/google/googletest)
   - [ZLib](https://github.com/madler/zlib)
   - [OpenSSL CMake Implementation](https://github.com/janbar/openssl-cmake)
+  - [LUA CMake Implementation](https://github.com/lubgr/lua-cmake)
+  - [LuaBridge3](https://github.com/kunitoki/LuaBridge3)
 
 ## Licensing
 This project uses [Apache License 2.0](https://choosealicense.com/licenses/apache-2.0/) for licensing. You can learn more information
