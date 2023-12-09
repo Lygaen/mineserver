@@ -98,7 +98,7 @@ make all
 ```
 
 ## Configuration
-Minserver uses multiple steps of configuration to customize everything. These steps are going for most influential to least. It means that for exemple configuration done in CMake will take over configuration done in the config file. We do not currently support configuration over the command line with arguments.
+Mineserver uses multiple steps of configuration to customize everything. These steps are going for most influential to least. It means that for exemple configuration done in CMake will take over configuration done in the config file. We do not currently support configuration over the command line with arguments.
 
 ### CMake
 Refer to [this piece of documentation](https://cmake.org/cmake/help/latest/prop_cache/TYPE.html) for more information on CMake types.
