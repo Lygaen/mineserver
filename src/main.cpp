@@ -1,3 +1,14 @@
+/**
+ * @file main.cpp
+ * @author Mathieu Cayeux
+ * @brief The file for the program entry point
+ * @version 0.1
+ * @date 2023-12-09
+ *
+ * @copyright Copyright (c) 2023
+ *
+ */
+
 #include <iostream>
 #include <utils/config.h>
 #include <server.h>
