@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['8_209_0',['Why 1.8.9 ?',['../index.html#why_version',1,'']]]
+  ['2_20_3a_20make_20gcc_20installation_0',['Step 2 : Make/GCC Installation',['../md_docs_2__1__INSTALLATION.html#autotoc_md1',1,'']]]
 ];

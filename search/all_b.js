@@ -1,19 +1,12 @@
 var searchData=
 [
-  ['icon_5ffile_0',['ICON_FILE',['../classConfig.html#aef3a172855427f6b66a430a973c62955',1,'Config']]],
-  ['id_1',['id',['../classIPacket.html#af88e94301d4f1ce06cb65e7314aa94cd',1,'IPacket']]],
-  ['ievent_2',['IEvent',['../classIEvent.html',1,'']]],
-  ['ievent_3c_20clientconnectedevent_20_3e_3',['IEvent&lt; ClientConnectedEvent &gt;',['../classIEvent.html',1,'']]],
-  ['ievent_3c_20clientstatusevent_20_3e_4',['IEvent&lt; ClientStatusEvent &gt;',['../classIEvent.html',1,'']]],
-  ['ievent_3c_20serverstartevent_20_3e_5',['IEvent&lt; ServerStartEvent &gt;',['../classIEvent.html',1,'']]],
-  ['imcstream_6',['IMCStream',['../classIMCStream.html',1,'']]],
-  ['inflate_7',['inflate',['../classcrypto_1_1ZLibCompressor.html#acdfa78b953277426e064d9699e1e922f',1,'crypto::ZLibCompressor']]],
-  ['info_8',['info',['../namespacelogger.html#a6c9ab850a6fd8deb457e1ade2007460f',1,'logger::info()'],['../logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a748005382152808a72b1a9177d9dc806',1,'INFO:&#160;logger.h']]],
-  ['info_5fcolor_9',['INFO_COLOR',['../logger_8h.html#a5d724ff30124b3ce91f377afb4598ed7',1,'logger.h']]],
-  ['init_10',['init',['../namespacecrypto.html#a3f13672befc50b83435e9b84f637997c',1,'crypto::init()'],['../classServerSocket.html#a0ca4d909bf5c076b2cac8e8d297fa500',1,'ServerSocket::init()']]],
-  ['insertion_11',['insertion',['../classChatMessage.html#ad89ce158d6e312c6cd28ff508286aff3',1,'ChatMessage']]],
-  ['inst_12',['inst',['../classConfig.html#af08cc4a60a38a00097b93a2c5ad4d37a',1,'Config::inst()'],['../classServer.html#a326ec98fe5fb62cc0a9588a1594ed840',1,'Server::inst()'],['../classEventsManager.html#a8b6868e7bf770c95e5706f4cf817bf56',1,'EventsManager::inst()']]],
-  ['ipacket_13',['ipacket',['../classIPacket.html#a2516236e7181caa0ea28ee00ff92e3b9',1,'IPacket::IPacket()'],['../classIPacket.html',1,'IPacket']]],
-  ['it_20open_20source_14',['Why making it Open-Source ?',['../index.html#why_opensource',1,'']]],
-  ['italic_15',['italic',['../classChatMessage.html#a45e14f8d0cceda2f3af297bb394dffce',1,'ChatMessage']]]
+  ['debug_0',['debug',['../logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a0593585da9181e972974c1274d8f2b4f',1,'DEBUG:&#160;logger.h'],['../namespacelogger.html#abf121e9e40ac777068d5f90419d3dfa8',1,'logger::debug()']]],
+  ['debug_5fcolor_1',['DEBUG_COLOR',['../logger_8h.html#a792f9eb6a62648607f47b22644ad9707',1,'logger.h']]],
+  ['decrypt_2',['DECRYPT',['../namespacecrypto.html#a512c0376973f32897981d6c4a7b2fd4ba22a7d9a2b89e6fb536138c0f6b743e29',1,'crypto']]],
+  ['definitions_3',['CMake Definitions',['../md_docs_2__2__CONFIG.html#cmake_definitions',1,'']]],
+  ['deflate_4',['deflate',['../classcrypto_1_1ZLibCompressor.html#a909476280eb8bf0144e941e47171bbe4',1,'crypto::ZLibCompressor']]],
+  ['deprecated_20list_5',['Deprecated List',['../deprecated.html',1,'']]],
+  ['display_6',['Display',['../md_docs_2__2__CONFIG.html#autotoc_md13',1,'']]],
+  ['do_20you_20have_20compared_20to_20other_7',['What features do you have compared to other ?',['../index.html#autotoc_md21',1,'']]],
+  ['does_20the_20project_20takes_20so_20much_20time_8',['Why does the project takes so much time ?',['../index.html#autotoc_md22',1,'']]]
 ];

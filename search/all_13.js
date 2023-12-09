@@ -1,12 +1,8 @@
 var searchData=
 [
-  ['takes_20so_20much_20time_0',['Why does the project takes so much time ?',['../index.html#why_so_long',1,'']]],
-  ['text_1',['text',['../classChatMessage.html#a667910b13603ee95b81ba7ad1d289ef1',1,'ChatMessage']]],
-  ['the_20project_20takes_20so_20much_20time_2',['Why does the project takes so much time ?',['../index.html#why_so_long',1,'']]],
-  ['time_3',['Why does the project takes so much time ?',['../index.html#why_so_long',1,'']]],
-  ['time_5fcolor_4',['TIME_COLOR',['../logger_8h.html#ac8e597a14bd81a2aae848dfe05abef13',1,'logger.h']]],
-  ['to_20other_5',['What features do you have compared to other ?',['../index.html#what_features',1,'']]],
-  ['todo_20list_6',['Todo List',['../todo.html',1,'']]],
-  ['touch_20of_20existential_20crisis_7',['End note with a touch of existential crisis',['../index.html#faq_end_note',1,'']]],
-  ['type_5fname_8',['type_name',['../event_8h.html#a76b4d07bdea899ac27cd17e96f56954b',1,'event.h']]]
+  ['netsocketstream_0',['netsocketstream',['../classNetSocketStream.html',1,'NetSocketStream'],['../classNetSocketStream.html#a6ddbb89505842e91429aeb7ec38febbc',1,'NetSocketStream::NetSocketStream()']]],
+  ['network_1',['Network',['../md_docs_2__2__CONFIG.html#autotoc_md12',1,'']]],
+  ['network_2eh_2',['network.h',['../network_8h.html',1,'']]],
+  ['nextstate_3',['nextState',['../classHandshakePacket.html#a96b7a2867a9f3717a70caecbd58d6804',1,'HandshakePacket']]],
+  ['note_20with_20a_20touch_20of_20existential_20crisis_4',['End note with a touch of existential crisis',['../index.html#autotoc_md23',1,'']]]
 ];

@@ -1,11 +1,7 @@
 var searchData=
 [
-  ['obfuscated_0',['obfuscated',['../classChatMessage.html#ad6a3d9687bcdee31ac06fa2581f439db',1,'ChatMessage']]],
-  ['of_20existential_20crisis_1',['End note with a touch of existential crisis',['../index.html#faq_end_note',1,'']]],
-  ['off_2',['OFF',['../logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9aac132f2982b98bcaa3445e535a03ff75',1,'logger.h']]],
-  ['online_5fmode_3',['ONLINE_MODE',['../classConfig.html#a8fce02797d172e5ea22979f38c569b9c',1,'Config']]],
-  ['onlineplayers_4',['onlinePlayers',['../classServerListPacket.html#ac153d15d85f28f589e051224499a8c35',1,'ServerListPacket']]],
-  ['open_20source_5',['Why making it Open-Source ?',['../index.html#why_opensource',1,'']]],
-  ['operator_3d_3d_6',['operator==',['../classChatMessage.html#a3b17b800fec4be26fa28af64cd32875b',1,'ChatMessage']]],
-  ['other_7',['What features do you have compared to other ?',['../index.html#what_features',1,'']]]
+  ['handshake_0',['HANDSHAKE',['../clientstate_8h.html#a8d4a6786d6193f0e6245c44e4a7bb4a0acc6ddcaa36bd57e5aec12749cb5ce29c',1,'clientstate.h']]],
+  ['handshake_2eh_1',['handshake.h',['../handshake_8h.html',1,'']]],
+  ['handshakepacket_2',['handshakepacket',['../classHandshakePacket.html',1,'HandshakePacket'],['../classHandshakePacket.html#ad2726c911f3bb5ed887e3858cc838264',1,'HandshakePacket::HandshakePacket()']]],
+  ['have_20compared_20to_20other_3',['What features do you have compared to other ?',['../index.html#autotoc_md21',1,'']]]
 ];

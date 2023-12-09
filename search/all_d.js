@@ -1,12 +1,18 @@
 var searchData=
 [
-  ['making_20it_20open_20source_0',['Why making it Open-Source ?',['../index.html#why_opensource',1,'']]],
-  ['max_5fplayers_1',['MAX_PLAYERS',['../classConfig.html#a6d3f8fa249a5909b1fdf1c209c449312',1,'Config']]],
-  ['maxplayers_2',['maxPlayers',['../classServerListPacket.html#a4a14cb56b577f79884ab46c4e926452b',1,'ServerListPacket']]],
-  ['mc_5fversion_5fname_3',['MC_VERSION_NAME',['../config_8h.html#a04b3235bab4b9b5f3e267bfe3e51cff8',1,'config.h']]],
-  ['mc_5fversion_5fnumber_4',['MC_VERSION_NUMBER',['../config_8h.html#a0ba599fd6a7f981428f324ce7cc1240c',1,'config.h']]],
-  ['memorystream_5',['memorystream',['../classMemoryStream.html',1,'MemoryStream'],['../classMemoryStream.html#a50244829d3814d4bd03133c71ec1c92a',1,'MemoryStream::MemoryStream()']]],
-  ['minecrafthash_6',['minecrafthash',['../classcrypto_1_1MinecraftHash.html',1,'crypto::MinecraftHash'],['../classcrypto_1_1MinecraftHash.html#a367213192993b0a61e92483b6894849f',1,'crypto::MinecraftHash::MinecraftHash()']]],
-  ['motd_7',['motd',['../classServerListPacket.html#ab4826954e5ab053550e59787e4eafaea',1,'ServerListPacket::motd'],['../classConfig.html#abcc2d45023a25f1c3cf5bf8074ffc993',1,'Config::MOTD']]],
-  ['much_20time_8',['Why does the project takes so much time ?',['../index.html#why_so_long',1,'']]]
+  ['faq_0',['Index - FAQ',['../index.html',1,'']]],
+  ['fatal_1',['fatal',['../logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a651d8a47a6976d6fe05c0e03fb4cd2d0',1,'FATAL:&#160;logger.h'],['../namespacelogger.html#a556241a1f5dfb02c21e3ba755e5ff4ac',1,'logger::fatal()']]],
+  ['fatal_5fcolor_2',['FATAL_COLOR',['../logger_8h.html#af28559d37017eab92792d364a8f82e21',1,'logger.h']]],
+  ['features_20do_20you_20have_20compared_20to_20other_3',['What features do you have compared to other ?',['../index.html#autotoc_md21',1,'']]],
+  ['field_4',['field',['../classField.html',1,'Field&lt; T &gt;'],['../classField.html#a2304aea77ba747f09a4fa109866ef374',1,'Field::Field()']]],
+  ['field_3c_20bool_20_3e_5',['Field&lt; bool &gt;',['../classField.html',1,'']]],
+  ['field_3c_20chatmessage_20_3e_6',['Field&lt; ChatMessage &gt;',['../classField.html',1,'']]],
+  ['field_3c_20int_20_3e_7',['Field&lt; int &gt;',['../classField.html',1,'']]],
+  ['field_3c_20pngfile_20_3e_8',['Field&lt; PNGFile &gt;',['../classField.html',1,'']]],
+  ['field_3c_20std_3a_3astring_20_3e_9',['Field&lt; std::string &gt;',['../classField.html',1,'']]],
+  ['file_10',['file',['../md_docs_2__2__CONFIG.html#config_file',1,'Config file'],['../classFile.html#ae039af5807fc385f41b60644725d15d0',1,'File::File()'],['../classFile.html',1,'File'],['../classFile.html#a4901fbf2e6cebd0adea4ea0cf998530f',1,'File::File()']]],
+  ['file_2eh_11',['file.h',['../file_8h.html',1,'']]],
+  ['finalize_12',['finalize',['../classcrypto_1_1AES128CFB8Cipher.html#a6619c1ddc3a98ffa393f840e1d206a59',1,'crypto::AES128CFB8Cipher::finalize()'],['../classcrypto_1_1MinecraftHash.html#a8c4157f0eb90c96166143db9ca4a99d2',1,'crypto::MinecraftHash::finalize()']]],
+  ['fire_13',['fire',['../classEventsManager.html#ac2e3dcab35985173976477a9ea8545c8',1,'EventsManager::fire()'],['../classEventHandler.html#a335dacd696ffcdfd912d34d9cfa7c2bd',1,'EventHandler::fire()']]],
+  ['flush_14',['flush',['../classIMCStream.html#aca226377aea0f0e1bca188a8911bff63',1,'IMCStream::flush()'],['../classMemoryStream.html#a497251020f6338694ebe91b8d32b2404',1,'MemoryStream::flush()'],['../classNetSocketStream.html#ab8e7a809ac4e51b7d8934ee25740a43b',1,'NetSocketStream::flush()'],['../classCipherStream.html#afda30da86b45fca2f023c365eb441229',1,'CipherStream::flush()'],['../classZLibStream.html#ac06417138fc207911d411577de418dfc',1,'ZLibStream::flush()']]]
 ];

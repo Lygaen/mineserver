@@ -25,7 +25,32 @@
 var NAVTREE =
 [
   [ "Mineserver", "index.html", [
-    [ "FAQ", "index.html", "index" ],
+    [ "Index - FAQ", "index.html", "index" ],
+    [ "Installation", "md_docs_2__1__INSTALLATION.html", [
+      [ "Step 1 : CMake Installation", "md_docs_2__1__INSTALLATION.html#cmake_installation", null ],
+      [ "Step 2 : Make/GCC Installation", "md_docs_2__1__INSTALLATION.html#autotoc_md1", [
+        [ "Windows", "md_docs_2__1__INSTALLATION.html#autotoc_md2", null ],
+        [ "Linux", "md_docs_2__1__INSTALLATION.html#autotoc_md3", null ]
+      ] ],
+      [ "Step 3 : Cloning", "md_docs_2__1__INSTALLATION.html#autotoc_md4", null ],
+      [ "Step 4 : Configuring using CMake", "md_docs_2__1__INSTALLATION.html#autotoc_md5", [
+        [ "GUI", "md_docs_2__1__INSTALLATION.html#autotoc_md6", null ],
+        [ "Command Line", "md_docs_2__1__INSTALLATION.html#autotoc_md7", null ]
+      ] ],
+      [ "Step 5 : Compiling", "md_docs_2__1__INSTALLATION.html#autotoc_md8", [
+        [ "Windows", "md_docs_2__1__INSTALLATION.html#autotoc_md9", null ],
+        [ "Linux", "md_docs_2__1__INSTALLATION.html#autotoc_md10", null ]
+      ] ]
+    ] ],
+    [ "Config", "md_docs_2__2__CONFIG.html", [
+      [ "CMake Definitions", "md_docs_2__2__CONFIG.html#cmake_definitions", null ],
+      [ "Config file", "md_docs_2__2__CONFIG.html#config_file", [
+        [ "Network", "md_docs_2__2__CONFIG.html#autotoc_md12", null ],
+        [ "Display", "md_docs_2__2__CONFIG.html#autotoc_md13", null ],
+        [ "Server", "md_docs_2__2__CONFIG.html#autotoc_md14", null ],
+        [ "Other", "md_docs_2__2__CONFIG.html#autotoc_md15", null ]
+      ] ]
+    ] ],
     [ "Deprecated List", "deprecated.html", null ],
     [ "Todo List", "todo.html", null ],
     [ "Namespaces", "namespaces.html", [

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['9_0',['Why 1.8.9 ?',['../index.html#why_version',1,'']]]
+  ['3_20_3a_20cloning_0',['Step 3 : Cloning',['../md_docs_2__1__INSTALLATION.html#autotoc_md4',1,'']]]
 ];
