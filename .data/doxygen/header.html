@@ -30,6 +30,28 @@
   <script type="text/javascript">
     DoxygenAwesomeDarkModeToggle.init()
   </script>
+  <link rel="stylesheet" type="text/css" href="$relpath^atom-one-dark.css">
+  <script type="text/javascript" src="$relpath^highlight.js"></script>
+  <script type="text/javascript">
+    if (window.location.href.indexOf("source") === -1) {
+      $(function () {
+        $(".fragment").each(function (i, node) {
+          var $node = $(node);
+          $node.html("<pre><code class='" +
+            $node.attr("class") + "'>" +
+            $node.text() + "</code></pre>");
+          hljs.highlightElement(node);
+          $node.wrap("<pre></pre>");
+        });
+      });
+    }
+  </script>
+  
+  <style>
+    .lineno {
+      display: none;
+    }
+  </style>
 </head>
 
 <body>

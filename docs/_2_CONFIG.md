@@ -5,7 +5,7 @@ Mineserver uses multiple steps of configuration to customize everything. These s
 The order of hierarchy of the configuration is :
  - [CMake definitions](#cmake_definitions) (limited and defined at compile-time)
  - Command Line Arguments (yet to be supported)
- - [`config.json` file](#config_file)
+ - [config.json file](#config_file)
 
 ## CMake Definitions {#cmake_definitions}
 Refer to [this piece of documentation](https://cmake.org/cmake/help/latest/prop_cache/TYPE.html) for more information on CMake types.

@@ -1364,7 +1364,9 @@ HTML_EXTRA_STYLESHEET  = .data/doxygen/doxygen-awesome-sidebar-only-darkmode-tog
 # files will be copied as-is; there are no commands or markers available.
 # This tag requires that the tag GENERATE_HTML is set to YES.
 
-HTML_EXTRA_FILES       = .data/doxygen/doxygen-awesome-darkmode-toggle.js
+HTML_EXTRA_FILES       = .data/doxygen/doxygen-awesome-darkmode-toggle.js \
+                         .data/doxygen/highlight/highlight.js \
+                         .data/doxygen/highlight/styles/atom-one-dark.css
 
 # The HTML_COLORSTYLE tag can be used to specify if the generated HTML output
 # should be rendered with a dark or light theme.
