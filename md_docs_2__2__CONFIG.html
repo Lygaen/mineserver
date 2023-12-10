@@ -25,6 +25,27 @@
   <script type="text/javascript">
     DoxygenAwesomeDarkModeToggle.init()
   </script>
+  <link rel="stylesheet" type="text/css" href="atom-one-dark.css">
+  <script type="text/javascript" src="highlight.js"></script>
+  <script type="text/javascript">
+    if (window.location.href.indexOf("source") === -1) {
+      $(function () {
+        $(".fragment").each(function (i, node) {
+          var $node = $(node);
+          $node.html("<pre><code class='" +
+            $node.attr("class") + "'>" +
+            $node.text() + "</code></pre>");
+          hljs.highlightElement(node);
+          $node.wrap("<pre></pre>");
+        });
+      });
+    }
+  </script>
+  <style>
+    .lineno {
+      display: none;
+    }
+  </style>
 </head>
 <body>
     <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -115,7 +136,7 @@ $(document).ready(function(){initNavTree('md_docs_2__2__CONFIG.html',''); initRe
 <p>Mineserver uses multiple steps of configuration to customize everything. These steps are going for most influential to least. It means that for exemple configuration done in CMake will take over configuration done in the config file. We do not currently support configuration over the command line with arguments. The order of hierarchy of the configuration is :</p><ul>
 <li><a class="el" href="md_docs_2__2__CONFIG.html#cmake_definitions">CMake definitions</a> (limited and defined at compile-time)</li>
 <li>Command Line Arguments (yet to be supported)</li>
-<li><a class="el" href="md_docs_2__2__CONFIG.html#config_file">`config.json` file</a></li>
+<li><a class="el" href="md_docs_2__2__CONFIG.html#config_file">config.json file</a></li>
 </ul>
 <h1><a class="anchor" id="cmake_definitions"></a>
 CMake Definitions</h1>
@@ -194,7 +215,7 @@ Other</h2>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Sat Dec 9 2023 20:50:28 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Dec 10 2023 14:57:47 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

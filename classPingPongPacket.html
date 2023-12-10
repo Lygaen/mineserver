@@ -25,6 +25,27 @@
   <script type="text/javascript">
     DoxygenAwesomeDarkModeToggle.init()
   </script>
+  <link rel="stylesheet" type="text/css" href="atom-one-dark.css">
+  <script type="text/javascript" src="highlight.js"></script>
+  <script type="text/javascript">
+    if (window.location.href.indexOf("source") === -1) {
+      $(function () {
+        $(".fragment").each(function (i, node) {
+          var $node = $(node);
+          $node.html("<pre><code class='" +
+            $node.attr("class") + "'>" +
+            $node.text() + "</code></pre>");
+          hljs.highlightElement(node);
+          $node.wrap("<pre></pre>");
+        });
+      });
+    }
+  </script>
+  <style>
+    .lineno {
+      display: none;
+    }
+  </style>
 </head>
 <body>
     <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -322,7 +343,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classPingPongPacket.html">PingPongPacket</a></li>
-    <li class="footer">Generated on Sat Dec 9 2023 20:50:28 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sun Dec 10 2023 14:57:47 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>
