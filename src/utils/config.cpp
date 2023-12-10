@@ -160,6 +160,7 @@ void Field<T>::registerLuaProperty(lua_State *state)
 {
     luabridge::getGlobalNamespace(state)
         .beginNamespace("config")
+        .beginNamespace(section)
         .addProperty(
             key, [this]()
             { return this->getValue(); },
@@ -167,6 +168,7 @@ void Field<T>::registerLuaProperty(lua_State *state)
             {
                 this->setValue(value);
             })
+        .endNamespace()
         .endNamespace();
 }
 

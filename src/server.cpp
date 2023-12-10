@@ -80,4 +80,5 @@ void Server::stop()
 {
     logger::info("Stopping server...");
     isRunning = false;
+    sock.close();
 }

@@ -30,21 +30,25 @@ bool Plugin::load()
         return false;
     }
 
-    auto luaName = luabridge::getGlobal(state, "Name");
-    auto luaVersion = luabridge::getGlobal(state, "Version");
-    if (!luaName.isString() || !luaVersion.isString())
-    {
-        logger::error("Plugin has invalid metadata at %s", path.c_str());
-    }
-    name = luaName.tostring();
-    version = luaVersion.tostring();
-
     return true;
 }
 
 void Plugin::defineLibs()
 {
+    name = path;
+    version = "0";
+
     lua::registerDefaultLibs(state, name.c_str());
+
+    luabridge::getGlobalNamespace(state)
+        .beginNamespace("plugins")
+        .beginClass<Plugin>("Plugin")
+        .addProperty("name", &Plugin::name)
+        .addProperty("version", &Plugin::version)
+        .addProperty("path", &Plugin::path, false)
+        .endClass()
+        .endNamespace();
+    luabridge::setGlobal(state, this, "plugin");
 
     loadEventsLua(state);
     loadUtilsLua(state);

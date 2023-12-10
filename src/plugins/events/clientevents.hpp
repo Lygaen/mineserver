@@ -14,6 +14,7 @@
 
 #include <plugins/event.h>
 #include <net/packets/status/serverlist.h>
+#include <net/packets/handshake.h>
 
 /**
  * @brief Event for a client connection
@@ -29,6 +30,62 @@
  * @endcode
  */
 class ClientConnectedEvent : public IEvent<ClientConnectedEvent> {
+};
+
+/**
+ * @brief Event for a client status
+ *
+ * Launched when a new clients was connected,
+ * and we received it seems an handshake.
+ * Should implement in lua as such :
+ * @code{.lua}
+ * local function onStatus(e)
+ *     -- do your thing, like printing the client protocol version
+ *     print("Client protocol version : " .. e.packet.protocolVersion)
+ * end
+ *
+ * event.onClientHandshake(onStatus)
+ * @endcode
+ */
+class ClientHandshakeEvent : public IEvent<ClientHandshakeEvent>
+{
+public:
+    /**
+     * @brief Pointer to handshake packet
+     *
+     * Pointer to the handshake packet,
+     * so that lua and other listeners can modify
+     * the data sent to clients individually.
+     */
+    HandshakePacket *packet;
+
+    /**
+     * @brief Construct a new Client Handshake Event object
+     *
+     * @param packet the pointer to the packet
+     */
+    ClientHandshakeEvent(HandshakePacket *packet) : packet(packet) {}
+
+    /**
+     * @brief Loads this event to lua
+     *
+     * @param state the lua state to load to
+     */
+    static void loadLua(lua_State *state)
+    {
+        luabridge::getGlobalNamespace(state)
+            .beginNamespace("event")
+            .addFunction("onClientHandshake", [](const luabridge::LuaRef &ref)
+                         {
+                    if(!ref.isFunction())
+                        return;
+
+                    EventsManager::inst()->subscribe<ClientHandshakeEvent>(const_cast<luabridge::LuaRef &>(ref)); })
+            .beginClass<ClientHandshakeEvent>("ClientHandshake")
+            .addProperty("packet", &ClientHandshakeEvent::packet)
+            .endClass()
+            .endNamespace();
+    }
 };
 
 /**
