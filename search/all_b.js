@@ -7,6 +7,6 @@ var searchData=
   ['deflate_4',['deflate',['../classcrypto_1_1ZLibCompressor.html#a909476280eb8bf0144e941e47171bbe4',1,'crypto::ZLibCompressor']]],
   ['deprecated_20list_5',['Deprecated List',['../deprecated.html',1,'']]],
   ['display_6',['Display',['../md_docs_2__2__CONFIG.html#autotoc_md13',1,'']]],
-  ['do_20you_20have_20compared_20to_20other_7',['What features do you have compared to other ?',['../index.html#autotoc_md21',1,'']]],
-  ['does_20the_20project_20takes_20so_20much_20time_8',['Why does the project takes so much time ?',['../index.html#autotoc_md22',1,'']]]
+  ['do_20you_20have_20compared_20to_20other_7',['What features do you have compared to other ?',['../index.html#autotoc_md28',1,'']]],
+  ['does_20the_20project_20takes_20so_20much_20time_8',['Why does the project takes so much time ?',['../index.html#autotoc_md29',1,'']]]
 ];

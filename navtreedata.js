@@ -51,6 +51,15 @@ var NAVTREE =
         [ "Other", "md_docs_2__2__CONFIG.html#autotoc_md15", null ]
       ] ]
     ] ],
+    [ "Plugins", "md_docs_2__3__PLUGINS.html", [
+      [ "Basics", "md_docs_2__3__PLUGINS.html#autotoc_md17", null ],
+      [ "Events", "md_docs_2__3__PLUGINS.html#autotoc_md18", null ],
+      [ "Access to classes", "md_docs_2__3__PLUGINS.html#autotoc_md19", [
+        [ "Generally", "md_docs_2__3__PLUGINS.html#autotoc_md20", null ],
+        [ "Config", "md_docs_2__3__PLUGINS.html#autotoc_md21", null ]
+      ] ],
+      [ "Libraries Warning", "md_docs_2__3__PLUGINS.html#autotoc_md22", null ]
+    ] ],
     [ "Deprecated List", "deprecated.html", null ],
     [ "Todo List", "todo.html", null ],
     [ "Namespaces", "namespaces.html", [
@@ -90,7 +99,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"clientstate_8h.html#a8d4a6786d6193f0e6245c44e4a7bb4a0a0352906d1ea1dfcd663c918f3a86755b"
+"clientevents_8hpp.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

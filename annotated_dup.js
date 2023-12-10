@@ -12,6 +12,7 @@ var annotated_dup =
     [ "CipherStream", "classCipherStream.html", "classCipherStream" ],
     [ "Client", "classClient.html", "classClient" ],
     [ "ClientConnectedEvent", "classClientConnectedEvent.html", null ],
+    [ "ClientHandshakeEvent", "classClientHandshakeEvent.html", "classClientHandshakeEvent" ],
     [ "ClientSocket", "classClientSocket.html", "classClientSocket" ],
     [ "ClientStatusEvent", "classClientStatusEvent.html", "classClientStatusEvent" ],
     [ "Config", "classConfig.html", "classConfig" ],

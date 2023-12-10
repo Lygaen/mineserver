@@ -23,6 +23,9 @@ var hierarchy =
     [ "IEvent< ClientConnectedEvent >", "classIEvent.html", [
       [ "ClientConnectedEvent", "classClientConnectedEvent.html", null ]
     ] ],
+    [ "IEvent< ClientHandshakeEvent >", "classIEvent.html", [
+      [ "ClientHandshakeEvent", "classClientHandshakeEvent.html", null ]
+    ] ],
     [ "IEvent< ClientStatusEvent >", "classIEvent.html", [
       [ "ClientStatusEvent", "classClientStatusEvent.html", null ]
     ] ],
