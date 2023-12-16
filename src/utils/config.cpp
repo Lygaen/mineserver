@@ -1,3 +1,14 @@
+/**
+ * @file config.cpp
+ * @author Lygaen
+ * @brief The file containing the config logic
+ * @version 0.1
+ * @date 2023-12-16
+ *
+ * @copyright Copyright (c) 2023
+ *
+ */
+
 #include <fstream>
 #include <sstream>
 #include <string>

@@ -1,3 +1,14 @@
+/**
+ * @file uuid.cpp
+ * @author Lygaen
+ * @brief The file containing UUID logic
+ * @version 0.1
+ * @date 2023-12-16
+ *
+ * @copyright Copyright (c) 2023
+ *
+ */
+
 #include "uuid.h"
 #include <utils/crypto.h>
 #include <vector>

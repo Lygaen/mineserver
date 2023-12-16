@@ -1,3 +1,14 @@
+/**
+ * @file chatmessage.cpp
+ * @author Lygaen
+ * @brief The file containing Chat Message logic
+ * @version 0.1
+ * @date 2023-12-16
+ *
+ * @copyright Copyright (c) 2023
+ *
+ */
+
 #include "chatmessage.h"
 
 #include <utility>

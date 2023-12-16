@@ -1,3 +1,14 @@
+/**
+ * @file stream.cpp
+ * @author Lygaen
+ * @brief The file containing the Minecraft Stream logic
+ * @version 0.1
+ * @date 2023-12-16
+ *
+ * @copyright Copyright (c) 2023
+ *
+ */
+
 #include "stream.h"
 #include <cstring>
 #include <bit>

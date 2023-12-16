@@ -1,3 +1,14 @@
+/**
+ * @file server.cpp
+ * @author Lygaen
+ * @brief the file containing the logic for the server
+ * @version 0.1
+ * @date 2023-12-16
+ *
+ * @copyright Copyright (c) 2023
+ *
+ */
+
 #include "server.h"
 #include <utils/logger.h>
 #include <client.h>

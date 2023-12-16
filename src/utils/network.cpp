@@ -1,3 +1,14 @@
+/**
+ * @file network.cpp
+ * @author Lygaen
+ * @brief The file containing the logic for the networking
+ * @version 0.1
+ * @date 2023-12-16
+ *
+ * @copyright Copyright (c) 2023
+ *
+ */
+
 #include "network.h"
 #include <cstring>
 #include <stdexcept>

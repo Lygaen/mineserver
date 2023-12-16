@@ -1,3 +1,14 @@
+/**
+ * @file plugins.cpp
+ * @author Lygaen
+ * @brief The file containing the plugin system logic
+ * @version 0.1
+ * @date 2023-12-16
+ *
+ * @copyright Copyright (c) 2023
+ *
+ */
+
 #include "plugins.h"
 #include <plugins/events/serverevents.hpp>
 #include <plugins/events/clientevents.hpp>

@@ -1,3 +1,14 @@
+/**
+ * @file logger.cpp
+ * @author Lygaen
+ * @brief The file containing the logic for the logger
+ * @version 0.1
+ * @date 2023-12-16
+ *
+ * @copyright Copyright (c) 2023
+ *
+ */
+
 #include "logger.h"
 #include "plugins/luaheaders.h"
 

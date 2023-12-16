@@ -1,3 +1,14 @@
+/**
+ * @file handshake.cpp
+ * @author Lygaen
+ * @brief The file containing handshake logic
+ * @version 0.1
+ * @date 2023-12-16
+ *
+ * @copyright Copyright (c) 2023
+ *
+ */
+
 #include "handshake.h"
 #include <stdexcept>
 #include <codecvt>

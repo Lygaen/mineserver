@@ -1,3 +1,14 @@
+/**
+ * @file crypto.cpp
+ * @author Lygaen
+ * @brief The file containing the cryptography logic
+ * @version 0.1
+ * @date 2023-12-16
+ *
+ * @copyright Copyright (c) 2023
+ *
+ */
+
 #include "crypto.h"
 #include <vector>
 #include <algorithm>

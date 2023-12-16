@@ -1,3 +1,14 @@
+/**
+ * @file serverlist.cpp
+ * @author Lygaen
+ * @brief The file containing Server List Packet logic
+ * @version 0.1
+ * @date 2023-12-16
+ *
+ * @copyright Copyright (c) 2023
+ *
+ */
+
 #include "serverlist.h"
 #include <rapidjson/document.h>
 #include <rapidjson/stringbuffer.h>

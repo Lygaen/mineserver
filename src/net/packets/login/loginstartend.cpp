@@ -1,3 +1,14 @@
+/**
+ * @file loginstartend.cpp
+ * @author Lygaen
+ * @brief The file containing Login Start / Success packets logic
+ * @version 0.1
+ * @date 2023-12-16
+ *
+ * @copyright Copyright (c) 2023
+ *
+ */
+
 #include "loginstartend.h"
 
 void LoginStart::write(IMCStream *stream)
