@@ -219,7 +219,20 @@ void IMCStream::writeChat(const ChatMessage &c)
     writeString(buffer.GetString());
 }
 
+/**
+ * @brief Mask for VarInts
+ *
+ * Mask for bit representation of varints,
+ * the most bit used to continue or not
+ */
 #define SEGMENT_BITS 0x7F
+/**
+ * @brief Mask for Continue Bit
+ *
+ * Mask for the bit representation of the
+ * continue bit, used to see if we need
+ * to load the next byte in
+ */
 #define CONTINUE_BIT 0x80
 std::int32_t IMCStream::readVarInt()
 {
@@ -235,6 +248,7 @@ std::int32_t IMCStream::readVarInt()
         if ((currentByte & CONTINUE_BIT) == 0)
             break;
 
+        // Forward to the next 7 bits
         position += 7;
 
         if (position > 32)
