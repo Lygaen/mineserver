@@ -1,6 +1,6 @@
 /**
  * @file handshake.h
- * @author Mathieu Cayeux
+ * @author Lygaen
  * @brief The file containing handshake protocol
  * @version 1.0
  * @date 2023-06-12

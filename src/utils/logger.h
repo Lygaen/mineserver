@@ -1,6 +1,6 @@
 /**
  * @file logger.h
- * @author Mathieu Cayeux
+ * @author Lygaen
  * @brief The main file for the logger
  * @version 1.0
  * @date 2023-03-20

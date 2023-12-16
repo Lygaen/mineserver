@@ -1,6 +1,6 @@
 /**
  * @file clientevents.hpp
- * @author Mathieu Cayeux
+ * @author Lygaen
  * @brief The file containing all of the client events
  * @version 0.1
  * @date 2023-12-03

@@ -1,6 +1,6 @@
 /**
  * @file luaregnet.hpp
- * @author Mathieu Cayeux
+ * @author Lygaen
  * @brief Utility for loading network lua classes
  * @version 0.1
  * @date 2023-12-03

@@ -1,6 +1,6 @@
 /**
  * @file plugins.h
- * @author Mathieu Cayeux
+ * @author Lygaen
  * @brief The file handling plugin system
  * @version 0.1
  * @date 2023-11-27

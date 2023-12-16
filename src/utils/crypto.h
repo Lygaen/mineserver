@@ -1,6 +1,6 @@
 /**
  * @file crypto.h
- * @author Mathieu
+ * @author Lygaen
  * @brief The file containing all the logic for encryption
  * @version 0.1
  * @date 2023-03-24

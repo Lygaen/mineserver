@@ -1,6 +1,6 @@
 /**
  * @file server.h
- * @author Mathieu Cayeux
+ * @author Lygaen
  * @brief The file containing most of the server logic
  * @version 0.1
  * @date 2023-04-13

@@ -1,6 +1,6 @@
 /**
  * @file chatmessage.h
- * @author Mathieu Cayeux
+ * @author Lygaen
  * @brief The file containing minecraft chat message implementation
  * @version 1.0
  * @date 2023-04-08

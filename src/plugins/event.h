@@ -1,6 +1,6 @@
 /**
  * @file event.h
- * @author Mathieu Cayeux
+ * @author Lygaen
  * @brief The header-only containing event logic
  * @version 0.1
  * @date 2023-11-27

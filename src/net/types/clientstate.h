@@ -1,6 +1,6 @@
 /**
  * @file clientstate.h
- * @author Mathieu Cayeuyx
+ * @author Lygaen Cayeuyx
  * @brief The file containing just the enum of client state
  * @version 1.0
  * @date 2023-06-12

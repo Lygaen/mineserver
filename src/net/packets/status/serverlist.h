@@ -1,6 +1,6 @@
 /**
  * @file serverlist.h
- * @author Mathieu Cayeux
+ * @author Lygaen
  * @brief The file containing packet logic for server list
  * @version 1.0
  * @date 2023-06-13

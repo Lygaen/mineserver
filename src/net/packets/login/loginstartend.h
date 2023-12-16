@@ -1,6 +1,6 @@
 /**
  * @file loginstartend.h
- * @author Mathieu Cayeux
+ * @author Lygaen
  * @brief The file containing login start and end packets
  * @version 0.1
  * @date 2023-12-16

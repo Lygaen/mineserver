@@ -1,6 +1,6 @@
 /**
  * @file luaregutils.hpp
- * @author Mathieu Cayeux
+ * @author Lygaen
  * @brief Utility for loading utils lua classes
  * @version 0.1
  * @date 2023-12-03

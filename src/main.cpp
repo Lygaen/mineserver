@@ -1,6 +1,6 @@
 /**
  * @file main.cpp
- * @author Mathieu Cayeux
+ * @author Lygaen
  * @brief The file for the program entry point
  * @version 0.1
  * @date 2023-12-09

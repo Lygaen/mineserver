@@ -1,6 +1,6 @@
 /**
  * @file packet.h
- * @author Mathieu Cayeux
+ * @author Lygaen
  * @brief The file containing the packet data
  * @version 1.0
  * @date 2023-06-11

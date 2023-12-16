@@ -1,6 +1,6 @@
 /**
  * @file luaregpackets.hpp
- * @author Mathieu Cayeux
+ * @author Lygaen
  * @brief Utility for loading packets lua classes
  * @version 0.1
  * @date 2023-12-03

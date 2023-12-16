@@ -1,6 +1,6 @@
 /**
  * @file luaheaders.h
- * @author Mathieu Cayeux
+ * @author Lygaen
  * @brief Utility header file for lua things
  * @version 0.1
  * @date 2023-11-27
