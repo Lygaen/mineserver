@@ -7,5 +7,6 @@ var searchData=
   ['using_20c_4',['Why bother using C++ ?',['../index.html#autotoc_md25',1,'']]],
   ['using_20cmake_5',['Step 4 : Configuring using CMake',['../md_docs_2__1__INSTALLATION.html#autotoc_md5',1,'']]],
   ['uuid_6',['uuid',['../classUUID.html',1,'UUID'],['../classLoginSuccess.html#ac5df232f2ac54da3755d89d7f14ed060',1,'LoginSuccess::uuid']]],
-  ['uuid_2eh_7',['uuid.h',['../uuid_8h.html',1,'']]]
+  ['uuid_2ecpp_7',['uuid.cpp',['../uuid_8cpp.html',1,'']]],
+  ['uuid_2eh_8',['uuid.h',['../uuid_8h.html',1,'']]]
 ];

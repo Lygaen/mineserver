@@ -99,7 +99,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"classcrypto_1_1MinecraftHash.html"
+"classcrypto_1_1AES128CFB8Cipher.html#af974d7ce658f268bca94ae2c4f5a3bd2",
+"uuid_8h.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

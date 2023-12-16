@@ -10,12 +10,13 @@ var searchData=
   ['field_3c_20int_20_3e_7',['Field&lt; int &gt;',['../classField.html',1,'']]],
   ['field_3c_20pngfile_20_3e_8',['Field&lt; PNGFile &gt;',['../classField.html',1,'']]],
   ['field_3c_20std_3a_3astring_20_3e_9',['Field&lt; std::string &gt;',['../classField.html',1,'']]],
-  ['file_10',['file',['../md_docs_2__2__CONFIG.html#config_file',1,'Config file'],['../classFile.html#ae039af5807fc385f41b60644725d15d0',1,'File::File()'],['../classFile.html',1,'File'],['../classFile.html#a4901fbf2e6cebd0adea4ea0cf998530f',1,'File::File()']]],
-  ['file_2eh_11',['file.h',['../file_8h.html',1,'']]],
-  ['finalize_12',['finalize',['../classcrypto_1_1AES128CFB8Cipher.html#a6619c1ddc3a98ffa393f840e1d206a59',1,'crypto::AES128CFB8Cipher::finalize()'],['../classcrypto_1_1MinecraftHash.html#a8c4157f0eb90c96166143db9ca4a99d2',1,'crypto::MinecraftHash::finalize()']]],
-  ['fire_13',['fire',['../classEventsManager.html#ac2e3dcab35985173976477a9ea8545c8',1,'EventsManager::fire()'],['../classEventHandler.html#a335dacd696ffcdfd912d34d9cfa7c2bd',1,'EventHandler::fire()']]],
-  ['flush_14',['flush',['../classIMCStream.html#aca226377aea0f0e1bca188a8911bff63',1,'IMCStream::flush()'],['../classMemoryStream.html#a497251020f6338694ebe91b8d32b2404',1,'MemoryStream::flush()'],['../classNetSocketStream.html#ab8e7a809ac4e51b7d8934ee25740a43b',1,'NetSocketStream::flush()'],['../classCipherStream.html#afda30da86b45fca2f023c365eb441229',1,'CipherStream::flush()'],['../classZLibStream.html#ac06417138fc207911d411577de418dfc',1,'ZLibStream::flush()']]],
-  ['frombytes_15',['fromBytes',['../classUUID.html#a1d49b555155fbbd8ecf34e448c9903f2',1,'UUID']]],
-  ['fromhex_16',['fromHex',['../classUUID.html#aef1f87fdf8be6a84f68f13fe03799393',1,'UUID']]],
-  ['fromusername_17',['fromUsername',['../classUUID.html#a0d212f0cb87a90eb42797cfd7daed110',1,'UUID']]]
+  ['file_10',['file',['../md_docs_2__2__CONFIG.html#config_file',1,'Config file'],['../classFile.html#ae039af5807fc385f41b60644725d15d0',1,'File::File()'],['../classFile.html#a4901fbf2e6cebd0adea4ea0cf998530f',1,'File::File(std::string path)'],['../classFile.html',1,'File']]],
+  ['file_2ecpp_11',['file.cpp',['../file_8cpp.html',1,'']]],
+  ['file_2eh_12',['file.h',['../file_8h.html',1,'']]],
+  ['finalize_13',['finalize',['../classcrypto_1_1AES128CFB8Cipher.html#a6619c1ddc3a98ffa393f840e1d206a59',1,'crypto::AES128CFB8Cipher::finalize()'],['../classcrypto_1_1MinecraftHash.html#a8c4157f0eb90c96166143db9ca4a99d2',1,'crypto::MinecraftHash::finalize()']]],
+  ['fire_14',['fire',['../classEventsManager.html#ac2e3dcab35985173976477a9ea8545c8',1,'EventsManager::fire()'],['../classEventHandler.html#a335dacd696ffcdfd912d34d9cfa7c2bd',1,'EventHandler::fire()']]],
+  ['flush_15',['flush',['../classMemoryStream.html#a497251020f6338694ebe91b8d32b2404',1,'MemoryStream::flush()'],['../classNetSocketStream.html#ab8e7a809ac4e51b7d8934ee25740a43b',1,'NetSocketStream::flush()'],['../classCipherStream.html#afda30da86b45fca2f023c365eb441229',1,'CipherStream::flush()'],['../classZLibStream.html#ac06417138fc207911d411577de418dfc',1,'ZLibStream::flush()'],['../classIMCStream.html#aca226377aea0f0e1bca188a8911bff63',1,'IMCStream::flush()']]],
+  ['frombytes_16',['fromBytes',['../classUUID.html#a1d49b555155fbbd8ecf34e448c9903f2',1,'UUID']]],
+  ['fromhex_17',['fromHex',['../classUUID.html#aef1f87fdf8be6a84f68f13fe03799393',1,'UUID']]],
+  ['fromusername_18',['fromUsername',['../classUUID.html#a0d212f0cb87a90eb42797cfd7daed110',1,'UUID']]]
 ];

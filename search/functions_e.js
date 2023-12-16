@@ -1,13 +1,23 @@
 var searchData=
 [
-  ['save_0',['save',['../classField.html#a4f69f9beef47fcb6a0ac75fdc2315a96',1,'Field::save()'],['../classConfig.html#ae7e68962f22a2c965a61702de1c637db',1,'Config::save()'],['../classChatMessage.html#ab84c6a8e3da68e79005bd019d50f9055',1,'ChatMessage::save()']]],
-  ['send_1',['send',['../classIPacket.html#a2690dfa6267a96e7066002e06884af35',1,'IPacket']]],
-  ['server_2',['Server',['../classServer.html#ad5ec9462b520e59f7ea831e157ee5e59',1,'Server']]],
-  ['serverlistpacket_3',['ServerListPacket',['../classServerListPacket.html#ad88daa45371008f29333f11ee1c4bd3e',1,'ServerListPacket']]],
-  ['serversocket_4',['serversocket',['../classServerSocket.html#a2b3098589541243241ca25495155186c',1,'ServerSocket::ServerSocket()'],['../classServerSocket.html#a8df16b3cb42a8a6fe5a4bb438b43866b',1,'ServerSocket::ServerSocket(int type)']]],
-  ['setpath_5',['setPath',['../classFile.html#a2a4a2243e3df06714a001ad31a605a38',1,'File']]],
-  ['setvalue_6',['setValue',['../classField.html#a8fffa4866eabc15ec6cdf7db860a4839',1,'Field']]],
-  ['start_7',['start',['../classClient.html#a742373e08a80d993d2651b6fff76f5b9',1,'Client::start()'],['../classServer.html#a7eac07d2582fa01c2671362efa955b31',1,'Server::start()'],['../classServerSocket.html#abfabfd9e132aa6b73dcf77792d8b6ec9',1,'ServerSocket::start()']]],
-  ['stop_8',['stop',['../classServer.html#a07c45a7e101a3926d8f9685c3c5d14e4',1,'Server']]],
-  ['subscribe_9',['subscribe',['../classEventHandler.html#ae37885fe6ddadf786eaf97f835874a5f',1,'EventHandler::subscribe(const callbackType &amp;func)'],['../classEventHandler.html#ad563c96e95bd5ce43a09fdcf562d2334',1,'EventHandler::subscribe(callbackType &amp;&amp;func)'],['../classEventsManager.html#a17a034b18a623bb8db75bf16aabeb7c0',1,'EventsManager::subscribe(const EventHandler&lt; T &gt;::callbackType &amp;callback)'],['../classEventsManager.html#abd6add9e9a5cfc2ec483208a8ef0f603',1,'EventsManager::subscribe(EventHandler&lt; T &gt;::callbackType &amp;&amp;callback)']]]
+  ['randomsecure_0',['randomSecure',['../namespacecrypto.html#a4cc82d519a7538de05cf960f031e44d9',1,'crypto']]],
+  ['read_1',['read',['../classNetSocketStream.html#a3bcda89414aa711236dbaa0e548ac8c0',1,'NetSocketStream::read()'],['../classIPacket.html#a4ce52e561a46755626d62d9290ce7ab9',1,'IPacket::read()'],['../classClientSocket.html#af1f8bfae4957063cd484f444f655cfd0',1,'ClientSocket::read()'],['../classZLibStream.html#afcc3fabfb54e92bf0c868efcf9ef1d27',1,'ZLibStream::read()'],['../classCipherStream.html#aaa340fad40a76b7fe3c5e0316bb0b01a',1,'CipherStream::read()'],['../classMemoryStream.html#a72769208313900a9dee1b423590cb260',1,'MemoryStream::read()'],['../classIMCStream.html#af9259f1c68733763d960107ab8334b60',1,'IMCStream::read()'],['../classServerListPacket.html#acb75be090bccdb8c7858b74e38b1b2cb',1,'ServerListPacket::read()'],['../classPingPongPacket.html#aa53f4ff98c777895bb6d2e05be848cce',1,'PingPongPacket::read()'],['../classLoginSuccess.html#a46c4530cfb8068db6c7614b9396a6a14',1,'LoginSuccess::read()'],['../classLoginStart.html#a26a5f2daf4f38d40abd16cc1b8d63c8f',1,'LoginStart::read()'],['../classHandshakePacket.html#aca203ce7dbb54b5ceec5ccf1b903ce5e',1,'HandshakePacket::read()']]],
+  ['readboolean_2',['readBoolean',['../classIMCStream.html#ae58cce0b2c4a51f0b8ee3818345bf530',1,'IMCStream']]],
+  ['readbyte_3',['readByte',['../classIMCStream.html#ae00c6aee5410270793009979ba0ae0ea',1,'IMCStream']]],
+  ['readchat_4',['readChat',['../classIMCStream.html#a33c9ff2c45435a561ff66cd722dfba10',1,'IMCStream']]],
+  ['readdouble_5',['readDouble',['../classIMCStream.html#a76eeeb58baa6b6015b696a216a599188',1,'IMCStream']]],
+  ['readfloat_6',['readFloat',['../classIMCStream.html#a276b858c52ca9783d903fcb6a55eeca1',1,'IMCStream']]],
+  ['readint_7',['readInt',['../classIMCStream.html#ad9509053db2253017b6a8d60a6a5cc2d',1,'IMCStream']]],
+  ['readlong_8',['readLong',['../classIMCStream.html#a23e7dd1c03ac1306322fca4e690e3993',1,'IMCStream']]],
+  ['readshort_9',['readShort',['../classIMCStream.html#ae2a51c16233025c336249d2e6c29cd54',1,'IMCStream']]],
+  ['readstring_10',['readString',['../classIMCStream.html#a76648f895a1ef2035b581fb5da4b56a2',1,'IMCStream']]],
+  ['readunsignedbyte_11',['readUnsignedByte',['../classIMCStream.html#ae1785631b8d65b27ba16a06f5b27b1f1',1,'IMCStream']]],
+  ['readunsignedshort_12',['readUnsignedShort',['../classIMCStream.html#a6b13b43179cc1dd96b6d801065f2f0a8',1,'IMCStream']]],
+  ['readuuid_13',['readUUID',['../classIMCStream.html#a92a41a039e7e3dad3557a0eaf04e2b28',1,'IMCStream']]],
+  ['readvarint_14',['readVarInt',['../classIMCStream.html#a09925d431ef180eb1b816d72aaf90b78',1,'IMCStream']]],
+  ['readvarlong_15',['readVarLong',['../classIMCStream.html#a22a8511cd6d1ee73d512dbe6bba419e0',1,'IMCStream']]],
+  ['registerdefaultlibs_16',['registerDefaultLibs',['../namespacelua.html#aabcf2f0300271dfc460da8ac800254ae',1,'lua']]],
+  ['registerluaproperty_17',['registerLuaProperty',['../classField.html#a8784d5cb3626d7e6e971069153dcf5aa',1,'Field']]],
+  ['rsadecrypt_18',['rsaDecrypt',['../namespacecrypto.html#a1f0ff42fb28d677d0ebf3775082e2327',1,'crypto']]],
+  ['rsaencrypt_19',['rsaEncrypt',['../namespacecrypto.html#a29e78257094408827833ea3e5e7d613e',1,'crypto']]]
 ];

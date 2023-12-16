@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['time_5fcolor_0',['TIME_COLOR',['../logger_8h.html#ac8e597a14bd81a2aae848dfe05abef13',1,'logger.h']]]
+  ['segment_5fbits_0',['SEGMENT_BITS',['../stream_8cpp.html#a52b2c17562dbaa7f6b14da5d36e15334',1,'stream.cpp']]]
 ];
