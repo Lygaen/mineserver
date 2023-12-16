@@ -3,6 +3,7 @@
 #include <algorithm>
 #include <openssl/rand.h>
 #include <openssl/x509.h>
+#include <openssl/md5.h>
 #include <cstring>
 
 #define KEY_LENGTH 1024
@@ -112,7 +113,26 @@ std::unique_ptr<std::byte[]> crypto::randomSecure(size_t len)
     std::byte *data = new std::byte[len];
     if (RAND_bytes((unsigned char *)data, len))
         return std::unique_ptr<std::byte[]>(data);
+    delete[] data;
     return std::unique_ptr<std::byte[]>();
+}
+
+std::string crypto::md5Digest(const std::string &data)
+{
+    EVP_MD_CTX *context = EVP_MD_CTX_new();
+    unsigned char md_value[EVP_MAX_MD_SIZE];
+    unsigned int md_len;
+    std::string output;
+
+    EVP_DigestInit(context, EVP_md5());
+    EVP_DigestUpdate(context, data.c_str(), data.length());
+    EVP_DigestFinal_ex(context, md_value, &md_len);
+    EVP_MD_CTX_free(context);
+
+    output.resize(md_len * 2);
+    for (unsigned int i = 0; i < md_len; ++i)
+        std::sprintf(&output[i * 2], "%02x", md_value[i]);
+    return output;
 }
 
 crypto::MinecraftHash::MinecraftHash()

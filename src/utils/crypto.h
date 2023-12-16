@@ -93,6 +93,17 @@ namespace crypto
     std::unique_ptr<std::byte[]> randomSecure(size_t len);
 
     /**
+     * @brief MD5 digests a string
+     *
+     * Returns an MD5 digest of the @p data
+     * given, really used just for UUID
+     * creation from Player's usernames
+     * @param data the data to digest
+     * @return std::string the md5 string in hex
+     */
+    std::string md5Digest(const std::string &data);
+
+    /**
      * @brief The Minecraft Hashing class
      *
      * The class that wraps around OpenSSL

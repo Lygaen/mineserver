@@ -299,6 +299,23 @@ void IMCStream::writeVarLong(std::int64_t l)
     }
 }
 
+void IMCStream::writeUUID(const UUID &uuid)
+{
+    const std::byte *buff = uuid.getBytes();
+
+    write(const_cast<std::byte *>(buff), 0, 16);
+}
+
+UUID IMCStream::readUUID()
+{
+    std::byte *buff = new std::byte[16];
+    read(buff, 0, 16);
+    UUID uuid = UUID::fromBytes(buff);
+    delete[] buff;
+
+    return uuid;
+}
+
 void MemoryStream::read(std::byte *buffer, std::size_t offset, std::size_t len)
 {
     std::memcpy(buffer + offset, data.data() + readIndex, std::min(len, data.size()));

@@ -18,6 +18,7 @@
 #include <vector>
 #include <utils/network.h>
 #include <net/types/chatmessage.h>
+#include <net/types/uuid.h>
 #include <utils/crypto.h>
 
 /**
@@ -247,6 +248,22 @@ public:
      * @param l the variable long to write
      */
     void writeVarLong(std::int64_t l);
+
+    /**
+     * @brief Reads an UUID
+     *
+     * Reads 16 bytes from the stream and interprets
+     * them as an UUID.
+     * @return UUID the uuid read from the stream
+     */
+    UUID readUUID();
+    /**
+     * @brief Writes an UUID
+     *
+     * Writes an UUID to the stream.
+     * @param uuid the UUID to write
+     */
+    void writeUUID(const UUID &uuid);
 };
 
 /**

@@ -15,6 +15,7 @@
 #include <plugins/luaheaders.h>
 #include <net/types/clientstate.h>
 #include <net/types/chatmessage.h>
+#include <net/types/uuid.h>
 
 /**
  * @brief Loads types classes to lua
@@ -24,6 +25,8 @@
 void loadTypesLua(lua_State *state)
 {
     const char* namespaceName = "types";
+
+    UUID::loadLua(state, namespaceName);
     loadClientStateLua(state, namespaceName);
     ChatMessage::loadLua(state, namespaceName);
 }

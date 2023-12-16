@@ -381,3 +381,19 @@ TEST(Streams, CryptoZLib)
     ASSERT_EQ(inLen, s.size());
     ASSERT_EQ(s, std::string((char *)in.get(), inLen));
 }
+
+TEST(Streams, MD5)
+{
+    std::string s1 = "Et l’unique cordeau des trompettes marines";
+    std::string s2 = "Et l’unique cordeau des trompettes marinEs";
+    std::string precomputedDigest1 = "8747e564eb53cb2f1dcb9aae0779c2aa";
+    std::string precomputedDigest2 = "c802e1bd9b5f2b0d244bbc982f5082b3";
+
+    std::string hashed1 = crypto::md5Digest(s1);
+
+    ASSERT_EQ(precomputedDigest1, hashed1);
+
+    std::string hashed2 = crypto::md5Digest(s2);
+    ASSERT_NE(hashed1, hashed2);
+    ASSERT_EQ(precomputedDigest2, hashed2);
+}

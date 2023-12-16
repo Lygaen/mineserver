@@ -14,6 +14,7 @@
 #include <plugins/luaheaders.h>
 #include <net/packets/status/serverlist.h>
 #include <net/packets/status/pingpong.h>
+#include <net/packets/login/loginstartend.h>
 #include <net/packets/handshake.h>
 
 /**
@@ -24,8 +25,12 @@
 void loadPacketsLua(lua_State *state)
 {
     const char* namespaceName = "packets";
+    LoginStart::loadLua(state, namespaceName);
+    LoginSuccess::loadLua(state, namespaceName);
+
     ServerListPacket::loadLua(state, namespaceName);
     PingPongPacket::loadLua(state, namespaceName);
+
     HandshakePacket::loadLua(state, namespaceName);
 }
 

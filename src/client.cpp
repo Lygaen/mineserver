@@ -94,6 +94,12 @@ void Client::loop()
         break;
     }
     case ClientState::LOGIN:
+    {
+        switch (id)
+        {
+        }
+        close();
+    }
     case ClientState::PLAY:
     {
         close();
