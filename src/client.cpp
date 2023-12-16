@@ -20,6 +20,13 @@ Client::~Client()
 void Client::loop()
 {
     int32_t len = stream->readVarInt();
+    if (len == 254 && state == ClientState::HANDSHAKE)
+    {
+        logger::debug("Closing client connection - prior to 1.7");
+        close();
+        return;
+    }
+
     int32_t id = stream->readVarInt();
 
     logger::debug("C->S Len:%d Id:%d", len, id);
@@ -111,6 +118,8 @@ void Client::start()
     }
     catch (const std::exception &err)
     {
+        if (state == ClientState::HANDSHAKE)
+            logger::error("Connection seems not minecrafty or protocol is too old");
         logger::error("Client ended badly : %s", err.what());
     }
 
