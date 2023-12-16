@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['debug_0',['debug',['../logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a0593585da9181e972974c1274d8f2b4f',1,'DEBUG:&#160;logger.h'],['../namespacelogger.html#abf121e9e40ac777068d5f90419d3dfa8',1,'logger::debug()']]],
+  ['debug_0',['debug',['../namespacelogger.html#abf121e9e40ac777068d5f90419d3dfa8',1,'logger::debug()'],['../logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a0593585da9181e972974c1274d8f2b4f',1,'DEBUG:&#160;logger.h']]],
   ['debug_5fcolor_1',['DEBUG_COLOR',['../logger_8h.html#a792f9eb6a62648607f47b22644ad9707',1,'logger.h']]],
   ['decrypt_2',['DECRYPT',['../namespacecrypto.html#a512c0376973f32897981d6c4a7b2fd4ba22a7d9a2b89e6fb536138c0f6b743e29',1,'crypto']]],
   ['definitions_3',['CMake Definitions',['../md_docs_2__2__CONFIG.html#cmake_definitions',1,'']]],

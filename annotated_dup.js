@@ -24,6 +24,8 @@ var annotated_dup =
     [ "IEvent", "classIEvent.html", "classIEvent" ],
     [ "IMCStream", "classIMCStream.html", "classIMCStream" ],
     [ "IPacket", "classIPacket.html", "classIPacket" ],
+    [ "LoginStart", "classLoginStart.html", "classLoginStart" ],
+    [ "LoginSuccess", "classLoginSuccess.html", "classLoginSuccess" ],
     [ "MemoryStream", "classMemoryStream.html", "classMemoryStream" ],
     [ "NetSocketStream", "classNetSocketStream.html", "classNetSocketStream" ],
     [ "PingPongPacket", "classPingPongPacket.html", "classPingPongPacket" ],
@@ -34,5 +36,6 @@ var annotated_dup =
     [ "ServerListPacket", "classServerListPacket.html", "classServerListPacket" ],
     [ "ServerSocket", "classServerSocket.html", "classServerSocket" ],
     [ "ServerStartEvent", "classServerStartEvent.html", null ],
+    [ "UUID", "classUUID.html", "classUUID" ],
     [ "ZLibStream", "classZLibStream.html", "classZLibStream" ]
 ];

@@ -13,6 +13,7 @@ var classIMCStream =
     [ "readString", "classIMCStream.html#a76648f895a1ef2035b581fb5da4b56a2", null ],
     [ "readUnsignedByte", "classIMCStream.html#ae1785631b8d65b27ba16a06f5b27b1f1", null ],
     [ "readUnsignedShort", "classIMCStream.html#a6b13b43179cc1dd96b6d801065f2f0a8", null ],
+    [ "readUUID", "classIMCStream.html#a92a41a039e7e3dad3557a0eaf04e2b28", null ],
     [ "readVarInt", "classIMCStream.html#a09925d431ef180eb1b816d72aaf90b78", null ],
     [ "readVarLong", "classIMCStream.html#a22a8511cd6d1ee73d512dbe6bba419e0", null ],
     [ "write", "classIMCStream.html#ad589a29c0af4eead2d91d12633a5a236", null ],
@@ -27,6 +28,7 @@ var classIMCStream =
     [ "writeString", "classIMCStream.html#ac0b35f0ddc91270ad2e05d75c6e6fda2", null ],
     [ "writeUnsignedByte", "classIMCStream.html#a0a7e2d76fd540725778d500ec6fe47dd", null ],
     [ "writeUnsignedShort", "classIMCStream.html#a47fd0317883b8d3a13f6cea117ba9f9f", null ],
+    [ "writeUUID", "classIMCStream.html#a95eab678db76f93c94c0b30f48612e84", null ],
     [ "writeVarInt", "classIMCStream.html#ab34f7b4f362f0046718fc4fb242afd02", null ],
     [ "writeVarLong", "classIMCStream.html#a146a9234da91114bb01b48effa4c0627", null ]
 ];

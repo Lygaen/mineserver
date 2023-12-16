@@ -170,6 +170,9 @@ Functions</h2></td></tr>
 <tr class="memitem:a4cc82d519a7538de05cf960f031e44d9" id="r_a4cc82d519a7538de05cf960f031e44d9"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; std::byte[]&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrypto.html#a4cc82d519a7538de05cf960f031e44d9">randomSecure</a> (<a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">size_t</a> <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">len</a>)</td></tr>
 <tr class="memdesc:a4cc82d519a7538de05cf960f031e44d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Generates randoms bytes securely.  <br /></td></tr>
 <tr class="separator:a4cc82d519a7538de05cf960f031e44d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4d3003a5d98419605eddb445ed4d7c3" id="r_ac4d3003a5d98419605eddb445ed4d7c3"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacecrypto.html#ac4d3003a5d98419605eddb445ed4d7c3">md5Digest</a> (<a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">const</a> std::string &amp;data)</td></tr>
+<tr class="memdesc:ac4d3003a5d98419605eddb445ed4d7c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">MD5 digests a string.  <br /></td></tr>
+<tr class="separator:ac4d3003a5d98419605eddb445ed4d7c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The crypto namespace. </p>
@@ -260,6 +263,33 @@ Functions</h2></td></tr>
 <p>Inits OpenSSL and generates an RSA Keypair to be used in encryption. </p><dl class="section return"><dt>Returns</dt><dd>true Init went correctly </dd>
 <dd>
 false Something went wrong </dd></dl>
+
+</div>
+</div>
+<a id="ac4d3003a5d98419605eddb445ed4d7c3" name="ac4d3003a5d98419605eddb445ed4d7c3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4d3003a5d98419605eddb445ed4d7c3">&#9670;&#160;</a></span>md5Digest()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string crypto::md5Digest </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">const</a> std::string &amp;&#160;</td>
+          <td class="paramname"><em>data</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>MD5 digests a string. </p>
+<p>Returns an MD5 digest of the <code>data</code> given, really used just for <a class="el" href="classUUID.html" title="UUID compliant data holder.">UUID</a> creation from Player's usernames </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">data</td><td>the data to digest </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>std::string the md5 string in hex </dd></dl>
 
 </div>
 </div>
@@ -386,7 +416,7 @@ false Something went wrong </dd></dl>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacecrypto.html">crypto</a></li>
-    <li class="footer">Generated on Sat Dec 16 2023 10:48:04 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sat Dec 16 2023 18:45:44 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

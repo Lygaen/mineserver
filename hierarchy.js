@@ -40,6 +40,8 @@ var hierarchy =
     ] ],
     [ "IPacket", "classIPacket.html", [
       [ "HandshakePacket", "classHandshakePacket.html", null ],
+      [ "LoginStart", "classLoginStart.html", null ],
+      [ "LoginSuccess", "classLoginSuccess.html", null ],
       [ "PingPongPacket", "classPingPongPacket.html", null ],
       [ "ServerListPacket", "classServerListPacket.html", null ]
     ] ],
@@ -48,5 +50,6 @@ var hierarchy =
     [ "PluginsManager", "classPluginsManager.html", null ],
     [ "Server", "classServer.html", null ],
     [ "ServerSocket", "classServerSocket.html", null ],
+    [ "UUID", "classUUID.html", null ],
     [ "crypto::ZLibCompressor", "classcrypto_1_1ZLibCompressor.html", null ]
 ];

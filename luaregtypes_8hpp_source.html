@@ -134,30 +134,35 @@ $(document).ready(function(){initNavTree('luaregtypes_8hpp_source.html',''); ini
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;<a class="code" href="luaheaders_8h.html">plugins/luaheaders.h</a>&gt;</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;<a class="code" href="clientstate_8h.html">net/types/clientstate.h</a>&gt;</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;<a class="code" href="chatmessage_8h.html">net/types/chatmessage.h</a>&gt;</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="foldopen" id="foldopen00024" data-start="{" data-end="}">
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="luaregtypes_8hpp.html#a2b4df6fc5684a0e37b820b4b0b84670d">   24</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="luaregtypes_8hpp.html#a2b4df6fc5684a0e37b820b4b0b84670d">loadTypesLua</a>(lua_State *state)</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>{</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>* namespaceName = <span class="stringliteral">&quot;types&quot;</span>;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <a class="code hl_function" href="clientstate_8h.html#ad04dc15df469d6875adbb117d01ed30f">loadClientStateLua</a>(state, namespaceName);</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <a class="code hl_function" href="classChatMessage.html#af22b068bf7a90b4c1ad2fd008063f49c">ChatMessage::loadLua</a>(state, namespaceName);</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>}</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;<a class="code" href="uuid_8h.html">net/types/uuid.h</a>&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="foldopen" id="foldopen00025" data-start="{" data-end="}">
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="luaregtypes_8hpp.html#a2b4df6fc5684a0e37b820b4b0b84670d">   25</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="luaregtypes_8hpp.html#a2b4df6fc5684a0e37b820b4b0b84670d">loadTypesLua</a>(lua_State *state)</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>{</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>* namespaceName = <span class="stringliteral">&quot;types&quot;</span>;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <a class="code hl_function" href="classUUID.html#a8e7f079c5a889385db32f43d6800bcb0">UUID::loadLua</a>(state, namespaceName);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <a class="code hl_function" href="clientstate_8h.html#ad04dc15df469d6875adbb117d01ed30f">loadClientStateLua</a>(state, namespaceName);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <a class="code hl_function" href="classChatMessage.html#af22b068bf7a90b4c1ad2fd008063f49c">ChatMessage::loadLua</a>(state, namespaceName);</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>}</div>
 </div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span><span class="preprocessor">#endif </span><span class="comment">// MINESERVER_LUAREGTYPES_H</span></div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span><span class="preprocessor">#endif </span><span class="comment">// MINESERVER_LUAREGTYPES_H</span></div>
 <div class="ttc" id="achatmessage_8h_html"><div class="ttname"><a href="chatmessage_8h.html">chatmessage.h</a></div><div class="ttdoc">The file containing minecraft chat message implementation.</div></div>
 <div class="ttc" id="aclassChatMessage_html_af22b068bf7a90b4c1ad2fd008063f49c"><div class="ttname"><a href="classChatMessage.html#af22b068bf7a90b4c1ad2fd008063f49c">ChatMessage::loadLua</a></div><div class="ttdeci">static void loadLua(lua_State *state, const char *namespaceName)</div><div class="ttdoc">Loads the ChatMessage class to a Lua one.</div><div class="ttdef"><b>Definition</b> chatmessage.cpp:123</div></div>
+<div class="ttc" id="aclassUUID_html_a8e7f079c5a889385db32f43d6800bcb0"><div class="ttname"><a href="classUUID.html#a8e7f079c5a889385db32f43d6800bcb0">UUID::loadLua</a></div><div class="ttdeci">static void loadLua(lua_State *state, const char *namespaceName)</div><div class="ttdoc">Loads UUID to the lua state.</div><div class="ttdef"><b>Definition</b> uuid.cpp:132</div></div>
 <div class="ttc" id="aclientstate_8h_html"><div class="ttname"><a href="clientstate_8h.html">clientstate.h</a></div><div class="ttdoc">The file containing just the enum of client state.</div></div>
 <div class="ttc" id="aclientstate_8h_html_ad04dc15df469d6875adbb117d01ed30f"><div class="ttname"><a href="clientstate_8h.html#ad04dc15df469d6875adbb117d01ed30f">loadClientStateLua</a></div><div class="ttdeci">void loadClientStateLua(lua_State *state, const char *namespaceName)</div><div class="ttdoc">Loads ClientState to lua.</div><div class="ttdef"><b>Definition</b> clientstate.h:86</div></div>
 <div class="ttc" id="aluaheaders_8h_html"><div class="ttname"><a href="luaheaders_8h.html">luaheaders.h</a></div><div class="ttdoc">Utility header file for lua things.</div></div>
-<div class="ttc" id="aluaregtypes_8hpp_html_a2b4df6fc5684a0e37b820b4b0b84670d"><div class="ttname"><a href="luaregtypes_8hpp.html#a2b4df6fc5684a0e37b820b4b0b84670d">loadTypesLua</a></div><div class="ttdeci">void loadTypesLua(lua_State *state)</div><div class="ttdoc">Loads types classes to lua.</div><div class="ttdef"><b>Definition</b> luaregtypes.hpp:24</div></div>
+<div class="ttc" id="aluaregtypes_8hpp_html_a2b4df6fc5684a0e37b820b4b0b84670d"><div class="ttname"><a href="luaregtypes_8hpp.html#a2b4df6fc5684a0e37b820b4b0b84670d">loadTypesLua</a></div><div class="ttdeci">void loadTypesLua(lua_State *state)</div><div class="ttdoc">Loads types classes to lua.</div><div class="ttdef"><b>Definition</b> luaregtypes.hpp:25</div></div>
+<div class="ttc" id="auuid_8h_html"><div class="ttname"><a href="uuid_8h.html">uuid.h</a></div><div class="ttdoc">The file containing UUID logic.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c72b25b75abe208498b36a3e44a3726c.html">net</a></li><li class="navelem"><a class="el" href="dir_30b1537879e8720516756f581cf1de44.html">types</a></li><li class="navelem"><a class="el" href="luaregtypes_8hpp.html">luaregtypes.hpp</a></li>
-    <li class="footer">Generated on Sat Dec 16 2023 10:48:04 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sat Dec 16 2023 18:45:44 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>

@@ -232,6 +232,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a146a9234da91114bb01b48effa4c0627" id="r_a146a9234da91114bb01b48effa4c0627"><td class="memItemLeft" align="right" valign="top"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIMCStream.html#a146a9234da91114bb01b48effa4c0627">writeVarLong</a> (std::int64_t <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">l</a>)</td></tr>
 <tr class="memdesc:a146a9234da91114bb01b48effa4c0627"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes a Variable Long.  <br /></td></tr>
 <tr class="separator:a146a9234da91114bb01b48effa4c0627"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92a41a039e7e3dad3557a0eaf04e2b28" id="r_a92a41a039e7e3dad3557a0eaf04e2b28"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classUUID.html">UUID</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIMCStream.html#a92a41a039e7e3dad3557a0eaf04e2b28">readUUID</a> ()</td></tr>
+<tr class="memdesc:a92a41a039e7e3dad3557a0eaf04e2b28"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads an <a class="el" href="classUUID.html" title="UUID compliant data holder.">UUID</a>.  <br /></td></tr>
+<tr class="separator:a92a41a039e7e3dad3557a0eaf04e2b28"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a95eab678db76f93c94c0b30f48612e84" id="r_a95eab678db76f93c94c0b30f48612e84"><td class="memItemLeft" align="right" valign="top"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIMCStream.html#a95eab678db76f93c94c0b30f48612e84">writeUUID</a> (<a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">const</a> <a class="el" href="classUUID.html">UUID</a> &amp;uuid)</td></tr>
+<tr class="memdesc:a95eab678db76f93c94c0b30f48612e84"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes an <a class="el" href="classUUID.html" title="UUID compliant data holder.">UUID</a>.  <br /></td></tr>
+<tr class="separator:a95eab678db76f93c94c0b30f48612e84"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Stream interface. </p>
@@ -538,6 +544,26 @@ Public Member Functions</h2></td></tr>
 
 <p>Reads an Unsigned Short. </p>
 <p>Reads an unsigned short from the stream in a Minecrafty way. </p>
+
+</div>
+</div>
+<a id="a92a41a039e7e3dad3557a0eaf04e2b28" name="a92a41a039e7e3dad3557a0eaf04e2b28"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92a41a039e7e3dad3557a0eaf04e2b28">&#9670;&#160;</a></span>readUUID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classUUID.html">UUID</a> IMCStream::readUUID </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reads an <a class="el" href="classUUID.html" title="UUID compliant data holder.">UUID</a>. </p>
+<p>Reads 16 bytes from the stream and interprets them as an <a class="el" href="classUUID.html" title="UUID compliant data holder.">UUID</a>. </p><dl class="section return"><dt>Returns</dt><dd><a class="el" href="classUUID.html" title="UUID compliant data holder.">UUID</a> the uuid read from the stream </dd></dl>
 
 </div>
 </div>
@@ -921,6 +947,32 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a95eab678db76f93c94c0b30f48612e84" name="a95eab678db76f93c94c0b30f48612e84"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a95eab678db76f93c94c0b30f48612e84">&#9670;&#160;</a></span>writeUUID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">void</a> IMCStream::writeUUID </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">const</a> <a class="el" href="classUUID.html">UUID</a> &amp;&#160;</td>
+          <td class="paramname"><em>uuid</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Writes an <a class="el" href="classUUID.html" title="UUID compliant data holder.">UUID</a>. </p>
+<p>Writes an <a class="el" href="classUUID.html" title="UUID compliant data holder.">UUID</a> to the stream. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">uuid</td><td>the <a class="el" href="classUUID.html" title="UUID compliant data holder.">UUID</a> to write </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="ab34f7b4f362f0046718fc4fb242afd02" name="ab34f7b4f362f0046718fc4fb242afd02"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab34f7b4f362f0046718fc4fb242afd02">&#9670;&#160;</a></span>writeVarInt()</h2>
 
@@ -983,7 +1035,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classIMCStream.html">IMCStream</a></li>
-    <li class="footer">Generated on Sat Dec 16 2023 10:48:04 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
+    <li class="footer">Generated on Sat Dec 16 2023 18:45:44 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.9.8 </li>
   </ul>
 </div>
 </body>
