@@ -14,7 +14,7 @@
 
 #include <plugins/luaheaders.h>
 #include <net/packets/luaregpackets.hpp>
-#include <net/types/luaregtypes.hpp>
+#include <types/luaregtypes.hpp>
 
 /**
  * @brief Loads network lua classes

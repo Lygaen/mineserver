@@ -12,7 +12,7 @@
 #ifndef MINESERVER_HANDSHAKE_H
 #define MINESERVER_HANDSHAKE_H
 
-#include <net/types/clientstate.h>
+#include <types/clientstate.h>
 #include <net/packet.h>
 #include <plugins/luaheaders.h>
 

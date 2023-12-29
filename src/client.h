@@ -13,7 +13,7 @@
 #define MINESERVER_CLIENT_H
 
 #include <net/stream.h>
-#include <net/types/clientstate.h>
+#include <types/clientstate.h>
 
 /**
  * @brief Client class

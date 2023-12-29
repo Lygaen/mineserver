@@ -14,7 +14,7 @@
 
 #include <memory>
 #include <rapidjson/document.h>
-#include <net/types/chatmessage.h>
+#include <types/chatmessage.h>
 #include <utils/file.h>
 #include <plugins/luaheaders.h>
 

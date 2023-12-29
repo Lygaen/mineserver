@@ -13,9 +13,9 @@
 #define MINESERVER_LUAREGTYPES_H
 
 #include <plugins/luaheaders.h>
-#include <net/types/clientstate.h>
-#include <net/types/chatmessage.h>
-#include <net/types/uuid.h>
+#include <types/clientstate.h>
+#include <types/chatmessage.h>
+#include <types/uuid.h>
 
 /**
  * @brief Loads types classes to lua
@@ -24,7 +24,7 @@
  */
 void loadTypesLua(lua_State *state)
 {
-    const char* namespaceName = "types";
+    const char *namespaceName = "types";
 
     UUID::loadLua(state, namespaceName);
     loadClientStateLua(state, namespaceName);

@@ -1,8 +1,8 @@
 #include <gtest/gtest.h>
-#include <net/types/chatmessage.h>
+#include <types/chatmessage.h>
 #include <rapidjson/stringbuffer.h>
 #include <rapidjson/prettywriter.h>
-#include <net/types/uuid.h>
+#include <types/uuid.h>
 
 TEST(Types, ChatMessage)
 {

@@ -17,8 +17,8 @@
 #include <string>
 #include <vector>
 #include <utils/network.h>
-#include <net/types/chatmessage.h>
-#include <net/types/uuid.h>
+#include <types/chatmessage.h>
+#include <types/uuid.h>
 #include <utils/crypto.h>
 
 /**

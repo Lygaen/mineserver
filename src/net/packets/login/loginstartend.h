@@ -14,7 +14,7 @@
 
 #include <net/packet.h>
 #include <plugins/luaheaders.h>
-#include <net/types/uuid.h>
+#include <types/uuid.h>
 
 /**
  * @brief Login Start Packet
