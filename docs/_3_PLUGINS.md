@@ -62,7 +62,7 @@ and its name so that if you want to access it, you do :
 ```lua
 config.&lt;category&gt;.&lt;fieldname&gt;
 ```
-For exemple, for the max players field in the `Server` category :
+For exemple, for the max players field in the [server category](#config_server_category) :
 ```lua
 -- Accessing field
 config.server.max_players

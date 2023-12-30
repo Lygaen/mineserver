@@ -15,6 +15,8 @@
 #include <plugins/plugins.h>
 #include <plugins/event.h>
 #include <utils/network.h>
+#include <client.h>
+#include <list>
 
 /**
  * @brief Server Class
@@ -27,6 +29,7 @@ class Server
 {
 private:
     static Server *INSTANCE;
+    std::list<Client *> connectedClients;
     PluginsManager pluginsManager;
     EventsManager eventsManager;
     ServerSocket sock;

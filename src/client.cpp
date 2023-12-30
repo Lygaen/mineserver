@@ -14,6 +14,7 @@
 #include <net/packets/handshake.h>
 #include <net/packets/status/serverlist.h>
 #include <net/packets/status/pingpong.h>
+#include <net/packets/login/loginstartend.h>
 #include <plugins/events/clientevents.hpp>
 #include <plugins/event.h>
 
@@ -25,6 +26,8 @@ Client::Client(ClientSocket sock) : sock(sock), stream(new NetSocketStream(sock)
 
 Client::~Client()
 {
+    if (!stream)
+        return;
     delete stream;
 }
 
@@ -63,15 +66,6 @@ void Client::loop()
             // Login but invalid protocol version
             (state == ClientState::LOGIN && handshake.protocolVersion != MC_VERSION_NUMBER))
             close();
-
-        if (state == ClientState::STATUS)
-        {
-            logger::debug("Initiating Server List Ping...");
-        }
-        else
-        {
-            logger::debug("Initiating Login...");
-        }
         break;
     }
     case ClientState::STATUS:
@@ -80,6 +74,7 @@ void Client::loop()
         {
         case 0x00:
         {
+            logger::debug("Initiating Server List Ping...");
             ServerListPacket serverlist;
             ClientStatusEvent statusEvent(&serverlist);
             EventsManager::inst()->fire(statusEvent);
@@ -108,8 +103,22 @@ void Client::loop()
     {
         switch (id)
         {
+        case 0x00:
+        {
+            LoginStart loginStart;
+            loginStart.read(stream);
+
+            player.name = loginStart.name;
+            logger::debug("Initiating Login with player '%s'", player.name.c_str());
+            close();
+            return;
         }
-        close();
+        default:
+        {
+            close();
+            return;
+        }
+        }
     }
     case ClientState::PLAY:
     {
@@ -139,11 +148,11 @@ void Client::start()
             logger::error("Connection seems not minecrafty or protocol is too old");
         logger::error("Client ended badly : %s", err.what());
     }
-
-    sock.close();
 }
 
 void Client::close()
 {
     isRunning = false;
+
+    sock.close();
 }

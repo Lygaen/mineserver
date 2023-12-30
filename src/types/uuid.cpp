@@ -16,6 +16,17 @@
 #include <sstream>
 #include <iomanip>
 
+UUID::UUID() : bytes({})
+{
+    UUID temp = UUID::newRandom();
+    std::copy(temp.bytes.begin(), temp.bytes.end(), bytes.begin());
+}
+
+bool UUID::operator==(UUID const &other)
+{
+    return std::equal(other.bytes.begin(), other.bytes.end(), bytes.begin());
+}
+
 std::string UUID::getFull() const
 {
     std::stringstream stream;
@@ -112,7 +123,7 @@ UUID UUID::fromHex(const std::string &uuidString)
 
         if (!isValidHexChar(c) ||
             length >= 16)
-            return UUID({});
+            return UUID(std::array<std::byte, 16>({}));
 
         if (firstChar)
         {
@@ -129,13 +140,13 @@ UUID UUID::fromHex(const std::string &uuidString)
     }
 
     if (length < 16)
-        return UUID({});
+        return UUID(std::array<std::byte, 16>({}));
     return UUID(bytes);
 }
 
 UUID UUID::fromBytes(const std::byte *buff)
 {
-    UUID out({});
+    UUID out(std::array<std::byte, 16>({}));
     std::copy(const_cast<std::byte *>(buff), const_cast<std::byte *>(buff) + 16, out.bytes.data());
     return out;
 }

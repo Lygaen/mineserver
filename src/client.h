@@ -14,6 +14,8 @@
 
 #include <net/stream.h>
 #include <types/clientstate.h>
+#include <entities/player.h>
+#include <types/uuid.h>
 
 /**
  * @brief Client class
@@ -28,6 +30,7 @@ private:
     IMCStream *stream;
     bool isRunning;
     ClientState state;
+    Player player;
 
     /**
      * @brief Single packet loop

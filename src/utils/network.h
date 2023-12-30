@@ -81,6 +81,17 @@ public:
      * @return false something went wrong
      */
     bool connect(const char *address, int port);
+
+    /**
+     * @brief Whether the connection is valid
+     *
+     * @return true the connection is valid
+     * @return false the connection is not valid
+     */
+    bool isValid() const
+    {
+        return sock >= 0;
+    }
     /**
      * @brief Reads from the socket
      *

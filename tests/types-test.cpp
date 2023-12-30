@@ -35,6 +35,8 @@ TEST(Types, UUID)
 
     ASSERT_EQ(uuid.getTrimmed(), trimmed);
 
+    ASSERT_TRUE(uuid == UUID::fromHex(realUUID));
+
     UUID ui2 = UUID::fromBytes(uuid.getBytes());
 
     ASSERT_EQ(uuid.getFull(), ui2.getFull());

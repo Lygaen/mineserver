@@ -10,14 +10,16 @@
  */
 
 #include "server.h"
-#include <utils/logger.h>
-#include <client.h>
 #include <future>
+#include <utils/logger.h>
 #include <plugins/event.h>
 #include <plugins/events/serverevents.hpp>
 
 Server *Server::INSTANCE;
-Server::Server() : sock(), pluginsManager(), eventsManager() // We initialize later once the network is initialized
+Server::Server() : sock(),
+                   connectedClients(),
+                   pluginsManager(),
+                   eventsManager() // We initialize later once the network is initialized
 {
     if (INSTANCE)
         return;
@@ -78,18 +80,28 @@ void Server::start()
     {
         ClientSocket cs = sock.accept();
 
-        std::thread([&cs]()
-                    { Client client(cs);
-                    client.start(); })
+        if (!cs.isValid())
+            continue;
+
+        std::thread([&cs, this]()
+                    {
+            Client client(cs);
+            this->connectedClients.push_back(&client);
+            client.start();
+            this->connectedClients.remove(&client); })
             .detach();
     }
-
-    sock.close();
 }
 
 void Server::stop()
 {
     logger::info("Stopping server...");
     isRunning = false;
+
+    for (auto client : connectedClients)
+    {
+        client->close();
+    }
+
     sock.close();
 }

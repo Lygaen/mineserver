@@ -52,7 +52,7 @@ Here are the current fields listed, separated in different categories such that 
 | motd      |    chat   |       /       | A message of the day in the form of a [Chat object](https://wiki.vg/Chat#Inheritance) |
 | icon_file | file path |       /       | Path to the png file of the server's icon (must be 64x64)                             |
 
-### Server
+### Server {#config_server_category}
 | Key         | Type | Default Value | Description                   |
 |-------------|:----:|:-------------:|-------------------------------|
 | max_players |  int |      100      | Max number of players allowed |

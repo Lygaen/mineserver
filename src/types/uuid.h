@@ -31,6 +31,22 @@ private:
 
 public:
     /**
+     * @brief Construct a new UUID object
+     *
+     * In reality, just a wrapper around ::newRandom()
+     */
+    UUID();
+
+    /**
+     * @brief Equality operator
+     *
+     * @param other the other member
+     * @return true the members are equal
+     * @return false the member are not equal
+     */
+    bool operator==(UUID const &other);
+
+    /**
      * @brief Get the hex of the UUID with hyphens
      *
      * It will resemble something such as :
