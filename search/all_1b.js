@@ -1,4 +1,30 @@
 var searchData=
 [
-  ['you_20have_20compared_20to_20other_0',['What features do you have compared to other ?',['../index.html#autotoc_md28',1,'']]]
+  ['warn_0',['warn',['../namespacelogger.html#a97dbc692baa8b760f866b81a93175a19',1,'logger']]],
+  ['warn_1',['WARN',['../logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a74dac7ac23d5b810db6d4067f14e8676',1,'logger.h']]],
+  ['warn_5fcolor_2',['WARN_COLOR',['../logger_8h.html#ade48c7e2e47b62c4ba5b651a8fce44d7',1,'logger.h']]],
+  ['warning_3',['Libraries Warning',['../md_docs_2__3__PLUGINS.html#autotoc_md21',1,'']]],
+  ['what_20features_20do_20you_20have_20compared_20to_20other_4',['What features do you have compared to other ?',['../index.html#autotoc_md27',1,'']]],
+  ['why_201_208_209_5',['Why 1.8.9 ?',['../index.html#autotoc_md26',1,'']]],
+  ['why_20another_20server_6',['WHY another server ?',['../index.html#autotoc_md23',1,'']]],
+  ['why_20bother_20using_20c_7',['Why bother using C++ ?',['../index.html#autotoc_md24',1,'']]],
+  ['why_20does_20the_20project_20takes_20so_20much_20time_8',['Why does the project takes so much time ?',['../index.html#autotoc_md28',1,'']]],
+  ['why_20making_20it_20open_20source_9',['Why making it Open-Source ?',['../index.html#autotoc_md25',1,'']]],
+  ['windows_10',['Windows',['../md_docs_2__1__INSTALLATION.html#autotoc_md2',1,'Windows'],['../md_docs_2__1__INSTALLATION.html#autotoc_md9',1,'Windows']]],
+  ['with_20a_20touch_20of_20existential_20crisis_11',['End note with a touch of existential crisis',['../index.html#autotoc_md29',1,'']]],
+  ['write_12',['write',['../classIPacket.html#a4076ed617c55d3bd89f366d57b6e44ca',1,'IPacket::write()'],['../classHandshakePacket.html#ad7b09b157a22ce685cd352bb6d8d3e1f',1,'HandshakePacket::write()'],['../classPingPongPacket.html#ab3c42dfad842a2ebcd45fec36c76bec4',1,'PingPongPacket::write()'],['../classServerListPacket.html#a735c7afc1bd0853eb1ff128ec34d2e2c',1,'ServerListPacket::write()'],['../classIMCStream.html#ad589a29c0af4eead2d91d12633a5a236',1,'IMCStream::write()'],['../classMemoryStream.html#a937182f1358267154235d152a189fcb9',1,'MemoryStream::write()'],['../classNetSocketStream.html#a83190962e72d075db61825ac20e13107',1,'NetSocketStream::write()'],['../classCipherStream.html#a0daaa917592b42e868b3d2c86ca50ab8',1,'CipherStream::write()'],['../classZLibStream.html#aea1834629a214061404494774e624723',1,'ZLibStream::write()'],['../classClientSocket.html#a6c6d2c5c2026083e0bf5ee78fb31098c',1,'ClientSocket::write()']]],
+  ['writeboolean_13',['writeBoolean',['../classIMCStream.html#a86f24c981712f72fcb32204eaed23e9f',1,'IMCStream']]],
+  ['writebyte_14',['writeByte',['../classIMCStream.html#a0701e1f63947c23ef23f608193256587',1,'IMCStream']]],
+  ['writechat_15',['writeChat',['../classIMCStream.html#a3286ac710b2bd42f73d4becc8aa3d511',1,'IMCStream']]],
+  ['writedouble_16',['writeDouble',['../classIMCStream.html#a55613619e44e1c60a1535cea29b6ae8e',1,'IMCStream']]],
+  ['writefloat_17',['writeFloat',['../classIMCStream.html#a30da5ddb9c78bd72e1f9d9aa273b292f',1,'IMCStream']]],
+  ['writeint_18',['writeInt',['../classIMCStream.html#aa4b24318b919a4603298a1c85a108f6d',1,'IMCStream']]],
+  ['writelong_19',['writeLong',['../classIMCStream.html#a5584a07325cf438e2aa345fb9d71bbf9',1,'IMCStream']]],
+  ['writeshort_20',['writeShort',['../classIMCStream.html#a7d5c7f8da4d6e36977dab1d8e89c907c',1,'IMCStream']]],
+  ['writestring_21',['writeString',['../classIMCStream.html#ac0b35f0ddc91270ad2e05d75c6e6fda2',1,'IMCStream']]],
+  ['writeunsignedbyte_22',['writeUnsignedByte',['../classIMCStream.html#a0a7e2d76fd540725778d500ec6fe47dd',1,'IMCStream']]],
+  ['writeunsignedshort_23',['writeUnsignedShort',['../classIMCStream.html#a47fd0317883b8d3a13f6cea117ba9f9f',1,'IMCStream']]],
+  ['writeuuid_24',['writeUUID',['../classIMCStream.html#a95eab678db76f93c94c0b30f48612e84',1,'IMCStream']]],
+  ['writevarint_25',['writeVarInt',['../classIMCStream.html#ab34f7b4f362f0046718fc4fb242afd02',1,'IMCStream']]],
+  ['writevarlong_26',['writeVarLong',['../classIMCStream.html#a146a9234da91114bb01b48effa4c0627',1,'IMCStream']]]
 ];

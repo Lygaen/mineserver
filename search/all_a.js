@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['c_0',['Why bother using C++ ?',['../index.html#autotoc_md25',1,'']]],
+  ['c_0',['Why bother using C++ ?',['../index.html#autotoc_md24',1,'']]],
   ['calculatebuffersize_1',['calculateBufferSize',['../classcrypto_1_1AES128CFB8Cipher.html#ae9cd70d5a6a9cb806b8a8175822a70b1',1,'crypto::AES128CFB8Cipher']]],
   ['callbacktype_2',['callbackType',['../classEventHandler.html#a7c8d86eb7b551f72d7ba9c484ce0884d',1,'EventHandler']]],
   ['chatmessage_3',['ChatMessage',['../classChatMessage.html',1,'ChatMessage'],['../classChatMessage.html#a2ed5fc0f5be09e27ca956aca65d405c8',1,'ChatMessage::ChatMessage()'],['../classChatMessage.html#a21b2eb491db5a61fb6706f444c6de788',1,'ChatMessage::ChatMessage(std::string msg)']]],
@@ -8,7 +8,7 @@ var searchData=
   ['chatmessage_2eh_5',['chatmessage.h',['../chatmessage_8h.html',1,'']]],
   ['cipherstate_6',['CipherState',['../namespacecrypto.html#a512c0376973f32897981d6c4a7b2fd4b',1,'crypto']]],
   ['cipherstream_7',['CipherStream',['../classCipherStream.html',1,'CipherStream'],['../classCipherStream.html#a0602be22cb1ba07130b8ddc34f8ff37a',1,'CipherStream::CipherStream()']]],
-  ['classes_8',['Access to classes',['../md_docs_2__3__PLUGINS.html#autotoc_md19',1,'']]],
+  ['classes_8',['Access to classes',['../md_docs_2__3__PLUGINS.html#autotoc_md18',1,'']]],
   ['cleanup_9',['cleanup',['../classServerSocket.html#a3bccb373b5d5d92d9609a0f8842f9c06',1,'ServerSocket::cleanup()'],['../namespacecrypto.html#adb6a95ab45ce1c988675a45b9564b185',1,'crypto::cleanup()']]],
   ['clear_10',['clear',['../classMemoryStream.html#a392cb7470c7642c89daa5652e05c12c8',1,'MemoryStream']]],
   ['client_11',['Client',['../classClient.html',1,'Client'],['../classClient.html#a1bb2f385948faf1b441c6406aa82e4ea',1,'Client::Client()']]],
@@ -28,10 +28,10 @@ var searchData=
   ['cmake_20installation_25',['Step 1 : CMake Installation',['../md_docs_2__1__INSTALLATION.html#cmake_installation',1,'']]],
   ['color_26',['color',['../classChatMessage.html#abf704dae7d0485af0a9bacfdc277357f',1,'ChatMessage']]],
   ['command_20line_27',['Command Line',['../md_docs_2__1__INSTALLATION.html#autotoc_md7',1,'']]],
-  ['compared_20to_20other_28',['What features do you have compared to other ?',['../index.html#autotoc_md28',1,'']]],
+  ['compared_20to_20other_28',['What features do you have compared to other ?',['../index.html#autotoc_md27',1,'']]],
   ['compiling_29',['Step 5 : Compiling',['../md_docs_2__1__INSTALLATION.html#autotoc_md8',1,'']]],
   ['compression_5flvl_30',['COMPRESSION_LVL',['../classConfig.html#a57bcad1158820b8408cff38171809b32',1,'Config']]],
-  ['config_31',['Config',['../classConfig.html',1,'Config'],['../classConfig.html#abd0c571c116924871e30444b192b792a',1,'Config::Config()'],['../md_docs_2__2__CONFIG.html',1,'Config'],['../md_docs_2__3__PLUGINS.html#autotoc_md21',1,'Config']]],
+  ['config_31',['Config',['../classConfig.html',1,'Config'],['../classConfig.html#abd0c571c116924871e30444b192b792a',1,'Config::Config()'],['../md_docs_2__2__CONFIG.html',1,'Config'],['../md_docs_2__3__PLUGINS.html#autotoc_md20',1,'Config']]],
   ['config_20file_32',['Config file',['../md_docs_2__2__CONFIG.html#config_file',1,'']]],
   ['config_2ecpp_33',['config.cpp',['../config_8cpp.html',1,'']]],
   ['config_2eh_34',['config.h',['../config_8h.html',1,'']]],
@@ -39,7 +39,7 @@ var searchData=
   ['configuring_20using_20cmake_36',['Step 4 : Configuring using CMake',['../md_docs_2__1__INSTALLATION.html#autotoc_md5',1,'']]],
   ['connect_37',['connect',['../classClientSocket.html#ac22cddc58215b02bd414338e1011b393',1,'ClientSocket']]],
   ['continue_5fbit_38',['CONTINUE_BIT',['../stream_8cpp.html#a8b0a7b299ee9bf687f09f894cf043c13',1,'stream.cpp']]],
-  ['crisis_39',['End note with a touch of existential crisis',['../index.html#autotoc_md30',1,'']]],
+  ['crisis_39',['End note with a touch of existential crisis',['../index.html#autotoc_md29',1,'']]],
   ['crypto_40',['crypto',['../namespacecrypto.html',1,'']]],
   ['crypto_2ecpp_41',['crypto.cpp',['../crypto_8cpp.html',1,'']]],
   ['crypto_2eh_42',['crypto.h',['../crypto_8h.html',1,'']]]

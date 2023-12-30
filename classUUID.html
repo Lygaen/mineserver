@@ -135,6 +135,12 @@ $(function(){initNavTree('classUUID.html',''); initResizable(); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a56b6dfa8d38418093502ad169a814dfb" id="r_a56b6dfa8d38418093502ad169a814dfb"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a56b6dfa8d38418093502ad169a814dfb">UUID</a> ()</td></tr>
+<tr class="memdesc:a56b6dfa8d38418093502ad169a814dfb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classUUID.html" title="UUID compliant data holder.">UUID</a> object.  <br /></td></tr>
+<tr class="separator:a56b6dfa8d38418093502ad169a814dfb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c11b7e3834ee04801b47b78bcf48efc" id="r_a9c11b7e3834ee04801b47b78bcf48efc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9c11b7e3834ee04801b47b78bcf48efc">operator==</a> (<a class="el" href="classUUID.html">UUID</a> <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">const</a> &amp;<a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">other</a>)</td></tr>
+<tr class="memdesc:a9c11b7e3834ee04801b47b78bcf48efc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Equality operator.  <br /></td></tr>
+<tr class="separator:a9c11b7e3834ee04801b47b78bcf48efc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6d097ca89241f58afffdbdba528c4af0" id="r_a6d097ca89241f58afffdbdba528c4af0"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6d097ca89241f58afffdbdba528c4af0">getFull</a> () <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">const</a></td></tr>
 <tr class="memdesc:a6d097ca89241f58afffdbdba528c4af0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the hex of the <a class="el" href="classUUID.html" title="UUID compliant data holder.">UUID</a> with hyphens.  <br /></td></tr>
 <tr class="separator:a6d097ca89241f58afffdbdba528c4af0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -166,7 +172,28 @@ Static Public Member Functions</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classUUID.html" title="UUID compliant data holder.">UUID</a> compliant data holder. </p>
 <p>Data holder for an <a href="https://www.rfc-editor.org/rfc/pdfrfc/rfc4122.txt.pdf">RFC 4122</a> compliant <a class="el" href="classUUID.html" title="UUID compliant data holder.">UUID</a>. </p>
-</div><h2 class="groupheader">Member Function Documentation</h2>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a56b6dfa8d38418093502ad169a814dfb" name="a56b6dfa8d38418093502ad169a814dfb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56b6dfa8d38418093502ad169a814dfb">&#9670;&#160;</a></span>UUID()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">UUID::UUID </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Construct a new <a class="el" href="classUUID.html" title="UUID compliant data holder.">UUID</a> object. </p>
+<p>In reality, just a wrapper around <a class="el" href="#ac7154e165d7eb0be2547adac45d52ece" title="Constructs a new random UUID.">newRandom()</a> </p>
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
 <a id="a1d49b555155fbbd8ecf34e448c9903f2" name="a1d49b555155fbbd8ecf34e448c9903f2"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1d49b555155fbbd8ecf34e448c9903f2">&#9670;&#160;</a></span>fromBytes()</h2>
 
@@ -398,6 +425,34 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a9c11b7e3834ee04801b47b78bcf48efc" name="a9c11b7e3834ee04801b47b78bcf48efc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c11b7e3834ee04801b47b78bcf48efc">&#9670;&#160;</a></span>operator==()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">bool</a> UUID::operator== </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classUUID.html">UUID</a> <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">const</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>other</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Equality operator. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">other</td><td>the other member </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>true the members are equal </dd>
+<dd>
+false the member are not equal </dd></dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/types/<a class="el" href="uuid_8h_source.html">uuid.h</a></li>
 <li>src/types/<a class="el" href="uuid_8cpp.html">uuid.cpp</a></li>
@@ -408,7 +463,7 @@ Static Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classUUID.html">UUID</a></li>
-    <li class="footer">Generated on Fri Dec 29 2023 17:55:00 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+    <li class="footer">Generated on Sat Dec 30 2023 11:17:44 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
   </ul>
 </div>
 </body>

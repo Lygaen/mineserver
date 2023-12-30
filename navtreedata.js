@@ -47,18 +47,18 @@ var NAVTREE =
       [ "Config file", "md_docs_2__2__CONFIG.html#config_file", [
         [ "Network", "md_docs_2__2__CONFIG.html#autotoc_md12", null ],
         [ "Display", "md_docs_2__2__CONFIG.html#autotoc_md13", null ],
-        [ "Server", "md_docs_2__2__CONFIG.html#autotoc_md14", null ],
-        [ "Other", "md_docs_2__2__CONFIG.html#autotoc_md15", null ]
+        [ "Server", "md_docs_2__2__CONFIG.html#config_server_category", null ],
+        [ "Other", "md_docs_2__2__CONFIG.html#autotoc_md14", null ]
       ] ]
     ] ],
     [ "Plugins", "md_docs_2__3__PLUGINS.html", [
-      [ "Basics", "md_docs_2__3__PLUGINS.html#autotoc_md17", null ],
-      [ "Events", "md_docs_2__3__PLUGINS.html#autotoc_md18", null ],
-      [ "Access to classes", "md_docs_2__3__PLUGINS.html#autotoc_md19", [
-        [ "Generally", "md_docs_2__3__PLUGINS.html#autotoc_md20", null ],
-        [ "Config", "md_docs_2__3__PLUGINS.html#autotoc_md21", null ]
+      [ "Basics", "md_docs_2__3__PLUGINS.html#autotoc_md16", null ],
+      [ "Events", "md_docs_2__3__PLUGINS.html#autotoc_md17", null ],
+      [ "Access to classes", "md_docs_2__3__PLUGINS.html#autotoc_md18", [
+        [ "Generally", "md_docs_2__3__PLUGINS.html#autotoc_md19", null ],
+        [ "Config", "md_docs_2__3__PLUGINS.html#autotoc_md20", null ]
       ] ],
-      [ "Libraries Warning", "md_docs_2__3__PLUGINS.html#autotoc_md22", null ]
+      [ "Libraries Warning", "md_docs_2__3__PLUGINS.html#autotoc_md21", null ]
     ] ],
     [ "Deprecated List", "deprecated.html", null ],
     [ "Todo List", "todo.html", null ],
@@ -77,7 +77,7 @@ var NAVTREE =
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
         [ "All", "functions.html", "functions_dup" ],
-        [ "Functions", "functions_func.html", null ],
+        [ "Functions", "functions_func.html", "functions_func" ],
         [ "Variables", "functions_vars.html", null ],
         [ "Typedefs", "functions_type.html", null ],
         [ "Related Symbols", "functions_rela.html", null ]
@@ -88,6 +88,7 @@ var NAVTREE =
       [ "File Members", "globals.html", [
         [ "All", "globals.html", null ],
         [ "Functions", "globals_func.html", null ],
+        [ "Typedefs", "globals_type.html", null ],
         [ "Enumerations", "globals_enum.html", null ],
         [ "Enumerator", "globals_eval.html", null ],
         [ "Macros", "globals_defs.html", null ]
@@ -98,9 +99,9 @@ var NAVTREE =
 
 var NAVTREEINDEX =
 [
-"annotated.html",
-"classcrypto_1_1AES128CFB8Cipher.html#af974d7ce658f268bca94ae2c4f5a3bd2",
-"uuid_8h.html"
+"angle_8hpp.html",
+"classUUID.html#a56b6dfa8d38418093502ad169a814dfb",
+"md_docs_2__2__CONFIG.html#cmake_definitions"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

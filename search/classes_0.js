@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['aes128cfb8cipher_0',['AES128CFB8Cipher',['../classcrypto_1_1AES128CFB8Cipher.html',1,'crypto']]]
+  ['aes128cfb8cipher_0',['AES128CFB8Cipher',['../classcrypto_1_1AES128CFB8Cipher.html',1,'crypto']]],
+  ['angle_1',['Angle',['../classAngle.html',1,'']]]
 ];

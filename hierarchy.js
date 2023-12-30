@@ -1,6 +1,7 @@
 var hierarchy =
 [
     [ "crypto::AES128CFB8Cipher", "classcrypto_1_1AES128CFB8Cipher.html", null ],
+    [ "Angle", "classAngle.html", null ],
     [ "ChatMessage", "classChatMessage.html", null ],
     [ "Client", "classClient.html", null ],
     [ "ClientSocket", "classClientSocket.html", null ],
@@ -18,6 +19,11 @@ var hierarchy =
     [ "Field< std::string >", "classField.html", null ],
     [ "File", "classFile.html", [
       [ "PNGFile", "classPNGFile.html", null ]
+    ] ],
+    [ "IEntity", "classIEntity.html", [
+      [ "ILiving", "classILiving.html", [
+        [ "Player", "classPlayer.html", null ]
+      ] ]
     ] ],
     [ "IEvent< T >", "classIEvent.html", null ],
     [ "IEvent< ClientConnectedEvent >", "classIEvent.html", [
@@ -51,5 +57,7 @@ var hierarchy =
     [ "Server", "classServer.html", null ],
     [ "ServerSocket", "classServerSocket.html", null ],
     [ "UUID", "classUUID.html", null ],
+    [ "Vec< T >", "classVec.html", null ],
+    [ "Vec< float >", "classVec.html", null ],
     [ "crypto::ZLibCompressor", "classcrypto_1_1ZLibCompressor.html", null ]
 ];

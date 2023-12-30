@@ -8,6 +8,7 @@ var annotated_dup =
     [ "luabridge", null, [
       [ "Stack< ClientState >", "structluabridge_1_1Stack_3_01ClientState_01_4.html", null ]
     ] ],
+    [ "Angle", "classAngle.html", "classAngle" ],
     [ "ChatMessage", "classChatMessage.html", "classChatMessage" ],
     [ "CipherStream", "classCipherStream.html", "classCipherStream" ],
     [ "Client", "classClient.html", "classClient" ],
@@ -21,7 +22,9 @@ var annotated_dup =
     [ "Field", "classField.html", "classField" ],
     [ "File", "classFile.html", "classFile" ],
     [ "HandshakePacket", "classHandshakePacket.html", "classHandshakePacket" ],
+    [ "IEntity", "classIEntity.html", "classIEntity" ],
     [ "IEvent", "classIEvent.html", "classIEvent" ],
+    [ "ILiving", "classILiving.html", "classILiving" ],
     [ "IMCStream", "classIMCStream.html", "classIMCStream" ],
     [ "IPacket", "classIPacket.html", "classIPacket" ],
     [ "LoginStart", "classLoginStart.html", "classLoginStart" ],
@@ -29,6 +32,7 @@ var annotated_dup =
     [ "MemoryStream", "classMemoryStream.html", "classMemoryStream" ],
     [ "NetSocketStream", "classNetSocketStream.html", "classNetSocketStream" ],
     [ "PingPongPacket", "classPingPongPacket.html", "classPingPongPacket" ],
+    [ "Player", "classPlayer.html", "classPlayer" ],
     [ "Plugin", "classPlugin.html", "classPlugin" ],
     [ "PluginsManager", "classPluginsManager.html", "classPluginsManager" ],
     [ "PNGFile", "classPNGFile.html", "classPNGFile" ],
@@ -37,5 +41,6 @@ var annotated_dup =
     [ "ServerSocket", "classServerSocket.html", "classServerSocket" ],
     [ "ServerStartEvent", "classServerStartEvent.html", null ],
     [ "UUID", "classUUID.html", "classUUID" ],
+    [ "Vec", "classVec.html", "classVec" ],
     [ "ZLibStream", "classZLibStream.html", "classZLibStream" ]
 ];

@@ -2,7 +2,7 @@ var searchData=
 [
   ['main_2ecpp_0',['main.cpp',['../main_8cpp.html',1,'']]],
   ['make_20gcc_20installation_1',['Step 2 : Make/GCC Installation',['../md_docs_2__1__INSTALLATION.html#autotoc_md1',1,'']]],
-  ['making_20it_20open_20source_2',['Why making it Open-Source ?',['../index.html#autotoc_md26',1,'']]],
+  ['making_20it_20open_20source_2',['Why making it Open-Source ?',['../index.html#autotoc_md25',1,'']]],
   ['max_5fplayers_3',['MAX_PLAYERS',['../classConfig.html#a6d3f8fa249a5909b1fdf1c209c449312',1,'Config']]],
   ['maxplayers_4',['maxPlayers',['../classServerListPacket.html#a4a14cb56b577f79884ab46c4e926452b',1,'ServerListPacket']]],
   ['mc_5fversion_5fname_5',['MC_VERSION_NAME',['../config_8h.html#a04b3235bab4b9b5f3e267bfe3e51cff8',1,'config.h']]],
@@ -12,5 +12,5 @@ var searchData=
   ['minecrafthash_9',['MinecraftHash',['../classcrypto_1_1MinecraftHash.html',1,'crypto::MinecraftHash'],['../classcrypto_1_1MinecraftHash.html#a367213192993b0a61e92483b6894849f',1,'crypto::MinecraftHash::MinecraftHash()']]],
   ['motd_10',['motd',['../classServerListPacket.html#ab4826954e5ab053550e59787e4eafaea',1,'ServerListPacket']]],
   ['motd_11',['MOTD',['../classConfig.html#abcc2d45023a25f1c3cf5bf8074ffc993',1,'Config']]],
-  ['much_20time_12',['Why does the project takes so much time ?',['../index.html#autotoc_md29',1,'']]]
+  ['much_20time_12',['Why does the project takes so much time ?',['../index.html#autotoc_md28',1,'']]]
 ];

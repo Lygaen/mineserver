@@ -124,18 +124,18 @@ $(function(){initNavTree('md_docs_2__3__PLUGINS.html',''); initResizable(); });
 </div><!--header-->
 <div class="contents">
 <div class="toc"><h3>Table of Contents</h3>
-<ul><li class="level1"><a href="#autotoc_md17">Basics</a></li>
-<li class="level1"><a href="#autotoc_md18">Events</a></li>
-<li class="level1"><a href="#autotoc_md19">Access to classes</a><ul><li class="level2"><a href="#autotoc_md20">Generally</a></li>
-<li class="level2"><a href="#autotoc_md21">Config</a></li>
+<ul><li class="level1"><a href="#autotoc_md16">Basics</a></li>
+<li class="level1"><a href="#autotoc_md17">Events</a></li>
+<li class="level1"><a href="#autotoc_md18">Access to classes</a><ul><li class="level2"><a href="#autotoc_md19">Generally</a></li>
+<li class="level2"><a href="#autotoc_md20">Config</a></li>
 </ul>
 </li>
-<li class="level1"><a href="#autotoc_md22">Libraries Warning</a></li>
+<li class="level1"><a href="#autotoc_md21">Libraries Warning</a></li>
 </ul>
 </div>
-<div class="textblock"><p><a class="anchor" id="autotoc_md16"></a></p>
+<div class="textblock"><p><a class="anchor" id="autotoc_md15"></a></p>
 <p>You can make custom plugins for your server in <a href="https://www.lua.org/about.html">Lua</a>. We chose Lua because it is fast, lightweight, easy to learn and more importantly easy to use on top of C++.</p>
-<h1><a class="anchor" id="autotoc_md17"></a>
+<h1><a class="anchor" id="autotoc_md16"></a>
 Basics</h1>
 <p>First of all, you need to name your plugin and give it a version. The filename of your file doesn't matter, the name that will be displayed inside the game will be retrieved from the Lua file. You can access the current plugin running metadata as such :</p>
 <div class="fragment"><div class="line">-- The following two lines should be at the top of your file</div>
@@ -144,7 +144,7 @@ Basics</h1>
 <div class="line"> </div>
 <div class="line">-- Here it is just for show sake</div>
 <div class="line">print(&quot;Plugin path is &quot; .. plugin.path)</div>
-</div><!-- fragment --> <h1><a class="anchor" id="autotoc_md18"></a>
+</div><!-- fragment --> <h1><a class="anchor" id="autotoc_md17"></a>
 Events</h1>
 <p>You can listen to all the events listed in the <a class="el" href="dir_9d2e58768472232ed3174312c9931ffa.html">events directory</a>. Go click on the individual files, look for the events you want to listen and you should be able to see in their documentation how to listen for the event. Generally to listen for an event a class called <code>SimpleBasicEvent</code>, you do as follows : </p><div class="fragment"><div class="line">local function canBeAnything(e)</div>
 <div class="line">    -- do your thing</div>
@@ -152,10 +152,10 @@ Events</h1>
 <div class="line"> </div>
 <div class="line">-- register the function as a listener</div>
 <div class="line">event.onSimpleBasic(canBeAnything)</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md19"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md18"></a>
 Access to classes</h1>
 <p>You can normally access all of the classes of the server. It is still at a development stage so not everything is well connected and not everything will have a lua equivalent. There are still few things you can do though.</p>
-<h2><a class="anchor" id="autotoc_md20"></a>
+<h2><a class="anchor" id="autotoc_md19"></a>
 Generally</h2>
 <p>If it is not specified in the class documentation, you can access a class fields like they are written. For exemple, for the <a class="el" href="classHandshakePacket.html">Handshake Packet class</a>, you can access its <a class="el" href="classHandshakePacket.html#a96b7a2867a9f3717a70caecbd58d6804">Next State field</a> field like this, after for exemple registering for the <a class="el" href="classClientHandshakeEvent.html">Client Handshake Event</a> : </p><div class="fragment"><div class="line">local function onStatus(e)</div>
 <div class="line">    -- do your thing, like printing the client protocol version</div>
@@ -163,17 +163,17 @@ Generally</h2>
 <div class="line">end</div>
 <div class="line"> </div>
 <div class="line">event.onClientHandshake(onStatus)</div>
-</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md21"></a>
+</div><!-- fragment --> <h2><a class="anchor" id="autotoc_md20"></a>
 Config</h2>
 <p>You can access any fields of the config using the following manner. If you want to access <a class="el" href="classConfig.html#a6d3f8fa249a5909b1fdf1c209c449312">the max players field</a> for exemple, refer to the <a class="el" href="md_docs_2__2__CONFIG.html">Config Documentation</a> and get the category of the field and its name so that if you want to access it, you do : </p><div class="fragment"><div class="line">config.&amp;lt;category&amp;gt;.&amp;lt;fieldname&amp;gt;</div>
-</div><!-- fragment --><p> For exemple, for the max players field in the <code><a class="el" href="classServer.html" title="Server Class.">Server</a></code> category : </p><div class="fragment"><div class="line">-- Accessing field</div>
+</div><!-- fragment --><p> For exemple, for the max players field in the <a class="el" href="md_docs_2__2__CONFIG.html#config_server_category">server category</a> : </p><div class="fragment"><div class="line">-- Accessing field</div>
 <div class="line">config.server.max_players</div>
 <div class="line"> </div>
 <div class="line">print(&quot;Max number of players : &quot; .. config.server.max_players)</div>
 <div class="line"> </div>
 <div class="line">-- Lets add 10</div>
 <div class="line">config.server.max_players = config.server.max_players + 10</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md22"></a>
+</div><!-- fragment --><h1><a class="anchor" id="autotoc_md21"></a>
 Libraries Warning</h1>
 <p>All default libraries are opened on the lua file. So beware of what files you install because they can use libraries like <code>os</code> that can modify files on your computer. </p>
 </div></div><!-- contents -->
@@ -182,7 +182,7 @@ Libraries Warning</h1>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Fri Dec 29 2023 17:55:00 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+    <li class="footer">Generated on Sat Dec 30 2023 11:17:44 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
   </ul>
 </div>
 </body>
