@@ -13,6 +13,7 @@
 #define MINESERVER_NETWORK_H
 
 #include <string>
+#include <types/uuid.h>
 #if defined(__linux__)
 #include <netdb.h>
 #include <unistd.h>
@@ -118,6 +119,37 @@ public:
      * memory !
      */
     void close();
+
+    /**
+     * @brief Get the Handle of the socket
+     *
+     * @return socket_t the handle of the socket
+     */
+    socket_t getHandle() const
+    {
+        return sock;
+    }
+
+    /**
+     * @brief Get the Address of the client
+     *
+     * @return std::string the address
+     */
+    std::string getAddress() const
+    {
+        return address;
+    };
+
+    /**
+     * @brief Checks whether the connection is a local one
+     *
+     * @return true the connection is local
+     * @return false the connection is not local
+     */
+    bool isLocal() const
+    {
+        return address == "127.0.0.1" || address == "localhost";
+    };
 };
 
 /**
@@ -214,6 +246,42 @@ public:
      * @return false something went wrong
      */
     static bool cleanup();
+};
+
+/**
+ * @brief The Mojang API holder
+ *
+ */
+namespace mojangapi
+{
+    /**
+     * @brief Reponse for ::hasJoined endpoint
+     *
+     */
+    struct HasJoinedResponse
+    {
+        /**
+         * @brief Name of the player
+         *
+         */
+        std::string name;
+        /**
+         * @brief UUID of the player
+         *
+         */
+        UUID id;
+    };
+
+    /**
+     * @brief Checks whether the player has joined the server
+     *
+     * Only used during authentication scheme.
+     * @param username the username of the player
+     * @param serverId the hash (aka the server id)
+     * @param ip the ip of the client if needed
+     * @return HasJoinedResponse the response from the API
+     */
+    HasJoinedResponse hasJoined(const std::string &username, const std::string &serverId, const std::string &ip = "");
 };
 
 #endif

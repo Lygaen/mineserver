@@ -15,6 +15,8 @@
 #include <net/packets/status/serverlist.h>
 #include <net/packets/status/pingpong.h>
 #include <net/packets/login/loginstartend.h>
+#include <net/packets/login/encryptionexchange.h>
+#include <net/packets/play/disconnect.h>
 #include <plugins/events/clientevents.hpp>
 #include <plugins/event.h>
 
@@ -34,10 +36,9 @@ Client::~Client()
 void Client::loop()
 {
     int32_t len = stream->readVarInt();
-    if (len == 254 && state == ClientState::HANDSHAKE)
+    if (len == 0xFE && state == ClientState::HANDSHAKE)
     {
-        logger::debug("Closing client connection - prior to 1.7");
-        close();
+        close("Connection prior to 1.7");
         return;
     }
 
@@ -52,7 +53,7 @@ void Client::loop()
         if (id != 0x00)
         {
             // wtf just tried to connect ??
-            close();
+            close("Invalid handshake protocol");
             return;
         }
 
@@ -65,7 +66,7 @@ void Client::loop()
         if ((state != ClientState::STATUS && state != ClientState::LOGIN) ||
             // Login but invalid protocol version
             (state == ClientState::LOGIN && handshake.protocolVersion != MC_VERSION_NUMBER))
-            close();
+            close("Invalid state or invalid protocol version");
         break;
     }
     case ClientState::STATUS:
@@ -88,12 +89,12 @@ void Client::loop()
             pingpong.send(stream);
 
             logger::debug("Finished Server List Ping !");
-            close();
+            close("Ping Protocol finished");
             return;
         }
         default:
         {
-            close();
+            close("Invalid client response");
             return;
         }
         }
@@ -109,23 +110,90 @@ void Client::loop()
             loginStart.read(stream);
 
             player.name = loginStart.name;
-            logger::debug("Initiating Login with player '%s'", player.name.c_str());
-            close();
+            if (!Config::inst()->ONLINE_MODE.getValue())
+            {
+                player.uuid = UUID::newRandom();
+                initiatePlayerJoin();
+                return;
+            }
+
+            verifyToken = crypto::randomSecure(sizeof(verifyToken));
+
+            EncryptionRequest request(verifyToken.get(), sizeof(verifyToken));
+            request.send(stream);
+            break;
+        }
+        case 0x01:
+        {
+            EncryptionResponse response;
+            response.read(stream);
+
+            if (response.verifyTokenLength != sizeof(verifyToken) ||
+                !std::equal(response.verifyToken.get(), response.verifyToken.get() + response.verifyTokenLength, verifyToken.get()))
+            {
+                close("Invalid verify token");
+                return;
+            }
+            logger::debug("Valid verify token");
+
+            crypto::MinecraftHash hash;
+            hash.update("");
+            hash.update(std::string((const char *)response.sharedSecret.get(), response.sharedSecretLength));
+
+            int outLen;
+            std::unique_ptr<std::byte[]> b = crypto::getPublicRSAKey(&outLen);
+            hash.update(std::string((const char *)b.get(), outLen));
+
+            mojangapi::HasJoinedResponse hasJoined;
+            if (Config::inst()->PREVENT_PROXY_CONNECTIONS.getValue() && !sock.isLocal())
+            {
+                hasJoined = mojangapi::hasJoined(player.name, hash.finalize(), sock.getAddress());
+            }
+            else
+            {
+                hasJoined = mojangapi::hasJoined(player.name, hash.finalize());
+            }
+
+            if (player.name != hasJoined.name)
+                close("Invalid joining name");
+
+            player.uuid = hasJoined.id;
+
+            stream = new CipherStream(stream, response.sharedSecret.get(), response.sharedSecret.get());
+
+            // if (Config::inst()->COMPRESSION_LVL.getValue() != 0)
+            // {
+            //     stream = new ZLibStream(stream, Config::inst()->COMPRESSION_LVL.getValue());
+            // }
+
+            initiatePlayerJoin();
             return;
         }
         default:
         {
-            close();
+            close("Invalid client response");
             return;
         }
         }
+        break;
     }
     case ClientState::PLAY:
     {
-        close();
+        close("Not yet implemented");
         return;
     }
     }
+}
+
+void Client::initiatePlayerJoin()
+{
+    LoginSuccess loginSuccess(player.name, player.uuid);
+    loginSuccess.send(stream);
+
+    state = ClientState::PLAY;
+
+    logger::debug("Player %s (%s) has joined the server !", player.name.c_str(), player.uuid.getFull().c_str());
+    close("Not yet implemented");
 }
 
 void Client::start()
@@ -147,12 +215,26 @@ void Client::start()
         if (state == ClientState::HANDSHAKE)
             logger::error("Connection seems not minecrafty or protocol is too old");
         logger::error("Client ended badly : %s", err.what());
+        close();
     }
 }
 
-void Client::close()
+void Client::close(const std::string &reason)
 {
     isRunning = false;
 
+    if (state == ClientState::LOGIN)
+    {
+        DisconnectLogin disconnect(reason);
+        disconnect.send(stream);
+    }
+    else if (state == ClientState::PLAY)
+    {
+        DisconnectPlay disconnect(reason);
+        disconnect.send(stream);
+    }
+
     sock.close();
+    if (reason != "")
+        logger::debug("Connection closed : %s", reason.c_str());
 }

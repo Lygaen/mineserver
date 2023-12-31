@@ -1,6 +1,6 @@
 /**
  * @file entity.h
- * @author Mathieu Cayeux
+ * @author Lygaen
  * @brief The file having entities logic
  * @version 0.1
  * @date 2023-12-30
@@ -56,6 +56,8 @@ public:
      * Unique identifier for the entity
      */
     UUID uuid;
+
+    // TODO implement everything in Lua
 };
 
 /**
@@ -73,6 +75,7 @@ public:
      *
      */
     virtual ~ILiving() = default;
+    // TODO implement everything in Lua
 };
 
 #endif // MINESERVER_ENTITY_H

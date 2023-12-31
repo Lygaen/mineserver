@@ -12,6 +12,9 @@
 #include "network.h"
 #include <cstring>
 #include <stdexcept>
+#include <openssl/ssl.h>
+#include <openssl/err.h>
+#include <rapidjson/document.h>
 #ifdef _WIN32
 #include <basetsd.h>
 #include <WinSock2.h>
@@ -193,4 +196,60 @@ void ClientSocket::close()
 #elif defined(__linux__)
     ::close(sock);
 #endif
+}
+
+mojangapi::HasJoinedResponse mojangapi::hasJoined(const std::string &username, const std::string &serverId, const std::string &ip)
+{
+    OpenSSL_add_ssl_algorithms();
+    SSL_CTX *ctx = SSL_CTX_new(TLS_client_method());
+    if (!ctx)
+        throw std::runtime_error("Could not initialize SSL context");
+
+    ClientSocket socket(SOCK_STREAM);
+    if (!socket.connect("sessionserver.mojang.com", 443))
+        throw std::runtime_error("Could not connect to server");
+
+    std::string url = std::string("/session/minecraft/hasJoined") + "?username=" + username + "&serverId=" + serverId + (ip == "" ? "" : ("&ip=" + ip));
+
+    SSL *ssl = SSL_new(ctx);
+    if (!ssl)
+        throw std::runtime_error("Could not initialize SSL");
+    SSL_set_fd(ssl, socket.getHandle());
+
+    if (SSL_connect(ssl) == -1)
+        throw std::runtime_error("Could not initialize SSL");
+
+    std::string s = "GET " + url + " HTTP/1.1\r\nHost:sessionserver.mojang.com\r\n\r\n";
+
+    if (SSL_write(ssl, s.c_str(), s.size()) == -1)
+        throw std::runtime_error("Could not write to SSL");
+
+    char buff[8192];
+    int len = SSL_read(ssl, buff, sizeof(buff) - 1);
+    if (len == -1)
+        throw std::runtime_error("Could not read to SSL");
+    buff[len] = '\0';
+
+    std::string response(buff);
+    auto loc = response.find("\r\n\r\n");
+    response.erase(0, loc + 4);
+
+    SSL_shutdown(ssl);
+    socket.close();
+    SSL_free(ssl);
+    SSL_CTX_free(ctx);
+
+    HasJoinedResponse r;
+    rapidjson::Document doc;
+    doc.Parse(response.c_str());
+
+    if (doc.HasParseError() || !doc.IsObject() ||
+        !doc.HasMember("id") || !doc["id"].IsString() ||
+        !doc.HasMember("name") || !doc["name"].IsString())
+        throw std::runtime_error("Could not parse JSON reponse");
+
+    r.name = std::string(doc["name"].GetString(), doc["name"].GetStringLength());
+    r.id = UUID::fromHex(std::string(doc["id"].GetString(), doc["id"].GetStringLength()));
+
+    return r;
 }

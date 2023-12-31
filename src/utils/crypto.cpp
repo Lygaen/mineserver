@@ -17,12 +17,14 @@
 #include <openssl/md5.h>
 #include <cstring>
 
-#define KEY_LENGTH 1024
-
 static EVP_PKEY *keypair;
 
 bool crypto::init()
 {
+    OpenSSL_add_all_algorithms();
+    OpenSSL_add_all_ciphers();
+    OpenSSL_add_all_digests();
+
     EVP_PKEY_CTX *ctx = EVP_PKEY_CTX_new_id(EVP_PKEY_RSA, nullptr);
     if (!ctx || !EVP_PKEY_keygen_init(ctx))
     {
@@ -30,7 +32,7 @@ bool crypto::init()
         return false;
     }
 
-    EVP_PKEY_CTX_set_rsa_keygen_bits(ctx, KEY_LENGTH);
+    EVP_PKEY_CTX_set_rsa_keygen_bits(ctx, RSA_KEY_LENGTH);
     EVP_PKEY_keygen(ctx, &keypair);
 
     EVP_PKEY_CTX_free(ctx);
@@ -94,28 +96,16 @@ std::unique_ptr<std::byte[]> crypto::rsaDecrypt(const std::byte *data, size_t le
     return std::unique_ptr<std::byte[]>(out);
 }
 
-std::unique_ptr<std::byte[]> crypto::getPublicRSAKey()
+std::unique_ptr<std::byte[]> crypto::getPublicRSAKey(int *outLen)
 {
-    X509_PUBKEY *pubkey = X509_PUBKEY_new();
-    X509_PUBKEY_set(&pubkey, keypair);
-
-    unsigned char *der;
-    int len = i2d_X509_PUBKEY(pubkey, &der);
-    if (len <= 0)
-    {
-        X509_PUBKEY_free(pubkey);
-        return std::unique_ptr<std::byte[]>();
-    }
+    unsigned char *buff = nullptr;
+    int len = i2d_PUBKEY(keypair, &buff);
 
     std::byte *out = new std::byte[len];
+    std::memcpy(out, buff, len);
 
-    // Ye, ye, not efficient but whatever, it's
-    // not like it is called 200 times per seconds
-    std::memcpy(out, der, len);
-
-    OPENSSL_free(der);
-    X509_PUBKEY_free(pubkey);
-
+    *outLen = len;
+    OPENSSL_free(buff);
     return std::unique_ptr<std::byte[]>(out);
 }
 

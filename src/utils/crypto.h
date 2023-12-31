@@ -26,6 +26,15 @@
 namespace crypto
 {
     /**
+     * @brief The length of the rsa keys
+     *
+     * The length of the RSA keys that the
+     * server should generate at the start
+     * to be used for encryption scheme.
+     */
+    constexpr int RSA_KEY_LENGTH = 1024;
+
+    /**
      * @brief Inits Crypto
      *
      * Inits OpenSSL and generates an RSA Keypair
@@ -77,9 +86,11 @@ namespace crypto
      * Formats the public key from the startup keypair
      * into DER format, which is an underlying ASN.1
      * format defined by x.509
-     * @return std::unique_ptr<std::byte[]> The public key
+     *
+     *@param outLen a pointer to a variable that will hold the length of the key returned
+     *@return std::byte * The public key formatted
      */
-    std::unique_ptr<std::byte[]> getPublicRSAKey();
+    std::unique_ptr<std::byte[]> getPublicRSAKey(int *outLen);
 
     /**
      * @brief Generates randoms bytes securely

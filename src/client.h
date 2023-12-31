@@ -30,6 +30,7 @@ private:
     IMCStream *stream;
     bool isRunning;
     ClientState state;
+    std::unique_ptr<std::byte[]> verifyToken;
     Player player;
 
     /**
@@ -37,6 +38,13 @@ private:
      *
      */
     void loop();
+
+    /**
+     * @brief Makes player join server
+     *
+     * Makes the current player join the server.
+     */
+    void initiatePlayerJoin();
 
 public:
     /**
@@ -61,8 +69,11 @@ public:
      * @brief Stops the client
      *
      * Tells the client to exit on the next packet loop.
+     * Also, if in ClientState::LOGIN or ClientState::PLAY,
+     * sends a disconnect packet.
+     *@param reason the reason for closing the connection
      */
-    void close();
+    void close(const std::string &reason = "");
 };
 
 #endif // MINESERVER_CLIENT_H

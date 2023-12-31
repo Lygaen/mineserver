@@ -1,6 +1,6 @@
 /**
  * @file vector.hpp
- * @author Mathieu Cayeux
+ * @author Lygaen
  * @brief The file handling vector logic
  * @version 0.1
  * @date 2023-12-30
@@ -180,6 +180,8 @@ public:
         z /= other;
         return *this;
     }
+
+    // TODO implement everything in Lua
 };
 
 /**

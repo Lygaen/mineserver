@@ -160,11 +160,20 @@ public:
     /**
      * @brief The online mode flag
      *
-     * Wether to check with mojang when an account
+     * Whether to check with mojang when an account
      * is logging in if the said account is crack
      * or not.
      */
     Field<bool> ONLINE_MODE = Field("network", "online_mode", true);
+    /**
+     * @brief Whether to prevent proxy connections or not
+     *
+     * Whether to check if the incoming connection
+     * is a proxy or not. Done using Mojang's server
+     * while authenticating. Will only work if we
+     * are in online mode (ONLINE_MODE).
+     */
+    Field<bool> PREVENT_PROXY_CONNECTIONS = Field("network", "prevent_proxy_connections", true);
     /**
      * @brief The address to listen on
      *
@@ -218,7 +227,7 @@ public:
  * on all of the fields by defining the UF(x) macro.
  */
 #define CONFIG_FIELDS UF(PORT) UF(MOTD) UF(LOGLEVEL) UF(COMPRESSION_LVL) UF(ONLINE_MODE) UF(ADDRESS) \
-    UF(BACKLOG) UF(MAX_PLAYERS) UF(ICON_FILE)
+    UF(BACKLOG) UF(MAX_PLAYERS) UF(ICON_FILE) UF(PREVENT_PROXY_CONNECTIONS)
 
 /**
  * @brief The Version Number

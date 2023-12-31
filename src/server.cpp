@@ -31,6 +31,12 @@ Server::Server() : sock(),
         exit(EXIT_FAILURE);
     }
 
+    if (!crypto::init())
+    {
+        logger::fatal("Could not init cryptography !");
+        exit(EXIT_FAILURE);
+    }
+
     sock = ServerSocket(SOCK_STREAM);
 }
 
@@ -100,7 +106,7 @@ void Server::stop()
 
     for (auto client : connectedClients)
     {
-        client->close();
+        client->close("Server closing");
     }
 
     sock.close();

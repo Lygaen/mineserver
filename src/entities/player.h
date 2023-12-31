@@ -1,6 +1,6 @@
 /**
  * @file player.h
- * @author Mathieu Cayeux
+ * @author Lygaen
  * @brief The file for handling player logic
  * @version 0.1
  * @date 2023-12-30
@@ -40,6 +40,7 @@ public:
      * Also called the username or tag
      */
     std::string name;
+    // TODO implement everything in Lua
 };
 
 #endif // MINESERVER_PLAYER_H

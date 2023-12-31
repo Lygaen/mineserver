@@ -1,6 +1,6 @@
 /**
  * @file angle.hpp
- * @author Mathieu Cayeux
+ * @author Lygaen
  * @brief The file for angle logic
  * @version 0.1
  * @date 2023-12-30
@@ -69,6 +69,8 @@ public:
     {
         return value;
     }
+
+    // TODO implement everything in Lua
 };
 
 #endif // MINESERVER_ANGLE_H
