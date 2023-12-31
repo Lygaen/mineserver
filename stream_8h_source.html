@@ -260,18 +260,19 @@ $(function(){initNavTree('stream_8h_source.html',''); initResizable(); });
 <div class="line"><a id="l00449" name="l00449"></a><span class="lineno">  449</span>    std::uint32_t inIndex{};</div>
 <div class="line"><a id="l00450" name="l00450"></a><span class="lineno">  450</span> </div>
 <div class="line"><a id="l00451" name="l00451"></a><span class="lineno">  451</span>    std::vector&lt;std::byte&gt; outBuffer{};</div>
-<div class="line"><a id="l00452" name="l00452"></a><span class="lineno">  452</span> </div>
-<div class="line"><a id="l00453" name="l00453"></a><span class="lineno">  453</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00460" name="l00460"></a><span class="lineno">  460</span>    <a class="code hl_function" href="classZLibStream.html#af3116f77505e100aa0c959ec1dcb1ed1">ZLibStream</a>(<a class="code hl_class" href="classIMCStream.html">IMCStream</a> *baseStream, <span class="keywordtype">int</span> level);</div>
-<div class="line"><a id="l00465" name="l00465"></a><span class="lineno">  465</span>    <a class="code hl_function" href="classZLibStream.html#afe30c6f669a0d8f8cf8dd12643f14ddc">~ZLibStream</a>();</div>
-<div class="line"><a id="l00466" name="l00466"></a><span class="lineno">  466</span> </div>
-<div class="line"><a id="l00474" name="l00474"></a><span class="lineno">  474</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classZLibStream.html#afcc3fabfb54e92bf0c868efcf9ef1d27">read</a>(std::byte *buffer, std::size_t offset, std::size_t len) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00482" name="l00482"></a><span class="lineno">  482</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classZLibStream.html#aea1834629a214061404494774e624723">write</a>(std::byte *buffer, std::size_t offset, std::size_t len) <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00495" name="l00495"></a><span class="lineno">  495</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classZLibStream.html#ac06417138fc207911d411577de418dfc">flush</a>() <span class="keyword">override</span>;</div>
-<div class="line"><a id="l00496" name="l00496"></a><span class="lineno">  496</span>};</div>
+<div class="line"><a id="l00452" name="l00452"></a><span class="lineno">  452</span>    <span class="keywordtype">int</span> threshold;</div>
+<div class="line"><a id="l00453" name="l00453"></a><span class="lineno">  453</span> </div>
+<div class="line"><a id="l00454" name="l00454"></a><span class="lineno">  454</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00462" name="l00462"></a><span class="lineno">  462</span>    <a class="code hl_function" href="classZLibStream.html#a9bc577bfb893642d810d2feeef73033a">ZLibStream</a>(<a class="code hl_class" href="classIMCStream.html">IMCStream</a> *baseStream, <span class="keywordtype">int</span> level, <span class="keywordtype">int</span> threshold);</div>
+<div class="line"><a id="l00467" name="l00467"></a><span class="lineno">  467</span>    <a class="code hl_function" href="classZLibStream.html#afe30c6f669a0d8f8cf8dd12643f14ddc">~ZLibStream</a>();</div>
+<div class="line"><a id="l00468" name="l00468"></a><span class="lineno">  468</span> </div>
+<div class="line"><a id="l00476" name="l00476"></a><span class="lineno">  476</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classZLibStream.html#afcc3fabfb54e92bf0c868efcf9ef1d27">read</a>(std::byte *buffer, std::size_t offset, std::size_t len) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00484" name="l00484"></a><span class="lineno">  484</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classZLibStream.html#aea1834629a214061404494774e624723">write</a>(std::byte *buffer, std::size_t offset, std::size_t len) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00497" name="l00497"></a><span class="lineno">  497</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classZLibStream.html#ac06417138fc207911d411577de418dfc">flush</a>() <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00498" name="l00498"></a><span class="lineno">  498</span>};</div>
 </div>
-<div class="line"><a id="l00497" name="l00497"></a><span class="lineno">  497</span> </div>
-<div class="line"><a id="l00498" name="l00498"></a><span class="lineno">  498</span><span class="preprocessor">#endif </span><span class="comment">// MINESERVER_STREAM_H</span></div>
+<div class="line"><a id="l00499" name="l00499"></a><span class="lineno">  499</span> </div>
+<div class="line"><a id="l00500" name="l00500"></a><span class="lineno">  500</span><span class="preprocessor">#endif </span><span class="comment">// MINESERVER_STREAM_H</span></div>
 <div class="ttc" id="achatmessage_8h_html"><div class="ttname"><a href="chatmessage_8h.html">chatmessage.h</a></div><div class="ttdoc">The file containing minecraft chat message implementation.</div></div>
 <div class="ttc" id="aclassChatMessage_html"><div class="ttname"><a href="classChatMessage.html">ChatMessage</a></div><div class="ttdoc">Minecraft Chat Message implementation.</div><div class="ttdef"><b>Definition</b> chatmessage.h:27</div></div>
 <div class="ttc" id="aclassCipherStream_html"><div class="ttname"><a href="classCipherStream.html">CipherStream</a></div><div class="ttdoc">AES 128bit CFB8 Cipher stream.</div><div class="ttdef"><b>Definition</b> stream.h:391</div></div>
@@ -329,9 +330,9 @@ $(function(){initNavTree('stream_8h_source.html',''); initResizable(); });
 <div class="ttc" id="aclassNetSocketStream_html_ae0b5f735b810c6ab6765e64e83ee4870"><div class="ttname"><a href="classNetSocketStream.html#ae0b5f735b810c6ab6765e64e83ee4870">NetSocketStream::~NetSocketStream</a></div><div class="ttdeci">~NetSocketStream()</div><div class="ttdoc">Destroy the Net Socket Stream object.</div><div class="ttdef"><b>Definition</b> stream.cpp:375</div></div>
 <div class="ttc" id="aclassUUID_html"><div class="ttname"><a href="classUUID.html">UUID</a></div><div class="ttdoc">UUID compliant data holder.</div><div class="ttdef"><b>Definition</b> uuid.h:27</div></div>
 <div class="ttc" id="aclassZLibStream_html"><div class="ttname"><a href="classZLibStream.html">ZLibStream</a></div><div class="ttdoc">ZLib Stream.</div><div class="ttdef"><b>Definition</b> stream.h:443</div></div>
+<div class="ttc" id="aclassZLibStream_html_a9bc577bfb893642d810d2feeef73033a"><div class="ttname"><a href="classZLibStream.html#a9bc577bfb893642d810d2feeef73033a">ZLibStream::ZLibStream</a></div><div class="ttdeci">ZLibStream(IMCStream *baseStream, int level, int threshold)</div><div class="ttdoc">Construct a new ZLibStream object.</div><div class="ttdef"><b>Definition</b> stream.cpp:434</div></div>
 <div class="ttc" id="aclassZLibStream_html_ac06417138fc207911d411577de418dfc"><div class="ttname"><a href="classZLibStream.html#ac06417138fc207911d411577de418dfc">ZLibStream::flush</a></div><div class="ttdeci">void flush() override</div><div class="ttdoc">Flushes the stream.</div><div class="ttdef"><b>Definition</b> stream.cpp:454</div></div>
 <div class="ttc" id="aclassZLibStream_html_aea1834629a214061404494774e624723"><div class="ttname"><a href="classZLibStream.html#aea1834629a214061404494774e624723">ZLibStream::write</a></div><div class="ttdeci">void write(std::byte *buffer, std::size_t offset, std::size_t len) override</div><div class="ttdoc">Writes to a compressed stream.</div><div class="ttdef"><b>Definition</b> stream.cpp:449</div></div>
-<div class="ttc" id="aclassZLibStream_html_af3116f77505e100aa0c959ec1dcb1ed1"><div class="ttname"><a href="classZLibStream.html#af3116f77505e100aa0c959ec1dcb1ed1">ZLibStream::ZLibStream</a></div><div class="ttdeci">ZLibStream(IMCStream *baseStream, int level)</div><div class="ttdoc">Construct a new ZLibStream object.</div><div class="ttdef"><b>Definition</b> stream.cpp:434</div></div>
 <div class="ttc" id="aclassZLibStream_html_afcc3fabfb54e92bf0c868efcf9ef1d27"><div class="ttname"><a href="classZLibStream.html#afcc3fabfb54e92bf0c868efcf9ef1d27">ZLibStream::read</a></div><div class="ttdeci">void read(std::byte *buffer, std::size_t offset, std::size_t len) override</div><div class="ttdoc">Reads from a compressed stream.</div><div class="ttdef"><b>Definition</b> stream.cpp:443</div></div>
 <div class="ttc" id="aclassZLibStream_html_afe30c6f669a0d8f8cf8dd12643f14ddc"><div class="ttname"><a href="classZLibStream.html#afe30c6f669a0d8f8cf8dd12643f14ddc">ZLibStream::~ZLibStream</a></div><div class="ttdeci">~ZLibStream()</div><div class="ttdoc">Destroy the ZLibStream object.</div><div class="ttdef"><b>Definition</b> stream.cpp:438</div></div>
 <div class="ttc" id="aclasscrypto_1_1AES128CFB8Cipher_html"><div class="ttname"><a href="classcrypto_1_1AES128CFB8Cipher.html">crypto::AES128CFB8Cipher</a></div><div class="ttdoc">AES/CFB8 128bit cipher class.</div><div class="ttdef"><b>Definition</b> crypto.h:203</div></div>
@@ -345,7 +346,7 @@ $(function(){initNavTree('stream_8h_source.html',''); initResizable(); });
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c72b25b75abe208498b36a3e44a3726c.html">net</a></li><li class="navelem"><a class="el" href="stream_8h.html">stream.h</a></li>
-    <li class="footer">Generated on Sun Dec 31 2023 15:19:36 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+    <li class="footer">Generated on Sun Dec 31 2023 15:52:45 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
   </ul>
 </div>
 </body>

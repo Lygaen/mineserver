@@ -9,6 +9,7 @@ var classConfig =
     [ "ADDRESS", "classConfig.html#a2d9308efd8e264f8118b65658df0257b", null ],
     [ "BACKLOG", "classConfig.html#a78844faa97f4a8e017ba2b14a600a17e", null ],
     [ "COMPRESSION_LVL", "classConfig.html#a57bcad1158820b8408cff38171809b32", null ],
+    [ "COMPRESSION_THRESHOLD", "classConfig.html#a151950a7f96708378e1d40f7772ffa7d", null ],
     [ "ICON_FILE", "classConfig.html#aef3a172855427f6b66a430a973c62955", null ],
     [ "LOGLEVEL", "classConfig.html#ad015e9d391c06a1073cc0d09736319f3", null ],
     [ "MAX_PLAYERS", "classConfig.html#a6d3f8fa249a5909b1fdf1c209c449312", null ],

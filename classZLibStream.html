@@ -143,9 +143,9 @@ Inheritance diagram for ZLibStream:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:af3116f77505e100aa0c959ec1dcb1ed1" id="r_af3116f77505e100aa0c959ec1dcb1ed1"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af3116f77505e100aa0c959ec1dcb1ed1">ZLibStream</a> (<a class="el" href="classIMCStream.html">IMCStream</a> *baseStream, <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">int</a> <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">level</a>)</td></tr>
-<tr class="memdesc:af3116f77505e100aa0c959ec1dcb1ed1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classZLibStream.html" title="ZLib Stream.">ZLibStream</a> object.  <br /></td></tr>
-<tr class="separator:af3116f77505e100aa0c959ec1dcb1ed1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9bc577bfb893642d810d2feeef73033a" id="r_a9bc577bfb893642d810d2feeef73033a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9bc577bfb893642d810d2feeef73033a">ZLibStream</a> (<a class="el" href="classIMCStream.html">IMCStream</a> *baseStream, <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">int</a> <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">level</a>, <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">int</a> threshold)</td></tr>
+<tr class="memdesc:a9bc577bfb893642d810d2feeef73033a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classZLibStream.html" title="ZLib Stream.">ZLibStream</a> object.  <br /></td></tr>
+<tr class="separator:a9bc577bfb893642d810d2feeef73033a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe30c6f669a0d8f8cf8dd12643f14ddc" id="r_afe30c6f669a0d8f8cf8dd12643f14ddc"><td class="memItemLeft" align="right" valign="top"><a id="afe30c6f669a0d8f8cf8dd12643f14ddc" name="afe30c6f669a0d8f8cf8dd12643f14ddc"></a>
 &#160;</td><td class="memItemRight" valign="bottom"><b>~ZLibStream</b> ()</td></tr>
 <tr class="memdesc:afe30c6f669a0d8f8cf8dd12643f14ddc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the <a class="el" href="classZLibStream.html" title="ZLib Stream.">ZLibStream</a> object. <br /></td></tr>
@@ -249,8 +249,8 @@ Public Member Functions</h2></td></tr>
 <div class="textblock"><p>ZLib Stream. </p>
 <p>Stream that compresses data according to minecraft standard, writing packet length and data length. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="af3116f77505e100aa0c959ec1dcb1ed1" name="af3116f77505e100aa0c959ec1dcb1ed1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af3116f77505e100aa0c959ec1dcb1ed1">&#9670;&#160;</a></span>ZLibStream()</h2>
+<a id="a9bc577bfb893642d810d2feeef73033a" name="a9bc577bfb893642d810d2feeef73033a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9bc577bfb893642d810d2feeef73033a">&#9670;&#160;</a></span>ZLibStream()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -263,7 +263,12 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">int</a></td>          <td class="paramname"><span class="paramname"><em>level</em></span>&#160;)</td>
+          <td class="paramtype"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">int</a></td>          <td class="paramname"><span class="paramname"><em>level</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">int</a></td>          <td class="paramname"><span class="paramname"><em>threshold</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -273,6 +278,7 @@ Public Member Functions</h2></td></tr>
   <table class="params">
     <tr><td class="paramname">baseStream</td><td>the base stream to IO on, the class takes ownership </td></tr>
     <tr><td class="paramname">level</td><td>the level of compression </td></tr>
+    <tr><td class="paramname">threshold</td><td>the threshold before compression </td></tr>
   </table>
   </dd>
 </dl>
@@ -412,7 +418,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classZLibStream.html">ZLibStream</a></li>
-    <li class="footer">Generated on Sun Dec 31 2023 15:19:36 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+    <li class="footer">Generated on Sun Dec 31 2023 15:52:45 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
   </ul>
 </div>
 </body>

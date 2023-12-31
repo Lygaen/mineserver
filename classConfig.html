@@ -167,6 +167,9 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a57bcad1158820b8408cff38171809b32" id="r_a57bcad1158820b8408cff38171809b32"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classField.html">Field</a>&lt; <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">int</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a57bcad1158820b8408cff38171809b32">COMPRESSION_LVL</a> = <a class="el" href="classField.html">Field</a>(&quot;network&quot;, &quot;compression_level&quot;, -1)</td></tr>
 <tr class="memdesc:a57bcad1158820b8408cff38171809b32"><td class="mdescLeft">&#160;</td><td class="mdescRight">The compression level for ZLib.  <br /></td></tr>
 <tr class="separator:a57bcad1158820b8408cff38171809b32"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a151950a7f96708378e1d40f7772ffa7d" id="r_a151950a7f96708378e1d40f7772ffa7d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classField.html">Field</a>&lt; <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">int</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a151950a7f96708378e1d40f7772ffa7d">COMPRESSION_THRESHOLD</a> = <a class="el" href="classField.html">Field</a>(&quot;network&quot;, &quot;compression_threshold&quot;, 128)</td></tr>
+<tr class="memdesc:a151950a7f96708378e1d40f7772ffa7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">The limit size for packets before they are compressed.  <br /></td></tr>
+<tr class="separator:a151950a7f96708378e1d40f7772ffa7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8fce02797d172e5ea22979f38c569b9c" id="r_a8fce02797d172e5ea22979f38c569b9c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classField.html">Field</a>&lt; <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8fce02797d172e5ea22979f38c569b9c">ONLINE_MODE</a> = <a class="el" href="classField.html">Field</a>(&quot;network&quot;, &quot;online_mode&quot;, <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">true</a>)</td></tr>
 <tr class="memdesc:a8fce02797d172e5ea22979f38c569b9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The online mode flag.  <br /></td></tr>
 <tr class="separator:a8fce02797d172e5ea22979f38c569b9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -362,6 +365,23 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a151950a7f96708378e1d40f7772ffa7d" name="a151950a7f96708378e1d40f7772ffa7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a151950a7f96708378e1d40f7772ffa7d">&#9670;&#160;</a></span>COMPRESSION_THRESHOLD</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classField.html">Field</a>&lt;<a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">int</a>&gt; Config::COMPRESSION_THRESHOLD = <a class="el" href="classField.html">Field</a>(&quot;network&quot;, &quot;compression_threshold&quot;, 128)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The limit size for packets before they are compressed. </p>
+<p>If a packet exceed the compression threshold, it will get compressed. </p>
+
+</div>
+</div>
 <a id="aef3a172855427f6b66a430a973c62955" name="aef3a172855427f6b66a430a973c62955"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aef3a172855427f6b66a430a973c62955">&#9670;&#160;</a></span>ICON_FILE</h2>
 
@@ -491,7 +511,7 @@ Public Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classConfig.html">Config</a></li>
-    <li class="footer">Generated on Sun Dec 31 2023 15:19:36 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+    <li class="footer">Generated on Sun Dec 31 2023 15:52:45 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
   </ul>
 </div>
 </body>
