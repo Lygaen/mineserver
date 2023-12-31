@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['serveraddress_0',['serverAddress',['../classHandshakePacket.html#aeca8b30363699357644497c06ac816be',1,'HandshakePacket']]],
-  ['serverport_1',['serverPort',['../classHandshakePacket.html#af5e376b6bc926c458640a55fcee182f5',1,'HandshakePacket']]],
-  ['strikethrough_2',['strikethrough',['../classChatMessage.html#ab47846c7398d7c14ed8c5d9a9e038920',1,'ChatMessage']]]
+  ['reason_0',['reason',['../classDisconnectPlay.html#a415737b71f5449b41cca4da3ee1ba0a0',1,'DisconnectPlay::reason'],['../classDisconnectLogin.html#a0fb18db44bcb97d92e8924e006ad1c16',1,'DisconnectLogin::reason']]],
+  ['rsa_5fkey_5flength_1',['RSA_KEY_LENGTH',['../namespacecrypto.html#a99fc248e88743e6b02cfd9ae8aa9fbd5',1,'crypto']]]
 ];

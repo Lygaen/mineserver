@@ -159,6 +159,15 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a6326bc6d9eec75a2e10ae8d8122ea488" id="r_a6326bc6d9eec75a2e10ae8d8122ea488"><td class="memItemLeft" align="right" valign="top"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6326bc6d9eec75a2e10ae8d8122ea488">close</a> ()</td></tr>
 <tr class="memdesc:a6326bc6d9eec75a2e10ae8d8122ea488"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes the connection.  <br /></td></tr>
 <tr class="separator:a6326bc6d9eec75a2e10ae8d8122ea488"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af6e524ff4b5c9cf487f5d07b46e9f876" id="r_af6e524ff4b5c9cf487f5d07b46e9f876"><td class="memItemLeft" align="right" valign="top"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">socket_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af6e524ff4b5c9cf487f5d07b46e9f876">getHandle</a> () <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">const</a></td></tr>
+<tr class="memdesc:af6e524ff4b5c9cf487f5d07b46e9f876"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Handle of the socket.  <br /></td></tr>
+<tr class="separator:af6e524ff4b5c9cf487f5d07b46e9f876"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac75e19c4ccd2093a858dc6abf69069ef" id="r_ac75e19c4ccd2093a858dc6abf69069ef"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac75e19c4ccd2093a858dc6abf69069ef">getAddress</a> () <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">const</a></td></tr>
+<tr class="memdesc:ac75e19c4ccd2093a858dc6abf69069ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Address of the client.  <br /></td></tr>
+<tr class="separator:ac75e19c4ccd2093a858dc6abf69069ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a26bdf997f1a038e40f0001bf13346ce9" id="r_a26bdf997f1a038e40f0001bf13346ce9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a26bdf997f1a038e40f0001bf13346ce9">isLocal</a> () <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">const</a></td></tr>
+<tr class="memdesc:a26bdf997f1a038e40f0001bf13346ce9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Checks whether the connection is a local one.  <br /></td></tr>
+<tr class="separator:a26bdf997f1a038e40f0001bf13346ce9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Network POSIX <a class="el" href="classClient.html" title="Client class.">Client</a>. </p>
@@ -273,6 +282,92 @@ false something went wrong </dd></dl>
 
 </div>
 </div>
+<a id="ac75e19c4ccd2093a858dc6abf69069ef" name="ac75e19c4ccd2093a858dc6abf69069ef"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac75e19c4ccd2093a858dc6abf69069ef">&#9670;&#160;</a></span>getAddress()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::string ClientSocket::getAddress </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the Address of the client. </p>
+<dl class="section return"><dt>Returns</dt><dd>std::string the address </dd></dl>
+
+</div>
+</div>
+<a id="af6e524ff4b5c9cf487f5d07b46e9f876" name="af6e524ff4b5c9cf487f5d07b46e9f876"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af6e524ff4b5c9cf487f5d07b46e9f876">&#9670;&#160;</a></span>getHandle()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">socket_t</a> ClientSocket::getHandle </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the Handle of the socket. </p>
+<dl class="section return"><dt>Returns</dt><dd>socket_t the handle of the socket </dd></dl>
+
+</div>
+</div>
+<a id="a26bdf997f1a038e40f0001bf13346ce9" name="a26bdf997f1a038e40f0001bf13346ce9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a26bdf997f1a038e40f0001bf13346ce9">&#9670;&#160;</a></span>isLocal()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">bool</a> ClientSocket::isLocal </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Checks whether the connection is a local one. </p>
+<dl class="section return"><dt>Returns</dt><dd>true the connection is local </dd>
+<dd>
+false the connection is not local </dd></dl>
+
+</div>
+</div>
 <a id="a4263568b1b948099a1ddaec8fc9eeeac" name="a4263568b1b948099a1ddaec8fc9eeeac"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4263568b1b948099a1ddaec8fc9eeeac">&#9670;&#160;</a></span>isValid()</h2>
 
@@ -375,7 +470,7 @@ false the connection is not valid </dd></dl>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classClientSocket.html">ClientSocket</a></li>
-    <li class="footer">Generated on Sat Dec 30 2023 11:17:44 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+    <li class="footer">Generated on Sun Dec 31 2023 15:19:36 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
   </ul>
 </div>
 </body>

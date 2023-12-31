@@ -170,6 +170,9 @@ Public Attributes</h2></td></tr>
 <tr class="memitem:a8fce02797d172e5ea22979f38c569b9c" id="r_a8fce02797d172e5ea22979f38c569b9c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classField.html">Field</a>&lt; <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8fce02797d172e5ea22979f38c569b9c">ONLINE_MODE</a> = <a class="el" href="classField.html">Field</a>(&quot;network&quot;, &quot;online_mode&quot;, <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">true</a>)</td></tr>
 <tr class="memdesc:a8fce02797d172e5ea22979f38c569b9c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The online mode flag.  <br /></td></tr>
 <tr class="separator:a8fce02797d172e5ea22979f38c569b9c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a34ce131bce6b1a715bc8a8226a2246ff" id="r_a34ce131bce6b1a715bc8a8226a2246ff"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classField.html">Field</a>&lt; <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">bool</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a34ce131bce6b1a715bc8a8226a2246ff">PREVENT_PROXY_CONNECTIONS</a> = <a class="el" href="classField.html">Field</a>(&quot;network&quot;, &quot;prevent_proxy_connections&quot;, <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">true</a>)</td></tr>
+<tr class="memdesc:a34ce131bce6b1a715bc8a8226a2246ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">Whether to prevent proxy connections or not.  <br /></td></tr>
+<tr class="separator:a34ce131bce6b1a715bc8a8226a2246ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2d9308efd8e264f8118b65658df0257b" id="r_a2d9308efd8e264f8118b65658df0257b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="classField.html">Field</a>&lt; std::string &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2d9308efd8e264f8118b65658df0257b">ADDRESS</a> = <a class="el" href="classField.html">Field</a>(&quot;network&quot;, &quot;address&quot;, std::string(&quot;127.0.0.1&quot;))</td></tr>
 <tr class="memdesc:a2d9308efd8e264f8118b65658df0257b"><td class="mdescLeft">&#160;</td><td class="mdescRight">The address to listen on.  <br /></td></tr>
 <tr class="separator:a2d9308efd8e264f8118b65658df0257b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -440,7 +443,7 @@ Public Attributes</h2></td></tr>
 </div><div class="memdoc">
 
 <p>The online mode flag. </p>
-<p>Wether to check with mojang when an account is logging in if the said account is crack or not. </p>
+<p>Whether to check with mojang when an account is logging in if the said account is crack or not. </p>
 
 </div>
 </div>
@@ -461,6 +464,23 @@ Public Attributes</h2></td></tr>
 
 </div>
 </div>
+<a id="a34ce131bce6b1a715bc8a8226a2246ff" name="a34ce131bce6b1a715bc8a8226a2246ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a34ce131bce6b1a715bc8a8226a2246ff">&#9670;&#160;</a></span>PREVENT_PROXY_CONNECTIONS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classField.html">Field</a>&lt;<a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">bool</a>&gt; Config::PREVENT_PROXY_CONNECTIONS = <a class="el" href="classField.html">Field</a>(&quot;network&quot;, &quot;prevent_proxy_connections&quot;, <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">true</a>)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Whether to prevent proxy connections or not. </p>
+<p>Whether to check if the incoming connection is a proxy or not. Done using Mojang's server while authenticating. Will only work if we are in online mode (ONLINE_MODE). </p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/utils/<a class="el" href="config_8h_source.html">config.h</a></li>
 <li>src/utils/<a class="el" href="config_8cpp.html">config.cpp</a></li>
@@ -471,7 +491,7 @@ Public Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classConfig.html">Config</a></li>
-    <li class="footer">Generated on Sat Dec 30 2023 11:17:44 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+    <li class="footer">Generated on Sun Dec 31 2023 15:19:36 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
   </ul>
 </div>
 </body>

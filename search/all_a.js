@@ -22,7 +22,7 @@ var searchData=
   ['clientstate_2eh_19',['clientstate.h',['../clientstate_8h.html',1,'']]],
   ['clientstatusevent_20',['ClientStatusEvent',['../classClientStatusEvent.html',1,'ClientStatusEvent'],['../classClientStatusEvent.html#ac7494bf096510709629bad69f048c324',1,'ClientStatusEvent::ClientStatusEvent()']]],
   ['cloning_21',['Step 3 : Cloning',['../md_docs_2__1__INSTALLATION.html#autotoc_md4',1,'']]],
-  ['close_22',['close',['../classClient.html#a2ac4838875e743af25125d8b5c8eba09',1,'Client::close()'],['../classClientSocket.html#a6326bc6d9eec75a2e10ae8d8122ea488',1,'ClientSocket::close()'],['../classServerSocket.html#a0245d40096ca089255c67303eebf17e6',1,'ServerSocket::close()']]],
+  ['close_22',['close',['../classClient.html#a4565e91cd2bd35ddaa7278a5bc2055c6',1,'Client::close()'],['../classClientSocket.html#a6326bc6d9eec75a2e10ae8d8122ea488',1,'ClientSocket::close()'],['../classServerSocket.html#a0245d40096ca089255c67303eebf17e6',1,'ServerSocket::close()']]],
   ['cmake_23',['Step 4 : Configuring using CMake',['../md_docs_2__1__INSTALLATION.html#autotoc_md5',1,'']]],
   ['cmake_20definitions_24',['CMake Definitions',['../md_docs_2__2__CONFIG.html#cmake_definitions',1,'']]],
   ['cmake_20installation_25',['Step 1 : CMake Installation',['../md_docs_2__1__INSTALLATION.html#cmake_installation',1,'']]],

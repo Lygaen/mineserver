@@ -7,7 +7,11 @@ var searchData=
   ['definitions_4',['CMake Definitions',['../md_docs_2__2__CONFIG.html#cmake_definitions',1,'']]],
   ['deflate_5',['deflate',['../classcrypto_1_1ZLibCompressor.html#a909476280eb8bf0144e941e47171bbe4',1,'crypto::ZLibCompressor']]],
   ['deprecated_20list_6',['Deprecated List',['../deprecated.html',1,'']]],
-  ['display_7',['Display',['../md_docs_2__2__CONFIG.html#autotoc_md13',1,'']]],
-  ['do_20you_20have_20compared_20to_20other_8',['What features do you have compared to other ?',['../index.html#autotoc_md27',1,'']]],
-  ['does_20the_20project_20takes_20so_20much_20time_9',['Why does the project takes so much time ?',['../index.html#autotoc_md28',1,'']]]
+  ['disconnect_2ecpp_7',['disconnect.cpp',['../disconnect_8cpp.html',1,'']]],
+  ['disconnect_2eh_8',['disconnect.h',['../disconnect_8h.html',1,'']]],
+  ['disconnectlogin_9',['DisconnectLogin',['../classDisconnectLogin.html',1,'DisconnectLogin'],['../classDisconnectLogin.html#a2c4a4c206dc9adacd3ed48a88641d998',1,'DisconnectLogin::DisconnectLogin()']]],
+  ['disconnectplay_10',['DisconnectPlay',['../classDisconnectPlay.html',1,'DisconnectPlay'],['../classDisconnectPlay.html#ac0eb6e543dee14babbcbd5902166f56f',1,'DisconnectPlay::DisconnectPlay()']]],
+  ['display_11',['Display',['../md_docs_2__2__CONFIG.html#autotoc_md13',1,'']]],
+  ['do_20you_20have_20compared_20to_20other_12',['What features do you have compared to other ?',['../index.html#autotoc_md27',1,'']]],
+  ['does_20the_20project_20takes_20so_20much_20time_13',['Why does the project takes so much time ?',['../index.html#autotoc_md28',1,'']]]
 ];

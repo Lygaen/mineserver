@@ -14,5 +14,6 @@ var classConfig =
     [ "MAX_PLAYERS", "classConfig.html#a6d3f8fa249a5909b1fdf1c209c449312", null ],
     [ "MOTD", "classConfig.html#abcc2d45023a25f1c3cf5bf8074ffc993", null ],
     [ "ONLINE_MODE", "classConfig.html#a8fce02797d172e5ea22979f38c569b9c", null ],
-    [ "PORT", "classConfig.html#a6ee00c8b627479c136aad4b2366b6426", null ]
+    [ "PORT", "classConfig.html#a6ee00c8b627479c136aad4b2366b6426", null ],
+    [ "PREVENT_PROXY_CONNECTIONS", "classConfig.html#a34ce131bce6b1a715bc8a8226a2246ff", null ]
 ];

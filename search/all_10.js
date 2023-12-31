@@ -1,7 +1,7 @@
 var searchData=
 [
   ['icon_5ffile_0',['ICON_FILE',['../classConfig.html#aef3a172855427f6b66a430a973c62955',1,'Config']]],
-  ['id_1',['id',['../classIPacket.html#af88e94301d4f1ce06cb65e7314aa94cd',1,'IPacket']]],
+  ['id_1',['id',['../classIPacket.html#af88e94301d4f1ce06cb65e7314aa94cd',1,'IPacket::id'],['../structmojangapi_1_1HasJoinedResponse.html#a02367e59fde761135750e1373f17c7fd',1,'mojangapi::HasJoinedResponse::id']]],
   ['ientity_2',['IEntity',['../classIEntity.html',1,'']]],
   ['ievent_3',['IEvent',['../classIEvent.html',1,'']]],
   ['ievent_3c_20clientconnectedevent_20_3e_4',['IEvent&lt; ClientConnectedEvent &gt;',['../classIEvent.html',1,'']]],
@@ -12,15 +12,16 @@ var searchData=
   ['imcstream_9',['IMCStream',['../classIMCStream.html',1,'']]],
   ['index_20faq_10',['Index - FAQ',['../index.html',1,'']]],
   ['inflate_11',['inflate',['../classcrypto_1_1ZLibCompressor.html#acdfa78b953277426e064d9699e1e922f',1,'crypto::ZLibCompressor']]],
-  ['info_12',['info',['../namespacelogger.html#a6c9ab850a6fd8deb457e1ade2007460f',1,'logger']]],
-  ['info_13',['INFO',['../logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a748005382152808a72b1a9177d9dc806',1,'logger.h']]],
+  ['info_12',['INFO',['../logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a748005382152808a72b1a9177d9dc806',1,'logger.h']]],
+  ['info_13',['info',['../namespacelogger.html#a6c9ab850a6fd8deb457e1ade2007460f',1,'logger']]],
   ['info_5fcolor_14',['INFO_COLOR',['../logger_8h.html#a5d724ff30124b3ce91f377afb4598ed7',1,'logger.h']]],
   ['init_15',['init',['../classServerSocket.html#a0ca4d909bf5c076b2cac8e8d297fa500',1,'ServerSocket::init()'],['../namespacecrypto.html#a3f13672befc50b83435e9b84f637997c',1,'crypto::init()']]],
   ['insertion_16',['insertion',['../classChatMessage.html#ad89ce158d6e312c6cd28ff508286aff3',1,'ChatMessage']]],
   ['inst_17',['inst',['../classEventsManager.html#a8b6868e7bf770c95e5706f4cf817bf56',1,'EventsManager::inst()'],['../classServer.html#a326ec98fe5fb62cc0a9588a1594ed840',1,'Server::inst()'],['../classConfig.html#af08cc4a60a38a00097b93a2c5ad4d37a',1,'Config::inst()']]],
   ['installation_18',['Installation',['../md_docs_2__1__INSTALLATION.html',1,'Installation'],['../md_docs_2__1__INSTALLATION.html#cmake_installation',1,'Step 1 : CMake Installation'],['../md_docs_2__1__INSTALLATION.html#autotoc_md1',1,'Step 2 : Make/GCC Installation']]],
   ['ipacket_19',['IPacket',['../classIPacket.html',1,'IPacket'],['../classIPacket.html#a2516236e7181caa0ea28ee00ff92e3b9',1,'IPacket::IPacket()']]],
-  ['isvalid_20',['isValid',['../classClientSocket.html#a4263568b1b948099a1ddaec8fc9eeeac',1,'ClientSocket']]],
-  ['it_20open_20source_21',['Why making it Open-Source ?',['../index.html#autotoc_md25',1,'']]],
-  ['italic_22',['italic',['../classChatMessage.html#a45e14f8d0cceda2f3af297bb394dffce',1,'ChatMessage']]]
+  ['islocal_20',['isLocal',['../classClientSocket.html#a26bdf997f1a038e40f0001bf13346ce9',1,'ClientSocket']]],
+  ['isvalid_21',['isValid',['../classClientSocket.html#a4263568b1b948099a1ddaec8fc9eeeac',1,'ClientSocket']]],
+  ['it_20open_20source_22',['Why making it Open-Source ?',['../index.html#autotoc_md25',1,'']]],
+  ['italic_23',['italic',['../classChatMessage.html#a45e14f8d0cceda2f3af297bb394dffce',1,'ChatMessage']]]
 ];

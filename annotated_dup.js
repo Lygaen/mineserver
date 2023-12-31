@@ -8,6 +8,9 @@ var annotated_dup =
     [ "luabridge", null, [
       [ "Stack< ClientState >", "structluabridge_1_1Stack_3_01ClientState_01_4.html", null ]
     ] ],
+    [ "mojangapi", "namespacemojangapi.html", [
+      [ "HasJoinedResponse", "structmojangapi_1_1HasJoinedResponse.html", "structmojangapi_1_1HasJoinedResponse" ]
+    ] ],
     [ "Angle", "classAngle.html", "classAngle" ],
     [ "ChatMessage", "classChatMessage.html", "classChatMessage" ],
     [ "CipherStream", "classCipherStream.html", "classCipherStream" ],
@@ -17,6 +20,10 @@ var annotated_dup =
     [ "ClientSocket", "classClientSocket.html", "classClientSocket" ],
     [ "ClientStatusEvent", "classClientStatusEvent.html", "classClientStatusEvent" ],
     [ "Config", "classConfig.html", "classConfig" ],
+    [ "DisconnectLogin", "classDisconnectLogin.html", "classDisconnectLogin" ],
+    [ "DisconnectPlay", "classDisconnectPlay.html", "classDisconnectPlay" ],
+    [ "EncryptionRequest", "classEncryptionRequest.html", "classEncryptionRequest" ],
+    [ "EncryptionResponse", "classEncryptionResponse.html", "classEncryptionResponse" ],
     [ "EventHandler", "classEventHandler.html", "classEventHandler" ],
     [ "EventsManager", "classEventsManager.html", "classEventsManager" ],
     [ "Field", "classField.html", "classField" ],
@@ -40,6 +47,7 @@ var annotated_dup =
     [ "ServerListPacket", "classServerListPacket.html", "classServerListPacket" ],
     [ "ServerSocket", "classServerSocket.html", "classServerSocket" ],
     [ "ServerStartEvent", "classServerStartEvent.html", null ],
+    [ "SetCompression", "classSetCompression.html", "classSetCompression" ],
     [ "UUID", "classUUID.html", "classUUID" ],
     [ "Vec", "classVec.html", "classVec" ],
     [ "ZLibStream", "classZLibStream.html", "classZLibStream" ]

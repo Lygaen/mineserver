@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['eventhandler_0',['EventHandler',['../classEventHandler.html',1,'']]],
-  ['eventsmanager_1',['EventsManager',['../classEventsManager.html',1,'']]]
+  ['disconnectlogin_0',['DisconnectLogin',['../classDisconnectLogin.html',1,'']]],
+  ['disconnectplay_1',['DisconnectPlay',['../classDisconnectPlay.html',1,'']]]
 ];

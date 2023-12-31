@@ -20,6 +20,7 @@ var hierarchy =
     [ "File", "classFile.html", [
       [ "PNGFile", "classPNGFile.html", null ]
     ] ],
+    [ "mojangapi::HasJoinedResponse", "structmojangapi_1_1HasJoinedResponse.html", null ],
     [ "IEntity", "classIEntity.html", [
       [ "ILiving", "classILiving.html", [
         [ "Player", "classPlayer.html", null ]
@@ -45,11 +46,16 @@ var hierarchy =
       [ "ZLibStream", "classZLibStream.html", null ]
     ] ],
     [ "IPacket", "classIPacket.html", [
+      [ "DisconnectLogin", "classDisconnectLogin.html", null ],
+      [ "DisconnectPlay", "classDisconnectPlay.html", null ],
+      [ "EncryptionRequest", "classEncryptionRequest.html", null ],
+      [ "EncryptionResponse", "classEncryptionResponse.html", null ],
       [ "HandshakePacket", "classHandshakePacket.html", null ],
       [ "LoginStart", "classLoginStart.html", null ],
       [ "LoginSuccess", "classLoginSuccess.html", null ],
       [ "PingPongPacket", "classPingPongPacket.html", null ],
-      [ "ServerListPacket", "classServerListPacket.html", null ]
+      [ "ServerListPacket", "classServerListPacket.html", null ],
+      [ "SetCompression", "classSetCompression.html", null ]
     ] ],
     [ "crypto::MinecraftHash", "classcrypto_1_1MinecraftHash.html", null ],
     [ "Plugin", "classPlugin.html", null ],

@@ -5,5 +5,6 @@ var searchData=
   ['pitch_2',['pitch',['../classIEntity.html#aab961fff4876aeb85ce6936d94609caf',1,'IEntity']]],
   ['port_3',['PORT',['../classConfig.html#a6ee00c8b627479c136aad4b2366b6426',1,'Config']]],
   ['position_4',['position',['../classIEntity.html#a4573109df6a18e1e140b61b8a7f06cba',1,'IEntity']]],
-  ['protocolversion_5',['protocolVersion',['../classHandshakePacket.html#ace21358e72ce6231f141d254d7c21976',1,'HandshakePacket']]]
+  ['prevent_5fproxy_5fconnections_5',['PREVENT_PROXY_CONNECTIONS',['../classConfig.html#a34ce131bce6b1a715bc8a8226a2246ff',1,'Config']]],
+  ['protocolversion_6',['protocolVersion',['../classHandshakePacket.html#ace21358e72ce6231f141d254d7c21976',1,'HandshakePacket']]]
 ];

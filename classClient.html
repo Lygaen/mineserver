@@ -145,9 +145,9 @@ Public Member Functions</h2></td></tr>
 <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">void</a>&#160;</td><td class="memItemRight" valign="bottom"><b>start</b> ()</td></tr>
 <tr class="memdesc:a742373e08a80d993d2651b6fff76f5b9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Starts the client, blocking. <br /></td></tr>
 <tr class="separator:a742373e08a80d993d2651b6fff76f5b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2ac4838875e743af25125d8b5c8eba09" id="r_a2ac4838875e743af25125d8b5c8eba09"><td class="memItemLeft" align="right" valign="top"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2ac4838875e743af25125d8b5c8eba09">close</a> ()</td></tr>
-<tr class="memdesc:a2ac4838875e743af25125d8b5c8eba09"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops the client.  <br /></td></tr>
-<tr class="separator:a2ac4838875e743af25125d8b5c8eba09"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4565e91cd2bd35ddaa7278a5bc2055c6" id="r_a4565e91cd2bd35ddaa7278a5bc2055c6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4565e91cd2bd35ddaa7278a5bc2055c6">close</a> (<a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">const</a> std::string &amp;reason=&quot;&quot;)</td></tr>
+<tr class="memdesc:a4565e91cd2bd35ddaa7278a5bc2055c6"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops the client.  <br /></td></tr>
+<tr class="separator:a4565e91cd2bd35ddaa7278a5bc2055c6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classClient.html" title="Client class.">Client</a> class. </p>
@@ -179,8 +179,8 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a2ac4838875e743af25125d8b5c8eba09" name="a2ac4838875e743af25125d8b5c8eba09"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2ac4838875e743af25125d8b5c8eba09">&#9670;&#160;</a></span>close()</h2>
+<a id="a4565e91cd2bd35ddaa7278a5bc2055c6" name="a4565e91cd2bd35ddaa7278a5bc2055c6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4565e91cd2bd35ddaa7278a5bc2055c6">&#9670;&#160;</a></span>close()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -188,14 +188,19 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="memname"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">void</a> Client::close </td>
           <td>(</td>
-          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td class="paramtype"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">const</a> std::string &amp;</td>          <td class="paramname"><span class="paramname"><em>reason</em><span class="paramdefsep"> = </span><span class="paramdefval">&quot;&quot;</span></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Stops the client. </p>
-<p>Tells the client to exit on the next packet loop. </p>
+<p>Tells the client to exit on the next packet loop. Also, if in ClientState::LOGIN or ClientState::PLAY, sends a disconnect packet. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">reason</td><td>the reason for closing the connection </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
@@ -209,7 +214,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classClient.html">Client</a></li>
-    <li class="footer">Generated on Sat Dec 30 2023 11:17:44 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+    <li class="footer">Generated on Sun Dec 31 2023 15:19:36 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
   </ul>
 </div>
 </body>

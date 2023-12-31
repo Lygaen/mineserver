@@ -21,6 +21,7 @@ var searchData=
   ['pngfile_18',['PNGFile',['../classPNGFile.html',1,'PNGFile'],['../classPNGFile.html#a409621329dd69822c753a3c23622bc4f',1,'PNGFile::PNGFile()'],['../classPNGFile.html#ac5df70b8fc905f5ba953a5f19f9ba948',1,'PNGFile::PNGFile(std::string path)']]],
   ['port_19',['PORT',['../classConfig.html#a6ee00c8b627479c136aad4b2366b6426',1,'Config']]],
   ['position_20',['position',['../classIEntity.html#a4573109df6a18e1e140b61b8a7f06cba',1,'IEntity']]],
-  ['project_20takes_20so_20much_20time_21',['Why does the project takes so much time ?',['../index.html#autotoc_md28',1,'']]],
-  ['protocolversion_22',['protocolVersion',['../classHandshakePacket.html#ace21358e72ce6231f141d254d7c21976',1,'HandshakePacket']]]
+  ['prevent_5fproxy_5fconnections_21',['PREVENT_PROXY_CONNECTIONS',['../classConfig.html#a34ce131bce6b1a715bc8a8226a2246ff',1,'Config']]],
+  ['project_20takes_20so_20much_20time_22',['Why does the project takes so much time ?',['../index.html#autotoc_md28',1,'']]],
+  ['protocolversion_23',['protocolVersion',['../classHandshakePacket.html#ace21358e72ce6231f141d254d7c21976',1,'HandshakePacket']]]
 ];
