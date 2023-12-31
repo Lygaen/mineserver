@@ -431,7 +431,7 @@ void CipherStream::flush()
     baseStream->flush();
 }
 
-ZLibStream::ZLibStream(IMCStream *baseStream, int level) : baseStream(baseStream), comp(level)
+ZLibStream::ZLibStream(IMCStream *baseStream, int level, int threshold) : baseStream(baseStream), comp(level), threshold(threshold)
 {
 }
 
@@ -455,7 +455,7 @@ void ZLibStream::flush()
 {
 
     // Buffer write
-    if (outBuffer.size() > 0)
+    if (outBuffer.size() >= threshold)
     {
         int dataLength = outBuffer.size();
         int packetLength = 0;
@@ -470,6 +470,15 @@ void ZLibStream::flush()
         baseStream->write(inData.get(), 0, packetLength - m.getData().size());
         outBuffer.clear();
     }
+    else
+    {
+        MemoryStream m;
+        m.writeVarInt(0); // Data length must be 0 in that case
+
+        baseStream->writeVarInt(outBuffer.size() + m.getData().size());
+        baseStream->write(const_cast<std::byte *>(&m.getData()[0]), 0, m.getData().size()); // writes just 1 byte but for keepsake
+        baseStream->write(&outBuffer[0], 0, outBuffer.size());
+    }
 
     // Buffer read
     inBuffer.clear();
@@ -479,17 +488,33 @@ void ZLibStream::flush()
 
     int dataLength = baseStream->readVarInt();
 
-    MemoryStream m;
-    m.writeVarInt(dataLength); // Adds dataLength to the buffer because it is used
-    std::copy(m.getData().begin(), m.getData().end(), std::back_inserter(inBuffer));
+    if (dataLength > 0)
+    {
+        MemoryStream m;
+        m.writeVarInt(dataLength); // Adds dataLength to the buffer because it is used
+        std::copy(m.getData().begin(), m.getData().end(), std::back_inserter(inBuffer));
 
-    std::byte *streamIn = new std::byte[packetLength - inBuffer.size()];
-    baseStream->read(streamIn, 0, packetLength - inBuffer.size());
-    int outLen = dataLength;
-    std::unique_ptr<std::byte[]> data = comp.inflate(streamIn, packetLength - inBuffer.size(), &dataLength);
-    delete[] streamIn;
+        std::byte *streamIn = new std::byte[packetLength - inBuffer.size()];
+        baseStream->read(streamIn, 0, packetLength - inBuffer.size());
+        int outLen = dataLength;
+        std::unique_ptr<std::byte[]> data = comp.inflate(streamIn, packetLength - inBuffer.size(), &dataLength);
+        delete[] streamIn;
 
-    std::copy(data.get(), data.get() + outLen, std::back_inserter(inBuffer));
+        std::copy(data.get(), data.get() + outLen, std::back_inserter(inBuffer));
+    }
+    else
+    {
+        packetLength -= 1; //  because length = packetLength - sizeof(datalength)
+
+        MemoryStream m;
+        m.writeVarInt(packetLength);
+        std::copy(m.getData().begin(), m.getData().end(), std::back_inserter(inBuffer));
+
+        std::byte *streamIn = new std::byte[packetLength];
+        baseStream->read(streamIn, 0, packetLength);
+        std::copy(streamIn, streamIn + packetLength, std::back_inserter(inBuffer));
+        delete[] streamIn;
+    }
 
     baseStream->flush();
 }

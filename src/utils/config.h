@@ -158,6 +158,13 @@ public:
      */
     Field<int> COMPRESSION_LVL = Field("network", "compression_level", -1);
     /**
+     * @brief The limit size for packets before they are compressed
+     *
+     * If a packet exceed the compression threshold, it will get
+     * compressed.
+     */
+    Field<int> COMPRESSION_THRESHOLD = Field("network", "compression_threshold", 128);
+    /**
      * @brief The online mode flag
      *
      * Whether to check with mojang when an account
@@ -227,7 +234,7 @@ public:
  * on all of the fields by defining the UF(x) macro.
  */
 #define CONFIG_FIELDS UF(PORT) UF(MOTD) UF(LOGLEVEL) UF(COMPRESSION_LVL) UF(ONLINE_MODE) UF(ADDRESS) \
-    UF(BACKLOG) UF(MAX_PLAYERS) UF(ICON_FILE) UF(PREVENT_PROXY_CONNECTIONS)
+    UF(BACKLOG) UF(MAX_PLAYERS) UF(ICON_FILE) UF(PREVENT_PROXY_CONNECTIONS) UF(COMPRESSION_THRESHOLD)
 
 /**
  * @brief The Version Number

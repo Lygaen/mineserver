@@ -449,6 +449,7 @@ private:
     std::uint32_t inIndex{};
 
     std::vector<std::byte> outBuffer{};
+    int threshold;
 
 public:
     /**
@@ -456,8 +457,9 @@ public:
      *
      * @param baseStream the base stream to IO on, the class takes ownership
      * @param level the level of compression
+     * @param threshold the threshold before compression
      */
-    ZLibStream(IMCStream *baseStream, int level);
+    ZLibStream(IMCStream *baseStream, int level, int threshold);
     /**
      * @brief Destroy the ZLibStream object
      *

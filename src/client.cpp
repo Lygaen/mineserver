@@ -16,6 +16,7 @@
 #include <net/packets/status/pingpong.h>
 #include <net/packets/login/loginstartend.h>
 #include <net/packets/login/encryptionexchange.h>
+#include <net/packets/login/setcompression.h>
 #include <net/packets/play/disconnect.h>
 #include <plugins/events/clientevents.hpp>
 #include <plugins/event.h>
@@ -134,7 +135,7 @@ void Client::loop()
                 close("Invalid verify token");
                 return;
             }
-            logger::debug("Valid verify token");
+            stream = new CipherStream(stream, response.sharedSecret.get(), response.sharedSecret.get());
 
             crypto::MinecraftHash hash;
             hash.update("");
@@ -159,13 +160,6 @@ void Client::loop()
 
             player.uuid = hasJoined.id;
 
-            stream = new CipherStream(stream, response.sharedSecret.get(), response.sharedSecret.get());
-
-            // if (Config::inst()->COMPRESSION_LVL.getValue() != 0)
-            // {
-            //     stream = new ZLibStream(stream, Config::inst()->COMPRESSION_LVL.getValue());
-            // }
-
             initiatePlayerJoin();
             return;
         }
@@ -187,6 +181,15 @@ void Client::loop()
 
 void Client::initiatePlayerJoin()
 {
+    // TODO Compression
+    // if (Config::inst()->COMPRESSION_LVL.getValue() != 0)
+    // {
+    //     SetCompression comp(Config::inst()->COMPRESSION_THRESHOLD.getValue());
+    //     comp.send(stream);
+
+    //     stream = new ZLibStream(stream, Config::inst()->COMPRESSION_LVL.getValue(), Config::inst()->COMPRESSION_THRESHOLD.getValue());
+    // }
+
     LoginSuccess loginSuccess(player.name, player.uuid);
     loginSuccess.send(stream);
 

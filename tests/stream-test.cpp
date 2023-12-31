@@ -299,9 +299,13 @@ TEST(Streams, Cipher)
 
 TEST(Streams, ZLib)
 {
-    ZLibStream stream(new MemoryStream(), Z_DEFAULT_COMPRESSION);
+    ZLibStream stream0(new MemoryStream(), Z_DEFAULT_COMPRESSION, 0);
 
-    runStreamTest(&stream, &stream, true);
+    runStreamTest(&stream0, &stream0, true);
+
+    ZLibStream stream10k(new MemoryStream(), Z_DEFAULT_COMPRESSION, 10000);
+
+    runStreamTest(&stream10k, &stream10k, true);
 }
 
 TEST(Streams, CryptoRSA)

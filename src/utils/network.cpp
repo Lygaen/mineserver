@@ -232,7 +232,7 @@ mojangapi::HasJoinedResponse mojangapi::hasJoined(const std::string &username, c
 
     std::string response(buff);
     auto loc = response.find("\r\n\r\n");
-    response.erase(0, loc + 4);
+    response = response.substr(loc + 4);
 
     SSL_shutdown(ssl);
     socket.close();
