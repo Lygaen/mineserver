@@ -53,7 +53,7 @@ We will be configuring it :
  - Select the cloned / downloaded source code at the top
  - Select where to build the executable at
  - Now a lot of red variables should appear in a table
- - Configure the variable starting with `MINESERVER` (refer to [this](https://lygaen.github.io/mineserver/md_docs_2__2__CONFIG.html#cmake_definitions))
+ - Configure the variable starting with `MINESERVER` (refer to [this](#cmake_definitions))
  - Press `Configure` then `Generate`
 
 ### Command Line
@@ -63,7 +63,7 @@ mkdir build
 cd build
 cmake -DCMAKE_BUILD_TYPE=Release ..
 ```
-You can add `-D<YOUR OPTION>=<VALUE>` to the cmake command before the `..` to modify build parameters for Mineserver (refer to [this]([#cmake](https://lygaen.github.io/mineserver/md_docs_2__2__CONFIG.html#cmake_definitions))).
+You can add `-D<YOUR OPTION>=<VALUE>` to the cmake command before the `..` to modify build parameters for Mineserver (refer to [this](#cmake_definitions)).
 
 ## Step 5 : Compiling
 Open a terminal in the build folder or reuse the terminal in the previous steps, running the following commands. It should start building the executable. If any errors happened, please check that you did all of the previous steps or make an issue on Github, we will be happy to help !
