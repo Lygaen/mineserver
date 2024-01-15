@@ -136,23 +136,26 @@ $(function(){initNavTree('luaregpackets_8hpp_source.html',''); initResizable(); 
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;<a class="code" href="serverlist_8h.html">net/packets/status/serverlist.h</a>&gt;</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;<a class="code" href="pingpong_8h.html">net/packets/status/pingpong.h</a>&gt;</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;<a class="code" href="loginstartend_8h.html">net/packets/login/loginstartend.h</a>&gt;</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;<a class="code" href="handshake_8h.html">net/packets/handshake.h</a>&gt;</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="foldopen" id="foldopen00025" data-start="{" data-end="}">
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno"><a class="line" href="luaregpackets_8hpp.html#a60a3d12a4b6bee74566fcc6c51dd8b8a">   25</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="luaregpackets_8hpp.html#a60a3d12a4b6bee74566fcc6c51dd8b8a">loadPacketsLua</a>(lua_State *state)</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>{</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>* namespaceName = <span class="stringliteral">&quot;packets&quot;</span>;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <a class="code hl_function" href="classLoginStart.html#a5677597baf172251ac5e4f793dd1f771">LoginStart::loadLua</a>(state, namespaceName);</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <a class="code hl_function" href="classLoginSuccess.html#a722387693dbdfd9624cd0982fbb352a4">LoginSuccess::loadLua</a>(state, namespaceName);</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <a class="code hl_function" href="classServerListPacket.html#a0499a6b11f1fd3656fa11995c0379fba">ServerListPacket::loadLua</a>(state, namespaceName);</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <a class="code hl_function" href="classPingPongPacket.html#a5aa7678916141109d978c15357575b94">PingPongPacket::loadLua</a>(state, namespaceName);</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;<a class="code" href="luaregplaypackets_8hpp.html">net/packets/play/luaregplaypackets.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;<a class="code" href="handshake_8h.html">net/packets/handshake.h</a>&gt;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="foldopen" id="foldopen00026" data-start="{" data-end="}">
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="luaregpackets_8hpp.html#a60a3d12a4b6bee74566fcc6c51dd8b8a">   26</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="luaregpackets_8hpp.html#a60a3d12a4b6bee74566fcc6c51dd8b8a">loadPacketsLua</a>(lua_State *state)</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>{</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keyword">const</span> <span class="keywordtype">char</span>* namespaceName = <span class="stringliteral">&quot;packets&quot;</span>;</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <a class="code hl_function" href="classLoginStart.html#a5677597baf172251ac5e4f793dd1f771">LoginStart::loadLua</a>(state, namespaceName);</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <a class="code hl_function" href="classLoginSuccess.html#a722387693dbdfd9624cd0982fbb352a4">LoginSuccess::loadLua</a>(state, namespaceName);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span> </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <a class="code hl_function" href="luaregplaypackets_8hpp.html#a2730cc13e53a0d69165b2b82f6633d45">loadPlayPacketsLua</a>(state);</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <a class="code hl_function" href="classHandshakePacket.html#adc864e4dac9770355aa2d3607d8e4f6d">HandshakePacket::loadLua</a>(state, namespaceName);</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>}</div>
-</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <a class="code hl_function" href="classServerListPacket.html#a0499a6b11f1fd3656fa11995c0379fba">ServerListPacket::loadLua</a>(state, namespaceName);</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <a class="code hl_function" href="classPingPongPacket.html#a5aa7678916141109d978c15357575b94">PingPongPacket::loadLua</a>(state, namespaceName);</div>
 <div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span><span class="preprocessor">#endif </span><span class="comment">// MINESERVER_LUAREGPACKETS_H</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <a class="code hl_function" href="classHandshakePacket.html#adc864e4dac9770355aa2d3607d8e4f6d">HandshakePacket::loadLua</a>(state, namespaceName);</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>}</div>
+</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><span class="preprocessor">#endif </span><span class="comment">// MINESERVER_LUAREGPACKETS_H</span></div>
 <div class="ttc" id="aclassHandshakePacket_html_adc864e4dac9770355aa2d3607d8e4f6d"><div class="ttname"><a href="classHandshakePacket.html#adc864e4dac9770355aa2d3607d8e4f6d">HandshakePacket::loadLua</a></div><div class="ttdeci">static void loadLua(lua_State *state, const char *baseNamespaceName)</div><div class="ttdoc">Loads packet as lua class.</div><div class="ttdef"><b>Definition</b> handshake.cpp:33</div></div>
 <div class="ttc" id="aclassLoginStart_html_a5677597baf172251ac5e4f793dd1f771"><div class="ttname"><a href="classLoginStart.html#a5677597baf172251ac5e4f793dd1f771">LoginStart::loadLua</a></div><div class="ttdeci">static void loadLua(lua_State *state, const char *baseNamespaceName)</div><div class="ttdoc">Loads Packet to lua.</div><div class="ttdef"><b>Definition</b> loginstartend.cpp:26</div></div>
 <div class="ttc" id="aclassLoginSuccess_html_a722387693dbdfd9624cd0982fbb352a4"><div class="ttname"><a href="classLoginSuccess.html#a722387693dbdfd9624cd0982fbb352a4">LoginSuccess::loadLua</a></div><div class="ttdeci">static void loadLua(lua_State *state, const char *baseNamespaceName)</div><div class="ttdoc">Loads Packet to lua state.</div><div class="ttdef"><b>Definition</b> loginstartend.cpp:50</div></div>
@@ -161,7 +164,9 @@ $(function(){initNavTree('luaregpackets_8hpp_source.html',''); initResizable(); 
 <div class="ttc" id="ahandshake_8h_html"><div class="ttname"><a href="handshake_8h.html">handshake.h</a></div><div class="ttdoc">The file containing handshake protocol.</div></div>
 <div class="ttc" id="aloginstartend_8h_html"><div class="ttname"><a href="loginstartend_8h.html">loginstartend.h</a></div><div class="ttdoc">The file containing login start and end packets.</div></div>
 <div class="ttc" id="aluaheaders_8h_html"><div class="ttname"><a href="luaheaders_8h.html">luaheaders.h</a></div><div class="ttdoc">Utility header file for lua things.</div></div>
-<div class="ttc" id="aluaregpackets_8hpp_html_a60a3d12a4b6bee74566fcc6c51dd8b8a"><div class="ttname"><a href="luaregpackets_8hpp.html#a60a3d12a4b6bee74566fcc6c51dd8b8a">loadPacketsLua</a></div><div class="ttdeci">void loadPacketsLua(lua_State *state)</div><div class="ttdoc">Loads packets lua classes.</div><div class="ttdef"><b>Definition</b> luaregpackets.hpp:25</div></div>
+<div class="ttc" id="aluaregpackets_8hpp_html_a60a3d12a4b6bee74566fcc6c51dd8b8a"><div class="ttname"><a href="luaregpackets_8hpp.html#a60a3d12a4b6bee74566fcc6c51dd8b8a">loadPacketsLua</a></div><div class="ttdeci">void loadPacketsLua(lua_State *state)</div><div class="ttdoc">Loads packets lua classes.</div><div class="ttdef"><b>Definition</b> luaregpackets.hpp:26</div></div>
+<div class="ttc" id="aluaregplaypackets_8hpp_html"><div class="ttname"><a href="luaregplaypackets_8hpp.html">luaregplaypackets.hpp</a></div><div class="ttdoc">Utility for loading types lua classes.</div></div>
+<div class="ttc" id="aluaregplaypackets_8hpp_html_a2730cc13e53a0d69165b2b82f6633d45"><div class="ttname"><a href="luaregplaypackets_8hpp.html#a2730cc13e53a0d69165b2b82f6633d45">loadPlayPacketsLua</a></div><div class="ttdeci">void loadPlayPacketsLua(lua_State *state)</div><div class="ttdoc">Loads entities classes to lua.</div><div class="ttdef"><b>Definition</b> luaregplaypackets.hpp:23</div></div>
 <div class="ttc" id="apingpong_8h_html"><div class="ttname"><a href="pingpong_8h.html">pingpong.h</a></div><div class="ttdoc">The file containing logic for pinging the server.</div></div>
 <div class="ttc" id="aserverlist_8h_html"><div class="ttname"><a href="serverlist_8h.html">serverlist.h</a></div><div class="ttdoc">The file containing packet logic for server list.</div></div>
 </div><!-- fragment --></div><!-- contents -->
@@ -170,7 +175,7 @@ $(function(){initNavTree('luaregpackets_8hpp_source.html',''); initResizable(); 
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_c72b25b75abe208498b36a3e44a3726c.html">net</a></li><li class="navelem"><a class="el" href="dir_a31b6ac1860772a961c73d504bbae633.html">packets</a></li><li class="navelem"><a class="el" href="luaregpackets_8hpp.html">luaregpackets.hpp</a></li>
-    <li class="footer">Generated on Sun Jan 14 2024 17:20:59 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+    <li class="footer">Generated on Mon Jan 15 2024 17:34:40 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
   </ul>
 </div>
 </body>

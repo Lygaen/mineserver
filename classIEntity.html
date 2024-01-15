@@ -122,6 +122,7 @@ $(function(){initNavTree('classIEntity.html',''); initResizable(); });
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="classIEntity-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">IEntity Class Reference</div></div>
@@ -150,6 +151,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a727892234e0efad23c7a399997dee974"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the <a class="el" href="classIEntity.html" title="Interface Entity.">IEntity</a> object. <br /></td></tr>
 <tr class="separator:a727892234e0efad23c7a399997dee974"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:ae2ba640e79073e70bc4a32c914e4d713" id="r_ae2ba640e79073e70bc4a32c914e4d713"><td class="memItemLeft" align="right" valign="top"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">static</a> <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae2ba640e79073e70bc4a32c914e4d713">loadLua</a> (<a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">lua_State</a> *state, <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">const</a> <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">char</a> *<a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">namespaceName</a>)</td></tr>
+<tr class="memdesc:ae2ba640e79073e70bc4a32c914e4d713"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads the <a class="el" href="classIEntity.html" title="Interface Entity.">IEntity</a> class to a Lua one.  <br /></td></tr>
+<tr class="separator:ae2ba640e79073e70bc4a32c914e4d713"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
 <tr class="memitem:a4573109df6a18e1e140b61b8a7f06cba" id="r_a4573109df6a18e1e140b61b8a7f06cba"><td class="memItemLeft" align="right" valign="top"><a id="a4573109df6a18e1e140b61b8a7f06cba" name="a4573109df6a18e1e140b61b8a7f06cba"></a>
@@ -169,7 +176,46 @@ Public Attributes</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Interface Entity. </p>
 <p>Interface for all entities, implements basic things that all entities should have </p>
-</div><h2 class="groupheader">Member Data Documentation</h2>
+</div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="ae2ba640e79073e70bc4a32c914e4d713" name="ae2ba640e79073e70bc4a32c914e4d713"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae2ba640e79073e70bc4a32c914e4d713">&#9670;&#160;</a></span>loadLua()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">static</a> <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">void</a> IEntity::loadLua </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">lua_State</a> *</td>          <td class="paramname"><span class="paramname"><em>state</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">const</a> <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">char</a> *</td>          <td class="paramname"><span class="paramname"><em>namespaceName</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Loads the <a class="el" href="classIEntity.html" title="Interface Entity.">IEntity</a> class to a Lua one. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">state</td><td>the state to load to </td></tr>
+    <tr><td class="paramname">namespaceName</td><td>the namespace to load to </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
 <a id="aab961fff4876aeb85ce6936d94609caf" name="aab961fff4876aeb85ce6936d94609caf"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aab961fff4876aeb85ce6936d94609caf">&#9670;&#160;</a></span>pitch</h2>
 
@@ -230,7 +276,7 @@ Public Attributes</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classIEntity.html">IEntity</a></li>
-    <li class="footer">Generated on Sun Jan 14 2024 17:20:59 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+    <li class="footer">Generated on Mon Jan 15 2024 17:34:40 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
   </ul>
 </div>
 </body>

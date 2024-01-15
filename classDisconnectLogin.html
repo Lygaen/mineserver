@@ -122,6 +122,7 @@ $(function(){initNavTree('classDisconnectLogin.html',''); initResizable(); });
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="classDisconnectLogin-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">DisconnectLogin Class Reference</div></div>
@@ -158,6 +159,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a2690dfa6267a96e7066002e06884af35 inherit pub_methods_classIPacket" id="r_a2690dfa6267a96e7066002e06884af35"><td class="memItemLeft" align="right" valign="top"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classIPacket.html#a2690dfa6267a96e7066002e06884af35">send</a> (<a class="el" href="classIMCStream.html">IMCStream</a> *stream)</td></tr>
 <tr class="memdesc:a2690dfa6267a96e7066002e06884af35 inherit pub_methods_classIPacket"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a Packet in Minecraft format.  <br /></td></tr>
 <tr class="separator:a2690dfa6267a96e7066002e06884af35 inherit pub_methods_classIPacket"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:ad7febe50713a4e4eb192ad95fb4d55d9" id="r_ad7febe50713a4e4eb192ad95fb4d55d9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">static</a> <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad7febe50713a4e4eb192ad95fb4d55d9">loadLua</a> (<a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">lua_State</a> *state, <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">const</a> <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">char</a> *<a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">baseNamespaceName</a>)</td></tr>
+<tr class="memdesc:ad7febe50713a4e4eb192ad95fb4d55d9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads packet as lua class.  <br /></td></tr>
+<tr class="separator:ad7febe50713a4e4eb192ad95fb4d55d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -215,6 +222,44 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="ad7febe50713a4e4eb192ad95fb4d55d9" name="ad7febe50713a4e4eb192ad95fb4d55d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad7febe50713a4e4eb192ad95fb4d55d9">&#9670;&#160;</a></span>loadLua()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">void</a> DisconnectLogin::loadLua </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">lua_State</a> *</td>          <td class="paramname"><span class="paramname"><em>state</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">const</a> <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">char</a> *</td>          <td class="paramname"><span class="paramname"><em>baseNamespaceName</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Loads packet as lua class. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">state</td><td>lua state to load to </td></tr>
+    <tr><td class="paramname">baseNamespaceName</td><td>the base namespace name to load to </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a0649c0b7fd1758ab39889aea9b2fb31c" name="a0649c0b7fd1758ab39889aea9b2fb31c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0649c0b7fd1758ab39889aea9b2fb31c">&#9670;&#160;</a></span>read()</h2>
 
@@ -261,7 +306,7 @@ Additional Inherited Members</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classDisconnectLogin.html">DisconnectLogin</a></li>
-    <li class="footer">Generated on Sun Jan 14 2024 17:20:59 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+    <li class="footer">Generated on Mon Jan 15 2024 17:34:40 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
   </ul>
 </div>
 </body>

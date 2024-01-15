@@ -5,5 +5,6 @@ var classAngle =
     [ "Angle", "classAngle.html#a126f8cf389768499594b25725ec35588", null ],
     [ "~Angle", "classAngle.html#aadc434ed30254af9cf469be8fe97234f", null ],
     [ "getByte", "classAngle.html#a416dcf13e7716de9fa35506262496987", null ],
-    [ "getDegrees", "classAngle.html#a66ee21aa618d4b2fb234634b68f71ac8", null ]
+    [ "getDegrees", "classAngle.html#a66ee21aa618d4b2fb234634b68f71ac8", null ],
+    [ "loadLua", "classAngle.html#a96d3c7f78907eae3faaa1914cdeb1b4a", null ]
 ];

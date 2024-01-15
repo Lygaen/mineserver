@@ -122,6 +122,7 @@ $(function(){initNavTree('classAngle.html',''); initResizable(); });
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="classAngle-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Angle Class Reference</div></div>
 </div><!--header-->
@@ -153,6 +154,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a416dcf13e7716de9fa35506262496987" id="r_a416dcf13e7716de9fa35506262496987"><td class="memItemLeft" align="right" valign="top">std::byte&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a416dcf13e7716de9fa35506262496987">getByte</a> () <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">const</a></td></tr>
 <tr class="memdesc:a416dcf13e7716de9fa35506262496987"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the Byte representation.  <br /></td></tr>
 <tr class="separator:a416dcf13e7716de9fa35506262496987"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a96d3c7f78907eae3faaa1914cdeb1b4a" id="r_a96d3c7f78907eae3faaa1914cdeb1b4a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">static</a> <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a96d3c7f78907eae3faaa1914cdeb1b4a">loadLua</a> (<a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">lua_State</a> *state, <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">const</a> <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">char</a> *<a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">namespaceName</a>)</td></tr>
+<tr class="memdesc:a96d3c7f78907eae3faaa1914cdeb1b4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Loads <a class="el" href="classAngle.html" title="Angle class holder.">Angle</a> to lua state.  <br /></td></tr>
+<tr class="separator:a96d3c7f78907eae3faaa1914cdeb1b4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classAngle.html" title="Angle class holder.">Angle</a> class holder. </p>
@@ -309,6 +316,44 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="a96d3c7f78907eae3faaa1914cdeb1b4a" name="a96d3c7f78907eae3faaa1914cdeb1b4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a96d3c7f78907eae3faaa1914cdeb1b4a">&#9670;&#160;</a></span>loadLua()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">static</a> <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">void</a> Angle::loadLua </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">lua_State</a> *</td>          <td class="paramname"><span class="paramname"><em>state</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">const</a> <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">char</a> *</td>          <td class="paramname"><span class="paramname"><em>namespaceName</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Loads <a class="el" href="classAngle.html" title="Angle class holder.">Angle</a> to lua state. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">state</td><td>lua state </td></tr>
+    <tr><td class="paramname">namespaceName</td><td>base namespace name </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/types/<a class="el" href="angle_8hpp_source.html">angle.hpp</a></li>
 </ul>
@@ -318,7 +363,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classAngle.html">Angle</a></li>
-    <li class="footer">Generated on Sun Jan 14 2024 17:20:59 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+    <li class="footer">Generated on Mon Jan 15 2024 17:34:40 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
   </ul>
 </div>
 </body>
