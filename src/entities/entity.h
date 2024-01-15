@@ -12,6 +12,7 @@
 #ifndef MINESERVER_ENTITY_H
 #define MINESERVER_ENTITY_H
 
+#include <plugins/luaheaders.h>
 #include <types/vector.hpp>
 #include <types/angle.hpp>
 #include <types/uuid.h>
@@ -57,7 +58,24 @@ public:
      */
     UUID uuid;
 
-    // TODO implement everything in Lua
+    /**
+     * @brief Loads the IEntity class to a Lua one
+     *
+     * @param state the state to load to
+     * @param namespaceName the namespace to load to
+     */
+    static void loadLua(lua_State *state, const char *namespaceName)
+    {
+        luabridge::getGlobalNamespace(state)
+            .beginNamespace(namespaceName)
+            .beginClass<IEntity>("IEntity")
+            .addProperty("position", &IEntity::position)
+            .addProperty("yaw", &IEntity::yaw)
+            .addProperty("pitch", &IEntity::pitch)
+            .addProperty("uuid", &IEntity::uuid)
+            .endClass()
+            .endNamespace();
+    }
 };
 
 /**
@@ -75,7 +93,21 @@ public:
      *
      */
     virtual ~ILiving() = default;
-    // TODO implement everything in Lua
+
+    /**
+     * @brief Loads the ILiving class to a Lua one
+     *
+     * @param state the state to load to
+     * @param namespaceName the namespace to load to
+     */
+    static void loadLua(lua_State *state, const char *namespaceName)
+    {
+        luabridge::getGlobalNamespace(state)
+            .beginNamespace(namespaceName)
+            .beginClass<ILiving>("ILiving")
+            .endClass()
+            .endNamespace();
+    }
 };
 
 #endif // MINESERVER_ENTITY_H

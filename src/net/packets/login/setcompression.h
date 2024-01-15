@@ -17,6 +17,9 @@
 /**
  * @brief Set Compression Packet
  *
+ * Is not exposed to lua as it could
+ * break if the threshold value is
+ * modified.
  */
 class SetCompression : public IPacket
 {
@@ -48,8 +51,6 @@ public:
      * @deprecated should not be used, useless
      */
     void read(IMCStream *stream) override;
-
-    // TODO implement everything in Lua
 };
 
 #endif // MINESERVER_SETCOMPRESSION_H

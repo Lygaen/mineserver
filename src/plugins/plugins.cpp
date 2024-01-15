@@ -18,6 +18,7 @@
 #include <net/luaregnet.hpp>
 #include <utils/luaregutils.hpp>
 #include <plugins/events/luaregevents.hpp>
+#include <entities/luaregentities.hpp>
 
 Plugin::Plugin(std::string path) : path(std::move(path)), state(nullptr)
 {
@@ -64,6 +65,7 @@ void Plugin::defineLibs()
     loadEventsLua(state);
     loadUtilsLua(state);
     loadNetLua(state);
+    loadEntitiesLua(state);
 }
 
 PluginsManager::PluginsManager() : plugins()

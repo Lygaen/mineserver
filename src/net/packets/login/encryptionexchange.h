@@ -20,6 +20,10 @@
  *
  * Used in protocol encryption scheme,
  * for the server to ask to the client.
+ *
+ * It is not exposed to lua for security
+ * reasons. A plugin should not handle
+ * encryption and stuff.
  */
 class EncryptionRequest : public IPacket
 {
@@ -55,8 +59,6 @@ public:
     @deprecated should not be used, useless
     */
     void read(IMCStream *stream) override;
-
-    // TODO implement everything in Lua
 };
 
 /**
@@ -64,6 +66,10 @@ public:
  *
  * Used to verify the verify token as well
  * as encrypting the channel with the shared secret.
+ *
+ * It is not exposed to lua for security
+ * reasons. A plugin should not handle
+ * encryption and stuff.
  */
 class EncryptionResponse : public IPacket
 {
@@ -114,8 +120,6 @@ public:
      * @param stream the stream to read from
      */
     void read(IMCStream *stream) override;
-
-    // TODO implement everything in Lua
 };
 
 #endif // MINESERVER_ENCRYPTIONEXCHANGE_H

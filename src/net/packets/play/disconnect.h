@@ -48,7 +48,13 @@ public:
      */
     void read(IMCStream *stream) override;
 
-    // TODO implement everything in Lua
+    /**
+     * @brief Loads packet as lua class
+     *
+     * @param state lua state to load to
+     * @param baseNamespaceName the base namespace name to load to
+     */
+    static void loadLua(lua_State *state, const char *baseNamespaceName);
 };
 
 /**
@@ -85,7 +91,13 @@ public:
      */
     void read(IMCStream *stream) override;
 
-    // TODO implement everything in Lua
+    /**
+     * @brief Loads packet as lua class
+     *
+     * @param state lua state to load to
+     * @param baseNamespaceName the base namespace name to load to
+     */
+    static void loadLua(lua_State *state, const char *baseNamespaceName);
 };
 
 #endif // MINESERVER_DISCONNECT_H

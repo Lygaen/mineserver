@@ -40,7 +40,22 @@ public:
      * Also called the username or tag
      */
     std::string name;
-    // TODO implement everything in Lua
+
+    /**
+     * @brief Loads the Player class to a Lua one
+     *
+     * @param state the state to load to
+     * @param namespaceName the namespace to load to
+     */
+    static void loadLua(lua_State *state, const char *namespaceName)
+    {
+        luabridge::getGlobalNamespace(state)
+            .beginNamespace(namespaceName)
+            .beginClass<Player>("Player")
+            .addProperty("name", &Player::name)
+            .endClass()
+            .endNamespace();
+    }
 };
 
 #endif // MINESERVER_PLAYER_H

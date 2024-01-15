@@ -13,6 +13,7 @@
 #define MINESERVER_ANGLE_H
 
 #include <cstddef>
+#include <plugins/luaheaders.h>
 
 /**
  * @brief Angle class holder
@@ -70,7 +71,23 @@ public:
         return value;
     }
 
-    // TODO implement everything in Lua
+    /**
+     * @brief Loads Angle to lua state
+     *
+     * @param state lua state
+     * @param namespaceName base namespace name
+     */
+    static void loadLua(lua_State *state, const char *namespaceName)
+    {
+        luabridge::getGlobalNamespace(state)
+            .beginNamespace(namespaceName)
+            .beginClass<Angle>("Angle")
+            .addConstructor<void(float), void(std::byte)>()
+            .addFunction("getDegrees", &Angle::getDegrees)
+            .addFunction("getByte", &Angle::getByte)
+            .endClass()
+            .endNamespace();
+    }
 };
 
 #endif // MINESERVER_ANGLE_H

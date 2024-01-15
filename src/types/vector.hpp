@@ -14,6 +14,7 @@
 
 #include <cstdint>
 #include <type_traits>
+#include <plugins/luaheaders.h>
 
 /**
  * @brief Vector 3 (x, y, z) with variable type
@@ -180,8 +181,6 @@ public:
         z /= other;
         return *this;
     }
-
-    // TODO implement everything in Lua
 };
 
 /**
@@ -196,5 +195,30 @@ typedef Vec<float> Vecf;
  * All coordinates are represented as a 32-byte integer.
  */
 typedef Vec<std::int32_t> Veci32;
+
+/**
+ * @brief Loads Vector to lua state
+ *
+ * @param state lua state
+ * @param namespaceName base namespace name
+ */
+static void loadVectorLua(lua_State *state, const char *namespaceName)
+{
+    luabridge::getGlobalNamespace(state)
+        .beginNamespace(namespaceName)
+        .beginClass<Vecf>("Vecf")
+        .addConstructor<void(), void(float, float), void(float, float, float)>()
+        .addProperty("x", &Vecf::x)
+        .addProperty("y", &Vecf::y)
+        .addProperty("z", &Vecf::z)
+        .endClass()
+        .beginClass<Veci32>("Veci32")
+        .addConstructor<void(), void(std::int32_t, std::int32_t), void(std::int32_t, std::int32_t, std::int32_t)>()
+        .addProperty("x", &Veci32::x)
+        .addProperty("y", &Veci32::y)
+        .addProperty("z", &Veci32::z)
+        .endClass()
+        .endNamespace();
+}
 
 #endif // MINESERVER_VECTOR_HPP

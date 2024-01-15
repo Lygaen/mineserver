@@ -15,6 +15,8 @@
 #include <plugins/luaheaders.h>
 #include <types/clientstate.h>
 #include <types/chatmessage.h>
+#include <types/angle.hpp>
+#include <types/vector.hpp>
 #include <types/uuid.h>
 
 /**
@@ -29,6 +31,8 @@ void loadTypesLua(lua_State *state)
     UUID::loadLua(state, namespaceName);
     loadClientStateLua(state, namespaceName);
     ChatMessage::loadLua(state, namespaceName);
+    Angle::loadLua(state, namespaceName);
+    loadVectorLua(state, namespaceName);
 }
 
 #endif // MINESERVER_LUAREGTYPES_H
