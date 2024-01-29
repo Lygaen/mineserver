@@ -9,7 +9,7 @@
 	url = https://github.com/janbar/openssl-cmake
 [submodule "libs/zlib"]
 	path = libs/zlib
-	url = https://github.com/Lygaen/zlib
+	url = https://github.com/madler/zlib
 [submodule "libs/lua-cmake"]
 	path = libs/lua-cmake
 	url = https://github.com/lubgr/lua-cmake
