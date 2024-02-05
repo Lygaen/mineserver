@@ -1,5 +1,7 @@
 var classIMCStream =
 [
+    [ "available", "classIMCStream.html#a2c334c6533d4c86ea89dd33755a36b2c", null ],
+    [ "finishPacketWrite", "classIMCStream.html#a5a940ca3d10f8756bee21f2fba26aaed", null ],
     [ "flush", "classIMCStream.html#aca226377aea0f0e1bca188a8911bff63", null ],
     [ "read", "classIMCStream.html#af9259f1c68733763d960107ab8334b60", null ],
     [ "readBoolean", "classIMCStream.html#ae58cce0b2c4a51f0b8ee3818345bf530", null ],
@@ -16,7 +18,7 @@ var classIMCStream =
     [ "readUUID", "classIMCStream.html#a92a41a039e7e3dad3557a0eaf04e2b28", null ],
     [ "readVarInt", "classIMCStream.html#a09925d431ef180eb1b816d72aaf90b78", null ],
     [ "readVarLong", "classIMCStream.html#a22a8511cd6d1ee73d512dbe6bba419e0", null ],
-    [ "write", "classIMCStream.html#ad589a29c0af4eead2d91d12633a5a236", null ],
+    [ "write", "classIMCStream.html#abb733b006bac00f54c1b05cc013c9eb0", null ],
     [ "writeBoolean", "classIMCStream.html#a86f24c981712f72fcb32204eaed23e9f", null ],
     [ "writeByte", "classIMCStream.html#a0701e1f63947c23ef23f608193256587", null ],
     [ "writeChat", "classIMCStream.html#a3286ac710b2bd42f73d4becc8aa3d511", null ],

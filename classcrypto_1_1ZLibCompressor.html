@@ -141,12 +141,12 @@ Public Member Functions</h2></td></tr>
 &#160;</td><td class="memItemRight" valign="bottom"><b>~ZLibCompressor</b> ()=<a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">default</a></td></tr>
 <tr class="memdesc:a4446e1a286f3f676c23b6da838d67a82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Destroy the Zlib Compressor object. <br /></td></tr>
 <tr class="separator:a4446e1a286f3f676c23b6da838d67a82"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a909476280eb8bf0144e941e47171bbe4" id="r_a909476280eb8bf0144e941e47171bbe4"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; std::byte[]&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a909476280eb8bf0144e941e47171bbe4">deflate</a> (<a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">const</a> std::byte *data, <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">size_t</a> <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">len</a>, <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">int</a> *<a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">outLen</a>)</td></tr>
-<tr class="memdesc:a909476280eb8bf0144e941e47171bbe4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Deflates data.  <br /></td></tr>
-<tr class="separator:a909476280eb8bf0144e941e47171bbe4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acdfa78b953277426e064d9699e1e922f" id="r_acdfa78b953277426e064d9699e1e922f"><td class="memItemLeft" align="right" valign="top">std::unique_ptr&lt; std::byte[]&gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acdfa78b953277426e064d9699e1e922f">inflate</a> (<a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">const</a> std::byte *data, <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">size_t</a> <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">len</a>, <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">int</a> *<a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">outLen</a>)</td></tr>
-<tr class="memdesc:acdfa78b953277426e064d9699e1e922f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Inflates data.  <br /></td></tr>
-<tr class="separator:acdfa78b953277426e064d9699e1e922f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ada2013d2353b8a39f98117e0111aab3c" id="r_ada2013d2353b8a39f98117e0111aab3c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ada2013d2353b8a39f98117e0111aab3c">compress</a> (<a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">const</a> std::byte *data, <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">size_t</a> <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">len</a>, std::byte *<a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">out</a>, <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">size_t</a> <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">outLen</a>)</td></tr>
+<tr class="memdesc:ada2013d2353b8a39f98117e0111aab3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Compresses data (deflate)  <br /></td></tr>
+<tr class="separator:ada2013d2353b8a39f98117e0111aab3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e042327c18c77272c53c092ec20c968" id="r_a4e042327c18c77272c53c092ec20c968"><td class="memItemLeft" align="right" valign="top"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">int</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4e042327c18c77272c53c092ec20c968">uncompress</a> (<a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">const</a> std::byte *data, <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">size_t</a> <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">len</a>, std::byte *<a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">out</a>, <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">size_t</a> <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">outLen</a>)</td></tr>
+<tr class="memdesc:a4e042327c18c77272c53c092ec20c968"><td class="mdescLeft">&#160;</td><td class="mdescRight">Uncompresses data (inflate)  <br /></td></tr>
+<tr class="separator:a4e042327c18c77272c53c092ec20c968"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>ZLib compressor. </p>
@@ -178,14 +178,14 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a909476280eb8bf0144e941e47171bbe4" name="a909476280eb8bf0144e941e47171bbe4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a909476280eb8bf0144e941e47171bbe4">&#9670;&#160;</a></span>deflate()</h2>
+<a id="ada2013d2353b8a39f98117e0111aab3c" name="ada2013d2353b8a39f98117e0111aab3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ada2013d2353b8a39f98117e0111aab3c">&#9670;&#160;</a></span>compress()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::unique_ptr&lt; std::byte[]&gt; crypto::ZLibCompressor::deflate </td>
+          <td class="memname"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">int</a> crypto::ZLibCompressor::compress </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">const</a> std::byte *</td>          <td class="paramname"><span class="paramname"><em>data</em>, </span></td>
         </tr>
@@ -197,32 +197,37 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">int</a> *</td>          <td class="paramname"><span class="paramname"><em>outLen</em></span>&#160;)</td>
+          <td class="paramtype">std::byte *</td>          <td class="paramname"><span class="paramname"><em>out</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">size_t</a></td>          <td class="paramname"><span class="paramname"><em>outLen</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Deflates data. </p>
-<p>Compresses <code>data</code> of length <code>len</code> and writes the compressed length to <code>outLen</code> returning the compressed data. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Compresses data (deflate) </p>
+<p>Compresses <code>data</code> buffer of length <code>len</code> and outputs it in the <code>out</code> buffer. It then returns the length of the written data. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">data</td><td>the data to compress </td></tr>
     <tr><td class="paramname">len</td><td>the length of <code>data</code> </td></tr>
-    <tr><td class="paramname">outLen</td><td>a pointer to an int that will contain the compressed data length </td></tr>
+    <tr><td class="paramname">out</td><td>the output buffer, should be of length <code>len</code> </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>std::unique_ptr&lt;std::byte[]&gt; the compressed data </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>int the written length </dd></dl>
 
 </div>
 </div>
-<a id="acdfa78b953277426e064d9699e1e922f" name="acdfa78b953277426e064d9699e1e922f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acdfa78b953277426e064d9699e1e922f">&#9670;&#160;</a></span>inflate()</h2>
+<a id="a4e042327c18c77272c53c092ec20c968" name="a4e042327c18c77272c53c092ec20c968"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4e042327c18c77272c53c092ec20c968">&#9670;&#160;</a></span>uncompress()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">std::unique_ptr&lt; std::byte[]&gt; crypto::ZLibCompressor::inflate </td>
+          <td class="memname"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">int</a> crypto::ZLibCompressor::uncompress </td>
           <td>(</td>
           <td class="paramtype"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">const</a> std::byte *</td>          <td class="paramname"><span class="paramname"><em>data</em>, </span></td>
         </tr>
@@ -234,21 +239,28 @@ Public Member Functions</h2></td></tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">int</a> *</td>          <td class="paramname"><span class="paramname"><em>outLen</em></span>&#160;)</td>
+          <td class="paramtype">std::byte *</td>          <td class="paramname"><span class="paramname"><em>out</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">size_t</a></td>          <td class="paramname"><span class="paramname"><em>outLen</em></span>&#160;)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p>Inflates data. </p>
-<p>Uncompresses <code>data</code> of length <code>len</code> and writes the uncompressed length to <code>outLen</code> returning the compressed data. In contrary to <a class="el" href="#a909476280eb8bf0144e941e47171bbe4" title="Deflates data.">deflate</a> <code>outLen</code> should contain the uncompressed data size. </p><dl class="params"><dt>Parameters</dt><dd>
+<p>Uncompresses data (inflate) </p>
+<p>Uncompresses <code>data</code> buffer of length <code>len</code> and outputs it in the <code>out</code> buffer. It then returns the length of the written data. The <code>out</code> buffer needs to be of the length of the uncompressed data.</p>
+<dl class="section warning"><dt>Warning</dt><dd>Uncompress length need to be known</dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">data</td><td>the data to uncompress </td></tr>
     <tr><td class="paramname">len</td><td>the length of <code>data</code> </td></tr>
-    <tr><td class="paramname">outLen</td><td>a pointer to an int that contains the uncompressed data size </td></tr>
+    <tr><td class="paramname">out</td><td>the output buffer </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>std::unique_ptr&lt;std::byte[]&gt; the uncompressed data </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>int the written length </dd></dl>
 
 </div>
 </div>
@@ -262,7 +274,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="namespacecrypto.html">crypto</a></li><li class="navelem"><a class="el" href="classcrypto_1_1ZLibCompressor.html">ZLibCompressor</a></li>
-    <li class="footer">Generated on Mon Jan 29 2024 12:08:40 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+    <li class="footer">Generated on Mon Feb 5 2024 16:43:18 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
   </ul>
 </div>
 </body>

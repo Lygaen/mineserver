@@ -9,5 +9,6 @@ var searchData=
   ['all_6',['ALL',['../logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9ab1d5eac4b1dca480c8056eaea7663b7a',1,'logger.h']]],
   ['angle_7',['Angle',['../classAngle.html',1,'Angle'],['../classAngle.html#aca3c6e1519b40835d31736430ca082a9',1,'Angle::Angle()'],['../classAngle.html#aa9de14101740ebe5c7c3243173129c58',1,'Angle::Angle(float degrees)'],['../classAngle.html#a126f8cf389768499594b25725ec35588',1,'Angle::Angle(std::byte value)']]],
   ['angle_2ehpp_8',['angle.hpp',['../angle_8hpp.html',1,'']]],
-  ['another_20server_9',['WHY another server ?',['../index.html#autotoc_md23',1,'']]]
+  ['another_20server_9',['WHY another server ?',['../index.html#autotoc_md23',1,'']]],
+  ['available_10',['available',['../classIMCStream.html#a2c334c6533d4c86ea89dd33755a36b2c',1,'IMCStream::available()'],['../classMemoryStream.html#a3dba29201a03f5163bd8a339191f15cd',1,'MemoryStream::available()'],['../classNetSocketStream.html#a2d01fa8c717d3b6b6601c8c7443648cd',1,'NetSocketStream::available()'],['../classCipherStream.html#a458a86d6925c031a842fde912a51e7f2',1,'CipherStream::available()'],['../classZLibStream.html#aa052a028bfab1b87fb691f71fc0f05dc',1,'ZLibStream::available()']]]
 ];
