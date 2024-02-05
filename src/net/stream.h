@@ -54,13 +54,26 @@ public:
      * @param offset the offset to start reading from
      * @param len the maximum read length
      */
-    virtual void write(std::byte *buffer, std::size_t offset, std::size_t len) = 0;
+    virtual void write(const std::byte *buffer, std::size_t offset, std::size_t len) = 0;
     /**
      * @brief Flushes the stream
      *
      * Empties the buffer, sending it correctly, resets any offset / data.
      */
     virtual void flush() = 0;
+    /**
+     * @brief Gets the number of available bytes
+     *
+     * @return size_t the number of available bytes
+     */
+    virtual size_t available() = 0;
+
+    /**
+     * @brief Finishes packet write to stream
+     *
+     * @param p the packet data (id + data)
+     */
+    virtual void finishPacketWrite(const std::byte *packetData, size_t len) = 0;
 
     /**
      * @brief Reads a Boolean
@@ -309,13 +322,27 @@ public:
      * @param offset the offset to start reading from
      * @param len the maximum read length
      */
-    void write(std::byte *buffer, std::size_t offset, std::size_t len) override;
+    void write(const std::byte *buffer, std::size_t offset, std::size_t len) override;
     /**
      * @brief Flushes the stream
      *
      * Flushes the buffer of the stream, resetting the index of the buffer.
      */
     void flush() override;
+    /**
+     * @brief Gets the number of available bytes
+     *
+     * @return size_t the number of available bytes
+     */
+    size_t available() override;
+
+    /**
+     * @brief Finishes to write the packet in a Minecrafty way
+     *
+     * @param packetData the packet data
+     * @param len the length of the packet data
+     */
+    void finishPacketWrite(const std::byte *packetData, size_t len) override;
 
     /**
      * @brief Cleares the stream
@@ -373,7 +400,22 @@ public:
      * @param offset the offset to start reading from
      * @param len the maximum read length
      */
-    void write(std::byte *buffer, std::size_t offset, std::size_t len) override;
+    void write(const std::byte *buffer, std::size_t offset, std::size_t len) override;
+    /**
+     * @brief Gets the number of available bytes
+     *
+     * @return size_t the number of available bytes
+     */
+    size_t available() override;
+
+    /**
+     * @brief Finishes to write the packet in a Minecrafty way
+     *
+     * @param packetData the packet data
+     * @param len the length of the packet data
+     */
+    void finishPacketWrite(const std::byte *packetData, size_t len) override;
+
     /**
      * @brief Flushes the stream
      * @deprecated Not implemented, useless, should not be used
@@ -424,7 +466,26 @@ public:
      * @param offset the offset to start reading from
      * @param len the length to read from @p buffer
      */
-    void write(std::byte *buffer, std::size_t offset, std::size_t len) override;
+    void write(const std::byte *buffer, std::size_t offset, std::size_t len) override;
+    /**
+     * @brief Gets the number of available bytes
+     * Returns the number of available bytes in the sub-stream.
+     * Not accurate as to the real length because it doesn't account
+     * for the encryption.
+     *
+     * @warning Only use to check if there are bytes to read.
+     * @return size_t the number of available bytes
+     */
+    size_t available() override;
+
+    /**
+     * @brief Finishes to write the packet in a Minecrafty way
+     *
+     * @param packetData the packet data
+     * @param len the length of the packet data
+     */
+    void finishPacketWrite(const std::byte *packetData, size_t len) override;
+
     /**
      * @brief Flushes the base stream
      *
@@ -481,7 +542,22 @@ public:
      * @param offset the offset to start reading from
      * @param len the length to read from @p buffer
      */
-    void write(std::byte *buffer, std::size_t offset, std::size_t len) override;
+    void write(const std::byte *buffer, std::size_t offset, std::size_t len) override;
+    /**
+     * @brief Gets the number of available bytes
+     *
+     * @return size_t the number of available bytes
+     */
+    size_t available() override;
+
+    /**
+     * @brief Finishes to write the packet in a Minecrafty way
+     *
+     * @param packetData the packet data
+     * @param len the length of the packet data
+     */
+    void finishPacketWrite(const std::byte *packetData, size_t len) override;
+
     /**
      * @brief Flushes the stream
      *

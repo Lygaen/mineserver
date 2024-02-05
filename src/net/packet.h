@@ -25,14 +25,6 @@ class IPacket
 {
 protected:
     /**
-     * @brief Packet Id
-     *
-     * The id of the packet for Minecraft,
-     * should be copied from https://wiki.vg (see 1.8.9)
-     */
-    int id;
-
-    /**
      * @brief Write packet data to stream
      *
      * Writes raw packet data to a stream, excluding
@@ -60,6 +52,13 @@ public:
      *
      */
     virtual ~IPacket() = default;
+    /**
+     * @brief Packet Id
+     *
+     * The id of the packet for Minecraft,
+     * should be copied from https://wiki.vg (see 1.8.9)
+     */
+    int id;
 
     /**
      * @brief Reads data from the stream to a packet

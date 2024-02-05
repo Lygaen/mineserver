@@ -181,14 +181,13 @@ void Client::loop()
 
 void Client::initiatePlayerJoin()
 {
-    // TODO Compression
-    // if (Config::inst()->COMPRESSION_LVL.getValue() != 0)
-    // {
-    //     SetCompression comp(Config::inst()->COMPRESSION_THRESHOLD.getValue());
-    //     comp.send(stream);
+    if (Config::inst()->COMPRESSION_LVL.getValue() != 0)
+    {
+        SetCompression comp(Config::inst()->COMPRESSION_THRESHOLD.getValue());
+        comp.send(stream);
 
-    //     stream = new ZLibStream(stream, Config::inst()->COMPRESSION_LVL.getValue(), Config::inst()->COMPRESSION_THRESHOLD.getValue());
-    // }
+        stream = new ZLibStream(stream, Config::inst()->COMPRESSION_LVL.getValue(), Config::inst()->COMPRESSION_THRESHOLD.getValue());
+    }
 
     LoginSuccess loginSuccess(player.name, player.uuid);
     loginSuccess.send(stream);
@@ -218,7 +217,7 @@ void Client::start()
         if (state == ClientState::HANDSHAKE)
             logger::error("Connection seems not minecrafty or protocol is too old");
         logger::error("Client ended badly : %s", err.what());
-        close();
+        close(err.what());
     }
 }
 
@@ -237,7 +236,7 @@ void Client::close(const std::string &reason)
         disconnect.send(stream);
     }
 
-    sock.close();
+    // sock.close();
     if (reason != "")
         logger::debug("Connection closed : %s", reason.c_str());
 }

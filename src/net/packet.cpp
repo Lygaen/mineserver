@@ -20,9 +20,7 @@ void IPacket::send(IMCStream *stream)
 
     std::vector<std::byte> d = m.getData();
 
-    stream->writeVarInt(d.size());
-
-    stream->write(&d[0], 0, d.size());
+    stream->finishPacketWrite(&d[0], d.size());
 
     logger::debug("C<-S Len:%d Id:%d", d.size(), id);
 }

@@ -24,6 +24,7 @@
 #include <arpa/inet.h>
 #include <netinet/in.h>
 #include <netinet/ip.h>
+#include <sys/ioctl.h>
 #endif // __linux__
 
 ServerSocket::ServerSocket()
@@ -180,7 +181,7 @@ ssize_t ClientSocket::read(std::byte *buffer, size_t len)
     return retval;
 }
 
-ssize_t ClientSocket::write(std::byte *buffer, size_t len)
+ssize_t ClientSocket::write(const std::byte *buffer, size_t len)
 {
 #if defined(__linux__)
     return send(sock, buffer, len, MSG_NOSIGNAL);
@@ -196,6 +197,17 @@ void ClientSocket::close()
 #elif defined(__linux__)
     ::close(sock);
 #endif
+}
+
+size_t ClientSocket::getAvailableBytes()
+{
+    int available = 0;
+#if defined(_WIN32)
+    ioctlsocket(sock, FIONREAD, &available);
+#elif defined(__linux__)
+    ioctl(sock, FIONREAD, &available);
+#endif
+    return available;
 }
 
 mojangapi::HasJoinedResponse mojangapi::hasJoined(const std::string &username, const std::string &serverId, const std::string &ip)

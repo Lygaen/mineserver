@@ -245,61 +245,74 @@ crypto::ZLibCompressor::ZLibCompressor(int level) : compressionLevel(level)
 {
 }
 
-std::unique_ptr<std::byte[]> crypto::ZLibCompressor::deflate(const std::byte *data, size_t len, int *outLen)
+int crypto::ZLibCompressor::compress(const std::byte *data, size_t len, std::byte *out, size_t outLen)
 {
-    z_stream zs = z_stream();
-    *outLen = 0;
+    z_stream stream;
+    stream.zalloc = Z_NULL;
+    stream.zfree = Z_NULL;
+    stream.opaque = Z_NULL;
 
-    if (deflateInit(&zs, compressionLevel) != Z_OK)
-        return std::unique_ptr<std::byte[]>();
+    if (deflateInit(&stream, Z_DEFAULT_COMPRESSION) != Z_OK)
+        throw std::runtime_error("Failed to initialize ZLib");
 
-    zs.next_in = (Bytef *)data;
-    zs.avail_in = len;
+    stream.avail_in = len;
+    stream.next_in = (Bytef *)data;
+    stream.avail_out = outLen;
+    stream.next_out = (Bytef *)out;
 
-    std::byte *out = new std::byte[len];
-
-    zs.next_out = (Bytef *)out;
-    zs.avail_out = len;
-
-    if (::deflate(&zs, Z_FINISH) != Z_STREAM_END)
+    do
     {
-        delete[] out;
-        return std::unique_ptr<std::byte[]>();
+        int result = deflate(&stream, Z_SYNC_FLUSH);
+        if (result == Z_STREAM_ERROR)
+        {
+            deflateEnd(&stream);
+            throw std::runtime_error("ZLib compress error");
+        }
+    } while (stream.avail_out == 0);
+
+    while (true)
+    {
+        int result = deflate(&stream, Z_FINISH);
+        if (result == Z_STREAM_ERROR)
+        {
+            deflateEnd(&stream);
+            throw std::runtime_error("ZLib compress finish error");
+        }
+        if (result == Z_STREAM_END)
+            break;
     }
 
-    deflateEnd(&zs);
-    *outLen = zs.total_out;
+    (void)deflateEnd(&stream);
 
-    return std::unique_ptr<std::byte[]>(out);
+    return stream.total_out;
 }
 
-std::unique_ptr<std::byte[]> crypto::ZLibCompressor::inflate(const std::byte *data, size_t len, int *outLen)
+int crypto::ZLibCompressor::uncompress(const std::byte *data, size_t len, std::byte *out, size_t outLen)
 {
-    z_stream zs = z_stream();
+    z_stream stream;
+    stream.zalloc = Z_NULL;
+    stream.zfree = Z_NULL;
+    stream.opaque = Z_NULL;
 
-    if (inflateInit(&zs) != Z_OK)
+    if (inflateInit(&stream) != Z_OK)
+        throw std::runtime_error("Failed to initialize ZLib");
+
+    stream.avail_in = len;
+    stream.next_in = (Bytef *)data;
+    stream.avail_out = outLen;
+    stream.next_out = (Bytef *)out;
+
+    do
     {
-        *outLen = 0;
-        return std::unique_ptr<std::byte[]>();
-    }
+        int res = inflate(&stream, Z_NO_FLUSH);
+        if (res == Z_STREAM_ERROR)
+        {
+            inflateEnd(&stream);
+            throw std::runtime_error("ZLib uncompress error");
+        }
+    } while (stream.avail_in != 0);
 
-    zs.next_in = (Bytef *)data;
-    zs.avail_in = len;
+    inflateEnd(&stream);
 
-    std::byte *out = new std::byte[*outLen];
-
-    zs.next_out = (Bytef *)out;
-    zs.avail_out = *outLen;
-
-    if (::inflate(&zs, Z_FINISH) != Z_STREAM_END)
-    {
-        *outLen = 0;
-        delete[] out;
-        return std::unique_ptr<std::byte[]>();
-    }
-
-    inflateEnd(&zs);
-    *outLen = zs.total_out;
-
-    return std::unique_ptr<std::byte[]>(out);
+    return stream.total_out;
 }

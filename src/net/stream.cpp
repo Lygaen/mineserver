@@ -227,7 +227,7 @@ void IMCStream::writeChat(const ChatMessage &c)
     rapidjson::Writer<rapidjson::StringBuffer> writer(buffer);
     doc.Accept(writer);
 
-    writeString(buffer.GetString());
+    writeString(std::string(buffer.GetString(), buffer.GetSize()));
 }
 
 /**
@@ -347,7 +347,7 @@ void MemoryStream::read(std::byte *buffer, std::size_t offset, std::size_t len)
     readIndex += std::min(len, data.size());
 }
 
-void MemoryStream::write(std::byte *buffer, std::size_t offset, std::size_t len)
+void MemoryStream::write(const std::byte *buffer, std::size_t offset, std::size_t len)
 {
     std::copy(buffer + offset, buffer + offset + len, std::back_inserter(data));
 }
@@ -355,6 +355,17 @@ void MemoryStream::write(std::byte *buffer, std::size_t offset, std::size_t len)
 void MemoryStream::flush()
 {
     readIndex = 0;
+}
+
+size_t MemoryStream::available()
+{
+    return data.size() - readIndex;
+}
+
+void MemoryStream::finishPacketWrite(const std::byte *packetData, size_t len)
+{
+    writeVarInt(len);
+    write(packetData, 0, len);
 }
 
 void MemoryStream::clear()
@@ -382,9 +393,20 @@ void NetSocketStream::read(std::byte *buffer, std::size_t offset, std::size_t le
     socket.read(buffer + offset, len);
 }
 
-void NetSocketStream::write(std::byte *buffer, std::size_t offset, std::size_t len)
+void NetSocketStream::write(const std::byte *buffer, std::size_t offset, std::size_t len)
 {
     socket.write(buffer + offset, len);
+}
+
+size_t NetSocketStream::available()
+{
+    return socket.getAvailableBytes();
+}
+
+void NetSocketStream::finishPacketWrite(const std::byte *packetData, size_t len)
+{
+    writeVarInt(len);
+    write(packetData, 0, len);
 }
 
 void NetSocketStream::flush()
@@ -417,13 +439,24 @@ void CipherStream::read(std::byte *buffer, std::size_t offset, std::size_t len)
     delete[] outBuf;
 }
 
-void CipherStream::write(std::byte *buffer, std::size_t offset, std::size_t len)
+void CipherStream::write(const std::byte *buffer, std::size_t offset, std::size_t len)
 {
     std::byte *outBuf = new std::byte[encipher.calculateBufferSize(len)];
     int outLen = encipher.update(buffer + offset, len, outBuf);
 
     baseStream->write(outBuf, 0, outLen);
     delete[] outBuf;
+}
+
+size_t CipherStream::available()
+{
+    return baseStream->available();
+}
+
+void CipherStream::finishPacketWrite(const std::byte *packetData, size_t len)
+{
+    writeVarInt(len);
+    write(packetData, 0, len);
 }
 
 void CipherStream::flush()
@@ -446,75 +479,84 @@ void ZLibStream::read(std::byte *buffer, std::size_t offset, std::size_t len)
     inIndex += std::min(len, inBuffer.size());
 }
 
-void ZLibStream::write(std::byte *buffer, std::size_t offset, std::size_t len)
+void ZLibStream::write(const std::byte *buffer, std::size_t offset, std::size_t len)
 {
     std::copy(buffer + offset, buffer + offset + len, std::back_inserter(outBuffer));
 }
 
+size_t ZLibStream::available()
+{
+    return baseStream->available();
+}
+
+size_t calculateVarIntSize(int i)
+{
+    MemoryStream m;
+    m.writeVarInt(i);
+    return m.getData().size();
+}
+
+#include <utils/logger.h>
+
+void ZLibStream::finishPacketWrite(const std::byte *packetData, size_t len)
+{
+    if (len < threshold)
+    {
+        // No compression, data length = 0
+        baseStream->writeVarInt(len + calculateVarIntSize(0));
+        baseStream->writeVarInt(0);
+        baseStream->write(packetData, 0, len);
+        return;
+    }
+
+    std::byte compBytes[2 * len];
+    int packetLength = comp.compress(packetData, len, compBytes, 2 * len);
+
+    baseStream->writeVarInt(packetLength + calculateVarIntSize(len));
+    baseStream->writeVarInt(len);
+    baseStream->write(compBytes, 0, packetLength);
+}
+
 void ZLibStream::flush()
 {
-
-    // Buffer write
-    if (outBuffer.size() >= threshold)
-    {
-        int dataLength = outBuffer.size();
-        int packetLength = 0;
-        std::unique_ptr<std::byte[]> inData = comp.deflate(outBuffer.data(), dataLength, &packetLength);
-
-        MemoryStream m;
-        m.writeVarInt(dataLength); // Adds dataLength to the buffer because it is used
-        packetLength += m.getData().size();
-
-        baseStream->writeVarInt(packetLength);
-        baseStream->writeVarInt(dataLength);
-        baseStream->write(inData.get(), 0, packetLength - m.getData().size());
-        outBuffer.clear();
-    }
-    else
-    {
-        MemoryStream m;
-        m.writeVarInt(0); // Data length must be 0 in that case
-
-        baseStream->writeVarInt(outBuffer.size() + m.getData().size());
-        baseStream->write(const_cast<std::byte *>(&m.getData()[0]), 0, m.getData().size()); // writes just 1 byte but for keepsake
-        baseStream->write(&outBuffer[0], 0, outBuffer.size());
-    }
-
-    // Buffer read
+    if (baseStream->available() <= 0)
+        return;
     inBuffer.clear();
+    inIndex = 0;
 
     int packetLength = baseStream->readVarInt();
-    inBuffer.reserve(packetLength);
-
     int dataLength = baseStream->readVarInt();
 
-    if (dataLength > 0)
+    if (dataLength == 0)
     {
+        int len = packetLength - calculateVarIntSize(0);
+
+        if (len >= threshold)
+            throw std::runtime_error("Invalid received compression size");
+        std::byte bytes[len];
+        baseStream->read(bytes, 0, len);
+
+        // We write back the length to the stream
         MemoryStream m;
-        m.writeVarInt(dataLength); // Adds dataLength to the buffer because it is used
+        m.writeVarInt(dataLength);
         std::copy(m.getData().begin(), m.getData().end(), std::back_inserter(inBuffer));
 
-        std::byte *streamIn = new std::byte[packetLength - inBuffer.size()];
-        baseStream->read(streamIn, 0, packetLength - inBuffer.size());
-        int outLen = dataLength;
-        std::unique_ptr<std::byte[]> data = comp.inflate(streamIn, packetLength - inBuffer.size(), &dataLength);
-        delete[] streamIn;
-
-        std::copy(data.get(), data.get() + outLen, std::back_inserter(inBuffer));
+        std::copy(bytes, bytes + len, std::back_inserter(inBuffer));
+        return;
     }
-    else
-    {
-        packetLength -= 1; //  because length = packetLength - sizeof(datalength)
+    int len = packetLength - calculateVarIntSize(dataLength);
+    std::byte compressed[len];
+    baseStream->read(compressed, 0, len);
 
-        MemoryStream m;
-        m.writeVarInt(packetLength);
-        std::copy(m.getData().begin(), m.getData().end(), std::back_inserter(inBuffer));
+    std::byte finalUncomp[dataLength];
+    int written = comp.uncompress(compressed, len, finalUncomp, dataLength);
+    if (written != dataLength)
+        throw std::runtime_error("Invalid uncompressed length");
 
-        std::byte *streamIn = new std::byte[packetLength];
-        baseStream->read(streamIn, 0, packetLength);
-        std::copy(streamIn, streamIn + packetLength, std::back_inserter(inBuffer));
-        delete[] streamIn;
-    }
+    // We write back the length to the stream
+    MemoryStream m;
+    m.writeVarInt(dataLength);
+    std::copy(m.getData().begin(), m.getData().end(), std::back_inserter(inBuffer));
 
-    baseStream->flush();
+    std::copy(finalUncomp, finalUncomp + dataLength, std::back_inserter(inBuffer));
 }

@@ -288,31 +288,37 @@ namespace crypto
         ~ZLibCompressor() = default;
 
         /**
-         * @brief Deflates data
+         * @brief Compresses data (deflate)
          *
-         * Compresses @p data of length @p len and
-         * writes the compressed length to @p outLen
-         * returning the compressed data.
+         * Compresses @p data buffer of length @p len
+         * and outputs it in the @p out buffer.
+         * It then returns the length of the
+         * written data.
          * @param data the data to compress
          * @param len the length of @p data
-         * @param outLen a pointer to an int that will contain the compressed data length
-         * @return std::unique_ptr<std::byte[]> the compressed data
+         * @param out the output buffer, should be of length @p len
+         * @return int the written length
          */
-        std::unique_ptr<std::byte[]> deflate(const std::byte *data, size_t len, int *outLen);
+        int compress(const std::byte *data, size_t len, std::byte *out, size_t outLen);
+
         /**
-         * @brief Inflates data
+         * @brief Uncompresses data (inflate)
          *
-         * Uncompresses @p data of length @p len and
-         * writes the uncompressed length to @p outLen
-         * returning the compressed data.
-         * In contrary to ::deflate @p outLen
-         * should contain the uncompressed data size.
+         * Uncompresses @p data buffer of length @p len
+         * and outputs it in the @p out buffer.
+         * It then returns the length of the
+         * written data.
+         * The @p out buffer needs to be
+         * of the length of the uncompressed data.
+         *
+         * @warning Uncompress length need to be known
+         *
          * @param data the data to uncompress
          * @param len the length of @p data
-         * @param outLen a pointer to an int that contains the uncompressed data size
-         * @return std::unique_ptr<std::byte[]> the uncompressed data
+         * @param out the output buffer
+         * @return int the written length
          */
-        std::unique_ptr<std::byte[]> inflate(const std::byte *data, size_t len, int *outLen);
+        int uncompress(const std::byte *data, size_t len, std::byte *out, size_t outLen);
     };
 };
 

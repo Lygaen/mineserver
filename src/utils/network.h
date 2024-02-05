@@ -110,7 +110,7 @@ public:
      * @param len the maximum length to read
      * @return ssize_t the data length actually written
      */
-    ssize_t write(std::byte *buffer, size_t len);
+    ssize_t write(const std::byte *buffer, size_t len);
     /**
      * @brief Closes the connection
      *
@@ -119,6 +119,12 @@ public:
      * memory !
      */
     void close();
+    /**
+     * @brief Get the number of available bytes
+     *
+     * @return int the number of available bytes
+     */
+    size_t getAvailableBytes();
 
     /**
      * @brief Get the Handle of the socket

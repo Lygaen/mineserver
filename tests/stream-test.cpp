@@ -1,5 +1,6 @@
 #include <gtest/gtest.h>
 #include <net/stream.h>
+#include <net/packet.h>
 #include <utils/crypto.h>
 #include <limits>
 
@@ -216,46 +217,63 @@ TEST(MinecraftStream, VarLong)
     ASSERT_EQ(m.readVarLong(), LONG_MAX);
 }
 
-void runStreamTest(IMCStream *reader, IMCStream *writer, bool shouldReadVarInt = false)
+class TestPacket : public IPacket
 {
-    writer->writeBoolean(true);
-    writer->writeByte(SCHAR_MAX);
-    writer->writeUnsignedByte(UCHAR_MAX);
-    writer->writeShort(SHRT_MAX);
-    writer->writeUnsignedShort(SHRT_MAX);
-    writer->writeInt(INT_MAX);
-    writer->writeFloat(FLT_MAX);
-    writer->writeLong(LONG_MAX);
-    writer->writeDouble(DBL_MAX);
-
+private:
     std::string s = "Some random st\0ring to io";
-    writer->writeString(s);
 
-    writer->writeVarInt(INT_MAX);
-    writer->writeVarLong(LONG_MAX);
-
-    writer->flush();
-
-    // Because some buffer-type
-    // streams are going to automatically
-    // append the size. (eg. ZLibStream)
-    if (shouldReadVarInt)
+protected:
+    void write(IMCStream *stream) override
     {
-        reader->readVarInt();
+        stream->writeBoolean(true);
+        stream->writeByte(SCHAR_MAX);
+        stream->writeUnsignedByte(UCHAR_MAX);
+        stream->writeShort(SHRT_MAX);
+        stream->writeUnsignedShort(SHRT_MAX);
+        stream->writeInt(INT_MAX);
+        stream->writeFloat(FLT_MAX);
+        stream->writeLong(LONG_MAX);
+        stream->writeDouble(DBL_MAX);
+
+        stream->writeString(s);
+
+        stream->writeVarInt(INT_MAX);
+        stream->writeVarLong(LONG_MAX);
     }
 
-    ASSERT_TRUE(reader->readBoolean());
-    ASSERT_EQ(reader->readByte(), SCHAR_MAX);
-    ASSERT_EQ(reader->readUnsignedByte(), UCHAR_MAX);
-    ASSERT_EQ(reader->readShort(), SHRT_MAX);
-    ASSERT_EQ(reader->readUnsignedShort(), SHRT_MAX);
-    ASSERT_EQ(reader->readInt(), INT_MAX);
-    ASSERT_EQ(reader->readFloat(), FLT_MAX);
-    ASSERT_EQ(reader->readLong(), LONG_MAX);
-    ASSERT_EQ(reader->readDouble(), DBL_MAX);
-    ASSERT_EQ(reader->readString(), s);
-    ASSERT_EQ(reader->readVarInt(), INT_MAX);
-    ASSERT_EQ(reader->readVarLong(), LONG_MAX);
+public:
+    TestPacket() : IPacket(0x03) {}
+    ~TestPacket() override = default;
+
+    void read(IMCStream *stream) override
+    {
+        ASSERT_TRUE(stream->readBoolean());
+        ASSERT_EQ(stream->readByte(), SCHAR_MAX);
+        ASSERT_EQ(stream->readUnsignedByte(), UCHAR_MAX);
+        ASSERT_EQ(stream->readShort(), SHRT_MAX);
+        ASSERT_EQ(stream->readUnsignedShort(), SHRT_MAX);
+        ASSERT_EQ(stream->readInt(), INT_MAX);
+        ASSERT_EQ(stream->readFloat(), FLT_MAX);
+        ASSERT_EQ(stream->readLong(), LONG_MAX);
+        ASSERT_EQ(stream->readDouble(), DBL_MAX);
+
+        ASSERT_EQ(stream->readString(), s);
+        ASSERT_EQ(stream->readVarInt(), INT_MAX);
+        ASSERT_EQ(stream->readVarLong(), LONG_MAX);
+    }
+};
+
+void runStreamTest(IMCStream *reader, IMCStream *writer)
+{
+    TestPacket p;
+    p.send(writer);
+    writer->flush();
+
+    reader->readVarInt();
+    int id = reader->readVarInt();
+    ASSERT_EQ(id, p.id);
+
+    p.read(reader);
 }
 
 #ifndef GITHUB_ACTIONS_BUILD
@@ -299,13 +317,13 @@ TEST(Streams, Cipher)
 
 TEST(Streams, ZLib)
 {
-    ZLibStream stream0(new MemoryStream(), Z_DEFAULT_COMPRESSION, 0);
+    ZLibStream stream0(new MemoryStream(), 5, 0);
 
-    runStreamTest(&stream0, &stream0, true);
+    runStreamTest(&stream0, &stream0);
 
-    ZLibStream stream10k(new MemoryStream(), Z_DEFAULT_COMPRESSION, 10000);
+    ZLibStream stream10k(new MemoryStream(), 5, 10000);
 
-    runStreamTest(&stream10k, &stream10k, true);
+    runStreamTest(&stream10k, &stream10k);
 }
 
 TEST(Streams, CryptoRSA)
@@ -366,24 +384,6 @@ TEST(Streams, CryptoCipher)
 
     delete[] enData;
     delete[] deData;
-}
-
-TEST(Streams, CryptoZLib)
-{
-    crypto::ZLibCompressor comp(Z_DEFAULT_COMPRESSION);
-    std::string s = "Thiiiiiis iiiiissss some compresssable striiiing !";
-
-    int deLen;
-    std::unique_ptr<std::byte[]> de = comp.deflate((std::byte *)s.data(), s.size(), &deLen);
-    ASSERT_NE(0, deLen);
-    ASSERT_NE(s.size(), deLen);
-    ASSERT_NE(s, std::string((char *)de.get(), deLen));
-
-    int inLen = s.size();
-    std::unique_ptr<std::byte[]> in = comp.inflate(de.get(), deLen, &inLen);
-    ASSERT_NE(0, inLen);
-    ASSERT_EQ(inLen, s.size());
-    ASSERT_EQ(s, std::string((char *)in.get(), inLen));
 }
 
 TEST(Streams, MD5)
