@@ -48,7 +48,10 @@ CommandsManager::CallCommandError CommandsManager::callCommand(const ISender::Se
     if (type != ISender::SenderType::CONSOLE)
         throw std::runtime_error("Player and console logic not yet implemented");
 
+    // Remove trailing spaces
+    commandString = std::regex_replace(commandString, std::regex(" +$"), "");
     commandString += " ";
+
     size_t pos, startPos = 0;
     std::vector<std::string> splittedString;
     while ((pos = commandString.find(" ", startPos)) != std::string::npos)
@@ -63,6 +66,9 @@ CommandsManager::CallCommandError CommandsManager::callCommand(const ISender::Se
 
     std::string name = splittedString[0];
     std::vector<std::string> args(splittedString.begin() + 1, splittedString.end());
+
+    if (!std::regex_match(name, nameRegex))
+        return CommandsManager::FORMAT;
 
     if (!commands.contains(name))
         return CommandsManager::COMMAND_NOT_FOUND;
