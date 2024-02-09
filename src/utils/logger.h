@@ -13,6 +13,7 @@
 #define MINESERVER_LOGGER_H
 
 #include <utils/config.h>
+#include <plugins/event.h>
 #include <cstdarg>
 #include <ctime>
 
@@ -230,6 +231,18 @@ namespace logger
      * @param ... the arguments for the format
      */
     void fatal(const char *format, ...);
+
+    /**
+     * @brief Post print event
+     *
+     * In reality only used internally
+     * for when the console wants to
+     * output something at the end
+     * of the output.
+     */
+    class PostPrintEvent : public IEvent<PostPrintEvent>
+    {
+    };
 };
 
 #endif // MINESERVER_LOGGER_H

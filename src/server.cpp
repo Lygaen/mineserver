@@ -19,7 +19,9 @@ Server *Server::INSTANCE;
 Server::Server() : sock(),
                    connectedClients(),
                    pluginsManager(),
-                   eventsManager() // We initialize later once the network is initialized
+                   eventsManager(),
+                   commandsManager(),
+                   consoleManager()
 {
     if (INSTANCE)
         return;
@@ -75,6 +77,7 @@ void Server::start()
     checks();
 
     pluginsManager.load();
+    consoleManager.start();
 
     isRunning = true;
 

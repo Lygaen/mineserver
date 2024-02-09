@@ -50,10 +50,15 @@ void logger::debug(const char *format, ...)
     va_list args;
     va_start(args, format);
 
-    std::string formatted = DEBUG_COLOR + std::string("[DEBUG]  ") + TIME_COLOR + getTime() + RESET_COLOR + " - " + format + "\n";
-
+    std::string formatted = DEBUG_COLOR + std::string("\r[DEBUG]  ") + TIME_COLOR + getTime() + RESET_COLOR + " - " + format + "\n";
     std::vprintf(formatted.c_str(), args);
     va_end(args);
+
+    if (EventsManager::inst() == nullptr)
+        return;
+
+    PostPrintEvent event;
+    EventsManager::inst()->fire(event);
 }
 
 void logger::info(const char *format, ...)
@@ -64,9 +69,15 @@ void logger::info(const char *format, ...)
     va_list args;
     va_start(args, format);
 
-    std::string formatted = INFO_COLOR + std::string("[INFO]   ") + TIME_COLOR + getTime() + RESET_COLOR + " - " + format + "\n";
+    std::string formatted = INFO_COLOR + std::string("\r[INFO]   ") + TIME_COLOR + getTime() + RESET_COLOR + " - " + format + "\n";
     std::vprintf(formatted.c_str(), args);
     va_end(args);
+
+    if (EventsManager::inst() == nullptr)
+        return;
+
+    PostPrintEvent event;
+    EventsManager::inst()->fire(event);
 }
 
 void logger::plugin(const char *format, ...)
@@ -77,9 +88,15 @@ void logger::plugin(const char *format, ...)
     va_list args;
     va_start(args, format);
 
-    std::string formatted = PLUGIN_COLOR + std::string("[PLUGIN] ") + TIME_COLOR + getTime() + RESET_COLOR + " - " + format + "\n";
+    std::string formatted = PLUGIN_COLOR + std::string("\r[PLUGIN] ") + TIME_COLOR + getTime() + RESET_COLOR + " - " + format + "\n";
     std::vprintf(formatted.c_str(), args);
     va_end(args);
+
+    if (EventsManager::inst() == nullptr)
+        return;
+
+    PostPrintEvent event;
+    EventsManager::inst()->fire(event);
 }
 
 void logger::warn(const char *format, ...)
@@ -90,9 +107,15 @@ void logger::warn(const char *format, ...)
     va_list args;
     va_start(args, format);
 
-    std::string formatted = WARN_COLOR + std::string("[WARN]   ") + TIME_COLOR + getTime() + RESET_COLOR + " - " + format + "\n";
+    std::string formatted = WARN_COLOR + std::string("\r[WARN]   ") + TIME_COLOR + getTime() + RESET_COLOR + " - " + format + "\n";
     std::vprintf(formatted.c_str(), args);
     va_end(args);
+
+    if (EventsManager::inst() == nullptr)
+        return;
+
+    PostPrintEvent event;
+    EventsManager::inst()->fire(event);
 }
 
 void logger::error(const char *format, ...)
@@ -103,9 +126,15 @@ void logger::error(const char *format, ...)
     va_list args;
     va_start(args, format);
 
-    std::string formatted = ERROR_COLOR + std::string("[ERROR]  ") + TIME_COLOR + getTime() + RESET_COLOR + " - " + format + "\n";
+    std::string formatted = ERROR_COLOR + std::string("\r[ERROR]  ") + TIME_COLOR + getTime() + RESET_COLOR + " - " + format + "\n";
     std::vprintf(formatted.c_str(), args);
     va_end(args);
+
+    if (EventsManager::inst() == nullptr)
+        return;
+
+    PostPrintEvent event;
+    EventsManager::inst()->fire(event);
 }
 
 void logger::fatal(const char *format, ...)
@@ -116,7 +145,13 @@ void logger::fatal(const char *format, ...)
     va_list args;
     va_start(args, format);
 
-    std::string formatted = FATAL_COLOR + std::string("[FATAL]  ") + TIME_COLOR + getTime() + RESET_COLOR + " - " + format + "\n";
+    std::string formatted = FATAL_COLOR + std::string("\r[FATAL]  ") + TIME_COLOR + getTime() + RESET_COLOR + " - " + format + "\n";
     std::vprintf(formatted.c_str(), args);
     va_end(args);
+
+    if (EventsManager::inst() == nullptr)
+        return;
+
+    PostPrintEvent event;
+    EventsManager::inst()->fire(event);
 }

@@ -15,6 +15,9 @@
 #include <plugins/plugins.h>
 #include <plugins/event.h>
 #include <utils/network.h>
+#include <types/chatmessage.h>
+#include <cmd/commands.h>
+#include <cmd/console.h>
 #include <client.h>
 #include <list>
 
@@ -32,6 +35,8 @@ private:
     std::list<Client *> connectedClients;
     PluginsManager pluginsManager;
     EventsManager eventsManager;
+    CommandsManager commandsManager;
+    ConsoleManager consoleManager;
     ServerSocket sock;
     bool isRunning{};
 

@@ -15,7 +15,6 @@
 #include <functional>
 #include <type_traits>
 #include <plugins/luaheaders.h>
-#include <utils/logger.h>
 
 /**
  * @brief Event interface
@@ -39,6 +38,13 @@ public:
      */
     static void loadLua(lua_State *state);
 };
+
+#ifndef DOXYGEN_IGNORE_THIS
+namespace logger
+{
+    void error(const char *format, ...);
+};
+#endif // DOXYGEN_IGNORE_THIS
 
 /**
  * @brief Gets the name of the type paramater
