@@ -20,6 +20,7 @@
 #include <WinSock2.h>
 #endif // _WIN32
 #if defined(__linux__)
+#include <fcntl.h>
 #include <sys/socket.h>
 #include <arpa/inet.h>
 #include <netinet/in.h>
@@ -56,6 +57,12 @@ bool ServerSocket::bind(const char *address, int port)
         serv_addr.sin_addr.s_addr = htonl(INADDR_ANY);
     }
     serv_addr.sin_port = htons(port);
+#if defined(__linux__)
+    fcntl(sock, F_SETFL, O_NONBLOCK);
+#elif defined(_WIN32)
+    u_long mode = 1; // 1 to enable non-blocking socket
+    ioctlsocket(sock, FIONBIO, &mode);
+#endif
     int status_code = ::bind(sock, (struct sockaddr *)&serv_addr, sizeof(serv_addr));
     return status_code >= 0;
 }

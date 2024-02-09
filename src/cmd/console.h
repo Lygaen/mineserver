@@ -13,6 +13,7 @@
 #define MINESERVER_CONSOLE_H
 
 #include <thread>
+#include <atomic>
 #include <utils/logger.h>
 
 /**
@@ -26,6 +27,8 @@ private:
 
     std::string currentInput;
     EventHandler<logger::PostPrintEvent>::subId subscribeId;
+    std::thread::native_handle_type threadHandle;
+    std::atomic<bool> isRunning;
 
     void loop();
 
@@ -46,6 +49,11 @@ public:
      *
      */
     void start();
+    /**
+     * @brief Stops listening for commands
+     *
+     */
+    void stop();
     /**
      * @brief Post print hook
      *

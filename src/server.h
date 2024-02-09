@@ -19,6 +19,7 @@
 #include <cmd/commands.h>
 #include <cmd/console.h>
 #include <client.h>
+#include <atomic>
 #include <list>
 
 /**
@@ -38,7 +39,7 @@ private:
     CommandsManager commandsManager;
     ConsoleManager consoleManager;
     ServerSocket sock;
-    bool isRunning{};
+    std::atomic<bool> isRunning;
 
     /**
      * @brief Internal Checks

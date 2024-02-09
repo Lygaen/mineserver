@@ -8,12 +8,14 @@
 #if defined(__linux__)
 #include <termios.h>
 #include <unistd.h>
+#include <pthread.h>
 #elif defined(_WIN32)
 #include <conio.h>
+#include <windows.h>
 #endif
 
 ConsoleManager *ConsoleManager::instance;
-ConsoleManager::ConsoleManager() : currentInput("")
+ConsoleManager::ConsoleManager() : currentInput(""), isRunning(false)
 {
     if (instance)
         throw std::runtime_error("Console handler should not be constructed twice");
@@ -95,13 +97,35 @@ void ConsoleManager::loop()
     }
 }
 
+#include <server.h>
+
 void ConsoleManager::start()
 {
-    std::thread([this]()
-                { while(true) {
-                                    this->loop();
-                                    } })
-        .detach();
+    std::thread t = std::thread([this]()
+                                { 
+                    this->isRunning = true;
+                    while (isRunning)
+                    {
+                        this->loop();
+                    } });
+    threadHandle = t.native_handle();
+    t.detach();
+
+    CommandsManager::inst().addCommand(
+        "stop", [](const ISender::SenderType, ISender &, const std::vector<std::string> &)
+        { Server::inst()->stop(); },
+        "", "Stops the server");
+}
+
+void ConsoleManager::stop()
+{
+    isRunning = false;
+
+#if defined(__linux__)
+    pthread_cancel(threadHandle);
+#elif defined(_WIN32)
+    TerminateThread(threadHandle, 1);
+#endif
 }
 
 void ConsoleManager::onPostPrint(logger::PostPrintEvent event)

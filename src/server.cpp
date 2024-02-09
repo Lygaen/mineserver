@@ -14,6 +14,7 @@
 #include <utils/logger.h>
 #include <plugins/event.h>
 #include <plugins/events/serverevents.hpp>
+#include <chrono>
 
 Server *Server::INSTANCE;
 Server::Server() : sock(),
@@ -21,7 +22,8 @@ Server::Server() : sock(),
                    pluginsManager(),
                    eventsManager(),
                    commandsManager(),
-                   consoleManager()
+                   consoleManager(),
+                   isRunning(false)
 {
     if (INSTANCE)
         return;
@@ -87,11 +89,13 @@ void Server::start()
     logger::info("Server started on %s:%d !", addr.c_str(), port);
     while (isRunning)
     {
+        std::this_thread::sleep_for(std::chrono::milliseconds(100)); // So that we don't overload the CPU
         ClientSocket cs = sock.accept();
 
         if (!cs.isValid())
             continue;
 
+        // Join thread afterwards
         std::thread([&cs, this]()
                     {
             Client client(cs);
@@ -113,4 +117,7 @@ void Server::stop()
     }
 
     sock.close();
+
+    consoleManager.stop();
+    logger::debug("Stopped server !");
 }
