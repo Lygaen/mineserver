@@ -5,11 +5,15 @@ var hierarchy =
     [ "ChatMessage", "classChatMessage.html", null ],
     [ "Client", "classClient.html", null ],
     [ "ClientSocket", "classClientSocket.html", null ],
+    [ "Command", "structCommand.html", null ],
+    [ "CommandsManager", "classCommandsManager.html", null ],
     [ "Config", "classConfig.html", null ],
+    [ "ConsoleManager", "classConsoleManager.html", null ],
     [ "luabridge::Enum", null, [
       [ "luabridge::Stack< ClientState >", "structluabridge_1_1Stack_3_01ClientState_01_4.html", null ]
     ] ],
     [ "EventHandler< T >", "classEventHandler.html", null ],
+    [ "EventHandler< logger::PostPrintEvent >", "classEventHandler.html", null ],
     [ "EventsManager", "classEventsManager.html", null ],
     [ "Field< T >", "classField.html", null ],
     [ "Field< bool >", "classField.html", null ],
@@ -36,6 +40,9 @@ var hierarchy =
     [ "IEvent< ClientStatusEvent >", "classIEvent.html", [
       [ "ClientStatusEvent", "classClientStatusEvent.html", null ]
     ] ],
+    [ "IEvent< PostPrintEvent >", "classIEvent.html", [
+      [ "logger::PostPrintEvent", "classlogger_1_1PostPrintEvent.html", null ]
+    ] ],
     [ "IEvent< ServerStartEvent >", "classIEvent.html", [
       [ "ServerStartEvent", "classServerStartEvent.html", null ]
     ] ],
@@ -57,6 +64,7 @@ var hierarchy =
       [ "ServerListPacket", "classServerListPacket.html", null ],
       [ "SetCompression", "classSetCompression.html", null ]
     ] ],
+    [ "ISender", "classISender.html", null ],
     [ "crypto::MinecraftHash", "classcrypto_1_1MinecraftHash.html", null ],
     [ "Plugin", "classPlugin.html", null ],
     [ "PluginsManager", "classPluginsManager.html", null ],

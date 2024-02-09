@@ -10,7 +10,9 @@ var searchData=
   ['clientsocket_7',['ClientSocket',['../classClientSocket.html#a13175484cd58019f34f37471abcdf4df',1,'ClientSocket::ClientSocket(socket_t client, char *addr)'],['../classClientSocket.html#a2364e47b7c4cb3a81b8fdafe9376946c',1,'ClientSocket::ClientSocket(int type)']]],
   ['clientstatusevent_8',['ClientStatusEvent',['../classClientStatusEvent.html#ac7494bf096510709629bad69f048c324',1,'ClientStatusEvent']]],
   ['close_9',['close',['../classClient.html#a4565e91cd2bd35ddaa7278a5bc2055c6',1,'Client::close()'],['../classClientSocket.html#a6326bc6d9eec75a2e10ae8d8122ea488',1,'ClientSocket::close()'],['../classServerSocket.html#a0245d40096ca089255c67303eebf17e6',1,'ServerSocket::close()']]],
-  ['compress_10',['compress',['../classcrypto_1_1ZLibCompressor.html#ada2013d2353b8a39f98117e0111aab3c',1,'crypto::ZLibCompressor']]],
-  ['config_11',['Config',['../classConfig.html#abd0c571c116924871e30444b192b792a',1,'Config']]],
-  ['connect_12',['connect',['../classClientSocket.html#ac22cddc58215b02bd414338e1011b393',1,'ClientSocket']]]
+  ['commandsmanager_10',['CommandsManager',['../classCommandsManager.html#a620ebdd3b164ef16266454a719490013',1,'CommandsManager']]],
+  ['compress_11',['compress',['../classcrypto_1_1ZLibCompressor.html#ada2013d2353b8a39f98117e0111aab3c',1,'crypto::ZLibCompressor']]],
+  ['config_12',['Config',['../classConfig.html#abd0c571c116924871e30444b192b792a',1,'Config']]],
+  ['connect_13',['connect',['../classClientSocket.html#ac22cddc58215b02bd414338e1011b393',1,'ClientSocket']]],
+  ['consolemanager_14',['ConsoleManager',['../classConsoleManager.html#aa9f719ce8b6bb8c2efda952e49f534d6',1,'ConsoleManager']]]
 ];

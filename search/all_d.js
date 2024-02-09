@@ -18,7 +18,8 @@ var searchData=
   ['finishpacketwrite_15',['finishPacketWrite',['../classIMCStream.html#a5a940ca3d10f8756bee21f2fba26aaed',1,'IMCStream::finishPacketWrite()'],['../classMemoryStream.html#ad29efaa984219fbd1b0de4e4f524fba0',1,'MemoryStream::finishPacketWrite()'],['../classNetSocketStream.html#a8c4c5dc83a06586914a74bb84b26253a',1,'NetSocketStream::finishPacketWrite()'],['../classCipherStream.html#a7c0150703a97cfddb2f77da5eef7fe51',1,'CipherStream::finishPacketWrite()'],['../classZLibStream.html#a349320ff29483d2ca0e7220b006609f4',1,'ZLibStream::finishPacketWrite()']]],
   ['fire_16',['fire',['../classEventHandler.html#a335dacd696ffcdfd912d34d9cfa7c2bd',1,'EventHandler::fire()'],['../classEventsManager.html#ac2e3dcab35985173976477a9ea8545c8',1,'EventsManager::fire()']]],
   ['flush_17',['flush',['../classIMCStream.html#aca226377aea0f0e1bca188a8911bff63',1,'IMCStream::flush()'],['../classMemoryStream.html#a497251020f6338694ebe91b8d32b2404',1,'MemoryStream::flush()'],['../classNetSocketStream.html#ab8e7a809ac4e51b7d8934ee25740a43b',1,'NetSocketStream::flush()'],['../classCipherStream.html#afda30da86b45fca2f023c365eb441229',1,'CipherStream::flush()'],['../classZLibStream.html#ac06417138fc207911d411577de418dfc',1,'ZLibStream::flush()']]],
-  ['frombytes_18',['fromBytes',['../classUUID.html#a1d49b555155fbbd8ecf34e448c9903f2',1,'UUID']]],
-  ['fromhex_19',['fromHex',['../classUUID.html#aef1f87fdf8be6a84f68f13fe03799393',1,'UUID']]],
-  ['fromusername_20',['fromUsername',['../classUUID.html#a0d212f0cb87a90eb42797cfd7daed110',1,'UUID']]]
+  ['format_18',['FORMAT',['../classCommandsManager.html#a77c2f1f5224ebdfcebabd35f82ae7227ab1feaac6a50340b6ee46651747e24390',1,'CommandsManager']]],
+  ['frombytes_19',['fromBytes',['../classUUID.html#a1d49b555155fbbd8ecf34e448c9903f2',1,'UUID']]],
+  ['fromhex_20',['fromHex',['../classUUID.html#aef1f87fdf8be6a84f68f13fe03799393',1,'UUID']]],
+  ['fromusername_21',['fromUsername',['../classUUID.html#a0d212f0cb87a90eb42797cfd7daed110',1,'UUID']]]
 ];

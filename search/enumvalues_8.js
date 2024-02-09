@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['play_0',['PLAY',['../clientstate_8h.html#a8d4a6786d6193f0e6245c44e4a7bb4a0a0352906d1ea1dfcd663c918f3a86755b',1,'clientstate.h']]]
+  ['none_0',['NONE',['../classCommandsManager.html#a77c2f1f5224ebdfcebabd35f82ae7227a12204aba21c4b2c7ff8e0749e9a3a25b',1,'CommandsManager']]]
 ];

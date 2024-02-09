@@ -22,5 +22,6 @@ var searchData=
   ['reset_5fcolor_19',['RESET_COLOR',['../logger_8h.html#ad7c3b975e5552a122f836b02fa138502',1,'logger.h']]],
   ['rsa_5fkey_5flength_20',['RSA_KEY_LENGTH',['../namespacecrypto.html#a99fc248e88743e6b02cfd9ae8aa9fbd5',1,'crypto']]],
   ['rsadecrypt_21',['rsaDecrypt',['../namespacecrypto.html#a1f0ff42fb28d677d0ebf3775082e2327',1,'crypto']]],
-  ['rsaencrypt_22',['rsaEncrypt',['../namespacecrypto.html#a29e78257094408827833ea3e5e7d613e',1,'crypto']]]
+  ['rsaencrypt_22',['rsaEncrypt',['../namespacecrypto.html#a29e78257094408827833ea3e5e7d613e',1,'crypto']]],
+  ['runtime_5ferror_23',['RUNTIME_ERROR',['../classCommandsManager.html#a77c2f1f5224ebdfcebabd35f82ae7227ade903594741e8c84ae8f0998d7e354d9',1,'CommandsManager']]]
 ];

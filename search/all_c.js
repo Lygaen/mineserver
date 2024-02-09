@@ -13,7 +13,8 @@ var searchData=
   ['event_2ecpp_10',['event.cpp',['../event_8cpp.html',1,'']]],
   ['event_2eh_11',['event.h',['../event_8h.html',1,'']]],
   ['eventhandler_12',['EventHandler',['../classEventHandler.html',1,'EventHandler&lt; T &gt;'],['../classEventHandler.html#a2af645115bb1ee04e6179bc566b8ddec',1,'EventHandler::EventHandler()']]],
-  ['events_13',['Events',['../md_docs_2__3__PLUGINS.html#autotoc_md17',1,'']]],
-  ['eventsmanager_14',['EventsManager',['../classEventsManager.html',1,'EventsManager'],['../classEventsManager.html#a67fdb40a00f36d1a63fbb0afb640f3a6',1,'EventsManager::EventsManager()']]],
-  ['existential_20crisis_15',['End note with a touch of existential crisis',['../index.html#autotoc_md29',1,'']]]
+  ['eventhandler_3c_20logger_3a_3apostprintevent_20_3e_13',['EventHandler&lt; logger::PostPrintEvent &gt;',['../classEventHandler.html',1,'']]],
+  ['events_14',['Events',['../md_docs_2__3__PLUGINS.html#autotoc_md17',1,'']]],
+  ['eventsmanager_15',['EventsManager',['../classEventsManager.html',1,'EventsManager'],['../classEventsManager.html#a67fdb40a00f36d1a63fbb0afb640f3a6',1,'EventsManager::EventsManager()']]],
+  ['existential_20crisis_16',['End note with a touch of existential crisis',['../index.html#autotoc_md29',1,'']]]
 ];

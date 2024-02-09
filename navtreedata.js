@@ -60,8 +60,8 @@ var NAVTREE =
       ] ],
       [ "Libraries Warning", "md_docs_2__3__PLUGINS.html#autotoc_md21", null ]
     ] ],
-    [ "Deprecated List", "deprecated.html", null ],
     [ "Todo List", "todo.html", null ],
+    [ "Deprecated List", "deprecated.html", null ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
@@ -81,6 +81,8 @@ var NAVTREE =
         [ "Functions", "functions_func.html", "functions_func" ],
         [ "Variables", "functions_vars.html", null ],
         [ "Typedefs", "functions_type.html", null ],
+        [ "Enumerations", "functions_enum.html", null ],
+        [ "Enumerator", "functions_eval.html", null ],
         [ "Related Symbols", "functions_rela.html", null ]
       ] ]
     ] ],
@@ -101,8 +103,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "angle_8hpp.html",
-"classPlayer.html#a40d3c47b65e9652c363a8fde41f7bbf5",
-"logger_8h.html#a8cd5c6a640e9e8e6e253ac3e0b0c01cb"
+"classNetSocketStream.html#a1b6dbfc7a006044a089dafb958d5f042",
+"functions_~.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

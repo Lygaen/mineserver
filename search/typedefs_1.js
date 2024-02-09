@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['subid_0',['subId',['../classEventHandler.html#a7e2264d3e34a294002ae86f7acb0e556',1,'EventHandler']]]
+  ['handlertype_0',['HandlerType',['../structCommand.html#a035ca2210acb4d000b01129182540cdd',1,'Command']]]
 ];

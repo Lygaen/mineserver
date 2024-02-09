@@ -5,6 +5,9 @@ var annotated_dup =
       [ "MinecraftHash", "classcrypto_1_1MinecraftHash.html", "classcrypto_1_1MinecraftHash" ],
       [ "ZLibCompressor", "classcrypto_1_1ZLibCompressor.html", "classcrypto_1_1ZLibCompressor" ]
     ] ],
+    [ "logger", "namespacelogger.html", [
+      [ "PostPrintEvent", "classlogger_1_1PostPrintEvent.html", null ]
+    ] ],
     [ "luabridge", null, [
       [ "Stack< ClientState >", "structluabridge_1_1Stack_3_01ClientState_01_4.html", null ]
     ] ],
@@ -19,7 +22,10 @@ var annotated_dup =
     [ "ClientHandshakeEvent", "classClientHandshakeEvent.html", "classClientHandshakeEvent" ],
     [ "ClientSocket", "classClientSocket.html", "classClientSocket" ],
     [ "ClientStatusEvent", "classClientStatusEvent.html", "classClientStatusEvent" ],
+    [ "Command", "structCommand.html", "structCommand" ],
+    [ "CommandsManager", "classCommandsManager.html", "classCommandsManager" ],
     [ "Config", "classConfig.html", "classConfig" ],
+    [ "ConsoleManager", "classConsoleManager.html", "classConsoleManager" ],
     [ "DisconnectLogin", "classDisconnectLogin.html", "classDisconnectLogin" ],
     [ "DisconnectPlay", "classDisconnectPlay.html", "classDisconnectPlay" ],
     [ "EncryptionRequest", "classEncryptionRequest.html", "classEncryptionRequest" ],
@@ -34,6 +40,7 @@ var annotated_dup =
     [ "ILiving", "classILiving.html", "classILiving" ],
     [ "IMCStream", "classIMCStream.html", "classIMCStream" ],
     [ "IPacket", "classIPacket.html", "classIPacket" ],
+    [ "ISender", "classISender.html", "classISender" ],
     [ "LoginStart", "classLoginStart.html", "classLoginStart" ],
     [ "LoginSuccess", "classLoginSuccess.html", "classLoginSuccess" ],
     [ "MemoryStream", "classMemoryStream.html", "classMemoryStream" ],

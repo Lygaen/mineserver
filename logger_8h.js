@@ -1,5 +1,6 @@
 var logger_8h =
 [
+    [ "logger::PostPrintEvent", "classlogger_1_1PostPrintEvent.html", null ],
     [ "DEBUG_COLOR", "logger_8h.html#a792f9eb6a62648607f47b22644ad9707", null ],
     [ "ERROR_COLOR", "logger_8h.html#a79b638f694ebb66a5eb8b994f4139906", null ],
     [ "FATAL_COLOR", "logger_8h.html#af28559d37017eab92792d364a8f82e21", null ],

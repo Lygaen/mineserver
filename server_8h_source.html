@@ -135,49 +135,59 @@ $(function(){initNavTree('server_8h_source.html',''); initResizable(); });
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;<a class="code" href="plugins_8h.html">plugins/plugins.h</a>&gt;</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;<a class="code" href="event_8h.html">plugins/event.h</a>&gt;</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;<a class="code" href="network_8h.html">utils/network.h</a>&gt;</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;<a class="code" href="client_8h.html">client.h</a>&gt;</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;list&gt;</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
-<div class="foldopen" id="foldopen00028" data-start="{" data-end="};">
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="classServer.html">   28</a></span><span class="keyword">class </span><a class="code hl_class" href="classServer.html">Server</a></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>{</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">static</span> <a class="code hl_class" href="classServer.html">Server</a> *INSTANCE;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    std::list&lt;Client *&gt; connectedClients;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <a class="code hl_class" href="classPluginsManager.html">PluginsManager</a> pluginsManager;</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <a class="code hl_class" href="classEventsManager.html">EventsManager</a> eventsManager;</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <a class="code hl_class" href="classServerSocket.html">ServerSocket</a> sock;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <span class="keywordtype">bool</span> isRunning{};</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordtype">void</span> checks();</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <a class="code hl_function" href="classServer.html#ad5ec9462b520e59f7ea831e157ee5e59">Server</a>();</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <a class="code hl_function" href="classServer.html#a4b3aa2579cb1c8cd1d069582c14d0fa6">~Server</a>();</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classServer.html#a7eac07d2582fa01c2671362efa955b31">start</a>();</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classServer.html#a07c45a7e101a3926d8f9685c3c5d14e4">stop</a>();</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
-<div class="foldopen" id="foldopen00080" data-start="{" data-end="}">
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno"><a class="line" href="classServer.html#a326ec98fe5fb62cc0a9588a1594ed840">   80</a></span>    <span class="keyword">static</span> <a class="code hl_class" href="classServer.html">Server</a> *<a class="code hl_function" href="classServer.html#a326ec98fe5fb62cc0a9588a1594ed840">inst</a>()</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    {</div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <span class="keywordflow">return</span> INSTANCE;</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    }</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;<a class="code" href="chatmessage_8h.html">types/chatmessage.h</a>&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;<a class="code" href="commands_8h.html">cmd/commands.h</a>&gt;</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;<a class="code" href="console_8h.html">cmd/console.h</a>&gt;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;<a class="code" href="client_8h.html">client.h</a>&gt;</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;list&gt;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="foldopen" id="foldopen00031" data-start="{" data-end="};">
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="classServer.html">   31</a></span><span class="keyword">class </span><a class="code hl_class" href="classServer.html">Server</a></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>{</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keyword">static</span> <a class="code hl_class" href="classServer.html">Server</a> *INSTANCE;</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    std::list&lt;Client *&gt; connectedClients;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <a class="code hl_class" href="classPluginsManager.html">PluginsManager</a> pluginsManager;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <a class="code hl_class" href="classEventsManager.html">EventsManager</a> eventsManager;</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <a class="code hl_class" href="classCommandsManager.html">CommandsManager</a> commandsManager;</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <a class="code hl_class" href="classConsoleManager.html">ConsoleManager</a> consoleManager;</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <a class="code hl_class" href="classServerSocket.html">ServerSocket</a> sock;</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordtype">bool</span> isRunning{};</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordtype">void</span> checks();</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <a class="code hl_function" href="classServer.html#ad5ec9462b520e59f7ea831e157ee5e59">Server</a>();</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>    <a class="code hl_function" href="classServer.html#a4b3aa2579cb1c8cd1d069582c14d0fa6">~Server</a>();</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classServer.html#a7eac07d2582fa01c2671362efa955b31">start</a>();</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classServer.html#a07c45a7e101a3926d8f9685c3c5d14e4">stop</a>();</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span> </div>
+<div class="foldopen" id="foldopen00085" data-start="{" data-end="}">
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno"><a class="line" href="classServer.html#a326ec98fe5fb62cc0a9588a1594ed840">   85</a></span>    <span class="keyword">static</span> <a class="code hl_class" href="classServer.html">Server</a> *<a class="code hl_function" href="classServer.html#a326ec98fe5fb62cc0a9588a1594ed840">inst</a>()</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>    {</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>        <span class="keywordflow">return</span> INSTANCE;</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>    }</div>
 </div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>};</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>};</div>
 </div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span> </div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><span class="preprocessor">#endif </span><span class="comment">// MINESERVER_SERVER_H</span></div>
-<div class="ttc" id="aclassEventsManager_html"><div class="ttname"><a href="classEventsManager.html">EventsManager</a></div><div class="ttdoc">Manager for Events.</div><div class="ttdef"><b>Definition</b> event.h:215</div></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="preprocessor">#endif </span><span class="comment">// MINESERVER_SERVER_H</span></div>
+<div class="ttc" id="achatmessage_8h_html"><div class="ttname"><a href="chatmessage_8h.html">chatmessage.h</a></div><div class="ttdoc">The file containing minecraft chat message implementation.</div></div>
+<div class="ttc" id="aclassCommandsManager_html"><div class="ttname"><a href="classCommandsManager.html">CommandsManager</a></div><div class="ttdoc">Commands Manager.</div><div class="ttdef"><b>Definition</b> commands.h:116</div></div>
+<div class="ttc" id="aclassConsoleManager_html"><div class="ttname"><a href="classConsoleManager.html">ConsoleManager</a></div><div class="ttdoc">Console manager.</div><div class="ttdef"><b>Definition</b> console.h:23</div></div>
+<div class="ttc" id="aclassEventsManager_html"><div class="ttname"><a href="classEventsManager.html">EventsManager</a></div><div class="ttdoc">Manager for Events.</div><div class="ttdef"><b>Definition</b> event.h:221</div></div>
 <div class="ttc" id="aclassPluginsManager_html"><div class="ttname"><a href="classPluginsManager.html">PluginsManager</a></div><div class="ttdoc">Plugin Manager.</div><div class="ttdef"><b>Definition</b> plugins.h:63</div></div>
 <div class="ttc" id="aclassServerSocket_html"><div class="ttname"><a href="classServerSocket.html">ServerSocket</a></div><div class="ttdoc">Network POSIX Server.</div><div class="ttdef"><b>Definition</b> network.h:167</div></div>
-<div class="ttc" id="aclassServer_html"><div class="ttname"><a href="classServer.html">Server</a></div><div class="ttdoc">Server Class.</div><div class="ttdef"><b>Definition</b> server.h:29</div></div>
-<div class="ttc" id="aclassServer_html_a07c45a7e101a3926d8f9685c3c5d14e4"><div class="ttname"><a href="classServer.html#a07c45a7e101a3926d8f9685c3c5d14e4">Server::stop</a></div><div class="ttdeci">void stop()</div><div class="ttdoc">Stops the server.</div><div class="ttdef"><b>Definition</b> server.cpp:102</div></div>
-<div class="ttc" id="aclassServer_html_a326ec98fe5fb62cc0a9588a1594ed840"><div class="ttname"><a href="classServer.html#a326ec98fe5fb62cc0a9588a1594ed840">Server::inst</a></div><div class="ttdeci">static Server * inst()</div><div class="ttdoc">Get the instance of the server.</div><div class="ttdef"><b>Definition</b> server.h:80</div></div>
-<div class="ttc" id="aclassServer_html_a4b3aa2579cb1c8cd1d069582c14d0fa6"><div class="ttname"><a href="classServer.html#a4b3aa2579cb1c8cd1d069582c14d0fa6">Server::~Server</a></div><div class="ttdeci">~Server()</div><div class="ttdoc">Destroy the Server object.</div><div class="ttdef"><b>Definition</b> server.cpp:43</div></div>
-<div class="ttc" id="aclassServer_html_a7eac07d2582fa01c2671362efa955b31"><div class="ttname"><a href="classServer.html#a7eac07d2582fa01c2671362efa955b31">Server::start</a></div><div class="ttdeci">void start()</div><div class="ttdoc">Starts the server, blocking.</div><div class="ttdef"><b>Definition</b> server.cpp:63</div></div>
+<div class="ttc" id="aclassServer_html"><div class="ttname"><a href="classServer.html">Server</a></div><div class="ttdoc">Server Class.</div><div class="ttdef"><b>Definition</b> server.h:32</div></div>
+<div class="ttc" id="aclassServer_html_a07c45a7e101a3926d8f9685c3c5d14e4"><div class="ttname"><a href="classServer.html#a07c45a7e101a3926d8f9685c3c5d14e4">Server::stop</a></div><div class="ttdeci">void stop()</div><div class="ttdoc">Stops the server.</div><div class="ttdef"><b>Definition</b> server.cpp:105</div></div>
+<div class="ttc" id="aclassServer_html_a326ec98fe5fb62cc0a9588a1594ed840"><div class="ttname"><a href="classServer.html#a326ec98fe5fb62cc0a9588a1594ed840">Server::inst</a></div><div class="ttdeci">static Server * inst()</div><div class="ttdoc">Get the instance of the server.</div><div class="ttdef"><b>Definition</b> server.h:85</div></div>
+<div class="ttc" id="aclassServer_html_a4b3aa2579cb1c8cd1d069582c14d0fa6"><div class="ttname"><a href="classServer.html#a4b3aa2579cb1c8cd1d069582c14d0fa6">Server::~Server</a></div><div class="ttdeci">~Server()</div><div class="ttdoc">Destroy the Server object.</div><div class="ttdef"><b>Definition</b> server.cpp:45</div></div>
+<div class="ttc" id="aclassServer_html_a7eac07d2582fa01c2671362efa955b31"><div class="ttname"><a href="classServer.html#a7eac07d2582fa01c2671362efa955b31">Server::start</a></div><div class="ttdeci">void start()</div><div class="ttdoc">Starts the server, blocking.</div><div class="ttdef"><b>Definition</b> server.cpp:65</div></div>
 <div class="ttc" id="aclassServer_html_ad5ec9462b520e59f7ea831e157ee5e59"><div class="ttname"><a href="classServer.html#ad5ec9462b520e59f7ea831e157ee5e59">Server::Server</a></div><div class="ttdeci">Server()</div><div class="ttdoc">Construct a new Server object.</div><div class="ttdef"><b>Definition</b> server.cpp:19</div></div>
 <div class="ttc" id="aclient_8h_html"><div class="ttname"><a href="client_8h.html">client.h</a></div><div class="ttdoc">The file containing the logic for client handling.</div></div>
+<div class="ttc" id="acommands_8h_html"><div class="ttname"><a href="commands_8h.html">commands.h</a></div><div class="ttdoc">The file handling commands logic.</div></div>
+<div class="ttc" id="aconsole_8h_html"><div class="ttname"><a href="console_8h.html">console.h</a></div><div class="ttdoc">The file handling console logic.</div></div>
 <div class="ttc" id="aevent_8h_html"><div class="ttname"><a href="event_8h.html">event.h</a></div><div class="ttdoc">The header-only containing event logic.</div></div>
 <div class="ttc" id="anetwork_8h_html"><div class="ttname"><a href="network_8h.html">network.h</a></div><div class="ttdoc">The network (TCP) cross-platform implementation.</div></div>
 <div class="ttc" id="aplugins_8h_html"><div class="ttname"><a href="plugins_8h.html">plugins.h</a></div><div class="ttdoc">The file handling plugin system.</div></div>
@@ -187,7 +197,7 @@ $(function(){initNavTree('server_8h_source.html',''); initResizable(); });
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="server_8h.html">server.h</a></li>
-    <li class="footer">Generated on Mon Feb 5 2024 16:43:18 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+    <li class="footer">Generated on Fri Feb 9 2024 18:03:22 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
   </ul>
 </div>
 </body>

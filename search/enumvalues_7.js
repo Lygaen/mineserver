@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['off_0',['OFF',['../logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9aac132f2982b98bcaa3445e535a03ff75',1,'logger.h']]]
+  ['login_0',['LOGIN',['../clientstate_8h.html#a8d4a6786d6193f0e6245c44e4a7bb4a0a7ef5b81d60084ffcb2d5cb0faf9c64ff',1,'clientstate.h']]]
 ];
