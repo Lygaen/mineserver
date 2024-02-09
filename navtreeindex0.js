@@ -98,6 +98,7 @@ var NAVTREEINDEX0 =
 "classConfig.html#af08cc4a60a38a00097b93a2c5ad4d37a":[7,0,14,2],
 "classConsoleManager.html":[7,0,15],
 "classConsoleManager.html#a26c8c1266bc80607759ac15ffa6ab580":[7,0,15,1],
+"classConsoleManager.html#a6ab2c0b597c9c02f8cace84f137ec711":[7,0,15,5],
 "classConsoleManager.html#a79d974ff347eb329fcfcbff9ec32effc":[7,0,15,4],
 "classConsoleManager.html#aa9f719ce8b6bb8c2efda952e49f534d6":[7,0,15,0],
 "classConsoleManager.html#aed91a6800f8d3aa275d388bd474a5180":[7,0,15,3],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "classMemoryStream.html#a4c192de9c2a94bfa1d1d9eaa84e1dec1":[7,0,33,1],
 "classMemoryStream.html#a50244829d3814d4bd03133c71ec1c92a":[7,0,33,0],
 "classMemoryStream.html#a72769208313900a9dee1b423590cb260":[7,0,33,7],
-"classMemoryStream.html#ad29efaa984219fbd1b0de4e4f524fba0":[7,0,33,4],
-"classNetSocketStream.html":[7,0,34]
+"classMemoryStream.html#ad29efaa984219fbd1b0de4e4f524fba0":[7,0,33,4]
 };

@@ -1,5 +1,6 @@
 var NAVTREEINDEX1 =
 {
+"classNetSocketStream.html":[7,0,34],
 "classNetSocketStream.html#a1b6dbfc7a006044a089dafb958d5f042":[7,0,34,6],
 "classNetSocketStream.html#a2d01fa8c717d3b6b6601c8c7443648cd":[7,0,34,2],
 "classNetSocketStream.html#a3bcda89414aa711236dbaa0e548ac8c0":[7,0,34,5],
@@ -248,6 +249,5 @@ var NAVTREEINDEX1 =
 "functions_vars.html":[7,3,2],
 "functions_w.html":[7,3,0,19],
 "functions_x.html":[7,3,0,20],
-"functions_y.html":[7,3,0,21],
-"functions_z.html":[7,3,0,22]
+"functions_y.html":[7,3,0,21]
 };

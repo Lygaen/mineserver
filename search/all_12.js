@@ -11,7 +11,7 @@ var searchData=
   ['memorystream_8',['MemoryStream',['../classMemoryStream.html',1,'MemoryStream'],['../classMemoryStream.html#a50244829d3814d4bd03133c71ec1c92a',1,'MemoryStream::MemoryStream()']]],
   ['minecrafthash_9',['MinecraftHash',['../classcrypto_1_1MinecraftHash.html',1,'crypto::MinecraftHash'],['../classcrypto_1_1MinecraftHash.html#a367213192993b0a61e92483b6894849f',1,'crypto::MinecraftHash::MinecraftHash()']]],
   ['mojangapi_10',['mojangapi',['../namespacemojangapi.html',1,'']]],
-  ['motd_11',['MOTD',['../classConfig.html#abcc2d45023a25f1c3cf5bf8074ffc993',1,'Config']]],
-  ['motd_12',['motd',['../classServerListPacket.html#ab4826954e5ab053550e59787e4eafaea',1,'ServerListPacket']]],
+  ['motd_11',['motd',['../classServerListPacket.html#ab4826954e5ab053550e59787e4eafaea',1,'ServerListPacket']]],
+  ['motd_12',['MOTD',['../classConfig.html#abcc2d45023a25f1c3cf5bf8074ffc993',1,'Config']]],
   ['much_20time_13',['Why does the project takes so much time ?',['../index.html#autotoc_md28',1,'']]]
 ];

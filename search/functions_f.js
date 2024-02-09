@@ -9,6 +9,6 @@ var searchData=
   ['setpath_6',['setPath',['../classFile.html#a2a4a2243e3df06714a001ad31a605a38',1,'File']]],
   ['setvalue_7',['setValue',['../classField.html#a8fffa4866eabc15ec6cdf7db860a4839',1,'Field']]],
   ['start_8',['start',['../classClient.html#a742373e08a80d993d2651b6fff76f5b9',1,'Client::start()'],['../classConsoleManager.html#a79d974ff347eb329fcfcbff9ec32effc',1,'ConsoleManager::start()'],['../classServer.html#a7eac07d2582fa01c2671362efa955b31',1,'Server::start()'],['../classServerSocket.html#abfabfd9e132aa6b73dcf77792d8b6ec9',1,'ServerSocket::start()']]],
-  ['stop_9',['stop',['../classServer.html#a07c45a7e101a3926d8f9685c3c5d14e4',1,'Server']]],
+  ['stop_9',['stop',['../classConsoleManager.html#a6ab2c0b597c9c02f8cace84f137ec711',1,'ConsoleManager::stop()'],['../classServer.html#a07c45a7e101a3926d8f9685c3c5d14e4',1,'Server::stop()']]],
   ['subscribe_10',['subscribe',['../classEventHandler.html#ae37885fe6ddadf786eaf97f835874a5f',1,'EventHandler::subscribe(const callbackType &amp;func)'],['../classEventHandler.html#ad563c96e95bd5ce43a09fdcf562d2334',1,'EventHandler::subscribe(callbackType &amp;&amp;func)'],['../classEventsManager.html#a17a034b18a623bb8db75bf16aabeb7c0',1,'EventsManager::subscribe(const EventHandler&lt; T &gt;::callbackType &amp;callback)'],['../classEventsManager.html#abd6add9e9a5cfc2ec483208a8ef0f603',1,'EventsManager::subscribe(EventHandler&lt; T &gt;::callbackType &amp;&amp;callback)']]]
 ];

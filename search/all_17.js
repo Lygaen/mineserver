@@ -32,7 +32,7 @@ var searchData=
   ['step_203_20_3a_20cloning_29',['Step 3 : Cloning',['../md_docs_2__1__INSTALLATION.html#autotoc_md4',1,'']]],
   ['step_204_20_3a_20configuring_20using_20cmake_30',['Step 4 : Configuring using CMake',['../md_docs_2__1__INSTALLATION.html#autotoc_md5',1,'']]],
   ['step_205_20_3a_20compiling_31',['Step 5 : Compiling',['../md_docs_2__1__INSTALLATION.html#autotoc_md8',1,'']]],
-  ['stop_32',['stop',['../classServer.html#a07c45a7e101a3926d8f9685c3c5d14e4',1,'Server']]],
+  ['stop_32',['stop',['../classConsoleManager.html#a6ab2c0b597c9c02f8cace84f137ec711',1,'ConsoleManager::stop()'],['../classServer.html#a07c45a7e101a3926d8f9685c3c5d14e4',1,'Server::stop()']]],
   ['stream_2ecpp_33',['stream.cpp',['../stream_8cpp.html',1,'']]],
   ['stream_2eh_34',['stream.h',['../stream_8h.html',1,'']]],
   ['strikethrough_35',['strikethrough',['../classChatMessage.html#ab47846c7398d7c14ed8c5d9a9e038920',1,'ChatMessage']]],
