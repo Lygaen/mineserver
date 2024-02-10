@@ -95,7 +95,13 @@ public:
      *
      * @param msg the text of the chat message
      */
-    ChatMessage(std::string msg);
+    ChatMessage(const std::string &msg);
+    /**
+     * @brief Construct a new Chat Message object
+     *
+     * @param msg the text of the chat message
+     */
+    ChatMessage(const std::string &&msg);
     /**
      * @brief Destroy the Chat Message object
      *

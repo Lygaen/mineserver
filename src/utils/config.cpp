@@ -15,6 +15,7 @@
 #include <filesystem>
 #include <rapidjson/prettywriter.h>
 #include <rapidjson/stringbuffer.h>
+#include <cmd/commands.h>
 #include <utils/logger.h>
 #include "config.h"
 
@@ -228,6 +229,133 @@ void Config::load()
 
     logger::loadConfig();
     logger::debug("Loaded Config");
+}
+
+template <typename T>
+bool printFieldValue(ISender &sender, const std::string &section, const std::string &key, Field<T> &field)
+{
+    if (section != field.section || key != field.key)
+        return false;
+
+    rapidjson::Document doc;
+    doc.SetObject();
+    field.save(doc);
+
+    rapidjson::StringBuffer buff;
+    buff.Clear();
+
+    rapidjson::PrettyWriter<rapidjson::StringBuffer> writer(buff);
+    doc.FindMember(section.c_str())->value.FindMember(key.c_str())->value.Accept(writer);
+
+    sender.sendMessage(section + "." + key + ": " + std::string(buff.GetString(), buff.GetSize()));
+    return true;
+}
+
+void handleConfigCommand(const ISender::SenderType senderType, ISender &sender, const std::vector<std::string> &args)
+{
+    if (args.size() == 0)
+    {
+        sender.sendMessage(ChatMessage("Invalid number of arguments"));
+        return;
+    }
+
+    if (args[0] == "reload")
+    {
+        if (args.size() > 1)
+        {
+            sender.sendMessage(ChatMessage("Invalid number of arguments"));
+            return;
+        }
+
+        Config::inst()->load();
+        Config::inst()->save();
+        sender.sendMessage(ChatMessage("Reloaded config"));
+        return;
+    }
+
+    if (args[0] == "save")
+    {
+        if (args.size() > 1)
+        {
+            sender.sendMessage(ChatMessage("Invalid number of arguments"));
+            return;
+        }
+
+        Config::inst()->save();
+        sender.sendMessage(ChatMessage("Saved config"));
+        return;
+    }
+
+    std::string fullField = args[0];
+    if (fullField.find('.') == std::string::npos)
+    {
+        sender.sendMessage(ChatMessage("Field value doesn't match section.key"));
+        return;
+    }
+    std::stringstream ffss(fullField);
+    std::string section, key, seg;
+    // Last expression to check if there are more than one
+    if (!std::getline(ffss, section, '.') || !std::getline(ffss, key, '.') || std::getline(ffss, seg, '.'))
+    {
+        sender.sendMessage(ChatMessage("Field value doesn't match section.key"));
+        return;
+    }
+
+    if (args.size() == 1)
+    {
+        bool wasFound = false;
+#define UF(x)      \
+    if (!wasFound) \
+        wasFound = printFieldValue(sender, section, key, Config::inst()->x);
+        CONFIG_FIELDS
+#undef UF
+
+        if (wasFound)
+            return;
+
+        sender.sendMessage("Config value at " + section + "." + key + " was not found");
+        return;
+    }
+
+    std::string fullValue;
+    bool skip = true;
+    for (auto &arg : args)
+    {
+        if (skip) //  Skip first element
+        {
+            skip = false;
+            continue;
+        }
+        fullValue += arg;
+    }
+
+    std::string jsonValue;
+    jsonValue += "{";
+    jsonValue += "\"" + section + "\":{";
+    jsonValue += "\"" + key + "\":" + fullValue;
+    jsonValue += "}}";
+
+    rapidjson::Document doc;
+    doc.Parse(jsonValue.c_str());
+
+    if (doc.HasParseError() || !doc.IsObject())
+    {
+        sender.sendMessage(ChatMessage("Value is in invalid format !"));
+        return;
+    }
+
+#define UF(x) Config::inst()->x.load(doc);
+    CONFIG_FIELDS
+#undef UF
+
+    sender.sendMessage(ChatMessage("Set config value correctly !"));
+}
+
+void Config::registerCommands()
+{
+    CommandsManager::inst().addCommand(
+        "config", handleConfigCommand,
+        "<reload|save|field:Field> [newValue]", "Command to handle config things\nField type should be as such : section.key");
 }
 
 void Config::loadLuaLib(lua_State *state)

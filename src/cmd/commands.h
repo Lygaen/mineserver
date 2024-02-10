@@ -17,6 +17,7 @@
 #include <functional>
 #include <string>
 #include <regex>
+#include <types/chatmessage.h>
 
 /**
  * @brief Sender Interface
@@ -42,6 +43,12 @@ public:
         PLAYER,
         COMMAND_BLOCK
     };
+
+    /**
+     * @brief Sends a message to the sender
+     *
+     */
+    virtual void sendMessage(const ChatMessage &message) = 0;
 };
 
 /**
@@ -151,6 +158,16 @@ public:
                     Command::HandlerType handler,
                     const std::string &usage = "",
                     const std::string &description = "");
+
+    /**
+     * @brief Get all registered commands
+     *
+     * @return const std::unordered_map<std::string, Command>& commands as map, key for command name
+     */
+    const std::unordered_map<std::string, Command> &getCommands() const
+    {
+        return commands;
+    }
 
     /**
      * @brief Call command return code

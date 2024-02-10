@@ -15,7 +15,11 @@
 
 ChatMessage::ChatMessage() = default;
 
-ChatMessage::ChatMessage(std::string msg) : text(std::move(msg))
+ChatMessage::ChatMessage(const std::string &msg) : text(msg)
+{
+}
+
+ChatMessage::ChatMessage(const std::string &&msg) : text(msg)
 {
 }
 

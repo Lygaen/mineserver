@@ -68,12 +68,20 @@ void Plugin::defineLibs()
     loadEntitiesLua(state);
 }
 
+PluginsManager *PluginsManager::instance;
+
 PluginsManager::PluginsManager() : plugins()
 {
+    if (instance)
+        throw std::runtime_error("Plugins manager should not be constructed twice");
+
+    instance = this;
 }
 
 PluginsManager::~PluginsManager()
 {
+    if (instance == this)
+        instance = nullptr;
 }
 
 void PluginsManager::load()
@@ -90,7 +98,7 @@ void PluginsManager::load()
     {
         if (entry.path().extension() == ".lua")
         {
-            auto plugin = std::make_unique<Plugin>(entry.path().string());
+            auto plugin = std::make_shared<Plugin>(entry.path().string());
             if (plugin->load())
             {
                 plugins.push_back(std::move(plugin));

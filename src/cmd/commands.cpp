@@ -1,5 +1,6 @@
 #include "commands.h"
 #include <utils/logger.h>
+#include <cmd/commandsreg.hpp>
 
 CommandsManager *CommandsManager::instance = nullptr;
 CommandsManager::CommandsManager() : commands()
@@ -8,6 +9,8 @@ CommandsManager::CommandsManager() : commands()
         throw std::runtime_error("Commands handler should not be constructed twice");
 
     instance = this;
+
+    registerCommands();
 }
 
 CommandsManager::~CommandsManager()

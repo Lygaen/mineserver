@@ -69,10 +69,12 @@ void ConsoleManager::loop()
     while (true)
     {
         c = getOneChar();
-        if (c == '\n')
+        if (c == '\n' || !isascii(c) || c < 31)
             break;
         if (c == 127 || c == 8)
+        {
             currentInput = currentInput.substr(0, currentInput.size() - 1);
+        }
         else
             currentInput += c;
 
@@ -81,7 +83,7 @@ void ConsoleManager::loop()
     }
 
     std::printf("\r%s%s\n", prefix.c_str(), currentInput.c_str());
-    auto res = CommandsManager::inst().callCommand(ISender::SenderType::CONSOLE, nullptr, currentInput);
+    auto res = CommandsManager::inst().callCommand(ISender::SenderType::CONSOLE, this, currentInput);
     switch (res)
     {
     case CommandsManager::COMMAND_NOT_FOUND:
@@ -110,11 +112,6 @@ void ConsoleManager::start()
                     } });
     threadHandle = t.native_handle();
     t.detach();
-
-    CommandsManager::inst().addCommand(
-        "stop", [](const ISender::SenderType, ISender &, const std::vector<std::string> &)
-        { Server::inst()->stop(); },
-        "", "Stops the server");
 }
 
 void ConsoleManager::stop()
@@ -136,4 +133,13 @@ void ConsoleManager::onPostPrint(logger::PostPrintEvent event)
     std::printf("\r%s", spaces.c_str());
     std::printf("\r%s%s", prefix.c_str(), in.c_str());
     std::cout.flush();
+}
+
+void ConsoleManager::sendMessage(const ChatMessage &message)
+{
+    std::stringstream ss(message.text);
+    std::string line;
+
+    while (std::getline(ss, line, '\n'))
+        logger::info("%s", line.c_str());
 }

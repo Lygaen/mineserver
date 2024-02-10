@@ -15,12 +15,13 @@
 #include <thread>
 #include <atomic>
 #include <utils/logger.h>
+#include <cmd/commands.h>
 
 /**
  * @brief Console manager
  *
  */
-class ConsoleManager
+class ConsoleManager : public ISender
 {
 private:
     static ConsoleManager *instance;
@@ -62,6 +63,13 @@ public:
      * @param event the post print event
      */
     static void onPostPrint(logger::PostPrintEvent event);
+
+    /**
+     * @brief Sends a message to the console
+     *
+     * @param message the message to send
+     */
+    void sendMessage(const ChatMessage &message) override;
 
     /**
      * @brief Gets Console Manager instance

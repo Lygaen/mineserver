@@ -30,14 +30,22 @@ template <typename T>
 class Field
 {
 private:
-    const char *section;
-    const char *key;
     T value;
 
     inline rapidjson::Document::ConstMemberIterator canSafelyRead(const rapidjson::Document &document);
     inline void writeSafely(rapidjson::Document &document, rapidjson::Value &v);
 
 public:
+    /**
+     * @brief Section of the field
+     *
+     */
+    const char *section;
+    /**
+     * @brief Key of the field
+     *
+     */
+    const char *key;
     /**
      * @brief Construct a new Field object
      *
@@ -142,6 +150,11 @@ public:
      * into the fields.
      */
     void load();
+    /**
+     * @brief Register config commands
+     *
+     */
+    void registerCommands();
 
     /**
      * @brief The port of the instance
@@ -258,8 +271,7 @@ public:
      * the singleton class-like.
      * @return ::Config* The instance of the config
      */
-    static Config *
-    inst()
+    static Config *inst()
     {
         return INSTANCE;
     }

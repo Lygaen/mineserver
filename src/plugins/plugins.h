@@ -26,12 +26,20 @@ class Plugin
 private:
     std::string path;
     lua_State *state;
-    std::string name;
-    std::string version;
 
     void defineLibs();
 
 public:
+    /**
+     * @brief Name of the plugin
+     *
+     */
+    std::string name;
+    /**
+     * @brief Version of the plugin
+     *
+     */
+    std::string version;
     /**
      * @brief Construct a new Plugin object
      *
@@ -63,7 +71,9 @@ class PluginsManager
 {
 private:
     static constexpr std::string_view BASE_PATH = "./plugins/";
-    std::vector<std::unique_ptr<Plugin>> plugins;
+    std::vector<std::shared_ptr<Plugin>> plugins;
+
+    static PluginsManager *instance;
 
 public:
     /**
@@ -83,6 +93,26 @@ public:
      * Can be used to reload plugins as well
      */
     void load();
+
+    /**
+     * @brief Get the registered plugins
+     *
+     * @return const std::vector<std::shared_ptr<Plugin>>& plugins list
+     */
+    const std::vector<std::shared_ptr<Plugin>> &getPlugins() const
+    {
+        return plugins;
+    }
+
+    /**
+     * @brief Gets the instance of the plugin manager
+     *
+     * @return PluginsManager& the instance
+     */
+    static PluginsManager &inst()
+    {
+        return *instance;
+    }
 };
 
 #endif // MINESERVER_PLUGINS_H
