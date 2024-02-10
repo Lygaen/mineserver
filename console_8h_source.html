@@ -135,47 +135,54 @@ $(function(){initNavTree('console_8h_source.html',''); initResizable(); });
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;thread&gt;</span></div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#include &lt;atomic&gt;</span></div>
 <div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#include &lt;<a class="code" href="logger_8h.html">utils/logger.h</a>&gt;</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="foldopen" id="foldopen00023" data-start="{" data-end="};">
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="classConsoleManager.html">   23</a></span><span class="keyword">class </span><a class="code hl_class" href="classConsoleManager.html">ConsoleManager</a></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>{</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keyword">static</span> <a class="code hl_class" href="classConsoleManager.html">ConsoleManager</a> *instance;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    std::string currentInput;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <a class="code hl_typedef" href="classEventHandler.html#a7e2264d3e34a294002ae86f7acb0e556">EventHandler&lt;logger::PostPrintEvent&gt;::subId</a> subscribeId;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    std::thread::native_handle_type threadHandle;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    std::atomic&lt;bool&gt; isRunning;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    <span class="keywordtype">void</span> loop();</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <a class="code hl_function" href="classConsoleManager.html#aa9f719ce8b6bb8c2efda952e49f534d6">ConsoleManager</a>();</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <a class="code hl_function" href="classConsoleManager.html#a26c8c1266bc80607759ac15ffa6ab580">~ConsoleManager</a>();</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classConsoleManager.html#a79d974ff347eb329fcfcbff9ec32effc">start</a>();</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classConsoleManager.html#a6ab2c0b597c9c02f8cace84f137ec711">stop</a>();</div>
-<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classConsoleManager.html#aed91a6800f8d3aa275d388bd474a5180">onPostPrint</a>(<a class="code hl_class" href="classlogger_1_1PostPrintEvent.html">logger::PostPrintEvent</a> event);</div>
-<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span> </div>
-<div class="foldopen" id="foldopen00071" data-start="{" data-end="}">
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno"><a class="line" href="classConsoleManager.html#af424a86f594979aad0e975ae07774bd0">   71</a></span>    <span class="keyword">static</span> <a class="code hl_class" href="classConsoleManager.html">ConsoleManager</a> &amp;<a class="code hl_function" href="classConsoleManager.html#af424a86f594979aad0e975ae07774bd0">inst</a>()</div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    {</div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        <span class="keywordflow">return</span> *instance;</div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>    }</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">#include &lt;<a class="code" href="commands_8h.html">cmd/commands.h</a>&gt;</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
+<div class="foldopen" id="foldopen00024" data-start="{" data-end="};">
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="classConsoleManager.html">   24</a></span><span class="keyword">class </span><a class="code hl_class" href="classConsoleManager.html">ConsoleManager</a> : <span class="keyword">public</span> <a class="code hl_class" href="classISender.html">ISender</a></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>{</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keyword">static</span> <a class="code hl_class" href="classConsoleManager.html">ConsoleManager</a> *instance;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    std::string currentInput;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <a class="code hl_typedef" href="classEventHandler.html#a7e2264d3e34a294002ae86f7acb0e556">EventHandler&lt;logger::PostPrintEvent&gt;::subId</a> subscribeId;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    std::thread::native_handle_type threadHandle;</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    std::atomic&lt;bool&gt; isRunning;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="keywordtype">void</span> loop();</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span> </div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <a class="code hl_function" href="classConsoleManager.html#aa9f719ce8b6bb8c2efda952e49f534d6">ConsoleManager</a>();</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <a class="code hl_function" href="classConsoleManager.html#a26c8c1266bc80607759ac15ffa6ab580">~ConsoleManager</a>();</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classConsoleManager.html#a79d974ff347eb329fcfcbff9ec32effc">start</a>();</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classConsoleManager.html#a6ab2c0b597c9c02f8cace84f137ec711">stop</a>();</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="classConsoleManager.html#aed91a6800f8d3aa275d388bd474a5180">onPostPrint</a>(<a class="code hl_class" href="classlogger_1_1PostPrintEvent.html">logger::PostPrintEvent</a> event);</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classConsoleManager.html#aa0667e0292d5099dda6d6d348ff0b9f0">sendMessage</a>(<span class="keyword">const</span> <a class="code hl_class" href="classChatMessage.html">ChatMessage</a> &amp;message) <span class="keyword">override</span>;</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span> </div>
+<div class="foldopen" id="foldopen00079" data-start="{" data-end="}">
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno"><a class="line" href="classConsoleManager.html#af424a86f594979aad0e975ae07774bd0">   79</a></span>    <span class="keyword">static</span> <a class="code hl_class" href="classConsoleManager.html">ConsoleManager</a> &amp;<a class="code hl_function" href="classConsoleManager.html#af424a86f594979aad0e975ae07774bd0">inst</a>()</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    {</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        <span class="keywordflow">return</span> *instance;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    }</div>
 </div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>};</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>};</div>
 </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span><span class="preprocessor">#endif </span><span class="comment">// MINESERVER_CONSOLE_H</span></div>
-<div class="ttc" id="aclassConsoleManager_html"><div class="ttname"><a href="classConsoleManager.html">ConsoleManager</a></div><div class="ttdoc">Console manager.</div><div class="ttdef"><b>Definition</b> console.h:24</div></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><span class="preprocessor">#endif </span><span class="comment">// MINESERVER_CONSOLE_H</span></div>
+<div class="ttc" id="aclassChatMessage_html"><div class="ttname"><a href="classChatMessage.html">ChatMessage</a></div><div class="ttdoc">Minecraft Chat Message implementation.</div><div class="ttdef"><b>Definition</b> chatmessage.h:27</div></div>
+<div class="ttc" id="aclassConsoleManager_html"><div class="ttname"><a href="classConsoleManager.html">ConsoleManager</a></div><div class="ttdoc">Console manager.</div><div class="ttdef"><b>Definition</b> console.h:25</div></div>
 <div class="ttc" id="aclassConsoleManager_html_a26c8c1266bc80607759ac15ffa6ab580"><div class="ttname"><a href="classConsoleManager.html#a26c8c1266bc80607759ac15ffa6ab580">ConsoleManager::~ConsoleManager</a></div><div class="ttdeci">~ConsoleManager()</div><div class="ttdoc">Destroy the Console Manager object.</div><div class="ttdef"><b>Definition</b> console.cpp:27</div></div>
-<div class="ttc" id="aclassConsoleManager_html_a6ab2c0b597c9c02f8cace84f137ec711"><div class="ttname"><a href="classConsoleManager.html#a6ab2c0b597c9c02f8cace84f137ec711">ConsoleManager::stop</a></div><div class="ttdeci">void stop()</div><div class="ttdoc">Stops listening for commands.</div><div class="ttdef"><b>Definition</b> console.cpp:120</div></div>
-<div class="ttc" id="aclassConsoleManager_html_a79d974ff347eb329fcfcbff9ec32effc"><div class="ttname"><a href="classConsoleManager.html#a79d974ff347eb329fcfcbff9ec32effc">ConsoleManager::start</a></div><div class="ttdeci">void start()</div><div class="ttdoc">Starts listening for commands.</div><div class="ttdef"><b>Definition</b> console.cpp:102</div></div>
+<div class="ttc" id="aclassConsoleManager_html_a6ab2c0b597c9c02f8cace84f137ec711"><div class="ttname"><a href="classConsoleManager.html#a6ab2c0b597c9c02f8cace84f137ec711">ConsoleManager::stop</a></div><div class="ttdeci">void stop()</div><div class="ttdoc">Stops listening for commands.</div><div class="ttdef"><b>Definition</b> console.cpp:117</div></div>
+<div class="ttc" id="aclassConsoleManager_html_a79d974ff347eb329fcfcbff9ec32effc"><div class="ttname"><a href="classConsoleManager.html#a79d974ff347eb329fcfcbff9ec32effc">ConsoleManager::start</a></div><div class="ttdeci">void start()</div><div class="ttdoc">Starts listening for commands.</div><div class="ttdef"><b>Definition</b> console.cpp:104</div></div>
+<div class="ttc" id="aclassConsoleManager_html_aa0667e0292d5099dda6d6d348ff0b9f0"><div class="ttname"><a href="classConsoleManager.html#aa0667e0292d5099dda6d6d348ff0b9f0">ConsoleManager::sendMessage</a></div><div class="ttdeci">void sendMessage(const ChatMessage &amp;message) override</div><div class="ttdoc">Sends a message to the console.</div><div class="ttdef"><b>Definition</b> console.cpp:138</div></div>
 <div class="ttc" id="aclassConsoleManager_html_aa9f719ce8b6bb8c2efda952e49f534d6"><div class="ttname"><a href="classConsoleManager.html#aa9f719ce8b6bb8c2efda952e49f534d6">ConsoleManager::ConsoleManager</a></div><div class="ttdeci">ConsoleManager()</div><div class="ttdoc">Construct a new Console Manager object.</div><div class="ttdef"><b>Definition</b> console.cpp:18</div></div>
-<div class="ttc" id="aclassConsoleManager_html_aed91a6800f8d3aa275d388bd474a5180"><div class="ttname"><a href="classConsoleManager.html#aed91a6800f8d3aa275d388bd474a5180">ConsoleManager::onPostPrint</a></div><div class="ttdeci">static void onPostPrint(logger::PostPrintEvent event)</div><div class="ttdoc">Post print hook.</div><div class="ttdef"><b>Definition</b> console.cpp:131</div></div>
-<div class="ttc" id="aclassConsoleManager_html_af424a86f594979aad0e975ae07774bd0"><div class="ttname"><a href="classConsoleManager.html#af424a86f594979aad0e975ae07774bd0">ConsoleManager::inst</a></div><div class="ttdeci">static ConsoleManager &amp; inst()</div><div class="ttdoc">Gets Console Manager instance.</div><div class="ttdef"><b>Definition</b> console.h:71</div></div>
+<div class="ttc" id="aclassConsoleManager_html_aed91a6800f8d3aa275d388bd474a5180"><div class="ttname"><a href="classConsoleManager.html#aed91a6800f8d3aa275d388bd474a5180">ConsoleManager::onPostPrint</a></div><div class="ttdeci">static void onPostPrint(logger::PostPrintEvent event)</div><div class="ttdoc">Post print hook.</div><div class="ttdef"><b>Definition</b> console.cpp:128</div></div>
+<div class="ttc" id="aclassConsoleManager_html_af424a86f594979aad0e975ae07774bd0"><div class="ttname"><a href="classConsoleManager.html#af424a86f594979aad0e975ae07774bd0">ConsoleManager::inst</a></div><div class="ttdeci">static ConsoleManager &amp; inst()</div><div class="ttdoc">Gets Console Manager instance.</div><div class="ttdef"><b>Definition</b> console.h:79</div></div>
 <div class="ttc" id="aclassEventHandler_html_a7e2264d3e34a294002ae86f7acb0e556"><div class="ttname"><a href="classEventHandler.html#a7e2264d3e34a294002ae86f7acb0e556">EventHandler::subId</a></div><div class="ttdeci">int subId</div><div class="ttdoc">The Subscription Id.</div><div class="ttdef"><b>Definition</b> event.h:100</div></div>
+<div class="ttc" id="aclassISender_html"><div class="ttname"><a href="classISender.html">ISender</a></div><div class="ttdoc">Sender Interface.</div><div class="ttdef"><b>Definition</b> commands.h:32</div></div>
 <div class="ttc" id="aclasslogger_1_1PostPrintEvent_html"><div class="ttname"><a href="classlogger_1_1PostPrintEvent.html">logger::PostPrintEvent</a></div><div class="ttdoc">Post print event.</div><div class="ttdef"><b>Definition</b> logger.h:244</div></div>
+<div class="ttc" id="acommands_8h_html"><div class="ttname"><a href="commands_8h.html">commands.h</a></div><div class="ttdoc">The file handling commands logic.</div></div>
 <div class="ttc" id="alogger_8h_html"><div class="ttname"><a href="logger_8h.html">logger.h</a></div><div class="ttdoc">The main file for the logger.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
@@ -183,7 +190,7 @@ $(function(){initNavTree('console_8h_source.html',''); initResizable(); });
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_8a0776572ba2252f65a895457421e228.html">cmd</a></li><li class="navelem"><a class="el" href="console_8h.html">console.h</a></li>
-    <li class="footer">Generated on Fri Feb 9 2024 18:44:51 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+    <li class="footer">Generated on Sat Feb 10 2024 16:21:26 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
   </ul>
 </div>
 </body>

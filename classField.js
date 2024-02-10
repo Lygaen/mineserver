@@ -6,5 +6,7 @@ var classField =
     [ "load", "classField.html#a4fd4a306e69fa5290fd9700586a4de32", null ],
     [ "registerLuaProperty", "classField.html#a8784d5cb3626d7e6e971069153dcf5aa", null ],
     [ "save", "classField.html#a4f69f9beef47fcb6a0ac75fdc2315a96", null ],
-    [ "setValue", "classField.html#a8fffa4866eabc15ec6cdf7db860a4839", null ]
+    [ "setValue", "classField.html#a8fffa4866eabc15ec6cdf7db860a4839", null ],
+    [ "key", "classField.html#a69b7614616b4f8ee0276c1727447243a", null ],
+    [ "section", "classField.html#a1a4d3ecc23b5180106f92f850ac8f5eb", null ]
 ];

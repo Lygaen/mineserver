@@ -122,6 +122,7 @@ $(function(){initNavTree('config_8cpp.html',''); initResizable(); });
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a> &#124;
+<a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">config.cpp File Reference</div></div>
 </div><!--header-->
@@ -135,6 +136,7 @@ $(function(){initNavTree('config_8cpp.html',''); initResizable(); });
 <code>#include &lt;filesystem&gt;</code><br />
 <code>#include &lt;rapidjson/prettywriter.h&gt;</code><br />
 <code>#include &lt;rapidjson/stringbuffer.h&gt;</code><br />
+<code>#include &lt;<a class="el" href="commands_8h_source.html">cmd/commands.h</a>&gt;</code><br />
 <code>#include &lt;<a class="el" href="logger_8h_source.html">utils/logger.h</a>&gt;</code><br />
 <code>#include &quot;<a class="el" href="config_8h_source.html">config.h</a>&quot;</code><br />
 </div><table class="memberdecls">
@@ -143,12 +145,27 @@ Macros</h2></td></tr>
 <tr class="memitem:aede71a14481f4c790c7003e48df5fd72" id="r_aede71a14481f4c790c7003e48df5fd72"><td class="memItemLeft" align="right" valign="top"><a id="aede71a14481f4c790c7003e48df5fd72" name="aede71a14481f4c790c7003e48df5fd72"></a>
 #<a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">define</a>&#160;</td><td class="memItemRight" valign="bottom"><b>UF</b>(x)&#160;&#160;&#160;x.load(<a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">document</a>);</td></tr>
 <tr class="separator:aede71a14481f4c790c7003e48df5fd72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aede71a14481f4c790c7003e48df5fd72" id="r_aede71a14481f4c790c7003e48df5fd72"><td class="memItemLeft" align="right" valign="top">#<a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">define</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aede71a14481f4c790c7003e48df5fd72">UF</a>(x)</td></tr>
+<tr class="separator:aede71a14481f4c790c7003e48df5fd72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aede71a14481f4c790c7003e48df5fd72" id="r_aede71a14481f4c790c7003e48df5fd72"><td class="memItemLeft" align="right" valign="top"><a id="aede71a14481f4c790c7003e48df5fd72" name="aede71a14481f4c790c7003e48df5fd72"></a>
+#<a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">define</a>&#160;</td><td class="memItemRight" valign="bottom"><b>UF</b>(x)&#160;&#160;&#160;<a class="el" href="classConfig.html#af08cc4a60a38a00097b93a2c5ad4d37a">Config::inst</a>()-&gt;x.load(<a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">doc</a>);</td></tr>
+<tr class="separator:aede71a14481f4c790c7003e48df5fd72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aede71a14481f4c790c7003e48df5fd72" id="r_aede71a14481f4c790c7003e48df5fd72"><td class="memItemLeft" align="right" valign="top"><a id="aede71a14481f4c790c7003e48df5fd72" name="aede71a14481f4c790c7003e48df5fd72"></a>
 #<a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">define</a>&#160;</td><td class="memItemRight" valign="bottom"><b>UF</b>(x)&#160;&#160;&#160;x.registerLuaProperty(state);</td></tr>
 <tr class="separator:aede71a14481f4c790c7003e48df5fd72"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aede71a14481f4c790c7003e48df5fd72" id="r_aede71a14481f4c790c7003e48df5fd72"><td class="memItemLeft" align="right" valign="top"><a id="aede71a14481f4c790c7003e48df5fd72" name="aede71a14481f4c790c7003e48df5fd72"></a>
 #<a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">define</a>&#160;</td><td class="memItemRight" valign="bottom"><b>UF</b>(x)&#160;&#160;&#160;x.save(<a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">document</a>);</td></tr>
 <tr class="separator:aede71a14481f4c790c7003e48df5fd72"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:ad38327428a24cabc984b5c2163cede7f" id="r_ad38327428a24cabc984b5c2163cede7f"><td class="memTemplParams" colspan="2"><a id="ad38327428a24cabc984b5c2163cede7f" name="ad38327428a24cabc984b5c2163cede7f"></a>
+template&lt;<a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">typename</a> <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">T</a> &gt; </td></tr>
+<tr class="memitem:ad38327428a24cabc984b5c2163cede7f"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">bool</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><b>printFieldValue</b> (<a class="el" href="classISender.html">ISender</a> &amp;<a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">sender</a>, <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">const</a> <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">std::string</a> &amp;section, <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">const</a> <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">std::string</a> &amp;key, <a class="el" href="classField.html">Field</a>&lt; <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">T</a> &gt; &amp;<a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">field</a>)</td></tr>
+<tr class="separator:ad38327428a24cabc984b5c2163cede7f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04811a50c76c3cfcb3b946df5b1b50cb" id="r_a04811a50c76c3cfcb3b946df5b1b50cb"><td class="memItemLeft" align="right" valign="top"><a id="a04811a50c76c3cfcb3b946df5b1b50cb" name="a04811a50c76c3cfcb3b946df5b1b50cb"></a>
+<a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">void</a>&#160;</td><td class="memItemRight" valign="bottom"><b>handleConfigCommand</b> (<a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">const</a> <a class="el" href="classISender.html#ab1af5d6ba7a09a53656143e0910ef2eb">ISender::SenderType</a> <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">senderType</a>, <a class="el" href="classISender.html">ISender</a> &amp;<a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">sender</a>, <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">const</a> <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">std::vector</a>&lt; <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">std::string</a> &gt; &amp;<a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">args</a>)</td></tr>
+<tr class="separator:a04811a50c76c3cfcb3b946df5b1b50cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -162,13 +179,35 @@ Variables</h2></td></tr>
 <dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2023-12-16</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2023 </dd></dl>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="aede71a14481f4c790c7003e48df5fd72" name="aede71a14481f4c790c7003e48df5fd72"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aede71a14481f4c790c7003e48df5fd72">&#9670;&#160;</a></span>UF</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#<a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">define</a> UF</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname">x</span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    <span class="keywordflow">if</span> (!<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">wasFound</a>) \</div>
+<div class="line">        <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">wasFound</a> = printFieldValue(<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">sender</a>, section, key, <a class="code hl_function" href="classConfig.html#af08cc4a60a38a00097b93a2c5ad4d37a">Config::inst</a>()-&gt;x);</div>
+<div class="ttc" id="aclassConfig_html_af08cc4a60a38a00097b93a2c5ad4d37a"><div class="ttname"><a href="classConfig.html#af08cc4a60a38a00097b93a2c5ad4d37a">Config::inst</a></div><div class="ttdeci">static Config * inst()</div><div class="ttdoc">Fetch the instance of the config.</div><div class="ttdef"><b>Definition</b> config.h:274</div></div>
+<div class="ttc" id="aevent_8h_html_a76b4d07bdea899ac27cd17e96f56954b"><div class="ttname"><a href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">type_name</a></div><div class="ttdeci">constexpr std::string_view type_name()</div><div class="ttdoc">Gets the name of the type paramater.</div><div class="ttdef"><b>Definition</b> event.h:56</div></div>
+</div><!-- fragment -->
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_313caf1132e152dd9b58bea13a4052ca.html">utils</a></li><li class="navelem"><a class="el" href="config_8cpp.html">config.cpp</a></li>
-    <li class="footer">Generated on Fri Feb 9 2024 18:44:51 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+    <li class="footer">Generated on Sat Feb 10 2024 16:21:26 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
   </ul>
 </div>
 </body>

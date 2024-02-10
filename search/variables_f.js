@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['verifytoken_0',['verifyToken',['../classEncryptionRequest.html#a0c11b34d11f34528aaf78f2c2e1b4a85',1,'EncryptionRequest::verifyToken'],['../classEncryptionResponse.html#ac1d3ea49724313bc185779ce8a4a25b7',1,'EncryptionResponse::verifyToken']]],
-  ['verifytokenlength_1',['verifyTokenLength',['../classEncryptionRequest.html#abf77469a57aa5b82cd3b65b980102b8f',1,'EncryptionRequest::verifyTokenLength'],['../classEncryptionResponse.html#a6cc505652490f8202f2afe9f2cbaf736',1,'EncryptionResponse::verifyTokenLength']]]
+  ['underlined_0',['underlined',['../classChatMessage.html#afff011985c899bd1d2152818883fa2dc',1,'ChatMessage']]],
+  ['usage_1',['usage',['../structCommand.html#a3287c3688e2ca9919de8c55c649c9324',1,'Command']]],
+  ['username_2',['username',['../classLoginSuccess.html#a39edbcf336555d9d04ed6e8e0699d716',1,'LoginSuccess']]],
+  ['uuid_3',['uuid',['../classIEntity.html#ad0d87a98f9c086fa5b30a83d393f3ec8',1,'IEntity::uuid'],['../classLoginSuccess.html#ac5df232f2ac54da3755d89d7f14ed060',1,'LoginSuccess::uuid']]]
 ];

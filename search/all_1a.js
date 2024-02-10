@@ -1,10 +1,16 @@
 var searchData=
 [
-  ['vec_0',['Vec',['../classVec.html',1,'Vec&lt; T &gt;'],['../classVec.html#a205bf548b98a3f6a2032854091f60ef8',1,'Vec::Vec()'],['../classVec.html#a6241626ca77edf9dfb8bc883c1b126b9',1,'Vec::Vec(T x, T y)'],['../classVec.html#aa6a63ee3bac57a48af338fe067113e3e',1,'Vec::Vec(T x, T y, T z)'],['../classVec.html#a9decc98965b33be0a6f7c36abf93e306',1,'Vec::Vec(const Vec&lt; O &gt; &amp;other)']]],
-  ['vec_3c_20float_20_3e_1',['Vec&lt; float &gt;',['../classVec.html',1,'']]],
-  ['vecf_2',['Vecf',['../vector_8hpp.html#a19071219661d1a6c35e99d6bf6c6364e',1,'vector.hpp']]],
-  ['veci32_3',['Veci32',['../vector_8hpp.html#a5f4c5ecc4dec449532b103c6e4c285de',1,'vector.hpp']]],
-  ['vector_2ehpp_4',['vector.hpp',['../vector_8hpp.html',1,'']]],
-  ['verifytoken_5',['verifyToken',['../classEncryptionRequest.html#a0c11b34d11f34528aaf78f2c2e1b4a85',1,'EncryptionRequest::verifyToken'],['../classEncryptionResponse.html#ac1d3ea49724313bc185779ce8a4a25b7',1,'EncryptionResponse::verifyToken']]],
-  ['verifytokenlength_6',['verifyTokenLength',['../classEncryptionRequest.html#abf77469a57aa5b82cd3b65b980102b8f',1,'EncryptionRequest::verifyTokenLength'],['../classEncryptionResponse.html#a6cc505652490f8202f2afe9f2cbaf736',1,'EncryptionResponse::verifyTokenLength']]]
+  ['uncompress_0',['uncompress',['../classcrypto_1_1ZLibCompressor.html#a4e042327c18c77272c53c092ec20c968',1,'crypto::ZLibCompressor']]],
+  ['underlined_1',['underlined',['../classChatMessage.html#afff011985c899bd1d2152818883fa2dc',1,'ChatMessage']]],
+  ['unsubscribe_2',['unsubscribe',['../classEventHandler.html#a81d0ad307f791ef7f4fa8a4387812c0e',1,'EventHandler::unsubscribe()'],['../classEventsManager.html#a502a3de0687be48eb8d52c0bf2525ed2',1,'EventsManager::unsubscribe()']]],
+  ['update_3',['update',['../classcrypto_1_1MinecraftHash.html#a86172a5bbf208b64873a6a54bdebdc9f',1,'crypto::MinecraftHash::update()'],['../classcrypto_1_1AES128CFB8Cipher.html#a4a63c03f53297285956bc2c2652f3b1d',1,'crypto::AES128CFB8Cipher::update()']]],
+  ['usage_4',['usage',['../structCommand.html#a3287c3688e2ca9919de8c55c649c9324',1,'Command']]],
+  ['username_5',['username',['../classLoginSuccess.html#a39edbcf336555d9d04ed6e8e0699d716',1,'LoginSuccess']]],
+  ['using_20c_6',['Why bother using C++ ?',['../index.html#autotoc_md24',1,'']]],
+  ['using_20cmake_7',['Step 4 : Configuring using CMake',['../md_docs_2__1__INSTALLATION.html#autotoc_md5',1,'']]],
+  ['uuid_8',['UUID',['../classUUID.html',1,'']]],
+  ['uuid_9',['uuid',['../classIEntity.html#ad0d87a98f9c086fa5b30a83d393f3ec8',1,'IEntity::uuid'],['../classLoginSuccess.html#ac5df232f2ac54da3755d89d7f14ed060',1,'LoginSuccess::uuid']]],
+  ['uuid_10',['UUID',['../classUUID.html#a56b6dfa8d38418093502ad169a814dfb',1,'UUID']]],
+  ['uuid_2ecpp_11',['uuid.cpp',['../uuid_8cpp.html',1,'']]],
+  ['uuid_2eh_12',['uuid.h',['../uuid_8h.html',1,'']]]
 ];

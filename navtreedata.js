@@ -103,8 +103,8 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "angle_8hpp.html",
-"classNetSocketStream.html",
-"functions_z.html"
+"classMemoryStream.html#a392cb7470c7642c89daa5652e05c12c8",
+"functions_k.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

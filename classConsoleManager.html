@@ -132,6 +132,15 @@ $(function(){initNavTree('classConsoleManager.html',''); initResizable(); });
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="console_8h_source.html">console.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for ConsoleManager:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classConsoleManager.png" usemap="#ConsoleManager_map" alt=""/>
+  <map id="ConsoleManager_map" name="ConsoleManager_map">
+<area href="classISender.html" title="Sender Interface." alt="ISender" shape="rect" coords="0,0,109,24"/>
+  </map>
+</div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
@@ -151,6 +160,9 @@ Public Member Functions</h2></td></tr>
 <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">void</a>&#160;</td><td class="memItemRight" valign="bottom"><b>stop</b> ()</td></tr>
 <tr class="memdesc:a6ab2c0b597c9c02f8cace84f137ec711"><td class="mdescLeft">&#160;</td><td class="mdescRight">Stops listening for commands. <br /></td></tr>
 <tr class="separator:a6ab2c0b597c9c02f8cace84f137ec711"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa0667e0292d5099dda6d6d348ff0b9f0" id="r_aa0667e0292d5099dda6d6d348ff0b9f0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa0667e0292d5099dda6d6d348ff0b9f0">sendMessage</a> (<a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">const</a> <a class="el" href="classChatMessage.html">ChatMessage</a> &amp;<a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">message</a>) <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">override</a></td></tr>
+<tr class="memdesc:aa0667e0292d5099dda6d6d348ff0b9f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a message to the console.  <br /></td></tr>
+<tr class="separator:aa0667e0292d5099dda6d6d348ff0b9f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
@@ -160,6 +172,16 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:af424a86f594979aad0e975ae07774bd0" id="r_af424a86f594979aad0e975ae07774bd0"><td class="memItemLeft" align="right" valign="top"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">static</a> <a class="el" href="classConsoleManager.html">ConsoleManager</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af424a86f594979aad0e975ae07774bd0">inst</a> ()</td></tr>
 <tr class="memdesc:af424a86f594979aad0e975ae07774bd0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets Console Manager instance.  <br /></td></tr>
 <tr class="separator:af424a86f594979aad0e975ae07774bd0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="inherited" name="inherited"></a>
+Additional Inherited Members</h2></td></tr>
+<tr class="inherit_header pub_types_classISender"><td colspan="2" onclick="javascript:dynsection.toggleInherit('pub_types_classISender')"><img src="closed.png" alt="-"/>&#160;Public Types inherited from <a class="el" href="classISender.html">ISender</a></td></tr>
+<tr class="memitem:ab1af5d6ba7a09a53656143e0910ef2eb inherit pub_types_classISender" id="r_ab1af5d6ba7a09a53656143e0910ef2eb"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classISender.html#ab1af5d6ba7a09a53656143e0910ef2eb">SenderType</a> { <b>CONSOLE</b> = 0
+, <b>PLAYER</b>
+, <b>COMMAND_BLOCK</b>
+ }</td></tr>
+<tr class="memdesc:ab1af5d6ba7a09a53656143e0910ef2eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sender type.  <a href="classISender.html#ab1af5d6ba7a09a53656143e0910ef2eb">More...</a><br /></td></tr>
+<tr class="separator:ab1af5d6ba7a09a53656143e0910ef2eb inherit pub_types_classISender"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Console manager. </p>
@@ -225,6 +247,41 @@ Static Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="aa0667e0292d5099dda6d6d348ff0b9f0" name="aa0667e0292d5099dda6d6d348ff0b9f0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa0667e0292d5099dda6d6d348ff0b9f0">&#9670;&#160;</a></span>sendMessage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">void</a> ConsoleManager::sendMessage </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">const</a> <a class="el" href="classChatMessage.html">ChatMessage</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>message</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">override</span><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sends a message to the console. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">message</td><td>the message to send </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="classISender.html#a65fe59a504365a91f040dcd83fef188f">ISender</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/cmd/<a class="el" href="console_8h_source.html">console.h</a></li>
 <li>src/cmd/<b>console.cpp</b></li>
@@ -235,7 +292,7 @@ Static Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classConsoleManager.html">ConsoleManager</a></li>
-    <li class="footer">Generated on Fri Feb 9 2024 18:44:51 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+    <li class="footer">Generated on Sat Feb 10 2024 16:21:26 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
   </ul>
 </div>
 </body>

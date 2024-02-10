@@ -122,6 +122,7 @@ $(function(){initNavTree('classPluginsManager.html',''); initResizable(); });
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="classPluginsManager-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">PluginsManager Class Reference</div></div>
 </div><!--header-->
@@ -145,11 +146,76 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a0783693eecd6157c9c3fcbb1933bb73d" id="r_a0783693eecd6157c9c3fcbb1933bb73d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0783693eecd6157c9c3fcbb1933bb73d">load</a> ()</td></tr>
 <tr class="memdesc:a0783693eecd6157c9c3fcbb1933bb73d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Load all plugins in plugin folder.  <br /></td></tr>
 <tr class="separator:a0783693eecd6157c9c3fcbb1933bb73d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad1eb8b963103e9da96927f2badb1aabe" id="r_ad1eb8b963103e9da96927f2badb1aabe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">const</a> std::vector&lt; std::shared_ptr&lt; <a class="el" href="classPlugin.html">Plugin</a> &gt; &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad1eb8b963103e9da96927f2badb1aabe">getPlugins</a> () <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">const</a></td></tr>
+<tr class="memdesc:ad1eb8b963103e9da96927f2badb1aabe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the registered plugins.  <br /></td></tr>
+<tr class="separator:ad1eb8b963103e9da96927f2badb1aabe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a781183d5f40e0c1ce3f507c6d125682f" id="r_a781183d5f40e0c1ce3f507c6d125682f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">static</a> <a class="el" href="classPluginsManager.html">PluginsManager</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a781183d5f40e0c1ce3f507c6d125682f">inst</a> ()</td></tr>
+<tr class="memdesc:a781183d5f40e0c1ce3f507c6d125682f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Gets the instance of the plugin manager.  <br /></td></tr>
+<tr class="separator:a781183d5f40e0c1ce3f507c6d125682f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p><a class="el" href="classPlugin.html" title="Plugin class.">Plugin</a> Manager. </p>
 <p>Pretty transparent huh ? </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
+<a id="ad1eb8b963103e9da96927f2badb1aabe" name="ad1eb8b963103e9da96927f2badb1aabe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad1eb8b963103e9da96927f2badb1aabe">&#9670;&#160;</a></span>getPlugins()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">const</a> std::vector&lt; std::shared_ptr&lt; <a class="el" href="classPlugin.html">Plugin</a> &gt; &gt; &amp; PluginsManager::getPlugins </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Get the registered plugins. </p>
+<dl class="section return"><dt>Returns</dt><dd>const std::vector&lt;std::shared_ptr&lt;Plugin&gt;&gt;&amp; plugins list </dd></dl>
+
+</div>
+</div>
+<a id="a781183d5f40e0c1ce3f507c6d125682f" name="a781183d5f40e0c1ce3f507c6d125682f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a781183d5f40e0c1ce3f507c6d125682f">&#9670;&#160;</a></span>inst()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">static</a> <a class="el" href="classPluginsManager.html">PluginsManager</a> &amp; PluginsManager::inst </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Gets the instance of the plugin manager. </p>
+<dl class="section return"><dt>Returns</dt><dd><a class="el" href="classPluginsManager.html" title="Plugin Manager.">PluginsManager</a>&amp; the instance </dd></dl>
+
+</div>
+</div>
 <a id="a0783693eecd6157c9c3fcbb1933bb73d" name="a0783693eecd6157c9c3fcbb1933bb73d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0783693eecd6157c9c3fcbb1933bb73d">&#9670;&#160;</a></span>load()</h2>
 
@@ -180,7 +246,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classPluginsManager.html">PluginsManager</a></li>
-    <li class="footer">Generated on Fri Feb 9 2024 18:44:51 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+    <li class="footer">Generated on Sat Feb 10 2024 16:21:26 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
   </ul>
 </div>
 </body>

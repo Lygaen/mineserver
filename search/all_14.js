@@ -1,16 +1,12 @@
 var searchData=
 [
-  ['obfuscated_0',['obfuscated',['../classChatMessage.html#ad6a3d9687bcdee31ac06fa2581f439db',1,'ChatMessage']]],
-  ['of_20existential_20crisis_1',['End note with a touch of existential crisis',['../index.html#autotoc_md29',1,'']]],
-  ['off_2',['OFF',['../logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9aac132f2982b98bcaa3445e535a03ff75',1,'logger.h']]],
-  ['online_5fmode_3',['ONLINE_MODE',['../classConfig.html#a8fce02797d172e5ea22979f38c569b9c',1,'Config']]],
-  ['onlineplayers_4',['onlinePlayers',['../classServerListPacket.html#ac153d15d85f28f589e051224499a8c35',1,'ServerListPacket']]],
-  ['onpostprint_5',['onPostPrint',['../classConsoleManager.html#aed91a6800f8d3aa275d388bd474a5180',1,'ConsoleManager']]],
-  ['open_20source_6',['Why making it Open-Source ?',['../index.html#autotoc_md25',1,'']]],
-  ['operator_2a_7',['operator*',['../classVec.html#a55d4f973aaaaa33548f279658c8dd969',1,'Vec::operator*(const Vec&lt; O &gt; &amp;other)'],['../classVec.html#a4e67d83eb164650b148a7d13af29c8ed',1,'Vec::operator*(const O &amp;other)']]],
-  ['operator_2b_8',['operator+',['../classVec.html#a5ada6140b40c0a68f2a0c6df431e292f',1,'Vec']]],
-  ['operator_2d_9',['operator-',['../classVec.html#a475c1621bbb8b8db27e5a3fe8183c57d',1,'Vec']]],
-  ['operator_2f_10',['operator/',['../classVec.html#a8c2adef34d78839e9d7a15ef7889ec55',1,'Vec::operator/(const Vec&lt; O &gt; &amp;other)'],['../classVec.html#ae3107b7f9967861cc8730f7579af773b',1,'Vec::operator/(const O &amp;other)']]],
-  ['operator_3d_3d_11',['operator==',['../classChatMessage.html#a3b17b800fec4be26fa28af64cd32875b',1,'ChatMessage::operator=='],['../classUUID.html#a9c11b7e3834ee04801b47b78bcf48efc',1,'UUID::operator==()'],['../chatmessage_8cpp.html#a3b17b800fec4be26fa28af64cd32875b',1,'operator==():&#160;chatmessage.cpp']]],
-  ['other_12',['Other',['../md_docs_2__2__CONFIG.html#autotoc_md14',1,'Other'],['../index.html#autotoc_md27',1,'What features do you have compared to other ?']]]
+  ['name_0',['name',['../structCommand.html#a8d66550a9895cbd96373a9a221fa2b25',1,'Command::name'],['../classPlayer.html#af9c920fabaafdeb7961a645315b521ff',1,'Player::name'],['../classLoginStart.html#af11f8ea6e32e17d963a8373fbd8dad5b',1,'LoginStart::name'],['../classPlugin.html#a43cd1970ba35ae2f248a06f020e01878',1,'Plugin::name'],['../structmojangapi_1_1HasJoinedResponse.html#ae09f18adbd63035cf910d2a1c613e04a',1,'mojangapi::HasJoinedResponse::name']]],
+  ['netsocketstream_1',['NetSocketStream',['../classNetSocketStream.html',1,'NetSocketStream'],['../classNetSocketStream.html#a6ddbb89505842e91429aeb7ec38febbc',1,'NetSocketStream::NetSocketStream()']]],
+  ['network_2',['Network',['../md_docs_2__2__CONFIG.html#autotoc_md12',1,'']]],
+  ['network_2ecpp_3',['network.cpp',['../network_8cpp.html',1,'']]],
+  ['network_2eh_4',['network.h',['../network_8h.html',1,'']]],
+  ['newrandom_5',['newRandom',['../classUUID.html#ac7154e165d7eb0be2547adac45d52ece',1,'UUID']]],
+  ['nextstate_6',['nextState',['../classHandshakePacket.html#a96b7a2867a9f3717a70caecbd58d6804',1,'HandshakePacket']]],
+  ['none_7',['NONE',['../classCommandsManager.html#a77c2f1f5224ebdfcebabd35f82ae7227a12204aba21c4b2c7ff8e0749e9a3a25b',1,'CommandsManager']]],
+  ['note_20with_20a_20touch_20of_20existential_20crisis_8',['End note with a touch of existential crisis',['../index.html#autotoc_md29',1,'']]]
 ];

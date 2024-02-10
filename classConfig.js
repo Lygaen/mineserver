@@ -5,6 +5,7 @@ var classConfig =
     [ "inst", "classConfig.html#af08cc4a60a38a00097b93a2c5ad4d37a", null ],
     [ "load", "classConfig.html#add4ebd0c89505c9b5368f03264555606", null ],
     [ "loadLuaLib", "classConfig.html#a349ed190b18d59d959f240efc45a8898", null ],
+    [ "registerCommands", "classConfig.html#a1aa765c62f1a303c929f57df1c68b2e4", null ],
     [ "save", "classConfig.html#ae7e68962f22a2c965a61702de1c637db", null ],
     [ "ADDRESS", "classConfig.html#a2d9308efd8e264f8118b65658df0257b", null ],
     [ "BACKLOG", "classConfig.html#a78844faa97f4a8e017ba2b14a600a17e", null ],

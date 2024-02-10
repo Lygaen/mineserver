@@ -8,7 +8,6 @@ var hierarchy =
     [ "Command", "structCommand.html", null ],
     [ "CommandsManager", "classCommandsManager.html", null ],
     [ "Config", "classConfig.html", null ],
-    [ "ConsoleManager", "classConsoleManager.html", null ],
     [ "luabridge::Enum", null, [
       [ "luabridge::Stack< ClientState >", "structluabridge_1_1Stack_3_01ClientState_01_4.html", null ]
     ] ],
@@ -64,7 +63,9 @@ var hierarchy =
       [ "ServerListPacket", "classServerListPacket.html", null ],
       [ "SetCompression", "classSetCompression.html", null ]
     ] ],
-    [ "ISender", "classISender.html", null ],
+    [ "ISender", "classISender.html", [
+      [ "ConsoleManager", "classConsoleManager.html", null ]
+    ] ],
     [ "crypto::MinecraftHash", "classcrypto_1_1MinecraftHash.html", null ],
     [ "Plugin", "classPlugin.html", null ],
     [ "PluginsManager", "classPluginsManager.html", null ],

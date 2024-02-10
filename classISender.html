@@ -122,8 +122,9 @@ $(function(){initNavTree('classISender.html',''); initResizable(); });
 <div class="header">
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="classISender-members.html">List of all members</a>  </div>
-  <div class="headertitle"><div class="title">ISender Class Reference</div></div>
+  <div class="headertitle"><div class="title">ISender Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -131,6 +132,15 @@ $(function(){initNavTree('classISender.html',''); initResizable(); });
  <a href="#details">More...</a></p>
 
 <p><code>#include &lt;<a class="el" href="commands_8h_source.html">commands.h</a>&gt;</code></p>
+<div class="dynheader">
+Inheritance diagram for ISender:</div>
+<div class="dyncontent">
+ <div class="center">
+  <img src="classISender.png" usemap="#ISender_map" alt=""/>
+  <map id="ISender_map" name="ISender_map">
+<area href="classConsoleManager.html" title="Console manager." alt="ConsoleManager" shape="rect" coords="0,56,109,80"/>
+  </map>
+</div></div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
@@ -140,6 +150,12 @@ Public Types</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:ab1af5d6ba7a09a53656143e0910ef2eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sender type.  <a href="#ab1af5d6ba7a09a53656143e0910ef2eb">More...</a><br /></td></tr>
 <tr class="separator:ab1af5d6ba7a09a53656143e0910ef2eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:a65fe59a504365a91f040dcd83fef188f" id="r_a65fe59a504365a91f040dcd83fef188f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">virtual</a> <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a65fe59a504365a91f040dcd83fef188f">sendMessage</a> (<a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">const</a> <a class="el" href="classChatMessage.html">ChatMessage</a> &amp;<a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">message</a>)=0</td></tr>
+<tr class="memdesc:a65fe59a504365a91f040dcd83fef188f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a message to the sender.  <br /></td></tr>
+<tr class="separator:a65fe59a504365a91f040dcd83fef188f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Sender Interface. </p>
@@ -163,6 +179,36 @@ Public Types</h2></td></tr>
 
 </div>
 </div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a65fe59a504365a91f040dcd83fef188f" name="a65fe59a504365a91f040dcd83fef188f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a65fe59a504365a91f040dcd83fef188f">&#9670;&#160;</a></span>sendMessage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">virtual</a> <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">void</a> ISender::sendMessage </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">const</a> <a class="el" href="classChatMessage.html">ChatMessage</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>message</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Sends a message to the sender. </p>
+
+<p>Implemented in <a class="el" href="classConsoleManager.html#aa0667e0292d5099dda6d6d348ff0b9f0">ConsoleManager</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following file:<ul>
 <li>src/cmd/<a class="el" href="commands_8h_source.html">commands.h</a></li>
 </ul>
@@ -172,7 +218,7 @@ Public Types</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classISender.html">ISender</a></li>
-    <li class="footer">Generated on Fri Feb 9 2024 18:44:51 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+    <li class="footer">Generated on Sat Feb 10 2024 16:21:26 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
   </ul>
 </div>
 </body>

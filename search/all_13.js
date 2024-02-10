@@ -1,12 +1,17 @@
 var searchData=
 [
-  ['name_0',['name',['../structCommand.html#a8d66550a9895cbd96373a9a221fa2b25',1,'Command::name'],['../classPlayer.html#af9c920fabaafdeb7961a645315b521ff',1,'Player::name'],['../classLoginStart.html#af11f8ea6e32e17d963a8373fbd8dad5b',1,'LoginStart::name'],['../structmojangapi_1_1HasJoinedResponse.html#ae09f18adbd63035cf910d2a1c613e04a',1,'mojangapi::HasJoinedResponse::name']]],
-  ['netsocketstream_1',['NetSocketStream',['../classNetSocketStream.html',1,'NetSocketStream'],['../classNetSocketStream.html#a6ddbb89505842e91429aeb7ec38febbc',1,'NetSocketStream::NetSocketStream()']]],
-  ['network_2',['Network',['../md_docs_2__2__CONFIG.html#autotoc_md12',1,'']]],
-  ['network_2ecpp_3',['network.cpp',['../network_8cpp.html',1,'']]],
-  ['network_2eh_4',['network.h',['../network_8h.html',1,'']]],
-  ['newrandom_5',['newRandom',['../classUUID.html#ac7154e165d7eb0be2547adac45d52ece',1,'UUID']]],
-  ['nextstate_6',['nextState',['../classHandshakePacket.html#a96b7a2867a9f3717a70caecbd58d6804',1,'HandshakePacket']]],
-  ['none_7',['NONE',['../classCommandsManager.html#a77c2f1f5224ebdfcebabd35f82ae7227a12204aba21c4b2c7ff8e0749e9a3a25b',1,'CommandsManager']]],
-  ['note_20with_20a_20touch_20of_20existential_20crisis_8',['End note with a touch of existential crisis',['../index.html#autotoc_md29',1,'']]]
+  ['main_2ecpp_0',['main.cpp',['../main_8cpp.html',1,'']]],
+  ['make_20gcc_20installation_1',['Step 2 : Make/GCC Installation',['../md_docs_2__1__INSTALLATION.html#autotoc_md1',1,'']]],
+  ['making_20it_20open_20source_2',['Why making it Open-Source ?',['../index.html#autotoc_md25',1,'']]],
+  ['max_5fplayers_3',['MAX_PLAYERS',['../classConfig.html#a6d3f8fa249a5909b1fdf1c209c449312',1,'Config']]],
+  ['maxplayers_4',['maxPlayers',['../classServerListPacket.html#a4a14cb56b577f79884ab46c4e926452b',1,'ServerListPacket']]],
+  ['mc_5fversion_5fname_5',['MC_VERSION_NAME',['../config_8h.html#a04b3235bab4b9b5f3e267bfe3e51cff8',1,'config.h']]],
+  ['mc_5fversion_5fnumber_6',['MC_VERSION_NUMBER',['../config_8h.html#a0ba599fd6a7f981428f324ce7cc1240c',1,'config.h']]],
+  ['md5digest_7',['md5Digest',['../namespacecrypto.html#ac4d3003a5d98419605eddb445ed4d7c3',1,'crypto']]],
+  ['memorystream_8',['MemoryStream',['../classMemoryStream.html',1,'MemoryStream'],['../classMemoryStream.html#a50244829d3814d4bd03133c71ec1c92a',1,'MemoryStream::MemoryStream()']]],
+  ['minecrafthash_9',['MinecraftHash',['../classcrypto_1_1MinecraftHash.html',1,'crypto::MinecraftHash'],['../classcrypto_1_1MinecraftHash.html#a367213192993b0a61e92483b6894849f',1,'crypto::MinecraftHash::MinecraftHash()']]],
+  ['mojangapi_10',['mojangapi',['../namespacemojangapi.html',1,'']]],
+  ['motd_11',['motd',['../classServerListPacket.html#ab4826954e5ab053550e59787e4eafaea',1,'ServerListPacket']]],
+  ['motd_12',['MOTD',['../classConfig.html#abcc2d45023a25f1c3cf5bf8074ffc993',1,'Config']]],
+  ['much_20time_13',['Why does the project takes so much time ?',['../index.html#autotoc_md28',1,'']]]
 ];

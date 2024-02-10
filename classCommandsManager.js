@@ -10,5 +10,6 @@ var classCommandsManager =
     [ "~CommandsManager", "classCommandsManager.html#a75c6a893e784c4337fe02a729a22f604", null ],
     [ "addCommand", "classCommandsManager.html#a0f554740036b600ef51b9005c2fbce01", null ],
     [ "addCommand", "classCommandsManager.html#a4fff552741d8c7fa2389a3c58035cf97", null ],
+    [ "getCommands", "classCommandsManager.html#af06d2356f77107e7b2f6c3d56fc607ad", null ],
     [ "inst", "classCommandsManager.html#a7c6afd4c944afe237a91acecd5413c38", null ]
 ];

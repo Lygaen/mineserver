@@ -16,8 +16,9 @@ var searchData=
   ['readuuid_13',['readUUID',['../classIMCStream.html#a92a41a039e7e3dad3557a0eaf04e2b28',1,'IMCStream']]],
   ['readvarint_14',['readVarInt',['../classIMCStream.html#a09925d431ef180eb1b816d72aaf90b78',1,'IMCStream']]],
   ['readvarlong_15',['readVarLong',['../classIMCStream.html#a22a8511cd6d1ee73d512dbe6bba419e0',1,'IMCStream']]],
-  ['registerdefaultlibs_16',['registerDefaultLibs',['../namespacelua.html#aabcf2f0300271dfc460da8ac800254ae',1,'lua']]],
-  ['registerluaproperty_17',['registerLuaProperty',['../classField.html#a8784d5cb3626d7e6e971069153dcf5aa',1,'Field']]],
-  ['rsadecrypt_18',['rsaDecrypt',['../namespacecrypto.html#a1f0ff42fb28d677d0ebf3775082e2327',1,'crypto']]],
-  ['rsaencrypt_19',['rsaEncrypt',['../namespacecrypto.html#a29e78257094408827833ea3e5e7d613e',1,'crypto']]]
+  ['registercommands_16',['registerCommands',['../classConfig.html#a1aa765c62f1a303c929f57df1c68b2e4',1,'Config::registerCommands()'],['../commandsreg_8hpp.html#a4bbf70ad42a1517cdbdb168233c73586',1,'registerCommands():&#160;commandsreg.hpp']]],
+  ['registerdefaultlibs_17',['registerDefaultLibs',['../namespacelua.html#aabcf2f0300271dfc460da8ac800254ae',1,'lua']]],
+  ['registerluaproperty_18',['registerLuaProperty',['../classField.html#a8784d5cb3626d7e6e971069153dcf5aa',1,'Field']]],
+  ['rsadecrypt_19',['rsaDecrypt',['../namespacecrypto.html#a1f0ff42fb28d677d0ebf3775082e2327',1,'crypto']]],
+  ['rsaencrypt_20',['rsaEncrypt',['../namespacecrypto.html#a29e78257094408827833ea3e5e7d613e',1,'crypto']]]
 ];
