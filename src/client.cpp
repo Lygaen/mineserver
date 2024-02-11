@@ -181,7 +181,7 @@ void Client::loop()
 
 void Client::initiatePlayerJoin()
 {
-    if (Config::inst()->COMPRESSION_LVL.getValue() != 0)
+    if (Config::inst()->COMPRESSION_LVL.getValue() != 0 && !sock.isLocal())
     {
         SetCompression comp(Config::inst()->COMPRESSION_THRESHOLD.getValue());
         comp.send(stream);
