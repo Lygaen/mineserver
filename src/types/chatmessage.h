@@ -13,6 +13,7 @@
 #define MINESERVER_CHATMESSAGE_H
 
 #include <string>
+#include <unordered_map>
 #include <rapidjson/rapidjson.h>
 #include <rapidjson/document.h>
 #include <plugins/luaheaders.h>
@@ -72,12 +73,123 @@ public:
     std::string insertion{};
 
     /**
-     * @brief The (limited) text
+     * @brief The text excluding extras
      *
      * Does not parse for additional string components,
      * only text.
      */
     std::string text{};
+
+    /**
+     * @brief Click Event
+     *
+     * On message click event
+     */
+    class ClickEvent
+    {
+    public:
+        /**
+         * @brief Type of action to perform
+         *
+         */
+        enum ActionType
+        {
+            /**
+             * @brief No action
+             *
+             * Click event will not be saved to JSON.
+             */
+            NONE,
+            /**
+             * @brief Open URL
+             *
+             */
+            OPEN_URL,
+            /**
+             * @brief Run command
+             *
+             */
+            RUN_COMMAND,
+            /**
+             * @brief Suggest command to user
+             *
+             */
+            SUGGEST_COMMAND,
+            /**
+             * @brief Change page (book only)
+             *
+             */
+            CHANGE_PAGE,
+            /**
+             * @brief Copy text to clipboard
+             *
+             */
+            COPY_TO_CLIPBOARD
+        };
+
+        /**
+         * @brief Action to perform
+         *
+         */
+        ActionType action;
+        /**
+         * @brief Value of action
+         *
+         */
+        std::string value;
+
+        /**
+         * @brief Construct a new Click Event object
+         *
+         * @param action the action type
+         * @param value the value of action
+         */
+        ClickEvent(ActionType action, const std::string &value);
+        /**
+         * @brief Construct a new Click Event object
+         *
+         * @param changePage see ActionType::CHANGE_PAGE
+         */
+        ClickEvent(uint changePage);
+        /**
+         * @brief Construct a new Click Event object
+         *
+         */
+        ClickEvent();
+        /**
+         * @brief Destroy the Click Event object
+         *
+         */
+        ~ClickEvent() = default;
+
+        /**
+         * @brief Load click event from JSON
+         *
+         * @param document the document to load from
+         */
+        void load(const rapidjson::Value &document);
+        /**
+         * @brief Save click event to JSON
+         *
+         * @param document the document to save to
+         * @param alloc the document allocator
+         */
+        void save(rapidjson::Value &document, rapidjson::Document::AllocatorType &alloc) const;
+
+        /**
+         * @brief Loads Click Event to lua
+         *
+         * @param state the state of lua
+         * @param namespaceName the namespace name
+         */
+        static void loadLua(lua_State *state, const char *namespaceName);
+    };
+
+    /**
+     * @brief Click event for message
+     *
+     */
+    ClickEvent clickEvent;
 
 private:
     ChatMessage *next = nullptr;
@@ -146,6 +258,18 @@ public:
      * @param namespaceName the namespace to load to
      */
     static void loadLua(lua_State *state, const char *namespaceName);
+};
+
+template <>
+struct luabridge::Stack<ChatMessage::ClickEvent::ActionType>
+    : luabridge::Enum<ChatMessage::ClickEvent::ActionType,
+                      ChatMessage::ClickEvent::ActionType::NONE,
+                      ChatMessage::ClickEvent::ActionType::OPEN_URL,
+                      ChatMessage::ClickEvent::ActionType::RUN_COMMAND,
+                      ChatMessage::ClickEvent::ActionType::SUGGEST_COMMAND,
+                      ChatMessage::ClickEvent::ActionType::CHANGE_PAGE,
+                      ChatMessage::ClickEvent::ActionType::COPY_TO_CLIPBOARD>
+{
 };
 
 #endif // MINESERVER_CHATMESSAGE_H

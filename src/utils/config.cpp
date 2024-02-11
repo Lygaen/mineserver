@@ -90,7 +90,7 @@ void Field<ChatMessage>::load(const rapidjson::Document &document)
     if (loc == document.MemberEnd())
         return;
 
-    if (!loc->value.IsInt())
+    if (!loc->value.IsObject())
         return;
 
     value = ChatMessage();

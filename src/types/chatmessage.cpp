@@ -79,6 +79,8 @@ void ChatMessage::load(const rapidjson::Value &document)
     LS(insertion);
     LS(text);
 
+    clickEvent.load(document);
+
     if ((it = document.FindMember("extra")) != document.MemberEnd() &&
         it->value.IsArray())
     {
@@ -104,6 +106,7 @@ void ChatMessage::save(rapidjson::Value &document, rapidjson::Document::Allocato
     WV(underlined);
     WV(strikethrough);
     WV(obfuscated);
+#undef WV
 
 #define WS(x)          \
     if (x.size() != 0) \
@@ -112,6 +115,10 @@ void ChatMessage::save(rapidjson::Value &document, rapidjson::Document::Allocato
     WS(color);
     WS(insertion);
     WS(text);
+
+#undef WS
+
+    clickEvent.save(document, alloc);
 
     if (next == nullptr)
         return;
@@ -137,19 +144,107 @@ bool operator==(const ChatMessage &lhs, const ChatMessage &rhs)
 
 void ChatMessage::loadLua(lua_State *state, const char *namespaceName) {
     luabridge::getGlobalNamespace(state)
-    .beginNamespace(namespaceName)
-    .beginClass<ChatMessage>("ChatMessage")
-            .addConstructor([](void* ptr) {return new (ptr) ChatMessage();},
-                            [](void* ptr, const std::string &msg) {return new (ptr) ChatMessage(msg);})
-            .addProperty("bold", &ChatMessage::bold)
-            .addProperty("italic", &ChatMessage::italic)
-            .addProperty("underlined", &ChatMessage::underlined)
-            .addProperty("strikethrough", &ChatMessage::strikethrough)
-            .addProperty("obfuscated", &ChatMessage::obfuscated)
-            .addProperty("color", &ChatMessage::color)
-            .addProperty("insertion", &ChatMessage::insertion)
-            .addProperty("text", &ChatMessage::text)
-            .addFunction("addExtra", &ChatMessage::addExtra)
-    .endClass()
-    .endNamespace();
+        .beginNamespace(namespaceName)
+        .beginClass<ChatMessage>("ChatMessage")
+        .addConstructor([](void *ptr)
+                        { return new (ptr) ChatMessage(); },
+                        [](void *ptr, const std::string &msg)
+                        { return new (ptr) ChatMessage(msg); })
+        .addProperty("bold", &ChatMessage::bold)
+        .addProperty("italic", &ChatMessage::italic)
+        .addProperty("underlined", &ChatMessage::underlined)
+        .addProperty("strikethrough", &ChatMessage::strikethrough)
+        .addProperty("obfuscated", &ChatMessage::obfuscated)
+        .addProperty("color", &ChatMessage::color)
+        .addProperty("insertion", &ChatMessage::insertion)
+        .addProperty("text", &ChatMessage::text)
+        .addFunction("addExtra", &ChatMessage::addExtra)
+        .addProperty("clickEvent", &ChatMessage::clickEvent)
+        .endClass()
+        .endNamespace();
+
+    ClickEvent::loadLua(state, namespaceName);
+}
+
+ChatMessage::ClickEvent::ClickEvent(ActionType action, const std::string &value)
+    : action(action), value(value)
+{
+}
+
+ChatMessage::ClickEvent::ClickEvent(uint changePage)
+    : action(ActionType::CHANGE_PAGE), value(std::to_string(changePage))
+{
+}
+
+ChatMessage::ClickEvent::ClickEvent() : action(ActionType::NONE)
+{
+}
+
+const std::unordered_map<std::string, ChatMessage::ClickEvent::ActionType> ACTION_TABLE{
+    {"open_url", ChatMessage::ClickEvent::OPEN_URL},
+    {"run_command", ChatMessage::ClickEvent::RUN_COMMAND},
+    {"suggest_command", ChatMessage::ClickEvent::SUGGEST_COMMAND},
+    {"change_page", ChatMessage::ClickEvent::CHANGE_PAGE},
+    {"copy_to_clipboard", ChatMessage::ClickEvent::COPY_TO_CLIPBOARD},
+};
+
+void ChatMessage::ClickEvent::load(const rapidjson::Value &document)
+{
+    rapidjson::Document::ConstMemberIterator it;
+    if ((it = document.FindMember("clickEvent")) == document.MemberEnd() ||
+        !it->value.IsObject())
+        return;
+    const rapidjson::Value &clickEvent = it->value;
+
+    if ((it = clickEvent.FindMember("action")) == document.MemberEnd() ||
+        !it->value.IsString())
+        return;
+    std::string stringAction(it->value.GetString(), it->value.GetStringLength());
+
+    if ((it = clickEvent.FindMember("value")) == document.MemberEnd() ||
+        !it->value.IsString())
+        return;
+    value = std::string(it->value.GetString(), it->value.GetStringLength());
+
+    if (!ACTION_TABLE.contains(stringAction))
+    {
+        action = ActionType::NONE;
+        value = "";
+        return;
+    }
+
+    action = ACTION_TABLE.at(stringAction);
+}
+
+void ChatMessage::ClickEvent::save(rapidjson::Value &document, rapidjson::Document::AllocatorType &alloc) const
+{
+    if (action == ActionType::NONE)
+        return;
+
+    rapidjson::Value clickEvent(rapidjson::kObjectType);
+    auto it = std::find_if(std::begin(ACTION_TABLE), std::end(ACTION_TABLE),
+                           [this](auto &&p)
+                           { return std::get<1>(p) == action; });
+    if (it == std::end(ACTION_TABLE))
+        throw std::runtime_error("Could not parse action !");
+
+    std::string stringAction = it->first;
+
+    clickEvent.AddMember("action", rapidjson::Value(stringAction.c_str(), stringAction.length(), alloc), alloc);
+    clickEvent.AddMember("value", rapidjson::Value(value.c_str(), value.length(), alloc), alloc);
+
+    document.AddMember("clickEvent", clickEvent, alloc);
+}
+
+void ChatMessage::ClickEvent::loadLua(lua_State *state, const char *namespaceName)
+{
+    luabridge::getGlobalNamespace(state)
+        .beginNamespace(namespaceName)
+        .beginNamespace("ChatMessage")
+        .beginClass<ChatMessage::ClickEvent>("ClickEvent")
+        .addProperty("action", &ClickEvent::action)
+        .addProperty("value", &ClickEvent::value)
+        .endClass()
+        .endNamespace()
+        .endNamespace();
 }
