@@ -167,6 +167,8 @@ public:
      *
      * The compression level to use with ZLib when
      * compressing packets.
+     * Use -1 for default level. 0 means no compression,
+     * 9 means full compression.
      */
     Field<int> COMPRESSION_LVL = Field("network", "compression_level", -1);
     /**
@@ -175,7 +177,7 @@ public:
      * If a packet exceed the compression threshold, it will get
      * compressed.
      */
-    Field<int> COMPRESSION_THRESHOLD = Field("network", "compression_threshold", 128);
+    Field<int> COMPRESSION_THRESHOLD = Field("network", "compression_threshold", 256);
     /**
      * @brief The online mode flag
      *
@@ -208,14 +210,14 @@ public:
      * will hold before accepting them. There should
      * not be really any need to crank up that number.
      */
-    Field<int> BACKLOG = Field("network", "backlog", 100);
+    Field<int> BACKLOG = Field("network", "backlog", 10);
     /**
      * @brief The Message of the Day
      *
      * The message of the day to be displayed
      * on a status update.
      */
-    Field<ChatMessage> MOTD = Field("display", "motd", ChatMessage("This is the message of the day !"));
+    Field<ChatMessage> MOTD = Field("display", "motd", ChatMessage("This is a minecraft server"));
     /**
      * @brief Max Players
      *
@@ -236,7 +238,7 @@ public:
      * The icon file that is sent to the server
      * while pinging.
      */
-    Field<PNGFile> ICON_FILE = Field("display", "icon_file", PNGFile());
+    Field<PNGFile> ICON_FILE = Field("display", "icon_file", PNGFile("./icon.png"));
 
 /**
  * @brief List of all the config fields
