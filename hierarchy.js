@@ -3,12 +3,14 @@ var hierarchy =
     [ "crypto::AES128CFB8Cipher", "classcrypto_1_1AES128CFB8Cipher.html", null ],
     [ "Angle", "classAngle.html", null ],
     [ "ChatMessage", "classChatMessage.html", null ],
+    [ "ChatMessage::ClickEvent", "classChatMessage_1_1ClickEvent.html", null ],
     [ "Client", "classClient.html", null ],
     [ "ClientSocket", "classClientSocket.html", null ],
     [ "Command", "structCommand.html", null ],
     [ "CommandsManager", "classCommandsManager.html", null ],
     [ "Config", "classConfig.html", null ],
     [ "luabridge::Enum", null, [
+      [ "luabridge::Stack< ChatMessage::ClickEvent::ActionType >", "structluabridge_1_1Stack_3_01ChatMessage_1_1ClickEvent_1_1ActionType_01_4.html", null ],
       [ "luabridge::Stack< ClientState >", "structluabridge_1_1Stack_3_01ClientState_01_4.html", null ]
     ] ],
     [ "EventHandler< T >", "classEventHandler.html", null ],

@@ -122,7 +122,8 @@ $(function(){initNavTree('chatmessage_8cpp.html',''); initResizable(); });
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">chatmessage.cpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -153,6 +154,11 @@ Functions</h2></td></tr>
 <tr class="separator:a4afd59f57acca2cee54824987a5eb3e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3b17b800fec4be26fa28af64cd32875b" id="r_a3b17b800fec4be26fa28af64cd32875b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">bool</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3b17b800fec4be26fa28af64cd32875b">operator==</a> (<a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">const</a> <a class="el" href="classChatMessage.html">ChatMessage</a> &amp;<a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">lhs</a>, <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">const</a> <a class="el" href="classChatMessage.html">ChatMessage</a> &amp;<a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">rhs</a>)</td></tr>
 <tr class="separator:a3b17b800fec4be26fa28af64cd32875b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a9cacafee1634a215c7048e38d9a613bc" id="r_a9cacafee1634a215c7048e38d9a613bc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">const</a> <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">std::unordered_map</a>&lt; <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">std::string</a>, <a class="el" href="classChatMessage_1_1ClickEvent.html#a33cd9d2450d63fdd5ac194722c3b063d">ChatMessage::ClickEvent::ActionType</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9cacafee1634a215c7048e38d9a613bc">ACTION_TABLE</a></td></tr>
+<tr class="separator:a9cacafee1634a215c7048e38d9a613bc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The file containing Chat Message logic. </p>
@@ -272,13 +278,40 @@ false the two variables are not equal </dd></dl>
 
 </div>
 </div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a9cacafee1634a215c7048e38d9a613bc" name="a9cacafee1634a215c7048e38d9a613bc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9cacafee1634a215c7048e38d9a613bc">&#9670;&#160;</a></span>ACTION_TABLE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">const</a> <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">std::unordered_map</a>&lt;<a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">std::string</a>, <a class="el" href="classChatMessage_1_1ClickEvent.html#a33cd9d2450d63fdd5ac194722c3b063d">ChatMessage::ClickEvent::ActionType</a>&gt; ACTION_TABLE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">{</div>
+<div class="line">    {<span class="stringliteral">&quot;open_url&quot;</span>, <a class="code hl_enumvalue" href="classChatMessage_1_1ClickEvent.html#a33cd9d2450d63fdd5ac194722c3b063dac081e0e5df82a5a293637c3b2fa6ea40">ChatMessage::ClickEvent::OPEN_URL</a>},</div>
+<div class="line">    {<span class="stringliteral">&quot;run_command&quot;</span>, <a class="code hl_enumvalue" href="classChatMessage_1_1ClickEvent.html#a33cd9d2450d63fdd5ac194722c3b063da8192f7f84ef5c187bfc98c08737faf38">ChatMessage::ClickEvent::RUN_COMMAND</a>},</div>
+<div class="line">    {<span class="stringliteral">&quot;suggest_command&quot;</span>, <a class="code hl_enumvalue" href="classChatMessage_1_1ClickEvent.html#a33cd9d2450d63fdd5ac194722c3b063da1bbbb4d7d0e5bda01f57cd1b165c3c0b">ChatMessage::ClickEvent::SUGGEST_COMMAND</a>},</div>
+<div class="line">    {<span class="stringliteral">&quot;change_page&quot;</span>, <a class="code hl_enumvalue" href="classChatMessage_1_1ClickEvent.html#a33cd9d2450d63fdd5ac194722c3b063da40db881363fd3b494dad2fe8c44856c3">ChatMessage::ClickEvent::CHANGE_PAGE</a>},</div>
+<div class="line">    {<span class="stringliteral">&quot;copy_to_clipboard&quot;</span>, <a class="code hl_enumvalue" href="classChatMessage_1_1ClickEvent.html#a33cd9d2450d63fdd5ac194722c3b063dac410718394d27577425619cdfc13c717">ChatMessage::ClickEvent::COPY_TO_CLIPBOARD</a>},</div>
+<div class="line">}</div>
+<div class="ttc" id="aclassChatMessage_1_1ClickEvent_html_a33cd9d2450d63fdd5ac194722c3b063da1bbbb4d7d0e5bda01f57cd1b165c3c0b"><div class="ttname"><a href="classChatMessage_1_1ClickEvent.html#a33cd9d2450d63fdd5ac194722c3b063da1bbbb4d7d0e5bda01f57cd1b165c3c0b">ChatMessage::ClickEvent::SUGGEST_COMMAND</a></div><div class="ttdeci">@ SUGGEST_COMMAND</div><div class="ttdoc">Suggest command to user.</div><div class="ttdef"><b>Definition</b> chatmessage.h:117</div></div>
+<div class="ttc" id="aclassChatMessage_1_1ClickEvent_html_a33cd9d2450d63fdd5ac194722c3b063da40db881363fd3b494dad2fe8c44856c3"><div class="ttname"><a href="classChatMessage_1_1ClickEvent.html#a33cd9d2450d63fdd5ac194722c3b063da40db881363fd3b494dad2fe8c44856c3">ChatMessage::ClickEvent::CHANGE_PAGE</a></div><div class="ttdeci">@ CHANGE_PAGE</div><div class="ttdoc">Change page (book only)</div><div class="ttdef"><b>Definition</b> chatmessage.h:122</div></div>
+<div class="ttc" id="aclassChatMessage_1_1ClickEvent_html_a33cd9d2450d63fdd5ac194722c3b063da8192f7f84ef5c187bfc98c08737faf38"><div class="ttname"><a href="classChatMessage_1_1ClickEvent.html#a33cd9d2450d63fdd5ac194722c3b063da8192f7f84ef5c187bfc98c08737faf38">ChatMessage::ClickEvent::RUN_COMMAND</a></div><div class="ttdeci">@ RUN_COMMAND</div><div class="ttdoc">Run command.</div><div class="ttdef"><b>Definition</b> chatmessage.h:112</div></div>
+<div class="ttc" id="aclassChatMessage_1_1ClickEvent_html_a33cd9d2450d63fdd5ac194722c3b063dac081e0e5df82a5a293637c3b2fa6ea40"><div class="ttname"><a href="classChatMessage_1_1ClickEvent.html#a33cd9d2450d63fdd5ac194722c3b063dac081e0e5df82a5a293637c3b2fa6ea40">ChatMessage::ClickEvent::OPEN_URL</a></div><div class="ttdeci">@ OPEN_URL</div><div class="ttdoc">Open URL.</div><div class="ttdef"><b>Definition</b> chatmessage.h:107</div></div>
+<div class="ttc" id="aclassChatMessage_1_1ClickEvent_html_a33cd9d2450d63fdd5ac194722c3b063dac410718394d27577425619cdfc13c717"><div class="ttname"><a href="classChatMessage_1_1ClickEvent.html#a33cd9d2450d63fdd5ac194722c3b063dac410718394d27577425619cdfc13c717">ChatMessage::ClickEvent::COPY_TO_CLIPBOARD</a></div><div class="ttdeci">@ COPY_TO_CLIPBOARD</div><div class="ttdoc">Copy text to clipboard.</div><div class="ttdef"><b>Definition</b> chatmessage.h:127</div></div>
+</div><!-- fragment -->
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_0c0c9fa8a58db41e576adc3ce68c5ee9.html">types</a></li><li class="navelem"><a class="el" href="chatmessage_8cpp.html">chatmessage.cpp</a></li>
-    <li class="footer">Generated on Sun Feb 11 2024 13:47:44 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+    <li class="footer">Generated on Sun Feb 11 2024 20:09:30 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
   </ul>
 </div>
 </body>

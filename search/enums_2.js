@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['sendertype_0',['SenderType',['../classISender.html#ab1af5d6ba7a09a53656143e0910ef2eb',1,'ISender']]]
+  ['loglevel_0',['LogLevel',['../logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9',1,'logger.h']]]
 ];

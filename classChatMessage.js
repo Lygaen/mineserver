@@ -1,5 +1,6 @@
 var classChatMessage =
 [
+    [ "ClickEvent", "classChatMessage_1_1ClickEvent.html", "classChatMessage_1_1ClickEvent" ],
     [ "ChatMessage", "classChatMessage.html#a2ed5fc0f5be09e27ca956aca65d405c8", null ],
     [ "ChatMessage", "classChatMessage.html#a9b1e25cb7df20192325297c9fd725e7d", null ],
     [ "ChatMessage", "classChatMessage.html#a55ddbc4944a91f51701312b5e7fd982a", null ],
@@ -10,6 +11,7 @@ var classChatMessage =
     [ "save", "classChatMessage.html#ab84c6a8e3da68e79005bd019d50f9055", null ],
     [ "operator==", "classChatMessage.html#a3b17b800fec4be26fa28af64cd32875b", null ],
     [ "bold", "classChatMessage.html#aefd4866ba51147667a90dfa78da7df7e", null ],
+    [ "clickEvent", "classChatMessage.html#a0469d328a07adda8b4ff02cefc924822", null ],
     [ "color", "classChatMessage.html#abf704dae7d0485af0a9bacfdc277357f", null ],
     [ "insertion", "classChatMessage.html#ad89ce158d6e312c6cd28ff508286aff3", null ],
     [ "italic", "classChatMessage.html#a45e14f8d0cceda2f3af297bb394dffce", null ],

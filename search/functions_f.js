@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['save_0',['save',['../classChatMessage.html#ab84c6a8e3da68e79005bd019d50f9055',1,'ChatMessage::save()'],['../classField.html#a4f69f9beef47fcb6a0ac75fdc2315a96',1,'Field::save()'],['../classConfig.html#ae7e68962f22a2c965a61702de1c637db',1,'Config::save()']]],
+  ['save_0',['save',['../classChatMessage_1_1ClickEvent.html#a34ec2a897e9ba9062b2ac3117c4e2d71',1,'ChatMessage::ClickEvent::save()'],['../classChatMessage.html#ab84c6a8e3da68e79005bd019d50f9055',1,'ChatMessage::save()'],['../classField.html#a4f69f9beef47fcb6a0ac75fdc2315a96',1,'Field::save()'],['../classConfig.html#ae7e68962f22a2c965a61702de1c637db',1,'Config::save()']]],
   ['send_1',['send',['../classIPacket.html#a2690dfa6267a96e7066002e06884af35',1,'IPacket']]],
   ['sendmessage_2',['sendMessage',['../classISender.html#a65fe59a504365a91f040dcd83fef188f',1,'ISender::sendMessage()'],['../classConsoleManager.html#aa0667e0292d5099dda6d6d348ff0b9f0',1,'ConsoleManager::sendMessage()']]],
   ['server_3',['Server',['../classServer.html#ad5ec9462b520e59f7ea831e157ee5e59',1,'Server']]],
