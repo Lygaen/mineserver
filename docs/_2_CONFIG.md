@@ -41,7 +41,7 @@ Here are the current fields listed, separated in different categories such that 
 | Key               |             Type             | Default Value | Description                                                                  |
 | ----------------- | :--------------------------: | :-----------: | ---------------------------------------------------------------------------- |
 | port              |             int              |     25565     | The port for the server to listen on                                         |
-| backlog           |              ^               |      100      | The number of pending connections for the server to hold before accepting    |
+| backlog           |              ^               |      10       | The number of pending connections for the server to hold before accepting    |
 | compression_level |              ^               |      -1       | The compression level for ZLib, 0 means none, 9 means best, -1 means default |
 | online_mode       |             bool             |     true      | Whether to check if the client is crack or not                               |
 | address           |            string            |   127.0.0.1   | The IP address for the server to listen on                                   |
@@ -50,7 +50,7 @@ Here are the current fields listed, separated in different categories such that 
 | Key       |    Type   | Default Value | Description                                                                           |
 |-----------|:---------:|:-------------:|---------------------------------------------------------------------------------------|
 | motd      |    chat   |       /       | A message of the day in the form of a [Chat object](https://wiki.vg/Chat#Inheritance) |
-| icon_file | file path |       /       | Path to the png file of the server's icon (must be 64x64)                             |
+| icon_file | file path |   ./icon.png  | Path to the png file of the server's icon (must be 64x64)                             |
 
 ### Server {#config_server_category}
 | Key         | Type | Default Value | Description                   |
