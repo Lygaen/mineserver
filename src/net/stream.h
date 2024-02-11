@@ -219,7 +219,6 @@ public:
      * @brief Reads a Chat Message
      *
      * Reads a chat message from the stream in a Minecrafty way.
-     * @todo Do something to ensure the return value is moved
      */
     ChatMessage readChat();
     /**

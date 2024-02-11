@@ -115,7 +115,7 @@ void Field<std::string>::load(const rapidjson::Document &document)
     if (!loc->value.IsString())
         return;
 
-    value = std::string(std::string(loc->value.GetString(), loc->value.GetStringLength()));
+    value = std::string(loc->value.GetString(), loc->value.GetStringLength());
 }
 template <>
 void Field<std::string>::save(rapidjson::Document &document)

@@ -76,8 +76,6 @@ public:
      *
      * Does not parse for additional string components,
      * only text.
-     *
-     * @todo Add additional string component
      */
     std::string text{};
 
@@ -121,7 +119,6 @@ public:
      * @brief Loads data from a document
      *
      * @param document The document to load from
-     * @todo Contains an ugly of copying strings
      */
     void load(const rapidjson::Value &document);
     /**

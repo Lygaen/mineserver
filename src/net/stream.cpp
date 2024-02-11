@@ -211,6 +211,9 @@ ChatMessage IMCStream::readChat()
     rapidjson::Document doc(rapidjson::kObjectType);
     doc.Parse(json.c_str());
 
+    if (doc.HasParseError())
+        throw std::runtime_error("Invalid read chat message");
+
     m.load(doc);
 
     return m;

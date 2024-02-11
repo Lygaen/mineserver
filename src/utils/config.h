@@ -68,7 +68,6 @@ public:
      * Loads from the json document the value,
      * parsing it.
      * @param document The Json document
-     * @todo Contains an ugly of copying the string
      */
     void load(const rapidjson::Document &document);
     /**

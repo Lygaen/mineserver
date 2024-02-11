@@ -73,7 +73,7 @@ void ChatMessage::load(const rapidjson::Value &document)
 #define LS(x)                                                     \
     if ((it = document.FindMember(#x)) != document.MemberEnd() && \
         it->value.IsString())                                     \
-        x = std::string(std::string(it->value.GetString(), it->value.GetStringLength()));
+        x = std::string(it->value.GetString(), it->value.GetStringLength());
 
     LS(color);
     LS(insertion);
