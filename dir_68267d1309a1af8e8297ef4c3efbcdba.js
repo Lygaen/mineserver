@@ -8,7 +8,7 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "utils", "dir_313caf1132e152dd9b58bea13a4052ca.html", "dir_313caf1132e152dd9b58bea13a4052ca" ],
     [ "client.cpp", "client_8cpp.html", null ],
     [ "client.h", "client_8h.html", "client_8h" ],
-    [ "main.cpp", "main_8cpp.html", null ],
+    [ "main.cpp", "main_8cpp.html", "main_8cpp" ],
     [ "server.cpp", "server_8cpp.html", null ],
     [ "server.h", "server_8h.html", "server_8h" ]
 ];

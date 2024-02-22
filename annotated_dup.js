@@ -8,10 +8,6 @@ var annotated_dup =
     [ "logger", "namespacelogger.html", [
       [ "PostPrintEvent", "classlogger_1_1PostPrintEvent.html", null ]
     ] ],
-    [ "luabridge", null, [
-      [ "Stack< ChatMessage::ClickEvent::ActionType >", "structluabridge_1_1Stack_3_01ChatMessage_1_1ClickEvent_1_1ActionType_01_4.html", null ],
-      [ "Stack< ClientState >", "structluabridge_1_1Stack_3_01ClientState_01_4.html", null ]
-    ] ],
     [ "mojangapi", "namespacemojangapi.html", [
       [ "HasJoinedResponse", "structmojangapi_1_1HasJoinedResponse.html", "structmojangapi_1_1HasJoinedResponse" ]
     ] ],

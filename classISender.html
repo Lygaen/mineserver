@@ -123,6 +123,7 @@ $(function(){initNavTree('classISender.html',''); initResizable(); });
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="classISender-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">ISender Class Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div></div>
 </div><!--header-->
@@ -139,6 +140,7 @@ Inheritance diagram for ISender:</div>
   <img src="classISender.png" usemap="#ISender_map" alt=""/>
   <map id="ISender_map" name="ISender_map">
 <area href="classConsoleManager.html" title="Console manager." alt="ConsoleManager" shape="rect" coords="0,56,109,80"/>
+<area href="classPlayer.html" title="Player object." alt="Player" shape="rect" coords="119,56,228,80"/>
   </map>
 </div></div>
 <table class="memberdecls">
@@ -156,11 +158,16 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a65fe59a504365a91f040dcd83fef188f" id="r_a65fe59a504365a91f040dcd83fef188f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">virtual</a> <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a65fe59a504365a91f040dcd83fef188f">sendMessage</a> (<a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">const</a> <a class="el" href="classChatMessage.html">ChatMessage</a> &amp;<a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">message</a>)=0</td></tr>
 <tr class="memdesc:a65fe59a504365a91f040dcd83fef188f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Sends a message to the sender.  <br /></td></tr>
 <tr class="separator:a65fe59a504365a91f040dcd83fef188f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a9e4454482bbeba64904a622e2a90cc14" id="r_a9e4454482bbeba64904a622e2a90cc14"><td class="memItemLeft" align="right" valign="top"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">static</a> <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9e4454482bbeba64904a622e2a90cc14">loadLua</a> (<a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">lua_State</a> *state, <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">const</a> <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">char</a> *<a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">namespaceName</a>)</td></tr>
+<tr class="memdesc:a9e4454482bbeba64904a622e2a90cc14"><td class="mdescLeft">&#160;</td><td class="mdescRight">Register Lua things.  <br /></td></tr>
+<tr class="separator:a9e4454482bbeba64904a622e2a90cc14"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Sender Interface. </p>
-<p>Interface for all command-sending capable things (Players, command blocks console).</p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000002">Todo</a></b></dt><dd>Actually implement it lol </dd></dl>
+<p>Interface for all command-sending capable things (Players, command blocks console). </p>
 </div><h2 class="groupheader">Member Enumeration Documentation</h2>
 <a id="ab1af5d6ba7a09a53656143e0910ef2eb" name="ab1af5d6ba7a09a53656143e0910ef2eb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab1af5d6ba7a09a53656143e0910ef2eb">&#9670;&#160;</a></span>SenderType</h2>
@@ -180,6 +187,44 @@ Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a9e4454482bbeba64904a622e2a90cc14" name="a9e4454482bbeba64904a622e2a90cc14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9e4454482bbeba64904a622e2a90cc14">&#9670;&#160;</a></span>loadLua()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">void</a> ISender::loadLua </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">lua_State</a> *</td>          <td class="paramname"><span class="paramname"><em>state</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">const</a> <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">char</a> *</td>          <td class="paramname"><span class="paramname"><em>namespaceName</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Register Lua things. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">state</td><td>state to register to </td></tr>
+    <tr><td class="paramname">namespaceName</td><td>namespace name </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <a id="a65fe59a504365a91f040dcd83fef188f" name="a65fe59a504365a91f040dcd83fef188f"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a65fe59a504365a91f040dcd83fef188f">&#9670;&#160;</a></span>sendMessage()</h2>
 
@@ -205,12 +250,13 @@ Public Member Functions</h2></td></tr>
 
 <p>Sends a message to the sender. </p>
 
-<p>Implemented in <a class="el" href="classConsoleManager.html#aa0667e0292d5099dda6d6d348ff0b9f0">ConsoleManager</a>.</p>
+<p>Implemented in <a class="el" href="classPlayer.html#a1564880d525c517db3a07c482b57b05a">Player</a>, and <a class="el" href="classConsoleManager.html#aa0667e0292d5099dda6d6d348ff0b9f0">ConsoleManager</a>.</p>
 
 </div>
 </div>
-<hr/>The documentation for this class was generated from the following file:<ul>
+<hr/>The documentation for this class was generated from the following files:<ul>
 <li>src/cmd/<a class="el" href="commands_8h_source.html">commands.h</a></li>
+<li>src/cmd/<b>commands.cpp</b></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->
@@ -218,7 +264,7 @@ Public Member Functions</h2></td></tr>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="classISender.html">ISender</a></li>
-    <li class="footer">Generated on Sun Feb 11 2024 20:09:30 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+    <li class="footer">Generated on Thu Feb 22 2024 19:40:58 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
   </ul>
 </div>
 </body>

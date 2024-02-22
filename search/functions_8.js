@@ -5,5 +5,6 @@ var searchData=
   ['inst_2',['inst',['../classCommandsManager.html#a7c6afd4c944afe237a91acecd5413c38',1,'CommandsManager::inst()'],['../classConsoleManager.html#af424a86f594979aad0e975ae07774bd0',1,'ConsoleManager::inst()'],['../classEventsManager.html#a8b6868e7bf770c95e5706f4cf817bf56',1,'EventsManager::inst()'],['../classPluginsManager.html#a781183d5f40e0c1ce3f507c6d125682f',1,'PluginsManager::inst()'],['../classServer.html#a326ec98fe5fb62cc0a9588a1594ed840',1,'Server::inst()'],['../classConfig.html#af08cc4a60a38a00097b93a2c5ad4d37a',1,'Config::inst()']]],
   ['ipacket_3',['IPacket',['../classIPacket.html#a2516236e7181caa0ea28ee00ff92e3b9',1,'IPacket']]],
   ['islocal_4',['isLocal',['../classClientSocket.html#a26bdf997f1a038e40f0001bf13346ce9',1,'ClientSocket']]],
-  ['isvalid_5',['isValid',['../classClientSocket.html#a4263568b1b948099a1ddaec8fc9eeeac',1,'ClientSocket']]]
+  ['isvalid_5',['isValid',['../classClientSocket.html#a4263568b1b948099a1ddaec8fc9eeeac',1,'ClientSocket']]],
+  ['isvalidhexchar_6',['isValidHexChar',['../uuid_8cpp.html#a41376ff91f6a7b73f9f3666ef9036be6',1,'uuid.cpp']]]
 ];

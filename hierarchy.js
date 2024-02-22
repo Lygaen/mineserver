@@ -9,10 +9,6 @@ var hierarchy =
     [ "Command", "structCommand.html", null ],
     [ "CommandsManager", "classCommandsManager.html", null ],
     [ "Config", "classConfig.html", null ],
-    [ "luabridge::Enum", null, [
-      [ "luabridge::Stack< ChatMessage::ClickEvent::ActionType >", "structluabridge_1_1Stack_3_01ChatMessage_1_1ClickEvent_1_1ActionType_01_4.html", null ],
-      [ "luabridge::Stack< ClientState >", "structluabridge_1_1Stack_3_01ClientState_01_4.html", null ]
-    ] ],
     [ "EventHandler< T >", "classEventHandler.html", null ],
     [ "EventHandler< logger::PostPrintEvent >", "classEventHandler.html", null ],
     [ "EventsManager", "classEventsManager.html", null ],
@@ -66,7 +62,8 @@ var hierarchy =
       [ "SetCompression", "classSetCompression.html", null ]
     ] ],
     [ "ISender", "classISender.html", [
-      [ "ConsoleManager", "classConsoleManager.html", null ]
+      [ "ConsoleManager", "classConsoleManager.html", null ],
+      [ "Player", "classPlayer.html", null ]
     ] ],
     [ "crypto::MinecraftHash", "classcrypto_1_1MinecraftHash.html", null ],
     [ "Plugin", "classPlugin.html", null ],

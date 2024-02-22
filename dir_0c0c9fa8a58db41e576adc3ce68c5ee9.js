@@ -5,7 +5,7 @@ var dir_0c0c9fa8a58db41e576adc3ce68c5ee9 =
     [ "chatmessage.h", "chatmessage_8h.html", "chatmessage_8h" ],
     [ "clientstate.h", "clientstate_8h.html", "clientstate_8h" ],
     [ "luaregtypes.hpp", "luaregtypes_8hpp.html", "luaregtypes_8hpp" ],
-    [ "uuid.cpp", "uuid_8cpp.html", null ],
+    [ "uuid.cpp", "uuid_8cpp.html", "uuid_8cpp" ],
     [ "uuid.h", "uuid_8h.html", "uuid_8h" ],
     [ "vector.hpp", "vector_8hpp.html", "vector_8hpp" ]
 ];

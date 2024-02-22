@@ -195,225 +195,228 @@ $(function(){initNavTree('event_8h_source.html',''); initResizable(); });
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>    <a class="code hl_typedef" href="classEventHandler.html#a7e2264d3e34a294002ae86f7acb0e556">subId</a> nextId = 0;</div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>    <span class="keyword">const</span> std::type_info *typeInfo;</div>
 <div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span> </div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <a class="code hl_typedef" href="classEventHandler.html#a7e2264d3e34a294002ae86f7acb0e556">subId</a></div>
-<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    getNextId()</div>
-<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>    {</div>
-<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        <span class="keywordflow">return</span> ++nextId;</div>
-<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    }</div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span><span class="keyword">public</span>:</div>
-<div class="foldopen" id="foldopen00132" data-start="{" data-end="}">
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno"><a class="line" href="classEventHandler.html#a2af645115bb1ee04e6179bc566b8ddec">  132</a></span>    <a class="code hl_function" href="classEventHandler.html#a2af645115bb1ee04e6179bc566b8ddec">EventHandler</a>() : subs()</div>
-<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>    {</div>
-<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        <span class="keyword">static_assert</span>(std::is_base_of_v&lt;IEvent&lt;T&gt;, T&gt;, <span class="stringliteral">&quot;Class doesn&#39;t derive from IEvent&quot;</span>);</div>
-<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>        typeInfo = &amp;<span class="keyword">typeid</span>(T);</div>
-<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span>    }</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <a class="code hl_typedef" href="classEventHandler.html#a7e2264d3e34a294002ae86f7acb0e556">subId</a> getNextId()</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    {</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>        <span class="keywordflow">return</span> ++nextId;</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    }</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span> </div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span><span class="keyword">public</span>:</div>
+<div class="foldopen" id="foldopen00131" data-start="{" data-end="}">
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno"><a class="line" href="classEventHandler.html#a2af645115bb1ee04e6179bc566b8ddec">  131</a></span>    <a class="code hl_function" href="classEventHandler.html#a2af645115bb1ee04e6179bc566b8ddec">EventHandler</a>() : subs()</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span>    {</div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span>        <span class="keyword">static_assert</span>(std::is_base_of_v&lt;IEvent&lt;T&gt;, T&gt;, <span class="stringliteral">&quot;Class doesn&#39;t derive from IEvent&quot;</span>);</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>        typeInfo = &amp;<span class="keyword">typeid</span>(T);</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>    }</div>
 </div>
-<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span> </div>
-<div class="foldopen" id="foldopen00144" data-start="{" data-end="}">
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno"><a class="line" href="classEventHandler.html#a335dacd696ffcdfd912d34d9cfa7c2bd">  144</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classEventHandler.html#a335dacd696ffcdfd912d34d9cfa7c2bd">fire</a>(T &amp;event)</div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>    {</div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;sub : subs)</div>
-<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        {</div>
-<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>            <span class="keywordflow">try</span> {</div>
-<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>                sub.callback(event);</div>
-<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>            } <span class="keywordflow">catch</span>(<span class="keyword">const</span> luabridge::LuaException&amp; e) {</div>
-<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>                <a class="code hl_function" href="namespacelogger.html#a2c342fb4415aa53943af3b25b469581f">logger::error</a>(<span class="stringliteral">&quot;Could not launch event %s in lua&quot;</span>, std::string(<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">type_name&lt;T&gt;</a>()).<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">c_str</a>());</div>
-<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>            }</div>
-<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>        }</div>
-<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>    }</div>
+<div class="line"><a id="l00136" name="l00136"></a><span class="lineno">  136</span> </div>
+<div class="line"><a id="l00137" name="l00137"></a><span class="lineno">  137</span>    <a class="code hl_class" href="classEventHandler.html">~EventHandler</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00138" name="l00138"></a><span class="lineno">  138</span> </div>
+<div class="foldopen" id="foldopen00145" data-start="{" data-end="}">
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno"><a class="line" href="classEventHandler.html#a335dacd696ffcdfd912d34d9cfa7c2bd">  145</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classEventHandler.html#a335dacd696ffcdfd912d34d9cfa7c2bd">fire</a>(T &amp;event)</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span>    {</div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        <span class="keywordflow">for</span> (<span class="keyword">auto</span> &amp;sub : subs)</div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        {</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>            <span class="keywordflow">try</span> {</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>                sub.callback(event);</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>            }</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>            <span class="keywordflow">catch</span> (<span class="keyword">const</span> std::exception &amp;e)</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>            {</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>                <a class="code hl_function" href="namespacelogger.html#a2c342fb4415aa53943af3b25b469581f">logger::error</a>(<span class="stringliteral">&quot;Could not launch event %s&quot;</span>, std::string(<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">type_name&lt;T&gt;</a>()).<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">c_str</a>());</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>            }</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span>        }</div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>    }</div>
 </div>
-<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span> </div>
-<div class="foldopen" id="foldopen00163" data-start="{" data-end="}">
-<div class="line"><a id="l00163" name="l00163"></a><span class="lineno"><a class="line" href="classEventHandler.html#ae37885fe6ddadf786eaf97f835874a5f">  163</a></span>    <a class="code hl_typedef" href="classEventHandler.html#a7e2264d3e34a294002ae86f7acb0e556">subId</a> <a class="code hl_function" href="classEventHandler.html#ae37885fe6ddadf786eaf97f835874a5f">subscribe</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="classEventHandler.html#a7c8d86eb7b551f72d7ba9c484ce0884d">callbackType</a> &amp;<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">func</a>)</div>
-<div class="line"><a id="l00164" name="l00164"></a><span class="lineno">  164</span>    {</div>
-<div class="line"><a id="l00165" name="l00165"></a><span class="lineno">  165</span>        subscription <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">s</a>;</div>
-<div class="line"><a id="l00166" name="l00166"></a><span class="lineno">  166</span>        <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">s</a>.callback = <span class="keyword">static_cast&lt;</span><a class="code hl_typedef" href="classEventHandler.html#a7c8d86eb7b551f72d7ba9c484ce0884d">callbackType</a><span class="keyword">&gt;</span>(<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">func</a>);</div>
-<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>        <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">s</a>.id = getNextId();</div>
-<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        subs.push_back(<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">s</a>);</div>
-<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">s</a>.id;</div>
-<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>    }</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span> </div>
+<div class="foldopen" id="foldopen00166" data-start="{" data-end="}">
+<div class="line"><a id="l00166" name="l00166"></a><span class="lineno"><a class="line" href="classEventHandler.html#ae37885fe6ddadf786eaf97f835874a5f">  166</a></span>    <a class="code hl_typedef" href="classEventHandler.html#a7e2264d3e34a294002ae86f7acb0e556">subId</a> <a class="code hl_function" href="classEventHandler.html#ae37885fe6ddadf786eaf97f835874a5f">subscribe</a>(<span class="keyword">const</span> <a class="code hl_typedef" href="classEventHandler.html#a7c8d86eb7b551f72d7ba9c484ce0884d">callbackType</a> &amp;<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">func</a>)</div>
+<div class="line"><a id="l00167" name="l00167"></a><span class="lineno">  167</span>    {</div>
+<div class="line"><a id="l00168" name="l00168"></a><span class="lineno">  168</span>        subscription <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">s</a>;</div>
+<div class="line"><a id="l00169" name="l00169"></a><span class="lineno">  169</span>        <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">s</a>.callback = <span class="keyword">static_cast&lt;</span><a class="code hl_typedef" href="classEventHandler.html#a7c8d86eb7b551f72d7ba9c484ce0884d">callbackType</a><span class="keyword">&gt;</span>(<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">func</a>);</div>
+<div class="line"><a id="l00170" name="l00170"></a><span class="lineno">  170</span>        <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">s</a>.id = getNextId();</div>
+<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span>        subs.push_back(<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">s</a>);</div>
+<div class="line"><a id="l00172" name="l00172"></a><span class="lineno">  172</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">s</a>.id;</div>
+<div class="line"><a id="l00173" name="l00173"></a><span class="lineno">  173</span>    }</div>
 </div>
-<div class="line"><a id="l00171" name="l00171"></a><span class="lineno">  171</span> </div>
-<div class="foldopen" id="foldopen00179" data-start="{" data-end="}">
-<div class="line"><a id="l00179" name="l00179"></a><span class="lineno"><a class="line" href="classEventHandler.html#ad563c96e95bd5ce43a09fdcf562d2334">  179</a></span>    <a class="code hl_typedef" href="classEventHandler.html#a7e2264d3e34a294002ae86f7acb0e556">subId</a> <a class="code hl_function" href="classEventHandler.html#ad563c96e95bd5ce43a09fdcf562d2334">subscribe</a>(<a class="code hl_typedef" href="classEventHandler.html#a7c8d86eb7b551f72d7ba9c484ce0884d">callbackType</a> &amp;&amp;<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">func</a>)</div>
-<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span>    {</div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span>        subscription <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">s</a>;</div>
-<div class="line"><a id="l00182" name="l00182"></a><span class="lineno">  182</span>        <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">s</a>.callback = std::move(<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">func</a>);</div>
-<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>        <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">s</a>.id = getNextId();</div>
-<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>        subs.push_back(<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">s</a>);</div>
-<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">s</a>.id;</div>
-<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>    }</div>
+<div class="line"><a id="l00174" name="l00174"></a><span class="lineno">  174</span> </div>
+<div class="foldopen" id="foldopen00182" data-start="{" data-end="}">
+<div class="line"><a id="l00182" name="l00182"></a><span class="lineno"><a class="line" href="classEventHandler.html#ad563c96e95bd5ce43a09fdcf562d2334">  182</a></span>    <a class="code hl_typedef" href="classEventHandler.html#a7e2264d3e34a294002ae86f7acb0e556">subId</a> <a class="code hl_function" href="classEventHandler.html#ad563c96e95bd5ce43a09fdcf562d2334">subscribe</a>(<a class="code hl_typedef" href="classEventHandler.html#a7c8d86eb7b551f72d7ba9c484ce0884d">callbackType</a> &amp;&amp;<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">func</a>)</div>
+<div class="line"><a id="l00183" name="l00183"></a><span class="lineno">  183</span>    {</div>
+<div class="line"><a id="l00184" name="l00184"></a><span class="lineno">  184</span>        subscription <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">s</a>;</div>
+<div class="line"><a id="l00185" name="l00185"></a><span class="lineno">  185</span>        <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">s</a>.callback = std::move(<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">func</a>);</div>
+<div class="line"><a id="l00186" name="l00186"></a><span class="lineno">  186</span>        <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">s</a>.id = getNextId();</div>
+<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span>        subs.push_back(<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">s</a>);</div>
+<div class="line"><a id="l00188" name="l00188"></a><span class="lineno">  188</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">s</a>.id;</div>
+<div class="line"><a id="l00189" name="l00189"></a><span class="lineno">  189</span>    }</div>
 </div>
-<div class="line"><a id="l00187" name="l00187"></a><span class="lineno">  187</span> </div>
-<div class="foldopen" id="foldopen00194" data-start="{" data-end="}">
-<div class="line"><a id="l00194" name="l00194"></a><span class="lineno"><a class="line" href="classEventHandler.html#a81d0ad307f791ef7f4fa8a4387812c0e">  194</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classEventHandler.html#a81d0ad307f791ef7f4fa8a4387812c0e">unsubscribe</a>(<a class="code hl_typedef" href="classEventHandler.html#a7e2264d3e34a294002ae86f7acb0e556">subId</a> <span class="keywordtype">id</span>)</div>
-<div class="line"><a id="l00195" name="l00195"></a><span class="lineno">  195</span>    {</div>
-<div class="line"><a id="l00196" name="l00196"></a><span class="lineno">  196</span>        subs.erase(</div>
-<div class="line"><a id="l00197" name="l00197"></a><span class="lineno">  197</span>            std::remove_if(</div>
-<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>                subs.begin(),</div>
-<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>                subs.end(),</div>
-<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>                [<span class="keywordtype">id</span>](subscription <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">el</a>) -&gt; <span class="keywordtype">bool</span></div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>                {</div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>                    return el.id == id;</div>
-<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>                }),</div>
-<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>            subs.end());</div>
-<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>    }</div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno">  190</span> </div>
+<div class="foldopen" id="foldopen00197" data-start="{" data-end="}">
+<div class="line"><a id="l00197" name="l00197"></a><span class="lineno"><a class="line" href="classEventHandler.html#a81d0ad307f791ef7f4fa8a4387812c0e">  197</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classEventHandler.html#a81d0ad307f791ef7f4fa8a4387812c0e">unsubscribe</a>(<a class="code hl_typedef" href="classEventHandler.html#a7e2264d3e34a294002ae86f7acb0e556">subId</a> <span class="keywordtype">id</span>)</div>
+<div class="line"><a id="l00198" name="l00198"></a><span class="lineno">  198</span>    {</div>
+<div class="line"><a id="l00199" name="l00199"></a><span class="lineno">  199</span>        subs.erase(</div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno">  200</span>            std::remove_if(</div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span>                subs.begin(),</div>
+<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span>                subs.end(),</div>
+<div class="line"><a id="l00203" name="l00203"></a><span class="lineno">  203</span>                [<span class="keywordtype">id</span>](subscription <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">el</a>) -&gt; <span class="keywordtype">bool</span></div>
+<div class="line"><a id="l00204" name="l00204"></a><span class="lineno">  204</span>                {</div>
+<div class="line"><a id="l00205" name="l00205"></a><span class="lineno">  205</span>                    return el.id == id;</div>
+<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span>                }),</div>
+<div class="line"><a id="l00207" name="l00207"></a><span class="lineno">  207</span>            subs.end());</div>
+<div class="line"><a id="l00208" name="l00208"></a><span class="lineno">  208</span>    }</div>
 </div>
-<div class="line"><a id="l00206" name="l00206"></a><span class="lineno">  206</span> </div>
-<div class="line"><a id="l00213" name="l00213"></a><span class="lineno"><a class="line" href="classEventHandler.html#acc7e36728382d3998db846024df8b119">  213</a></span>    <span class="keyword">const</span> std::type_info *<a class="code hl_function" href="classEventHandler.html#acc7e36728382d3998db846024df8b119">getTypeInfo</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> typeInfo; }</div>
-<div class="line"><a id="l00214" name="l00214"></a><span class="lineno">  214</span>};</div>
+<div class="line"><a id="l00209" name="l00209"></a><span class="lineno">  209</span> </div>
+<div class="line"><a id="l00216" name="l00216"></a><span class="lineno"><a class="line" href="classEventHandler.html#acc7e36728382d3998db846024df8b119">  216</a></span>    <span class="keyword">const</span> std::type_info *<a class="code hl_function" href="classEventHandler.html#acc7e36728382d3998db846024df8b119">getTypeInfo</a>()<span class="keyword"> const </span>{ <span class="keywordflow">return</span> typeInfo; }</div>
+<div class="line"><a id="l00217" name="l00217"></a><span class="lineno">  217</span>};</div>
 </div>
-<div class="line"><a id="l00215" name="l00215"></a><span class="lineno">  215</span> </div>
-<div class="foldopen" id="foldopen00220" data-start="{" data-end="};">
-<div class="line"><a id="l00220" name="l00220"></a><span class="lineno"><a class="line" href="classEventsManager.html">  220</a></span><span class="keyword">class </span><a class="code hl_class" href="classEventsManager.html">EventsManager</a></div>
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span>{</div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span>    std::vector&lt;EventHandler&lt;void *&gt; *&gt; handlers;</div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>    <span class="keyword">static</span> <a class="code hl_class" href="classEventsManager.html">EventsManager</a> *INSTANCE;</div>
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span> </div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>    <a class="code hl_class" href="classEventHandler.html">EventHandler&lt;T&gt;</a> *getOrNull()</div>
-<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span>    {</div>
-<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>        <span class="keyword">auto</span> <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">loc</a> = std::find_if(handlers.begin(), handlers.end(), [](<span class="keyword">const</span> <a class="code hl_class" href="classEventHandler.html">EventHandler&lt;void *&gt;</a> *<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">entry</a>)</div>
-<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>                                { return *entry-&gt;getTypeInfo() == typeid(T); });</div>
-<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span> </div>
-<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">loc</a> == handlers.end())</div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>            <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
+<div class="line"><a id="l00218" name="l00218"></a><span class="lineno">  218</span> </div>
+<div class="foldopen" id="foldopen00223" data-start="{" data-end="};">
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno"><a class="line" href="classEventsManager.html">  223</a></span><span class="keyword">class </span><a class="code hl_class" href="classEventsManager.html">EventsManager</a></div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span>{</div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span>    std::vector&lt;EventHandler&lt;void *&gt; *&gt; handlers;</div>
+<div class="line"><a id="l00227" name="l00227"></a><span class="lineno">  227</span>    <span class="keyword">static</span> <a class="code hl_class" href="classEventsManager.html">EventsManager</a> *INSTANCE;</div>
+<div class="line"><a id="l00228" name="l00228"></a><span class="lineno">  228</span> </div>
+<div class="line"><a id="l00229" name="l00229"></a><span class="lineno">  229</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>    <a class="code hl_class" href="classEventHandler.html">EventHandler&lt;T&gt;</a> *getOrNull()</div>
+<div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span>    {</div>
+<div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>        <span class="keyword">auto</span> <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">loc</a> = std::find_if(handlers.begin(), handlers.end(), [](<span class="keyword">const</span> <a class="code hl_class" href="classEventHandler.html">EventHandler&lt;void *&gt;</a> *<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">entry</a>)</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>                                { return *entry-&gt;getTypeInfo() == typeid(T); });</div>
 <div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span> </div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>        <span class="keywordflow">return</span> <span class="keyword">reinterpret_cast&lt;</span><a class="code hl_class" href="classEventHandler.html">EventHandler&lt;T&gt;</a> *<span class="keyword">&gt;</span>(*loc);</div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>    }</div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>        <span class="keywordflow">if</span> (<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">loc</a> == handlers.end())</div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>            <span class="keywordflow">return</span> <span class="keyword">nullptr</span>;</div>
 <div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span> </div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>    <a class="code hl_class" href="classEventHandler.html">EventHandler&lt;T&gt;</a> *getOrCreateHandler()</div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>    {</div>
-<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>        <span class="keyword">auto</span> handler = <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">getOrNull&lt;T&gt;</a>();</div>
-<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span> </div>
-<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>        <span class="keywordflow">if</span> (!handler)</div>
-<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>        {</div>
-<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span>            handler = <span class="keyword">new</span> <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">EventHandler&lt;T&gt;</a>();</div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>            handlers.push_back(<span class="keyword">reinterpret_cast&lt;</span><a class="code hl_class" href="classEventHandler.html">EventHandler&lt;void *&gt;</a> *<span class="keyword">&gt;</span>(handler));</div>
-<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>        }</div>
-<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span> </div>
-<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>        <span class="keywordflow">return</span> handler;</div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>    }</div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>        <span class="keywordflow">return</span> <span class="keyword">reinterpret_cast&lt;</span><a class="code hl_class" href="classEventHandler.html">EventHandler&lt;T&gt;</a> *<span class="keyword">&gt;</span>(*loc);</div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>    }</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span> </div>
+<div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span>    <a class="code hl_class" href="classEventHandler.html">EventHandler&lt;T&gt;</a> *getOrCreateHandler()</div>
+<div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>    {</div>
+<div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>        <span class="keyword">auto</span> handler = <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">getOrNull&lt;T&gt;</a>();</div>
+<div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span> </div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>        <span class="keywordflow">if</span> (!handler)</div>
+<div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>        {</div>
+<div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>            handler = <span class="keyword">new</span> <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">EventHandler&lt;T&gt;</a>();</div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>            handlers.push_back(<span class="keyword">reinterpret_cast&lt;</span><a class="code hl_class" href="classEventHandler.html">EventHandler&lt;void *&gt;</a> *<span class="keyword">&gt;</span>(handler));</div>
+<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span>        }</div>
 <div class="line"><a id="l00251" name="l00251"></a><span class="lineno">  251</span> </div>
-<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00257" name="l00257"></a><span class="lineno">  257</span>    <a class="code hl_function" href="classEventsManager.html#a67fdb40a00f36d1a63fbb0afb640f3a6">EventsManager</a>();</div>
-<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span> </div>
-<div class="foldopen" id="foldopen00263" data-start="{" data-end="}">
-<div class="line"><a id="l00263" name="l00263"></a><span class="lineno"><a class="line" href="classEventsManager.html#a536b233bc47fa1409efa1106403f9043">  263</a></span>    <a class="code hl_function" href="classEventsManager.html#a536b233bc47fa1409efa1106403f9043">~EventsManager</a>()</div>
-<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span>    {</div>
-<div class="line"><a id="l00265" name="l00265"></a><span class="lineno">  265</span>        <span class="keyword">auto</span> <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">loc</a> = handlers.begin();</div>
-<div class="line"><a id="l00266" name="l00266"></a><span class="lineno">  266</span>        <span class="keywordflow">while</span> (<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">loc</a> != handlers.end())</div>
-<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>        {</div>
-<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>            <span class="keyword">delete</span> *<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">loc</a>;</div>
-<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>            <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">loc</a> = handlers.erase(<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">loc</a>);</div>
-<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>        }</div>
-<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>    }</div>
+<div class="line"><a id="l00252" name="l00252"></a><span class="lineno">  252</span>        <span class="keywordflow">return</span> handler;</div>
+<div class="line"><a id="l00253" name="l00253"></a><span class="lineno">  253</span>    }</div>
+<div class="line"><a id="l00254" name="l00254"></a><span class="lineno">  254</span> </div>
+<div class="line"><a id="l00255" name="l00255"></a><span class="lineno">  255</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span>    <a class="code hl_function" href="classEventsManager.html#a67fdb40a00f36d1a63fbb0afb640f3a6">EventsManager</a>();</div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span> </div>
+<div class="foldopen" id="foldopen00266" data-start="{" data-end="}">
+<div class="line"><a id="l00266" name="l00266"></a><span class="lineno"><a class="line" href="classEventsManager.html#a536b233bc47fa1409efa1106403f9043">  266</a></span>    <a class="code hl_function" href="classEventsManager.html#a536b233bc47fa1409efa1106403f9043">~EventsManager</a>()</div>
+<div class="line"><a id="l00267" name="l00267"></a><span class="lineno">  267</span>    {</div>
+<div class="line"><a id="l00268" name="l00268"></a><span class="lineno">  268</span>        <span class="keyword">auto</span> <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">loc</a> = handlers.begin();</div>
+<div class="line"><a id="l00269" name="l00269"></a><span class="lineno">  269</span>        <span class="keywordflow">while</span> (<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">loc</a> != handlers.end())</div>
+<div class="line"><a id="l00270" name="l00270"></a><span class="lineno">  270</span>        {</div>
+<div class="line"><a id="l00271" name="l00271"></a><span class="lineno">  271</span>            <span class="keyword">delete</span> *<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">loc</a>;</div>
+<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span>            <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">loc</a> = handlers.erase(<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">loc</a>);</div>
+<div class="line"><a id="l00273" name="l00273"></a><span class="lineno">  273</span>        }</div>
+<div class="line"><a id="l00274" name="l00274"></a><span class="lineno">  274</span>    }</div>
 </div>
-<div class="line"><a id="l00272" name="l00272"></a><span class="lineno">  272</span> </div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
-<div class="foldopen" id="foldopen00282" data-start="{" data-end="}">
-<div class="line"><a id="l00282" name="l00282"></a><span class="lineno"><a class="line" href="classEventsManager.html#a17a034b18a623bb8db75bf16aabeb7c0">  282</a></span>    <a class="code hl_typedef" href="classEventHandler.html#a7e2264d3e34a294002ae86f7acb0e556">EventHandler&lt;T&gt;::subId</a> <a class="code hl_function" href="classEventsManager.html#a17a034b18a623bb8db75bf16aabeb7c0">subscribe</a>(<span class="keyword">const</span> <a class="code hl_class" href="classEventHandler.html">EventHandler&lt;T&gt;::callbackType</a> &amp;callback)</div>
-<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span>    {</div>
-<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>        <span class="keyword">static_assert</span>(std::is_base_of_v&lt;IEvent&lt;T&gt;, <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">T</a>&gt;, <span class="stringliteral">&quot;Class doesn&#39;t derive from IEvent&quot;</span>);</div>
-<div class="line"><a id="l00285" name="l00285"></a><span class="lineno">  285</span>        <a class="code hl_class" href="classEventHandler.html">EventHandler&lt;T&gt;</a> *handler = <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">getOrCreateHandler&lt;T&gt;</a>();</div>
-<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>        <span class="keywordflow">return</span> handler-&gt;<a class="code hl_function" href="classEventHandler.html#ae37885fe6ddadf786eaf97f835874a5f">subscribe</a>(callback);</div>
-<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>    }</div>
+<div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span> </div>
+<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="foldopen" id="foldopen00285" data-start="{" data-end="}">
+<div class="line"><a id="l00285" name="l00285"></a><span class="lineno"><a class="line" href="classEventsManager.html#a17a034b18a623bb8db75bf16aabeb7c0">  285</a></span>    <a class="code hl_typedef" href="classEventHandler.html#a7e2264d3e34a294002ae86f7acb0e556">EventHandler&lt;T&gt;::subId</a> <a class="code hl_function" href="classEventsManager.html#a17a034b18a623bb8db75bf16aabeb7c0">subscribe</a>(<span class="keyword">const</span> <a class="code hl_class" href="classEventHandler.html">EventHandler&lt;T&gt;::callbackType</a> &amp;callback)</div>
+<div class="line"><a id="l00286" name="l00286"></a><span class="lineno">  286</span>    {</div>
+<div class="line"><a id="l00287" name="l00287"></a><span class="lineno">  287</span>        <span class="keyword">static_assert</span>(std::is_base_of_v&lt;IEvent&lt;T&gt;, <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">T</a>&gt;, <span class="stringliteral">&quot;Class doesn&#39;t derive from IEvent&quot;</span>);</div>
+<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span>        <a class="code hl_class" href="classEventHandler.html">EventHandler&lt;T&gt;</a> *handler = <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">getOrCreateHandler&lt;T&gt;</a>();</div>
+<div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span>        <span class="keywordflow">return</span> handler-&gt;<a class="code hl_function" href="classEventHandler.html#ae37885fe6ddadf786eaf97f835874a5f">subscribe</a>(callback);</div>
+<div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>    }</div>
 </div>
-<div class="line"><a id="l00288" name="l00288"></a><span class="lineno">  288</span> </div>
-<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
-<div class="foldopen" id="foldopen00298" data-start="{" data-end="}">
-<div class="line"><a id="l00298" name="l00298"></a><span class="lineno"><a class="line" href="classEventsManager.html#abd6add9e9a5cfc2ec483208a8ef0f603">  298</a></span>    <a class="code hl_typedef" href="classEventHandler.html#a7e2264d3e34a294002ae86f7acb0e556">EventHandler&lt;T&gt;::subId</a> <a class="code hl_function" href="classEventsManager.html#abd6add9e9a5cfc2ec483208a8ef0f603">subscribe</a>(<a class="code hl_class" href="classEventHandler.html">EventHandler&lt;T&gt;::callbackType</a> &amp;&amp;callback)</div>
-<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>    {</div>
-<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>        <span class="keyword">static_assert</span>(std::is_base_of_v&lt;IEvent&lt;T&gt;, <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">T</a>&gt;, <span class="stringliteral">&quot;Class doesn&#39;t derive from IEvent&quot;</span>);</div>
-<div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>        <a class="code hl_class" href="classEventHandler.html">EventHandler&lt;T&gt;</a> *handler = <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">getOrCreateHandler&lt;T&gt;</a>();</div>
-<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>        <span class="keywordflow">return</span> handler-&gt;<a class="code hl_function" href="classEventHandler.html#ae37885fe6ddadf786eaf97f835874a5f">subscribe</a>(std::move(callback));</div>
-<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>    }</div>
+<div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span> </div>
+<div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="foldopen" id="foldopen00301" data-start="{" data-end="}">
+<div class="line"><a id="l00301" name="l00301"></a><span class="lineno"><a class="line" href="classEventsManager.html#abd6add9e9a5cfc2ec483208a8ef0f603">  301</a></span>    <a class="code hl_typedef" href="classEventHandler.html#a7e2264d3e34a294002ae86f7acb0e556">EventHandler&lt;T&gt;::subId</a> <a class="code hl_function" href="classEventsManager.html#abd6add9e9a5cfc2ec483208a8ef0f603">subscribe</a>(<a class="code hl_class" href="classEventHandler.html">EventHandler&lt;T&gt;::callbackType</a> &amp;&amp;callback)</div>
+<div class="line"><a id="l00302" name="l00302"></a><span class="lineno">  302</span>    {</div>
+<div class="line"><a id="l00303" name="l00303"></a><span class="lineno">  303</span>        <span class="keyword">static_assert</span>(std::is_base_of_v&lt;IEvent&lt;T&gt;, <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">T</a>&gt;, <span class="stringliteral">&quot;Class doesn&#39;t derive from IEvent&quot;</span>);</div>
+<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span>        <a class="code hl_class" href="classEventHandler.html">EventHandler&lt;T&gt;</a> *handler = <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">getOrCreateHandler&lt;T&gt;</a>();</div>
+<div class="line"><a id="l00305" name="l00305"></a><span class="lineno">  305</span>        <span class="keywordflow">return</span> handler-&gt;<a class="code hl_function" href="classEventHandler.html#ae37885fe6ddadf786eaf97f835874a5f">subscribe</a>(std::move(callback));</div>
+<div class="line"><a id="l00306" name="l00306"></a><span class="lineno">  306</span>    }</div>
 </div>
-<div class="line"><a id="l00304" name="l00304"></a><span class="lineno">  304</span> </div>
-<div class="line"><a id="l00312" name="l00312"></a><span class="lineno">  312</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
-<div class="foldopen" id="foldopen00313" data-start="{" data-end="}">
-<div class="line"><a id="l00313" name="l00313"></a><span class="lineno"><a class="line" href="classEventsManager.html#a502a3de0687be48eb8d52c0bf2525ed2">  313</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classEventsManager.html#a502a3de0687be48eb8d52c0bf2525ed2">unsubscribe</a>(<a class="code hl_typedef" href="classEventHandler.html#a7e2264d3e34a294002ae86f7acb0e556">EventHandler&lt;T&gt;::subId</a> subId)</div>
-<div class="line"><a id="l00314" name="l00314"></a><span class="lineno">  314</span>    {</div>
-<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>        <span class="keyword">static_assert</span>(std::is_base_of_v&lt;IEvent&lt;T&gt;, <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">T</a>&gt;, <span class="stringliteral">&quot;Class doesn&#39;t derive from IEvent&quot;</span>);</div>
-<div class="line"><a id="l00316" name="l00316"></a><span class="lineno">  316</span>        <a class="code hl_class" href="classEventHandler.html">EventHandler&lt;T&gt;</a> *handler = <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">getOrCreateHandler&lt;T&gt;</a>();</div>
-<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>        <span class="keywordflow">return</span> handler-&gt;<a class="code hl_function" href="classEventHandler.html#a81d0ad307f791ef7f4fa8a4387812c0e">unsubscribe</a>(subId);</div>
-<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>    }</div>
+<div class="line"><a id="l00307" name="l00307"></a><span class="lineno">  307</span> </div>
+<div class="line"><a id="l00315" name="l00315"></a><span class="lineno">  315</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="foldopen" id="foldopen00316" data-start="{" data-end="}">
+<div class="line"><a id="l00316" name="l00316"></a><span class="lineno"><a class="line" href="classEventsManager.html#a502a3de0687be48eb8d52c0bf2525ed2">  316</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classEventsManager.html#a502a3de0687be48eb8d52c0bf2525ed2">unsubscribe</a>(<a class="code hl_typedef" href="classEventHandler.html#a7e2264d3e34a294002ae86f7acb0e556">EventHandler&lt;T&gt;::subId</a> subId)</div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span>    {</div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span>        <span class="keyword">static_assert</span>(std::is_base_of_v&lt;IEvent&lt;T&gt;, <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">T</a>&gt;, <span class="stringliteral">&quot;Class doesn&#39;t derive from IEvent&quot;</span>);</div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span>        <a class="code hl_class" href="classEventHandler.html">EventHandler&lt;T&gt;</a> *handler = <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">getOrCreateHandler&lt;T&gt;</a>();</div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span>        <span class="keywordflow">return</span> handler-&gt;<a class="code hl_function" href="classEventHandler.html#a81d0ad307f791ef7f4fa8a4387812c0e">unsubscribe</a>(subId);</div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span>    }</div>
 </div>
-<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span> </div>
-<div class="line"><a id="l00327" name="l00327"></a><span class="lineno">  327</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
-<div class="foldopen" id="foldopen00328" data-start="{" data-end="}">
-<div class="line"><a id="l00328" name="l00328"></a><span class="lineno"><a class="line" href="classEventsManager.html#ac2e3dcab35985173976477a9ea8545c8">  328</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classEventsManager.html#ac2e3dcab35985173976477a9ea8545c8">fire</a>(<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">T</a> &amp;<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">event</a>)</div>
-<div class="line"><a id="l00329" name="l00329"></a><span class="lineno">  329</span>    {</div>
-<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>        <span class="keyword">static_assert</span>(std::is_base_of_v&lt;IEvent&lt;T&gt;, <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">T</a>&gt;, <span class="stringliteral">&quot;Class doesn&#39;t derive from IEvent&quot;</span>);</div>
-<div class="line"><a id="l00331" name="l00331"></a><span class="lineno">  331</span>        <a class="code hl_class" href="classEventHandler.html">EventHandler&lt;T&gt;</a> *handler = <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">getOrNull&lt;T&gt;</a>();</div>
-<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span> </div>
-<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>        <span class="keywordflow">if</span> (handler)</div>
-<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>        {</div>
-<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span>            handler-&gt;<a class="code hl_function" href="classEventHandler.html#a335dacd696ffcdfd912d34d9cfa7c2bd">fire</a>(<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">event</a>);</div>
-<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>        }</div>
-<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>    }</div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span> </div>
+<div class="line"><a id="l00330" name="l00330"></a><span class="lineno">  330</span>    <span class="keyword">template</span> &lt;<span class="keyword">class</span> T&gt;</div>
+<div class="foldopen" id="foldopen00331" data-start="{" data-end="}">
+<div class="line"><a id="l00331" name="l00331"></a><span class="lineno"><a class="line" href="classEventsManager.html#ac2e3dcab35985173976477a9ea8545c8">  331</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classEventsManager.html#ac2e3dcab35985173976477a9ea8545c8">fire</a>(<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">T</a> &amp;<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">event</a>)</div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span>    {</div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span>        <span class="keyword">static_assert</span>(std::is_base_of_v&lt;IEvent&lt;T&gt;, <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">T</a>&gt;, <span class="stringliteral">&quot;Class doesn&#39;t derive from IEvent&quot;</span>);</div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span>        <a class="code hl_class" href="classEventHandler.html">EventHandler&lt;T&gt;</a> *handler = <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">getOrNull&lt;T&gt;</a>();</div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span> </div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span>        <span class="keywordflow">if</span> (handler)</div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span>        {</div>
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span>            handler-&gt;<a class="code hl_function" href="classEventHandler.html#a335dacd696ffcdfd912d34d9cfa7c2bd">fire</a>(<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">event</a>);</div>
+<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span>        }</div>
+<div class="line"><a id="l00340" name="l00340"></a><span class="lineno">  340</span>    }</div>
 </div>
-<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span> </div>
-<div class="line"><a id="l00344" name="l00344"></a><span class="lineno">  344</span>    <span class="keyword">static</span> <a class="code hl_class" href="classEventsManager.html">EventsManager</a> *<a class="code hl_function" href="classEventsManager.html#a8b6868e7bf770c95e5706f4cf817bf56">inst</a>();</div>
-<div class="line"><a id="l00345" name="l00345"></a><span class="lineno">  345</span>};</div>
+<div class="line"><a id="l00341" name="l00341"></a><span class="lineno">  341</span> </div>
+<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span>    <span class="keyword">static</span> <a class="code hl_class" href="classEventsManager.html">EventsManager</a> *<a class="code hl_function" href="classEventsManager.html#a8b6868e7bf770c95e5706f4cf817bf56">inst</a>();</div>
+<div class="line"><a id="l00348" name="l00348"></a><span class="lineno">  348</span>};</div>
 </div>
-<div class="line"><a id="l00346" name="l00346"></a><span class="lineno">  346</span> </div>
-<div class="line"><a id="l00347" name="l00347"></a><span class="lineno">  347</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
-<div class="foldopen" id="foldopen00348" data-start="{" data-end="}">
-<div class="line"><a id="l00348" name="l00348"></a><span class="lineno"><a class="line" href="classIEvent.html#a22d8bd6b55b5358f117db71c10272bb9">  348</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classIEvent.html#a22d8bd6b55b5358f117db71c10272bb9">IEvent&lt;T&gt;::loadLua</a>(<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">lua_State</a> *state) {</div>
-<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span>    <span class="keyword">auto</span> <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">baseName</a> = std::string(<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">type_name&lt;T&gt;</a>());</div>
-<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span>    std::string <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">cleanedEvent</a> = <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">baseName</a>.substr(0, <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">baseName</a>.length() - std::string(<span class="stringliteral">&quot;Event&quot;</span>).length());</div>
-<div class="line"><a id="l00351" name="l00351"></a><span class="lineno">  351</span>    <span class="keyword">static_assert</span>(std::is_base_of_v&lt;IEvent, T&gt;, <span class="stringliteral">&quot;Class doesn&#39;t derive from IEvent&quot;</span>);</div>
-<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>    luabridge::getGlobalNamespace(state)</div>
-<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>            .beginNamespace(<span class="stringliteral">&quot;event&quot;</span>)</div>
-<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>            .addFunction((<span class="stringliteral">&quot;on&quot;</span>+<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">cleanedEvent</a>).<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">c_str</a>(), [](<span class="keyword">const</span> luabridge::LuaRef&amp; <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">ref</a>) {</div>
-<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>                <span class="keywordflow">if</span>(!<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">ref</a>.isFunction())</div>
-<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>                    <span class="keywordflow">return</span>;</div>
-<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span> </div>
-<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>                <a class="code hl_function" href="classEventsManager.html#a8b6868e7bf770c95e5706f4cf817bf56">EventsManager::inst</a>()-&gt;<a class="code hl_function" href="classEventsManager.html#a17a034b18a623bb8db75bf16aabeb7c0">subscribe</a>&lt;<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">T</a>&gt;(<span class="keyword">const_cast&lt;</span>luabridge::LuaRef&amp;<span class="keyword">&gt;</span>(<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">ref</a>));</div>
-<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>            })</div>
-<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span>            .<span class="keyword">template</span> <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">beginClass&lt;T&gt;</a>(<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">cleanedEvent</a>.c_str())</div>
-<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>            .<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">endClass</a>()</div>
-<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>            .endNamespace();</div>
-<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>}</div>
+<div class="line"><a id="l00349" name="l00349"></a><span class="lineno">  349</span> </div>
+<div class="line"><a id="l00350" name="l00350"></a><span class="lineno">  350</span><span class="keyword">template</span>&lt;<span class="keyword">class</span> T&gt;</div>
+<div class="foldopen" id="foldopen00351" data-start="{" data-end="}">
+<div class="line"><a id="l00351" name="l00351"></a><span class="lineno"><a class="line" href="classIEvent.html#a22d8bd6b55b5358f117db71c10272bb9">  351</a></span><span class="keywordtype">void</span> <a class="code hl_function" href="classIEvent.html#a22d8bd6b55b5358f117db71c10272bb9">IEvent&lt;T&gt;::loadLua</a>(<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">lua_State</a> *state) {</div>
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno">  352</span>    <span class="keyword">auto</span> <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">baseName</a> = std::string(<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">type_name&lt;T&gt;</a>());</div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span>    std::string <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">cleanedEvent</a> = <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">baseName</a>.substr(0, <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">baseName</a>.length() - std::string(<span class="stringliteral">&quot;Event&quot;</span>).length());</div>
+<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span>    <span class="keyword">static_assert</span>(std::is_base_of_v&lt;IEvent, T&gt;, <span class="stringliteral">&quot;Class doesn&#39;t derive from IEvent&quot;</span>);</div>
+<div class="line"><a id="l00355" name="l00355"></a><span class="lineno">  355</span>    luabridge::getGlobalNamespace(state)</div>
+<div class="line"><a id="l00356" name="l00356"></a><span class="lineno">  356</span>            .beginNamespace(<span class="stringliteral">&quot;event&quot;</span>)</div>
+<div class="line"><a id="l00357" name="l00357"></a><span class="lineno">  357</span>            .addFunction((<span class="stringliteral">&quot;on&quot;</span>+<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">cleanedEvent</a>).<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">c_str</a>(), [](<span class="keyword">const</span> luabridge::LuaRef&amp; <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">ref</a>) {</div>
+<div class="line"><a id="l00358" name="l00358"></a><span class="lineno">  358</span>                <span class="keywordflow">if</span>(!<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">ref</a>.isFunction())</div>
+<div class="line"><a id="l00359" name="l00359"></a><span class="lineno">  359</span>                    <span class="keywordflow">return</span>;</div>
+<div class="line"><a id="l00360" name="l00360"></a><span class="lineno">  360</span> </div>
+<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span>                <a class="code hl_function" href="classEventsManager.html#a8b6868e7bf770c95e5706f4cf817bf56">EventsManager::inst</a>()-&gt;<a class="code hl_function" href="classEventsManager.html#a17a034b18a623bb8db75bf16aabeb7c0">subscribe</a>&lt;<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">T</a>&gt;(<span class="keyword">const_cast&lt;</span>luabridge::LuaRef&amp;<span class="keyword">&gt;</span>(<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">ref</a>));</div>
+<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span>            })</div>
+<div class="line"><a id="l00363" name="l00363"></a><span class="lineno">  363</span>            .<span class="keyword">template</span> <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">beginClass&lt;T&gt;</a>(<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">cleanedEvent</a>.c_str())</div>
+<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span>            .<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">endClass</a>()</div>
+<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span>            .endNamespace();</div>
+<div class="line"><a id="l00366" name="l00366"></a><span class="lineno">  366</span>}</div>
 </div>
 </div>
-<div class="line"><a id="l00364" name="l00364"></a><span class="lineno">  364</span> </div>
-<div class="line"><a id="l00365" name="l00365"></a><span class="lineno">  365</span><span class="preprocessor">#endif </span><span class="comment">// MINESERVER_EVENT_HPP</span></div>
+<div class="line"><a id="l00367" name="l00367"></a><span class="lineno">  367</span> </div>
+<div class="line"><a id="l00368" name="l00368"></a><span class="lineno">  368</span><span class="preprocessor">#endif </span><span class="comment">// MINESERVER_EVENT_HPP</span></div>
 </div>
 <div class="ttc" id="aclassEventHandler_html"><div class="ttname"><a href="classEventHandler.html">EventHandler</a></div><div class="ttdoc">Handler for a type of event.</div><div class="ttdef"><b>Definition</b> event.h:85</div></div>
-<div class="ttc" id="aclassEventHandler_html_a2af645115bb1ee04e6179bc566b8ddec"><div class="ttname"><a href="classEventHandler.html#a2af645115bb1ee04e6179bc566b8ddec">EventHandler::EventHandler</a></div><div class="ttdeci">EventHandler()</div><div class="ttdoc">Construct a new Event Handler object.</div><div class="ttdef"><b>Definition</b> event.h:132</div></div>
-<div class="ttc" id="aclassEventHandler_html_a335dacd696ffcdfd912d34d9cfa7c2bd"><div class="ttname"><a href="classEventHandler.html#a335dacd696ffcdfd912d34d9cfa7c2bd">EventHandler::fire</a></div><div class="ttdeci">void fire(T &amp;event)</div><div class="ttdoc">Fire an event.</div><div class="ttdef"><b>Definition</b> event.h:144</div></div>
+<div class="ttc" id="aclassEventHandler_html_a2af645115bb1ee04e6179bc566b8ddec"><div class="ttname"><a href="classEventHandler.html#a2af645115bb1ee04e6179bc566b8ddec">EventHandler::EventHandler</a></div><div class="ttdeci">EventHandler()</div><div class="ttdoc">Construct a new Event Handler object.</div><div class="ttdef"><b>Definition</b> event.h:131</div></div>
+<div class="ttc" id="aclassEventHandler_html_a335dacd696ffcdfd912d34d9cfa7c2bd"><div class="ttname"><a href="classEventHandler.html#a335dacd696ffcdfd912d34d9cfa7c2bd">EventHandler::fire</a></div><div class="ttdeci">void fire(T &amp;event)</div><div class="ttdoc">Fire an event.</div><div class="ttdef"><b>Definition</b> event.h:145</div></div>
 <div class="ttc" id="aclassEventHandler_html_a7c8d86eb7b551f72d7ba9c484ce0884d"><div class="ttname"><a href="classEventHandler.html#a7c8d86eb7b551f72d7ba9c484ce0884d">EventHandler::callbackType</a></div><div class="ttdeci">std::function&lt; void(T &amp;) callbackType)</div><div class="ttdoc">The type of function that should be passed.</div><div class="ttdef"><b>Definition</b> event.h:94</div></div>
 <div class="ttc" id="aclassEventHandler_html_a7e2264d3e34a294002ae86f7acb0e556"><div class="ttname"><a href="classEventHandler.html#a7e2264d3e34a294002ae86f7acb0e556">EventHandler::subId</a></div><div class="ttdeci">int subId</div><div class="ttdoc">The Subscription Id.</div><div class="ttdef"><b>Definition</b> event.h:100</div></div>
-<div class="ttc" id="aclassEventHandler_html_a81d0ad307f791ef7f4fa8a4387812c0e"><div class="ttname"><a href="classEventHandler.html#a81d0ad307f791ef7f4fa8a4387812c0e">EventHandler::unsubscribe</a></div><div class="ttdeci">void unsubscribe(subId id)</div><div class="ttdoc">Unsubscribe from an event.</div><div class="ttdef"><b>Definition</b> event.h:194</div></div>
-<div class="ttc" id="aclassEventHandler_html_acc7e36728382d3998db846024df8b119"><div class="ttname"><a href="classEventHandler.html#acc7e36728382d3998db846024df8b119">EventHandler::getTypeInfo</a></div><div class="ttdeci">const std::type_info * getTypeInfo() const</div><div class="ttdoc">Get the Type Info of T.</div><div class="ttdef"><b>Definition</b> event.h:213</div></div>
-<div class="ttc" id="aclassEventHandler_html_ad563c96e95bd5ce43a09fdcf562d2334"><div class="ttname"><a href="classEventHandler.html#ad563c96e95bd5ce43a09fdcf562d2334">EventHandler::subscribe</a></div><div class="ttdeci">subId subscribe(callbackType &amp;&amp;func)</div><div class="ttdoc">Subscribe to an event.</div><div class="ttdef"><b>Definition</b> event.h:179</div></div>
-<div class="ttc" id="aclassEventHandler_html_ae37885fe6ddadf786eaf97f835874a5f"><div class="ttname"><a href="classEventHandler.html#ae37885fe6ddadf786eaf97f835874a5f">EventHandler::subscribe</a></div><div class="ttdeci">subId subscribe(const callbackType &amp;func)</div><div class="ttdoc">Subscribe to an event.</div><div class="ttdef"><b>Definition</b> event.h:163</div></div>
-<div class="ttc" id="aclassEventsManager_html"><div class="ttname"><a href="classEventsManager.html">EventsManager</a></div><div class="ttdoc">Manager for Events.</div><div class="ttdef"><b>Definition</b> event.h:221</div></div>
-<div class="ttc" id="aclassEventsManager_html_a17a034b18a623bb8db75bf16aabeb7c0"><div class="ttname"><a href="classEventsManager.html#a17a034b18a623bb8db75bf16aabeb7c0">EventsManager::subscribe</a></div><div class="ttdeci">EventHandler&lt; T &gt;::subId subscribe(const EventHandler&lt; T &gt;::callbackType &amp;callback)</div><div class="ttdoc">Subscribe to T event.</div><div class="ttdef"><b>Definition</b> event.h:282</div></div>
-<div class="ttc" id="aclassEventsManager_html_a502a3de0687be48eb8d52c0bf2525ed2"><div class="ttname"><a href="classEventsManager.html#a502a3de0687be48eb8d52c0bf2525ed2">EventsManager::unsubscribe</a></div><div class="ttdeci">void unsubscribe(EventHandler&lt; T &gt;::subId subId)</div><div class="ttdoc">Unsubscribe to T event.</div><div class="ttdef"><b>Definition</b> event.h:313</div></div>
-<div class="ttc" id="aclassEventsManager_html_a536b233bc47fa1409efa1106403f9043"><div class="ttname"><a href="classEventsManager.html#a536b233bc47fa1409efa1106403f9043">EventsManager::~EventsManager</a></div><div class="ttdeci">~EventsManager()</div><div class="ttdoc">Destroy the Events Manager object.</div><div class="ttdef"><b>Definition</b> event.h:263</div></div>
+<div class="ttc" id="aclassEventHandler_html_a81d0ad307f791ef7f4fa8a4387812c0e"><div class="ttname"><a href="classEventHandler.html#a81d0ad307f791ef7f4fa8a4387812c0e">EventHandler::unsubscribe</a></div><div class="ttdeci">void unsubscribe(subId id)</div><div class="ttdoc">Unsubscribe from an event.</div><div class="ttdef"><b>Definition</b> event.h:197</div></div>
+<div class="ttc" id="aclassEventHandler_html_acc7e36728382d3998db846024df8b119"><div class="ttname"><a href="classEventHandler.html#acc7e36728382d3998db846024df8b119">EventHandler::getTypeInfo</a></div><div class="ttdeci">const std::type_info * getTypeInfo() const</div><div class="ttdoc">Get the Type Info of T.</div><div class="ttdef"><b>Definition</b> event.h:216</div></div>
+<div class="ttc" id="aclassEventHandler_html_ad563c96e95bd5ce43a09fdcf562d2334"><div class="ttname"><a href="classEventHandler.html#ad563c96e95bd5ce43a09fdcf562d2334">EventHandler::subscribe</a></div><div class="ttdeci">subId subscribe(callbackType &amp;&amp;func)</div><div class="ttdoc">Subscribe to an event.</div><div class="ttdef"><b>Definition</b> event.h:182</div></div>
+<div class="ttc" id="aclassEventHandler_html_ae37885fe6ddadf786eaf97f835874a5f"><div class="ttname"><a href="classEventHandler.html#ae37885fe6ddadf786eaf97f835874a5f">EventHandler::subscribe</a></div><div class="ttdeci">subId subscribe(const callbackType &amp;func)</div><div class="ttdoc">Subscribe to an event.</div><div class="ttdef"><b>Definition</b> event.h:166</div></div>
+<div class="ttc" id="aclassEventsManager_html"><div class="ttname"><a href="classEventsManager.html">EventsManager</a></div><div class="ttdoc">Manager for Events.</div><div class="ttdef"><b>Definition</b> event.h:224</div></div>
+<div class="ttc" id="aclassEventsManager_html_a17a034b18a623bb8db75bf16aabeb7c0"><div class="ttname"><a href="classEventsManager.html#a17a034b18a623bb8db75bf16aabeb7c0">EventsManager::subscribe</a></div><div class="ttdeci">EventHandler&lt; T &gt;::subId subscribe(const EventHandler&lt; T &gt;::callbackType &amp;callback)</div><div class="ttdoc">Subscribe to T event.</div><div class="ttdef"><b>Definition</b> event.h:285</div></div>
+<div class="ttc" id="aclassEventsManager_html_a502a3de0687be48eb8d52c0bf2525ed2"><div class="ttname"><a href="classEventsManager.html#a502a3de0687be48eb8d52c0bf2525ed2">EventsManager::unsubscribe</a></div><div class="ttdeci">void unsubscribe(EventHandler&lt; T &gt;::subId subId)</div><div class="ttdoc">Unsubscribe to T event.</div><div class="ttdef"><b>Definition</b> event.h:316</div></div>
+<div class="ttc" id="aclassEventsManager_html_a536b233bc47fa1409efa1106403f9043"><div class="ttname"><a href="classEventsManager.html#a536b233bc47fa1409efa1106403f9043">EventsManager::~EventsManager</a></div><div class="ttdeci">~EventsManager()</div><div class="ttdoc">Destroy the Events Manager object.</div><div class="ttdef"><b>Definition</b> event.h:266</div></div>
 <div class="ttc" id="aclassEventsManager_html_a67fdb40a00f36d1a63fbb0afb640f3a6"><div class="ttname"><a href="classEventsManager.html#a67fdb40a00f36d1a63fbb0afb640f3a6">EventsManager::EventsManager</a></div><div class="ttdeci">EventsManager()</div><div class="ttdoc">Construct a new Events Manager object.</div><div class="ttdef"><b>Definition</b> event.cpp:15</div></div>
 <div class="ttc" id="aclassEventsManager_html_a8b6868e7bf770c95e5706f4cf817bf56"><div class="ttname"><a href="classEventsManager.html#a8b6868e7bf770c95e5706f4cf817bf56">EventsManager::inst</a></div><div class="ttdeci">static EventsManager * inst()</div><div class="ttdoc">Gets the instance of the events manager.</div><div class="ttdef"><b>Definition</b> event.cpp:20</div></div>
-<div class="ttc" id="aclassEventsManager_html_abd6add9e9a5cfc2ec483208a8ef0f603"><div class="ttname"><a href="classEventsManager.html#abd6add9e9a5cfc2ec483208a8ef0f603">EventsManager::subscribe</a></div><div class="ttdeci">EventHandler&lt; T &gt;::subId subscribe(EventHandler&lt; T &gt;::callbackType &amp;&amp;callback)</div><div class="ttdoc">Subscribe to T event.</div><div class="ttdef"><b>Definition</b> event.h:298</div></div>
-<div class="ttc" id="aclassEventsManager_html_ac2e3dcab35985173976477a9ea8545c8"><div class="ttname"><a href="classEventsManager.html#ac2e3dcab35985173976477a9ea8545c8">EventsManager::fire</a></div><div class="ttdeci">void fire(T &amp;event)</div><div class="ttdoc">Fire T event.</div><div class="ttdef"><b>Definition</b> event.h:328</div></div>
+<div class="ttc" id="aclassEventsManager_html_abd6add9e9a5cfc2ec483208a8ef0f603"><div class="ttname"><a href="classEventsManager.html#abd6add9e9a5cfc2ec483208a8ef0f603">EventsManager::subscribe</a></div><div class="ttdeci">EventHandler&lt; T &gt;::subId subscribe(EventHandler&lt; T &gt;::callbackType &amp;&amp;callback)</div><div class="ttdoc">Subscribe to T event.</div><div class="ttdef"><b>Definition</b> event.h:301</div></div>
+<div class="ttc" id="aclassEventsManager_html_ac2e3dcab35985173976477a9ea8545c8"><div class="ttname"><a href="classEventsManager.html#ac2e3dcab35985173976477a9ea8545c8">EventsManager::fire</a></div><div class="ttdeci">void fire(T &amp;event)</div><div class="ttdoc">Fire T event.</div><div class="ttdef"><b>Definition</b> event.h:331</div></div>
 <div class="ttc" id="aclassIEvent_html"><div class="ttname"><a href="classIEvent.html">IEvent</a></div><div class="ttdoc">Event interface.</div><div class="ttdef"><b>Definition</b> event.h:28</div></div>
-<div class="ttc" id="aclassIEvent_html_a22d8bd6b55b5358f117db71c10272bb9"><div class="ttname"><a href="classIEvent.html#a22d8bd6b55b5358f117db71c10272bb9">IEvent::loadLua</a></div><div class="ttdeci">static void loadLua(lua_State *state)</div><div class="ttdoc">Loads the event to the lua state.</div><div class="ttdef"><b>Definition</b> event.h:348</div></div>
+<div class="ttc" id="aclassIEvent_html_a22d8bd6b55b5358f117db71c10272bb9"><div class="ttname"><a href="classIEvent.html#a22d8bd6b55b5358f117db71c10272bb9">IEvent::loadLua</a></div><div class="ttdeci">static void loadLua(lua_State *state)</div><div class="ttdoc">Loads the event to the lua state.</div><div class="ttdef"><b>Definition</b> event.h:351</div></div>
 <div class="ttc" id="aevent_8h_html_a76b4d07bdea899ac27cd17e96f56954b"><div class="ttname"><a href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">type_name</a></div><div class="ttdeci">constexpr std::string_view type_name()</div><div class="ttdoc">Gets the name of the type paramater.</div><div class="ttdef"><b>Definition</b> event.h:56</div></div>
 <div class="ttc" id="aluaheaders_8h_html"><div class="ttname"><a href="luaheaders_8h.html">luaheaders.h</a></div><div class="ttdoc">Utility header file for lua things.</div></div>
 <div class="ttc" id="anamespacelogger_html"><div class="ttname"><a href="namespacelogger.html">logger</a></div><div class="ttdoc">The logging namespace.</div><div class="ttdef"><b>Definition</b> logger.h:141</div></div>
-<div class="ttc" id="anamespacelogger_html_a2c342fb4415aa53943af3b25b469581f"><div class="ttname"><a href="namespacelogger.html#a2c342fb4415aa53943af3b25b469581f">logger::error</a></div><div class="ttdeci">void error(const char *format,...)</div><div class="ttdoc">Logs something at the ERROR level.</div><div class="ttdef"><b>Definition</b> logger.cpp:121</div></div>
+<div class="ttc" id="anamespacelogger_html_a2c342fb4415aa53943af3b25b469581f"><div class="ttname"><a href="namespacelogger.html#a2c342fb4415aa53943af3b25b469581f">logger::error</a></div><div class="ttdeci">void error(const char *format,...)</div><div class="ttdoc">Logs something at the ERROR level.</div><div class="ttdef"><b>Definition</b> logger.cpp:127</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_7020b8b7abcceffa3f9f7a2d24718f16.html">plugins</a></li><li class="navelem"><a class="el" href="event_8h.html">event.h</a></li>
-    <li class="footer">Generated on Sun Feb 11 2024 20:09:30 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+    <li class="footer">Generated on Thu Feb 22 2024 19:40:58 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
   </ul>
 </div>
 </body>

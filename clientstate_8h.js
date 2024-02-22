@@ -1,6 +1,5 @@
 var clientstate_8h =
 [
-    [ "luabridge::Stack< ClientState >", "structluabridge_1_1Stack_3_01ClientState_01_4.html", null ],
     [ "ClientState", "clientstate_8h.html#a8d4a6786d6193f0e6245c44e4a7bb4a0", [
       [ "HANDSHAKE", "clientstate_8h.html#a8d4a6786d6193f0e6245c44e4a7bb4a0acc6ddcaa36bd57e5aec12749cb5ce29c", null ],
       [ "STATUS", "clientstate_8h.html#a8d4a6786d6193f0e6245c44e4a7bb4a0ab15379688176677d49474245a6178d97", null ],

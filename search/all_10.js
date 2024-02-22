@@ -23,6 +23,7 @@ var searchData=
   ['isender_20',['ISender',['../classISender.html',1,'']]],
   ['islocal_21',['isLocal',['../classClientSocket.html#a26bdf997f1a038e40f0001bf13346ce9',1,'ClientSocket']]],
   ['isvalid_22',['isValid',['../classClientSocket.html#a4263568b1b948099a1ddaec8fc9eeeac',1,'ClientSocket']]],
-  ['it_20open_20source_23',['Why making it Open-Source ?',['../index.html#autotoc_md25',1,'']]],
-  ['italic_24',['italic',['../classChatMessage.html#a45e14f8d0cceda2f3af297bb394dffce',1,'ChatMessage']]]
+  ['isvalidhexchar_23',['isValidHexChar',['../uuid_8cpp.html#a41376ff91f6a7b73f9f3666ef9036be6',1,'uuid.cpp']]],
+  ['it_20open_20source_24',['Why making it Open-Source ?',['../index.html#autotoc_md25',1,'']]],
+  ['italic_25',['italic',['../classChatMessage.html#a45e14f8d0cceda2f3af297bb394dffce',1,'ChatMessage']]]
 ];

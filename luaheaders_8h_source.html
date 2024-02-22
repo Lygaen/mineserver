@@ -139,28 +139,29 @@ $(function(){initNavTree('luaheaders_8h_source.html',''); initResizable(); });
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#include &lt;lauxlib.h&gt;</span></div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>}</div>
 <div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#include &lt;LuaBridge/LuaBridge.h&gt;</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#ifndef DOXYGEN_IGNORE_THIS</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacelogger.html">logger</a></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>{</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="namespacelogger.html#a0bbc9f0fb2af7e5465b08b9e6a6ccaf3">plugin</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">format</a>, ...);</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>};</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span> </div>
-<div class="foldopen" id="foldopen00034" data-start="{" data-end="}">
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno"><a class="line" href="namespacelua.html">   34</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacelua.html">lua</a></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>{</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="namespacelua.html#af0ce960bbad664d1bd4469a63827b471">luaCustomPrint</a>(<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">lua_State</a> *state);</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span> </div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="namespacelua.html#aabcf2f0300271dfc460da8ac800254ae">registerDefaultLibs</a>(<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">lua_State</a> *state, <span class="keyword">const</span> <span class="keywordtype">char</span> *name);</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>};</div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">#include &lt;LuaBridge/Vector.h&gt;</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span> </div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">#ifndef DOXYGEN_IGNORE_THIS</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacelogger.html">logger</a></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>{</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="namespacelogger.html#a0bbc9f0fb2af7e5465b08b9e6a6ccaf3">plugin</a>(<span class="keyword">const</span> <span class="keywordtype">char</span> *<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">format</a>, ...);</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>};</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
+<div class="foldopen" id="foldopen00035" data-start="{" data-end="}">
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="namespacelua.html">   35</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacelua.html">lua</a></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>{</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="namespacelua.html#af0ce960bbad664d1bd4469a63827b471">luaCustomPrint</a>(<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">lua_State</a> *state);</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="namespacelua.html#aabcf2f0300271dfc460da8ac800254ae">registerDefaultLibs</a>(<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">lua_State</a> *state, <span class="keyword">const</span> <span class="keywordtype">char</span> *name);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>};</div>
 </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span><span class="preprocessor">#endif </span><span class="comment">// MINESERVER_LUAHEADERS_H</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="preprocessor">#endif </span><span class="comment">// MINESERVER_LUAHEADERS_H</span></div>
 <div class="ttc" id="aevent_8h_html_a76b4d07bdea899ac27cd17e96f56954b"><div class="ttname"><a href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">type_name</a></div><div class="ttdeci">constexpr std::string_view type_name()</div><div class="ttdoc">Gets the name of the type paramater.</div><div class="ttdef"><b>Definition</b> event.h:56</div></div>
 <div class="ttc" id="anamespacelogger_html"><div class="ttname"><a href="namespacelogger.html">logger</a></div><div class="ttdoc">The logging namespace.</div><div class="ttdef"><b>Definition</b> logger.h:141</div></div>
-<div class="ttc" id="anamespacelogger_html_a0bbc9f0fb2af7e5465b08b9e6a6ccaf3"><div class="ttname"><a href="namespacelogger.html#a0bbc9f0fb2af7e5465b08b9e6a6ccaf3">logger::plugin</a></div><div class="ttdeci">void plugin(const char *format,...)</div><div class="ttdoc">Logs something at the INFO level, for plugins.</div><div class="ttdef"><b>Definition</b> logger.cpp:83</div></div>
-<div class="ttc" id="anamespacelua_html"><div class="ttname"><a href="namespacelua.html">lua</a></div><div class="ttdoc">Lua utility namespace.</div><div class="ttdef"><b>Definition</b> luaheaders.h:35</div></div>
+<div class="ttc" id="anamespacelogger_html_a0bbc9f0fb2af7e5465b08b9e6a6ccaf3"><div class="ttname"><a href="namespacelogger.html#a0bbc9f0fb2af7e5465b08b9e6a6ccaf3">logger::plugin</a></div><div class="ttdeci">void plugin(const char *format,...)</div><div class="ttdoc">Logs something at the INFO level, for plugins.</div><div class="ttdef"><b>Definition</b> logger.cpp:89</div></div>
+<div class="ttc" id="anamespacelua_html"><div class="ttname"><a href="namespacelua.html">lua</a></div><div class="ttdoc">Lua utility namespace.</div><div class="ttdef"><b>Definition</b> luaheaders.h:36</div></div>
 <div class="ttc" id="anamespacelua_html_aabcf2f0300271dfc460da8ac800254ae"><div class="ttname"><a href="namespacelua.html#aabcf2f0300271dfc460da8ac800254ae">lua::registerDefaultLibs</a></div><div class="ttdeci">void registerDefaultLibs(lua_State *state, const char *name)</div><div class="ttdoc">Loads default libs.</div><div class="ttdef"><b>Definition</b> luaheaders.cpp:34</div></div>
 <div class="ttc" id="anamespacelua_html_af0ce960bbad664d1bd4469a63827b471"><div class="ttname"><a href="namespacelua.html#af0ce960bbad664d1bd4469a63827b471">lua::luaCustomPrint</a></div><div class="ttdeci">int luaCustomPrint(lua_State *state)</div><div class="ttdoc">Custom print.</div><div class="ttdef"><b>Definition</b> luaheaders.cpp:15</div></div>
 </div><!-- fragment --></div><!-- contents -->
@@ -169,7 +170,7 @@ $(function(){initNavTree('luaheaders_8h_source.html',''); initResizable(); });
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_7020b8b7abcceffa3f9f7a2d24718f16.html">plugins</a></li><li class="navelem"><a class="el" href="luaheaders_8h.html">luaheaders.h</a></li>
-    <li class="footer">Generated on Sun Feb 11 2024 20:09:30 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+    <li class="footer">Generated on Thu Feb 22 2024 19:40:58 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
   </ul>
 </div>
 </body>
