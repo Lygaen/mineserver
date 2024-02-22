@@ -8,7 +8,7 @@ var searchData=
   ['end_20note_20with_20a_20touch_20of_20existential_20crisis_5',['End note with a touch of existential crisis',['../index.html#autotoc_md29',1,'']]],
   ['entity_2eh_6',['entity.h',['../entity_8h.html',1,'']]],
   ['error_7',['error',['../namespacelogger.html#a2c342fb4415aa53943af3b25b469581f',1,'logger']]],
-  ['error_8',['ERROR',['../logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a2fd6f336d08340583bd620a7f5694c90',1,'logger.h']]],
+  ['error_8',['ERROR',['../logger_8h.html#a4ad2f3fcf504e54f0d7835fa6a4a5cd4a2fd6f336d08340583bd620a7f5694c90',1,'logger.h']]],
   ['error_5fcolor_9',['ERROR_COLOR',['../logger_8h.html#a79b638f694ebb66a5eb8b994f4139906',1,'logger.h']]],
   ['event_2ecpp_10',['event.cpp',['../event_8cpp.html',1,'']]],
   ['event_2eh_11',['event.h',['../event_8h.html',1,'']]],

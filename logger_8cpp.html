@@ -121,6 +121,7 @@ $(function(){initNavTree('logger_8cpp.html',''); initResizable(); });
 
 <div class="header">
   <div class="summary">
+<a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">logger.cpp File Reference</div></div>
 </div><!--header-->
@@ -130,13 +131,23 @@ $(function(){initNavTree('logger_8cpp.html',''); initResizable(); });
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="logger_8h_source.html">logger.h</a>&quot;</code><br />
 <code>#include &quot;<a class="el" href="luaheaders_8h_source.html">plugins/luaheaders.h</a>&quot;</code><br />
+<code>#include &lt;unordered_map&gt;</code><br />
 </div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a113392497bba8fe81fb595bbd0eb6bb2" id="r_a113392497bba8fe81fb595bbd0eb6bb2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">void</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a113392497bba8fe81fb595bbd0eb6bb2">logAtLevel</a> (<a class="el" href="logger_8h.html#a4ad2f3fcf504e54f0d7835fa6a4a5cd4">LogLevel</a> <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">level</a>, <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">const</a> <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">char</a> *<a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">format</a>, <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">va_list</a> <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">args</a>)</td></tr>
+<tr class="memdesc:a113392497bba8fe81fb595bbd0eb6bb2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Logs a format and its args at a certain level.  <br /></td></tr>
+<tr class="separator:a113392497bba8fe81fb595bbd0eb6bb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:aadb8685df949eda17b8f5a3f737938ef" id="r_aadb8685df949eda17b8f5a3f737938ef"><td class="memItemLeft" align="right" valign="top"><a id="aadb8685df949eda17b8f5a3f737938ef" name="aadb8685df949eda17b8f5a3f737938ef"></a>
-<a class="el" href="logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9">LogLevel</a>&#160;</td><td class="memItemRight" valign="bottom"><b>LOGLEVEL</b></td></tr>
+<a class="el" href="logger_8h.html#a4ad2f3fcf504e54f0d7835fa6a4a5cd4">LogLevel</a>&#160;</td><td class="memItemRight" valign="bottom"><b>LOGLEVEL</b></td></tr>
 <tr class="memdesc:aadb8685df949eda17b8f5a3f737938ef"><td class="mdescLeft">&#160;</td><td class="mdescRight">The current stored loglevel. <br /></td></tr>
 <tr class="separator:aadb8685df949eda17b8f5a3f737938ef"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af363e144b423b700133ec8bcfb0a6b2e" id="r_af363e144b423b700133ec8bcfb0a6b2e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">const</a> <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">std::unordered_map</a>&lt; <a class="el" href="logger_8h.html#a4ad2f3fcf504e54f0d7835fa6a4a5cd4">LogLevel</a>, <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">std::pair</a>&lt; <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">std::string</a>, <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">std::string</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af363e144b423b700133ec8bcfb0a6b2e">LEVELS</a></td></tr>
+<tr class="memdesc:af363e144b423b700133ec8bcfb0a6b2e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Mappings for loglevel enum.  <br /></td></tr>
+<tr class="separator:af363e144b423b700133ec8bcfb0a6b2e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>The file containing the logic for the logger. </p>
@@ -144,13 +155,88 @@ Variables</h2></td></tr>
 <dl class="section version"><dt>Version</dt><dd>0.1 </dd></dl>
 <dl class="section date"><dt>Date</dt><dd>2023-12-16</dd></dl>
 <dl class="section copyright"><dt>Copyright</dt><dd>Copyright (c) 2023 </dd></dl>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="a113392497bba8fe81fb595bbd0eb6bb2" name="a113392497bba8fe81fb595bbd0eb6bb2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a113392497bba8fe81fb595bbd0eb6bb2">&#9670;&#160;</a></span>logAtLevel()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">void</a> logAtLevel </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="logger_8h.html#a4ad2f3fcf504e54f0d7835fa6a4a5cd4">LogLevel</a></td>          <td class="paramname"><span class="paramname"><em>level</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">const</a> <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">char</a> *</td>          <td class="paramname"><span class="paramname"><em>format</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">va_list</a></td>          <td class="paramname"><span class="paramname"><em>args</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Logs a format and its args at a certain level. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">level</td><td>the level to log to </td></tr>
+    <tr><td class="paramname">format</td><td>the format of the log </td></tr>
+    <tr><td class="paramname">args</td><td>the arguments of the log </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="af363e144b423b700133ec8bcfb0a6b2e" name="af363e144b423b700133ec8bcfb0a6b2e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af363e144b423b700133ec8bcfb0a6b2e">&#9670;&#160;</a></span>LEVELS</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">const</a> <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">std::unordered_map</a>&lt;<a class="el" href="logger_8h.html#a4ad2f3fcf504e54f0d7835fa6a4a5cd4">LogLevel</a>, <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">std::pair</a>&lt;<a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">std::string</a>, <a class="el" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">std::string</a>&gt; &gt; LEVELS</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Initial value:</b><div class="fragment"><div class="line">{</div>
+<div class="line">    {<a class="code hl_enumvalue" href="logger_8h.html#a4ad2f3fcf504e54f0d7835fa6a4a5cd4a0593585da9181e972974c1274d8f2b4f">LogLevel::DEBUG</a>, {<span class="stringliteral">&quot;DEBUG&quot;</span>, <a class="code hl_define" href="logger_8h.html#a792f9eb6a62648607f47b22644ad9707">DEBUG_COLOR</a>}},</div>
+<div class="line">    {<a class="code hl_enumvalue" href="logger_8h.html#a4ad2f3fcf504e54f0d7835fa6a4a5cd4a2fd6f336d08340583bd620a7f5694c90">LogLevel::ERROR</a>, {<span class="stringliteral">&quot;ERROR&quot;</span>, <a class="code hl_define" href="logger_8h.html#a79b638f694ebb66a5eb8b994f4139906">ERROR_COLOR</a>}},</div>
+<div class="line">    {<a class="code hl_enumvalue" href="logger_8h.html#a4ad2f3fcf504e54f0d7835fa6a4a5cd4a651d8a47a6976d6fe05c0e03fb4cd2d0">LogLevel::FATAL</a>, {<span class="stringliteral">&quot;FATAL&quot;</span>, <a class="code hl_define" href="logger_8h.html#af28559d37017eab92792d364a8f82e21">FATAL_COLOR</a>}},</div>
+<div class="line">    {<a class="code hl_enumvalue" href="logger_8h.html#a4ad2f3fcf504e54f0d7835fa6a4a5cd4a748005382152808a72b1a9177d9dc806">LogLevel::INFO</a>, {<span class="stringliteral">&quot;INFO&quot;</span>, <a class="code hl_define" href="logger_8h.html#a5d724ff30124b3ce91f377afb4598ed7">INFO_COLOR</a>}},</div>
+<div class="line">    {<a class="code hl_enumvalue" href="logger_8h.html#a4ad2f3fcf504e54f0d7835fa6a4a5cd4adc92bc1a28e72c0c0631125e4cda2d98">LogLevel::PLUGIN</a>, {<span class="stringliteral">&quot;PLUGIN&quot;</span>, <a class="code hl_define" href="logger_8h.html#a8cd5c6a640e9e8e6e253ac3e0b0c01cb">PLUGIN_COLOR</a>}},</div>
+<div class="line">    {<a class="code hl_enumvalue" href="logger_8h.html#a4ad2f3fcf504e54f0d7835fa6a4a5cd4a74dac7ac23d5b810db6d4067f14e8676">LogLevel::WARN</a>, {<span class="stringliteral">&quot;WARN&quot;</span>, <a class="code hl_define" href="logger_8h.html#ade48c7e2e47b62c4ba5b651a8fce44d7">WARN_COLOR</a>}},</div>
+<div class="line">}</div>
+<div class="ttc" id="alogger_8h_html_a4ad2f3fcf504e54f0d7835fa6a4a5cd4a0593585da9181e972974c1274d8f2b4f"><div class="ttname"><a href="logger_8h.html#a4ad2f3fcf504e54f0d7835fa6a4a5cd4a0593585da9181e972974c1274d8f2b4f">DEBUG</a></div><div class="ttdeci">@ DEBUG</div><div class="ttdoc">Debug level.</div><div class="ttdef"><b>Definition</b> logger.h:100</div></div>
+<div class="ttc" id="alogger_8h_html_a4ad2f3fcf504e54f0d7835fa6a4a5cd4a2fd6f336d08340583bd620a7f5694c90"><div class="ttname"><a href="logger_8h.html#a4ad2f3fcf504e54f0d7835fa6a4a5cd4a2fd6f336d08340583bd620a7f5694c90">ERROR</a></div><div class="ttdeci">@ ERROR</div><div class="ttdoc">Error level.</div><div class="ttdef"><b>Definition</b> logger.h:124</div></div>
+<div class="ttc" id="alogger_8h_html_a4ad2f3fcf504e54f0d7835fa6a4a5cd4a651d8a47a6976d6fe05c0e03fb4cd2d0"><div class="ttname"><a href="logger_8h.html#a4ad2f3fcf504e54f0d7835fa6a4a5cd4a651d8a47a6976d6fe05c0e03fb4cd2d0">FATAL</a></div><div class="ttdeci">@ FATAL</div><div class="ttdoc">Fatal level.</div><div class="ttdef"><b>Definition</b> logger.h:130</div></div>
+<div class="ttc" id="alogger_8h_html_a4ad2f3fcf504e54f0d7835fa6a4a5cd4a748005382152808a72b1a9177d9dc806"><div class="ttname"><a href="logger_8h.html#a4ad2f3fcf504e54f0d7835fa6a4a5cd4a748005382152808a72b1a9177d9dc806">INFO</a></div><div class="ttdeci">@ INFO</div><div class="ttdoc">Info and.</div><div class="ttdef"><b>Definition</b> logger.h:106</div></div>
+<div class="ttc" id="alogger_8h_html_a4ad2f3fcf504e54f0d7835fa6a4a5cd4a74dac7ac23d5b810db6d4067f14e8676"><div class="ttname"><a href="logger_8h.html#a4ad2f3fcf504e54f0d7835fa6a4a5cd4a74dac7ac23d5b810db6d4067f14e8676">WARN</a></div><div class="ttdeci">@ WARN</div><div class="ttdoc">warn level</div><div class="ttdef"><b>Definition</b> logger.h:118</div></div>
+<div class="ttc" id="alogger_8h_html_a4ad2f3fcf504e54f0d7835fa6a4a5cd4adc92bc1a28e72c0c0631125e4cda2d98"><div class="ttname"><a href="logger_8h.html#a4ad2f3fcf504e54f0d7835fa6a4a5cd4adc92bc1a28e72c0c0631125e4cda2d98">PLUGIN</a></div><div class="ttdeci">@ PLUGIN</div><div class="ttdoc">Plugin level.</div><div class="ttdef"><b>Definition</b> logger.h:112</div></div>
+<div class="ttc" id="alogger_8h_html_a5d724ff30124b3ce91f377afb4598ed7"><div class="ttname"><a href="logger_8h.html#a5d724ff30124b3ce91f377afb4598ed7">INFO_COLOR</a></div><div class="ttdeci">#define INFO_COLOR</div><div class="ttdoc">ANSI color for info level in the console.</div><div class="ttdef"><b>Definition</b> logger.h:60</div></div>
+<div class="ttc" id="alogger_8h_html_a792f9eb6a62648607f47b22644ad9707"><div class="ttname"><a href="logger_8h.html#a792f9eb6a62648607f47b22644ad9707">DEBUG_COLOR</a></div><div class="ttdeci">#define DEBUG_COLOR</div><div class="ttdoc">ANSI color for debug level in the console.</div><div class="ttdef"><b>Definition</b> logger.h:66</div></div>
+<div class="ttc" id="alogger_8h_html_a79b638f694ebb66a5eb8b994f4139906"><div class="ttname"><a href="logger_8h.html#a79b638f694ebb66a5eb8b994f4139906">ERROR_COLOR</a></div><div class="ttdeci">#define ERROR_COLOR</div><div class="ttdoc">ANSI color for error level in the console.</div><div class="ttdef"><b>Definition</b> logger.h:42</div></div>
+<div class="ttc" id="alogger_8h_html_a8cd5c6a640e9e8e6e253ac3e0b0c01cb"><div class="ttname"><a href="logger_8h.html#a8cd5c6a640e9e8e6e253ac3e0b0c01cb">PLUGIN_COLOR</a></div><div class="ttdeci">#define PLUGIN_COLOR</div><div class="ttdoc">ANSI color for plugins.</div><div class="ttdef"><b>Definition</b> logger.h:54</div></div>
+<div class="ttc" id="alogger_8h_html_ade48c7e2e47b62c4ba5b651a8fce44d7"><div class="ttname"><a href="logger_8h.html#ade48c7e2e47b62c4ba5b651a8fce44d7">WARN_COLOR</a></div><div class="ttdeci">#define WARN_COLOR</div><div class="ttdoc">ANSI color for warn level in the console.</div><div class="ttdef"><b>Definition</b> logger.h:48</div></div>
+<div class="ttc" id="alogger_8h_html_af28559d37017eab92792d364a8f82e21"><div class="ttname"><a href="logger_8h.html#af28559d37017eab92792d364a8f82e21">FATAL_COLOR</a></div><div class="ttdeci">#define FATAL_COLOR</div><div class="ttdoc">ANSI color for fatal level in the console.</div><div class="ttdef"><b>Definition</b> logger.h:36</div></div>
+</div><!-- fragment -->
+<p>Mappings for loglevel enum. </p>
+<p>For ease of use, instead of having a giant switch case, we have this map. The first part of the pair in the values is the string representation of the level and the second one is the color associated with that same level. </p>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_313caf1132e152dd9b58bea13a4052ca.html">utils</a></li><li class="navelem"><a class="el" href="logger_8cpp.html">logger.cpp</a></li>
-    <li class="footer">Generated on Thu Feb 22 2024 19:46:46 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+    <li class="footer">Generated on Thu Feb 22 2024 20:12:04 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
   </ul>
 </div>
 </body>

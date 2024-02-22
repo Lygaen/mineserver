@@ -1,7 +1,7 @@
 var searchData=
 [
   ['faq_0',['Index - FAQ',['../index.html',1,'']]],
-  ['fatal_1',['FATAL',['../logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a651d8a47a6976d6fe05c0e03fb4cd2d0',1,'logger.h']]],
+  ['fatal_1',['FATAL',['../logger_8h.html#a4ad2f3fcf504e54f0d7835fa6a4a5cd4a651d8a47a6976d6fe05c0e03fb4cd2d0',1,'logger.h']]],
   ['fatal_2',['fatal',['../namespacelogger.html#a556241a1f5dfb02c21e3ba755e5ff4ac',1,'logger']]],
   ['fatal_5fcolor_3',['FATAL_COLOR',['../logger_8h.html#af28559d37017eab92792d364a8f82e21',1,'logger.h']]],
   ['features_20do_20you_20have_20compared_20to_20other_4',['What features do you have compared to other ?',['../index.html#autotoc_md27',1,'']]],

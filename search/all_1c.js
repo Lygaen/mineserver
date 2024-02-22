@@ -1,7 +1,7 @@
 var searchData=
 [
   ['warn_0',['warn',['../namespacelogger.html#a97dbc692baa8b760f866b81a93175a19',1,'logger']]],
-  ['warn_1',['WARN',['../logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a74dac7ac23d5b810db6d4067f14e8676',1,'logger.h']]],
+  ['warn_1',['WARN',['../logger_8h.html#a4ad2f3fcf504e54f0d7835fa6a4a5cd4a74dac7ac23d5b810db6d4067f14e8676',1,'logger.h']]],
   ['warn_5fcolor_2',['WARN_COLOR',['../logger_8h.html#ade48c7e2e47b62c4ba5b651a8fce44d7',1,'logger.h']]],
   ['warning_3',['Libraries Warning',['../md_docs_2__3__PLUGINS.html#autotoc_md21',1,'']]],
   ['what_20features_20do_20you_20have_20compared_20to_20other_4',['What features do you have compared to other ?',['../index.html#autotoc_md27',1,'']]],

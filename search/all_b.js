@@ -1,7 +1,7 @@
 var searchData=
 [
   ['debug_0',['debug',['../namespacelogger.html#abf121e9e40ac777068d5f90419d3dfa8',1,'logger']]],
-  ['debug_1',['DEBUG',['../logger_8h.html#aca1fd1d8935433e6ba2e3918214e07f9a0593585da9181e972974c1274d8f2b4f',1,'logger.h']]],
+  ['debug_1',['DEBUG',['../logger_8h.html#a4ad2f3fcf504e54f0d7835fa6a4a5cd4a0593585da9181e972974c1274d8f2b4f',1,'logger.h']]],
   ['debug_5fcolor_2',['DEBUG_COLOR',['../logger_8h.html#a792f9eb6a62648607f47b22644ad9707',1,'logger.h']]],
   ['decrypt_3',['DECRYPT',['../namespacecrypto.html#a512c0376973f32897981d6c4a7b2fd4ba22a7d9a2b89e6fb536138c0f6b743e29',1,'crypto']]],
   ['definitions_4',['CMake Definitions',['../md_docs_2__2__CONFIG.html#cmake_definitions',1,'']]],
