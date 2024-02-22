@@ -213,7 +213,7 @@ public:
     /**
      * @brief Accepts a new client
      *
-     * Accepts synchronously a new client,
+     * Accepts asynchronously a new client,
      * and gives back a wrapper for the client
      * socket when the client is connected.
      * @return ClientSocket

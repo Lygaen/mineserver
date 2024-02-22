@@ -11,6 +11,7 @@
 
 #include "logger.h"
 #include "plugins/luaheaders.h"
+#include <unordered_map>
 
 /**
  * @brief The current stored loglevel
@@ -38,6 +39,7 @@ void logger::loadConfig()
     CHECK_ENUM(ALL);
     CHECK_ENUM(DEBUG);
     CHECK_ENUM(INFO);
+    CHECK_ENUM(PLUGIN);
     CHECK_ENUM(WARN);
     CHECK_ENUM(ERROR);
     CHECK_ENUM(FATAL);
@@ -48,116 +50,98 @@ void logger::loadConfig()
 #endif // DOXYGEN_IGNORE_THIS
 }
 
-void logger::debug(const char *format, ...)
+/**
+ * @brief Mappings for loglevel enum
+ *
+ * For ease of use, instead of having a
+ * giant switch case, we have this map.
+ * The first part of the pair in the values
+ * is the string representation of the level
+ * and the second one is the color associated
+ * with that same level.
+ */
+const std::unordered_map<LogLevel, std::pair<std::string, std::string>> LEVELS{
+    {LogLevel::DEBUG, {"DEBUG", DEBUG_COLOR}},
+    {LogLevel::ERROR, {"ERROR", ERROR_COLOR}},
+    {LogLevel::FATAL, {"FATAL", FATAL_COLOR}},
+    {LogLevel::INFO, {"INFO", INFO_COLOR}},
+    {LogLevel::PLUGIN, {"PLUGIN", PLUGIN_COLOR}},
+    {LogLevel::WARN, {"WARN", WARN_COLOR}},
+};
+
+/**
+ * @brief Logs a format and its args at a certain level
+ *
+ * @param level the level to log to
+ * @param format the format of the log
+ * @param args the arguments of the log
+ */
+void logAtLevel(LogLevel level, const char *format, va_list args)
 {
-    if (LogLevel::DEBUG < LOGLEVEL)
+    if (level < LOGLEVEL)
         return;
 
-    va_list args;
-    va_start(args, format);
+    const std::pair<std::string, std::string> &levelInfo = LEVELS.at(level);
+    std::string levelString = levelInfo.first;
+    std::string color = levelInfo.second;
 
-    std::string formatted = DEBUG_COLOR + std::string("\r[DEBUG]  ") + TIME_COLOR + getTime() + RESET_COLOR + " - " + format + "\n";
+    constexpr int MAX_LEVEL_NAME_SIZE = 5;
+    std::string spaces(MAX_LEVEL_NAME_SIZE - levelString.size(), ' ');
+
+    std::string formatted = color + "\r[" + levelString + "] " + spaces + TIME_COLOR + logger::getTime() + RESET_COLOR + " - " + format + "\n";
     std::vprintf(formatted.c_str(), args);
-    va_end(args);
 
     if (EventsManager::inst() == nullptr)
         return;
 
-    PostPrintEvent event;
+    logger::PostPrintEvent event;
     EventsManager::inst()->fire(event);
+}
+
+void logger::debug(const char *format, ...)
+{
+    va_list args;
+    va_start(args, format);
+    logAtLevel(LogLevel::DEBUG, format, args);
+    va_end(args);
 }
 
 void logger::info(const char *format, ...)
 {
-    if (LogLevel::INFO < LOGLEVEL)
-        return;
-
     va_list args;
     va_start(args, format);
-
-    std::string formatted = INFO_COLOR + std::string("\r[INFO]   ") + TIME_COLOR + getTime() + RESET_COLOR + " - " + format + "\n";
-    std::vprintf(formatted.c_str(), args);
+    logAtLevel(LogLevel::INFO, format, args);
     va_end(args);
-
-    if (EventsManager::inst() == nullptr)
-        return;
-
-    PostPrintEvent event;
-    EventsManager::inst()->fire(event);
 }
 
 void logger::plugin(const char *format, ...)
 {
-    if (LogLevel::INFO < LOGLEVEL)
-        return;
-
     va_list args;
     va_start(args, format);
-
-    std::string formatted = PLUGIN_COLOR + std::string("\r[PLUGIN] ") + TIME_COLOR + getTime() + RESET_COLOR + " - " + format + "\n";
-    std::vprintf(formatted.c_str(), args);
+    logAtLevel(LogLevel::PLUGIN, format, args);
     va_end(args);
-
-    if (EventsManager::inst() == nullptr)
-        return;
-
-    PostPrintEvent event;
-    EventsManager::inst()->fire(event);
 }
 
 void logger::warn(const char *format, ...)
 {
-    if (LogLevel::WARN < LOGLEVEL)
-        return;
-
     va_list args;
     va_start(args, format);
-
-    std::string formatted = WARN_COLOR + std::string("\r[WARN]   ") + TIME_COLOR + getTime() + RESET_COLOR + " - " + format + "\n";
-    std::vprintf(formatted.c_str(), args);
+    logAtLevel(LogLevel::WARN, format, args);
     va_end(args);
-
-    if (EventsManager::inst() == nullptr)
-        return;
-
-    PostPrintEvent event;
-    EventsManager::inst()->fire(event);
 }
 
 void logger::error(const char *format, ...)
 {
-    if (LogLevel::ERROR < LOGLEVEL)
-        return;
-
     va_list args;
     va_start(args, format);
-
-    std::string formatted = ERROR_COLOR + std::string("\r[ERROR]  ") + TIME_COLOR + getTime() + RESET_COLOR + " - " + format + "\n";
-    std::vprintf(formatted.c_str(), args);
+    logAtLevel(LogLevel::ERROR, format, args);
     va_end(args);
-
-    if (EventsManager::inst() == nullptr)
-        return;
-
-    PostPrintEvent event;
-    EventsManager::inst()->fire(event);
 }
 
 void logger::fatal(const char *format, ...)
 {
-    if (LogLevel::FATAL < LOGLEVEL)
-        return;
-
     va_list args;
     va_start(args, format);
-
-    std::string formatted = FATAL_COLOR + std::string("\r[FATAL]  ") + TIME_COLOR + getTime() + RESET_COLOR + " - " + format + "\n";
-    std::vprintf(formatted.c_str(), args);
+    logAtLevel(LogLevel::FATAL, format, args);
     va_end(args);
-
-    if (EventsManager::inst() == nullptr)
-        return;
-
-    PostPrintEvent event;
-    EventsManager::inst()->fire(event);
 }

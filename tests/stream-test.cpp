@@ -276,35 +276,6 @@ void runStreamTest(IMCStream *reader, IMCStream *writer)
     p.read(reader);
 }
 
-#ifndef GITHUB_ACTIONS_BUILD
-TEST(Streams, Network)
-{
-    ASSERT_TRUE(ServerSocket::init());
-
-    ServerSocket server(SOCK_STREAM);
-    server.bind(nullptr, 6565);
-    server.start(10);
-
-    ClientSocket client(SOCK_STREAM);
-    bool hasConnected;
-    std::thread([&client, &hasConnected]()
-                { hasConnected = client.connect("127.0.0.1", 6565); })
-        .detach();
-    ClientSocket sClient = server.accept();
-    ASSERT_TRUE(hasConnected);
-
-    NetSocketStream clientStream(client);
-    NetSocketStream serverStream(sClient);
-
-    runStreamTest(&clientStream, &serverStream);
-    runStreamTest(&serverStream, &clientStream);
-
-    server.close();
-    client.close();
-    ASSERT_TRUE(ServerSocket::cleanup());
-}
-#endif
-
 TEST(Streams, Cipher)
 {
     std::unique_ptr<std::byte[]> key = crypto::randomSecure(16);

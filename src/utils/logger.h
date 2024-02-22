@@ -49,7 +49,6 @@
 /**
  * @brief ANSI color for plugins
  *
- * Same level as LogLevel::INFO
  * See logger::plugin() for more info
  */
 #define PLUGIN_COLOR "\033[0;34m"
@@ -85,7 +84,7 @@
  * The standard log levels in an enum, only used internally
  * by the logger.
  */
-enum LogLevel
+enum LogLevel : std::uint8_t
 {
     /**
      * @brief All level, just for enabling
@@ -100,11 +99,17 @@ enum LogLevel
      */
     DEBUG = 1,
     /**
-     * @brief Info and Plugin level
+     * @brief Info and
      *
      * see logger::info() for more info
      */
     INFO = 2,
+    /**
+     * @brief Plugin level
+     *
+     * see logger::plugin() for more info
+     */
+    PLUGIN = 3,
     /**
      * @brief warn level
      *
@@ -182,7 +187,7 @@ namespace logger
     void info(const char *format, ...);
 
     /**
-     * @brief Logs something at the ::INFO level, for plugins
+     * @brief Logs something at the ::PLUGIN level, for plugins
      *
      * In the end is just a wrapper around printf, so it
      * will works like it.
