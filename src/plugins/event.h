@@ -116,8 +116,7 @@ private:
      * Utility for generating ids for subscription system
      * @return subId the unique id
      */
-    subId
-    getNextId()
+    subId getNextId()
     {
         return ++nextId;
     }
@@ -135,6 +134,8 @@ public:
         typeInfo = &typeid(T);
     }
 
+    ~EventHandler() = default;
+
     /**
      * @brief Fire an event
      *
@@ -147,8 +148,10 @@ public:
         {
             try {
                 sub.callback(event);
-            } catch(const luabridge::LuaException& e) {
-                logger::error("Could not launch event %s in lua", std::string(type_name<T>()).c_str());
+            }
+            catch (const std::exception &e)
+            {
+                logger::error("Could not launch event %s", std::string(type_name<T>()).c_str());
             }
         }
     }

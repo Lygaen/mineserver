@@ -48,36 +48,34 @@ void ChatMessage::addExtra(ChatMessage *cm)
     n->next = cm;
 }
 
-inline void writeSafely(std::string key, rapidjson::Value v, rapidjson::Value &document, rapidjson::Document::AllocatorType &alloc)
-{
-    document.AddMember(rapidjson::StringRef(key.data()), v, alloc);
-}
-
 void ChatMessage::load(const rapidjson::Value &document)
 {
     if (!document.IsObject())
         return;
     rapidjson::Document::ConstMemberIterator it;
 
-#define LB(x)                                                     \
+#define LOAD_BOOL(x)                                              \
     if ((it = document.FindMember(#x)) != document.MemberEnd() && \
         it->value.IsBool())                                       \
         x = it->value.GetBool();
 
-    LB(bold);
-    LB(italic);
-    LB(underlined);
-    LB(strikethrough);
-    LB(obfuscated);
+    LOAD_BOOL(bold);
+    LOAD_BOOL(italic);
+    LOAD_BOOL(underlined);
+    LOAD_BOOL(strikethrough);
+    LOAD_BOOL(obfuscated);
+#undef LOAD_BOOL
 
-#define LS(x)                                                     \
+#define LOAD_STRING(x)                                            \
     if ((it = document.FindMember(#x)) != document.MemberEnd() && \
         it->value.IsString())                                     \
         x = std::string(it->value.GetString(), it->value.GetStringLength());
 
-    LS(color);
-    LS(insertion);
-    LS(text);
+    LOAD_STRING(color);
+    LOAD_STRING(insertion);
+    LOAD_STRING(text);
+
+#undef LOAD_STRING
 
     clickEvent.load(document);
 
@@ -97,26 +95,26 @@ void ChatMessage::load(const rapidjson::Value &document)
 
 void ChatMessage::save(rapidjson::Value &document, rapidjson::Document::AllocatorType &alloc) const
 {
-#define WV(x) \
-    if (x)    \
+#define WRITE_BOOL(x) \
+    if (x)            \
     document.AddMember(#x, rapidjson::Value(x), alloc)
 
-    WV(bold);
-    WV(italic);
-    WV(underlined);
-    WV(strikethrough);
-    WV(obfuscated);
-#undef WV
+    WRITE_BOOL(bold);
+    WRITE_BOOL(italic);
+    WRITE_BOOL(underlined);
+    WRITE_BOOL(strikethrough);
+    WRITE_BOOL(obfuscated);
+#undef WRITE_BOOL
 
-#define WS(x)          \
-    if (x.size() != 0) \
+#define WRITE_STRING(x) \
+    if (x.size() != 0)  \
     document.AddMember(#x, rapidjson::Value(x.c_str(), x.length(), alloc), alloc)
 
-    WS(color);
-    WS(insertion);
-    WS(text);
+    WRITE_STRING(color);
+    WRITE_STRING(insertion);
+    WRITE_STRING(text);
 
-#undef WS
+#undef WRITE_STRING
 
     clickEvent.save(document, alloc);
 
@@ -136,10 +134,11 @@ void ChatMessage::save(rapidjson::Value &document, rapidjson::Document::Allocato
 
 bool operator==(const ChatMessage &lhs, const ChatMessage &rhs)
 {
-#define CMP(x) lhs.x == rhs.x &&
-    return CMP(text) CMP(bold) CMP(italic) CMP(underlined)
-        CMP(strikethrough) CMP(obfuscated)
-            CMP(color) CMP(insertion) true;
+#define COMPARE(x) lhs.x == rhs.x &&
+    return COMPARE(text) COMPARE(bold) COMPARE(italic) COMPARE(underlined)
+        COMPARE(strikethrough) COMPARE(obfuscated)
+            COMPARE(color) COMPARE(insertion) true;
+#undef COMPARE
 }
 
 void ChatMessage::loadLua(lua_State *state, const char *namespaceName) {
@@ -180,6 +179,10 @@ ChatMessage::ClickEvent::ClickEvent() : action(ActionType::NONE)
 {
 }
 
+/**
+ * @brief Table for converting enum values to string
+ *
+ */
 const std::unordered_map<std::string, ChatMessage::ClickEvent::ActionType> ACTION_TABLE{
     {"open_url", ChatMessage::ClickEvent::OPEN_URL},
     {"run_command", ChatMessage::ClickEvent::RUN_COMMAND},

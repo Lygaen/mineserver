@@ -19,6 +19,7 @@ extern "C"
 #include <lauxlib.h>
 }
 #include <LuaBridge/LuaBridge.h>
+#include <LuaBridge/Vector.h>
 
 #ifndef DOXYGEN_IGNORE_THIS
 namespace logger

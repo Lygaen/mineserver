@@ -82,7 +82,7 @@ void pluginsMessage(const ISender::SenderType senderType, ISender &sender, const
 }
 
 /**
- * @brief Register commands
+ * @brief Register commands for the console and general usage
  *
  */
 void registerCommands()
@@ -97,7 +97,7 @@ void registerCommands()
         "", "Stops the server");
 
     CommandsManager::inst().addCommand(
-        "plugins", pluginsMessage,
+        "plugins", std::ref(pluginsMessage),
         "", "Shows a list of installed plugins");
 
     Config::inst()->registerCommands();

@@ -84,6 +84,12 @@ UUID UUID::fromUsername(const std::string &name)
     return UUID::fromHex(hex);
 }
 
+/**
+ * @brief Convert one character to byte value in Base64 format
+ *
+ * @param ch the character
+ * @return char the value
+ */
 char hexDigitToChar(char ch)
 {
     if (ch >= '0' && ch <= '9')
@@ -98,12 +104,25 @@ char hexDigitToChar(char ch)
     return 0;
 }
 
+/**
+ * @brief Check whether the character is a valid Base64 character
+ *
+ * @param ch the character to check
+ * @return true the character is valid
+ * @return false the character is not valid
+ */
 bool isValidHexChar(char ch)
 {
     return (ch >= '0' && ch <= '9') || (ch >= 'a' && ch <= 'f') || (ch >= 'A' && ch <= 'F');
 }
 
-// converts the two hexadecimal characters to an unsigned char (a byte)
+/**
+ * @brief Converts two chars to one byte
+ *
+ * @param a the first char
+ * @param b the second char
+ * @return unsigned char the byte value
+ */
 unsigned char hexPairToChar(char a, char b)
 {
     return hexDigitToChar(a) * 16 + hexDigitToChar(b);

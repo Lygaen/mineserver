@@ -25,8 +25,6 @@
  * Interface for all command-sending
  * capable things (Players, command blocks
  * console).
- *
- * @todo Actually implement it lol
  */
 class ISender
 {
@@ -49,7 +47,25 @@ public:
      *
      */
     virtual void sendMessage(const ChatMessage &message) = 0;
+    /**
+     * @brief Register Lua things
+     *
+     * @param state state to register to
+     * @param namespaceName namespace name
+     */
+    static void loadLua(lua_State *state, const char *namespaceName);
 };
+
+#ifndef DOXYGEN_IGNORE_THIS
+template <>
+struct luabridge::Stack<ISender::SenderType>
+    : luabridge::Enum<ISender::SenderType,
+                      ISender::SenderType::CONSOLE,
+                      ISender::SenderType::PLAYER,
+                      ISender::SenderType::COMMAND_BLOCK>
+{
+};
+#endif
 
 /**
  * @brief Command struct
@@ -141,13 +157,6 @@ public:
     /**
      * @brief Adds a command
      *
-     * Adds it by struct value.
-     * @param command the command to add
-     */
-    void addCommand(const Command &command);
-    /**
-     * @brief Adds a command
-     *
      * Adds it by struct fields values.
      * @param name see Command::name
      * @param handler Command::handler
@@ -196,7 +205,23 @@ public:
          */
         RUNTIME_ERROR,
     };
+    /**
+     * @brief Calls a command
+     *
+     * @param type the type of the sender that asked for the command
+     * @param sender the sender
+     * @param commandString the command string such as '/test info'
+     * @return CallCommandError error struct
+     */
     CallCommandError callCommand(const ISender::SenderType type, ISender *sender, std::string commandString);
+
+    /**
+     * @brief Register Lua things
+     *
+     * @param state state to register to
+     * @param namespaceName namespace name
+     */
+    static void loadLua(lua_State *state, const char *namespaceName);
 
     /**
      * @brief Gets Commands Manager instance
@@ -208,5 +233,17 @@ public:
         return *instance;
     }
 };
+
+#ifndef DOXYGEN_IGNORE_THIS
+template <>
+struct luabridge::Stack<CommandsManager::CallCommandError>
+    : luabridge::Enum<CommandsManager::CallCommandError,
+                      CommandsManager::CallCommandError::NONE,
+                      CommandsManager::CallCommandError::FORMAT,
+                      CommandsManager::CallCommandError::COMMAND_NOT_FOUND,
+                      CommandsManager::CallCommandError::RUNTIME_ERROR>
+{
+};
+#endif
 
 #endif // MINESERVER_COMMANDS_H

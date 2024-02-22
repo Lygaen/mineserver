@@ -14,6 +14,11 @@
 #include <server.h>
 #include <csignal>
 
+/**
+ * @brief Main entry point for executable
+ *
+ * @return int the return value
+ */
 int main()
 {
     Config config;

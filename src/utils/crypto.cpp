@@ -17,6 +17,10 @@
 #include <openssl/md5.h>
 #include <cstring>
 
+/**
+ * @brief The static OpenCrypto keypair variable
+ *
+ */
 static EVP_PKEY *keypair;
 
 bool crypto::init()

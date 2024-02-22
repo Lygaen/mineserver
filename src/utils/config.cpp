@@ -63,6 +63,8 @@ void Field<T>::save(rapidjson::Document &document)
     static_assert(sizeof(T) != sizeof(T), "Use available specializations");
 }
 
+#ifndef DOXYGEN_IGNORE_THIS
+
 template <>
 void Field<int>::load(const rapidjson::Document &document)
 {
@@ -166,6 +168,7 @@ void Field<bool>::save(rapidjson::Document &document)
     v.SetBool(value);
     writeSafely(document, v);
 }
+#endif // DOXYGEN_IGNORE_THIS
 
 template <typename T>
 void Field<T>::registerLuaProperty(lua_State *state)
@@ -184,6 +187,10 @@ void Field<T>::registerLuaProperty(lua_State *state)
         .endNamespace();
 }
 
+/**
+ * @brief The config file path
+ *
+ */
 constexpr const char *CONFIG_FILE = "config.json";
 Config *Config::INSTANCE = nullptr;
 
@@ -231,6 +238,18 @@ void Config::load()
     logger::debug("Loaded Config");
 }
 
+/**
+ * @brief Prints to console field value if matching key and section
+ *
+ * See ::Config for more information on config fields
+ * @tparam T the field type
+ * @param sender the asking sender
+ * @param section the section of the value
+ * @param key the key of the value
+ * @param field the current field
+ * @return true the field's value was printed
+ * @return false the field's value was not printed
+ */
 template <typename T>
 bool printFieldValue(ISender &sender, const std::string &section, const std::string &key, Field<T> &field)
 {
@@ -251,6 +270,13 @@ bool printFieldValue(ISender &sender, const std::string &section, const std::str
     return true;
 }
 
+/**
+ * @brief Handles /config command
+ *
+ * @param senderType the type of sender
+ * @param sender the sender in and on itself
+ * @param args the arguments of the command
+ */
 void handleConfigCommand(const ISender::SenderType senderType, ISender &sender, const std::vector<std::string> &args)
 {
     if (args.size() == 0)

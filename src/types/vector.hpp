@@ -201,6 +201,7 @@ typedef Vec<std::int32_t> Veci32;
  *
  * @param state lua state
  * @param namespaceName base namespace name
+ * @todo add operators
  */
 static void loadVectorLua(lua_State *state, const char *namespaceName)
 {

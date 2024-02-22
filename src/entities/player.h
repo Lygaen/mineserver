@@ -13,6 +13,7 @@
 #define MINESERVER_PLAYER_H
 
 #include <entities/entity.h>
+#include <cmd/commands.h>
 
 /**
  * @brief Player object
@@ -20,7 +21,7 @@
  * Represents a player on the server,
  * as a living entity.
  */
-class Player : public ILiving
+class Player : public ILiving, ISender
 {
 public:
     /**
@@ -40,6 +41,17 @@ public:
      * Also called the username or tag
      */
     std::string name;
+
+    /**
+     * @brief Sends a message to a player
+     *
+     * @param message the message to send
+     * @todo actually implement it
+     */
+    void sendMessage(const ChatMessage &message)
+    {
+        throw std::runtime_error("Cannot send message to player !");
+    }
 
     /**
      * @brief Loads the Player class to a Lua one

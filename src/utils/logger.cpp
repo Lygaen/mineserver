@@ -12,7 +12,10 @@
 #include "logger.h"
 #include "plugins/luaheaders.h"
 
-
+/**
+ * @brief The current stored loglevel
+ *
+ */
 LogLevel LOGLEVEL;
 
 std::string logger::getTime()
@@ -27,19 +30,22 @@ std::string logger::getTime()
 void logger::loadConfig()
 {
     std::string lvl = Config::inst()->LOGLEVEL.getValue();
+#ifndef DOXYGEN_IGNORE_THIS
 
-#define QCK(X)      \
-    if (lvl == "X") \
+#define CHECK_ENUM(X) \
+    if (lvl == #X)    \
     LOGLEVEL = LogLevel::X
-    QCK(ALL);
-    QCK(DEBUG);
-    QCK(INFO);
-    QCK(WARN);
-    QCK(ERROR);
-    QCK(FATAL);
-    QCK(OFF);
+    CHECK_ENUM(ALL);
+    CHECK_ENUM(DEBUG);
+    CHECK_ENUM(INFO);
+    CHECK_ENUM(WARN);
+    CHECK_ENUM(ERROR);
+    CHECK_ENUM(FATAL);
+    CHECK_ENUM(OFF);
     else LOGLEVEL = LogLevel::ALL;
 #undef QCK
+
+#endif // DOXYGEN_IGNORE_THIS
 }
 
 void logger::debug(const char *format, ...)

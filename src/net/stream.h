@@ -71,7 +71,8 @@ public:
     /**
      * @brief Finishes packet write to stream
      *
-     * @param p the packet data (id + data)
+     * @param packetData the packet data (id + data)
+     * @param len the length of the data
      */
     virtual void finishPacketWrite(const std::byte *packetData, size_t len) = 0;
 

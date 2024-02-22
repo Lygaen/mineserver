@@ -20,30 +20,30 @@ CommandsManager::~CommandsManager()
 }
 
 static std::regex nameRegex("[a-z][a-z-A-Z]+");
-void CommandsManager::addCommand(const Command &command)
+
+void CommandsManager::addCommand(const std::string &name, Command::HandlerType handler,
+                                 const std::string &usage, const std::string &description)
 {
-    if (command.name.empty() || !std::regex_match(command.name, nameRegex))
+    if (name.empty() || !std::regex_match(name, nameRegex))
     {
-        logger::warn("Could not register command '%s'", command.name.c_str());
-        logger::debug("Command name '%s' doesn't match name regex '[a-z][a-z-A-Z]+'", command.name.c_str());
+        logger::warn("Could not register command '%s'", name.c_str());
+        logger::debug("Command name '%s' doesn't match name regex '[a-z][a-z-A-Z]+'", name.c_str());
         return;
     }
 
-    if (commands.contains(command.name))
+    if (commands.contains(name))
     {
-        logger::warn("Command '%s' is already registered", command.name.c_str());
+        logger::warn("Command '%s' is already registered", name.c_str());
         return;
     }
 
-    commands[command.name] = command;
-}
+    Command c;
+    c.name = name;
+    c.usage = usage;
+    c.description = description;
+    c.handler = handler;
 
-void CommandsManager::addCommand(const std::string &name, Command::HandlerType handler, const std::string &usage, const std::string &description)
-{
-    addCommand({name,
-                usage,
-                description,
-                handler});
+    commands[name] = c;
 }
 
 CommandsManager::CallCommandError CommandsManager::callCommand(const ISender::SenderType type, ISender *sender, std::string commandString)
@@ -53,6 +53,8 @@ CommandsManager::CallCommandError CommandsManager::callCommand(const ISender::Se
 
     // Remove trailing spaces
     commandString = std::regex_replace(commandString, std::regex(" +$"), "");
+    // Remove if has slash first
+    commandString = std::regex_replace(commandString, std::regex("^\\/"), "");
     commandString += " ";
 
     size_t pos, startPos = 0;
@@ -89,4 +91,32 @@ CommandsManager::CallCommandError CommandsManager::callCommand(const ISender::Se
     }
 
     return CommandsManager::NONE;
+}
+
+void CommandsManager::loadLua(lua_State *state, const char *namespaceName)
+{
+    luabridge::getGlobalNamespace(state)
+        .beginNamespace(namespaceName)
+        .beginNamespace("CommandsManager")
+        .addFunction("addCommand", [](const std::string &name, const luabridge::LuaRef &ref, const std::string &usage, const std::string description)
+                     {
+                    if (!ref.isFunction())
+                        return;
+
+                    CommandsManager::inst().addCommand(name, [ref](const ISender::SenderType senderType, ISender & sender, const std::vector<std::string> & args) {
+                        luabridge::call(ref, senderType, sender, args);
+                    }, usage, description); })
+        .addFunction("getCommands", []()
+                     { return CommandsManager::inst().getCommands(); })
+        .endNamespace();
+}
+
+void ISender::loadLua(lua_State *state, const char *namespaceName)
+{
+    luabridge::getGlobalNamespace(state)
+        .beginNamespace(namespaceName)
+        .beginClass<ISender>("ISender")
+        .addFunction("sendMessage", &ISender::sendMessage)
+        .endClass()
+        .endNamespace();
 }

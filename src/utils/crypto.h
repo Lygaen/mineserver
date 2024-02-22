@@ -296,7 +296,8 @@ namespace crypto
          * written data.
          * @param data the data to compress
          * @param len the length of @p data
-         * @param out the output buffer, should be of length @p len
+         * @param out the output buffer, should be of length @p len if you want no risks
+         * @param outLen the output buffer length
          * @return int the written length
          */
         int compress(const std::byte *data, size_t len, std::byte *out, size_t outLen);
@@ -316,6 +317,7 @@ namespace crypto
          * @param data the data to uncompress
          * @param len the length of @p data
          * @param out the output buffer
+         * @param outLen the output buffer length
          * @return int the written length
          */
         int uncompress(const std::byte *data, size_t len, std::byte *out, size_t outLen);

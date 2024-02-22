@@ -62,12 +62,7 @@ enum ClientState
     PLAY = 3
 };
 
-/**
- * @brief Luabridge stack
- *
- * Utility from luabridge to add ClientState as
- * an enum.
- */
+#ifndef DOXYGEN_IGNORE_THIS
 template <>
 struct luabridge::Stack<ClientState> : luabridge::Enum<ClientState,
         ClientState::HANDSHAKE,
@@ -76,6 +71,7 @@ struct luabridge::Stack<ClientState> : luabridge::Enum<ClientState,
         ClientState::PLAY>
 {
 };
+#endif
 
 /**
  * @brief Loads ClientState to lua

@@ -6,7 +6,7 @@
  * @date 2023-04-08
  *
  * @copyright Copyright (c) 2023
- * @todo Chat message is very incomplete
+ * @todo Chat message is missing hover event
  */
 
 #ifndef MINESERVER_CHATMESSAGE_H
@@ -21,7 +21,7 @@
 /**
  * @brief Minecraft Chat Message implementation
  *
- * Following great <a href="https://wiki.vg/Chat">Wiki.vg article</a>
+ * Following great <a href="https://wiki.vg/Text_formatting">Wiki.vg article</a>
  * on the implementation of Minecraft's chat system.
  */
 class ChatMessage
@@ -260,6 +260,7 @@ public:
     static void loadLua(lua_State *state, const char *namespaceName);
 };
 
+#ifndef DOXYGEN_IGNORE_THIS
 template <>
 struct luabridge::Stack<ChatMessage::ClickEvent::ActionType>
     : luabridge::Enum<ChatMessage::ClickEvent::ActionType,
@@ -271,5 +272,6 @@ struct luabridge::Stack<ChatMessage::ClickEvent::ActionType>
                       ChatMessage::ClickEvent::ActionType::COPY_TO_CLIPBOARD>
 {
 };
+#endif
 
 #endif // MINESERVER_CHATMESSAGE_H

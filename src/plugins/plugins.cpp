@@ -19,6 +19,7 @@
 #include <utils/luaregutils.hpp>
 #include <plugins/events/luaregevents.hpp>
 #include <entities/luaregentities.hpp>
+#include <cmd/luaregcmd.hpp>
 
 Plugin::Plugin(std::string path) : path(std::move(path)), state(nullptr)
 {
@@ -66,6 +67,7 @@ void Plugin::defineLibs()
     loadUtilsLua(state);
     loadNetLua(state);
     loadEntitiesLua(state);
+    loadCmdLua(state);
 }
 
 PluginsManager *PluginsManager::instance;

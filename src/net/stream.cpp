@@ -492,6 +492,12 @@ size_t ZLibStream::available()
     return baseStream->available();
 }
 
+/**
+ * @brief Calculates the size of an int in VarInt format
+ *
+ * @param i the int to calculates its size
+ * @return size_t the size of @p i in VarInt format
+ */
 size_t calculateVarIntSize(int i)
 {
     MemoryStream m;
