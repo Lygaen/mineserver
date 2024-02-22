@@ -6,7 +6,6 @@
  * @date 2024-02-09
  *
  * @copyright Copyright (c) 2024
- * @todo Register commands in Lua
  */
 
 #ifndef MINESERVER_COMMANDS_H
