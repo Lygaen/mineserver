@@ -69,6 +69,64 @@ const std::unordered_map<LogLevel, std::pair<std::string, std::string>> LEVELS{
     {LogLevel::WARN, {"WARN", WARN_COLOR}},
 };
 
+#ifdef MINESERVER_ANSI_COLORS
+
+const std::unordered_map<char, std::string> NOTCHIAN_TO_ANSI{
+    {'0', "\033[90m"}, // Not actual black or else won't see
+    {'1', "\033[34m"},
+    {'2', "\033[32m"},
+    {'3', "\033[36m"},
+    {'4', "\033[31m"},
+    {'5', "\033[35m"},
+    {'6', "\033[33m"},
+    {'7', "\033[37m"},
+    {'8', "\033[90m"},
+    {'9', "\033[94m"},
+    {'a', "\033[92m"},
+    {'b', "\033[96m"},
+    {'c', "\033[91m"},
+    {'d', "\033[95m"},
+    {'e', "\033[93m"},
+    {'f', "\033[97m"},
+    {'k', RESET_COLOR}, // No ANSI equivalent
+    {'l', "\033[1m"},
+    {'m', "\033[9m"},
+    {'n', "\033[24m"},
+    {'o', "\033[3m"},
+    {'r', RESET_COLOR},
+};
+
+std::string replaceMinecraftEscapes(const std::string &s)
+{
+    std::string res = s;
+    auto getNextPos = [&res](size_t pos)
+    {
+        size_t p1 = res.find("§", 0);
+        size_t p2 = res.find('&', 0);
+        return std::min(p1, p2);
+    };
+
+    size_t pos = 0;
+    while ((pos = getNextPos(pos)) != std::string::npos)
+    {
+        if (res.at(pos) != '&')
+            res.erase(pos, 2); // § symbol is 2-bytes long
+        else
+            res.erase(pos, 1);
+
+        char code = res.at(pos);
+        if (!NOTCHIAN_TO_ANSI.contains(code))
+            continue;
+
+        res.erase(pos, 1);
+        res.insert(pos, NOTCHIAN_TO_ANSI.at(code));
+    }
+
+    return res;
+}
+
+#endif // MINESERVER_ANSI_COLORS
+
 /**
  * @brief Logs a format and its args at a certain level
  *
@@ -76,7 +134,7 @@ const std::unordered_map<LogLevel, std::pair<std::string, std::string>> LEVELS{
  * @param format the format of the log
  * @param args the arguments of the log
  */
-void logAtLevel(LogLevel level, const char *format, va_list args)
+void logAtLevel(LogLevel level, std::string format, va_list args)
 {
     if (level < LOGLEVEL)
         return;
@@ -85,10 +143,15 @@ void logAtLevel(LogLevel level, const char *format, va_list args)
     std::string levelString = levelInfo.first;
     std::string color = levelInfo.second;
 
-    constexpr int MAX_LEVEL_NAME_SIZE = 5;
+#ifdef MINESERVER_ANSI_COLORS
+    format = replaceMinecraftEscapes(format);
+#endif // MINESERVER_ANSI_COLORS
+
+    constexpr int MAX_LEVEL_NAME_SIZE = 6;
     std::string spaces(MAX_LEVEL_NAME_SIZE - levelString.size(), ' ');
 
-    std::string formatted = color + "\r[" + levelString + "] " + spaces + TIME_COLOR + logger::getTime() + RESET_COLOR + " - " + format + "\n";
+    std::string formatted = color + "\r[" + levelString + "] " + spaces + TIME_COLOR + logger::getTime() + RESET_COLOR + " - " + format + RESET_COLOR + "\n";
+
     std::vprintf(formatted.c_str(), args);
 
     if (EventsManager::inst() == nullptr)

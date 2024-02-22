@@ -27,7 +27,9 @@ int lua::luaCustomPrint(lua_State *state)
         endString += std::string(s, l);               /* print it */
         lua_pop(state, 1);                            /* pop result */
     }
-    logger::plugin("[%s] %s", name, endString.c_str());
+    std::string format = "[" + std::string(name) + "] " + endString;
+    logger::plugin(format.c_str());
+
     return 0;
 }
 

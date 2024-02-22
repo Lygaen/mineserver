@@ -16,7 +16,7 @@ endif()
 
 option(MINESERVER_ANSI_COLORS "Enables printing with color in the terminal" ON)
 if(MINESERVER_ANSI_COLORS)
-    target_compile_definitions(mineserver PUBLIC MINESERVER_ANSI_COLORS)
+  target_compile_definitions(mineserver PUBLIC MINESERVER_ANSI_COLORS=1)
 endif()
 
 option(GITHUB_ACTIONS_BUILD "Built from a Github Action" OFF)
