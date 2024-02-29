@@ -9,10 +9,10 @@ add_executable(mineserver ${MAIN_SOURCES})
 target_include_directories(mineserver PUBLIC src/)
 
 if(MSVC)
-  target_compile_options(mineserver PRIVATE /W4 /WX)
+  target_compile_options(mineserver PUBLIC /W4 /WX $<$<CONFIG:RELEASE>:/O2>)
   target_link_libraries(mineserver PUBLIC wsock32 ws2_32)
 else()
-  target_compile_options(mineserver PRIVATE -Wall -Wextra -Wpedantic)
+  target_compile_options(mineserver PUBLIC -Wall -Wextra -Wpedantic $<$<CONFIG:RELEASE>:-O2>)
 endif()
 
 option(MINESERVER_ANSI_COLORS "Enables printing with color in the terminal" ON)
