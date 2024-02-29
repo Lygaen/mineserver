@@ -148,18 +148,26 @@ ClientSocket::ClientSocket(socket_t client, char *addr) : address(addr)
     sock = client;
     connected = true;
 
+#if defined(__linux__)
+    const int flags = fcntl(sock, F_GETFL, 0);
+    fcntl(sock, F_SETFL, flags & ~O_NONBLOCK);
+#elif defined(_WIN32)
     u_long mode = 0; // 0 to disable non-blocking socket
     ioctlsocket(sock, FIONBIO, &mode);
+#endif
 }
 
 ClientSocket::ClientSocket(int type)
 {
     connected = false;
 
-    sock = socket(AF_INET, type, 0);
-
+#if defined(__linux__)
+    const int flags = fcntl(sock, F_GETFL, 0);
+    fcntl(sock, F_SETFL, flags & ~O_NONBLOCK);
+#elif defined(_WIN32)
     u_long mode = 0; // 0 to disable non-blocking socket
     ioctlsocket(sock, FIONBIO, &mode);
+#endif
 }
 
 bool ClientSocket::connect(const char *address, int port) const
