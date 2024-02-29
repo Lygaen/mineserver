@@ -1,6 +1,7 @@
 #include "commands.h"
 #include <utils/logger.h>
 #include <cmd/commandsreg.hpp>
+#include <utility>
 
 CommandsManager *CommandsManager::instance = nullptr;
 CommandsManager::CommandsManager() : commands()
@@ -53,24 +54,24 @@ CommandsManager::CallCommandError CommandsManager::callCommand(const ISender::Se
 
     // Remove trailing spaces
     commandString = std::regex_replace(commandString, std::regex(" +$"), "");
-    // Remove if has slash first
+    // Remove if it has slash first
     commandString = std::regex_replace(commandString, std::regex("^\\/"), "");
     commandString += " ";
 
     size_t pos, startPos = 0;
-    std::vector<std::string> splittedString;
-    while ((pos = commandString.find(" ", startPos)) != std::string::npos)
+    std::vector<std::string> splitString;
+    while ((pos = commandString.find(' ', startPos)) != std::string::npos)
     {
         std::string split = commandString.substr(startPos, pos - startPos);
         if (split.empty() || split == " ")
             return CallCommandError::FORMAT;
 
-        splittedString.push_back(split);
+        splitString.push_back(split);
         startPos = pos + 1;
     }
 
-    std::string name = splittedString[0];
-    std::vector<std::string> args(splittedString.begin() + 1, splittedString.end());
+    std::string name = splitString[0];
+    std::vector<std::string> args(splitString.begin() + 1, splitString.end());
 
     if (!std::regex_match(name, nameRegex))
         return CommandsManager::FORMAT;

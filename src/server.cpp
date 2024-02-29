@@ -23,7 +23,7 @@ Server::Server() : sock(),
                    eventsManager(),
                    commandsManager(),
                    consoleManager(),
-                   isRunning(false)
+                   running(false)
 {
     if (INSTANCE)
         return;
@@ -81,13 +81,13 @@ void Server::start()
     pluginsManager.load();
     consoleManager.start();
 
-    isRunning = true;
+    running = true;
 
     ServerStartEvent startEvent;
     eventsManager.fire(startEvent);
 
     logger::info("Server started on %s:%d !", addr.c_str(), port);
-    while (isRunning)
+    while (running)
     {
         std::this_thread::sleep_for(std::chrono::milliseconds(100)); // So that we don't overload the CPU
         ClientSocket cs = sock.accept();
@@ -109,7 +109,7 @@ void Server::start()
 void Server::stop()
 {
     logger::info("Stopping server...");
-    isRunning = false;
+    running = false;
 
     for (auto client : connectedClients)
     {

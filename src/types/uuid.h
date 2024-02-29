@@ -1,7 +1,7 @@
 /**
  * @file uuid.h
  * @author Lygaen
- * @brief The file containing UUID logic
+ * @brief The file containing MinecraftUUID logic
  * @version 0.1
  * @date 2023-12-16
  *
@@ -18,24 +18,24 @@
 #include <plugins/luaheaders.h>
 
 /**
- * @brief UUID compliant data holder
+ * @brief MinecraftUUID compliant data holder
  *
  * Data holder for an [RFC 4122](https://www.rfc-editor.org/rfc/pdfrfc/rfc4122.txt.pdf)
- * compliant UUID.
+ * compliant MinecraftUUID.
  */
-class UUID
+class MinecraftUUID
 {
 private:
     std::array<std::byte, 16> bytes;
-    UUID(const std::array<std::byte, 16> &bytes) : bytes(bytes) {}
+    MinecraftUUID(const std::array<std::byte, 16> &bytes) : bytes(bytes) {}
 
 public:
     /**
-     * @brief Construct a new UUID object
+     * @brief Construct a new MinecraftUUID object
      *
      * In reality, just a wrapper around ::newRandom()
      */
-    UUID();
+    MinecraftUUID();
 
     /**
      * @brief Equality operator
@@ -44,10 +44,10 @@ public:
      * @return true the members are equal
      * @return false the member are not equal
      */
-    bool operator==(UUID const &other);
+    bool operator==(MinecraftUUID const &other);
 
     /**
-     * @brief Get the hex of the UUID with hyphens
+     * @brief Get the hex of the MinecraftUUID with hyphens
      *
      * It will resemble something such as :
      * @code
@@ -57,7 +57,7 @@ public:
      */
     std::string getFull() const;
     /**
-     * @brief Get the hex of the UUID without hyphens
+     * @brief Get the hex of the MinecraftUUID without hyphens
      *
      * It will resemble something such as :
      * @code
@@ -67,49 +67,49 @@ public:
      */
     std::string getTrimmed() const;
     /**
-     * @brief Get the raw bytes of the UUID
+     * @brief Get the raw bytes of the MinecraftUUID
      *
      * @return const std::byte* pointer to byte data
      */
     const std::byte *getBytes() const;
 
     /**
-     * @brief Constructs a new random UUID
+     * @brief Constructs a new random MinecraftUUID
      *
-     * @return UUID the newly created UUID
+     * @return MinecraftUUID the newly created MinecraftUUID
      */
-    static UUID newRandom();
+    static MinecraftUUID newRandom();
     /**
-     * @brief Constructs an UUID from an username
+     * @brief Constructs an MinecraftUUID from an username
      *
      * In reality, uses MD5 to generate a sequence
      * of hex characters so that we can interpret
-     * the digested @p name as an UUID.
+     * the digested @p name as an MinecraftUUID.
      * It is then a deterministic function.
      * See more at crypto::md5Digest
      * @param name the name to generate from
-     * @return UUID the newly created UUID
+     * @return MinecraftUUID the newly created MinecraftUUID
      */
-    static UUID fromUsername(const std::string &name);
+    static MinecraftUUID fromUsername(const std::string &name);
     /**
-     * @brief Contructs an UUID from an hex string
+     * @brief Contructs an MinecraftUUID from an hex string
      *
-     * Interprets the hex string as an UUID, whether
+     * Interprets the hex string as an MinecraftUUID, whether
      * it contains hyphens or not.
      * @param hexString the string to construct from
-     * @return UUID the newly created UUID
+     * @return MinecraftUUID the newly created MinecraftUUID
      */
-    static UUID fromHex(const std::string &hexString);
+    static MinecraftUUID fromHex(const std::string &hexString);
     /**
-     * @brief Constructs an UUID from the raw bytes
+     * @brief Constructs an MinecraftUUID from the raw bytes
      *
-     * @param buff a pointer to the UUID
-     * @return UUID the newly created UUID
+     * @param buff a pointer to the MinecraftUUID
+     * @return MinecraftUUID the newly created MinecraftUUID
      */
-    static UUID fromBytes(const std::byte *buff);
+    static MinecraftUUID fromBytes(const std::byte *buff);
 
     /**
-     * @brief Loads UUID to the lua state
+     * @brief Loads MinecraftUUID to the lua state
      *
      * @param state the lua state to load to
      * @param namespaceName the namespace to load to

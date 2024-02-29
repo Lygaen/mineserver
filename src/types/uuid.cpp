@@ -1,7 +1,7 @@
 /**
  * @file uuid.cpp
  * @author Lygaen
- * @brief The file containing UUID logic
+ * @brief The file containing MinecraftUUID logic
  * @version 0.1
  * @date 2023-12-16
  *
@@ -16,18 +16,18 @@
 #include <sstream>
 #include <iomanip>
 
-UUID::UUID() : bytes({})
+MinecraftUUID::MinecraftUUID() : bytes({})
 {
-    UUID temp = UUID::newRandom();
+    MinecraftUUID temp = MinecraftUUID::newRandom();
     std::copy(temp.bytes.begin(), temp.bytes.end(), bytes.begin());
 }
 
-bool UUID::operator==(UUID const &other)
+bool MinecraftUUID::operator==(MinecraftUUID const &other)
 {
     return std::equal(other.bytes.begin(), other.bytes.end(), bytes.begin());
 }
 
-std::string UUID::getFull() const
+std::string MinecraftUUID::getFull() const
 {
     std::stringstream stream;
     stream << std::hex << std::setfill('0');
@@ -59,29 +59,29 @@ std::string UUID::getFull() const
     return stream.str();
 }
 
-std::string UUID::getTrimmed() const
+std::string MinecraftUUID::getTrimmed() const
 {
     std::string s = getFull();
     s.erase(std::remove(s.begin(), s.end(), '-'), s.end());
     return s;
 }
 
-const std::byte *UUID::getBytes() const
+const std::byte *MinecraftUUID::getBytes() const
 {
     return bytes.data();
 }
 
-UUID UUID::newRandom()
+MinecraftUUID MinecraftUUID::newRandom()
 {
     std::unique_ptr<std::byte[]> bytes = crypto::randomSecure(16);
-    return UUID::fromBytes(bytes.get());
+    return MinecraftUUID::fromBytes(bytes.get());
 }
 
-UUID UUID::fromUsername(const std::string &name)
+MinecraftUUID MinecraftUUID::fromUsername(const std::string &name)
 {
     std::string hex = crypto::md5Digest(name);
 
-    return UUID::fromHex(hex);
+    return MinecraftUUID::fromHex(hex);
 }
 
 /**
@@ -128,9 +128,9 @@ unsigned char hexPairToChar(char a, char b)
     return hexDigitToChar(a) * 16 + hexDigitToChar(b);
 }
 
-UUID UUID::fromHex(const std::string &uuidString)
+MinecraftUUID MinecraftUUID::fromHex(const std::string &uuidString)
 {
-    std::array<std::byte, 16> bytes;
+    std::array<std::byte, 16> bytes{};
     bool firstChar = true;
     int length = 0;
     char lastChar;
@@ -142,7 +142,7 @@ UUID UUID::fromHex(const std::string &uuidString)
 
         if (!isValidHexChar(c) ||
             length >= 16)
-            return UUID(std::array<std::byte, 16>({}));
+            return MinecraftUUID(std::array<std::byte, 16>({}));
 
         if (firstChar)
         {
@@ -159,27 +159,27 @@ UUID UUID::fromHex(const std::string &uuidString)
     }
 
     if (length < 16)
-        return UUID(std::array<std::byte, 16>({}));
-    return UUID(bytes);
+        return MinecraftUUID(std::array<std::byte, 16>({}));
+    return MinecraftUUID(bytes);
 }
 
-UUID UUID::fromBytes(const std::byte *buff)
+MinecraftUUID MinecraftUUID::fromBytes(const std::byte *buff)
 {
-    UUID out(std::array<std::byte, 16>({}));
+    MinecraftUUID out(std::array<std::byte, 16>({}));
     std::copy(const_cast<std::byte *>(buff), const_cast<std::byte *>(buff) + 16, out.bytes.data());
     return out;
 }
 
-void UUID::loadLua(lua_State *state, const char *namespaceName)
+void MinecraftUUID::loadLua(lua_State *state, const char *namespaceName)
 {
     luabridge::getGlobalNamespace(state)
         .beginNamespace(namespaceName)
-        .beginClass<UUID>("UUID")
+        .beginClass<MinecraftUUID>("MinecraftUUID")
         .addConstructor([](void *ptr)
-                        { return new (ptr) UUID(UUID::newRandom()); })
-        .addFunction("getFull", &UUID::getFull)
-        .addFunction("getTrimmed", &UUID::getTrimmed)
-        .addFunction("getBytes", &UUID::getBytes)
+                        { return new (ptr) MinecraftUUID(MinecraftUUID::newRandom()); })
+        .addFunction("getFull", &MinecraftUUID::getFull)
+        .addFunction("getTrimmed", &MinecraftUUID::getTrimmed)
+        .addFunction("getBytes", &MinecraftUUID::getBytes)
         .endClass()
         .endNamespace();
 }

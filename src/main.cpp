@@ -9,7 +9,6 @@
  *
  */
 
-#include <iostream>
 #include <utils/config.h>
 #include <server.h>
 #include <csignal>

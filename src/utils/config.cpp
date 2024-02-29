@@ -20,32 +20,34 @@
 #include "config.h"
 
 template <typename T>
-Field<T>::Field(const char *section, const char *key, T def) : section(section), key(key), value(def) {}
+Field<T>::Field(const char *section, const char *key, T def) : section(section), key(key), value(def) {
+
+}
 template <typename T>
 Field<T>::~Field() = default;
 
 template <typename T>
 inline rapidjson::Document::ConstMemberIterator Field<T>::canSafelyRead(const rapidjson::Document &document)
 {
-    auto loc = document.FindMember(section);
+    auto loc = document.FindMember(section.c_str());
     if (loc == document.MemberEnd())
         return document.MemberEnd();
-    return !loc->value.IsObject() ? document.MemberEnd() : loc->value.FindMember(key);
+    return !loc->value.IsObject() ? document.MemberEnd() : loc->value.FindMember(key.c_str());
 }
 
 template <typename T>
 void Field<T>::writeSafely(rapidjson::Document &document, rapidjson::Value &v)
 {
-    if (document.HasMember(section))
+    if (document.HasMember(section.c_str()))
     {
-        document[section].AddMember(rapidjson::StringRef(key), v, document.GetAllocator());
+        document[section.c_str()].AddMember(rapidjson::StringRef(key.c_str()), v, document.GetAllocator());
     }
     else
     {
         rapidjson::Value sec;
         sec.SetObject();
-        sec.AddMember(rapidjson::StringRef(key), v, document.GetAllocator());
-        document.AddMember(rapidjson::StringRef(section), sec, document.GetAllocator());
+        sec.AddMember(rapidjson::StringRef(key.c_str()), v, document.GetAllocator());
+        document.AddMember(rapidjson::StringRef(section.c_str()), sec, document.GetAllocator());
     }
 }
 
@@ -175,9 +177,9 @@ void Field<T>::registerLuaProperty(lua_State *state)
 {
     luabridge::getGlobalNamespace(state)
         .beginNamespace("config")
-        .beginNamespace(section)
+        .beginNamespace(section.c_str())
         .addProperty(
-            key, [this]()
+            key.c_str(), [this]()
             { return this->getValue(); },
             [this](T value)
             {
@@ -210,7 +212,8 @@ Config::Config()
 
     load();
     save();
-};
+}
+
 Config::~Config()
 {
     INSTANCE = nullptr;
@@ -279,7 +282,7 @@ bool printFieldValue(ISender &sender, const std::string &section, const std::str
  */
 void handleConfigCommand(const ISender::SenderType senderType, ISender &sender, const std::vector<std::string> &args)
 {
-    if (args.size() == 0)
+    if (args.empty())
     {
         sender.sendMessage(ChatMessage("Invalid number of arguments"));
         return;
@@ -312,7 +315,7 @@ void handleConfigCommand(const ISender::SenderType senderType, ISender &sender, 
         return;
     }
 
-    std::string fullField = args[0];
+    const std::string& fullField = args[0];
     if (fullField.find('.') == std::string::npos)
     {
         sender.sendMessage(ChatMessage("Field value doesn't match section.key"));

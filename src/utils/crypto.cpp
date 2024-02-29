@@ -55,20 +55,20 @@ std::unique_ptr<std::byte[]> crypto::rsaEncrypt(const std::byte *data, size_t le
     if (!ctx || !EVP_PKEY_encrypt_init(ctx) || !EVP_PKEY_CTX_set_rsa_padding(ctx, RSA_PKCS1_PADDING))
     {
         EVP_PKEY_CTX_free(ctx);
-        return std::unique_ptr<std::byte[]>();
+        return {};
     }
 
     if (!EVP_PKEY_encrypt(ctx, nullptr, outLen, (const unsigned char *)data, len))
     {
         EVP_PKEY_CTX_free(ctx);
-        return std::unique_ptr<std::byte[]>();
+        return {};
     }
 
-    std::byte *out = new std::byte[*outLen];
+    auto *out = new std::byte[*outLen];
     if (!EVP_PKEY_encrypt(ctx, (unsigned char *)out, outLen, (const unsigned char *)data, len))
     {
         EVP_PKEY_CTX_free(ctx);
-        return std::unique_ptr<std::byte[]>();
+        return {};
     }
 
     return std::unique_ptr<std::byte[]>(out);
@@ -81,20 +81,20 @@ std::unique_ptr<std::byte[]> crypto::rsaDecrypt(const std::byte *data, size_t le
     {
         EVP_PKEY_CTX_free(ctx);
         *outLen = 0;
-        return std::unique_ptr<std::byte[]>();
+        return {};
     }
 
     if (!EVP_PKEY_decrypt(ctx, nullptr, outLen, (const unsigned char *)data, len))
     {
         EVP_PKEY_CTX_free(ctx);
-        return std::unique_ptr<std::byte[]>();
+        return {};
     }
 
-    std::byte *out = new std::byte[*outLen];
+    auto *out = new std::byte[*outLen];
     if (!EVP_PKEY_decrypt(ctx, (unsigned char *)out, outLen, (const unsigned char *)data, len))
     {
         EVP_PKEY_CTX_free(ctx);
-        return std::unique_ptr<std::byte[]>();
+        return {};
     }
 
     return std::unique_ptr<std::byte[]>(out);
@@ -105,7 +105,7 @@ std::unique_ptr<std::byte[]> crypto::getPublicRSAKey(int *outLen)
     unsigned char *buff = nullptr;
     int len = i2d_PUBKEY(keypair, &buff);
 
-    std::byte *out = new std::byte[len];
+    auto *out = new std::byte[len];
     std::memcpy(out, buff, len);
 
     *outLen = len;
@@ -115,11 +115,11 @@ std::unique_ptr<std::byte[]> crypto::getPublicRSAKey(int *outLen)
 
 std::unique_ptr<std::byte[]> crypto::randomSecure(size_t len)
 {
-    std::byte *data = new std::byte[len];
+    auto *data = new std::byte[len];
     if (RAND_bytes((unsigned char *)data, len))
         return std::unique_ptr<std::byte[]>(data);
     delete[] data;
-    return std::unique_ptr<std::byte[]>();
+    return {};
 }
 
 std::string crypto::md5Digest(const std::string &data)
@@ -182,7 +182,7 @@ std::string crypto::MinecraftHash::finalize()
     char *hex = BN_bn2hex(bn);
 
     auto view = std::string_view(hex);
-    while (view.size() && view[0] == '0')
+    while (!view.empty() && view[0] == '0')
         view = view.substr(1);
 
     result.append(view.begin(), view.end());
@@ -256,7 +256,7 @@ int crypto::ZLibCompressor::compress(const std::byte *data, size_t len, std::byt
     stream.zfree = Z_NULL;
     stream.opaque = Z_NULL;
 
-    if (deflateInit(&stream, Z_DEFAULT_COMPRESSION) != Z_OK)
+    if (deflateInit(&stream, compressionLevel) != Z_OK)
         throw std::runtime_error("Failed to initialize ZLib");
 
     stream.avail_in = len;

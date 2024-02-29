@@ -11,7 +11,6 @@
 
 #include "encryptionexchange.h"
 #include <utils/crypto.h>
-#include <utils/logger.h>
 
 void EncryptionRequest::write(IMCStream *stream)
 {

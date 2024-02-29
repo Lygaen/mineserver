@@ -59,7 +59,7 @@ std::int16_t IMCStream::readShort()
     if constexpr (std::endian::native == std::endian::little)
     {
         std::byte temp; // Yes, I know, It is not needed to use a temp
-                        // variable to swap these two bytes but it increases
+                        // variable to swap these two bytes, but it increases
                         // readability
         temp = b[0];
         b[0] = b[1];
@@ -73,9 +73,9 @@ void IMCStream::writeShort(std::int16_t s)
 {
     if constexpr (std::endian::native == std::endian::little)
     {
-        std::byte *bytes = reinterpret_cast<std::byte *>(&s);
+        auto *bytes = reinterpret_cast<std::byte *>(&s);
         std::byte temp; // Yes, I know, It is not needed to use a temp
-                        // variable to swap these two bytes but it increases
+                        // variable to swap these two bytes, but it increases
                         // readability
         temp = bytes[0];
         bytes[0] = bytes[1];
@@ -190,7 +190,7 @@ void IMCStream::writeDouble(double d)
 std::string IMCStream::readString()
 {
     std::int32_t len = readVarInt();
-    std::byte *b = new std::byte[len];
+    auto *b = new std::byte[len];
     read(reinterpret_cast<std::byte *>(b), 0, len);
     std::string s = std::string(reinterpret_cast<const char *>(b), len);
     delete[] b;
@@ -327,18 +327,18 @@ void IMCStream::writeVarLong(std::int64_t l)
     }
 }
 
-void IMCStream::writeUUID(const UUID &uuid)
+void IMCStream::writeUUID(const MinecraftUUID &uuid)
 {
     const std::byte *buff = uuid.getBytes();
 
     write(const_cast<std::byte *>(buff), 0, 16);
 }
 
-UUID IMCStream::readUUID()
+MinecraftUUID IMCStream::readUUID()
 {
-    std::byte *buff = new std::byte[16];
+    auto *buff = new std::byte[16];
     read(buff, 0, 16);
-    UUID uuid = UUID::fromBytes(buff);
+    MinecraftUUID uuid = MinecraftUUID::fromBytes(buff);
     delete[] buff;
 
     return uuid;
@@ -382,7 +382,7 @@ const std::vector<std::byte> &MemoryStream::getData() const
     return data;
 }
 
-NetSocketStream::NetSocketStream(ClientSocket socket) : socket(socket)
+NetSocketStream::NetSocketStream(const ClientSocket& socket) : socket(socket)
 {
 }
 
@@ -431,10 +431,10 @@ CipherStream::~CipherStream()
 
 void CipherStream::read(std::byte *buffer, std::size_t offset, std::size_t len)
 {
-    std::byte *buf = new std::byte[len];
+    auto *buf = new std::byte[len];
     baseStream->read(buf, 0, len);
 
-    std::byte *outBuf = new std::byte[decipher.calculateBufferSize(len)];
+    auto *outBuf = new std::byte[decipher.calculateBufferSize(len)];
     int outLen = decipher.update(buf, len, outBuf);
     delete[] buf;
 
@@ -444,7 +444,7 @@ void CipherStream::read(std::byte *buffer, std::size_t offset, std::size_t len)
 
 void CipherStream::write(const std::byte *buffer, std::size_t offset, std::size_t len)
 {
-    std::byte *outBuf = new std::byte[encipher.calculateBufferSize(len)];
+    auto *outBuf = new std::byte[encipher.calculateBufferSize(len)];
     int outLen = encipher.update(buffer + offset, len, outBuf);
 
     baseStream->write(outBuf, 0, outLen);
@@ -557,8 +557,8 @@ void ZLibStream::flush()
     std::byte compressed[len];
     baseStream->read(compressed, 0, len);
 
-    std::byte finalUncomp[dataLength];
-    int written = comp.uncompress(compressed, len, finalUncomp, dataLength);
+    std::byte final[dataLength];
+    int written = comp.uncompress(compressed, len, final, dataLength);
     if (written != dataLength)
         throw std::runtime_error("Invalid uncompressed length");
 
@@ -567,5 +567,5 @@ void ZLibStream::flush()
     m.writeVarInt(dataLength);
     std::copy(m.getData().begin(), m.getData().end(), std::back_inserter(inBuffer));
 
-    std::copy(finalUncomp, finalUncomp + dataLength, std::back_inserter(inBuffer));
+    std::copy(final, final + dataLength, std::back_inserter(inBuffer));
 }

@@ -33,7 +33,7 @@ public:
      * @brief Destroy the Player object
      *
      */
-    ~Player() = default;
+    ~Player() override = default;
 
     /**
      * @brief Name of the player
@@ -48,7 +48,7 @@ public:
      * @param message the message to send
      * @todo actually implement it
      */
-    void sendMessage(const ChatMessage &message)
+    void sendMessage(const ChatMessage &message) override
     {
         throw std::runtime_error("Cannot send message to player !");
     }

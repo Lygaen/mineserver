@@ -1,6 +1,5 @@
 #include <gtest/gtest.h>
 #include <types/chatmessage.h>
-#include <rapidjson/stringbuffer.h>
 #include <rapidjson/prettywriter.h>
 #include <types/uuid.h>
 
@@ -28,16 +27,16 @@ TEST(Types, UUID)
     std::string trimmed = realUUID;
     trimmed.erase(std::remove(trimmed.begin(), trimmed.end(), '-'), trimmed.end());
 
-    UUID uuid = UUID::fromHex(realUUID);
+    MinecraftUUID uuid = MinecraftUUID::fromHex(realUUID);
     std::string s(reinterpret_cast<const char *>(uuid.getBytes()), 16);
 
     ASSERT_EQ(uuid.getFull(), realUUID);
 
     ASSERT_EQ(uuid.getTrimmed(), trimmed);
 
-    ASSERT_TRUE(uuid == UUID::fromHex(realUUID));
+    ASSERT_TRUE(uuid == MinecraftUUID::fromHex(realUUID));
 
-    UUID ui2 = UUID::fromBytes(uuid.getBytes());
+    MinecraftUUID ui2 = MinecraftUUID::fromBytes(uuid.getBytes());
 
     ASSERT_EQ(uuid.getFull(), ui2.getFull());
     ASSERT_EQ(uuid.getTrimmed(), ui2.getTrimmed());

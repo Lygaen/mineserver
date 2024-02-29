@@ -194,7 +194,7 @@ namespace logger
      * Should be used to print out general information
      * such as the current status of the program and
      * so on and so on.
-     * @param format the format string to parse arguements in
+     * @param format the format string to parse arguments in
      * @param ... the arguments for the format
      */
     void plugin(const char *format, ...);
@@ -206,7 +206,7 @@ namespace logger
      * will works like it.
      * Should be used to log information that the end user
      * should be warned about, but has no impact.
-     * @param format the format string to parse arguements in
+     * @param format the format string to parse arguments in
      * @param ... the arguments for the format
      */
     void warn(const char *format, ...);
@@ -248,6 +248,6 @@ namespace logger
     class PostPrintEvent : public IEvent<PostPrintEvent>
     {
     };
-};
+}
 
 #endif // MINESERVER_LOGGER_H

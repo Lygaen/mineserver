@@ -28,7 +28,7 @@ void loadTypesLua(lua_State *state)
 {
     const char *namespaceName = "types";
 
-    UUID::loadLua(state, namespaceName);
+    MinecraftUUID::loadLua(state, namespaceName);
     loadClientStateLua(state, namespaceName);
     ChatMessage::loadLua(state, namespaceName);
     Angle::loadLua(state, namespaceName);

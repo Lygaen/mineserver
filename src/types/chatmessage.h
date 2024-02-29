@@ -144,13 +144,13 @@ public:
          * @param action the action type
          * @param value the value of action
          */
-        ClickEvent(ActionType action, const std::string &value);
+        ClickEvent(ActionType action, std::string value);
         /**
          * @brief Construct a new Click Event object
          *
          * @param changePage see ActionType::CHANGE_PAGE
          */
-        ClickEvent(uint changePage);
+        ClickEvent(std::uint32_t changePage);
         /**
          * @brief Construct a new Click Event object
          *

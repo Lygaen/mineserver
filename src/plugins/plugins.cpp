@@ -10,8 +10,6 @@
  */
 
 #include "plugins.h"
-#include <plugins/events/serverevents.hpp>
-#include <plugins/events/clientevents.hpp>
 #include <utility>
 #include <utils/logger.h>
 #include <plugins/event.h>

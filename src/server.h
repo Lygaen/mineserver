@@ -39,7 +39,7 @@ private:
     CommandsManager commandsManager;
     ConsoleManager consoleManager;
     ServerSocket sock;
-    std::atomic<bool> isRunning;
+    std::atomic<bool> running;
 
     /**
      * @brief Internal Checks
@@ -48,7 +48,7 @@ private:
      * prevent the integrity of the
      * server.
      */
-    void checks();
+    static void checks();
 
 public:
     /**
@@ -76,6 +76,10 @@ public:
      * connects).
      */
     void stop();
+
+    bool isRunning() const {
+        return running;
+    }
 
     /**
      * @brief Get the instance of the server

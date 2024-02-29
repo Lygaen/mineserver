@@ -2,6 +2,7 @@ project(mineserver-libs)
 
 add_library(mineserver-libs STATIC deps-maker.cpp)
 
+set(BUILD_SHARED_LIBS OFF CACHE BOOL "" FORCE)
 set(CMAKE_WARN_DEPRECATED OFF CACHE BOOL "" FORCE)
 
 set(RAPIDJSON_BUILD_EXAMPLES OFF CACHE BOOL "" FORCE)

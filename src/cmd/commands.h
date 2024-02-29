@@ -212,7 +212,7 @@ public:
      * @param commandString the command string such as '/test info'
      * @return CallCommandError error struct
      */
-    CallCommandError callCommand(const ISender::SenderType type, ISender *sender, std::string commandString);
+    CallCommandError callCommand(ISender::SenderType type, ISender *sender, std::string commandString);
 
     /**
      * @brief Register Lua things

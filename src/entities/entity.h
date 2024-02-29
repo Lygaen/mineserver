@@ -52,11 +52,11 @@ public:
      */
     Angle pitch;
     /**
-     * @brief UUID of the entity
+     * @brief MinecraftUUID of the entity
      *
      * Unique identifier for the entity
      */
-    UUID uuid;
+    MinecraftUUID uuid;
 
     /**
      * @brief Loads the IEntity class to a Lua one
@@ -92,7 +92,7 @@ public:
      * @brief Destroy the ILiving object
      *
      */
-    virtual ~ILiving() = default;
+    ~ILiving() override = default;
 
     /**
      * @brief Loads the ILiving class to a Lua one

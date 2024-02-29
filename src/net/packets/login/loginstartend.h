@@ -16,6 +16,8 @@
 #include <plugins/luaheaders.h>
 #include <types/uuid.h>
 
+#include <utility>
+
 /**
  * @brief Login Start Packet
  *
@@ -89,7 +91,7 @@ public:
      * @param username the username given to the player
      * @param uuid the uuid of the player
      */
-    LoginSuccess(const std::string &username, const UUID &uuid) : IPacket(0x02), username(username), uuid(uuid) {}
+    LoginSuccess(std::string username, const MinecraftUUID &uuid) : IPacket(0x02), username(std::move(username)), uuid(uuid) {}
 
     /**
      * @brief Username of the player
@@ -99,11 +101,11 @@ public:
      */
     std::string username;
     /**
-     * @brief UUID of the player
+     * @brief MinecraftUUID of the player
      *
-     * The UUID given by the server to the client.
+     * The MinecraftUUID given by the server to the client.
      */
-    UUID uuid;
+    MinecraftUUID uuid;
 
     /**
      * @brief Reads Packet Data

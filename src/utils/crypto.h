@@ -107,7 +107,7 @@ namespace crypto
      * @brief MD5 digests a string
      *
      * Returns an MD5 digest of the @p data
-     * given, really used just for UUID
+     * given, really used just for MinecraftUUID
      * creation from Player's usernames
      * @param data the data to digest
      * @return std::string the md5 string in hex
@@ -322,6 +322,6 @@ namespace crypto
          */
         int uncompress(const std::byte *data, size_t len, std::byte *out, size_t outLen);
     };
-};
+}
 
 #endif

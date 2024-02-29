@@ -4,7 +4,7 @@
 #include <stdexcept>
 #include <iostream>
 #include <string>
-#include <stdio.h>
+#include <cstdio>
 #if defined(__linux__)
 #include <termios.h>
 #include <unistd.h>
@@ -15,7 +15,7 @@
 #endif
 
 ConsoleManager *ConsoleManager::instance;
-ConsoleManager::ConsoleManager() : currentInput(""), isRunning(false)
+ConsoleManager::ConsoleManager() : currentInput(), isRunning(false), threadHandle()
 {
     if (instance)
         throw std::runtime_error("Console handler should not be constructed twice");
@@ -48,7 +48,7 @@ extern "C" char getOneChar()
     return c;
 }
 
-inline std::string repeat(std::string s, int n)
+inline std::string repeat(const std::string& s, int n)
 {
     std::string r;
     for (int i = 0; i < n; i++)
@@ -71,7 +71,7 @@ void ConsoleManager::loop()
         c = getOneChar();
         if (c == '\n' || !isascii(c) || c < 31)
             break;
-        if (c == 127 || c == 8)
+        if (c == 127)
         {
             currentInput = currentInput.substr(0, currentInput.size() - 1);
         }
@@ -99,8 +99,6 @@ void ConsoleManager::loop()
     }
 }
 
-#include <server.h>
-
 void ConsoleManager::start()
 {
     std::thread t = std::thread([this]()
@@ -121,12 +119,14 @@ void ConsoleManager::stop()
 #if defined(__linux__)
     pthread_cancel(threadHandle);
 #elif defined(_WIN32)
-    TerminateThread(threadHandle, 1);
+    TerminateThread((void*)threadHandle, 1);
 #endif
 }
 
 void ConsoleManager::onPostPrint(logger::PostPrintEvent event)
 {
+    (void)event;
+
     std::string in = ConsoleManager::inst().currentInput;
     std::string spaces = repeat(" ", prefix.size() + in.size() + 1);
 

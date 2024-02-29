@@ -11,8 +11,6 @@
 
 #include "handshake.h"
 #include <stdexcept>
-#include <codecvt>
-#include <locale>
 #include <utils/config.h>
 
 void HandshakePacket::write(IMCStream *stream)

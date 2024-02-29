@@ -20,7 +20,7 @@ print("Plugin path is " .. plugin.path)
 ```
 ## Events
 You can listen to all the events listed in the [events directory](@ref src/plugins/events).
-Go click on the individual files, look for the events you want to listen and you
+Go click on the individual files, look for the events you want to listen, and you
 should be able to see in their documentation how to listen for the event.
 Generally to listen for an event a class called `SimpleBasicEvent`, you do
 as follows :
@@ -35,8 +35,8 @@ event.onSimpleBasic(canBeAnything)
 
 
 ## Access to classes
-You can normally access all of the classes of the server.
-It is still at a development stage so not everything is well connected
+You can normally access all the classes of the server.
+It is still at a development stage so not everything is well-connected
 and not everything will have a lua equivalent.
 There are still few things you can do though.
 
@@ -44,7 +44,7 @@ There are still few things you can do though.
 If it is not specified in the class documentation, you can
 access a class fields like they are written.
 For exemple, for the [Handshake Packet class](@ref HandshakePacket), you
-can access its [Next State field](@ref HandshakePacket::nextState) field
+can access its [Next State field](@ref HandshakePacket::nextState)
 like this, after for exemple registering for the [Client Handshake Event](@ref ClientHandshakeEvent) :
 ```lua
 local function onStatus(e)

@@ -10,6 +10,7 @@ target_include_directories(mineserver PUBLIC src/)
 
 if(MSVC)
   target_compile_options(mineserver PRIVATE /W4 /WX)
+  target_link_libraries(mineserver PUBLIC wsock32 ws2_32)
 else()
   target_compile_options(mineserver PRIVATE -Wall -Wextra -Wpedantic)
 endif()

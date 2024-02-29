@@ -22,7 +22,7 @@
 #elif defined(_WIN32)
 #include <WS2tcpip.h>
 #include <Windef.h>
-#include <stdio.h>
+#include <cstdio>
 #include <io.h>
 #endif
 
@@ -81,7 +81,7 @@ public:
      * @return true the connection was succesfull
      * @return false something went wrong
      */
-    bool connect(const char *address, int port);
+    bool connect(const char *address, int port) const;
 
     /**
      * @brief Whether the connection is valid
@@ -89,10 +89,7 @@ public:
      * @return true the connection is valid
      * @return false the connection is not valid
      */
-    bool isValid() const
-    {
-        return sock >= 0;
-    }
+    bool isValid() const;
     /**
      * @brief Reads from the socket
      *
@@ -101,7 +98,7 @@ public:
      * @param len the maximum length to write
      * @return ssize_t the data length actually read
      */
-    ssize_t read(std::byte *buffer, size_t len);
+    ssize_t read(std::byte *buffer, size_t len) const;
     /**
      * @brief Writes to the socket
      *
@@ -110,7 +107,7 @@ public:
      * @param len the maximum length to read
      * @return ssize_t the data length actually written
      */
-    ssize_t write(const std::byte *buffer, size_t len);
+    ssize_t write(const std::byte *buffer, size_t len) const;
     /**
      * @brief Closes the connection
      *
@@ -118,13 +115,13 @@ public:
      * else it will come at a cost of leaking
      * memory !
      */
-    void close();
+    void close() const;
     /**
      * @brief Get the number of available bytes
      *
      * @return int the number of available bytes
      */
-    size_t getAvailableBytes();
+    size_t getAvailableBytes() const;
 
     /**
      * @brief Get the Handle of the socket
@@ -167,7 +164,6 @@ class ServerSocket
 {
 private:
     socket_t sock;
-    bool isClient;
 
 public:
     /**
@@ -197,10 +193,10 @@ public:
      * port to listen on.
      * @param address the address to bind on
      * @param port the port to bind on
-     * @return true binding was succesfull
+     * @return true binding was successful
      * @return false something went wrong
      */
-    bool bind(const char *address, int port);
+    bool bind(const char *address, int port) const;
     /**
      * @brief Starts the server
      *
@@ -209,7 +205,7 @@ public:
      * of @p backlog
      * @param backlog the max incoming connections
      */
-    void start(unsigned int backlog);
+    void start(unsigned int backlog) const;
     /**
      * @brief Accepts a new client
      *
@@ -218,7 +214,7 @@ public:
      * socket when the client is connected.
      * @return ClientSocket
      */
-    ClientSocket accept();
+    ClientSocket accept() const;
     /**
      * @brief Closes the connection
      *
@@ -226,7 +222,7 @@ public:
      * should be always ran when you finished
      * your stuff.
      */
-    void close();
+    void close() const;
 
     /**
      * @brief Inits the POSIX API
@@ -272,10 +268,10 @@ namespace mojangapi
          */
         std::string name;
         /**
-         * @brief UUID of the player
+         * @brief MinecraftUUID of the player
          *
          */
-        UUID id;
+        MinecraftUUID id;
     };
 
     /**
@@ -288,6 +284,6 @@ namespace mojangapi
      * @return HasJoinedResponse the response from the API
      */
     HasJoinedResponse hasJoined(const std::string &username, const std::string &serverId, const std::string &ip = "");
-};
+}
 
 #endif

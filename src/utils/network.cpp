@@ -28,16 +28,14 @@
 #include <sys/ioctl.h>
 #endif // __linux__
 
-ServerSocket::ServerSocket()
-{
-}
+ServerSocket::ServerSocket() = default;
 
 ServerSocket::ServerSocket(int type)
 {
     sock = socket(AF_INET, type, 0);
 }
 
-bool ServerSocket::bind(const char *address, int port)
+bool ServerSocket::bind(const char *address, int port) const
 {
     if (!sock)
     {
@@ -67,16 +65,16 @@ bool ServerSocket::bind(const char *address, int port)
     return status_code >= 0;
 }
 
-void ServerSocket::start(unsigned int backlog)
+void ServerSocket::start(unsigned int backlog) const
 {
     listen(sock, backlog);
 }
 
-ClientSocket ServerSocket::accept()
+ClientSocket ServerSocket::accept() const
 {
-    struct sockaddr_in cli_addr;
-    socklen_t clilen = sizeof(cli_addr);
-    socket_t rvalue = ::accept(sock, (struct sockaddr *)&cli_addr, &clilen);
+    struct sockaddr_in cli_addr{};
+    socklen_t cliLen = sizeof(cli_addr);
+    socket_t rvalue = ::accept(sock, (struct sockaddr *)&cli_addr, &cliLen);
     char addr[46];
     char *tmp = inet_ntoa(cli_addr.sin_addr);
 #if defined(__linux__)
@@ -87,10 +85,10 @@ ClientSocket ServerSocket::accept()
     strncpy(addr, tmp, 46);
 #endif
 
-    return ClientSocket(rvalue, addr);
+    return {rvalue, addr};
 }
 
-void ServerSocket::close()
+void ServerSocket::close() const
 {
 #if defined(_WIN32)
     closesocket(sock);
@@ -101,7 +99,9 @@ void ServerSocket::close()
 
 bool ServerSocket::init()
 {
-#ifdef _WIN32
+#if defined(__linux__)
+    return true;
+#elif defined(_WIN32)
     WORD requested_version;
     WSADATA wsa_data;
     int err;
@@ -115,7 +115,7 @@ bool ServerSocket::init()
     }
     /* Confirm that the WinSock DLL supports 2.2.        */
     /* Note that if the DLL supports versions greater    */
-    /* than 2.2 in addition to 2.2, it will still return */
+    /* then 2.2 in addition to 2.2, it will still return */
     /* 2.2 in wVersion since that is the version we      */
     /* requested.                                        */
 
@@ -132,7 +132,6 @@ bool ServerSocket::init()
         return true;
     }
 #endif
-    return true;
 }
 
 bool ServerSocket::cleanup()
@@ -148,6 +147,9 @@ ClientSocket::ClientSocket(socket_t client, char *addr) : address(addr)
 {
     sock = client;
     connected = true;
+
+    u_long mode = 0; // 0 to disable non-blocking socket
+    ioctlsocket(sock, FIONBIO, &mode);
 }
 
 ClientSocket::ClientSocket(int type)
@@ -155,17 +157,20 @@ ClientSocket::ClientSocket(int type)
     connected = false;
 
     sock = socket(AF_INET, type, 0);
+
+    u_long mode = 0; // 0 to disable non-blocking socket
+    ioctlsocket(sock, FIONBIO, &mode);
 }
 
-bool ClientSocket::connect(const char *address, int port)
+bool ClientSocket::connect(const char *address, int port) const
 {
     if (connected)
         return false;
 
-    struct sockaddr_in serv_addr;
+    struct sockaddr_in serv_addr{};
     struct hostent *server;
     server = gethostbyname(address);
-    if (server == NULL)
+    if (server == nullptr)
     {
         return -1;
     }
@@ -176,28 +181,30 @@ bool ClientSocket::connect(const char *address, int port)
     return ::connect(sock, (struct sockaddr *)&serv_addr, sizeof(serv_addr)) == 0;
 }
 
-ssize_t ClientSocket::read(std::byte *buffer, size_t len)
+ssize_t ClientSocket::read(std::byte *buffer, size_t len) const
 {
 #if defined(__linux__)
     ssize_t retval = recv(sock, buffer, len, MSG_NOSIGNAL);
-#elif defined(_WIN32)
-    ssize_t retval = (ssize_t)(recv(sock, reinterpret_cast<char*>(buffer), (int)len, 0));
-#endif
     if (retval <= 0)
         throw std::runtime_error("Invalid socket read !");
+#elif defined(_WIN32)
+    auto retval = (ssize_t)(recv(sock, reinterpret_cast<char*>(buffer), (int)len, 0));
+    if (retval == SOCKET_ERROR)
+        throw std::runtime_error("Invalid socket read (" + std::to_string(WSAGetLastError()) + ")");
+#endif
     return retval;
 }
 
-ssize_t ClientSocket::write(const std::byte *buffer, size_t len)
+ssize_t ClientSocket::write(const std::byte *buffer, size_t len) const
 {
 #if defined(__linux__)
     return send(sock, buffer, len, MSG_NOSIGNAL);
 #elif defined(_WIN32)
-    return send(sock, reinterpret_cast<char*>(buffer), (unsigned int)len, 0);
+    return send(sock, reinterpret_cast<const char*>(buffer), (unsigned int)len, 0);
 #endif
 }
 
-void ClientSocket::close()
+void ClientSocket::close() const
 {
 #if defined(_WIN32)
     closesocket(sock);
@@ -206,15 +213,26 @@ void ClientSocket::close()
 #endif
 }
 
-size_t ClientSocket::getAvailableBytes()
+size_t ClientSocket::getAvailableBytes() const
 {
-    int available = 0;
 #if defined(_WIN32)
+    u_long available = 0;
     ioctlsocket(sock, FIONREAD, &available);
 #elif defined(__linux__)
+    int available = 0;
     ioctl(sock, FIONREAD, &available);
 #endif
     return available;
+}
+
+bool ClientSocket::isValid() const {
+    bool isValid;
+#if defined(_WIN32)
+    isValid = sock != INVALID_SOCKET;
+#elif defined(__linux__)
+    isValid = sock >= 0;
+#endif
+    return isValid;
 }
 
 mojangapi::HasJoinedResponse mojangapi::hasJoined(const std::string &username, const std::string &serverId, const std::string &ip)
@@ -228,7 +246,7 @@ mojangapi::HasJoinedResponse mojangapi::hasJoined(const std::string &username, c
     if (!socket.connect("sessionserver.mojang.com", 443))
         throw std::runtime_error("Could not connect to server");
 
-    std::string url = std::string("/session/minecraft/hasJoined") + "?username=" + username + "&serverId=" + serverId + (ip == "" ? "" : ("&ip=" + ip));
+    std::string url = std::string("/session/minecraft/hasJoined") + "?username=" + username + "&serverId=" + serverId + (ip.empty() ? "" : ("&ip=" + ip));
 
     SSL *ssl = SSL_new(ctx);
     if (!ssl)
@@ -265,10 +283,10 @@ mojangapi::HasJoinedResponse mojangapi::hasJoined(const std::string &username, c
     if (doc.HasParseError() || !doc.IsObject() ||
         !doc.HasMember("id") || !doc["id"].IsString() ||
         !doc.HasMember("name") || !doc["name"].IsString())
-        throw std::runtime_error("Could not parse JSON reponse");
+        throw std::runtime_error("Could not parse JSON response");
 
     r.name = std::string(doc["name"].GetString(), doc["name"].GetStringLength());
-    r.id = UUID::fromHex(std::string(doc["id"].GetString(), doc["id"].GetStringLength()));
+    r.id = MinecraftUUID::fromHex(std::string(doc["id"].GetString(), doc["id"].GetStringLength()));
 
     return r;
 }

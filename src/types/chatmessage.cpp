@@ -57,7 +57,7 @@ void ChatMessage::load(const rapidjson::Value &document)
 #define LOAD_BOOL(x)                                              \
     if ((it = document.FindMember(#x)) != document.MemberEnd() && \
         it->value.IsBool())                                       \
-        x = it->value.GetBool();
+        x = it->value.GetBool()
 
     LOAD_BOOL(bold);
     LOAD_BOOL(italic);
@@ -69,7 +69,7 @@ void ChatMessage::load(const rapidjson::Value &document)
 #define LOAD_STRING(x)                                            \
     if ((it = document.FindMember(#x)) != document.MemberEnd() && \
         it->value.IsString())                                     \
-        x = std::string(it->value.GetString(), it->value.GetStringLength());
+        x = std::string(it->value.GetString(), it->value.GetStringLength())
 
     LOAD_STRING(color);
     LOAD_STRING(insertion);
@@ -107,7 +107,7 @@ void ChatMessage::save(rapidjson::Value &document, rapidjson::Document::Allocato
 #undef WRITE_BOOL
 
 #define WRITE_STRING(x) \
-    if (x.size() != 0)  \
+    if (!x.empty())  \
     document.AddMember(#x, rapidjson::Value(x.c_str(), x.length(), alloc), alloc)
 
     WRITE_STRING(color);
@@ -165,12 +165,12 @@ void ChatMessage::loadLua(lua_State *state, const char *namespaceName) {
     ClickEvent::loadLua(state, namespaceName);
 }
 
-ChatMessage::ClickEvent::ClickEvent(ActionType action, const std::string &value)
-    : action(action), value(value)
+ChatMessage::ClickEvent::ClickEvent(ActionType action, std::string value)
+    : action(action), value(std::move(value))
 {
 }
 
-ChatMessage::ClickEvent::ClickEvent(uint changePage)
+ChatMessage::ClickEvent::ClickEvent(std::uint32_t changePage)
     : action(ActionType::CHANGE_PAGE), value(std::to_string(changePage))
 {
 }

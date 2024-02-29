@@ -11,7 +11,7 @@ Make is needed in order to work with CMake.
 
 ### Windows
 It is a bit of a headache to make GCC and make work on Windows. It is advised to use [WSL 2](https://learn.microsoft.com/fr-fr/windows/wsl/install) on Windows and follow the Linux-side guide. If you still want it
-to work on Windows, here is a step by step guide on installing MinGW :
+to work on Windows, here is a step-by-step guide on installing MinGW :
  - Download [MinGW from winlibs](https://winlibs.com/)
  - Unzip the downloaded file into a folder (Like `C:\MinGW`)
  - [Add the folder `<Install Path>\bin\` to your path](https://linuxhint.com/add-directory-to-path-environment-variables-windows/) (so if you installed in `C:\MinGW`, you should add `C:\MinGW\bin`)
@@ -39,7 +39,7 @@ You can then clone this repository and its submodules using [Git](https://git-sc
 ```sh
 git clone --recurse-submodules https://github.com/Lygaen/mineserver/
 ```
-There should be no problem if you are cloning on the default master branch. If a problem happens or you don't have / don't want to have git on your system, try to use [releases](https://github.com/Lygaen/mineserver/releases).
+There should be no problem if you are cloning on the default master branch. If a problem happens, or you don't have / don't want to have git on your system, try to use [releases](https://github.com/Lygaen/mineserver/releases).
 Know that if you clone using the zip button on GitHub, it will not clone the submodules. In that case, you will need to have [Git](https://git-scm.com/downloads) installed and run the following command in your directory :
 ```sh
 git submodule update --init
@@ -66,7 +66,7 @@ cmake -DCMAKE_BUILD_TYPE=Release ..
 You can add `-D<YOUR OPTION>=<VALUE>` to the cmake command before the `..` to modify build parameters for Mineserver (refer to [this](#cmake_definitions)).
 
 ## Step 5 : Compiling
-Open a terminal in the build folder or reuse the terminal in the previous steps, running the following commands. It should start building the executable. If any errors happened, please check that you did all of the previous steps or make an issue on Github, we will be happy to help !
+Open a terminal in the build folder or reuse the terminal in the previous steps, running the following commands. It should start building the executable. If any errors happened, please check that you did all the previous steps or make an issue on GitHub, we will be happy to help !
 ### Windows
 ```
 mingw32-make all

@@ -8,7 +8,7 @@
 
 The project is a rewrite of Minecraft server in C++.
 For installing the project, follow [these instructions](https://lygaen.github.io/mineserver/md_docs_2__1__INSTALLATION.html).
-The documentation is hosted on github pages [here](https://lygaen.github.io/mineserver/).
+The documentation is hosted on GitHub pages [here](https://lygaen.github.io/mineserver/).
 
 ## Summary
 - [Summary](#summary)
@@ -19,18 +19,18 @@ The documentation is hosted on github pages [here](https://lygaen.github.io/mine
 - [Licensing](#licensing)
 
 ## Contribution
-A few instructions and informations on contributing to this project.
+A few instructions and information on contributing to this project.
 
 ### Documentation
-All of the code is documented and published using [doxygen](https://www.doxygen.nl/) on github pages [right here](https://lygaen.github.io/mineserver/) !
-We are more than happy for you to provide feedback on the documentation and we aim for our code to be fully documented so that anyone can pick up the project. Contributing to the documentation of this project (and other projects in general) is a good way to familiarize with it and later contribute to it.
+All the code is documented and published using [doxygen](https://www.doxygen.nl/) on GitHub pages [right here](https://lygaen.github.io/mineserver/) !
+We are more than happy for you to provide feedback on the documentation, and we aim for our code to be fully documented so that anyone can pick up the project. Contributing to the documentation of this project (and other projects in general) is a good way to familiarize with it and later contribute to it.
 ### Code
-All of the contributed code on this project falls under our [license](#licensing). We use pull-requests from github to endorse / refuse code from other contributors. You can follow [Github's guide on creating pull-requests](https://docs.github.com/fr/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) to learn how to push code to this project.
+All the contributed code on this project falls under our [licence](#licensing). We use pull-requests from GitHub to endorse / refuse code from other contributors. You can follow [GitHub's guide on creating pull-requests](https://docs.github.com/fr/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/creating-a-pull-request) to learn how to push code to this project.
 We will be happy for you to participate in this project, and, even if you push code that is wrong or buggy, you shall only receive positive feedback from other contributors so that you can progress on your programmer's skills in general.
-You will never be wrong to try to push new code onto this project and we will always be glad for you to do so !
+You will never be wrong to try to push new code onto this project, and we will always be glad for you to do so !
 
 ## Libraries
-Mineserver uses a set of libraries, but tries to be independant as
+Mineserver uses a set of libraries, but tries to be independent as
 possible from them and uses only Open-Source libraries :
   - [Rapidjson](https://github.com/Tencent/rapidjson)
   - [Googletest](https://github.com/google/googletest)
@@ -40,5 +40,5 @@ possible from them and uses only Open-Source libraries :
   - [LuaBridge3](https://github.com/kunitoki/LuaBridge3)
 
 ## Licensing
-This project uses [Apache License 2.0](https://choosealicense.com/licenses/apache-2.0/) for licensing. You can learn more information
+This project uses [Apache Licence 2.0](https://choosealicense.com/licenses/apache-2.0/) for licensing. You can learn more information
 by clicking on the above link.

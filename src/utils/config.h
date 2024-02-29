@@ -40,12 +40,12 @@ public:
      * @brief Section of the field
      *
      */
-    const char *section;
+    std::string section;
     /**
      * @brief Key of the field
      *
      */
-    const char *key;
+    std::string key;
     /**
      * @brief Construct a new Field object
      *
@@ -153,7 +153,7 @@ public:
      * @brief Register config commands
      *
      */
-    void registerCommands();
+    static void registerCommands();
 
     /**
      * @brief The port of the instance

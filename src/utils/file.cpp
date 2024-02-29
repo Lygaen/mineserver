@@ -11,15 +11,15 @@
 
 #include "file.h"
 #include <fstream>
+#include <utility>
 #include <net/stream.h>
 #include <openssl/evp.h>
-#include <utils/logger.h>
 
-File::File() : path("")
+File::File() : path()
 {
 }
 
-File::File(std::string path) : path(path)
+File::File(std::string path) : path(std::move(path))
 {
     load();
 }
@@ -32,17 +32,15 @@ bool File::load()
 {
     std::ifstream file(path, std::ios::binary | std::ios::ate);
     std::streamsize size = file.tellg();
+    if(size <= 0)
+        return false;
+
     file.seekg(0, std::ios::beg);
 
     data.resize(size);
     file.read(data.data(), size);
 
     return file.good();
-}
-
-void File::setPath(std::string path)
-{
-    this->path = path;
 }
 
 const std::string &File::getPath() const
@@ -60,13 +58,16 @@ int File::getSize() const
     return data.size();
 }
 
-PNGFile::PNGFile() : File()
+PNGFile::PNGFile() : File(), width(0), height(0)
 {
 }
 
-PNGFile::PNGFile(std::string path) : File(path), width(0), height(0)
+PNGFile::PNGFile(std::string path) : File(std::move(path)), width(0), height(0)
 {
     MemoryStream m;
+    if(!getPointer())
+        return;
+
     m.write(reinterpret_cast<std::byte *>(const_cast<char *>(getPointer())), 1, 15 + 8);
 
     char buff[3];
@@ -92,9 +93,7 @@ PNGFile::PNGFile(std::string path) : File(path), width(0), height(0)
     delete[] encoded;
 }
 
-PNGFile::~PNGFile()
-{
-}
+PNGFile::~PNGFile() = default;
 
 unsigned int PNGFile::getWidth() const
 {

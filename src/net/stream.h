@@ -263,20 +263,20 @@ public:
     void writeVarLong(std::int64_t l);
 
     /**
-     * @brief Reads an UUID
+     * @brief Reads an MinecraftUUID
      *
      * Reads 16 bytes from the stream and interprets
-     * them as an UUID.
-     * @return UUID the uuid read from the stream
+     * them as an MinecraftUUID.
+     * @return MinecraftUUID the uuid read from the stream
      */
-    UUID readUUID();
+    MinecraftUUID readUUID();
     /**
-     * @brief Writes an UUID
+     * @brief Writes an MinecraftUUID
      *
-     * Writes an UUID to the stream.
-     * @param uuid the UUID to write
+     * Writes an MinecraftUUID to the stream.
+     * @param uuid the MinecraftUUID to write
      */
-    void writeUUID(const UUID &uuid);
+    void writeUUID(const MinecraftUUID &uuid);
 };
 
 /**
@@ -303,7 +303,7 @@ public:
      * @brief Destroy the Memory Stream object
      *
      */
-    ~MemoryStream() = default;
+    ~MemoryStream() override = default;
 
     /**
      * @brief Reads from the stream
@@ -375,7 +375,7 @@ public:
      *
      * @param socket the socket to IO on
      */
-    NetSocketStream(ClientSocket socket);
+    NetSocketStream(const ClientSocket& socket);
     /**
      * @brief Destroy the Net Socket Stream object
      *

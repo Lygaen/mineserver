@@ -52,7 +52,7 @@ void LoginSuccess::loadLua(lua_State *state, const char *baseNamespaceName)
     luabridge::getGlobalNamespace(state)
         .beginNamespace(baseNamespaceName)
         .beginClass<LoginSuccess>("LoginSuccess")
-        .addConstructor<void(const std::string &, const UUID &)>()
+        .addConstructor<void(const std::string &, const MinecraftUUID &)>()
         .endClass()
         .endNamespace();
 }

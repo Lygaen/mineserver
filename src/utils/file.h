@@ -56,14 +56,6 @@ public:
     bool load();
 
     /**
-     * @brief Set the Path of the file
-     *
-     * You should call File::load() to load
-     * the file data afterwards.
-     * @param path the path of the targeted file
-     */
-    void setPath(std::string path);
-    /**
      * @brief Get the Path object
      *
      * @warning The path does not assure that the data

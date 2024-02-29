@@ -53,7 +53,7 @@ public:
      * Wraps around a client socket to handle it.
      * @param sock the socket to wrap around
      */
-    Client(ClientSocket sock);
+    Client(const ClientSocket& sock);
     /**
      * @brief Destroy the Client object
      *

@@ -42,7 +42,7 @@ public:
      * @brief Destroy the Server List Packet object
      *
      */
-    ~PingPongPacket() = default;
+    ~PingPongPacket() override = default;
 
     /**
      * @brief Payload

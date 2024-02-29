@@ -42,7 +42,7 @@ public:
      * @brief Destroy the Encryption Request object
      *
      */
-    ~EncryptionRequest() = default;
+    ~EncryptionRequest() override = default;
 
     /**
      * @brief The pointer to the verify token
@@ -89,13 +89,13 @@ public:
      * @brief Destroy the Encryption Response object
      *
      */
-    ~EncryptionResponse() = default;
+    ~EncryptionResponse() override = default;
 
     /**
      * @brief The length of the shared secret
      *
      */
-    size_t sharedSecretLength;
+    size_t sharedSecretLength{};
     /**
      * @brief The shared secret between the two clients
      *
@@ -106,7 +106,7 @@ public:
      * @brief The length of the verify token
      *
      */
-    size_t verifyTokenLength;
+    size_t verifyTokenLength{};
     /**
      * @brief The verify token
      *

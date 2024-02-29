@@ -21,7 +21,7 @@
 #include <plugins/events/clientevents.hpp>
 #include <plugins/event.h>
 
-Client::Client(ClientSocket sock) : sock(sock), stream(new NetSocketStream(sock))
+Client::Client(const ClientSocket& sock) : isRunning(), state(ClientState::HANDSHAKE), sock(sock), stream(new NetSocketStream(sock))
 {
     ClientConnectedEvent connectedEvent;
     EventsManager::inst()->fire(connectedEvent);
@@ -113,7 +113,7 @@ void Client::loop()
             player.name = loginStart.name;
             if (!Config::inst()->ONLINE_MODE.getValue())
             {
-                player.uuid = UUID::newRandom();
+                player.uuid = MinecraftUUID::fromUsername(player.name);
                 initiatePlayerJoin();
                 return;
             }
@@ -237,6 +237,6 @@ void Client::close(const std::string &reason)
     }
 
     // sock.close();
-    if (reason != "")
+    if (!reason.empty())
         logger::debug("Connection closed : %s", reason.c_str());
 }

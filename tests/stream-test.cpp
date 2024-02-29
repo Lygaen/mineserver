@@ -2,7 +2,6 @@
 #include <net/stream.h>
 #include <net/packet.h>
 #include <utils/crypto.h>
-#include <limits>
 
 /**
  * @brief Test Loops number
@@ -38,7 +37,7 @@ TEST(MinecraftStream, Byte)
         m.clear();
     }
 
-    // So that we test the full 1's possibilty
+    // So that we test the full 1's possibility
     m.writeByte(SCHAR_MAX);
     ASSERT_EQ(m.readByte(), SCHAR_MAX);
 }
@@ -56,7 +55,7 @@ TEST(MinecraftStream, UnsignedByte)
         m.clear();
     }
 
-    // So that we test the full 1's possibilty
+    // So that we test the full 1's possibility
     m.writeUnsignedByte(UCHAR_MAX);
     ASSERT_EQ(m.readUnsignedByte(), UCHAR_MAX);
 }
@@ -74,7 +73,7 @@ TEST(MinecraftStream, Short)
         m.clear();
     }
 
-    // So that we test the full 1's possibilty
+    // So that we test the full 1's possibility
     m.writeShort(SHRT_MAX);
     ASSERT_EQ(m.readShort(), SHRT_MAX);
 }
@@ -92,7 +91,7 @@ TEST(MinecraftStream, UnsignedShort)
         m.clear();
     }
 
-    // So that we test the full 1's possibilty
+    // So that we test the full 1's possibility
     m.writeUnsignedShort(SHRT_MAX);
     ASSERT_EQ(m.readUnsignedShort(), SHRT_MAX);
 }
@@ -110,7 +109,7 @@ TEST(MinecraftStream, Int)
         m.clear();
     }
 
-    // So that we test the full 1's possibilty
+    // So that we test the full 1's possibility
     m.writeInt(INT_MAX);
     ASSERT_EQ(m.readInt(), INT_MAX);
 }
@@ -128,7 +127,7 @@ TEST(MinecraftStream, Long)
         m.clear();
     }
 
-    // So that we test the full 1's possibilty
+    // So that we test the full 1's possibility
     m.writeLong(LONG_MAX);
     ASSERT_EQ(m.readLong(), LONG_MAX);
 }
@@ -194,7 +193,7 @@ TEST(MinecraftStream, VarInt)
         m.clear();
     }
 
-    // So that we test the full 1's possibilty
+    // So that we test the full 1's possibility
     m.writeVarInt(INT_MAX);
     ASSERT_EQ(m.readVarInt(), INT_MAX);
 }
@@ -212,7 +211,7 @@ TEST(MinecraftStream, VarLong)
         m.clear();
     }
 
-    // So that we test the full 1's possibilty
+    // So that we test the full 1's possibility
     m.writeVarLong(LONG_MAX);
     ASSERT_EQ(m.readVarLong(), LONG_MAX);
 }
@@ -317,19 +316,19 @@ TEST(Streams, CryptoRSA)
 
 TEST(Streams, CryptoHash)
 {
-    crypto::MinecraftHash hasher;
+    crypto::MinecraftHash minecraftHash;
 
-    hasher.update("Notch");
-    ASSERT_EQ(hasher.finalize(), "4ed1f46bbe04bc756bcb17c0c7ce3e4632f06a48");
+    minecraftHash.update("Notch");
+    ASSERT_EQ(minecraftHash.finalize(), "4ed1f46bbe04bc756bcb17c0c7ce3e4632f06a48");
 
-    hasher.update("Notch");
-    ASSERT_EQ(hasher.finalize(), "4ed1f46bbe04bc756bcb17c0c7ce3e4632f06a48");
+    minecraftHash.update("Notch");
+    ASSERT_EQ(minecraftHash.finalize(), "4ed1f46bbe04bc756bcb17c0c7ce3e4632f06a48");
 
-    hasher.update("jeb_");
-    ASSERT_EQ(hasher.finalize(), "-7c9d5b0044c130109a5d7b5fb5c317c02b4e28c1");
+    minecraftHash.update("jeb_");
+    ASSERT_EQ(minecraftHash.finalize(), "-7c9d5b0044c130109a5d7b5fb5c317c02b4e28c1");
 
-    hasher.update("simon");
-    ASSERT_EQ(hasher.finalize(), "88e16a1019277b15d58faf0541e11910eb756f6");
+    minecraftHash.update("simon");
+    ASSERT_EQ(minecraftHash.finalize(), "88e16a1019277b15d58faf0541e11910eb756f6");
 }
 
 TEST(Streams, CryptoCipher)
@@ -338,9 +337,8 @@ TEST(Streams, CryptoCipher)
     crypto::AES128CFB8Cipher encipher(crypto::CipherState::ENCRYPT, d.get(), d.get());
     crypto::AES128CFB8Cipher decipher(crypto::CipherState::DECRYPT, d.get(), d.get());
 
-    std::string s = "This is some really long data ! It should be allright to encrypt it and get it back.";
+    std::string s = "This is some really long data ! It should be all right to encrypt it and get it back.";
 
-    int temp;
     std::byte *enData = new std::byte[encipher.calculateBufferSize(s.size())];
     int enLen = encipher.update((std::byte *)s.c_str(), s.size(), enData);
     enLen += encipher.finalize(enData + enLen);

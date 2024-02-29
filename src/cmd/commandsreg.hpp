@@ -26,7 +26,8 @@
  */
 void helpMessage(const ISender::SenderType senderType, ISender &sender, const std::vector<std::string> &args)
 {
-    if (args.size() != 0)
+    (void)senderType;
+    if (!args.empty())
     {
         sender.sendMessage(ChatMessage("/help doesn't accept any arguments !"));
     }
@@ -53,14 +54,15 @@ void helpMessage(const ISender::SenderType senderType, ISender &sender, const st
  */
 void pluginsMessage(const ISender::SenderType senderType, ISender &sender, const std::vector<std::string> &args)
 {
-    if (args.size() != 0)
+    (void)senderType;
+    if (!args.empty())
     {
         sender.sendMessage(ChatMessage("/plugins doesn't accept any arguments !"));
         return;
     }
 
     auto plugins = PluginsManager::inst().getPlugins();
-    if (plugins.size() <= 0)
+    if (plugins.empty())
     {
         sender.sendMessage(ChatMessage("No plugins registered"));
         return;
@@ -68,7 +70,7 @@ void pluginsMessage(const ISender::SenderType senderType, ISender &sender, const
 
     std::string finalString;
 
-    for (auto plugin : plugins)
+    for (const auto& plugin : plugins)
     {
         finalString += plugin->name + " (v" + plugin->version + "), ";
     }

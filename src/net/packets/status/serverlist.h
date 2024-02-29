@@ -65,7 +65,7 @@ public:
      * @brief Destroy the Server List Packet object
      *
      */
-    ~ServerListPacket() = default;
+    ~ServerListPacket() override = default;
 
     /**
      * @brief Read Packet Data

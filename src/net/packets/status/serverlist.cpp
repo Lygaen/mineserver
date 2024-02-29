@@ -64,7 +64,7 @@ ServerListPacket::ServerListPacket() : IPacket(0x00)
 
 void ServerListPacket::read(IMCStream *stream)
 {
-    /* Nothing wrong if you call it but just unecessary bloat */
+    /* Nothing wrong if you call it but just unnecessary bloat */
     (void)stream;
 }
 

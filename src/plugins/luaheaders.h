@@ -25,7 +25,7 @@ extern "C"
 namespace logger
 {
     void plugin(const char *format, ...);
-};
+}
 #endif
 
 /**
@@ -54,6 +54,6 @@ namespace lua
      * @param name the pointer to the name of the plugin
      */
     void registerDefaultLibs(lua_State *state, const char *name);
-};
+}
 
 #endif // MINESERVER_LUAHEADERS_H

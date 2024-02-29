@@ -43,7 +43,7 @@ public:
 namespace logger
 {
     void error(const char *format, ...);
-};
+}
 #endif // DOXYGEN_IGNORE_THIS
 
 /**
