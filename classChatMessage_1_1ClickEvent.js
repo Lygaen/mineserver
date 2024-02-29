@@ -8,8 +8,8 @@ var classChatMessage_1_1ClickEvent =
       [ "CHANGE_PAGE", "classChatMessage_1_1ClickEvent.html#a33cd9d2450d63fdd5ac194722c3b063da40db881363fd3b494dad2fe8c44856c3", null ],
       [ "COPY_TO_CLIPBOARD", "classChatMessage_1_1ClickEvent.html#a33cd9d2450d63fdd5ac194722c3b063dac410718394d27577425619cdfc13c717", null ]
     ] ],
-    [ "ClickEvent", "classChatMessage_1_1ClickEvent.html#a85a485a0e9df2320c457512eea86488a", null ],
-    [ "ClickEvent", "classChatMessage_1_1ClickEvent.html#a6689c5691df7f1ad9652db5f93745baf", null ],
+    [ "ClickEvent", "classChatMessage_1_1ClickEvent.html#a61bfa56ab5df69842856fae7d3f1c9c2", null ],
+    [ "ClickEvent", "classChatMessage_1_1ClickEvent.html#a152d570d010e1e99e87f12744b78155b", null ],
     [ "ClickEvent", "classChatMessage_1_1ClickEvent.html#a84882fd16056d06d0eff3d770fcd490c", null ],
     [ "~ClickEvent", "classChatMessage_1_1ClickEvent.html#af5f3b50110fcf1a7725300dd85aed849", null ],
     [ "load", "classChatMessage_1_1ClickEvent.html#ad7c63e81c40f32f553d43ec299f7377c", null ],

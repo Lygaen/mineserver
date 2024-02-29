@@ -153,9 +153,9 @@ $(function(){initNavTree('server_8h_source.html',''); initResizable(); });
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>    <a class="code hl_class" href="classCommandsManager.html">CommandsManager</a> commandsManager;</div>
 <div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <a class="code hl_class" href="classConsoleManager.html">ConsoleManager</a> consoleManager;</div>
 <div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <a class="code hl_class" href="classServerSocket.html">ServerSocket</a> sock;</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    std::atomic&lt;bool&gt; isRunning;</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    std::atomic&lt;bool&gt; running;</div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordtype">void</span> checks();</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keyword">static</span> <span class="keywordtype">void</span> checks();</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="keyword">public</span>:</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <a class="code hl_function" href="classServer.html#ad5ec9462b520e59f7ea831e157ee5e59">Server</a>();</div>
@@ -164,25 +164,29 @@ $(function(){initNavTree('server_8h_source.html',''); initResizable(); });
 <div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classServer.html#a7eac07d2582fa01c2671362efa955b31">start</a>();</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classServer.html#a07c45a7e101a3926d8f9685c3c5d14e4">stop</a>();</div>
 <div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span> </div>
-<div class="foldopen" id="foldopen00086" data-start="{" data-end="}">
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno"><a class="line" href="classServer.html#a326ec98fe5fb62cc0a9588a1594ed840">   86</a></span>    <span class="keyword">static</span> <a class="code hl_class" href="classServer.html">Server</a> *<a class="code hl_function" href="classServer.html#a326ec98fe5fb62cc0a9588a1594ed840">inst</a>()</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    {</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>        <span class="keywordflow">return</span> INSTANCE;</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>    }</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>    <span class="keywordtype">bool</span> isRunning()<span class="keyword"> const </span>{</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        <span class="keywordflow">return</span> running;</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>    }</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span> </div>
+<div class="foldopen" id="foldopen00090" data-start="{" data-end="}">
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno"><a class="line" href="classServer.html#a326ec98fe5fb62cc0a9588a1594ed840">   90</a></span>    <span class="keyword">static</span> <a class="code hl_class" href="classServer.html">Server</a> *<a class="code hl_function" href="classServer.html#a326ec98fe5fb62cc0a9588a1594ed840">inst</a>()</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>    {</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        <span class="keywordflow">return</span> INSTANCE;</div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>    }</div>
 </div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>};</div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>};</div>
 </div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="preprocessor">#endif </span><span class="comment">// MINESERVER_SERVER_H</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span> </div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="preprocessor">#endif </span><span class="comment">// MINESERVER_SERVER_H</span></div>
 <div class="ttc" id="achatmessage_8h_html"><div class="ttname"><a href="chatmessage_8h.html">chatmessage.h</a></div><div class="ttdoc">The file containing minecraft chat message implementation.</div></div>
 <div class="ttc" id="aclassCommandsManager_html"><div class="ttname"><a href="classCommandsManager.html">CommandsManager</a></div><div class="ttdoc">Commands Manager.</div><div class="ttdef"><b>Definition</b> commands.h:138</div></div>
 <div class="ttc" id="aclassConsoleManager_html"><div class="ttname"><a href="classConsoleManager.html">ConsoleManager</a></div><div class="ttdoc">Console manager.</div><div class="ttdef"><b>Definition</b> console.h:25</div></div>
 <div class="ttc" id="aclassEventsManager_html"><div class="ttname"><a href="classEventsManager.html">EventsManager</a></div><div class="ttdoc">Manager for Events.</div><div class="ttdef"><b>Definition</b> event.h:224</div></div>
 <div class="ttc" id="aclassPluginsManager_html"><div class="ttname"><a href="classPluginsManager.html">PluginsManager</a></div><div class="ttdoc">Plugin Manager.</div><div class="ttdef"><b>Definition</b> plugins.h:71</div></div>
-<div class="ttc" id="aclassServerSocket_html"><div class="ttname"><a href="classServerSocket.html">ServerSocket</a></div><div class="ttdoc">Network POSIX Server.</div><div class="ttdef"><b>Definition</b> network.h:167</div></div>
+<div class="ttc" id="aclassServerSocket_html"><div class="ttname"><a href="classServerSocket.html">ServerSocket</a></div><div class="ttdoc">Network POSIX Server.</div><div class="ttdef"><b>Definition</b> network.h:164</div></div>
 <div class="ttc" id="aclassServer_html"><div class="ttname"><a href="classServer.html">Server</a></div><div class="ttdoc">Server Class.</div><div class="ttdef"><b>Definition</b> server.h:33</div></div>
 <div class="ttc" id="aclassServer_html_a07c45a7e101a3926d8f9685c3c5d14e4"><div class="ttname"><a href="classServer.html#a07c45a7e101a3926d8f9685c3c5d14e4">Server::stop</a></div><div class="ttdeci">void stop()</div><div class="ttdoc">Stops the server.</div><div class="ttdef"><b>Definition</b> server.cpp:109</div></div>
-<div class="ttc" id="aclassServer_html_a326ec98fe5fb62cc0a9588a1594ed840"><div class="ttname"><a href="classServer.html#a326ec98fe5fb62cc0a9588a1594ed840">Server::inst</a></div><div class="ttdeci">static Server * inst()</div><div class="ttdoc">Get the instance of the server.</div><div class="ttdef"><b>Definition</b> server.h:86</div></div>
+<div class="ttc" id="aclassServer_html_a326ec98fe5fb62cc0a9588a1594ed840"><div class="ttname"><a href="classServer.html#a326ec98fe5fb62cc0a9588a1594ed840">Server::inst</a></div><div class="ttdeci">static Server * inst()</div><div class="ttdoc">Get the instance of the server.</div><div class="ttdef"><b>Definition</b> server.h:90</div></div>
 <div class="ttc" id="aclassServer_html_a4b3aa2579cb1c8cd1d069582c14d0fa6"><div class="ttname"><a href="classServer.html#a4b3aa2579cb1c8cd1d069582c14d0fa6">Server::~Server</a></div><div class="ttdeci">~Server()</div><div class="ttdoc">Destroy the Server object.</div><div class="ttdef"><b>Definition</b> server.cpp:47</div></div>
 <div class="ttc" id="aclassServer_html_a7eac07d2582fa01c2671362efa955b31"><div class="ttname"><a href="classServer.html#a7eac07d2582fa01c2671362efa955b31">Server::start</a></div><div class="ttdeci">void start()</div><div class="ttdoc">Starts the server, blocking.</div><div class="ttdef"><b>Definition</b> server.cpp:67</div></div>
 <div class="ttc" id="aclassServer_html_ad5ec9462b520e59f7ea831e157ee5e59"><div class="ttname"><a href="classServer.html#ad5ec9462b520e59f7ea831e157ee5e59">Server::Server</a></div><div class="ttdeci">Server()</div><div class="ttdoc">Construct a new Server object.</div><div class="ttdef"><b>Definition</b> server.cpp:20</div></div>
@@ -198,7 +202,7 @@ $(function(){initNavTree('server_8h_source.html',''); initResizable(); });
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="server_8h.html">server.h</a></li>
-    <li class="footer">Generated on Thu Feb 22 2024 21:55:37 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+    <li class="footer">Generated on Thu Feb 29 2024 22:30:08 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
   </ul>
 </div>
 </body>

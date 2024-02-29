@@ -140,13 +140,13 @@ $(function(){initNavTree('player_8h_source.html',''); initResizable(); });
 <div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>{</div>
 <div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">public</span>:</div>
 <div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="classPlayer.html#aaa23b3bf80e8c0267cf08d4fe4d6ddc1">   31</a></span>    <a class="code hl_function" href="classPlayer.html#aaa23b3bf80e8c0267cf08d4fe4d6ddc1">Player</a>() = <span class="keywordflow">default</span>;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="classPlayer.html#a40d3c47b65e9652c363a8fde41f7bbf5">   36</a></span>    <a class="code hl_function" href="classPlayer.html#a40d3c47b65e9652c363a8fde41f7bbf5">~Player</a>() = <span class="keywordflow">default</span>;</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno"><a class="line" href="classPlayer.html#a1228878de27edb8544145dc7964ce72a">   36</a></span>    <a class="code hl_function" href="classPlayer.html#a1228878de27edb8544145dc7964ce72a">~Player</a>() <span class="keyword">override</span> = <span class="keywordflow">default</span>;</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
 <div class="line"><a id="l00043" name="l00043"></a><span class="lineno"><a class="line" href="classPlayer.html#af9c920fabaafdeb7961a645315b521ff">   43</a></span>    std::string <a class="code hl_variable" href="classPlayer.html#af9c920fabaafdeb7961a645315b521ff">name</a>;</div>
 <div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
 <div class="foldopen" id="foldopen00051" data-start="{" data-end="}">
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="classPlayer.html#a1564880d525c517db3a07c482b57b05a">   51</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classPlayer.html#a1564880d525c517db3a07c482b57b05a">sendMessage</a>(<span class="keyword">const</span> <a class="code hl_class" href="classChatMessage.html">ChatMessage</a> &amp;message)</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    {</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="classPlayer.html#aa8d35d39c3b9efe3b4312cc265961108">   51</a></span>    <span class="keywordtype">void</span> <a class="code hl_function" href="classPlayer.html#aa8d35d39c3b9efe3b4312cc265961108">sendMessage</a>(<span class="keyword">const</span> <a class="code hl_class" href="classChatMessage.html">ChatMessage</a> &amp;message)<span class="keyword"> override</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="keyword">    </span>{</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <span class="keywordflow">throw</span> std::runtime_error(<span class="stringliteral">&quot;Cannot send message to player !&quot;</span>);</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    }</div>
 </div>
@@ -170,8 +170,8 @@ $(function(){initNavTree('player_8h_source.html',''); initResizable(); });
 <div class="ttc" id="aclassILiving_html"><div class="ttname"><a href="classILiving.html">ILiving</a></div><div class="ttdoc">Interface Living Entity.</div><div class="ttdef"><b>Definition</b> entity.h:89</div></div>
 <div class="ttc" id="aclassISender_html"><div class="ttname"><a href="classISender.html">ISender</a></div><div class="ttdoc">Sender Interface.</div><div class="ttdef"><b>Definition</b> commands.h:29</div></div>
 <div class="ttc" id="aclassPlayer_html"><div class="ttname"><a href="classPlayer.html">Player</a></div><div class="ttdoc">Player object.</div><div class="ttdef"><b>Definition</b> player.h:25</div></div>
-<div class="ttc" id="aclassPlayer_html_a1564880d525c517db3a07c482b57b05a"><div class="ttname"><a href="classPlayer.html#a1564880d525c517db3a07c482b57b05a">Player::sendMessage</a></div><div class="ttdeci">void sendMessage(const ChatMessage &amp;message)</div><div class="ttdoc">Sends a message to a player.</div><div class="ttdef"><b>Definition</b> player.h:51</div></div>
-<div class="ttc" id="aclassPlayer_html_a40d3c47b65e9652c363a8fde41f7bbf5"><div class="ttname"><a href="classPlayer.html#a40d3c47b65e9652c363a8fde41f7bbf5">Player::~Player</a></div><div class="ttdeci">~Player()=default</div><div class="ttdoc">Destroy the Player object.</div></div>
+<div class="ttc" id="aclassPlayer_html_a1228878de27edb8544145dc7964ce72a"><div class="ttname"><a href="classPlayer.html#a1228878de27edb8544145dc7964ce72a">Player::~Player</a></div><div class="ttdeci">~Player() override=default</div><div class="ttdoc">Destroy the Player object.</div></div>
+<div class="ttc" id="aclassPlayer_html_aa8d35d39c3b9efe3b4312cc265961108"><div class="ttname"><a href="classPlayer.html#aa8d35d39c3b9efe3b4312cc265961108">Player::sendMessage</a></div><div class="ttdeci">void sendMessage(const ChatMessage &amp;message) override</div><div class="ttdoc">Sends a message to a player.</div><div class="ttdef"><b>Definition</b> player.h:51</div></div>
 <div class="ttc" id="aclassPlayer_html_aaa23b3bf80e8c0267cf08d4fe4d6ddc1"><div class="ttname"><a href="classPlayer.html#aaa23b3bf80e8c0267cf08d4fe4d6ddc1">Player::Player</a></div><div class="ttdeci">Player()=default</div><div class="ttdoc">Construct a new Player object.</div></div>
 <div class="ttc" id="aclassPlayer_html_adffcf6ccbabd275dcfe399c52ed42fb1"><div class="ttname"><a href="classPlayer.html#adffcf6ccbabd275dcfe399c52ed42fb1">Player::loadLua</a></div><div class="ttdeci">static void loadLua(lua_State *state, const char *namespaceName)</div><div class="ttdoc">Loads the Player class to a Lua one.</div><div class="ttdef"><b>Definition</b> player.h:62</div></div>
 <div class="ttc" id="aclassPlayer_html_af9c920fabaafdeb7961a645315b521ff"><div class="ttname"><a href="classPlayer.html#af9c920fabaafdeb7961a645315b521ff">Player::name</a></div><div class="ttdeci">std::string name</div><div class="ttdoc">Name of the player.</div><div class="ttdef"><b>Definition</b> player.h:43</div></div>
@@ -183,7 +183,7 @@ $(function(){initNavTree('player_8h_source.html',''); initResizable(); });
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_d691984d1d74be3b164cee16192654be.html">entities</a></li><li class="navelem"><a class="el" href="player_8h.html">player.h</a></li>
-    <li class="footer">Generated on Thu Feb 22 2024 21:55:37 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+    <li class="footer">Generated on Thu Feb 29 2024 22:30:08 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
   </ul>
 </div>
 </body>

@@ -41,6 +41,7 @@ var annotated_dup =
     [ "LoginStart", "classLoginStart.html", "classLoginStart" ],
     [ "LoginSuccess", "classLoginSuccess.html", "classLoginSuccess" ],
     [ "MemoryStream", "classMemoryStream.html", "classMemoryStream" ],
+    [ "MinecraftUUID", "classMinecraftUUID.html", "classMinecraftUUID" ],
     [ "NetSocketStream", "classNetSocketStream.html", "classNetSocketStream" ],
     [ "PingPongPacket", "classPingPongPacket.html", "classPingPongPacket" ],
     [ "Player", "classPlayer.html", "classPlayer" ],
@@ -52,7 +53,6 @@ var annotated_dup =
     [ "ServerSocket", "classServerSocket.html", "classServerSocket" ],
     [ "ServerStartEvent", "classServerStartEvent.html", null ],
     [ "SetCompression", "classSetCompression.html", "classSetCompression" ],
-    [ "UUID", "classUUID.html", "classUUID" ],
     [ "Vec", "classVec.html", "classVec" ],
     [ "ZLibStream", "classZLibStream.html", "classZLibStream" ]
 ];

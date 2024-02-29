@@ -66,11 +66,11 @@ var hierarchy =
       [ "Player", "classPlayer.html", null ]
     ] ],
     [ "crypto::MinecraftHash", "classcrypto_1_1MinecraftHash.html", null ],
+    [ "MinecraftUUID", "classMinecraftUUID.html", null ],
     [ "Plugin", "classPlugin.html", null ],
     [ "PluginsManager", "classPluginsManager.html", null ],
     [ "Server", "classServer.html", null ],
     [ "ServerSocket", "classServerSocket.html", null ],
-    [ "UUID", "classUUID.html", null ],
     [ "Vec< T >", "classVec.html", null ],
     [ "Vec< float >", "classVec.html", null ],
     [ "crypto::ZLibCompressor", "classcrypto_1_1ZLibCompressor.html", null ]

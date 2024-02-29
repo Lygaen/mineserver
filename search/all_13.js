@@ -11,8 +11,9 @@ var searchData=
   ['md5digest_8',['md5Digest',['../namespacecrypto.html#ac4d3003a5d98419605eddb445ed4d7c3',1,'crypto']]],
   ['memorystream_9',['MemoryStream',['../classMemoryStream.html',1,'MemoryStream'],['../classMemoryStream.html#a50244829d3814d4bd03133c71ec1c92a',1,'MemoryStream::MemoryStream()']]],
   ['minecrafthash_10',['MinecraftHash',['../classcrypto_1_1MinecraftHash.html',1,'crypto::MinecraftHash'],['../classcrypto_1_1MinecraftHash.html#a367213192993b0a61e92483b6894849f',1,'crypto::MinecraftHash::MinecraftHash()']]],
-  ['mojangapi_11',['mojangapi',['../namespacemojangapi.html',1,'']]],
-  ['motd_12',['motd',['../classServerListPacket.html#ab4826954e5ab053550e59787e4eafaea',1,'ServerListPacket']]],
+  ['minecraftuuid_11',['MinecraftUUID',['../classMinecraftUUID.html',1,'MinecraftUUID'],['../classMinecraftUUID.html#afdac149f4b385f91e75416a55f652bca',1,'MinecraftUUID::MinecraftUUID()']]],
+  ['mojangapi_12',['mojangapi',['../namespacemojangapi.html',1,'']]],
   ['motd_13',['MOTD',['../classConfig.html#abcc2d45023a25f1c3cf5bf8074ffc993',1,'Config']]],
-  ['much_20time_14',['Why does the project takes so much time ?',['../index.html#autotoc_md28',1,'']]]
+  ['motd_14',['motd',['../classServerListPacket.html#ab4826954e5ab053550e59787e4eafaea',1,'ServerListPacket']]],
+  ['much_20time_15',['Why does the project takes so much time ?',['../index.html#autotoc_md28',1,'']]]
 ];

@@ -134,8 +134,8 @@ $(function(){initNavTree('md_docs_2__2__CONFIG.html',''); initResizable(); });
 </ul>
 </div>
 <div class="textblock"><p><a class="anchor" id="autotoc_md11"></a></p>
-<p>Mineserver uses multiple steps of configuration to customize everything. These steps are going for most influential to least. It means that for exemple configuration done in CMake will take over configuration done in the config file. We do not currently support configuration over the command line with arguments. The order of hierarchy of the configuration is :</p><ul>
-<li><a class="el" href="#cmake_definitions">CMake definitions</a> (limited and defined at compile-time)</li>
+<p>Mineserver uses multiple steps of configuration to customize everything. These steps are going for most influential to least. It means that for example configuration done in CMake will take over configuration done in the config file. We do not currently support configuration over the command line with arguments. The order of hierarchy of the configuration is :</p><ul>
+<li><a class="el" href="#cmake_definitions">CMake Definitions</a> (limited and defined at compile-time)</li>
 <li><a class="el" href="structCommand.html" title="Command struct.">Command</a> Line Arguments (yet to be supported)</li>
 <li><a class="el" href="#config_file">config.json file</a></li>
 </ul>
@@ -154,7 +154,7 @@ CMake Definitions</h1>
 </table>
 <h1><a class="anchor" id="config_file"></a>
 Config file</h1>
-<p>The config is loaded at runtime from the <code>config.json</code> file. The documentation is not to be trusted on the latest or older configurations as it is updated periodically. Go look at the <a class="el" href="classConfig.html">Config class</a> for an exhaustive list. Here are the current fields listed, separated in different categories such that for exemple, <code>network</code> and <code>display</code> categories translate to in the config file : </p><div class="fragment"><div class="line">{</div>
+<p>The config is loaded at runtime from the <code>config.json</code> file. The documentation is not to be trusted on the latest or older configurations as it is updated periodically. Go look at the <a class="el" href="classConfig.html">Config class</a> for an exhaustive list. Here are the current fields listed, separated in different categories such that for example, <code>network</code> and <code>display</code> categories translate to in the config file : </p><div class="fragment"><div class="line">{</div>
 <div class="line">    &quot;network&quot;: {</div>
 <div class="line">        // -- network members</div>
 <div class="line">        &quot;port&quot;: 25565,</div>
@@ -216,7 +216,7 @@ Other</h2>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Thu Feb 22 2024 21:55:37 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+    <li class="footer">Generated on Thu Feb 29 2024 22:30:08 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
   </ul>
 </div>
 </body>

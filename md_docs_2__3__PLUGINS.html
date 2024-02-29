@@ -146,7 +146,7 @@ Basics</h1>
 <div class="line">print(&quot;Plugin path is &quot; .. plugin.path)</div>
 </div><!-- fragment --> <h1><a class="anchor" id="autotoc_md17"></a>
 Events</h1>
-<p>You can listen to all the events listed in the <a class="el" href="dir_9d2e58768472232ed3174312c9931ffa.html">events directory</a>. Go click on the individual files, look for the events you want to listen and you should be able to see in their documentation how to listen for the event. Generally to listen for an event a class called <code>SimpleBasicEvent</code>, you do as follows : </p><div class="fragment"><div class="line">local function canBeAnything(e)</div>
+<p>You can listen to all the events listed in the <a class="el" href="dir_9d2e58768472232ed3174312c9931ffa.html">events directory</a>. Go click on the individual files, look for the events you want to listen, and you should be able to see in their documentation how to listen for the event. Generally to listen for an event a class called <code>SimpleBasicEvent</code>, you do as follows : </p><div class="fragment"><div class="line">local function canBeAnything(e)</div>
 <div class="line">    -- do your thing</div>
 <div class="line">end</div>
 <div class="line"> </div>
@@ -154,10 +154,10 @@ Events</h1>
 <div class="line">event.onSimpleBasic(canBeAnything)</div>
 </div><!-- fragment --><h1><a class="anchor" id="autotoc_md18"></a>
 Access to classes</h1>
-<p>You can normally access all of the classes of the server. It is still at a development stage so not everything is well connected and not everything will have a lua equivalent. There are still few things you can do though.</p>
+<p>You can normally access all the classes of the server. It is still at a development stage so not everything is well-connected and not everything will have a lua equivalent. There are still few things you can do though.</p>
 <h2><a class="anchor" id="autotoc_md19"></a>
 Generally</h2>
-<p>If it is not specified in the class documentation, you can access a class fields like they are written. For exemple, for the <a class="el" href="classHandshakePacket.html">Handshake Packet class</a>, you can access its <a class="el" href="classHandshakePacket.html#a96b7a2867a9f3717a70caecbd58d6804">Next State field</a> field like this, after for exemple registering for the <a class="el" href="classClientHandshakeEvent.html">Client Handshake Event</a> : </p><div class="fragment"><div class="line">local function onStatus(e)</div>
+<p>If it is not specified in the class documentation, you can access a class fields like they are written. For exemple, for the <a class="el" href="classHandshakePacket.html">Handshake Packet class</a>, you can access its <a class="el" href="classHandshakePacket.html#a96b7a2867a9f3717a70caecbd58d6804">Next State field</a> like this, after for exemple registering for the <a class="el" href="classClientHandshakeEvent.html">Client Handshake Event</a> : </p><div class="fragment"><div class="line">local function onStatus(e)</div>
 <div class="line">    -- do your thing, like printing the client protocol version</div>
 <div class="line">    print(&quot;Client protocol version : &quot; .. e.packet.protocolVersion)</div>
 <div class="line">end</div>
@@ -182,7 +182,7 @@ Libraries Warning</h1>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">Generated on Thu Feb 22 2024 21:55:37 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+    <li class="footer">Generated on Thu Feb 29 2024 22:30:08 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
   </ul>
 </div>
 </body>

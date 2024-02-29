@@ -181,7 +181,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">    <span class="keywordflow">if</span> ((<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">it</a> = <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">document</a>.FindMember(#x)) != <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">document</a>.MemberEnd() &amp;&amp; \</div>
 <div class="line">        <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">it</a>-&gt;value.IsBool())                                       \</div>
-<div class="line">        x = <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">it</a>-&gt;value.GetBool();</div>
+<div class="line">        x = <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">it</a>-&gt;value.GetBool()</div>
 <div class="ttc" id="aevent_8h_html_a76b4d07bdea899ac27cd17e96f56954b"><div class="ttname"><a href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">type_name</a></div><div class="ttdeci">constexpr std::string_view type_name()</div><div class="ttdoc">Gets the name of the type paramater.</div><div class="ttdef"><b>Definition</b> event.h:56</div></div>
 </div><!-- fragment -->
 </div>
@@ -202,7 +202,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <b>Value:</b><div class="fragment"><div class="line">    <span class="keywordflow">if</span> ((<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">it</a> = <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">document</a>.FindMember(#x)) != <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">document</a>.MemberEnd() &amp;&amp; \</div>
 <div class="line">        <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">it</a>-&gt;value.IsString())                                     \</div>
-<div class="line">        x = std::string(<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">it</a>-&gt;value.GetString(), <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">it</a>-&gt;value.GetStringLength());</div>
+<div class="line">        x = std::string(<a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">it</a>-&gt;value.GetString(), <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">it</a>-&gt;value.GetStringLength())</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -239,7 +239,7 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">    <span class="keywordflow">if</span> (x.size() != 0)  \</div>
+<b>Value:</b><div class="fragment"><div class="line">    <span class="keywordflow">if</span> (!x.empty())  \</div>
 <div class="line">    <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">document</a>.AddMember(#x, rapidjson::Value(x.c_str(), x.length(), <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">alloc</a>), <a class="code hl_function" href="event_8h.html#a76b4d07bdea899ac27cd17e96f56954b">alloc</a>)</div>
 </div><!-- fragment -->
 </div>
@@ -311,7 +311,7 @@ false the two variables are not equal </dd></dl>
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_0c0c9fa8a58db41e576adc3ce68c5ee9.html">types</a></li><li class="navelem"><a class="el" href="chatmessage_8cpp.html">chatmessage.cpp</a></li>
-    <li class="footer">Generated on Thu Feb 22 2024 21:55:37 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
+    <li class="footer">Generated on Thu Feb 29 2024 22:30:08 for Mineserver by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
   </ul>
 </div>
 </body>

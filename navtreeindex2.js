@@ -1,6 +1,5 @@
 var NAVTREEINDEX2 =
 {
-"functions_f.html":[7,3,0,5],
 "functions_func.html":[7,3,1,0],
 "functions_func.html":[7,3,1],
 "functions_func_b.html":[7,3,1,1],
@@ -229,8 +228,8 @@ var NAVTREEINDEX2 =
 "structCommand.html#a8e2d9b345d8839ac2dd9b32c62d4cf33":[7,0,11,2],
 "structmojangapi_1_1HasJoinedResponse.html":[6,0,3,0],
 "structmojangapi_1_1HasJoinedResponse.html":[7,0,2,0],
-"structmojangapi_1_1HasJoinedResponse.html#a02367e59fde761135750e1373f17c7fd":[6,0,3,0,0],
-"structmojangapi_1_1HasJoinedResponse.html#a02367e59fde761135750e1373f17c7fd":[7,0,2,0,0],
+"structmojangapi_1_1HasJoinedResponse.html#ab8f7fbffbd9027ea60049e95c5a2893b":[6,0,3,0,0],
+"structmojangapi_1_1HasJoinedResponse.html#ab8f7fbffbd9027ea60049e95c5a2893b":[7,0,2,0,0],
 "structmojangapi_1_1HasJoinedResponse.html#ae09f18adbd63035cf910d2a1c613e04a":[7,0,2,0,1],
 "structmojangapi_1_1HasJoinedResponse.html#ae09f18adbd63035cf910d2a1c613e04a":[6,0,3,0,1],
 "todo.html":[4],

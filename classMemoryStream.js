@@ -1,7 +1,7 @@
 var classMemoryStream =
 [
     [ "MemoryStream", "classMemoryStream.html#a50244829d3814d4bd03133c71ec1c92a", null ],
-    [ "~MemoryStream", "classMemoryStream.html#a4c192de9c2a94bfa1d1d9eaa84e1dec1", null ],
+    [ "~MemoryStream", "classMemoryStream.html#a7507876e4cc4d68d1a6a4cfa03f29c3a", null ],
     [ "available", "classMemoryStream.html#a3dba29201a03f5163bd8a339191f15cd", null ],
     [ "clear", "classMemoryStream.html#a392cb7470c7642c89daa5652e05c12c8", null ],
     [ "finishPacketWrite", "classMemoryStream.html#ad29efaa984219fbd1b0de4e4f524fba0", null ],
