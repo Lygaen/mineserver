@@ -9,5 +9,5 @@ var classMinecraftUUID =
     [ "getTrimmed", "classMinecraftUUID.html#a8ee4906ec218e7aafcd014eb91b594b1", null ],
     [ "loadLua", "classMinecraftUUID.html#ae7f38ab70a29061e4238658bfa0ff655", null ],
     [ "newRandom", "classMinecraftUUID.html#a4a39ed67a28637714c56c8f01db3207b", null ],
-    [ "operator==", "classMinecraftUUID.html#a381bd7d7da105dc0ee8af6bb582dc63f", null ]
+    [ "operator==", "classMinecraftUUID.html#a7e8affd53dd650fbfbf3ce840b9c5446", null ]
 ];
