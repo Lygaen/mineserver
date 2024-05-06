@@ -13,6 +13,8 @@
 #define MINESERVER_CRYPTO_H
 
 #include <memory>
+#include <string>
+#include <cstddef>
 #include <openssl/rsa.h>
 #include <openssl/evp.h>
 #include <zlib.h>

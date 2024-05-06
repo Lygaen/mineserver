@@ -109,7 +109,12 @@ std::int32_t IMCStream::readInt()
     {
         // Kinda tedious but better than nothing !
         std::uint32_t i = *reinterpret_cast<std::uint32_t *>(&b);
-        i = __builtin_bswap32(i);
+#ifdef _WIN32
+        // no builtin bswap for MSVC
+        i = (i << 24) | ((i & 0xff00) << 8) | ((i & 0xff0000) >> 8) | (i >> 24);
+#elif defined(__linux__)
+        n = __builtin_bswap32(n);
+#endif
         return *reinterpret_cast<std::int32_t *>(&i);
     }
     else
@@ -123,7 +128,12 @@ void IMCStream::writeInt(std::int32_t i)
     if constexpr (std::endian::native == std::endian::little)
     {
         std::uint32_t n = *reinterpret_cast<std::uint32_t *>(&i);
+#ifdef _WIN32
+        // no builtin bswap for MSVC
+        n = (n << 24) | ((n & 0xff00) << 8) | ((n & 0xff0000) >> 8) | (n >> 24);
+#elif defined(__linux__)
         n = __builtin_bswap32(n);
+#endif
         write(reinterpret_cast<std::byte *>(&n), 0, sizeof(std::int32_t));
     }
     else
@@ -141,7 +151,11 @@ std::int64_t IMCStream::readLong()
     {
         // Again, kinda tedious but better than nothing !
         std::uint64_t i = *reinterpret_cast<std::uint64_t *>(&b);
+#ifdef _WIN32
+        i = _byteswap_uint64(i);
+#elif defined(__linux__)
         i = __builtin_bswap64(i);
+#endif
         return *reinterpret_cast<std::int64_t *>(&i);
     }
     else
@@ -155,7 +169,11 @@ void IMCStream::writeLong(std::int64_t l)
     if constexpr (std::endian::native == std::endian::little)
     {
         std::uint64_t n = *reinterpret_cast<std::uint64_t *>(&l);
-        n = __builtin_bswap64(n);
+#ifdef _WIN32
+        n = _byteswap_uint64(n);
+#elif defined(__linux__)
+        i = __builtin_bswap64(i);
+#endif
         write(reinterpret_cast<std::byte *>(&n), 0, sizeof(std::int64_t));
     }
     else
@@ -344,6 +362,7 @@ MinecraftUUID IMCStream::readUUID()
     return uuid;
 }
 
+#undef min
 void MemoryStream::read(std::byte *buffer, std::size_t offset, std::size_t len)
 {
     std::memcpy(buffer + offset, data.data() + readIndex, std::min(len, data.size()));
@@ -518,7 +537,7 @@ void ZLibStream::finishPacketWrite(const std::byte *packetData, size_t len)
         return;
     }
 
-    std::byte compBytes[2 * len];
+    std::byte *compBytes = new std::byte[2 * len];
     int packetLength = comp.compress(packetData, len, compBytes, 2 * len);
 
     baseStream->writeVarInt(packetLength + calculateVarIntSize(len));
@@ -542,7 +561,7 @@ void ZLibStream::flush()
 
         if (len >= threshold)
             throw std::runtime_error("Invalid received compression size");
-        std::byte bytes[len];
+        std::byte *bytes = new std::byte[len];
         baseStream->read(bytes, 0, len);
 
         // We write back the length to the stream
@@ -554,10 +573,10 @@ void ZLibStream::flush()
         return;
     }
     int len = packetLength - calculateVarIntSize(dataLength);
-    std::byte compressed[len];
+    std::byte *compressed = new std::byte[len];
     baseStream->read(compressed, 0, len);
 
-    std::byte final[dataLength];
+    std::byte *final = new std::byte[dataLength];
     int written = comp.uncompress(compressed, len, final, dataLength);
     if (written != dataLength)
         throw std::runtime_error("Invalid uncompressed length");
@@ -565,7 +584,6 @@ void ZLibStream::flush()
     // We write back the length to the stream
     MemoryStream m;
     m.writeVarInt(dataLength);
-    std::copy(m.getData().begin(), m.getData().end(), std::back_inserter(inBuffer));
-
-    std::copy(final, final + dataLength, std::back_inserter(inBuffer));
+    std::ranges::copy(m.getData(), std::back_inserter(inBuffer));
+    inBuffer.insert(inBuffer.end(), final, final + dataLength);
 }

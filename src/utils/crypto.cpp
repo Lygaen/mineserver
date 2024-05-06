@@ -16,6 +16,7 @@
 #include <openssl/x509.h>
 #include <openssl/md5.h>
 #include <cstring>
+#include <stdexcept>
 
 /**
  * @brief The static OpenCrypto keypair variable

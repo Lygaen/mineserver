@@ -4,4 +4,8 @@
 /run/
 /cmake-build-debug/
 /cmake-build-release/
+/out/
+/.vs/
+CmakeSettings.json
+Folder.DotSettings.user
 scrap.excalidraw

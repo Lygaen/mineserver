@@ -43,14 +43,14 @@ void EncryptionResponse::read(IMCStream *stream)
 {
     {
         int len = stream->readVarInt();
-        std::byte buff[len];
+        std::byte *buff = new std::byte[len];
         stream->read(buff, 0, len);
 
         sharedSecret = crypto::rsaDecrypt(buff, len, &sharedSecretLength);
     }
     {
         int len = stream->readVarInt();
-        std::byte buff[len];
+        std::byte *buff = new std::byte[len];
         stream->read(buff, 0, len);
 
         verifyToken = crypto::rsaDecrypt(buff, len, &verifyTokenLength);

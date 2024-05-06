@@ -282,7 +282,7 @@ public:
      * @return EventHandler<T>::subId the handler used for unsuscribing
      */
     template <class T>
-    EventHandler<T>::subId subscribe(const EventHandler<T>::callbackType &callback)
+    typename EventHandler<T>::subId subscribe(const typename EventHandler<T>::callbackType &callback)
     {
         static_assert(std::is_base_of_v<IEvent<T>, T>, "Class doesn't derive from IEvent");
         EventHandler<T> *handler = getOrCreateHandler<T>();
@@ -298,7 +298,7 @@ public:
      * @return EventHandler<T>::subId the handler used for unsuscribing
      */
     template <class T>
-    EventHandler<T>::subId subscribe(EventHandler<T>::callbackType &&callback)
+    typename EventHandler<T>::subId subscribe(typename EventHandler<T>::callbackType &&callback)
     {
         static_assert(std::is_base_of_v<IEvent<T>, T>, "Class doesn't derive from IEvent");
         EventHandler<T> *handler = getOrCreateHandler<T>();
@@ -313,7 +313,7 @@ public:
      * @param subId the handler of the function
      */
     template <class T>
-    void unsubscribe(EventHandler<T>::subId subId)
+    void unsubscribe(typename EventHandler<T>::subId subId)
     {
         static_assert(std::is_base_of_v<IEvent<T>, T>, "Class doesn't derive from IEvent");
         EventHandler<T> *handler = getOrCreateHandler<T>();
