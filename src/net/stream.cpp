@@ -113,7 +113,7 @@ std::int32_t IMCStream::readInt()
         // no builtin bswap for MSVC
         i = (i << 24) | ((i & 0xff00) << 8) | ((i & 0xff0000) >> 8) | (i >> 24);
 #elif defined(__linux__)
-        n = __builtin_bswap32(n);
+        i = __builtin_bswap32(i);
 #endif
         return *reinterpret_cast<std::int32_t *>(&i);
     }
@@ -172,7 +172,7 @@ void IMCStream::writeLong(std::int64_t l)
 #ifdef _WIN32
         n = _byteswap_uint64(n);
 #elif defined(__linux__)
-        i = __builtin_bswap64(i);
+        n = __builtin_bswap64(n);
 #endif
         write(reinterpret_cast<std::byte *>(&n), 0, sizeof(std::int64_t));
     }
