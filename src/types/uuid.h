@@ -44,7 +44,7 @@ public:
      * @return true the members are equal
      * @return false the member are not equal
      */
-    bool operator==(MinecraftUUID const &other);
+    bool operator==(const MinecraftUUID &other);
 
     /**
      * @brief Get the hex of the MinecraftUUID with hyphens

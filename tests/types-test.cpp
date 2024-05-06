@@ -34,7 +34,7 @@ TEST(Types, UUID)
 
     ASSERT_EQ(uuid.getTrimmed(), trimmed);
 
-    ASSERT_TRUE(uuid == MinecraftUUID::fromHex(realUUID));
+    ASSERT_TRUE(uuid.operator==(MinecraftUUID::fromHex(realUUID)));
 
     MinecraftUUID ui2 = MinecraftUUID::fromBytes(uuid.getBytes());
 
